@@ -1,0 +1,76 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+    }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+sourceCompatibility = targetCompatibility = 1.8
+
+def parseprops(File cfg) {
+    cfg.withReader {
+        def prop = new Properties()
+        prop.load(it)
+        return (new ConfigSlurper().parse(prop))
+    }
+}
+
+ext.ref = parseprops(file('build.properties'))
+ext.ref.mod_deps = parseprops(file('mod_deps.properties'))
+
+group = ref.package_base + '.' + ref.mod_id
+archivesBaseName = ref.mod_abbr
+version = ref.mc_version + '-' + ref.mod_version
+
+minecraft {
+    version = (ref.mcf_postfix!='') ? ref.mcf_version + '-' + ref.mcf_postfix : ref.mcf_version
+    runDir = ref.run_dir
+    mappings = ref.mappings
+    replace '@MOD_NAME@', ref.mod_name
+    replace '@MOD_ID@', ref.mod_id
+    replace '@MOD_VERSION@', version
+    replace '@MCF_VERSION@', ref.mcf_version
+    if (ref.mod_deps!="") replace '@MOD_DEPS@', ";" + ref.mod_deps.depstring
+    else replace '@MOD_DEPS@', ''
+    replaceIn 'ModInfo.java'
+}
+
+dependencies {
+    provided fileTree(dir: 'libs', include: '*.jar')
+}
+
+processResources {
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+		expand ([
+			'modid':ref.mod_id,
+			'name':ref.mod_name,
+			'description':ref.mod_desc,
+			'version':ref.mod_version,
+			'mcversion':ref.mc_version,
+			'url':ref.mod_url,
+			'authorList':ref.mod_author,
+			'credits':ref.mod_creds,
+			'logoFile':ref.mod_logo,
+		])
+	}
+	from(sourceSets.main.resources.srcDirs) {exclude 'mcmod.info'}
+}
+
+sourceJar {classifier = 'src'}
+
+// For a debugging session used 'gradle -DEBUG [runClient|runServer]'
+allprojects {
+    tasks.withType(JavaExec) {
+        jvmArgs '-Xms2G', '-Xmx4G'
+        if (System.getProperty("EBUG")!=null)
+            jvmArgs '-agentlib:jdwp=transport=dt_socket,address=localhost:5005,server=y,suspend=y'
+    }
+}
