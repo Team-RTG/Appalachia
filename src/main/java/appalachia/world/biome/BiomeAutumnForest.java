@@ -1,4 +1,4 @@
-package appalachia.world;
+package appalachia.world.biome;
 
 import java.util.Random;
 
@@ -9,12 +9,14 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
-import net.minecraft.world.gen.feature.WorldGenBigTree;
 
+import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BiomeAutumnForest extends Biome {
+public class BiomeAutumnForest extends AppalachianBiome implements IAppalachianBiome {
+
+    public static BiomeDictionary.Type[] biomeTypes;
 
     public BiomeAutumnForest(BiomeProperties props)
     {
@@ -24,6 +26,8 @@ public class BiomeAutumnForest extends Biome {
         theBiomeDecorator.treesPerChunk = 3;
         spawnableMonsterList.add(new SpawnListEntry(EntitySheep.class, 60, 1, 5));
         spawnableMonsterList.add(new SpawnListEntry(EntityRabbit.class, 60, 1, 3));
+
+        biomeTypes = new BiomeDictionary.Type[] { BiomeDictionary.Type.FOREST, BiomeDictionary.Type.HILLS };
     }
 
     @Override
@@ -35,7 +39,7 @@ public class BiomeAutumnForest extends Biome {
     @Override
     public WorldGenAbstractTree genBigTreeChance(Random rand)
     {
-        return rand.nextInt(3) == 0 ? TREE_FEATURE : rand.nextInt(5) == 0 ? new WorldGenBigTree(false) : TREE_FEATURE;
+        return rand.nextInt(3) == 0 ? TREE_FEATURE : rand.nextInt(5) == 0 ? BIG_TREE_FEATURE : TREE_FEATURE;
     }
 
     @Override
@@ -49,13 +53,23 @@ public class BiomeAutumnForest extends Biome {
     @SideOnly(Side.CLIENT)
     public int getGrassColorAtPos(BlockPos pos)
     {
-        return 0x30217A;
+        return 0x70600A;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public int getFoliageColorAtPos(BlockPos pos)
     {
-        return 0x30217A;
+        return 0x70600A;
+    }
+
+    public static BiomeProperties getBiomeProps() {
+        return new Biome.BiomeProperties("Autumn Forest")
+            .setBaseHeight(0.45F)
+            .setHeightVariation(0.3F)
+            .setTemperature(0.7F)
+            .setRainfall(0.8F)
+            .setWaterColor(2368150)
+        ;
     }
 }
