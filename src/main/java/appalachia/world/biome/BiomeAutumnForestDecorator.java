@@ -1,4 +1,4 @@
-package appalachia.world;
+package appalachia.world.biome;
 
 import java.util.Random;
 
@@ -9,11 +9,10 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.gen.ChunkProviderSettings;
 import net.minecraft.world.gen.feature.*;
 
-public class BiomeAutumnForestDecorator extends BiomeDecorator
+public class BiomeAutumnForestDecorator extends AppalachianBiomeDecorator
 {
     public boolean decorating;
     public BlockPos chunkPos;
