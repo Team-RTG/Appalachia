@@ -7,7 +7,6 @@ import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import net.minecraftforge.common.BiomeDictionary;
@@ -23,9 +22,9 @@ public class BiomeAutumnForest extends AppalachianBiome implements IAppalachianB
         super(props);
         topBlock = Blocks.GRASS.getDefaultState();
         fillerBlock = Blocks.DIRT.getDefaultState();
-        theBiomeDecorator.treesPerChunk = 3;
-        spawnableMonsterList.add(new SpawnListEntry(EntitySheep.class, 60, 1, 5));
-        spawnableMonsterList.add(new SpawnListEntry(EntityRabbit.class, 60, 1, 3));
+        theBiomeDecorator.treesPerChunk = 4;
+        spawnableCreatureList.add(new SpawnListEntry(EntitySheep.class, 60, 1, 5));
+        spawnableCreatureList.add(new SpawnListEntry(EntityRabbit.class, 60, 1, 3));
 
         biomeTypes = new BiomeDictionary.Type[] { BiomeDictionary.Type.FOREST, BiomeDictionary.Type.HILLS };
     }
@@ -46,30 +45,23 @@ public class BiomeAutumnForest extends AppalachianBiome implements IAppalachianB
     @SideOnly(Side.CLIENT)
     public int getSkyColorByTemp(float temp)
     {
-        return 0;
+        double noise = GRASS_COLOR_NOISE.getValue((double)temp * 0.0225D, (double)temp * 0.0225D);
+        return noise < -0.7D ? 0xD4DB55 : (noise < -0.3D ? 0xBBDD54 : 0xA3E053);
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public int getGrassColorAtPos(BlockPos pos)
     {
-        return 0x70600A;
+        double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
+        return noise < -0.7D ? 0xD4DB55 : (noise < -0.3D ? 0xBBDD54 : 0xA3E053);
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public int getFoliageColorAtPos(BlockPos pos)
     {
-        return 0x70600A;
-    }
-
-    public static BiomeProperties getBiomeProps() {
-        return new Biome.BiomeProperties("Autumn Forest")
-            .setBaseHeight(0.45F)
-            .setHeightVariation(0.3F)
-            .setTemperature(0.7F)
-            .setRainfall(0.8F)
-            .setWaterColor(2368150)
-        ;
+        double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
+        return noise < -0.7D ? 0xD4DB55 : (noise < -0.3D ? 0xBBDD54 : 0xA3E053);
     }
 }

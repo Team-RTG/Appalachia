@@ -20,6 +20,7 @@ import appalachia.config.appalachia.ConfigAppalachia;
 import appalachia.event.EventManager;
 import appalachia.proxy.CommonProxy;
 import appalachia.reference.ModInfo;
+import appalachia.world.biome.AppalachianBiome.AppalachiaBiomeProps;
 import appalachia.world.biome.BiomeAutumnForest;
 import static appalachia.api.biome.AppalachiaBiomes.autumnForest;
 import static appalachia.reference.ModInfo.*;
@@ -50,13 +51,16 @@ public class Appalachia
         eventMgr = new EventManager();
         eventMgr.registerEventHandlers();
 
-        autumnForest = new BiomeAutumnForest(BiomeAutumnForest.getBiomeProps());
 
-        registerBiomes();
     }
 
     @EventHandler
-    public void fmlLifeCycleEvent(FMLInitializationEvent event) {}
+    public void fmlLifeCycleEvent(FMLInitializationEvent event) {
+
+        autumnForest = new BiomeAutumnForest(AppalachiaBiomeProps.AUTUMN_FOREST.getProps());
+
+        registerBiomes();
+    }
 
     @EventHandler
     public void fmlLifeCycle(FMLPostInitializationEvent event) {
