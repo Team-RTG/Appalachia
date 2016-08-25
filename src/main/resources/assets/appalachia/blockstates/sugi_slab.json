@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "half=bottom": { "model": "appalachia:sugi_half_slab" },
+        "half=top": { "model": "appalachia:sugi_upper_slab" }
+    }
+}
