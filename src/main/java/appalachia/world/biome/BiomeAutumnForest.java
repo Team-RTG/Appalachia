@@ -26,7 +26,7 @@ public class BiomeAutumnForest extends AppalachianBiome implements IAppalachianB
         spawnableCreatureList.add(new SpawnListEntry(EntitySheep.class, 60, 1, 5));
         spawnableCreatureList.add(new SpawnListEntry(EntityRabbit.class, 60, 1, 3));
 
-        biomeTypes = new BiomeDictionary.Type[] { BiomeDictionary.Type.FOREST, BiomeDictionary.Type.HILLS };
+        biomeTypes = new BiomeDictionary.Type[] { BiomeDictionary.Type.FOREST };
     }
 
     @Override
