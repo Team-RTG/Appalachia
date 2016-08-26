@@ -20,21 +20,20 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
 import appalachia.api.AppalachiaBlocks;
-import appalachia.api.AppalachiaItems;
 import appalachia.block.*;
-import appalachia.config.ConfigManager;
 import appalachia.config.ConfigAppalachia;
+import appalachia.config.ConfigManager;
 import appalachia.crafting.CraftingManager;
 import appalachia.event.EventManager;
+import appalachia.item.ItemManager;
 import appalachia.proxy.CommonProxy;
-import appalachia.reference.ModInfo;
 import appalachia.world.AppalachiaWorldGenerator;
 import appalachia.world.biome.AppalachianBiome.AppalachiaBiomeProps;
 import appalachia.world.biome.BiomeAutumnForest;
 import static appalachia.api.AppalachiaBiomes.autumnForest;
 import static appalachia.reference.ModInfo.*;
 
-@Mod(modid = ModInfo.MOD_ID, name = MOD_NAME, version = MOD_VERSION, dependencies = "required-after:Forge@[" + FORGE_DEP + ",)", acceptableRemoteVersions = "*")
+@Mod(modid = MOD_ID, name = MOD_NAME, version = MOD_VERSION, dependencies = "required-after:Forge@[" + FORGE_DEP + ",)", acceptableRemoteVersions = "*")
 public class Appalachia
 {
 
@@ -43,7 +42,7 @@ public class Appalachia
     public static String configPath;
     public static EventManager eventMgr;
 
-    @SidedProxy(serverSide = ModInfo.PROXY_COMMON, clientSide = ModInfo.PROXY_CLIENT)
+    @SidedProxy(serverSide = PROXY_COMMON, clientSide = PROXY_CLIENT)
     public static CommonProxy proxy;
 
     private ConfigManager configManager = new ConfigManager();
@@ -53,7 +52,7 @@ public class Appalachia
 
         instance = this;
 
-        configPath = event.getModConfigurationDirectory() + File.separator + ModInfo.CONFIG_DIRECTORY + File.separator;
+        configPath = event.getModConfigurationDirectory() + File.separator + CONFIG_DIRECTORY + File.separator;
         ConfigManager.init(configPath);
 
         eventMgr = new EventManager();
@@ -68,13 +67,13 @@ public class Appalachia
         AppalachiaBlocks.sugi_fence = new BlockSugiFence();
         AppalachiaBlocks.sugi_fence_gate = new BlockSugiFenceGate();
 
-        AppalachiaBlocks.registerBlocks();
-        AppalachiaItems.registerItems();
+        BlockManager.registerBlocks();
+        ItemManager.registerItems();
 
         if (event.getSide().isClient())
         {
-            AppalachiaBlocks.registerModels();
-            AppalachiaItems.registerModels();
+            BlockManager.registerModels();
+            ItemManager.registerModels();
         }
 
         autumnForest = new BiomeAutumnForest(AppalachiaBiomeProps.AUTUMN_FOREST.getProps());
@@ -97,7 +96,6 @@ public class Appalachia
     @EventHandler
     public void fmlLifeCycleEvent(FMLInitializationEvent event) {
 
-        AppalachiaBlocks.registerRecipes();
         CraftingManager.addRecipes();
 
         GameRegistry.registerWorldGenerator(new AppalachiaWorldGenerator(), 0);
@@ -110,7 +108,7 @@ public class Appalachia
 
     private static void registerBiomeWithTypes(Biome biome, String name, int weight, BiomeType btype, BiomeDictionary.Type...types) {
 
-        GameRegistry.register(biome.setRegistryName(new ResourceLocation(ModInfo.MOD_ID, name)));
+        GameRegistry.register(biome.setRegistryName(new ResourceLocation(MOD_ID, name)));
         BiomeDictionary.registerBiomeType(biome, types);
         BiomeManager.addBiome(btype, new BiomeEntry(biome, weight));
     }
