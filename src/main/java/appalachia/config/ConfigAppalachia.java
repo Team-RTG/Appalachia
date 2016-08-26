@@ -1,4 +1,4 @@
-package appalachia.config.appalachia;
+package appalachia.config;
 
 import java.io.File;
 

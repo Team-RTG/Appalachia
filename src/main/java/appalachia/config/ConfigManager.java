@@ -2,8 +2,6 @@ package appalachia.config;
 
 import java.io.File;
 
-import appalachia.config.appalachia.ConfigAppalachia;
-
 public class ConfigManager {
 
     public static File appalachiaConfigFile;

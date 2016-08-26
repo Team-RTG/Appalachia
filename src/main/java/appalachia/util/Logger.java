@@ -5,7 +5,7 @@ import net.minecraft.crash.CrashReport;
 
 import net.minecraftforge.fml.common.FMLLog;
 
-import appalachia.config.appalachia.ConfigAppalachia;
+import appalachia.config.ConfigAppalachia;
 import org.apache.logging.log4j.Level;
 
 

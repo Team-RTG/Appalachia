@@ -23,8 +23,8 @@ import appalachia.api.block.AppalachiaBlocks;
 import appalachia.api.item.AppalachiaItems;
 import appalachia.block.*;
 import appalachia.config.ConfigManager;
-import appalachia.config.appalachia.ConfigAppalachia;
-import appalachia.crafting.AppalachiaCrafting;
+import appalachia.config.ConfigAppalachia;
+import appalachia.crafting.CraftingManager;
 import appalachia.event.EventManager;
 import appalachia.proxy.CommonProxy;
 import appalachia.reference.ModInfo;
@@ -98,7 +98,7 @@ public class Appalachia
     public void fmlLifeCycleEvent(FMLInitializationEvent event) {
 
         AppalachiaBlocks.registerRecipes();
-        AppalachiaCrafting.addRecipes();
+        CraftingManager.addRecipes();
 
         GameRegistry.registerWorldGenerator(new AppalachiaWorldGenerator(), 0);
     }

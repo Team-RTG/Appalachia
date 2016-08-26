@@ -1,6 +1,6 @@
 package appalachia.crafting;
 
-public class AppalachiaCrafting {
+public class CraftingManager {
 
 	public static void addRecipes()
 	{
