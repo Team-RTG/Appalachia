@@ -1,4 +1,4 @@
-package appalachia.api.block;
+package appalachia.api;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFenceGate;
@@ -18,7 +18,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
-import appalachia.api.item.AppalachiaItems;
 import appalachia.block.BlockSugiLog;
 import appalachia.block.BlockSugiWood;
 import appalachia.item.ItemSugiWoodSlab;

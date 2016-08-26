@@ -19,7 +19,7 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import net.minecraftforge.common.BiomeDictionary;
 
-import appalachia.api.block.AppalachiaBlocks;
+import appalachia.api.AppalachiaBlocks;
 import appalachia.block.BlockSugiLog;
 import appalachia.block.BlockSugiSapling;
 

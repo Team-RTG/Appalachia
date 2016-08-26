@@ -3,7 +3,7 @@ package appalachia.gui;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-import appalachia.api.block.AppalachiaBlocks;
+import appalachia.api.AppalachiaBlocks;
 
 public class AppalachiaTabs {
 

@@ -19,8 +19,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
-import appalachia.api.block.AppalachiaBlocks;
-import appalachia.api.item.AppalachiaItems;
+import appalachia.api.AppalachiaBlocks;
+import appalachia.api.AppalachiaItems;
 import appalachia.block.*;
 import appalachia.config.ConfigManager;
 import appalachia.config.ConfigAppalachia;
@@ -31,7 +31,7 @@ import appalachia.reference.ModInfo;
 import appalachia.world.AppalachiaWorldGenerator;
 import appalachia.world.biome.AppalachianBiome.AppalachiaBiomeProps;
 import appalachia.world.biome.BiomeAutumnForest;
-import static appalachia.api.biome.AppalachiaBiomes.autumnForest;
+import static appalachia.api.AppalachiaBiomes.autumnForest;
 import static appalachia.reference.ModInfo.*;
 
 @Mod(modid = ModInfo.MOD_ID, name = MOD_NAME, version = MOD_VERSION, dependencies = "required-after:Forge@[" + FORGE_DEP + ",)", acceptableRemoteVersions = "*")

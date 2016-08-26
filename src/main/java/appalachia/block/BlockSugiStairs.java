@@ -2,7 +2,7 @@ package appalachia.block;
 
 import net.minecraft.block.BlockStairs;
 
-import appalachia.api.block.AppalachiaBlocks;
+import appalachia.api.AppalachiaBlocks;
 import appalachia.gui.AppalachiaTabs;
 
 public class BlockSugiStairs extends BlockStairs

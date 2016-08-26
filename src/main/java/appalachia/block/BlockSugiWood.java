@@ -11,7 +11,7 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 
-import appalachia.api.block.AppalachiaBlocks;
+import appalachia.api.AppalachiaBlocks;
 import appalachia.gui.AppalachiaTabs;
 
 public class BlockSugiWood extends Block

@@ -21,7 +21,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import appalachia.api.block.AppalachiaBlocks;
+import appalachia.api.AppalachiaBlocks;
 import appalachia.gui.AppalachiaTabs;
 import com.google.common.collect.Lists;
 

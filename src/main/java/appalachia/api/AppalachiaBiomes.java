@@ -1,4 +1,4 @@
-package appalachia.api.biome;
+package appalachia.api;
 
 import net.minecraft.world.biome.Biome;
 

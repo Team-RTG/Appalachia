@@ -1,4 +1,4 @@
-package appalachia.api.item;
+package appalachia.api;
 
 import java.util.List;
 
