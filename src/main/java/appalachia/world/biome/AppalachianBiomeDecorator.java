@@ -20,9 +20,12 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 public class AppalachianBiomeDecorator extends BiomeDecorator
 {
 
+    public boolean generatePonds;
+
     public AppalachianBiomeDecorator() {
 
         this.generateLakes = false;
+        this.generatePonds = false;
     }
 
     @Override
