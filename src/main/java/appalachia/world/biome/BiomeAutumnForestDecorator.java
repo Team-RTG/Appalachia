@@ -13,7 +13,7 @@ import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 
-public class BiomeAutumnForestDecorator extends AppalachianBiomeDecorator
+public class BiomeAutumnForestDecorator extends AppalachiaBiomeDecorator
 {
 
     public BiomeAutumnForestDecorator() {

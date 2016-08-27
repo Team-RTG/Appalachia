@@ -2,7 +2,6 @@ package appalachia.util;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
-
 import static net.minecraft.world.biome.Biome.REGISTRY;
 
 public class BiomeUtils {

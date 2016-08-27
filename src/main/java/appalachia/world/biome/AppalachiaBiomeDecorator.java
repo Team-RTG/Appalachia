@@ -17,12 +17,12 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
-public class AppalachianBiomeDecorator extends BiomeDecorator
+public class AppalachiaBiomeDecorator extends BiomeDecorator
 {
 
     public boolean generatePonds;
 
-    public AppalachianBiomeDecorator() {
+    public AppalachiaBiomeDecorator() {
 
         this.generateLakes = false;
         this.generatePonds = false;

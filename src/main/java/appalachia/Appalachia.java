@@ -28,7 +28,7 @@ import appalachia.event.EventManager;
 import appalachia.item.ItemManager;
 import appalachia.proxy.CommonProxy;
 import appalachia.world.AppalachiaWorldGenerator;
-import appalachia.world.biome.AppalachianBiome.AppalachiaBiomeProps;
+import appalachia.world.biome.AppalachiaBiome.AppalachiaBiomeProps;
 import appalachia.world.biome.BiomeAutumnForest;
 import static appalachia.api.AppalachiaBiomes.autumnForest;
 import static appalachia.reference.ModInfo.*;

@@ -1,7 +1,7 @@
 package appalachia.world.biome;
 
 
-public interface IAppalachianBiome {
+public interface IAppalachiaBiome {
 
 
 }

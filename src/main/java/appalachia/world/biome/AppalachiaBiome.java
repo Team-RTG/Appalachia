@@ -9,9 +9,9 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenBigTree;
 
-public class AppalachianBiome extends Biome implements IAppalachianBiome {
+public class AppalachiaBiome extends Biome implements IAppalachiaBiome {
 
-    public AppalachianBiome(BiomeProperties props)
+    public AppalachiaBiome(BiomeProperties props)
     {
         super(props);
 
