@@ -7,6 +7,7 @@ import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import net.minecraftforge.common.BiomeDictionary;
@@ -27,6 +28,11 @@ public class BiomeAutumnForest extends AppalachianBiome implements IAppalachianB
         spawnableCreatureList.add(new SpawnListEntry(EntityRabbit.class, 60, 1, 3));
 
         biomeTypes = new BiomeDictionary.Type[] { BiomeDictionary.Type.FOREST };
+    }
+
+    @Override
+    public BiomeDecorator createBiomeDecorator() {
+        return new BiomeAutumnForestDecorator();
     }
 
     @Override
