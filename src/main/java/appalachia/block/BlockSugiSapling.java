@@ -97,8 +97,8 @@ public class BlockSugiSapling extends BlockBush implements IGrowable
 		}
 
 		world.setBlockState(pos, Blocks.AIR.getDefaultState(), 4);
-
-		if (!WorldGenSugiTree.treeGen.generate(world, rand, pos))
+		WorldGenSugiTree treegen = new WorldGenSugiTree(false);
+		if (!treegen.generate(world, rand, pos))
 		{
 			world.setBlockState(pos, state, 4);
 		}
