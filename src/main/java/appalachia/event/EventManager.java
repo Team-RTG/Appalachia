@@ -4,6 +4,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.eventhandler.Event;
@@ -17,6 +18,7 @@ public class EventManager {
 
     // Event handlers.
     private final WorldEventAppalachia WORLD_EVENT_HANDLER = new WorldEventAppalachia();
+    private final DecorateBiomeEventAppalachia DECORATE_BIOME_EVENT_HANDLER = new DecorateBiomeEventAppalachia();
     private final PopulateChunkEventAppalachia POPULATE_CHUNK_EVENT_HANDLER = new PopulateChunkEventAppalachia();
 
     private long worldSeed;
@@ -52,6 +54,30 @@ public class EventManager {
         }
     }
 
+    public class DecorateBiomeEventAppalachia {
+
+        DecorateBiomeEventAppalachia() {
+
+            logEventMessage("Initialising DecorateBiomeEventAppalachia...");
+        }
+
+        @SubscribeEvent
+        public void onBiomeDecorate(DecorateBiomeEvent.Decorate event) {
+
+            switch (event.getType())
+            {
+                // Prevent all flowing liquids (waterfalls/lavafalls) from generating, no exceptions.
+                case LAKE_WATER:
+                case LAKE_LAVA:
+
+                    event.setResult(Event.Result.DENY);
+
+                default:
+                    break;
+            }
+        }
+    }
+
     public class PopulateChunkEventAppalachia {
 
         PopulateChunkEventAppalachia() {
@@ -64,6 +90,7 @@ public class EventManager {
 
             switch (event.getType()) {
 
+                // Prevent ponds from generating, depending on the biome.
                 case LAKE:
                 case LAVA:
 
@@ -93,6 +120,7 @@ public class EventManager {
         logEventMessage("Registering Appalachia's event handlers...");
 
         MinecraftForge.EVENT_BUS.register(WORLD_EVENT_HANDLER);
+        MinecraftForge.TERRAIN_GEN_BUS.register(DECORATE_BIOME_EVENT_HANDLER);
         MinecraftForge.TERRAIN_GEN_BUS.register(POPULATE_CHUNK_EVENT_HANDLER);
 
         logEventMessage("Appalachia's event handlers have been registered successfully.");
