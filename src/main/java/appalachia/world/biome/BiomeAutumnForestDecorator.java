@@ -19,8 +19,6 @@ public class BiomeAutumnForestDecorator extends AppalachiaBiomeDecorator
     public BiomeAutumnForestDecorator() {
 
         super();
-
-        this.generateLakes = false;
     }
 
     @Override
