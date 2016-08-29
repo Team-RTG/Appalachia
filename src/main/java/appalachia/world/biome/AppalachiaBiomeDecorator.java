@@ -13,7 +13,6 @@ import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.gen.ChunkProviderSettings;
 import net.minecraft.world.gen.feature.*;
 
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
@@ -50,17 +49,9 @@ public class AppalachiaBiomeDecorator extends BiomeDecorator
             this.redstoneGen = new WorldGenMinable(Blocks.REDSTONE_ORE.getDefaultState(), this.chunkProviderSettings.redstoneSize);
             this.diamondGen = new WorldGenMinable(Blocks.DIAMOND_ORE.getDefaultState(), this.chunkProviderSettings.diamondSize);
             this.lapisGen = new WorldGenMinable(Blocks.LAPIS_ORE.getDefaultState(), this.chunkProviderSettings.lapisSize);
-            this.genDecorations(biome, worldIn, random);
+            this.generateOres(worldIn, random);
             this.decorating = false;
         }
-    }
-
-    @Override
-    protected void genDecorations(Biome biomeIn, World worldIn, Random random)
-    {
-        MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(worldIn, random, chunkPos));
-        this.generateOres(worldIn, random);
-        MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Post(worldIn, random, chunkPos));
     }
 
     protected void generateSand(Biome biomeIn, World worldIn, Random random) {

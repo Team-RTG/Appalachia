@@ -7,7 +7,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
-import net.minecraft.world.gen.feature.WorldGenBigTree;
 
 public class AppalachiaBiome extends Biome implements IAppalachiaBiome {
 
@@ -35,7 +34,7 @@ public class AppalachiaBiome extends Biome implements IAppalachiaBiome {
     @Override
     public WorldGenAbstractTree genBigTreeChance(Random rand)
     {
-        return rand.nextInt(3) == 0 ? TREE_FEATURE : rand.nextInt(5) == 0 ? new WorldGenBigTree(false) : TREE_FEATURE;
+        return rand.nextInt(3) == 0 ? TREE_FEATURE : rand.nextInt(5) == 0 ? BIG_TREE_FEATURE : TREE_FEATURE;
     }
 
     public static enum AppalachiaBiomeProps {

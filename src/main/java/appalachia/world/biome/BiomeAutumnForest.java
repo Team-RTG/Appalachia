@@ -23,7 +23,7 @@ public class BiomeAutumnForest extends AppalachiaBiome implements IAppalachiaBio
         super(props);
         topBlock = Blocks.GRASS.getDefaultState();
         fillerBlock = Blocks.DIRT.getDefaultState();
-        theBiomeDecorator.treesPerChunk = 4;
+        theBiomeDecorator.treesPerChunk = 2;
         spawnableCreatureList.add(new SpawnListEntry(EntitySheep.class, 60, 1, 5));
         spawnableCreatureList.add(new SpawnListEntry(EntityRabbit.class, 60, 1, 3));
 
