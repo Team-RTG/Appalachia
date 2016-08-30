@@ -4,11 +4,6 @@ import net.minecraft.block.Block;
 
 public class AppalachiaBlocks {
 
-	public static Block autumnForest_Log;
-	public static Block autumnForest_Leaves;
-    public static Block autumnForest_Planks;
-    public static Block autumnForest_Sapling;
-
     public static Block sugi_log;
     public static Block sugi_leaves;
     public static Block sugi_sapling;

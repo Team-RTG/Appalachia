@@ -16,6 +16,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import appalachia.api.AppalachiaBlocks;
 import appalachia.item.ItemManager;
 import appalachia.item.ItemSugiWoodSlab;
 import static appalachia.api.AppalachiaBlocks.*;
@@ -24,6 +25,15 @@ public class BlockManager {
 
     public static void registerBlocks()
     {
+        AppalachiaBlocks.sugi_log = new BlockSugiLog();
+        AppalachiaBlocks.sugi_leaves = new BlockSugiLeaves();
+        AppalachiaBlocks.sugi_sapling = new BlockSugiSapling();
+        AppalachiaBlocks.sugi_planks = new BlockSugiWood();
+        AppalachiaBlocks.sugi_slab = new BlockSugiWoodSlab();
+        AppalachiaBlocks.sugi_stairs = new BlockSugiStairs();
+        AppalachiaBlocks.sugi_fence = new BlockSugiFence();
+        AppalachiaBlocks.sugi_fence_gate = new BlockSugiFenceGate();
+
         sugi_log.setRegistryName("sugi_log");
         sugi_leaves.setRegistryName("sugi_leaves");
         sugi_sapling.setRegistryName("sugi_sapling");

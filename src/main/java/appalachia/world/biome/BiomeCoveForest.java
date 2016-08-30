@@ -14,11 +14,11 @@ import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BiomeAutumnForest extends AppalachiaBiome implements IAppalachiaBiome {
+public class BiomeCoveForest extends AppalachiaBiome implements IAppalachiaBiome {
 
     public static BiomeDictionary.Type[] biomeTypes;
 
-    public BiomeAutumnForest(BiomeProperties props)
+    public BiomeCoveForest(BiomeProperties props)
     {
         super(props);
         topBlock = Blocks.GRASS.getDefaultState();
@@ -32,7 +32,7 @@ public class BiomeAutumnForest extends AppalachiaBiome implements IAppalachiaBio
 
     @Override
     public BiomeDecorator createBiomeDecorator() {
-        return new BiomeAutumnForestDecorator();
+        return new BiomeCoveForestDecorator();
     }
 
     @Override
