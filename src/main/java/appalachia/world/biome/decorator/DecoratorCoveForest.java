@@ -1,4 +1,4 @@
-package appalachia.world.biome;
+package appalachia.world.biome.decorator;
 
 import java.util.Random;
 
@@ -12,10 +12,10 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 
 import appalachia.world.gen.feature.tree.WorldGenSugiTree;
 
-public class BiomeSmokyMountainsDecorator extends AppalachiaBiomeDecorator
+public class DecoratorCoveForest extends AppalachiaDecorator
 {
 
-    public BiomeSmokyMountainsDecorator() {
+    public DecoratorCoveForest() {
 
         super();
     }

@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import appalachia.util.Logger;
-import appalachia.world.biome.AppalachiaBiomeDecorator;
+import appalachia.world.biome.decorator.AppalachiaDecorator;
 
 
 public class EventManager {
@@ -96,9 +96,9 @@ public class EventManager {
 
                     Biome biome = event.getWorld().getBiome(new BlockPos(event.getChunkX() * 16 + 8, 0, event.getChunkZ() * 16 + 8));
 
-                    if (biome.theBiomeDecorator instanceof AppalachiaBiomeDecorator) {
+                    if (biome.theBiomeDecorator instanceof AppalachiaDecorator) {
 
-                        AppalachiaBiomeDecorator decorator = (AppalachiaBiomeDecorator)biome.theBiomeDecorator;
+                        AppalachiaDecorator decorator = (AppalachiaDecorator)biome.theBiomeDecorator;
 
                         if (!decorator.generatePonds) {
                             event.setResult(Event.Result.DENY);

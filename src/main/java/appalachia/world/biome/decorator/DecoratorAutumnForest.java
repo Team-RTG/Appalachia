@@ -1,4 +1,4 @@
-package appalachia.world.biome;
+package appalachia.world.biome.decorator;
 
 import java.util.Random;
 
@@ -12,10 +12,10 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 
 import appalachia.world.gen.feature.tree.WorldGenSugiTree;
 
-public class BiomePrairieDecorator extends AppalachiaBiomeDecorator
+public class DecoratorAutumnForest extends AppalachiaDecorator
 {
 
-    public BiomePrairieDecorator() {
+    public DecoratorAutumnForest() {
 
         super();
     }
@@ -23,12 +23,12 @@ public class BiomePrairieDecorator extends AppalachiaBiomeDecorator
     @Override
     public void decorate(World worldIn, Random random, Biome biome, BlockPos pos)
     {
-        MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(worldIn, random, chunkPos));
+        MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(worldIn, random, pos));
         super.decorate(worldIn, random, biome, pos);
-        this.generateTrees(biome, worldIn, random);
-        this.generateFlowers(biome, worldIn, random);
-        this.generateGrass(biome, worldIn, random);
-        MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Post(worldIn, random, chunkPos));
+        //this.generateTrees(biome, worldIn, random);
+        //this.generateFlowers(biome, worldIn, random);
+        //this.generateGrass(biome, worldIn, random);
+        MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Post(worldIn, random, pos));
     }
 
     protected void generateTrees(Biome biomeIn, World worldIn, Random random) {

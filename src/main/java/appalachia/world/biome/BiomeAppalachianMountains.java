@@ -14,6 +14,8 @@ import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import appalachia.world.biome.decorator.DecoratorAppalachianMountains;
+
 public class BiomeAppalachianMountains extends AppalachiaBiome implements IAppalachiaBiome {
 
     public static BiomeDictionary.Type[] biomeTypes;
@@ -32,7 +34,7 @@ public class BiomeAppalachianMountains extends AppalachiaBiome implements IAppal
 
     @Override
     public BiomeDecorator createBiomeDecorator() {
-        return new BiomeAppalachianMountainsDecorator();
+        return new DecoratorAppalachianMountains();
     }
 
     @Override
