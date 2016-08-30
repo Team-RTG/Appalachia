@@ -147,7 +147,7 @@ public class WorldGenSugiTree extends WorldGenAbstractTree
 	{
 		for (int i = 0; i < this.leafDistanceLimit; ++i)
 		{
-			this.crosSection(pos.up(i), this.leafSize(i), AppalachiaBlocks.sugi_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false)));
+			this.crosSection(pos.up(i), this.leafSize(i), AppalachiaBlocks.leaves_autumn_red.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false)));
 		}
 	}
 

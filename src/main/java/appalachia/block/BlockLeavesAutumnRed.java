@@ -25,12 +25,12 @@ import appalachia.api.AppalachiaBlocks;
 import appalachia.gui.AppalachiaTabs;
 import com.google.common.collect.Lists;
 
-public class BlockSugiLeaves extends BlockLeaves
+public class BlockLeavesAutumnRed extends BlockLeaves
 {
-	public BlockSugiLeaves()
+	public BlockLeavesAutumnRed()
 	{
 		super();
-		this.setUnlocalizedName("leaves.sugi");
+		this.setUnlocalizedName("leaves.autumn.red");
 		this.setHarvestLevel("axe", 0);
 		this.setCreativeTab(AppalachiaTabs.tabBlock);
 		this.setDefaultState(blockState.getBaseState().withProperty(DECAYABLE, Boolean.valueOf(true)).withProperty(CHECK_DECAY, Boolean.valueOf(true)));

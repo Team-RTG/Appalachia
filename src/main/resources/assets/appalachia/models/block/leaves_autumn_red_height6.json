@@ -1,7 +1,7 @@
 {
     "textures": {
-        "particle": "appalachia:blocks/leaves_sugi",
-        "texture": "appalachia:blocks/leaves_sugi"
+        "particle": "appalachia:blocks/leaves_autumn_red",
+        "texture": "appalachia:blocks/leaves_autumn_red"
     },
     "elements": [
         {   "from": [ 0, 0, 0 ],

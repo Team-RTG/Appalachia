@@ -1,6 +1,6 @@
 {
     "parent": "block/leaves",
     "textures": {
-        "all": "appalachia:blocks/leaves_sugi"
+        "all": "appalachia:blocks/leaves_autumn_red"
     }
 }

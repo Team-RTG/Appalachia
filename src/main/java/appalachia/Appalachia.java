@@ -101,7 +101,7 @@ public class Appalachia
         OreDictionary.registerOre("logWood", AppalachiaBlocks.sugi_log);
         OreDictionary.registerOre("plankWood", AppalachiaBlocks.sugi_planks);
         OreDictionary.registerOre("treeSapling", AppalachiaBlocks.sugi_sapling);
-        OreDictionary.registerOre("treeLeaves", AppalachiaBlocks.sugi_leaves);
+        OreDictionary.registerOre("treeLeaves", AppalachiaBlocks.leaves_autumn_red);
     }
 
     private void addBiomes() {

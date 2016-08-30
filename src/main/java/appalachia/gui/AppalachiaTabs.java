@@ -19,7 +19,7 @@ public class AppalachiaTabs {
 
 		@Override
 		public Item getTabIconItem() {
-			return Item.getItemFromBlock(AppalachiaBlocks.sugi_leaves);
+			return Item.getItemFromBlock(AppalachiaBlocks.leaves_autumn_red);
 		}
 	};
 }
