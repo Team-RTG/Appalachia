@@ -37,7 +37,7 @@ public class BiomeAutumnForestDecorator extends AppalachiaBiomeDecorator
 
             WorldGenSugiTree tree = new WorldGenSugiTree(false);
 
-            for (int j2 = 0; j2 < 3; ++j2) {
+            for (int j2 = 0; j2 < treesPerChunk; ++j2) {
 
                 int k6 = random.nextInt(16) + 8;
                 int l = random.nextInt(16) + 8;

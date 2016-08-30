@@ -23,7 +23,7 @@ public class BiomeAutumnForest extends AppalachiaBiome implements IAppalachiaBio
         super(props);
         topBlock = Blocks.GRASS.getDefaultState();
         fillerBlock = Blocks.DIRT.getDefaultState();
-        theBiomeDecorator.treesPerChunk = 2;
+        theBiomeDecorator.treesPerChunk = 1;
         spawnableCreatureList.add(new SpawnListEntry(EntitySheep.class, 60, 1, 5));
         spawnableCreatureList.add(new SpawnListEntry(EntityRabbit.class, 60, 1, 3));
 
@@ -47,20 +47,20 @@ public class BiomeAutumnForest extends AppalachiaBiome implements IAppalachiaBio
         return rand.nextInt(3) == 0 ? TREE_FEATURE : rand.nextInt(5) == 0 ? BIG_TREE_FEATURE : TREE_FEATURE;
     }
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public int getSkyColorByTemp(float temp)
-    {
-        double noise = GRASS_COLOR_NOISE.getValue((double)temp * 0.0225D, (double)temp * 0.0225D);
-        return noise < -0.7D ? 0xD4DB55 : (noise < -0.3D ? 0xBBDD54 : 0xA3E053);
-    }
+//    @Override
+//    @SideOnly(Side.CLIENT)
+//    public int getSkyColorByTemp(float temp)
+//    {
+//        double noise = GRASS_COLOR_NOISE.getValue((double)temp * 0.0225D, (double)temp * 0.0225D);
+//        return noise < -0.7D ? 0xD4DB55 : (noise < -0.3D ? 0xBBDD54 : 0xA3E053);
+//    }
 
     @Override
     @SideOnly(Side.CLIENT)
     public int getGrassColorAtPos(BlockPos pos)
     {
         double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
-        return noise < -0.7D ? 0xD4DB55 : (noise < -0.3D ? 0xBBDD54 : 0xA3E053);
+        return noise < -0.7D ? 0x758c76 : (noise < -0.3D ? 0x5ba15e : 0x5d8c5f);
     }
 
     @Override
@@ -68,6 +68,6 @@ public class BiomeAutumnForest extends AppalachiaBiome implements IAppalachiaBio
     public int getFoliageColorAtPos(BlockPos pos)
     {
         double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
-        return noise < -0.7D ? 0xD4DB55 : (noise < -0.3D ? 0xBBDD54 : 0xA3E053);
+        return noise < -0.7D ? 0x758c76 : (noise < -0.3D ? 0x5ba15e : 0x5d8c5f);
     }
 }
