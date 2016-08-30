@@ -32,7 +32,7 @@ public class BlockLeavesAutumnRed extends BlockLeaves
 		super();
 		this.setUnlocalizedName("leaves.autumn.red");
 		this.setHarvestLevel("axe", 0);
-		this.setCreativeTab(AppalachiaTabs.tabBlock);
+		this.setCreativeTab(AppalachiaTabs.tabDecoration);
 		this.setDefaultState(blockState.getBaseState().withProperty(DECAYABLE, Boolean.valueOf(true)).withProperty(CHECK_DECAY, Boolean.valueOf(true)));
 		this.leavesFancy = true;
 	}
