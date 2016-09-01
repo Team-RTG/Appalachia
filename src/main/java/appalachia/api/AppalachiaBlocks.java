@@ -4,7 +4,7 @@ import net.minecraft.block.Block;
 
 public class AppalachiaBlocks {
 
-    public static Block sugi_log;
+    public static Block log_autumn_grey;
     public static Block leaves_autumn_red;
     public static Block leaves_autumn_orange;
     public static Block leaves_autumn_yellow;

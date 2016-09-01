@@ -25,7 +25,7 @@ public class BlockManager {
 
     public static void registerBlocks()
     {
-        AppalachiaBlocks.sugi_log = new BlockSugiLog();
+        AppalachiaBlocks.log_autumn_grey = new BlockLogAutumnGrey();
         AppalachiaBlocks.leaves_autumn_red = new BlockLeavesAutumnRed();
         AppalachiaBlocks.leaves_autumn_orange = new BlockLeavesAutumnOrange();
         AppalachiaBlocks.leaves_autumn_yellow = new BlockLeavesAutumnYellow();
@@ -36,7 +36,7 @@ public class BlockManager {
         AppalachiaBlocks.sugi_fence = new BlockSugiFence();
         AppalachiaBlocks.sugi_fence_gate = new BlockSugiFenceGate();
 
-        sugi_log.setRegistryName("sugi_log");
+        log_autumn_grey.setRegistryName("log_autumn_grey");
         leaves_autumn_red.setRegistryName("leaves_autumn_red");
         leaves_autumn_orange.setRegistryName("leaves_autumn_orange");
         leaves_autumn_yellow.setRegistryName("leaves_autumn_yellow");
@@ -47,8 +47,8 @@ public class BlockManager {
         sugi_fence.setRegistryName("sugi_fence");
         sugi_fence_gate.setRegistryName("sugi_fence_gate");
 
-        GameRegistry.register(sugi_log);
-        GameRegistry.register(new ItemBlock(sugi_log), sugi_log.getRegistryName());
+        GameRegistry.register(log_autumn_grey);
+        GameRegistry.register(new ItemBlock(log_autumn_grey), log_autumn_grey.getRegistryName());
 
         GameRegistry.register(leaves_autumn_red);
         GameRegistry.register(new ItemBlock(leaves_autumn_red), leaves_autumn_red.getRegistryName());
@@ -77,7 +77,7 @@ public class BlockManager {
         GameRegistry.register(sugi_fence_gate);
         GameRegistry.register(new ItemBlock(sugi_fence_gate), sugi_fence_gate.getRegistryName());
 
-        OreDictionary.registerOre("logWood", new ItemStack(sugi_log, 1, OreDictionary.WILDCARD_VALUE));
+        OreDictionary.registerOre("logWood", new ItemStack(log_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("treeLeaves", new ItemStack(leaves_autumn_red, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("treeLeaves", new ItemStack(leaves_autumn_orange, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("treeLeaves", new ItemStack(leaves_autumn_yellow, 1, OreDictionary.WILDCARD_VALUE));
@@ -88,7 +88,7 @@ public class BlockManager {
         OreDictionary.registerOre("fenceWood", new ItemStack(sugi_fence, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("fenceGateWood", new ItemStack(sugi_fence_gate, 1, OreDictionary.WILDCARD_VALUE));
 
-        Blocks.FIRE.setFireInfo(sugi_log, 5, 5);
+        Blocks.FIRE.setFireInfo(log_autumn_grey, 5, 5);
         Blocks.FIRE.setFireInfo(leaves_autumn_red, 30, 60);
         Blocks.FIRE.setFireInfo(leaves_autumn_orange, 30, 60);
         Blocks.FIRE.setFireInfo(leaves_autumn_yellow, 30, 60);
@@ -103,7 +103,7 @@ public class BlockManager {
     @SideOnly(Side.CLIENT)
     public static void registerModels()
     {
-        registerModel(sugi_log);
+        registerModel(log_autumn_grey);
         registerModel(leaves_autumn_red);
         registerModel(leaves_autumn_orange);
         registerModel(leaves_autumn_yellow);
@@ -114,7 +114,7 @@ public class BlockManager {
         registerModel(sugi_fence);
         registerModel(sugi_fence_gate);
 
-        ModelLoader.setCustomStateMapper(sugi_log, new StateMap.Builder().ignore(BlockSugiLog.VARIANT).build());
+        ModelLoader.setCustomStateMapper(log_autumn_grey, new StateMap.Builder().ignore(BlockLogAutumnGrey.VARIANT).build());
         ModelLoader.setCustomStateMapper(leaves_autumn_red, new StateMap.Builder().ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
         ModelLoader.setCustomStateMapper(leaves_autumn_orange, new StateMap.Builder().ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
         ModelLoader.setCustomStateMapper(leaves_autumn_yellow, new StateMap.Builder().ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());

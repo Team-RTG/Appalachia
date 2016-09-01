@@ -214,7 +214,7 @@ public class WorldGenSugiTree extends WorldGenAbstractTree
 	{
 		BlockPos blockpos = this.basePos;
 		BlockPos blockpos1 = this.basePos.up(this.height);
-		Block block = AppalachiaBlocks.sugi_log;
+		Block block = AppalachiaBlocks.log_autumn_grey;
 		this.limb(blockpos, blockpos1, block);
 
 		if (this.trunkSize == 2)
@@ -234,7 +234,7 @@ public class WorldGenSugiTree extends WorldGenAbstractTree
 
 			if (!blockpos.equals(worldgenbigtree$foliagecoordinates) && this.leafNodeNeedsBase(i - this.basePos.getY()))
 			{
-				this.limb(blockpos, worldgenbigtree$foliagecoordinates, AppalachiaBlocks.sugi_log);
+				this.limb(blockpos, worldgenbigtree$foliagecoordinates, AppalachiaBlocks.log_autumn_grey);
 			}
 		}
 	}

@@ -33,11 +33,11 @@ public class CraftingManager {
     private static void addShapelessRecipes() {
 
         GameRegistry.addShapelessRecipe(new ItemStack(Items.STICK), new ItemStack(sugi_sapling));
-        GameRegistry.addShapelessRecipe(new ItemStack(sugi_planks, 4), new ItemStack(sugi_log, 1, OreDictionary.WILDCARD_VALUE));
+        GameRegistry.addShapelessRecipe(new ItemStack(sugi_planks, 4), new ItemStack(log_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
     }
 
     private static void addSmeltingRecipes() {
 
-        GameRegistry.addSmelting(sugi_log, new ItemStack(Items.COAL, 1, 1), 0.15F);
+        GameRegistry.addSmelting(log_autumn_grey, new ItemStack(Items.COAL, 1, 1), 0.15F);
     }
 }

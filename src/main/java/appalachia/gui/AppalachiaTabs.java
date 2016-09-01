@@ -11,7 +11,7 @@ public class AppalachiaTabs {
 
 		@Override
 		public Item getTabIconItem() {
-			return Item.getItemFromBlock(AppalachiaBlocks.sugi_log);
+			return Item.getItemFromBlock(AppalachiaBlocks.log_autumn_grey);
 		}
 	};
 
