@@ -17,6 +17,16 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import appalachia.api.AppalachiaBlocks;
+import appalachia.block.fences.BlockSugiFence;
+import appalachia.block.fences.BlockSugiFenceGate;
+import appalachia.block.leaves.BlockLeavesAutumnOrange;
+import appalachia.block.leaves.BlockLeavesAutumnRed;
+import appalachia.block.leaves.BlockLeavesAutumnYellow;
+import appalachia.block.logs.BlockLogAutumnGrey;
+import appalachia.block.planks.BlockSugiWood;
+import appalachia.block.saplings.BlockSugiSapling;
+import appalachia.block.slabs.BlockSugiWoodSlab;
+import appalachia.block.stairs.BlockSugiStairs;
 import appalachia.item.ItemManager;
 import appalachia.item.ItemSugiWoodSlab;
 import static appalachia.api.AppalachiaBlocks.*;

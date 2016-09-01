@@ -1,4 +1,4 @@
-package appalachia.block;
+package appalachia.block.logs;
 
 public class BlockLogAutumnGrey extends AppalachiaBlockLog
 {

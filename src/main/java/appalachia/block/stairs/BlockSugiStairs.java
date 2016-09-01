@@ -1,4 +1,4 @@
-package appalachia.block;
+package appalachia.block.stairs;
 
 import net.minecraft.block.BlockStairs;
 

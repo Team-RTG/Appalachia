@@ -1,17 +1,18 @@
-package appalachia.block;
+package appalachia.block.fences;
 
-import net.minecraft.block.BlockFenceGate;
+import net.minecraft.block.BlockFence;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 
 import appalachia.gui.AppalachiaTabs;
 
-public class BlockSugiFenceGate extends BlockFenceGate
+public class BlockSugiFence extends BlockFence
 {
-	public BlockSugiFenceGate()
+	public BlockSugiFence()
 	{
-		super(BlockPlanks.EnumType.BIRCH);
-		this.setUnlocalizedName("fenceGate.sugi");
+		super(Material.WOOD, BlockPlanks.EnumType.BIRCH.getMapColor());
+		this.setUnlocalizedName("fence.sugi");
 		this.setHardness(1.75F);
 		this.setResistance(4.75F);
 		this.setSoundType(SoundType.WOOD);

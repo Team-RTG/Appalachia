@@ -19,7 +19,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.api.AppalachiaBlocks;
-import appalachia.block.BlockSugiWood;
+import appalachia.block.planks.BlockSugiWood;
 
 public class ItemSugiWoodSlab extends ItemBlock
 {

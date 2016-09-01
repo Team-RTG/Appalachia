@@ -1,4 +1,4 @@
-package appalachia.block;
+package appalachia.block.leaves;
 
 import java.util.List;
 import java.util.Random;
@@ -25,12 +25,12 @@ import appalachia.api.AppalachiaBlocks;
 import appalachia.gui.AppalachiaTabs;
 import com.google.common.collect.Lists;
 
-public class BlockLeavesAutumnYellow extends BlockLeaves
+public class BlockLeavesAutumnRed extends BlockLeaves
 {
-	public BlockLeavesAutumnYellow()
+	public BlockLeavesAutumnRed()
 	{
 		super();
-		this.setUnlocalizedName("leaves.autumn.yellow");
+		this.setUnlocalizedName("leaves.autumn.red");
 		this.setHarvestLevel("axe", 0);
 		this.setCreativeTab(AppalachiaTabs.tabDecoration);
 		this.setDefaultState(blockState.getBaseState().withProperty(DECAYABLE, Boolean.valueOf(true)).withProperty(CHECK_DECAY, Boolean.valueOf(true)));

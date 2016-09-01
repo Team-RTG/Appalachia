@@ -1,4 +1,4 @@
-package appalachia.block;
+package appalachia.block.saplings;
 
 import java.util.List;
 import java.util.Random;

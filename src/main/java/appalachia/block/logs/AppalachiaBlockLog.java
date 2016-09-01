@@ -1,4 +1,4 @@
-package appalachia.block;
+package appalachia.block.logs;
 
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.BlockPlanks;

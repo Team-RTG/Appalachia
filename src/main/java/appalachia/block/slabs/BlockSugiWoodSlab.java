@@ -1,4 +1,4 @@
-package appalachia.block;
+package appalachia.block.slabs;
 
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.SoundType;

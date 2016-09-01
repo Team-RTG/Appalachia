@@ -1,4 +1,4 @@
-package appalachia.block;
+package appalachia.block.planks;
 
 import java.util.Random;
 
