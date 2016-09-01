@@ -25,7 +25,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.gui.AppalachiaTabs;
-import appalachia.world.gen.feature.tree.WorldGenSugiTree;
+import appalachia.world.gen.feature.tree.TreeQuercusRobur;
 
 public class AppalachiaBlockSapling extends BlockBush implements IGrowable
 {
@@ -77,7 +77,7 @@ public class AppalachiaBlockSapling extends BlockBush implements IGrowable
             return;
         }
 
-        WorldGenerator worldgenerator = new WorldGenSugiTree(true);
+        WorldGenerator worldgenerator = new TreeQuercusRobur(true);
         int i = 0;
         int j = 0;
 

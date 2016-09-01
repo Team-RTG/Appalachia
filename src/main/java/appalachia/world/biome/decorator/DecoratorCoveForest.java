@@ -10,7 +10,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
-import appalachia.world.gen.feature.tree.WorldGenSugiTree;
+import appalachia.world.gen.feature.tree.TreeQuercusRobur;
 
 public class DecoratorCoveForest extends AppalachiaDecorator
 {
@@ -35,7 +35,7 @@ public class DecoratorCoveForest extends AppalachiaDecorator
 
         if (TerrainGen.decorate(worldIn, random, chunkPos, DecorateBiomeEvent.Decorate.EventType.TREE)) {
 
-            WorldGenSugiTree tree = new WorldGenSugiTree(false);
+            TreeQuercusRobur tree = new TreeQuercusRobur(false);
 
             for (int j2 = 0; j2 < treesPerChunk; ++j2) {
 

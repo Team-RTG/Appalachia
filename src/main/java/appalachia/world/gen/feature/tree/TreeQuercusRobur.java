@@ -3,7 +3,6 @@ package appalachia.world.gen.feature.tree;
 import java.util.List;
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.state.IBlockState;
@@ -11,12 +10,10 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
-import appalachia.api.AppalachiaBlocks;
 import com.google.common.collect.Lists;
 
-public class WorldGenSugiTree extends WorldGenAbstractTree
+public class TreeQuercusRobur extends AppalachiaTree
 {
 	private Random rand;
 	private World world;
@@ -30,9 +27,9 @@ public class WorldGenSugiTree extends WorldGenAbstractTree
 	int trunkSize = 1;
 	int heightLimitLimit = 12;
 	int leafDistanceLimit = 4;
-	List<WorldGenSugiTree.FoliageCoordinates> foliageCoords;
+	List<TreeQuercusRobur.FoliageCoordinates> foliageCoords;
 
-	public WorldGenSugiTree(boolean notify)
+	public TreeQuercusRobur(boolean notify)
 	{
 		super(notify);
 	}
@@ -55,8 +52,8 @@ public class WorldGenSugiTree extends WorldGenAbstractTree
 
 		int j = this.basePos.getY() + this.height;
 		int k = this.heightLimit - this.leafDistanceLimit;
-		this.foliageCoords = Lists.<WorldGenSugiTree.FoliageCoordinates>newArrayList();
-		this.foliageCoords.add(new WorldGenSugiTree.FoliageCoordinates(this.basePos.up(k), j));
+		this.foliageCoords = Lists.<TreeQuercusRobur.FoliageCoordinates>newArrayList();
+		this.foliageCoords.add(new TreeQuercusRobur.FoliageCoordinates(this.basePos.up(k), j));
 
 		for (; k >= 0; --k)
 		{
@@ -83,7 +80,7 @@ public class WorldGenSugiTree extends WorldGenAbstractTree
 
 						if (this.checkBlockLine(blockpos2, blockpos) == -1)
 						{
-							this.foliageCoords.add(new WorldGenSugiTree.FoliageCoordinates(blockpos, blockpos2.getY()));
+							this.foliageCoords.add(new TreeQuercusRobur.FoliageCoordinates(blockpos, blockpos2.getY()));
 						}
 					}
 				}
@@ -91,7 +88,7 @@ public class WorldGenSugiTree extends WorldGenAbstractTree
 		}
 	}
 
-	void crosSection(BlockPos pos, float p_181631_2_, IBlockState p_181631_3_)
+	void crossSection(BlockPos pos, float p_181631_2_, IBlockState p_181631_3_)
 	{
 		int i = (int)((double)p_181631_2_ + 0.618D);
 
@@ -147,11 +144,13 @@ public class WorldGenSugiTree extends WorldGenAbstractTree
 	{
 		for (int i = 0; i < this.leafDistanceLimit; ++i)
 		{
-			this.crosSection(pos.up(i), this.leafSize(i), AppalachiaBlocks.leaves_autumn_red.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false)));
+			if (!this.noLeaves) {
+                this.crossSection(pos.up(i), this.leafSize(i), this.leavesBlock.withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false)));
+            }
 		}
 	}
 
-	void limb(BlockPos p_175937_1_, BlockPos p_175937_2_, Block p_175937_3_)
+	void limb(BlockPos p_175937_1_, BlockPos p_175937_2_, IBlockState p_175937_3_)
 	{
 		BlockPos blockpos = p_175937_2_.add(-p_175937_1_.getX(), -p_175937_1_.getY(), -p_175937_1_.getZ());
 		int i = this.getGreatestDistance(blockpos);
@@ -163,7 +162,7 @@ public class WorldGenSugiTree extends WorldGenAbstractTree
 		{
 			BlockPos blockpos1 = p_175937_1_.add((double)(0.5F + (float)j * f), (double)(0.5F + (float)j * f1), (double)(0.5F + (float)j * f2));
 			BlockLog.EnumAxis blocklog$enumaxis = this.getLogAxis(p_175937_1_, blockpos1);
-			this.setBlockAndNotifyAdequately(this.world, blockpos1, p_175937_3_.getDefaultState().withProperty(BlockLog.LOG_AXIS, blocklog$enumaxis));
+			this.setBlockAndNotifyAdequately(this.world, blockpos1, p_175937_3_.withProperty(BlockLog.LOG_AXIS, blocklog$enumaxis));
 		}
 	}
 
@@ -199,7 +198,7 @@ public class WorldGenSugiTree extends WorldGenAbstractTree
 
 	void generateLeaves()
 	{
-		for (WorldGenSugiTree.FoliageCoordinates worldgenbigtree$foliagecoordinates : this.foliageCoords)
+		for (TreeQuercusRobur.FoliageCoordinates worldgenbigtree$foliagecoordinates : this.foliageCoords)
 		{
 			this.generateLeafNode(worldgenbigtree$foliagecoordinates);
 		}
@@ -214,7 +213,7 @@ public class WorldGenSugiTree extends WorldGenAbstractTree
 	{
 		BlockPos blockpos = this.basePos;
 		BlockPos blockpos1 = this.basePos.up(this.height);
-		Block block = AppalachiaBlocks.log_autumn_grey;
+		IBlockState block = this.logBlock;
 		this.limb(blockpos, blockpos1, block);
 
 		if (this.trunkSize == 2)
@@ -227,14 +226,14 @@ public class WorldGenSugiTree extends WorldGenAbstractTree
 
 	void generateLeafNodeBases()
 	{
-		for (WorldGenSugiTree.FoliageCoordinates worldgenbigtree$foliagecoordinates : this.foliageCoords)
+		for (TreeQuercusRobur.FoliageCoordinates worldgenbigtree$foliagecoordinates : this.foliageCoords)
 		{
 			int i = worldgenbigtree$foliagecoordinates.getBranchBase();
 			BlockPos blockpos = new BlockPos(this.basePos.getX(), i, this.basePos.getZ());
 
 			if (!blockpos.equals(worldgenbigtree$foliagecoordinates) && this.leafNodeNeedsBase(i - this.basePos.getY()))
 			{
-				this.limb(blockpos, worldgenbigtree$foliagecoordinates, AppalachiaBlocks.log_autumn_grey);
+				this.limb(blockpos, worldgenbigtree$foliagecoordinates, this.logBlock);
 			}
 		}
 	}
