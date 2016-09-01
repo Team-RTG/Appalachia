@@ -18,7 +18,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import appalachia.api.AppalachiaBlocks;
 import appalachia.block.fences.BlockSugiFence;
-import appalachia.block.fences.BlockSugiFenceGate;
+import appalachia.block.fencegates.BlockSugiFenceGate;
 import appalachia.block.leaves.BlockLeavesAutumnOrange;
 import appalachia.block.leaves.BlockLeavesAutumnRed;
 import appalachia.block.leaves.BlockLeavesAutumnYellow;
