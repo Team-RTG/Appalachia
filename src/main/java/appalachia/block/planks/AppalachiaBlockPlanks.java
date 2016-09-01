@@ -2,8 +2,9 @@ package appalachia.block.planks;
 
 import java.util.Random;
 
-import net.minecraft.block.BlockPlanks;
+import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockStateContainer;
@@ -13,13 +14,13 @@ import net.minecraft.item.Item;
 import appalachia.api.AppalachiaBlocks;
 import appalachia.gui.AppalachiaTabs;
 
-public class AppalachiaBlockPlanks extends BlockPlanks
+public class AppalachiaBlockPlanks extends Block
 {
     public static final PropertyBool DOUBLE = PropertyBool.create("double");
 
     public AppalachiaBlockPlanks(String unlocalizedName)
     {
-        super();
+        super(Material.WOOD);
         this.setUnlocalizedName(unlocalizedName);
         this.setHardness(1.75F);
         this.setResistance(4.75F);
