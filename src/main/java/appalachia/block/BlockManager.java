@@ -25,10 +25,10 @@ import appalachia.block.leaves.BlockLeavesAutumnYellow;
 import appalachia.block.logs.BlockLogAutumnGrey;
 import appalachia.block.planks.BlockSugiWood;
 import appalachia.block.saplings.BlockSugiSapling;
-import appalachia.block.slabs.BlockSugiWoodSlab;
+import appalachia.block.slabs.BlockSlabAutumnGrey;
 import appalachia.block.stairs.BlockStairsAutumnGrey;
 import appalachia.item.ItemManager;
-import appalachia.item.ItemSugiWoodSlab;
+import appalachia.item.slabs.ItemSlabAutumnGrey;
 import static appalachia.api.AppalachiaBlocks.*;
 
 public class BlockManager {
@@ -41,8 +41,8 @@ public class BlockManager {
         AppalachiaBlocks.leaves_autumn_yellow = new BlockLeavesAutumnYellow();
         AppalachiaBlocks.sugi_sapling = new BlockSugiSapling();
         AppalachiaBlocks.sugi_planks = new BlockSugiWood();
-        AppalachiaBlocks.sugi_slab = new BlockSugiWoodSlab();
-        AppalachiaBlocks.sugi_stairs = new BlockStairsAutumnGrey();
+        AppalachiaBlocks.slab_autumn_grey = new BlockSlabAutumnGrey();
+        AppalachiaBlocks.stairs_autumn_grey = new BlockStairsAutumnGrey();
         AppalachiaBlocks.fence_autumn_grey = new BlockFenceAutumnGrey();
         AppalachiaBlocks.fence_gate_autumn_grey = new BlockFenceGateAutumnGrey();
 
@@ -52,8 +52,8 @@ public class BlockManager {
         leaves_autumn_yellow.setRegistryName("leaves_autumn_yellow");
         sugi_sapling.setRegistryName("sugi_sapling");
         sugi_planks.setRegistryName("sugi_planks");
-        sugi_slab.setRegistryName("sugi_slab");
-        sugi_stairs.setRegistryName("sugi_stairs");
+        slab_autumn_grey.setRegistryName("slab_autumn_grey");
+        stairs_autumn_grey.setRegistryName("stairs_autumn_grey");
         fence_autumn_grey.setRegistryName("fence_autumn_grey");
         fence_gate_autumn_grey.setRegistryName("fence_gate_autumn_grey");
 
@@ -75,11 +75,11 @@ public class BlockManager {
         GameRegistry.register(sugi_planks);
         GameRegistry.register(new ItemBlock(sugi_planks), sugi_planks.getRegistryName());
 
-        GameRegistry.register(sugi_slab);
-        GameRegistry.register(new ItemSugiWoodSlab(sugi_slab), sugi_slab.getRegistryName());
+        GameRegistry.register(slab_autumn_grey);
+        GameRegistry.register(new ItemSlabAutumnGrey(slab_autumn_grey), slab_autumn_grey.getRegistryName());
 
-        GameRegistry.register(sugi_stairs);
-        GameRegistry.register(new ItemBlock(sugi_stairs), sugi_stairs.getRegistryName());
+        GameRegistry.register(stairs_autumn_grey);
+        GameRegistry.register(new ItemBlock(stairs_autumn_grey), stairs_autumn_grey.getRegistryName());
 
         GameRegistry.register(fence_autumn_grey);
         GameRegistry.register(new ItemBlock(fence_autumn_grey), fence_autumn_grey.getRegistryName());
@@ -93,8 +93,8 @@ public class BlockManager {
         OreDictionary.registerOre("treeLeaves", new ItemStack(leaves_autumn_yellow, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("treeSapling", new ItemStack(sugi_sapling, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("plankWood", new ItemStack(sugi_planks, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("slabWood", new ItemStack(sugi_slab, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("stairWood", new ItemStack(sugi_stairs, 1, OreDictionary.WILDCARD_VALUE));
+        OreDictionary.registerOre("slabWood", new ItemStack(slab_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
+        OreDictionary.registerOre("stairWood", new ItemStack(stairs_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("fenceWood", new ItemStack(fence_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("fenceGateWood", new ItemStack(fence_gate_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
 
@@ -104,8 +104,8 @@ public class BlockManager {
         Blocks.FIRE.setFireInfo(leaves_autumn_yellow, 30, 60);
         Blocks.FIRE.setFireInfo(sugi_sapling, 20, 60);
         Blocks.FIRE.setFireInfo(sugi_planks, 5, 20);
-        Blocks.FIRE.setFireInfo(sugi_slab, 5, 20);
-        Blocks.FIRE.setFireInfo(sugi_stairs, 5, 20);
+        Blocks.FIRE.setFireInfo(slab_autumn_grey, 5, 20);
+        Blocks.FIRE.setFireInfo(stairs_autumn_grey, 5, 20);
         Blocks.FIRE.setFireInfo(fence_autumn_grey, 5, 20);
         Blocks.FIRE.setFireInfo(fence_gate_autumn_grey, 5, 20);
     }
@@ -119,8 +119,8 @@ public class BlockManager {
         registerModel(leaves_autumn_yellow);
         registerModel(sugi_sapling);
         registerModel(sugi_planks);
-        registerModel(sugi_slab);
-        registerModel(sugi_stairs);
+        registerModel(slab_autumn_grey);
+        registerModel(stairs_autumn_grey);
         registerModel(fence_autumn_grey);
         registerModel(fence_gate_autumn_grey);
 

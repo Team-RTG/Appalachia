@@ -20,9 +20,9 @@ public class CraftingManager {
 
     private static void addShapedRecipes() {
 
-        GameRegistry.addRecipe(new ItemStack(sugi_slab, 6), "###", '#', sugi_planks);
+        GameRegistry.addRecipe(new ItemStack(slab_autumn_grey, 6), "###", '#', sugi_planks);
 
-        GameRegistry.addRecipe(new ItemStack(sugi_stairs, 4), "  #", " ##", "###", '#', sugi_planks);
+        GameRegistry.addRecipe(new ItemStack(stairs_autumn_grey, 4), "  #", " ##", "###", '#', sugi_planks);
 
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(fence_autumn_grey, 3), "#S#", "#S#", 'S', "stickWood", '#', sugi_planks));
         GameRegistry.addRecipe(new ShapedOreRecipe(fence_gate_autumn_grey, "S#S", "S#S", 'S', "stickWood", '#', sugi_planks));
