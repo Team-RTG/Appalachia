@@ -18,7 +18,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import appalachia.api.AppalachiaBlocks;
 import appalachia.block.fences.BlockSugiFence;
-import appalachia.block.fencegates.BlockSugiFenceGate;
+import appalachia.block.fencegates.BlockFenceGateAutumnGrey;
 import appalachia.block.leaves.BlockLeavesAutumnOrange;
 import appalachia.block.leaves.BlockLeavesAutumnRed;
 import appalachia.block.leaves.BlockLeavesAutumnYellow;
@@ -44,7 +44,7 @@ public class BlockManager {
         AppalachiaBlocks.sugi_slab = new BlockSugiWoodSlab();
         AppalachiaBlocks.sugi_stairs = new BlockSugiStairs();
         AppalachiaBlocks.sugi_fence = new BlockSugiFence();
-        AppalachiaBlocks.sugi_fence_gate = new BlockSugiFenceGate();
+        AppalachiaBlocks.fence_gate_autumn_grey = new BlockFenceGateAutumnGrey();
 
         log_autumn_grey.setRegistryName("log_autumn_grey");
         leaves_autumn_red.setRegistryName("leaves_autumn_red");
@@ -55,7 +55,7 @@ public class BlockManager {
         sugi_slab.setRegistryName("sugi_slab");
         sugi_stairs.setRegistryName("sugi_stairs");
         sugi_fence.setRegistryName("sugi_fence");
-        sugi_fence_gate.setRegistryName("sugi_fence_gate");
+        fence_gate_autumn_grey.setRegistryName("fence_gate_autumn_grey");
 
         GameRegistry.register(log_autumn_grey);
         GameRegistry.register(new ItemBlock(log_autumn_grey), log_autumn_grey.getRegistryName());
@@ -84,8 +84,8 @@ public class BlockManager {
         GameRegistry.register(sugi_fence);
         GameRegistry.register(new ItemBlock(sugi_fence), sugi_fence.getRegistryName());
 
-        GameRegistry.register(sugi_fence_gate);
-        GameRegistry.register(new ItemBlock(sugi_fence_gate), sugi_fence_gate.getRegistryName());
+        GameRegistry.register(fence_gate_autumn_grey);
+        GameRegistry.register(new ItemBlock(fence_gate_autumn_grey), fence_gate_autumn_grey.getRegistryName());
 
         OreDictionary.registerOre("logWood", new ItemStack(log_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("treeLeaves", new ItemStack(leaves_autumn_red, 1, OreDictionary.WILDCARD_VALUE));
@@ -96,7 +96,7 @@ public class BlockManager {
         OreDictionary.registerOre("slabWood", new ItemStack(sugi_slab, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("stairWood", new ItemStack(sugi_stairs, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("fenceWood", new ItemStack(sugi_fence, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("fenceGateWood", new ItemStack(sugi_fence_gate, 1, OreDictionary.WILDCARD_VALUE));
+        OreDictionary.registerOre("fenceGateWood", new ItemStack(fence_gate_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
 
         Blocks.FIRE.setFireInfo(log_autumn_grey, 5, 5);
         Blocks.FIRE.setFireInfo(leaves_autumn_red, 30, 60);
@@ -107,7 +107,7 @@ public class BlockManager {
         Blocks.FIRE.setFireInfo(sugi_slab, 5, 20);
         Blocks.FIRE.setFireInfo(sugi_stairs, 5, 20);
         Blocks.FIRE.setFireInfo(sugi_fence, 5, 20);
-        Blocks.FIRE.setFireInfo(sugi_fence_gate, 5, 20);
+        Blocks.FIRE.setFireInfo(fence_gate_autumn_grey, 5, 20);
     }
 
     @SideOnly(Side.CLIENT)
@@ -122,7 +122,7 @@ public class BlockManager {
         registerModel(sugi_slab);
         registerModel(sugi_stairs);
         registerModel(sugi_fence);
-        registerModel(sugi_fence_gate);
+        registerModel(fence_gate_autumn_grey);
 
         ModelLoader.setCustomStateMapper(log_autumn_grey, new StateMap.Builder().ignore(BlockLogAutumnGrey.VARIANT).build());
         ModelLoader.setCustomStateMapper(leaves_autumn_red, new StateMap.Builder().ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
@@ -130,7 +130,7 @@ public class BlockManager {
         ModelLoader.setCustomStateMapper(leaves_autumn_yellow, new StateMap.Builder().ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
         ModelLoader.setCustomStateMapper(sugi_sapling, new StateMap.Builder().ignore(BlockSapling.TYPE, BlockSapling.STAGE).build());
         ModelLoader.setCustomStateMapper(sugi_planks, new StateMap.Builder().ignore(BlockSugiWood.DOUBLE).build());
-        ModelLoader.setCustomStateMapper(sugi_fence_gate, new StateMap.Builder().ignore(BlockFenceGate.POWERED).build());
+        ModelLoader.setCustomStateMapper(fence_gate_autumn_grey, new StateMap.Builder().ignore(BlockFenceGate.POWERED).build());
     }
 
     @SideOnly(Side.CLIENT)

@@ -25,7 +25,7 @@ public class CraftingManager {
         GameRegistry.addRecipe(new ItemStack(sugi_stairs, 4), "  #", " ##", "###", '#', sugi_planks);
 
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(sugi_fence, 3), "#S#", "#S#", 'S', "stickWood", '#', sugi_planks));
-        GameRegistry.addRecipe(new ShapedOreRecipe(sugi_fence_gate, "S#S", "S#S", 'S', "stickWood", '#', sugi_planks));
+        GameRegistry.addRecipe(new ShapedOreRecipe(fence_gate_autumn_grey, "S#S", "S#S", 'S', "stickWood", '#', sugi_planks));
 
         //GameRegistry.addRecipe(new ItemStack(AppalachiaBlocks.autumnForest_Planks, 4), new Object[] {"%", '%', AppalachiaBlocks.autumnForest_Log});
     }
