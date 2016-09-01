@@ -26,7 +26,7 @@ import appalachia.block.logs.BlockLogAutumnGrey;
 import appalachia.block.planks.BlockSugiWood;
 import appalachia.block.saplings.BlockSugiSapling;
 import appalachia.block.slabs.BlockSugiWoodSlab;
-import appalachia.block.stairs.BlockSugiStairs;
+import appalachia.block.stairs.BlockStairsAutumnGrey;
 import appalachia.item.ItemManager;
 import appalachia.item.ItemSugiWoodSlab;
 import static appalachia.api.AppalachiaBlocks.*;
@@ -42,7 +42,7 @@ public class BlockManager {
         AppalachiaBlocks.sugi_sapling = new BlockSugiSapling();
         AppalachiaBlocks.sugi_planks = new BlockSugiWood();
         AppalachiaBlocks.sugi_slab = new BlockSugiWoodSlab();
-        AppalachiaBlocks.sugi_stairs = new BlockSugiStairs();
+        AppalachiaBlocks.sugi_stairs = new BlockStairsAutumnGrey();
         AppalachiaBlocks.fence_autumn_grey = new BlockFenceAutumnGrey();
         AppalachiaBlocks.fence_gate_autumn_grey = new BlockFenceGateAutumnGrey();
 

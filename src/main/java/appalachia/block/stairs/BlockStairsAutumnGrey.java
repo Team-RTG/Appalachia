@@ -2,9 +2,9 @@ package appalachia.block.stairs;
 
 import appalachia.api.AppalachiaBlocks;
 
-public class BlockSugiStairs extends AppalachiaBlockStairs
+public class BlockStairsAutumnGrey extends AppalachiaBlockStairs
 {
-	public BlockSugiStairs()
+	public BlockStairsAutumnGrey()
 	{
 		super("stairs.sugi", AppalachiaBlocks.sugi_planks.getDefaultState());
 	}
