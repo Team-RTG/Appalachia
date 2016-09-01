@@ -1,6 +1,6 @@
 {
     "parent": "block/fence_post",
     "textures": {
-        "texture": "appalachia:blocks/planks_sugi"
+        "texture": "appalachia:blocks/planks_autumn_grey"
     }
 }

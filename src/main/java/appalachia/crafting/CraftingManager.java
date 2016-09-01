@@ -20,20 +20,18 @@ public class CraftingManager {
 
     private static void addShapedRecipes() {
 
-        GameRegistry.addRecipe(new ItemStack(slab_autumn_grey, 6), "###", '#', sugi_planks);
+        GameRegistry.addRecipe(new ItemStack(slab_autumn_grey, 6), "###", '#', planks_autumn_grey);
 
-        GameRegistry.addRecipe(new ItemStack(stairs_autumn_grey, 4), "  #", " ##", "###", '#', sugi_planks);
+        GameRegistry.addRecipe(new ItemStack(stairs_autumn_grey, 4), "  #", " ##", "###", '#', planks_autumn_grey);
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(fence_autumn_grey, 3), "#S#", "#S#", 'S', "stickWood", '#', sugi_planks));
-        GameRegistry.addRecipe(new ShapedOreRecipe(fence_gate_autumn_grey, "S#S", "S#S", 'S', "stickWood", '#', sugi_planks));
-
-        //GameRegistry.addRecipe(new ItemStack(AppalachiaBlocks.autumnForest_Planks, 4), new Object[] {"%", '%', AppalachiaBlocks.autumnForest_Log});
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(fence_autumn_grey, 3), "#S#", "#S#", 'S', "stickWood", '#', planks_autumn_grey));
+        GameRegistry.addRecipe(new ShapedOreRecipe(fence_gate_autumn_grey, "S#S", "S#S", 'S', "stickWood", '#', planks_autumn_grey));
     }
 
     private static void addShapelessRecipes() {
 
         GameRegistry.addShapelessRecipe(new ItemStack(Items.STICK), new ItemStack(sugi_sapling));
-        GameRegistry.addShapelessRecipe(new ItemStack(sugi_planks, 4), new ItemStack(log_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
+        GameRegistry.addShapelessRecipe(new ItemStack(planks_autumn_grey, 4), new ItemStack(log_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
     }
 
     private static void addSmeltingRecipes() {

@@ -6,6 +6,6 @@ public class BlockStairsAutumnGrey extends AppalachiaBlockStairs
 {
 	public BlockStairsAutumnGrey()
 	{
-		super("stairs.autumn.grey", AppalachiaBlocks.sugi_planks.getDefaultState());
+		super("stairs.autumn.grey", AppalachiaBlocks.planks_autumn_grey.getDefaultState());
 	}
 }

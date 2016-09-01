@@ -19,7 +19,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.api.AppalachiaBlocks;
-import appalachia.block.planks.BlockSugiWood;
+import appalachia.block.planks.BlockPlanksAutumnGrey;
 
 public class AppalachiaItemSlab extends ItemBlock
 {
@@ -30,7 +30,7 @@ public class AppalachiaItemSlab extends ItemBlock
 
     public IBlockState getFullBlock()
     {
-        return AppalachiaBlocks.sugi_planks.getDefaultState().withProperty(BlockSugiWood.DOUBLE, Boolean.valueOf(true));
+        return AppalachiaBlocks.planks_autumn_grey.getDefaultState().withProperty(BlockPlanksAutumnGrey.DOUBLE, Boolean.valueOf(true));
     }
 
     @Override

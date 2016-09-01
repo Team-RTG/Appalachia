@@ -1,6 +1,6 @@
 {
     "parent": "block/wall_gate_closed",
     "textures": {
-        "texture": "appalachia:blocks/planks_sugi"
+        "texture": "appalachia:blocks/planks_autumn_grey"
     }
 }
