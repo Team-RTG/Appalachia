@@ -3,11 +3,6 @@ itemGroup.appalachiablocks=Appalachia Blocks
 itemGroup.appalachiadecorations=Appalachia Decorations
 
 #Blocks
-tile.autumnforest_log.name=Autumn Forest Log
-tile.autumnforest_leaves.name=Autumn Forest Leaves
-tile.autumnforest_sapling.name=Autumn Forest Sapling
-tile.autumnforest_planks.name=Autumn Forest Planks
-
 tile.log.autumn.grey.name=Grey Autumn Log
 tile.leaves.autumn.red.name=Red Autumn Leaves
 tile.leaves.autumn.orange.name=Orange Autumn Leaves
