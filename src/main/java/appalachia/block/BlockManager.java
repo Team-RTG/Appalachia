@@ -17,7 +17,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import appalachia.api.AppalachiaBlocks;
-import appalachia.block.fences.BlockSugiFence;
+import appalachia.block.fences.BlockFenceAutumnGrey;
 import appalachia.block.fencegates.BlockFenceGateAutumnGrey;
 import appalachia.block.leaves.BlockLeavesAutumnOrange;
 import appalachia.block.leaves.BlockLeavesAutumnRed;
@@ -43,7 +43,7 @@ public class BlockManager {
         AppalachiaBlocks.sugi_planks = new BlockSugiWood();
         AppalachiaBlocks.sugi_slab = new BlockSugiWoodSlab();
         AppalachiaBlocks.sugi_stairs = new BlockSugiStairs();
-        AppalachiaBlocks.sugi_fence = new BlockSugiFence();
+        AppalachiaBlocks.fence_autumn_grey = new BlockFenceAutumnGrey();
         AppalachiaBlocks.fence_gate_autumn_grey = new BlockFenceGateAutumnGrey();
 
         log_autumn_grey.setRegistryName("log_autumn_grey");
@@ -54,7 +54,7 @@ public class BlockManager {
         sugi_planks.setRegistryName("sugi_planks");
         sugi_slab.setRegistryName("sugi_slab");
         sugi_stairs.setRegistryName("sugi_stairs");
-        sugi_fence.setRegistryName("sugi_fence");
+        fence_autumn_grey.setRegistryName("fence_autumn_grey");
         fence_gate_autumn_grey.setRegistryName("fence_gate_autumn_grey");
 
         GameRegistry.register(log_autumn_grey);
@@ -81,8 +81,8 @@ public class BlockManager {
         GameRegistry.register(sugi_stairs);
         GameRegistry.register(new ItemBlock(sugi_stairs), sugi_stairs.getRegistryName());
 
-        GameRegistry.register(sugi_fence);
-        GameRegistry.register(new ItemBlock(sugi_fence), sugi_fence.getRegistryName());
+        GameRegistry.register(fence_autumn_grey);
+        GameRegistry.register(new ItemBlock(fence_autumn_grey), fence_autumn_grey.getRegistryName());
 
         GameRegistry.register(fence_gate_autumn_grey);
         GameRegistry.register(new ItemBlock(fence_gate_autumn_grey), fence_gate_autumn_grey.getRegistryName());
@@ -95,7 +95,7 @@ public class BlockManager {
         OreDictionary.registerOre("plankWood", new ItemStack(sugi_planks, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("slabWood", new ItemStack(sugi_slab, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("stairWood", new ItemStack(sugi_stairs, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("fenceWood", new ItemStack(sugi_fence, 1, OreDictionary.WILDCARD_VALUE));
+        OreDictionary.registerOre("fenceWood", new ItemStack(fence_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("fenceGateWood", new ItemStack(fence_gate_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
 
         Blocks.FIRE.setFireInfo(log_autumn_grey, 5, 5);
@@ -106,7 +106,7 @@ public class BlockManager {
         Blocks.FIRE.setFireInfo(sugi_planks, 5, 20);
         Blocks.FIRE.setFireInfo(sugi_slab, 5, 20);
         Blocks.FIRE.setFireInfo(sugi_stairs, 5, 20);
-        Blocks.FIRE.setFireInfo(sugi_fence, 5, 20);
+        Blocks.FIRE.setFireInfo(fence_autumn_grey, 5, 20);
         Blocks.FIRE.setFireInfo(fence_gate_autumn_grey, 5, 20);
     }
 
@@ -121,7 +121,7 @@ public class BlockManager {
         registerModel(sugi_planks);
         registerModel(sugi_slab);
         registerModel(sugi_stairs);
-        registerModel(sugi_fence);
+        registerModel(fence_autumn_grey);
         registerModel(fence_gate_autumn_grey);
 
         ModelLoader.setCustomStateMapper(log_autumn_grey, new StateMap.Builder().ignore(BlockLogAutumnGrey.VARIANT).build());
