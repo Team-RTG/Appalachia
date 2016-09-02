@@ -78,7 +78,7 @@ public class AppalachiaBiome extends Biome implements IAppalachiaBiome {
     public static enum AppalachiaBiomeProps {
 
         APPALACHIAN_MOUNTAINS("Appalachian Mountains", 1.0F, 0.5F, 0.2F, 0.3F, 2368150, false),
-        AUTUMN_FOREST("Autumn Forest", 0.2F, 0.2F, 0.3F, 0.8F, 2368150, false),
+        AUTUMN_FOREST("Autumn Forest", 0.2F, 0.2F, 0.3F, 0.8F, 4540477, false),
         COVE_FOREST("Cove Forest", 0.2F, 0.2F, 0.25F, 0.8F, 2368150, false),
         PRAIRIE("Prairie", 0.125F, 0.05F, 0.8F, 0.4F, 2368150, false),
         SMOKY_MOUNTAINS("Smoky Mountains", 1.0F, 0.5F, 0.2F, 0.3F, 2368150, false);
@@ -105,7 +105,9 @@ public class AppalachiaBiome extends Biome implements IAppalachiaBiome {
             this.props = new Biome.BiomeProperties(this.biomeName)
                 .setBaseHeight(this.baseHeight)
                 .setHeightVariation(this.heightVariation)
-                .setTemperature(this.temperature);
+                .setTemperature(this.temperature)
+                .setRainfall(this.rainfall)
+                .setWaterColor(this.waterColour);
 
             if (this.snowEnabled) {
                 this.props.setSnowEnabled();
