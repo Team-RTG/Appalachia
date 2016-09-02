@@ -100,7 +100,7 @@ public class Appalachia
 
         OreDictionary.registerOre("logWood", AppalachiaBlocks.log_autumn_grey);
         OreDictionary.registerOre("plankWood", AppalachiaBlocks.planks_autumn_grey);
-        OreDictionary.registerOre("treeSapling", AppalachiaBlocks.sugi_sapling);
+        OreDictionary.registerOre("treeSapling", AppalachiaBlocks.sapling_quercus_robur);
         OreDictionary.registerOre("treeLeaves", AppalachiaBlocks.leaves_autumn_red);
     }
 

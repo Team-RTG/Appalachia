@@ -24,7 +24,7 @@ import appalachia.block.leaves.BlockLeavesAutumnRed;
 import appalachia.block.leaves.BlockLeavesAutumnYellow;
 import appalachia.block.logs.BlockLogAutumnGrey;
 import appalachia.block.planks.BlockPlanksAutumnGrey;
-import appalachia.block.saplings.BlockSugiSapling;
+import appalachia.block.saplings.BlockSaplingQuercusRobur;
 import appalachia.block.slabs.BlockSlabAutumnGrey;
 import appalachia.block.stairs.BlockStairsAutumnGrey;
 import appalachia.item.ItemManager;
@@ -39,7 +39,7 @@ public class BlockManager {
         AppalachiaBlocks.leaves_autumn_red = new BlockLeavesAutumnRed();
         AppalachiaBlocks.leaves_autumn_orange = new BlockLeavesAutumnOrange();
         AppalachiaBlocks.leaves_autumn_yellow = new BlockLeavesAutumnYellow();
-        AppalachiaBlocks.sugi_sapling = new BlockSugiSapling();
+        AppalachiaBlocks.sapling_quercus_robur = new BlockSaplingQuercusRobur();
         AppalachiaBlocks.planks_autumn_grey = new BlockPlanksAutumnGrey();
         AppalachiaBlocks.slab_autumn_grey = new BlockSlabAutumnGrey();
         AppalachiaBlocks.stairs_autumn_grey = new BlockStairsAutumnGrey();
@@ -50,7 +50,7 @@ public class BlockManager {
         leaves_autumn_red.setRegistryName("leaves_autumn_red");
         leaves_autumn_orange.setRegistryName("leaves_autumn_orange");
         leaves_autumn_yellow.setRegistryName("leaves_autumn_yellow");
-        sugi_sapling.setRegistryName("sugi_sapling");
+        sapling_quercus_robur.setRegistryName("sapling_quercus_robur");
         planks_autumn_grey.setRegistryName("planks_autumn_grey");
         slab_autumn_grey.setRegistryName("slab_autumn_grey");
         stairs_autumn_grey.setRegistryName("stairs_autumn_grey");
@@ -69,8 +69,8 @@ public class BlockManager {
         GameRegistry.register(leaves_autumn_yellow);
         GameRegistry.register(new ItemBlock(leaves_autumn_yellow), leaves_autumn_yellow.getRegistryName());
 
-        GameRegistry.register(sugi_sapling);
-        GameRegistry.register(new ItemBlock(sugi_sapling), sugi_sapling.getRegistryName());
+        GameRegistry.register(sapling_quercus_robur);
+        GameRegistry.register(new ItemBlock(sapling_quercus_robur), sapling_quercus_robur.getRegistryName());
 
         GameRegistry.register(planks_autumn_grey);
         GameRegistry.register(new ItemBlock(planks_autumn_grey), planks_autumn_grey.getRegistryName());
@@ -91,7 +91,7 @@ public class BlockManager {
         OreDictionary.registerOre("treeLeaves", new ItemStack(leaves_autumn_red, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("treeLeaves", new ItemStack(leaves_autumn_orange, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("treeLeaves", new ItemStack(leaves_autumn_yellow, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("treeSapling", new ItemStack(sugi_sapling, 1, OreDictionary.WILDCARD_VALUE));
+        OreDictionary.registerOre("treeSapling", new ItemStack(sapling_quercus_robur, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("plankWood", new ItemStack(planks_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("slabWood", new ItemStack(slab_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("stairWood", new ItemStack(stairs_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
@@ -102,7 +102,7 @@ public class BlockManager {
         Blocks.FIRE.setFireInfo(leaves_autumn_red, 30, 60);
         Blocks.FIRE.setFireInfo(leaves_autumn_orange, 30, 60);
         Blocks.FIRE.setFireInfo(leaves_autumn_yellow, 30, 60);
-        Blocks.FIRE.setFireInfo(sugi_sapling, 20, 60);
+        Blocks.FIRE.setFireInfo(sapling_quercus_robur, 20, 60);
         Blocks.FIRE.setFireInfo(planks_autumn_grey, 5, 20);
         Blocks.FIRE.setFireInfo(slab_autumn_grey, 5, 20);
         Blocks.FIRE.setFireInfo(stairs_autumn_grey, 5, 20);
@@ -117,7 +117,7 @@ public class BlockManager {
         registerModel(leaves_autumn_red);
         registerModel(leaves_autumn_orange);
         registerModel(leaves_autumn_yellow);
-        registerModel(sugi_sapling);
+        registerModel(sapling_quercus_robur);
         registerModel(planks_autumn_grey);
         registerModel(slab_autumn_grey);
         registerModel(stairs_autumn_grey);
@@ -128,7 +128,7 @@ public class BlockManager {
         ModelLoader.setCustomStateMapper(leaves_autumn_red, new StateMap.Builder().ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
         ModelLoader.setCustomStateMapper(leaves_autumn_orange, new StateMap.Builder().ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
         ModelLoader.setCustomStateMapper(leaves_autumn_yellow, new StateMap.Builder().ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
-        ModelLoader.setCustomStateMapper(sugi_sapling, new StateMap.Builder().ignore(BlockSapling.TYPE, BlockSapling.STAGE).build());
+        ModelLoader.setCustomStateMapper(sapling_quercus_robur, new StateMap.Builder().ignore(BlockSapling.TYPE, BlockSapling.STAGE).build());
         ModelLoader.setCustomStateMapper(planks_autumn_grey, new StateMap.Builder().ignore(BlockPlanksAutumnGrey.DOUBLE).build());
         ModelLoader.setCustomStateMapper(fence_gate_autumn_grey, new StateMap.Builder().ignore(BlockFenceGate.POWERED).build());
     }

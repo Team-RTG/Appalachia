@@ -83,7 +83,7 @@ public class AppalachiaBlockLeaves extends BlockLeaves
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(AppalachiaBlocks.sugi_sapling);
+        return Item.getItemFromBlock(AppalachiaBlocks.sapling_quercus_robur);
     }
 
     @Override

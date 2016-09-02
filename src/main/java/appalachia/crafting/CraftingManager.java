@@ -30,7 +30,7 @@ public class CraftingManager {
 
     private static void addShapelessRecipes() {
 
-        GameRegistry.addShapelessRecipe(new ItemStack(Items.STICK), new ItemStack(sugi_sapling));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.STICK), new ItemStack(sapling_quercus_robur));
         GameRegistry.addShapelessRecipe(new ItemStack(planks_autumn_grey, 4), new ItemStack(log_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
     }
 
