@@ -29,6 +29,11 @@ public class TreeQuercusRobur extends AppalachiaTree
 	int leafDistanceLimit = 4;
 	List<TreeQuercusRobur.FoliageCoordinates> foliageCoords;
 
+	public TreeQuercusRobur()
+	{
+		this(false);
+	}
+
 	public TreeQuercusRobur(boolean notify)
 	{
 		super(notify);
