@@ -17,17 +17,24 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import appalachia.api.AppalachiaBlocks;
-import appalachia.block.fences.BlockFenceAutumnGrey;
+import appalachia.block.fencegates.BlockFenceGateAutumnBrown;
 import appalachia.block.fencegates.BlockFenceGateAutumnGrey;
+import appalachia.block.fences.BlockFenceAutumnBrown;
+import appalachia.block.fences.BlockFenceAutumnGrey;
 import appalachia.block.leaves.BlockLeavesAutumnOrange;
 import appalachia.block.leaves.BlockLeavesAutumnRed;
 import appalachia.block.leaves.BlockLeavesAutumnYellow;
+import appalachia.block.logs.BlockLogAutumnBrown;
 import appalachia.block.logs.BlockLogAutumnGrey;
+import appalachia.block.planks.BlockPlanksAutumnBrown;
 import appalachia.block.planks.BlockPlanksAutumnGrey;
 import appalachia.block.saplings.BlockSaplingQuercusRobur;
+import appalachia.block.slabs.BlockSlabAutumnBrown;
 import appalachia.block.slabs.BlockSlabAutumnGrey;
+import appalachia.block.stairs.BlockStairsAutumnBrown;
 import appalachia.block.stairs.BlockStairsAutumnGrey;
 import appalachia.item.ItemManager;
+import appalachia.item.slabs.ItemSlabAutumnBrown;
 import appalachia.item.slabs.ItemSlabAutumnGrey;
 import static appalachia.api.AppalachiaBlocks.*;
 
@@ -35,30 +42,45 @@ public class BlockManager {
 
     public static void registerBlocks()
     {
-        AppalachiaBlocks.log_autumn_grey = new BlockLogAutumnGrey();
         AppalachiaBlocks.leaves_autumn_red = new BlockLeavesAutumnRed();
         AppalachiaBlocks.leaves_autumn_orange = new BlockLeavesAutumnOrange();
         AppalachiaBlocks.leaves_autumn_yellow = new BlockLeavesAutumnYellow();
+
         AppalachiaBlocks.sapling_quercus_robur = new BlockSaplingQuercusRobur();
+
+        AppalachiaBlocks.log_autumn_grey = new BlockLogAutumnGrey();
         AppalachiaBlocks.planks_autumn_grey = new BlockPlanksAutumnGrey();
         AppalachiaBlocks.slab_autumn_grey = new BlockSlabAutumnGrey();
         AppalachiaBlocks.stairs_autumn_grey = new BlockStairsAutumnGrey();
         AppalachiaBlocks.fence_autumn_grey = new BlockFenceAutumnGrey();
         AppalachiaBlocks.fence_gate_autumn_grey = new BlockFenceGateAutumnGrey();
 
-        log_autumn_grey.setRegistryName("log_autumn_grey");
+        AppalachiaBlocks.log_autumn_brown = new BlockLogAutumnBrown();
+        AppalachiaBlocks.planks_autumn_brown = new BlockPlanksAutumnBrown();
+        AppalachiaBlocks.slab_autumn_brown = new BlockSlabAutumnBrown();
+        AppalachiaBlocks.stairs_autumn_brown = new BlockStairsAutumnBrown();
+        AppalachiaBlocks.fence_autumn_brown = new BlockFenceAutumnBrown();
+        AppalachiaBlocks.fence_gate_autumn_brown = new BlockFenceGateAutumnBrown();
+
         leaves_autumn_red.setRegistryName("leaves_autumn_red");
         leaves_autumn_orange.setRegistryName("leaves_autumn_orange");
         leaves_autumn_yellow.setRegistryName("leaves_autumn_yellow");
+
         sapling_quercus_robur.setRegistryName("sapling_quercus_robur");
+
+        log_autumn_grey.setRegistryName("log_autumn_grey");
         planks_autumn_grey.setRegistryName("planks_autumn_grey");
         slab_autumn_grey.setRegistryName("slab_autumn_grey");
         stairs_autumn_grey.setRegistryName("stairs_autumn_grey");
         fence_autumn_grey.setRegistryName("fence_autumn_grey");
         fence_gate_autumn_grey.setRegistryName("fence_gate_autumn_grey");
 
-        GameRegistry.register(log_autumn_grey);
-        GameRegistry.register(new ItemBlock(log_autumn_grey), log_autumn_grey.getRegistryName());
+        log_autumn_brown.setRegistryName("log_autumn_brown");
+        planks_autumn_brown.setRegistryName("planks_autumn_brown");
+        slab_autumn_brown.setRegistryName("slab_autumn_brown");
+        stairs_autumn_brown.setRegistryName("stairs_autumn_brown");
+        fence_autumn_brown.setRegistryName("fence_autumn_brown");
+        fence_gate_autumn_brown.setRegistryName("fence_gate_autumn_brown");
 
         GameRegistry.register(leaves_autumn_red);
         GameRegistry.register(new ItemBlock(leaves_autumn_red), leaves_autumn_red.getRegistryName());
@@ -71,6 +93,9 @@ public class BlockManager {
 
         GameRegistry.register(sapling_quercus_robur);
         GameRegistry.register(new ItemBlock(sapling_quercus_robur), sapling_quercus_robur.getRegistryName());
+
+        GameRegistry.register(log_autumn_grey);
+        GameRegistry.register(new ItemBlock(log_autumn_grey), log_autumn_grey.getRegistryName());
 
         GameRegistry.register(planks_autumn_grey);
         GameRegistry.register(new ItemBlock(planks_autumn_grey), planks_autumn_grey.getRegistryName());
@@ -87,50 +112,101 @@ public class BlockManager {
         GameRegistry.register(fence_gate_autumn_grey);
         GameRegistry.register(new ItemBlock(fence_gate_autumn_grey), fence_gate_autumn_grey.getRegistryName());
 
-        OreDictionary.registerOre("logWood", new ItemStack(log_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
+        GameRegistry.register(log_autumn_brown);
+        GameRegistry.register(new ItemBlock(log_autumn_brown), log_autumn_brown.getRegistryName());
+
+        GameRegistry.register(planks_autumn_brown);
+        GameRegistry.register(new ItemBlock(planks_autumn_brown), planks_autumn_brown.getRegistryName());
+
+        GameRegistry.register(slab_autumn_brown);
+        GameRegistry.register(new ItemSlabAutumnBrown(slab_autumn_brown), slab_autumn_brown.getRegistryName());
+
+        GameRegistry.register(stairs_autumn_brown);
+        GameRegistry.register(new ItemBlock(stairs_autumn_brown), stairs_autumn_brown.getRegistryName());
+
+        GameRegistry.register(fence_autumn_brown);
+        GameRegistry.register(new ItemBlock(fence_autumn_brown), fence_autumn_brown.getRegistryName());
+
+        GameRegistry.register(fence_gate_autumn_brown);
+        GameRegistry.register(new ItemBlock(fence_gate_autumn_brown), fence_gate_autumn_brown.getRegistryName());
+
         OreDictionary.registerOre("treeLeaves", new ItemStack(leaves_autumn_red, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("treeLeaves", new ItemStack(leaves_autumn_orange, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("treeLeaves", new ItemStack(leaves_autumn_yellow, 1, OreDictionary.WILDCARD_VALUE));
+
         OreDictionary.registerOre("treeSapling", new ItemStack(sapling_quercus_robur, 1, OreDictionary.WILDCARD_VALUE));
+
+        OreDictionary.registerOre("logWood", new ItemStack(log_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("plankWood", new ItemStack(planks_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("slabWood", new ItemStack(slab_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("stairWood", new ItemStack(stairs_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("fenceWood", new ItemStack(fence_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("fenceGateWood", new ItemStack(fence_gate_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
 
-        Blocks.FIRE.setFireInfo(log_autumn_grey, 5, 5);
+        OreDictionary.registerOre("logWood", new ItemStack(log_autumn_brown, 1, OreDictionary.WILDCARD_VALUE));
+        OreDictionary.registerOre("plankWood", new ItemStack(planks_autumn_brown, 1, OreDictionary.WILDCARD_VALUE));
+        OreDictionary.registerOre("slabWood", new ItemStack(slab_autumn_brown, 1, OreDictionary.WILDCARD_VALUE));
+        OreDictionary.registerOre("stairWood", new ItemStack(stairs_autumn_brown, 1, OreDictionary.WILDCARD_VALUE));
+        OreDictionary.registerOre("fenceWood", new ItemStack(fence_autumn_brown, 1, OreDictionary.WILDCARD_VALUE));
+        OreDictionary.registerOre("fenceGateWood", new ItemStack(fence_gate_autumn_brown, 1, OreDictionary.WILDCARD_VALUE));
+
         Blocks.FIRE.setFireInfo(leaves_autumn_red, 30, 60);
         Blocks.FIRE.setFireInfo(leaves_autumn_orange, 30, 60);
         Blocks.FIRE.setFireInfo(leaves_autumn_yellow, 30, 60);
+
         Blocks.FIRE.setFireInfo(sapling_quercus_robur, 20, 60);
+
+        Blocks.FIRE.setFireInfo(log_autumn_grey, 5, 5);
         Blocks.FIRE.setFireInfo(planks_autumn_grey, 5, 20);
         Blocks.FIRE.setFireInfo(slab_autumn_grey, 5, 20);
         Blocks.FIRE.setFireInfo(stairs_autumn_grey, 5, 20);
         Blocks.FIRE.setFireInfo(fence_autumn_grey, 5, 20);
         Blocks.FIRE.setFireInfo(fence_gate_autumn_grey, 5, 20);
+
+        Blocks.FIRE.setFireInfo(log_autumn_brown, 5, 5);
+        Blocks.FIRE.setFireInfo(planks_autumn_brown, 5, 20);
+        Blocks.FIRE.setFireInfo(slab_autumn_brown, 5, 20);
+        Blocks.FIRE.setFireInfo(stairs_autumn_brown, 5, 20);
+        Blocks.FIRE.setFireInfo(fence_autumn_brown, 5, 20);
+        Blocks.FIRE.setFireInfo(fence_gate_autumn_brown, 5, 20);
     }
 
     @SideOnly(Side.CLIENT)
     public static void registerModels()
     {
-        registerModel(log_autumn_grey);
         registerModel(leaves_autumn_red);
         registerModel(leaves_autumn_orange);
         registerModel(leaves_autumn_yellow);
+
         registerModel(sapling_quercus_robur);
+
+        registerModel(log_autumn_grey);
         registerModel(planks_autumn_grey);
         registerModel(slab_autumn_grey);
         registerModel(stairs_autumn_grey);
         registerModel(fence_autumn_grey);
         registerModel(fence_gate_autumn_grey);
 
-        ModelLoader.setCustomStateMapper(log_autumn_grey, new StateMap.Builder().ignore(BlockLogAutumnGrey.VARIANT).build());
+        registerModel(log_autumn_brown);
+        registerModel(planks_autumn_brown);
+        registerModel(slab_autumn_brown);
+        registerModel(stairs_autumn_brown);
+        registerModel(fence_autumn_brown);
+        registerModel(fence_gate_autumn_brown);
+
         ModelLoader.setCustomStateMapper(leaves_autumn_red, new StateMap.Builder().ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
         ModelLoader.setCustomStateMapper(leaves_autumn_orange, new StateMap.Builder().ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
         ModelLoader.setCustomStateMapper(leaves_autumn_yellow, new StateMap.Builder().ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
+
         ModelLoader.setCustomStateMapper(sapling_quercus_robur, new StateMap.Builder().ignore(BlockSapling.TYPE, BlockSapling.STAGE).build());
+
+        ModelLoader.setCustomStateMapper(log_autumn_grey, new StateMap.Builder().ignore(BlockLogAutumnGrey.VARIANT).build());
         ModelLoader.setCustomStateMapper(planks_autumn_grey, new StateMap.Builder().ignore(BlockPlanksAutumnGrey.DOUBLE).build());
         ModelLoader.setCustomStateMapper(fence_gate_autumn_grey, new StateMap.Builder().ignore(BlockFenceGate.POWERED).build());
+
+        ModelLoader.setCustomStateMapper(log_autumn_brown, new StateMap.Builder().ignore(BlockLogAutumnBrown.VARIANT).build());
+        ModelLoader.setCustomStateMapper(planks_autumn_brown, new StateMap.Builder().ignore(BlockPlanksAutumnBrown.DOUBLE).build());
+        ModelLoader.setCustomStateMapper(fence_gate_autumn_brown, new StateMap.Builder().ignore(BlockFenceGate.POWERED).build());
     }
 
     @SideOnly(Side.CLIENT)

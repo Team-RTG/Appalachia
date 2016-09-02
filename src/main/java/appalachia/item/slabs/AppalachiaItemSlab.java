@@ -28,7 +28,7 @@ public class AppalachiaItemSlab extends ItemBlock
         super(block);
     }
 
-    public IBlockState getFullBlock()
+    protected IBlockState getFullBlock()
     {
         return AppalachiaBlocks.planks_autumn_grey.getDefaultState().withProperty(BlockPlanksAutumnGrey.DOUBLE, Boolean.valueOf(true));
     }

@@ -7,16 +7,16 @@ import net.minecraft.item.Item;
 
 import appalachia.api.AppalachiaBlocks;
 
-public class BlockPlanksAutumnGrey extends AppalachiaBlockPlanks
+public class BlockPlanksAutumnBrown extends AppalachiaBlockPlanks
 {
-	public BlockPlanksAutumnGrey()
+	public BlockPlanksAutumnBrown()
 	{
-		super("planks.autumn.grey");
+		super("planks.autumn.brown");
 	}
 
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune)
 	{
-		return Item.getItemFromBlock(state.getValue(DOUBLE).booleanValue() ? AppalachiaBlocks.slab_autumn_grey : this);
+		return Item.getItemFromBlock(state.getValue(DOUBLE).booleanValue() ? AppalachiaBlocks.slab_autumn_brown : this);
 	}
 }

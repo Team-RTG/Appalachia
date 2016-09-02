@@ -9,9 +9,7 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.item.Item;
 
-import appalachia.api.AppalachiaBlocks;
 import appalachia.gui.AppalachiaTabs;
 
 public class AppalachiaBlockPlanks extends Block
@@ -46,12 +44,6 @@ public class AppalachiaBlockPlanks extends Block
     public int getMetaFromState(IBlockState state)
     {
         return state.getValue(DOUBLE).booleanValue() ? 1 : 0;
-    }
-
-    @Override
-    public Item getItemDropped(IBlockState state, Random rand, int fortune)
-    {
-        return Item.getItemFromBlock(state.getValue(DOUBLE).booleanValue() ? AppalachiaBlocks.slab_autumn_grey : this);
     }
 
     @Override
