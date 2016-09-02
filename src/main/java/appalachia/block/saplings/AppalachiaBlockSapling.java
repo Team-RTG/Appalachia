@@ -18,14 +18,15 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraft.world.biome.Biome;
 
 import net.minecraftforge.event.terraingen.TerrainGen;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.gui.AppalachiaTabs;
-import appalachia.world.gen.feature.tree.TreeQuercusRobur;
+import appalachia.world.biome.AppalachiaBiome;
+import appalachia.world.gen.feature.tree.AppalachiaTree;
 
 public class AppalachiaBlockSapling extends BlockBush implements IGrowable
 {
@@ -77,17 +78,25 @@ public class AppalachiaBlockSapling extends BlockBush implements IGrowable
             return;
         }
 
-        WorldGenerator worldgenerator = new TreeQuercusRobur(true);
-        int i = 0;
-        int j = 0;
+        Biome biomeIn = worldIn.getBiome(pos);
 
-        IBlockState iblockstate2 = Blocks.AIR.getDefaultState();
+        if (biomeIn instanceof AppalachiaBiome) {
 
-        worldIn.setBlockState(pos, iblockstate2, 4);
+            AppalachiaBiome biome = (AppalachiaBiome)biomeIn;
 
-        if (!worldgenerator.generate(worldIn, rand, pos.add(i, 0, j)))
-        {
-            worldIn.setBlockState(pos, state, 4);
+            if (biome.appalachiaTrees.size() > 0) {
+
+                AppalachiaTree tree = biome.appalachiaTrees.get(rand.nextInt(biome.appalachiaTrees.size()));
+
+                IBlockState iblockstate2 = Blocks.AIR.getDefaultState();
+                worldIn.setBlockState(pos, iblockstate2, 4);
+
+                tree.generateFromSapling = true;
+                if (!tree.generate(worldIn, rand, pos)) {
+                    worldIn.setBlockState(pos, state, 4);
+                }
+                tree.generateFromSapling = false;
+            }
         }
     }
 

@@ -14,7 +14,9 @@ import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import appalachia.api.AppalachiaBlocks;
 import appalachia.world.biome.decorator.DecoratorAutumnForest;
+import appalachia.world.gen.feature.tree.TreeQuercusRobur;
 
 public class BiomeAutumnForest extends AppalachiaBiome implements IAppalachiaBiome {
 
@@ -71,5 +73,21 @@ public class BiomeAutumnForest extends AppalachiaBiome implements IAppalachiaBio
     {
         double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
         return noise < -0.1D ? 13741418 : 13018487;
+    }
+
+    @Override
+    public void addTreesToBiome()
+    {
+        TreeQuercusRobur treeYellow = new TreeQuercusRobur();
+        treeYellow.leavesBlock = AppalachiaBlocks.leaves_autumn_yellow.getDefaultState();
+        this.addTree(treeYellow);
+
+        TreeQuercusRobur treeOrange = new TreeQuercusRobur();
+        treeOrange.leavesBlock = AppalachiaBlocks.leaves_autumn_orange.getDefaultState();
+        this.addTree(treeOrange);
+
+        TreeQuercusRobur treeRed = new TreeQuercusRobur();
+        treeRed.leavesBlock = AppalachiaBlocks.leaves_autumn_red.getDefaultState();
+        this.addTree(treeRed);
     }
 }

@@ -15,13 +15,14 @@ public class AppalachiaTree extends WorldGenAbstractTree {
     public IBlockState logBlock;
     public IBlockState leavesBlock;
     public IBlockState saplingBlock;
+    public int trunkSize;
+    public int crownSize;
     public int minTrunkSize;
     public int maxTrunkSize;
-    public int trunkSize;
     public int minCrownSize;
     public int maxCrownSize;
-    public int crownSize;
     public boolean noLeaves;
+    public boolean generateFromSapling;
     public ArrayList<IBlockState> validGroundBlocks;
 
     public AppalachiaTree() {
@@ -36,13 +37,16 @@ public class AppalachiaTree extends WorldGenAbstractTree {
         this.logBlock = Blocks.LOG.getDefaultState();
         this.leavesBlock = Blocks.LEAVES.getDefaultState();
         this.saplingBlock = Blocks.SAPLING.getDefaultState();
+
         this.minTrunkSize = -1;
         this.maxTrunkSize = -1;
         this.trunkSize = 2;
         this.minCrownSize = -1;
         this.maxCrownSize = -1;
         this.crownSize = 4;
+
         this.noLeaves = false;
+        this.generateFromSapling = false;
 
         this.validGroundBlocks = new ArrayList<IBlockState>(Arrays.asList(
             Blocks.GRASS.getDefaultState(),
@@ -56,5 +60,18 @@ public class AppalachiaTree extends WorldGenAbstractTree {
     public boolean generate(World world, Random rand, BlockPos pos) {
 
         return false;
+    }
+
+    @Override
+    protected void setBlockAndNotifyAdequately(World worldIn, BlockPos pos, IBlockState state)
+    {
+        if (this.generateFromSapling)
+        {
+            worldIn.setBlockState(pos, state, 3);
+        }
+        else
+        {
+            worldIn.setBlockState(pos, state, 2);
+        }
     }
 }
