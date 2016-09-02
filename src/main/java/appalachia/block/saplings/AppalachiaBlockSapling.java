@@ -88,14 +88,17 @@ public class AppalachiaBlockSapling extends BlockBush implements IGrowable
 
                 AppalachiaTree tree = biome.appalachiaTrees.get(rand.nextInt(biome.appalachiaTrees.size()));
 
-                IBlockState iblockstate2 = Blocks.AIR.getDefaultState();
-                worldIn.setBlockState(pos, iblockstate2, 4);
+                if (tree.saplingBlock.getBlock() == state.getBlock()) {
 
-                tree.generateFromSapling = true;
-                if (!tree.generate(worldIn, rand, pos)) {
-                    worldIn.setBlockState(pos, state, 4);
+                    IBlockState iblockstate2 = Blocks.AIR.getDefaultState();
+                    worldIn.setBlockState(pos, iblockstate2, 4);
+
+                    tree.generateFromSapling = true;
+                    if (!tree.generate(worldIn, rand, pos)) {
+                        worldIn.setBlockState(pos, state, 4);
+                    }
+                    tree.generateFromSapling = false;
                 }
-                tree.generateFromSapling = false;
             }
         }
     }

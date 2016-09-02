@@ -10,6 +10,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
+import appalachia.api.AppalachiaBlocks;
+
 public class AppalachiaTree extends WorldGenAbstractTree {
 
     public IBlockState logBlock;
@@ -36,7 +38,7 @@ public class AppalachiaTree extends WorldGenAbstractTree {
 
         this.logBlock = Blocks.LOG.getDefaultState();
         this.leavesBlock = Blocks.LEAVES.getDefaultState();
-        this.saplingBlock = Blocks.SAPLING.getDefaultState();
+        this.saplingBlock = AppalachiaBlocks.sapling_quercus_robur.getDefaultState();
 
         this.minTrunkSize = -1;
         this.maxTrunkSize = -1;
