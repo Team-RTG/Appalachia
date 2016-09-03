@@ -54,9 +54,6 @@ public class Appalachia
         configPath = event.getModConfigurationDirectory() + File.separator + CONFIG_DIRECTORY + File.separator;
         ConfigManager.init(configPath);
 
-        eventMgr = new EventManager();
-        eventMgr.registerEventHandlers();
-
         BlockManager.registerBlocks();
         ItemManager.registerItems();
 
@@ -71,6 +68,9 @@ public class Appalachia
 
     @EventHandler
     public void fmlLifeCycleEvent(FMLInitializationEvent event) {
+
+        eventMgr = new EventManager();
+        eventMgr.registerEventHandlers();
 
         BlockManager.addRecipes();
 
