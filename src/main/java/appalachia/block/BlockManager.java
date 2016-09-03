@@ -1,11 +1,13 @@
 package appalachia.block;
 
+import java.util.ArrayList;
+
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockFenceGate;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -15,214 +17,409 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import appalachia.api.AppalachiaBlocks;
+import appalachia.block.fencegates.AppalachiaBlockFenceGate;
 import appalachia.block.fencegates.BlockFenceGateAutumnBrown;
+import appalachia.block.fencegates.BlockFenceGateAutumnCoffee;
 import appalachia.block.fencegates.BlockFenceGateAutumnGrey;
+import appalachia.block.fences.AppalachiaBlockFence;
 import appalachia.block.fences.BlockFenceAutumnBrown;
+import appalachia.block.fences.BlockFenceAutumnCoffee;
 import appalachia.block.fences.BlockFenceAutumnGrey;
+import appalachia.block.leaves.AppalachiaBlockLeaves;
 import appalachia.block.leaves.BlockLeavesAutumnOrange;
 import appalachia.block.leaves.BlockLeavesAutumnRed;
 import appalachia.block.leaves.BlockLeavesAutumnYellow;
+import appalachia.block.logs.AppalachiaBlockLog;
 import appalachia.block.logs.BlockLogAutumnBrown;
+import appalachia.block.logs.BlockLogAutumnCoffee;
 import appalachia.block.logs.BlockLogAutumnGrey;
+import appalachia.block.planks.AppalachiaBlockPlanks;
 import appalachia.block.planks.BlockPlanksAutumnBrown;
+import appalachia.block.planks.BlockPlanksAutumnCoffee;
 import appalachia.block.planks.BlockPlanksAutumnGrey;
+import appalachia.block.saplings.AppalachiaBlockSapling;
 import appalachia.block.saplings.BlockSaplingQuercusRobur;
+import appalachia.block.slabs.AppalachiaBlockSlab;
 import appalachia.block.slabs.BlockSlabAutumnBrown;
+import appalachia.block.slabs.BlockSlabAutumnCoffee;
 import appalachia.block.slabs.BlockSlabAutumnGrey;
+import appalachia.block.stairs.AppalachiaBlockStairs;
 import appalachia.block.stairs.BlockStairsAutumnBrown;
+import appalachia.block.stairs.BlockStairsAutumnCoffee;
 import appalachia.block.stairs.BlockStairsAutumnGrey;
 import appalachia.item.ItemManager;
-import appalachia.item.slabs.ItemSlabAutumnBrown;
-import appalachia.item.slabs.ItemSlabAutumnGrey;
-import static appalachia.api.AppalachiaBlocks.*;
 
 public class BlockManager {
 
+    public static ArrayList<Block> appalachiaBlocks = new ArrayList<Block>(){};
+    public static ArrayList<Block> appalachiaLogs = new ArrayList<Block>(){};
+    public static ArrayList<Block> appalachiaPlanks = new ArrayList<Block>(){};
+    public static ArrayList<Block> appalachiaSlabs = new ArrayList<Block>(){};
+    public static ArrayList<Block> appalachiaStairs = new ArrayList<Block>(){};
+    public static ArrayList<Block> appalachiaFences = new ArrayList<Block>(){};
+    public static ArrayList<Block> appalachiaFenceGates = new ArrayList<Block>(){};
+    public static ArrayList<Block> appalachiaLeaves = new ArrayList<Block>(){};
+    public static ArrayList<Block> appalachiaSaplings = new ArrayList<Block>(){};
+
     public static void registerBlocks()
     {
-        AppalachiaBlocks.leaves_autumn_red = new BlockLeavesAutumnRed();
-        AppalachiaBlocks.leaves_autumn_orange = new BlockLeavesAutumnOrange();
-        AppalachiaBlocks.leaves_autumn_yellow = new BlockLeavesAutumnYellow();
-
-        AppalachiaBlocks.sapling_quercus_robur = new BlockSaplingQuercusRobur();
-
-        AppalachiaBlocks.log_autumn_grey = new BlockLogAutumnGrey();
-        AppalachiaBlocks.planks_autumn_grey = new BlockPlanksAutumnGrey();
-        AppalachiaBlocks.slab_autumn_grey = new BlockSlabAutumnGrey();
-        AppalachiaBlocks.stairs_autumn_grey = new BlockStairsAutumnGrey();
-        AppalachiaBlocks.fence_autumn_grey = new BlockFenceAutumnGrey();
-        AppalachiaBlocks.fence_gate_autumn_grey = new BlockFenceGateAutumnGrey();
-
+        //Logs.
         AppalachiaBlocks.log_autumn_brown = new BlockLogAutumnBrown();
+        AppalachiaBlocks.log_autumn_coffee = new BlockLogAutumnCoffee();
+        AppalachiaBlocks.log_autumn_grey = new BlockLogAutumnGrey();
+        addLogs();
+
+        //Planks.
         AppalachiaBlocks.planks_autumn_brown = new BlockPlanksAutumnBrown();
+        AppalachiaBlocks.planks_autumn_coffee = new BlockPlanksAutumnCoffee();
+        AppalachiaBlocks.planks_autumn_grey = new BlockPlanksAutumnGrey();
+        addPlanks();
+
+        //Slabs.
         AppalachiaBlocks.slab_autumn_brown = new BlockSlabAutumnBrown();
+        AppalachiaBlocks.slab_autumn_coffee = new BlockSlabAutumnCoffee();
+        AppalachiaBlocks.slab_autumn_grey = new BlockSlabAutumnGrey();
+        addSlabs();
+
+        //Stairs.
         AppalachiaBlocks.stairs_autumn_brown = new BlockStairsAutumnBrown();
+        AppalachiaBlocks.stairs_autumn_coffee = new BlockStairsAutumnCoffee();
+        AppalachiaBlocks.stairs_autumn_grey = new BlockStairsAutumnGrey();
+        addStairs();
+
+        //Fences.
         AppalachiaBlocks.fence_autumn_brown = new BlockFenceAutumnBrown();
+        AppalachiaBlocks.fence_autumn_coffee = new BlockFenceAutumnCoffee();
+        AppalachiaBlocks.fence_autumn_grey = new BlockFenceAutumnGrey();
+        addFences();
+
+        //Fence gates.
         AppalachiaBlocks.fence_gate_autumn_brown = new BlockFenceGateAutumnBrown();
+        AppalachiaBlocks.fence_gate_autumn_coffee = new BlockFenceGateAutumnCoffee();
+        AppalachiaBlocks.fence_gate_autumn_grey = new BlockFenceGateAutumnGrey();
+        addFenceGates();
 
-        leaves_autumn_red.setRegistryName("leaves_autumn_red");
-        leaves_autumn_orange.setRegistryName("leaves_autumn_orange");
-        leaves_autumn_yellow.setRegistryName("leaves_autumn_yellow");
+        //Leaves.
+        AppalachiaBlocks.leaves_autumn_orange = new BlockLeavesAutumnOrange();
+        AppalachiaBlocks.leaves_autumn_red = new BlockLeavesAutumnRed();
+        AppalachiaBlocks.leaves_autumn_yellow = new BlockLeavesAutumnYellow();
+        addLeaves();
 
-        sapling_quercus_robur.setRegistryName("sapling_quercus_robur");
+        //Saplings.
+        AppalachiaBlocks.sapling_quercus_robur = new BlockSaplingQuercusRobur();
+        addSaplings();
 
-        log_autumn_grey.setRegistryName("log_autumn_grey");
-        planks_autumn_grey.setRegistryName("planks_autumn_grey");
-        slab_autumn_grey.setRegistryName("slab_autumn_grey");
-        stairs_autumn_grey.setRegistryName("stairs_autumn_grey");
-        fence_autumn_grey.setRegistryName("fence_autumn_grey");
-        fence_gate_autumn_grey.setRegistryName("fence_gate_autumn_grey");
+        addAppalachiaBlocks();
 
-        log_autumn_brown.setRegistryName("log_autumn_brown");
-        planks_autumn_brown.setRegistryName("planks_autumn_brown");
-        slab_autumn_brown.setRegistryName("slab_autumn_brown");
-        stairs_autumn_brown.setRegistryName("stairs_autumn_brown");
-        fence_autumn_brown.setRegistryName("fence_autumn_brown");
-        fence_gate_autumn_brown.setRegistryName("fence_gate_autumn_brown");
+        setRegistryNames();
+        registerBlocksAndItemBlocks();
+        registerOres();
+        setFireInfo();
+    }
 
-        GameRegistry.register(leaves_autumn_red);
-        GameRegistry.register(new ItemBlock(leaves_autumn_red), leaves_autumn_red.getRegistryName());
+    /*
+     * ALPHABETICAL ORDER MATTERS WHEN ADDING INDIVIDUAL BLOCKS TO THE BLOCK LISTS!!!
+     * For example...
+     * addShapedRecipes() loops through the planks and uses the same index to get() the associated slabs, stairs, fences, and fence gates.
+     * addShapelessRecipes() loops through the logs and uses the same index to get() the associated planks.
+     */
 
-        GameRegistry.register(leaves_autumn_orange);
-        GameRegistry.register(new ItemBlock(leaves_autumn_orange), leaves_autumn_orange.getRegistryName());
+    private static void addLogs() {
+        appalachiaLogs.add(AppalachiaBlocks.log_autumn_brown);
+        appalachiaLogs.add(AppalachiaBlocks.log_autumn_coffee);
+        appalachiaLogs.add(AppalachiaBlocks.log_autumn_grey);
+    }
 
-        GameRegistry.register(leaves_autumn_yellow);
-        GameRegistry.register(new ItemBlock(leaves_autumn_yellow), leaves_autumn_yellow.getRegistryName());
+    private static void addPlanks() {
+        appalachiaPlanks.add(AppalachiaBlocks.planks_autumn_brown);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_autumn_coffee);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_autumn_grey);
+    }
 
-        GameRegistry.register(sapling_quercus_robur);
-        GameRegistry.register(new ItemBlock(sapling_quercus_robur), sapling_quercus_robur.getRegistryName());
+    private static void addSlabs() {
+        appalachiaSlabs.add(AppalachiaBlocks.slab_autumn_brown);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_autumn_coffee);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_autumn_grey);
+    }
 
-        GameRegistry.register(log_autumn_grey);
-        GameRegistry.register(new ItemBlock(log_autumn_grey), log_autumn_grey.getRegistryName());
+    private static void addStairs() {
+        appalachiaStairs.add(AppalachiaBlocks.stairs_autumn_brown);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_autumn_coffee);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_autumn_grey);
+    }
 
-        GameRegistry.register(planks_autumn_grey);
-        GameRegistry.register(new ItemBlock(planks_autumn_grey), planks_autumn_grey.getRegistryName());
+    private static void addFences() {
+        appalachiaFences.add(AppalachiaBlocks.fence_autumn_brown);
+        appalachiaFences.add(AppalachiaBlocks.fence_autumn_coffee);
+        appalachiaFences.add(AppalachiaBlocks.fence_autumn_grey);
+    }
 
-        GameRegistry.register(slab_autumn_grey);
-        GameRegistry.register(new ItemSlabAutumnGrey(slab_autumn_grey), slab_autumn_grey.getRegistryName());
+    private static void addFenceGates() {
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_autumn_brown);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_autumn_coffee);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_autumn_grey);
+    }
 
-        GameRegistry.register(stairs_autumn_grey);
-        GameRegistry.register(new ItemBlock(stairs_autumn_grey), stairs_autumn_grey.getRegistryName());
+    private static void addLeaves() {
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_autumn_orange);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_autumn_red);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_autumn_yellow);
+    }
 
-        GameRegistry.register(fence_autumn_grey);
-        GameRegistry.register(new ItemBlock(fence_autumn_grey), fence_autumn_grey.getRegistryName());
+    private static void addSaplings() {
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_quercus_robur);
+    }
 
-        GameRegistry.register(fence_gate_autumn_grey);
-        GameRegistry.register(new ItemBlock(fence_gate_autumn_grey), fence_gate_autumn_grey.getRegistryName());
+    private static void addAppalachiaBlocks()
+    {
+        for (int i = 0; i < appalachiaLogs.size(); i++) {
+            appalachiaBlocks.add(appalachiaLogs.get(i));
+        }
 
-        GameRegistry.register(log_autumn_brown);
-        GameRegistry.register(new ItemBlock(log_autumn_brown), log_autumn_brown.getRegistryName());
+        for (int i = 0; i < appalachiaPlanks.size(); i++) {
+            appalachiaBlocks.add(appalachiaPlanks.get(i));
+        }
 
-        GameRegistry.register(planks_autumn_brown);
-        GameRegistry.register(new ItemBlock(planks_autumn_brown), planks_autumn_brown.getRegistryName());
+        for (int i = 0; i < appalachiaSlabs.size(); i++) {
+            appalachiaBlocks.add(appalachiaSlabs.get(i));
+        }
 
-        GameRegistry.register(slab_autumn_brown);
-        GameRegistry.register(new ItemSlabAutumnBrown(slab_autumn_brown), slab_autumn_brown.getRegistryName());
+        for (int i = 0; i < appalachiaStairs.size(); i++) {
+            appalachiaBlocks.add(appalachiaStairs.get(i));
+        }
 
-        GameRegistry.register(stairs_autumn_brown);
-        GameRegistry.register(new ItemBlock(stairs_autumn_brown), stairs_autumn_brown.getRegistryName());
+        for (int i = 0; i < appalachiaFences.size(); i++) {
+            appalachiaBlocks.add(appalachiaFences.get(i));
+        }
 
-        GameRegistry.register(fence_autumn_brown);
-        GameRegistry.register(new ItemBlock(fence_autumn_brown), fence_autumn_brown.getRegistryName());
+        for (int i = 0; i < appalachiaFenceGates.size(); i++) {
+            appalachiaBlocks.add(appalachiaFenceGates.get(i));
+        }
 
-        GameRegistry.register(fence_gate_autumn_brown);
-        GameRegistry.register(new ItemBlock(fence_gate_autumn_brown), fence_gate_autumn_brown.getRegistryName());
+        for (int i = 0; i < appalachiaLeaves.size(); i++) {
+            appalachiaBlocks.add(appalachiaLeaves.get(i));
+        }
 
-        OreDictionary.registerOre("treeLeaves", new ItemStack(leaves_autumn_red, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("treeLeaves", new ItemStack(leaves_autumn_orange, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("treeLeaves", new ItemStack(leaves_autumn_yellow, 1, OreDictionary.WILDCARD_VALUE));
+        for (int i = 0; i < appalachiaSaplings.size(); i++) {
+            appalachiaBlocks.add(appalachiaSaplings.get(i));
+        }
+    }
 
-        OreDictionary.registerOre("treeSapling", new ItemStack(sapling_quercus_robur, 1, OreDictionary.WILDCARD_VALUE));
+    private static void setRegistryNames()
+    {
+        for (int i = 0; i < appalachiaLogs.size(); i++) {
+            AppalachiaBlockLog block = (AppalachiaBlockLog)appalachiaLogs.get(i);
+            block.setRegistryName(block.registryName());
+        }
 
-        OreDictionary.registerOre("logWood", new ItemStack(log_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("plankWood", new ItemStack(planks_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("slabWood", new ItemStack(slab_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("stairWood", new ItemStack(stairs_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("fenceWood", new ItemStack(fence_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("fenceGateWood", new ItemStack(fence_gate_autumn_grey, 1, OreDictionary.WILDCARD_VALUE));
+        for (int i = 0; i < appalachiaPlanks.size(); i++) {
+            AppalachiaBlockPlanks block = (AppalachiaBlockPlanks)appalachiaPlanks.get(i);
+            block.setRegistryName(block.registryName());
+        }
 
-        OreDictionary.registerOre("logWood", new ItemStack(log_autumn_brown, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("plankWood", new ItemStack(planks_autumn_brown, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("slabWood", new ItemStack(slab_autumn_brown, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("stairWood", new ItemStack(stairs_autumn_brown, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("fenceWood", new ItemStack(fence_autumn_brown, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("fenceGateWood", new ItemStack(fence_gate_autumn_brown, 1, OreDictionary.WILDCARD_VALUE));
+        for (int i = 0; i < appalachiaSlabs.size(); i++) {
+            AppalachiaBlockSlab block = (AppalachiaBlockSlab)appalachiaSlabs.get(i);
+            block.setRegistryName(block.registryName());
+        }
 
-        Blocks.FIRE.setFireInfo(leaves_autumn_red, 30, 60);
-        Blocks.FIRE.setFireInfo(leaves_autumn_orange, 30, 60);
-        Blocks.FIRE.setFireInfo(leaves_autumn_yellow, 30, 60);
+        for (int i = 0; i < appalachiaStairs.size(); i++) {
+            AppalachiaBlockStairs block = (AppalachiaBlockStairs)appalachiaStairs.get(i);
+            block.setRegistryName(block.registryName());
+        }
 
-        Blocks.FIRE.setFireInfo(sapling_quercus_robur, 20, 60);
+        for (int i = 0; i < appalachiaFences.size(); i++) {
+            AppalachiaBlockFence block = (AppalachiaBlockFence)appalachiaFences.get(i);
+            block.setRegistryName(block.registryName());
+        }
 
-        Blocks.FIRE.setFireInfo(log_autumn_grey, 5, 5);
-        Blocks.FIRE.setFireInfo(planks_autumn_grey, 5, 20);
-        Blocks.FIRE.setFireInfo(slab_autumn_grey, 5, 20);
-        Blocks.FIRE.setFireInfo(stairs_autumn_grey, 5, 20);
-        Blocks.FIRE.setFireInfo(fence_autumn_grey, 5, 20);
-        Blocks.FIRE.setFireInfo(fence_gate_autumn_grey, 5, 20);
+        for (int i = 0; i < appalachiaFenceGates.size(); i++) {
+            AppalachiaBlockFenceGate block = (AppalachiaBlockFenceGate)appalachiaFenceGates.get(i);
+            block.setRegistryName(block.registryName());
+        }
 
-        Blocks.FIRE.setFireInfo(log_autumn_brown, 5, 5);
-        Blocks.FIRE.setFireInfo(planks_autumn_brown, 5, 20);
-        Blocks.FIRE.setFireInfo(slab_autumn_brown, 5, 20);
-        Blocks.FIRE.setFireInfo(stairs_autumn_brown, 5, 20);
-        Blocks.FIRE.setFireInfo(fence_autumn_brown, 5, 20);
-        Blocks.FIRE.setFireInfo(fence_gate_autumn_brown, 5, 20);
+        for (int i = 0; i < appalachiaLeaves.size(); i++) {
+            AppalachiaBlockLeaves block = (AppalachiaBlockLeaves)appalachiaLeaves.get(i);
+            block.setRegistryName(block.registryName());
+        }
+
+        for (int i = 0; i < appalachiaSaplings.size(); i++) {
+            AppalachiaBlockSapling block = (AppalachiaBlockSapling)appalachiaSaplings.get(i);
+            block.setRegistryName(block.registryName());
+        }
+    }
+
+    private static void registerBlocksAndItemBlocks()
+    {
+        for (int i = 0; i < appalachiaBlocks.size(); i++) {
+            GameRegistry.register(appalachiaBlocks.get(i));
+            GameRegistry.register(new ItemBlock(appalachiaBlocks.get(i)), appalachiaBlocks.get(i).getRegistryName());
+        }
+    }
+
+    private static void registerOres()
+    {
+        for (int i = 0; i < appalachiaLogs.size(); i++) {
+            OreDictionary.registerOre("logWood", new ItemStack(appalachiaLogs.get(i), 1, OreDictionary.WILDCARD_VALUE));
+        }
+
+        for (int i = 0; i < appalachiaPlanks.size(); i++) {
+            OreDictionary.registerOre("plankWood", new ItemStack(appalachiaPlanks.get(i), 1, OreDictionary.WILDCARD_VALUE));
+        }
+
+        for (int i = 0; i < appalachiaSlabs.size(); i++) {
+            OreDictionary.registerOre("slabWood", new ItemStack(appalachiaSlabs.get(i), 1, OreDictionary.WILDCARD_VALUE));
+        }
+
+        for (int i = 0; i < appalachiaStairs.size(); i++) {
+            OreDictionary.registerOre("stairWood", new ItemStack(appalachiaStairs.get(i), 1, OreDictionary.WILDCARD_VALUE));
+        }
+
+        for (int i = 0; i < appalachiaFences.size(); i++) {
+            OreDictionary.registerOre("fenceWood", new ItemStack(appalachiaFences.get(i), 1, OreDictionary.WILDCARD_VALUE));
+        }
+
+        for (int i = 0; i < appalachiaFenceGates.size(); i++) {
+            OreDictionary.registerOre("fenceGateWood", new ItemStack(appalachiaFenceGates.get(i), 1, OreDictionary.WILDCARD_VALUE));
+        }
+
+        for (int i = 0; i < appalachiaLeaves.size(); i++) {
+            OreDictionary.registerOre("treeLeaves", new ItemStack(appalachiaLeaves.get(i), 1, OreDictionary.WILDCARD_VALUE));
+        }
+
+        for (int i = 0; i < appalachiaSaplings.size(); i++) {
+            OreDictionary.registerOre("treeSapling", new ItemStack(appalachiaSaplings.get(i), 1, OreDictionary.WILDCARD_VALUE));
+        }
+    }
+
+    private static void setFireInfo()
+    {
+        for (int i = 0; i < appalachiaLogs.size(); i++) {
+            Blocks.FIRE.setFireInfo(appalachiaLogs.get(i), 5, 5);
+        }
+
+        for (int i = 0; i < appalachiaPlanks.size(); i++) {
+            Blocks.FIRE.setFireInfo(appalachiaPlanks.get(i), 5, 20);
+        }
+
+        for (int i = 0; i < appalachiaSlabs.size(); i++) {
+            Blocks.FIRE.setFireInfo(appalachiaSlabs.get(i), 5, 20);
+        }
+
+        for (int i = 0; i < appalachiaStairs.size(); i++) {
+            Blocks.FIRE.setFireInfo(appalachiaStairs.get(i), 5, 20);
+        }
+
+        for (int i = 0; i < appalachiaFences.size(); i++) {
+            Blocks.FIRE.setFireInfo(appalachiaFences.get(i), 5, 20);
+        }
+
+        for (int i = 0; i < appalachiaFenceGates.size(); i++) {
+            Blocks.FIRE.setFireInfo(appalachiaFenceGates.get(i), 5, 20);
+        }
+
+        for (int i = 0; i < appalachiaLeaves.size(); i++) {
+            Blocks.FIRE.setFireInfo(appalachiaLeaves.get(i), 30, 60);
+        }
+
+        for (int i = 0; i < appalachiaSaplings.size(); i++) {
+            Blocks.FIRE.setFireInfo(appalachiaSaplings.get(i), 20, 60);
+        }
+    }
+
+    public static void addRecipes()
+    {
+        addShapedRecipes();
+        addShapelessRecipes();
+        addSmeltingRecipes();
+    }
+
+    private static void addShapedRecipes()
+    {
+        for (int i = 0; i < appalachiaPlanks.size(); i++) {
+
+            GameRegistry.addRecipe(new ItemStack(appalachiaSlabs.get(i), 6), "###", '#', appalachiaPlanks.get(i));
+            GameRegistry.addRecipe(new ItemStack(appalachiaStairs.get(i), 4), "  #", " ##", "###", '#', appalachiaPlanks.get(i));
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(appalachiaFences.get(i), 3), "#S#", "#S#", 'S', "stickWood", '#', appalachiaPlanks.get(i)));
+            GameRegistry.addRecipe(new ShapedOreRecipe(appalachiaFenceGates.get(i), "S#S", "S#S", 'S', "stickWood", '#', appalachiaPlanks.get(i)));
+        }
+    }
+
+    private static void addShapelessRecipes()
+    {
+        for (int i = 0; i < appalachiaLogs.size(); i++) {
+            GameRegistry.addShapelessRecipe(new ItemStack(appalachiaPlanks.get(i), 4), new ItemStack(appalachiaLogs.get(i), 1, OreDictionary.WILDCARD_VALUE));
+        }
+
+        for (int i = 0; i < appalachiaSaplings.size(); i++) {
+            GameRegistry.addShapelessRecipe(new ItemStack(Items.STICK), new ItemStack(appalachiaSaplings.get(i)));
+        }
+    }
+
+    private static void addSmeltingRecipes()
+    {
+        for (int i = 0; i < appalachiaLogs.size(); i++) {
+            GameRegistry.addSmelting(appalachiaLogs.get(i), new ItemStack(Items.COAL, 1, 1), 0.15F);
+        }
     }
 
     @SideOnly(Side.CLIENT)
     public static void registerModels()
     {
-        registerModel(leaves_autumn_red);
-        registerModel(leaves_autumn_orange);
-        registerModel(leaves_autumn_yellow);
+        for (int i = 0; i < appalachiaLogs.size(); i++) {
+            registerModel(appalachiaLogs.get(i));
+            ModelLoader.setCustomStateMapper(appalachiaLogs.get(i), new StateMap.Builder().ignore(AppalachiaBlockLog.VARIANT).build());
+        }
 
-        registerModel(sapling_quercus_robur);
+        for (int i = 0; i < appalachiaPlanks.size(); i++) {
+            registerModel(appalachiaPlanks.get(i));
+            ModelLoader.setCustomStateMapper(appalachiaPlanks.get(i), new StateMap.Builder().ignore(AppalachiaBlockPlanks.DOUBLE).build());
+        }
 
-        registerModel(log_autumn_grey);
-        registerModel(planks_autumn_grey);
-        registerModel(slab_autumn_grey);
-        registerModel(stairs_autumn_grey);
-        registerModel(fence_autumn_grey);
-        registerModel(fence_gate_autumn_grey);
+        for (int i = 0; i < appalachiaSlabs.size(); i++) {
+            registerModel(appalachiaSlabs.get(i));
+        }
 
-        registerModel(log_autumn_brown);
-        registerModel(planks_autumn_brown);
-        registerModel(slab_autumn_brown);
-        registerModel(stairs_autumn_brown);
-        registerModel(fence_autumn_brown);
-        registerModel(fence_gate_autumn_brown);
+        for (int i = 0; i < appalachiaStairs.size(); i++) {
+            registerModel(appalachiaStairs.get(i));
+        }
 
-        ModelLoader.setCustomStateMapper(leaves_autumn_red, new StateMap.Builder().ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
-        ModelLoader.setCustomStateMapper(leaves_autumn_orange, new StateMap.Builder().ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
-        ModelLoader.setCustomStateMapper(leaves_autumn_yellow, new StateMap.Builder().ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
+        for (int i = 0; i < appalachiaFences.size(); i++) {
+            registerModel(appalachiaFences.get(i));
+        }
 
-        ModelLoader.setCustomStateMapper(sapling_quercus_robur, new StateMap.Builder().ignore(BlockSapling.TYPE, BlockSapling.STAGE).build());
+        for (int i = 0; i < appalachiaFenceGates.size(); i++) {
+            registerModel(appalachiaFenceGates.get(i));
+            ModelLoader.setCustomStateMapper(appalachiaFenceGates.get(i), new StateMap.Builder().ignore(AppalachiaBlockFenceGate.POWERED).build());
+        }
 
-        ModelLoader.setCustomStateMapper(log_autumn_grey, new StateMap.Builder().ignore(BlockLogAutumnGrey.VARIANT).build());
-        ModelLoader.setCustomStateMapper(planks_autumn_grey, new StateMap.Builder().ignore(BlockPlanksAutumnGrey.DOUBLE).build());
-        ModelLoader.setCustomStateMapper(fence_gate_autumn_grey, new StateMap.Builder().ignore(BlockFenceGate.POWERED).build());
+        for (int i = 0; i < appalachiaLeaves.size(); i++) {
+            registerModel(appalachiaLeaves.get(i));
+            ModelLoader.setCustomStateMapper(appalachiaLeaves.get(i), new StateMap.Builder().ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
+        }
 
-        ModelLoader.setCustomStateMapper(log_autumn_brown, new StateMap.Builder().ignore(BlockLogAutumnBrown.VARIANT).build());
-        ModelLoader.setCustomStateMapper(planks_autumn_brown, new StateMap.Builder().ignore(BlockPlanksAutumnBrown.DOUBLE).build());
-        ModelLoader.setCustomStateMapper(fence_gate_autumn_brown, new StateMap.Builder().ignore(BlockFenceGate.POWERED).build());
+        for (int i = 0; i < appalachiaSaplings.size(); i++) {
+            registerModel(appalachiaSaplings.get(i));
+            ModelLoader.setCustomStateMapper(appalachiaSaplings.get(i), new StateMap.Builder().ignore(BlockSapling.TYPE, BlockSapling.STAGE).build());
+        }
     }
 
     @SideOnly(Side.CLIENT)
-    public static void registerModel(Block block, String modelName)
+    private static void registerModel(Block block, String modelName)
     {
         ItemManager.registerModel(Item.getItemFromBlock(block), modelName);
     }
 
     @SideOnly(Side.CLIENT)
-    public static void registerModel(Block block)
+    private static void registerModel(Block block)
     {
         ItemManager.registerModel(Item.getItemFromBlock(block));
     }
 
     @SideOnly(Side.CLIENT)
-    public static void registerModelWithMeta(Block block, String... modelName)
+    private static void registerModelWithMeta(Block block, String... modelName)
     {
         ItemManager.registerModelWithMeta(Item.getItemFromBlock(block), modelName);
     }

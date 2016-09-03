@@ -17,21 +17,18 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.oredict.OreDictionary;
 
-import appalachia.api.AppalachiaBlocks;
 import appalachia.block.BlockManager;
 import appalachia.config.ConfigAppalachia;
 import appalachia.config.ConfigManager;
-import appalachia.crafting.CraftingManager;
 import appalachia.event.EventManager;
 import appalachia.item.ItemManager;
 import appalachia.proxy.CommonProxy;
 import appalachia.util.BiomeUtils;
 import appalachia.util.Logger;
 import appalachia.world.AppalachiaWorldGenerator;
-import appalachia.world.biome.AppalachiaBiome.AppalachiaBiomeProps;
 import appalachia.world.biome.*;
+import appalachia.world.biome.AppalachiaBiome.AppalachiaBiomeProps;
 import static appalachia.api.AppalachiaBiomes.*;
 import static appalachia.reference.ModInfo.*;
 
@@ -70,14 +67,12 @@ public class Appalachia
         }
 
         addBiomes();
-
-        addOreDictionaryStuff();
     }
 
     @EventHandler
     public void fmlLifeCycleEvent(FMLInitializationEvent event) {
 
-        CraftingManager.addRecipes();
+        BlockManager.addRecipes();
 
         GameRegistry.registerWorldGenerator(new AppalachiaWorldGenerator(), 0);
 
@@ -94,14 +89,6 @@ public class Appalachia
         GameRegistry.register(biome.setRegistryName(new ResourceLocation(MOD_ID, name)));
         BiomeDictionary.registerBiomeType(biome, types);
         BiomeManager.addBiome(btype, new BiomeEntry(biome, weight));
-    }
-
-    private void addOreDictionaryStuff() {
-
-        OreDictionary.registerOre("logWood", AppalachiaBlocks.log_autumn_grey);
-        OreDictionary.registerOre("plankWood", AppalachiaBlocks.planks_autumn_grey);
-        OreDictionary.registerOre("treeSapling", AppalachiaBlocks.sapling_quercus_robur);
-        OreDictionary.registerOre("treeLeaves", AppalachiaBlocks.leaves_autumn_red);
     }
 
     private void addBiomes() {
