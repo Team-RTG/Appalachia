@@ -51,13 +51,13 @@ public class BiomeAutumnForest extends AppalachiaBiome implements IAppalachiaBio
         return rand.nextInt(3) == 0 ? TREE_FEATURE : rand.nextInt(5) == 0 ? BIG_TREE_FEATURE : TREE_FEATURE;
     }
 
-//    @Override
-//    @SideOnly(Side.CLIENT)
-//    public int getSkyColorByTemp(float temp)
-//    {
-//        double noise = GRASS_COLOR_NOISE.getValue((double)temp * 0.0225D, (double)temp * 0.0225D);
-//        return noise < -0.7D ? 0xD4DB55 : (noise < -0.3D ? 0xBBDD54 : 0xA3E053);
-//    }
+    @Override
+    @SideOnly(Side.CLIENT)
+    public int getSkyColorByTemp(float temp)
+    {
+        double noise = GRASS_COLOR_NOISE.getValue((double)temp * 0.0225D, (double)temp * 0.0225D);
+        return (noise < -0.5D) ? 0xB52C0A : ((noise > 0.5D) ? 0xA81411 : 0xB31D01);
+    }
 
     @Override
     @SideOnly(Side.CLIENT)
@@ -72,7 +72,7 @@ public class BiomeAutumnForest extends AppalachiaBiome implements IAppalachiaBio
     public int getFoliageColorAtPos(BlockPos pos)
     {
         double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
-        return noise < -0.1D ? 13741418 : 13018487;
+        return (noise < -0.5D) ? 10703636 : ((noise > 0.5D) ? 11937822 : 12991488);
     }
 
     @Override
