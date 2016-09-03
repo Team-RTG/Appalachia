@@ -10,11 +10,14 @@ import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 
+import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
 
-public class AppalachiaBlockPlanks extends Block
+public class AppalachiaBlockPlanks extends Block implements IAppalachiaBlock
 {
     public static final PropertyBool DOUBLE = PropertyBool.create("double");
+
+    private String slug;
 
     public AppalachiaBlockPlanks(String unlocalizedName)
     {
@@ -26,6 +29,12 @@ public class AppalachiaBlockPlanks extends Block
         this.setHarvestLevel("axe", 0);
         this.setCreativeTab(AppalachiaTabs.tabBlock);
         this.setDefaultState(blockState.getBaseState().withProperty(DOUBLE, Boolean.valueOf(false)));
+        this.slug = unlocalizedName;
+    }
+
+    @Override
+    public String registryName() {
+        return String.join("_", this.slug.split("\\."));
     }
 
     @Override

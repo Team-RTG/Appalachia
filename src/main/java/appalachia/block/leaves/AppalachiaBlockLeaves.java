@@ -22,11 +22,14 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.api.AppalachiaBlocks;
+import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
 import com.google.common.collect.Lists;
 
-public class AppalachiaBlockLeaves extends BlockLeaves
+public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlock
 {
+    private String slug;
+
     public AppalachiaBlockLeaves(String unlocalizedName)
     {
         super();
@@ -35,6 +38,12 @@ public class AppalachiaBlockLeaves extends BlockLeaves
         this.setCreativeTab(AppalachiaTabs.tabDecoration);
         this.setDefaultState(blockState.getBaseState().withProperty(DECAYABLE, Boolean.valueOf(true)).withProperty(CHECK_DECAY, Boolean.valueOf(true)));
         this.leavesFancy = true;
+        this.slug = unlocalizedName;
+    }
+
+    @Override
+    public String registryName() {
+        return String.join("_", this.slug.split("\\."));
     }
 
     @Override

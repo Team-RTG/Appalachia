@@ -4,10 +4,13 @@ import net.minecraft.block.BlockFenceGate;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.SoundType;
 
+import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
 
-public class AppalachiaBlockFenceGate extends BlockFenceGate
+public class AppalachiaBlockFenceGate extends BlockFenceGate implements IAppalachiaBlock
 {
+    private String slug;
+
     public AppalachiaBlockFenceGate(String unlocalizedName)
     {
         super(BlockPlanks.EnumType.BIRCH);
@@ -17,5 +20,11 @@ public class AppalachiaBlockFenceGate extends BlockFenceGate
         this.setSoundType(SoundType.WOOD);
         this.setHarvestLevel("axe", 0);
         this.setCreativeTab(AppalachiaTabs.tabBlock);
+        this.slug = unlocalizedName;
+    }
+
+    @Override
+    public String registryName() {
+        return String.join("_", this.slug.split("\\."));
     }
 }

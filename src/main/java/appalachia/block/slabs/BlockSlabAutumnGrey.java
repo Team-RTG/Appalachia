@@ -1,9 +1,16 @@
 package appalachia.block.slabs;
 
-public class BlockSlabAutumnGrey extends AppalachiaBlockSlab
+import appalachia.block.IAppalachiaBlock;
+
+public class BlockSlabAutumnGrey extends AppalachiaBlockSlab implements IAppalachiaBlock
 {
 	public BlockSlabAutumnGrey()
 	{
 		super("slab.autumn.grey");
+	}
+
+	@Override
+	public String registryName() {
+		return super.registryName();
 	}
 }

@@ -8,10 +8,13 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
 
+import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
 
-public class AppalachiaBlockSlab extends BlockSlab
+public class AppalachiaBlockSlab extends BlockSlab implements IAppalachiaBlock
 {
+    private String slug;
+
     public AppalachiaBlockSlab(String unlocalizedName)
     {
         super(Material.WOOD);
@@ -23,6 +26,12 @@ public class AppalachiaBlockSlab extends BlockSlab
         this.setCreativeTab(AppalachiaTabs.tabBlock);
         this.setDefaultState(blockState.getBaseState().withProperty(HALF, EnumBlockHalf.BOTTOM));
         this.useNeighborBrightness = true;
+        this.slug = unlocalizedName;
+    }
+
+    @Override
+    public String registryName() {
+        return String.join("_", this.slug.split("\\."));
     }
 
     @Override

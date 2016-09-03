@@ -24,14 +24,17 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
 import appalachia.world.biome.AppalachiaBiome;
 import appalachia.world.gen.feature.tree.AppalachiaTree;
 
-public class AppalachiaBlockSapling extends BlockBush implements IGrowable
+public class AppalachiaBlockSapling extends BlockBush implements IGrowable, IAppalachiaBlock
 {
     public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
     protected static final AxisAlignedBB SAPLING_AABB = new AxisAlignedBB(0.09999999403953552D, 0.0D, 0.09999999403953552D, 0.8999999761581421D, 0.800000011920929D, 0.8999999761581421D);
+
+    private String slug;
 
     public AppalachiaBlockSapling(String unlocalizedName)
     {
@@ -39,6 +42,12 @@ public class AppalachiaBlockSapling extends BlockBush implements IGrowable
         this.setSoundType(SoundType.PLANT);
         this.setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
         this.setCreativeTab(AppalachiaTabs.tabDecoration);
+        this.slug = unlocalizedName;
+    }
+
+    @Override
+    public String registryName() {
+        return String.join("_", this.slug.split("\\."));
     }
 
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)

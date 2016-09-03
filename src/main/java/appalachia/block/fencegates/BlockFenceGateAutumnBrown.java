@@ -1,9 +1,16 @@
 package appalachia.block.fencegates;
 
-public class BlockFenceGateAutumnBrown extends AppalachiaBlockFenceGate
+import appalachia.block.IAppalachiaBlock;
+
+public class BlockFenceGateAutumnBrown extends AppalachiaBlockFenceGate implements IAppalachiaBlock
 {
 	public BlockFenceGateAutumnBrown()
 	{
 		super("fence.gate.autumn.brown");
 	}
+
+    @Override
+    public String registryName() {
+        return super.registryName();
+    }
 }

@@ -9,11 +9,14 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.IStringSerializable;
 
+import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
 
-public class AppalachiaBlockLog extends BlockLog
+public class AppalachiaBlockLog extends BlockLog implements IAppalachiaBlock
 {
     public static final PropertyEnum<EnumType> VARIANT = PropertyEnum.create("variant", EnumType.class);
+
+    private String slug;
 
     public AppalachiaBlockLog(String unlocalizedName)
     {
@@ -22,6 +25,12 @@ public class AppalachiaBlockLog extends BlockLog
         this.setHarvestLevel("axe", 0);
         this.setDefaultState(blockState.getBaseState().withProperty(VARIANT, EnumType.NORMAL).withProperty(LOG_AXIS, EnumAxis.Y));
         this.setCreativeTab(AppalachiaTabs.tabBlock);
+        this.slug = unlocalizedName;
+    }
+
+    @Override
+    public String registryName() {
+        return String.join("_", this.slug.split("\\."));
     }
 
     @Override
