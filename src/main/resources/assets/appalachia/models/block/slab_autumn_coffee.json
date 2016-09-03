@@ -1,0 +1,8 @@
+{
+    "parent": "block/half_slab",
+    "textures": {
+        "bottom": "appalachia:blocks/planks_autumn_coffee",
+        "top": "appalachia:blocks/planks_autumn_coffee",
+        "side": "appalachia:blocks/planks_autumn_coffee"
+    }
+}

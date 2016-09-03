@@ -1,12 +1,9 @@
 #Creative Tabs
+
 itemGroup.appalachiablocks=Appalachia Blocks
 itemGroup.appalachiadecorations=Appalachia Decorations
 
 #Blocks
-tile.leaves.autumn.red.name=Red Autumn Leaves
-tile.leaves.autumn.orange.name=Orange Autumn Leaves
-tile.leaves.autumn.yellow.name=Yellow Autumn Leaves
-tile.sapling.quercus.robur.name=Quercus Robur Sapling
 
 tile.log.autumn.grey.name=Grey Autumn Log
 tile.planks.autumn.grey.name=Grey Autumn Planks
@@ -21,3 +18,16 @@ tile.slab.autumn.brown.name=Brown Autumn Slab
 tile.stairs.autumn.brown.name=Brown Autumn Stairs
 tile.fence.autumn.brown.name=Brown Autumn Fence
 tile.fence.gate.autumn.brown.name=Brown Autumn Fence Gate
+
+tile.log.autumn.coffee.name=Coffee Autumn Log
+tile.planks.autumn.coffee.name=Coffee Autumn Planks
+tile.slab.autumn.coffee.name=Coffee Autumn Slab
+tile.stairs.autumn.coffee.name=Coffee Autumn Stairs
+tile.fence.autumn.coffee.name=Coffee Autumn Fence
+tile.fence.gate.autumn.coffee.name=Coffee Autumn Fence Gate
+
+tile.leaves.autumn.red.name=Red Autumn Leaves
+tile.leaves.autumn.orange.name=Orange Autumn Leaves
+tile.leaves.autumn.yellow.name=Yellow Autumn Leaves
+
+tile.sapling.quercus.robur.name=Quercus Robur Sapling

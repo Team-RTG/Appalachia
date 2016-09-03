@@ -1,0 +1,7 @@
+{
+    "parent": "block/column_side",
+    "textures": {
+        "end": "appalachia:blocks/log_autumn_coffee_top",
+        "side": "appalachia:blocks/log_autumn_coffee"
+    }
+}
