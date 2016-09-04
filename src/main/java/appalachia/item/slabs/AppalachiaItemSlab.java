@@ -19,18 +19,27 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.api.AppalachiaBlocks;
-import appalachia.block.planks.BlockPlanksAutumnGrey;
+import appalachia.block.planks.AppalachiaBlockPlanks;
 
 public class AppalachiaItemSlab extends ItemBlock
 {
+    protected IBlockState fullBlock;
+
     public AppalachiaItemSlab(Block block)
     {
         super(block);
+        this.fullBlock = AppalachiaBlocks.planks_autumn_grey.getDefaultState();
+    }
+
+    public AppalachiaItemSlab(Block block, IBlockState fullBlock)
+    {
+        this(block);
+        this.fullBlock = fullBlock;
     }
 
     protected IBlockState getFullBlock()
     {
-        return AppalachiaBlocks.planks_autumn_grey.getDefaultState().withProperty(BlockPlanksAutumnGrey.DOUBLE, Boolean.valueOf(true));
+        return this.fullBlock.withProperty(AppalachiaBlockPlanks.DOUBLE, Boolean.valueOf(true));
     }
 
     @Override
