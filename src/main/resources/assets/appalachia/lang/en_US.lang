@@ -19,6 +19,13 @@ tile.stairs.autumn.brown.name=Brown Autumn Stairs
 tile.fence.autumn.brown.name=Brown Autumn Fence
 tile.fence.gate.autumn.brown.name=Brown Autumn Fence Gate
 
+tile.log.autumn.charcoal.name=Charcoal Autumn Log
+tile.planks.autumn.charcoal.name=Charcoal Autumn Planks
+tile.slab.autumn.charcoal.name=Charcoal Autumn Slab
+tile.stairs.autumn.charcoal.name=Charcoal Autumn Stairs
+tile.fence.autumn.charcoal.name=Charcoal Autumn Fence
+tile.fence.gate.autumn.charcoal.name=Charcoal Autumn Fence Gate
+
 tile.log.autumn.coffee.name=Coffee Autumn Log
 tile.planks.autumn.coffee.name=Coffee Autumn Planks
 tile.slab.autumn.coffee.name=Coffee Autumn Slab
