@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom_rh",
+    "textures": {
+        "bottom": "appalachia:blocks/door_autumn_brown_lower",
+        "top": "appalachia:blocks/door_autumn_brown_upper"
+    }
+}

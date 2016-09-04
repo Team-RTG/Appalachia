@@ -11,6 +11,7 @@ tile.slab.autumn.grey.name=Grey Autumn Slab
 tile.stairs.autumn.grey.name=Grey Autumn Stairs
 tile.fence.autumn.grey.name=Grey Autumn Fence
 tile.fence.gate.autumn.grey.name=Grey Autumn Fence Gate
+tile.door.autumn.grey.name=Grey Autumn Door
 
 tile.log.autumn.brown.name=Brown Autumn Log
 tile.planks.autumn.brown.name=Brown Autumn Planks
@@ -18,6 +19,7 @@ tile.slab.autumn.brown.name=Brown Autumn Slab
 tile.stairs.autumn.brown.name=Brown Autumn Stairs
 tile.fence.autumn.brown.name=Brown Autumn Fence
 tile.fence.gate.autumn.brown.name=Brown Autumn Fence Gate
+tile.door.autumn.brown.name=Brown Autumn Door
 
 tile.log.autumn.charcoal.name=Charcoal Autumn Log
 tile.planks.autumn.charcoal.name=Charcoal Autumn Planks
@@ -25,6 +27,7 @@ tile.slab.autumn.charcoal.name=Charcoal Autumn Slab
 tile.stairs.autumn.charcoal.name=Charcoal Autumn Stairs
 tile.fence.autumn.charcoal.name=Charcoal Autumn Fence
 tile.fence.gate.autumn.charcoal.name=Charcoal Autumn Fence Gate
+tile.door.autumn.charcoal.name=Charcoal Autumn Door
 
 tile.log.autumn.coffee.name=Coffee Autumn Log
 tile.planks.autumn.coffee.name=Coffee Autumn Planks
@@ -32,6 +35,7 @@ tile.slab.autumn.coffee.name=Coffee Autumn Slab
 tile.stairs.autumn.coffee.name=Coffee Autumn Stairs
 tile.fence.autumn.coffee.name=Coffee Autumn Fence
 tile.fence.gate.autumn.coffee.name=Coffee Autumn Fence Gate
+tile.door.autumn.coffee.name=Coffee Autumn Door
 
 tile.leaves.autumn.red.name=Red Autumn Leaves
 tile.leaves.autumn.orange.name=Orange Autumn Leaves
