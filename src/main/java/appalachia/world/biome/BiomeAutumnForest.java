@@ -51,13 +51,13 @@ public class BiomeAutumnForest extends AppalachiaBiome implements IAppalachiaBio
         return rand.nextInt(3) == 0 ? TREE_FEATURE : rand.nextInt(5) == 0 ? BIG_TREE_FEATURE : TREE_FEATURE;
     }
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public int getSkyColorByTemp(float temp)
-    {
-        double noise = GRASS_COLOR_NOISE.getValue((double)temp * 0.0225D, (double)temp * 0.0225D);
-        return (noise < -0.5D) ? 0xB52C0A : ((noise > 0.5D) ? 0xA81411 : 0xB31D01);
-    }
+//    @Override
+//    @SideOnly(Side.CLIENT)
+//    public int getSkyColorByTemp(float temp)
+//    {
+//        double noise = GRASS_COLOR_NOISE.getValue((double)temp * 0.0225D, (double)temp * 0.0225D);
+//        return (noise < -0.5D) ? 0xB52C0A : ((noise > 0.5D) ? 0xA81411 : 0xB31D01);
+//    }
 
     @Override
     @SideOnly(Side.CLIENT)
