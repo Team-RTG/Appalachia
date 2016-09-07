@@ -38,6 +38,8 @@ public class ConfigAppalachia {
 
     public static boolean enableDebugging = false;
 
+    public static boolean allowTreesToGenerateOnSand = false;
+
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
