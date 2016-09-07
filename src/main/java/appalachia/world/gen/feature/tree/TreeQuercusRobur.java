@@ -25,7 +25,7 @@ public class TreeQuercusRobur extends AppalachiaTree
 	double branchSlope = 0.381D;
 	double scaleWidth = 1.0D;
 	double leafDensity = 1.0D;
-	int trunkSize = 1;
+	TrunkType trunkType;
 	int heightLimitLimit = 12;
 	int leafDistanceLimit = 4;
 	List<TreeQuercusRobur.FoliageCoordinates> foliageCoords;
@@ -39,6 +39,7 @@ public class TreeQuercusRobur extends AppalachiaTree
 	{
 		super(notify);
 
+        this.trunkType = TrunkType.THIN;
         this.saplingBlock = AppalachiaBlocks.sapling_quercus_robur.getDefaultState();
 	}
 
@@ -96,22 +97,22 @@ public class TreeQuercusRobur extends AppalachiaTree
 		}
 	}
 
-	void crossSection(BlockPos pos, float p_181631_2_, IBlockState p_181631_3_)
+	void crossSection(BlockPos pos, float leafSize, IBlockState leafBlock)
 	{
-		int i = (int)((double)p_181631_2_ + 0.618D);
+		int i = (int)((double)leafSize + 0.618D);
 
 		for (int j = -i; j <= i; ++j)
 		{
 			for (int k = -i; k <= i; ++k)
 			{
-				if (Math.pow((double)Math.abs(j) + 0.5D, 2.0D) + Math.pow((double)Math.abs(k) + 0.5D, 2.0D) <= (double)(p_181631_2_ * p_181631_2_))
+				if (Math.pow((double)Math.abs(j) + 0.5D, 2.0D) + Math.pow((double)Math.abs(k) + 0.5D, 2.0D) <= (double)(leafSize * leafSize))
 				{
 					BlockPos blockpos = pos.add(j, 0, k);
 					IBlockState state = this.world.getBlockState(blockpos);
 
 					if (state.getBlock().isAir(state, world, blockpos) || state.getBlock().isLeaves(state, world, blockpos))
 					{
-						this.setBlockAndNotifyAdequately(this.world, blockpos, p_181631_3_);
+						this.setBlockAndNotifyAdequately(this.world, blockpos, leafBlock);
 					}
 				}
 			}
@@ -224,11 +225,16 @@ public class TreeQuercusRobur extends AppalachiaTree
 		IBlockState block = this.logBlock;
 		this.limb(blockpos, blockpos1, block);
 
-		if (this.trunkSize == 2)
+		switch (this.trunkType)
 		{
-			this.limb(blockpos.east(), blockpos1.east(), block);
-			this.limb(blockpos.east().south(), blockpos1.east().south(), block);
-			this.limb(blockpos.south(), blockpos1.south(), block);
+            case THICK:
+                this.limb(blockpos.east(), blockpos1.east(), block);
+                this.limb(blockpos.east().south(), blockpos1.east().south(), block);
+                this.limb(blockpos.south(), blockpos1.south(), block);
+                break;
+            
+            default:
+                break;
 		}
 	}
 
@@ -279,6 +285,7 @@ public class TreeQuercusRobur extends AppalachiaTree
 		this.leafDistanceLimit = 5;
 	}
 
+	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos position)
 	{
 		this.world = worldIn;
@@ -340,15 +347,21 @@ public class TreeQuercusRobur extends AppalachiaTree
 	{
 		private final int branchBase;
 
-		public FoliageCoordinates(BlockPos pos, int p_i45635_2_)
+		public FoliageCoordinates(BlockPos pos, int branchBase)
 		{
 			super(pos.getX(), pos.getY(), pos.getZ());
-			this.branchBase = p_i45635_2_;
+			this.branchBase = branchBase;
 		}
 
 		public int getBranchBase()
 		{
 			return this.branchBase;
 		}
+	}
+
+	public enum TrunkType
+	{
+        THIN,
+        THICK;
 	}
 }
