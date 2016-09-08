@@ -89,4 +89,20 @@ public class AppalachiaTree extends WorldGenAbstractTree {
         this.leavesBlock = leavesBlock;
         return this;
     }
+
+    protected boolean isValidGroundBlock(World world, Random rand, BlockPos pos)
+    {
+        boolean validGroundBlock = false;
+
+        IBlockState g = world.getBlockState(new BlockPos(pos.getX(), pos.getY() - 1, pos.getZ()));
+
+        for (int i = 0; i < this.validGroundBlocks.size(); i++) {
+            if (g == this.validGroundBlocks.get(i)) {
+                validGroundBlock = true;
+                break;
+            }
+        }
+
+        return validGroundBlock;
+    }
 }
