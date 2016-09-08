@@ -16,7 +16,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.api.AppalachiaBlocks;
 import appalachia.world.biome.decorator.DecoratorAutumnForest;
-import appalachia.world.gen.feature.tree.TreeQuercusRobur;
+import appalachia.world.gen.feature.tree.AppalachiaTree;
+import appalachia.world.gen.feature.tree.TreeAcerRubrum;
 
 public class BiomeAutumnForest extends AppalachiaBiome implements IAppalachiaBiome {
 
@@ -78,16 +79,34 @@ public class BiomeAutumnForest extends AppalachiaBiome implements IAppalachiaBio
     @Override
     public void addTreesToBiome()
     {
-        TreeQuercusRobur treeYellow = new TreeQuercusRobur();
-        treeYellow.leavesBlock = AppalachiaBlocks.leaves_autumn_yellow.getDefaultState();
-        this.addTree(treeYellow);
+        AppalachiaTree tree = new TreeAcerRubrum();
+        tree.leavesBlock = AppalachiaBlocks.leaves_autumn_red.getDefaultState();
+        this.addTree(tree);
 
-        TreeQuercusRobur treeOrange = new TreeQuercusRobur();
-        treeOrange.leavesBlock = AppalachiaBlocks.leaves_autumn_orange.getDefaultState();
-        this.addTree(treeOrange);
+//        Tree tree1 = new Tree();
+//        tree1.leavesBlock = AppalachiaBlocks.leaves_autumn_orange.getDefaultState();
+//        tree1.trunkWidthBottom = 2;
+//        tree1.trunkWidthTop = 2;
+//        tree1.crownWidthBottom = 2;
+//        tree1.crownWidthTop = 2;
+//        this.addTree(tree1);
 
-        TreeQuercusRobur treeRed = new TreeQuercusRobur();
-        treeRed.leavesBlock = AppalachiaBlocks.leaves_autumn_red.getDefaultState();
-        this.addTree(treeRed);
+//        Tree tree2 = new Tree();
+//        tree2.leavesBlock = AppalachiaBlocks.leaves_autumn_yellow.getDefaultState();
+//        tree2.trunkWidthBottom = 2;
+//        tree2.crownWidthTop = 2;
+//        this.addTree(tree2);
+
+//        TreeQuercusRobur treeYellow = new TreeQuercusRobur();
+//        treeYellow.leavesBlock = AppalachiaBlocks.leaves_autumn_yellow.getDefaultState();
+//        this.addTree(treeYellow);
+//
+//        TreeQuercusRobur treeOrange = new TreeQuercusRobur();
+//        treeOrange.leavesBlock = AppalachiaBlocks.leaves_autumn_orange.getDefaultState();
+//        this.addTree(treeOrange);
+//
+//        TreeQuercusRobur treeRed = new TreeQuercusRobur();
+//        treeRed.leavesBlock = AppalachiaBlocks.leaves_autumn_red.getDefaultState();
+//        this.addTree(treeRed);
     }
 }
