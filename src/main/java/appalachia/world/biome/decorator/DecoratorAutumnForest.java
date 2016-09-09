@@ -45,6 +45,8 @@ public class DecoratorAutumnForest extends AppalachiaDecorator
 
                     AppalachiaTree tree = biome.appalachiaTrees.get(random.nextInt(biome.appalachiaTrees.size()));
 
+                    tree.trunkSize = random.nextInt(3) + 2;
+
                     for (int j2 = 0; j2 < treesPerChunk; ++j2) {
 
                         int k6 = random.nextInt(16) + 8;
