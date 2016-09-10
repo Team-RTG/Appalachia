@@ -16,7 +16,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.world.biome.decorator.DecoratorAutumnForest;
 import appalachia.world.gen.feature.tree.AppalachiaTree;
-import appalachia.world.gen.feature.tree.TreeAbiesGrandis;
+import appalachia.world.gen.feature.tree.TreeLiquidambarStyraciflua;
 
 public class BiomeAutumnForest extends AppalachiaBiome implements IAppalachiaBiome {
 
@@ -78,7 +78,7 @@ public class BiomeAutumnForest extends AppalachiaBiome implements IAppalachiaBio
     @Override
     public void addTreesToBiome()
     {
-        AppalachiaTree tree = new TreeAbiesGrandis();
+        AppalachiaTree tree = new TreeLiquidambarStyraciflua();
         tree.logBlock = Blocks.LOG.getDefaultState();
         tree.leavesBlock = Blocks.LEAVES.getDefaultState();
         this.addTree(tree);
