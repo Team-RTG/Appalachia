@@ -14,7 +14,6 @@ import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import appalachia.api.AppalachiaBlocks;
 import appalachia.world.biome.decorator.DecoratorAutumnForest;
 import appalachia.world.gen.feature.tree.AppalachiaTree;
 import appalachia.world.gen.feature.tree.TreeAcerSaccharum;
@@ -80,7 +79,8 @@ public class BiomeAutumnForest extends AppalachiaBiome implements IAppalachiaBio
     public void addTreesToBiome()
     {
         AppalachiaTree tree = new TreeAcerSaccharum();
-        tree.leavesBlock = AppalachiaBlocks.leaves_autumn_orange.getDefaultState();
+        tree.logBlock = Blocks.LOG.getStateFromMeta(1);
+        tree.leavesBlock = Blocks.LEAVES.getDefaultState();
         this.addTree(tree);
 
 //        Tree tree1 = new Tree();
