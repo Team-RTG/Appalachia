@@ -90,19 +90,23 @@ public class AppalachiaTree extends WorldGenAbstractTree {
         return this;
     }
 
-    protected boolean isValidGroundBlock(World world, Random rand, BlockPos pos)
-    {
-        boolean validGroundBlock = false;
+    protected boolean isValidGroundBlock(World world, Random rand, BlockPos pos, int depth) {
 
-        IBlockState g = world.getBlockState(new BlockPos(pos.getX(), pos.getY() - 1, pos.getZ()));
+        for (int d = 1; d <= depth; d++) {
+            IBlockState g = world.getBlockState(new BlockPos(pos.getX(), pos.getY() - d, pos.getZ()));
 
-        for (int i = 0; i < this.validGroundBlocks.size(); i++) {
-            if (g == this.validGroundBlocks.get(i)) {
-                validGroundBlock = true;
-                break;
+            for (int i = 0; i < this.validGroundBlocks.size(); i++) {
+                if (g == this.validGroundBlocks.get(i)) {
+                    return true;
+                }
             }
         }
 
-        return validGroundBlock;
+        return false;
+    }
+
+    protected boolean isValidGroundBlock(World world, Random rand, BlockPos pos)
+    {
+        return this.isValidGroundBlock(world, rand, pos, 1);
     }
 }
