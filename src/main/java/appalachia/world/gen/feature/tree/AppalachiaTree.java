@@ -26,7 +26,6 @@ public class AppalachiaTree extends WorldGenAbstractTree {
     public boolean noLeaves;
     public boolean generateFromSapling;
     public ArrayList<IBlockState> validGroundBlocks;
-    public int generateFlag = 2;
 
     public AppalachiaTree() {
 
@@ -76,18 +75,6 @@ public class AppalachiaTree extends WorldGenAbstractTree {
         {
             worldIn.setBlockState(pos, state, 2);
         }
-    }
-
-    public AppalachiaTree setLogBlock(IBlockState logBlock) {
-
-        this.logBlock = logBlock;
-        return this;
-    }
-
-    public AppalachiaTree setLeavesBlock(IBlockState leavesBlock) {
-
-        this.leavesBlock = leavesBlock;
-        return this;
     }
 
     protected boolean isValidGroundBlock(World world, Random rand, BlockPos pos, int depth) {
