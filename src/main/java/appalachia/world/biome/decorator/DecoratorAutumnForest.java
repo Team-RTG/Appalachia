@@ -11,7 +11,7 @@ import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
 import appalachia.world.biome.BiomeAutumnForest;
-import appalachia.world.gen.feature.tree.AppalachiaTree;
+import appalachia.api.world.gen.feature.tree.AppalachiaTree;
 
 public class DecoratorAutumnForest extends AppalachiaDecorator
 {

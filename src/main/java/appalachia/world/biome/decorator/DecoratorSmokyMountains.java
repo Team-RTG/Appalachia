@@ -10,7 +10,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
-import appalachia.world.gen.feature.tree.TreeQuercusRobur;
+import appalachia.api.world.gen.feature.tree.TreeQuercusRobur;
 
 public class DecoratorSmokyMountains extends AppalachiaDecorator
 {

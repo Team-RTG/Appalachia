@@ -15,8 +15,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.world.biome.decorator.DecoratorAutumnForest;
-import appalachia.world.gen.feature.tree.AppalachiaTree;
-import appalachia.world.gen.feature.tree.TreeLiquidambarStyraciflua;
+import appalachia.api.world.gen.feature.tree.AppalachiaTree;
+import appalachia.api.world.gen.feature.tree.TreeLiquidambarStyraciflua;
 
 public class BiomeAutumnForest extends AppalachiaBiome implements IAppalachiaBiome {
 
