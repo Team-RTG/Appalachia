@@ -26,6 +26,10 @@ import appalachia.block.leaves.AppalachiaBlockLeaves;
 import appalachia.block.leaves.BlockLeavesAutumnOrange;
 import appalachia.block.leaves.BlockLeavesAutumnRed;
 import appalachia.block.leaves.BlockLeavesAutumnYellow;
+import appalachia.block.leaves.fallen.AppalachiaBlockLeavesFallen;
+import appalachia.block.leaves.fallen.BlockLeavesAutumnOrangeFallen;
+import appalachia.block.leaves.fallen.BlockLeavesAutumnRedFallen;
+import appalachia.block.leaves.fallen.BlockLeavesAutumnYellowFallen;
 import appalachia.block.logs.*;
 import appalachia.block.planks.*;
 import appalachia.block.saplings.AppalachiaBlockSapling;
@@ -33,6 +37,7 @@ import appalachia.block.saplings.BlockSaplingQuercusRobur;
 import appalachia.block.slabs.*;
 import appalachia.block.stairs.*;
 import appalachia.item.ItemManager;
+import appalachia.item.leaves.fallen.AppalachiaItemLeavesFallen;
 import appalachia.item.slabs.AppalachiaItemSlab;
 import static appalachia.api.AppalachiaBlocks.slab_autumn_grey;
 
@@ -46,6 +51,7 @@ public class BlockManager {
     public static ArrayList<Block> appalachiaFences = new ArrayList<Block>(){};
     public static ArrayList<Block> appalachiaFenceGates = new ArrayList<Block>(){};
     public static ArrayList<Block> appalachiaLeaves = new ArrayList<Block>(){};
+    public static ArrayList<Block> appalachiaLeavesFallen = new ArrayList<Block>(){};
     public static ArrayList<Block> appalachiaSaplings = new ArrayList<Block>(){};
 
     public static void registerBlocks()
@@ -97,6 +103,12 @@ public class BlockManager {
         AppalachiaBlocks.leaves_autumn_red = new BlockLeavesAutumnRed();
         AppalachiaBlocks.leaves_autumn_yellow = new BlockLeavesAutumnYellow();
         addLeaves();
+
+        //Fallen leaves.
+        AppalachiaBlocks.leaves_autumn_orange_fallen = new BlockLeavesAutumnOrangeFallen();
+        AppalachiaBlocks.leaves_autumn_red_fallen = new BlockLeavesAutumnRedFallen();
+        AppalachiaBlocks.leaves_autumn_yellow_fallen = new BlockLeavesAutumnYellowFallen();
+        addFallenLeaves();
 
         //Saplings.
         AppalachiaBlocks.sapling_quercus_robur = new BlockSaplingQuercusRobur();
@@ -164,6 +176,12 @@ public class BlockManager {
         appalachiaLeaves.add(AppalachiaBlocks.leaves_autumn_yellow);
     }
 
+    private static void addFallenLeaves() {
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_autumn_orange_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_autumn_red_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_autumn_yellow_fallen);
+    }
+
     private static void addSaplings() {
         appalachiaSaplings.add(AppalachiaBlocks.sapling_quercus_robur);
     }
@@ -196,6 +214,10 @@ public class BlockManager {
 
         for (int i = 0; i < appalachiaLeaves.size(); i++) {
             appalachiaBlocks.add(appalachiaLeaves.get(i));
+        }
+
+        for (int i = 0; i < appalachiaLeavesFallen.size(); i++) {
+            appalachiaBlocks.add(appalachiaLeavesFallen.get(i));
         }
 
         for (int i = 0; i < appalachiaSaplings.size(); i++) {
@@ -255,6 +277,13 @@ public class BlockManager {
             GameRegistry.register(new ItemBlock(block), block.getRegistryName());
         }
 
+        for (int i = 0; i < appalachiaLeavesFallen.size(); i++) {
+            AppalachiaBlockLeavesFallen block = (AppalachiaBlockLeavesFallen)appalachiaLeavesFallen.get(i);
+            block.setRegistryName(block.registryName());
+            GameRegistry.register(block);
+            GameRegistry.register(new AppalachiaItemLeavesFallen(block), block.getRegistryName());
+        }
+
         for (int i = 0; i < appalachiaSaplings.size(); i++) {
             AppalachiaBlockSapling block = (AppalachiaBlockSapling)appalachiaSaplings.get(i);
             block.setRegistryName(block.registryName());
@@ -293,6 +322,10 @@ public class BlockManager {
             OreDictionary.registerOre("treeLeaves", new ItemStack(appalachiaLeaves.get(i), 1, OreDictionary.WILDCARD_VALUE));
         }
 
+        for (int i = 0; i < appalachiaLeavesFallen.size(); i++) {
+            OreDictionary.registerOre("treeLeavesFallen", new ItemStack(appalachiaLeavesFallen.get(i), 1, OreDictionary.WILDCARD_VALUE));
+        }
+
         for (int i = 0; i < appalachiaSaplings.size(); i++) {
             OreDictionary.registerOre("treeSapling", new ItemStack(appalachiaSaplings.get(i), 1, OreDictionary.WILDCARD_VALUE));
         }
@@ -326,6 +359,10 @@ public class BlockManager {
 
         for (int i = 0; i < appalachiaLeaves.size(); i++) {
             Blocks.FIRE.setFireInfo(appalachiaLeaves.get(i), 30, 60);
+        }
+
+        for (int i = 0; i < appalachiaLeavesFallen.size(); i++) {
+            Blocks.FIRE.setFireInfo(appalachiaLeavesFallen.get(i), 30, 60);
         }
 
         for (int i = 0; i < appalachiaSaplings.size(); i++) {
@@ -367,6 +404,10 @@ public class BlockManager {
         for (int i = 0; i < appalachiaLogs.size(); i++) {
             GameRegistry.addSmelting(appalachiaLogs.get(i), new ItemStack(Items.COAL, 1, 1), 0.15F);
         }
+
+        for (int i = 0; i < appalachiaLogs.size(); i++) {
+            GameRegistry.addSmelting(appalachiaLogs.get(i), new ItemStack(Items.COAL, 1, 1), 0.15F);
+        }
     }
 
     @SideOnly(Side.CLIENT)
@@ -402,6 +443,10 @@ public class BlockManager {
         for (int i = 0; i < appalachiaLeaves.size(); i++) {
             registerModel(appalachiaLeaves.get(i));
             ModelLoader.setCustomStateMapper(appalachiaLeaves.get(i), new StateMap.Builder().ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
+        }
+
+        for (int i = 0; i < appalachiaLeavesFallen.size(); i++) {
+            registerModel(appalachiaLeavesFallen.get(i));
         }
 
         for (int i = 0; i < appalachiaSaplings.size(); i++) {

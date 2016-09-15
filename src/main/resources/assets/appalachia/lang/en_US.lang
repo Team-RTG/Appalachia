@@ -34,7 +34,10 @@ tile.fence.autumn.coffee.name=Coffee Autumn Fence
 tile.fence.gate.autumn.coffee.name=Coffee Autumn Fence Gate
 
 tile.leaves.autumn.red.name=Red Autumn Leaves
+tile.leaves.autumn.red.fallen.name=Red Autumn Fallen Leaves
 tile.leaves.autumn.orange.name=Orange Autumn Leaves
+tile.leaves.autumn.orange.fallen.name=Orange Autumn Fallen Leaves
 tile.leaves.autumn.yellow.name=Yellow Autumn Leaves
+tile.leaves.autumn.yellow.fallen.name=Yellow Autumn Fallen Leaves
 
 tile.sapling.quercus.robur.name=Quercus Robur Sapling
