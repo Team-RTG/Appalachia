@@ -7,7 +7,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -24,13 +23,14 @@ import net.minecraftforge.common.IShearable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import appalachia.api.block.IAppalachiaBlockLeavesFallen;
 import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
 import com.google.common.collect.Lists;
 
-public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlock, IShearable
+public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlock, IShearable, IAppalachiaBlockLeavesFallen
 {
-    public static final PropertyInteger LAYERS = PropertyInteger.create("layers", 1, 8);
+    //public static final PropertyInteger LAYERS = PropertyInteger.create("layers", 1, 8);
 
     public static final AxisAlignedBB[] FALLEN_AABB = new AxisAlignedBB[]
         {

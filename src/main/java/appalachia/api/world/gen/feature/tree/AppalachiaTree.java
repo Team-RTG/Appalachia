@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import appalachia.api.AppalachiaBlocks;
-import appalachia.block.leaves.fallen.AppalachiaBlockLeavesFallen;
+import appalachia.api.block.IAppalachiaBlockLeavesFallen;
 
 public class AppalachiaTree extends WorldGenAbstractTree {
 
@@ -144,11 +144,11 @@ public class AppalachiaTree extends WorldGenAbstractTree {
 
                     IBlockState state = world.getBlockState(blockpos);
 
-                    if (state.getBlock() instanceof AppalachiaBlockLeavesFallen)
+                    if (state.getBlock() instanceof IAppalachiaBlockLeavesFallen)
                     {
-                        int layers = state.getValue(AppalachiaBlockLeavesFallen.LAYERS).intValue();
+                        int layers = state.getValue(IAppalachiaBlockLeavesFallen.LAYERS).intValue();
 
-                        setBlockAndNotifyAdequately(world, blockpos, this.fallenLeavesBlock.withProperty(AppalachiaBlockLeavesFallen.LAYERS, (layers & 7) + 1));
+                        setBlockAndNotifyAdequately(world, blockpos, this.fallenLeavesBlock.withProperty(IAppalachiaBlockLeavesFallen.LAYERS, (layers & 7) + 1));
                     }
                 }
             }
