@@ -23,6 +23,7 @@ import appalachia.config.ConfigAppalachia;
 import appalachia.config.ConfigManager;
 import appalachia.event.EventManager;
 import appalachia.item.ItemManager;
+import appalachia.proxy.ClientProxy;
 import appalachia.proxy.CommonProxy;
 import appalachia.util.BiomeUtils;
 import appalachia.util.Logger;
@@ -32,7 +33,15 @@ import appalachia.world.biome.AppalachiaBiome.AppalachiaBiomeProps;
 import static appalachia.api.AppalachiaBiomes.*;
 import static appalachia.reference.ModInfo.*;
 
-@Mod(modid = MOD_ID, name = MOD_NAME, version = MOD_VERSION, dependencies = "required-after:Forge@[" + FORGE_DEP + ",)", acceptableRemoteVersions = "*")
+
+@SuppressWarnings({"WeakerAccess", "unused"})
+@Mod(
+    modid                    = MOD_ID,
+    name                     = MOD_NAME,
+    version                  = MOD_VERSION,
+    dependencies             = "required-after:Forge@[" + MCF_MINVER + "," + MCF_MAXVER + ")" + MOD_DEPS,
+    acceptableRemoteVersions = "*"
+)
 public class Appalachia
 {
 
@@ -41,13 +50,13 @@ public class Appalachia
     public static String configPath;
     public static EventManager eventMgr;
 
-    @SidedProxy(serverSide = PROXY_COMMON, clientSide = PROXY_CLIENT)
+    @SidedProxy(serverSide = CommonProxy.LOCATION, clientSide = ClientProxy.LOCATION)
     public static CommonProxy proxy;
 
     private ConfigManager configManager = new ConfigManager();
 
     @EventHandler
-    public void fmlLifeCycleEvent(FMLPreInitializationEvent event) {
+    public void initPre(FMLPreInitializationEvent event) {
 
         instance = this;
 
@@ -67,7 +76,7 @@ public class Appalachia
     }
 
     @EventHandler
-    public void fmlLifeCycleEvent(FMLInitializationEvent event) {
+    public void init(FMLInitializationEvent event) {
 
         eventMgr = new EventManager();
         eventMgr.registerEventHandlers();
@@ -80,7 +89,7 @@ public class Appalachia
     }
 
     @EventHandler
-    public void fmlLifeCycle(FMLPostInitializationEvent event) {
+    public void initPost(FMLPostInitializationEvent event) {
 
     }
 

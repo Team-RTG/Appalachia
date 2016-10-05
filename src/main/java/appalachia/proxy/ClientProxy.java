@@ -5,6 +5,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public class ClientProxy extends appalachia.proxy.CommonProxy {
+    public static final String LOCATION = "appalachia.proxy.ClientProxy";
 
     @Override
     public void preInit(FMLPreInitializationEvent event) {
