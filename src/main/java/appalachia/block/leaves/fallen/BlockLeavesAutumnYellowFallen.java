@@ -4,15 +4,16 @@ import net.minecraftforge.common.IShearable;
 
 import appalachia.block.IAppalachiaBlock;
 
-public class BlockLeavesAutumnYellowFallen extends AppalachiaBlockLeavesFallen implements IAppalachiaBlock, IShearable
-{
-	public BlockLeavesAutumnYellowFallen()
-	{
-		super("leaves.autumn.yellow.fallen");
-	}
+public class BlockLeavesAutumnYellowFallen extends AppalachiaBlockLeavesFallen implements IAppalachiaBlock, IShearable {
 
-	@Override
-	public String registryName() {
-		return super.registryName();
-	}
+    public BlockLeavesAutumnYellowFallen() {
+
+        super("leaves.autumn.yellow.fallen");
+    }
+
+    @Override
+    public String registryName() {
+
+        return super.registryName();
+    }
 }

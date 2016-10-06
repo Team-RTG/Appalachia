@@ -1555,6 +1555,7 @@ public class TreeAcerSaccharum extends AppalachiaTree {
     }
 
     protected void setBlockState(BlockPos pos, IBlockState state) {
+
         this.setBlockAndNotifyAdequately(this.world, pos, state);
     }
 

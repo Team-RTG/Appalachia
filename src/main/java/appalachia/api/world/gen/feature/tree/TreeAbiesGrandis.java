@@ -45,7 +45,9 @@ public class TreeAbiesGrandis extends AppalachiaTree {
         int y = pos.getY();
         int z = pos.getZ();
 
-        ArrayList<BlockPos> groundPos = new ArrayList<BlockPos>(){};
+        ArrayList<BlockPos> groundPos = new ArrayList<BlockPos>() {
+
+        };
         groundPos.add(new BlockPos(x + 11, y, z + 2));
         groundPos.add(new BlockPos(x + 7, y, z + 3));
         groundPos.add(new BlockPos(x + 5, y, z + 4));

@@ -16,19 +16,21 @@ public class ConfigAppalachia {
     // Biome IDs
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    public static int biomeID_AppalachianMountains = 40;
-    public static int biomeID_AutumnForest = 41;
-    public static int biomeID_CoveForest = 42;
-    public static int biomeID_Prairie = 43;
-    public static int biomeID_SmokyMountains = 44;
+    public static int biomeID_AppalachianMountains = biomeIDCounter++;
+    public static int biomeID_BlueRidgeMountains = biomeIDCounter++;
+    public static int biomeID_AutumnBlueRidgeForest = biomeIDCounter++;
+    public static int biomeID_BlueRidgeForest = biomeIDCounter++;
+    public static int biomeID_Prairie = biomeIDCounter++;
+    public static int biomeID_SmokyMountains = biomeIDCounter++;
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // Biome Weights
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     public static int biomeWeight_AppalachianMountains = 20;
-    public static int biomeWeight_AutumnForest = 20;
-    public static int biomeWeight_CoveForest = 20;
+    public static int biomeWeight_BlueRidgeMountains = 20;
+    public static int biomeWeight_AutumnBlueRidgeForest = 20;
+    public static int biomeWeight_BlueRidgeForest = 20;
     public static int biomeWeight_Prairie = 20;
     public static int biomeWeight_SmokyMountains = 20;
 
@@ -56,8 +58,9 @@ public class ConfigAppalachia {
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
             biomeID_AppalachianMountains = config.getInt("Appalachian Mountains Biome ID", "Biome IDs", biomeID_AppalachianMountains, 0, 255, "");
-            biomeID_AutumnForest = config.getInt("Autumn Forest Biome ID", "Biome IDs", biomeID_AutumnForest, 0, 255, "");
-            biomeID_CoveForest = config.getInt("Cove Forest Biome ID", "Biome IDs", biomeID_CoveForest, 0, 255, "");
+            biomeID_BlueRidgeMountains = config.getInt("Blue Ridge Mountains Biome ID", "Biome IDs", biomeID_BlueRidgeMountains, 0, 255, "");
+            biomeID_AutumnBlueRidgeForest = config.getInt("Autumn Blue Ridge Forest Biome ID", "Biome IDs", biomeID_AutumnBlueRidgeForest, 0, 255, "");
+            biomeID_BlueRidgeForest = config.getInt("Blue Ridge Forest Biome ID", "Biome IDs", biomeID_BlueRidgeForest, 0, 255, "");
             biomeID_Prairie = config.getInt("Prairie Biome ID", "Biome IDs", biomeID_Prairie, 0, 255, "");
             biomeID_SmokyMountains = config.getInt("Smoky Mountains Biome ID", "Biome IDs", biomeID_SmokyMountains, 0, 255, "");
 
@@ -66,8 +69,9 @@ public class ConfigAppalachia {
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
             biomeWeight_AppalachianMountains = config.getInt("Appalachian Mountains Biome Weight", "Biome Weights", biomeWeight_AppalachianMountains, 0, Integer.MAX_VALUE, "");
-            biomeWeight_AutumnForest = config.getInt("Autumn Forest Biome Weight", "Biome Weights", biomeWeight_AutumnForest, 0, Integer.MAX_VALUE, "");
-            biomeWeight_CoveForest = config.getInt("Cove Forest Biome Weight", "Biome Weights", biomeWeight_CoveForest, 0, Integer.MAX_VALUE, "");
+            biomeWeight_BlueRidgeMountains = config.getInt("Blue Ridge Mountains Biome Weight", "Biome Weights", biomeWeight_BlueRidgeMountains, 0, Integer.MAX_VALUE, "");
+            biomeWeight_AutumnBlueRidgeForest = config.getInt("Autumn Blue Ridge Forest Biome Weight", "Biome Weights", biomeWeight_AutumnBlueRidgeForest, 0, Integer.MAX_VALUE, "");
+            biomeWeight_BlueRidgeForest = config.getInt("Blue Ridge Forest Biome Weight", "Biome Weights", biomeWeight_BlueRidgeForest, 0, Integer.MAX_VALUE, "");
             biomeWeight_Prairie = config.getInt("Prairie Biome Weight", "Biome Weights", biomeWeight_Prairie, 0, Integer.MAX_VALUE, "");
             biomeWeight_SmokyMountains = config.getInt("Smoky Mountains Biome Weight", "Biome Weights", biomeWeight_SmokyMountains, 0, Integer.MAX_VALUE, "");
 

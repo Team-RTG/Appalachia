@@ -43,19 +43,38 @@ import static appalachia.api.AppalachiaBlocks.slab_autumn_grey;
 
 public class BlockManager {
 
-    public static ArrayList<Block> appalachiaBlocks = new ArrayList<Block>(){};
-    public static ArrayList<Block> appalachiaLogs = new ArrayList<Block>(){};
-    public static ArrayList<Block> appalachiaPlanks = new ArrayList<Block>(){};
-    public static ArrayList<Block> appalachiaSlabs = new ArrayList<Block>(){};
-    public static ArrayList<Block> appalachiaStairs = new ArrayList<Block>(){};
-    public static ArrayList<Block> appalachiaFences = new ArrayList<Block>(){};
-    public static ArrayList<Block> appalachiaFenceGates = new ArrayList<Block>(){};
-    public static ArrayList<Block> appalachiaLeaves = new ArrayList<Block>(){};
-    public static ArrayList<Block> appalachiaLeavesFallen = new ArrayList<Block>(){};
-    public static ArrayList<Block> appalachiaSaplings = new ArrayList<Block>(){};
+    public static ArrayList<Block> appalachiaBlocks = new ArrayList<Block>() {
 
-    public static void registerBlocks()
-    {
+    };
+    public static ArrayList<Block> appalachiaLogs = new ArrayList<Block>() {
+
+    };
+    public static ArrayList<Block> appalachiaPlanks = new ArrayList<Block>() {
+
+    };
+    public static ArrayList<Block> appalachiaSlabs = new ArrayList<Block>() {
+
+    };
+    public static ArrayList<Block> appalachiaStairs = new ArrayList<Block>() {
+
+    };
+    public static ArrayList<Block> appalachiaFences = new ArrayList<Block>() {
+
+    };
+    public static ArrayList<Block> appalachiaFenceGates = new ArrayList<Block>() {
+
+    };
+    public static ArrayList<Block> appalachiaLeaves = new ArrayList<Block>() {
+
+    };
+    public static ArrayList<Block> appalachiaLeavesFallen = new ArrayList<Block>() {
+
+    };
+    public static ArrayList<Block> appalachiaSaplings = new ArrayList<Block>() {
+
+    };
+
+    public static void registerBlocks() {
         //Logs.
         AppalachiaBlocks.log_autumn_brown = new BlockLogAutumnBrown();
         AppalachiaBlocks.log_autumn_charcoal = new BlockLogAutumnCharcoal();
@@ -129,6 +148,7 @@ public class BlockManager {
      */
 
     private static void addLogs() {
+
         appalachiaLogs.add(AppalachiaBlocks.log_autumn_brown);
         appalachiaLogs.add(AppalachiaBlocks.log_autumn_charcoal);
         appalachiaLogs.add(AppalachiaBlocks.log_autumn_coffee);
@@ -136,6 +156,7 @@ public class BlockManager {
     }
 
     private static void addPlanks() {
+
         appalachiaPlanks.add(AppalachiaBlocks.planks_autumn_brown);
         appalachiaPlanks.add(AppalachiaBlocks.planks_autumn_charcoal);
         appalachiaPlanks.add(AppalachiaBlocks.planks_autumn_coffee);
@@ -143,6 +164,7 @@ public class BlockManager {
     }
 
     private static void addSlabs() {
+
         appalachiaSlabs.add(AppalachiaBlocks.slab_autumn_brown);
         appalachiaSlabs.add(AppalachiaBlocks.slab_autumn_charcoal);
         appalachiaSlabs.add(AppalachiaBlocks.slab_autumn_coffee);
@@ -150,6 +172,7 @@ public class BlockManager {
     }
 
     private static void addStairs() {
+
         appalachiaStairs.add(AppalachiaBlocks.stairs_autumn_brown);
         appalachiaStairs.add(AppalachiaBlocks.stairs_autumn_charcoal);
         appalachiaStairs.add(AppalachiaBlocks.stairs_autumn_coffee);
@@ -157,6 +180,7 @@ public class BlockManager {
     }
 
     private static void addFences() {
+
         appalachiaFences.add(AppalachiaBlocks.fence_autumn_brown);
         appalachiaFences.add(AppalachiaBlocks.fence_autumn_charcoal);
         appalachiaFences.add(AppalachiaBlocks.fence_autumn_coffee);
@@ -164,6 +188,7 @@ public class BlockManager {
     }
 
     private static void addFenceGates() {
+
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_autumn_brown);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_autumn_charcoal);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_autumn_coffee);
@@ -171,23 +196,26 @@ public class BlockManager {
     }
 
     private static void addLeaves() {
+
         appalachiaLeaves.add(AppalachiaBlocks.leaves_autumn_orange);
         appalachiaLeaves.add(AppalachiaBlocks.leaves_autumn_red);
         appalachiaLeaves.add(AppalachiaBlocks.leaves_autumn_yellow);
     }
 
     private static void addFallenLeaves() {
+
         appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_autumn_orange_fallen);
         appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_autumn_red_fallen);
         appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_autumn_yellow_fallen);
     }
 
     private static void addSaplings() {
+
         appalachiaSaplings.add(AppalachiaBlocks.sapling_quercus_robur);
     }
 
-    private static void addAppalachiaBlocks()
-    {
+    private static void addAppalachiaBlocks() {
+
         for (int i = 0; i < appalachiaLogs.size(); i++) {
             appalachiaBlocks.add(appalachiaLogs.get(i));
         }
@@ -225,8 +253,8 @@ public class BlockManager {
         }
     }
 
-    private static void registerBlocksAndItemBlocks()
-    {
+    private static void registerBlocksAndItemBlocks() {
+
         for (int i = 0; i < appalachiaLogs.size(); i++) {
             AppalachiaBlockLog block = (AppalachiaBlockLog)appalachiaLogs.get(i);
             block.setRegistryName(block.registryName());
@@ -292,8 +320,8 @@ public class BlockManager {
         }
     }
 
-    private static void registerOres()
-    {
+    private static void registerOres() {
+
         for (int i = 0; i < appalachiaLogs.size(); i++) {
             OreDictionary.registerOre("logWood", new ItemStack(appalachiaLogs.get(i), 1, OreDictionary.WILDCARD_VALUE));
         }
@@ -331,8 +359,8 @@ public class BlockManager {
         }
     }
 
-    private static void setFireInfo()
-    {
+    private static void setFireInfo() {
+
         for (int i = 0; i < appalachiaLogs.size(); i++) {
             Blocks.FIRE.setFireInfo(appalachiaLogs.get(i), 5, 5);
         }
@@ -370,15 +398,15 @@ public class BlockManager {
         }
     }
 
-    public static void addRecipes()
-    {
+    public static void addRecipes() {
+
         addShapedRecipes();
         addShapelessRecipes();
         addSmeltingRecipes();
     }
 
-    private static void addShapedRecipes()
-    {
+    private static void addShapedRecipes() {
+
         for (int i = 0; i < appalachiaPlanks.size(); i++) {
 
             GameRegistry.addRecipe(new ItemStack(appalachiaSlabs.get(i), 6), "###", '#', appalachiaPlanks.get(i));
@@ -388,8 +416,8 @@ public class BlockManager {
         }
     }
 
-    private static void addShapelessRecipes()
-    {
+    private static void addShapelessRecipes() {
+
         for (int i = 0; i < appalachiaLogs.size(); i++) {
             GameRegistry.addShapelessRecipe(new ItemStack(appalachiaPlanks.get(i), 4), new ItemStack(appalachiaLogs.get(i), 1, OreDictionary.WILDCARD_VALUE));
         }
@@ -399,8 +427,8 @@ public class BlockManager {
         }
     }
 
-    private static void addSmeltingRecipes()
-    {
+    private static void addSmeltingRecipes() {
+
         for (int i = 0; i < appalachiaLogs.size(); i++) {
             GameRegistry.addSmelting(appalachiaLogs.get(i), new ItemStack(Items.COAL, 1, 1), 0.15F);
         }
@@ -411,8 +439,8 @@ public class BlockManager {
     }
 
     @SideOnly(Side.CLIENT)
-    public static void registerModels()
-    {
+    public static void registerModels() {
+
         for (int i = 0; i < appalachiaLogs.size(); i++) {
             registerModel(appalachiaLogs.get(i));
             ModelLoader.setCustomStateMapper(appalachiaLogs.get(i), new StateMap.Builder().ignore(AppalachiaBlockLog.VARIANT).build());
@@ -456,20 +484,20 @@ public class BlockManager {
     }
 
     @SideOnly(Side.CLIENT)
-    private static void registerModel(Block block, String modelName)
-    {
+    private static void registerModel(Block block, String modelName) {
+
         ItemManager.registerModel(Item.getItemFromBlock(block), modelName);
     }
 
     @SideOnly(Side.CLIENT)
-    private static void registerModel(Block block)
-    {
+    private static void registerModel(Block block) {
+
         ItemManager.registerModel(Item.getItemFromBlock(block));
     }
 
     @SideOnly(Side.CLIENT)
-    private static void registerModelWithMeta(Block block, String... modelName)
-    {
+    private static void registerModelWithMeta(Block block, String... modelName) {
+
         ItemManager.registerModelWithMeta(Item.getItemFromBlock(block), modelName);
     }
 }

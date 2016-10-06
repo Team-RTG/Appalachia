@@ -21,45 +21,41 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import appalachia.api.AppalachiaBlocks;
 import appalachia.block.planks.AppalachiaBlockPlanks;
 
-public class AppalachiaItemSlab extends ItemBlock
-{
+public class AppalachiaItemSlab extends ItemBlock {
+
     protected IBlockState fullBlock;
 
-    public AppalachiaItemSlab(Block block)
-    {
+    public AppalachiaItemSlab(Block block) {
+
         super(block);
         this.fullBlock = AppalachiaBlocks.planks_autumn_grey.getDefaultState();
     }
 
-    public AppalachiaItemSlab(Block block, IBlockState fullBlock)
-    {
+    public AppalachiaItemSlab(Block block, IBlockState fullBlock) {
+
         this(block);
         this.fullBlock = fullBlock;
     }
 
-    protected IBlockState getFullBlock()
-    {
+    protected IBlockState getFullBlock() {
+
         return this.fullBlock.withProperty(AppalachiaBlockPlanks.DOUBLE, Boolean.valueOf(true));
     }
 
     @Override
-    public EnumActionResult onItemUse(ItemStack stack, EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ)
-    {
-        if (stack.stackSize > 0 && player.canPlayerEdit(pos.offset(side), side, stack))
-        {
+    public EnumActionResult onItemUse(ItemStack stack, EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
+
+        if (stack.stackSize > 0 && player.canPlayerEdit(pos.offset(side), side, stack)) {
             IBlockState state = world.getBlockState(pos);
 
-            if (state.getBlock() == block)
-            {
+            if (state.getBlock() == block) {
                 BlockSlab.EnumBlockHalf half = state.getValue(BlockSlab.HALF);
 
-                if (side == EnumFacing.UP && half == BlockSlab.EnumBlockHalf.BOTTOM || side == EnumFacing.DOWN && half == BlockSlab.EnumBlockHalf.TOP)
-                {
+                if (side == EnumFacing.UP && half == BlockSlab.EnumBlockHalf.BOTTOM || side == EnumFacing.DOWN && half == BlockSlab.EnumBlockHalf.TOP) {
                     IBlockState blockstate = getFullBlock();
                     AxisAlignedBB box = blockstate.getSelectedBoundingBox(world, pos);
 
-                    if (box != Block.NULL_AABB && world.checkNoEntityCollision(box.offset(pos)) && world.setBlockState(pos, blockstate, 11))
-                    {
+                    if (box != Block.NULL_AABB && world.checkNoEntityCollision(box.offset(pos)) && world.setBlockState(pos, blockstate, 11)) {
                         SoundType sound = blockstate.getBlock().getSoundType();
 
                         world.playSound(player, pos, sound.getPlaceSound(), SoundCategory.BLOCKS, (sound.getVolume() + 1.0F) / 2.0F, sound.getPitch() * 0.8F);
@@ -79,17 +75,15 @@ public class AppalachiaItemSlab extends ItemBlock
 
     @SideOnly(Side.CLIENT)
     @Override
-    public boolean canPlaceBlockOnSide(World world, BlockPos pos, EnumFacing side, EntityPlayer player, ItemStack stack)
-    {
+    public boolean canPlaceBlockOnSide(World world, BlockPos pos, EnumFacing side, EntityPlayer player, ItemStack stack) {
+
         BlockPos blockpos = pos;
         IBlockState state = world.getBlockState(pos);
 
-        if (state.getBlock() == block)
-        {
+        if (state.getBlock() == block) {
             boolean flag = state.getValue(BlockSlab.HALF) == BlockSlab.EnumBlockHalf.TOP;
 
-            if (side == EnumFacing.UP && !flag || side == EnumFacing.DOWN && flag)
-            {
+            if (side == EnumFacing.UP && !flag || side == EnumFacing.DOWN && flag) {
                 return true;
             }
         }
@@ -100,15 +94,13 @@ public class AppalachiaItemSlab extends ItemBlock
         return state.getBlock() == block || super.canPlaceBlockOnSide(world, blockpos, side, player, stack);
     }
 
-    protected boolean tryPlace(EntityPlayer player, ItemStack stack, World world, BlockPos pos)
-    {
-        if (world.getBlockState(pos).getBlock() == block)
-        {
+    protected boolean tryPlace(EntityPlayer player, ItemStack stack, World world, BlockPos pos) {
+
+        if (world.getBlockState(pos).getBlock() == block) {
             IBlockState state = getFullBlock();
             AxisAlignedBB box = state.getSelectedBoundingBox(world, pos);
 
-            if (box != Block.NULL_AABB && world.checkNoEntityCollision(box.offset(pos)) && world.setBlockState(pos, state, 11))
-            {
+            if (box != Block.NULL_AABB && world.checkNoEntityCollision(box.offset(pos)) && world.setBlockState(pos, state, 11)) {
                 SoundType sound = state.getBlock().getSoundType();
 
                 world.playSound(player, pos, sound.getPlaceSound(), SoundCategory.BLOCKS, (sound.getVolume() + 1.0F) / 2.0F, sound.getPitch() * 0.8F);

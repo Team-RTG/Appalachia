@@ -24,20 +24,20 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import appalachia.api.world.gen.feature.tree.AppalachiaTree;
 import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
 import appalachia.world.biome.AppalachiaBiome;
-import appalachia.api.world.gen.feature.tree.AppalachiaTree;
 
-public class AppalachiaBlockSapling extends BlockBush implements IGrowable, IAppalachiaBlock
-{
+public class AppalachiaBlockSapling extends BlockBush implements IGrowable, IAppalachiaBlock {
+
     public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
     protected static final AxisAlignedBB SAPLING_AABB = new AxisAlignedBB(0.09999999403953552D, 0.0D, 0.09999999403953552D, 0.8999999761581421D, 0.800000011920929D, 0.8999999761581421D);
 
     private String slug;
 
-    public AppalachiaBlockSapling(String unlocalizedName)
-    {
+    public AppalachiaBlockSapling(String unlocalizedName) {
+
         this.setUnlocalizedName(unlocalizedName);
         this.setSoundType(SoundType.PLANT);
         this.setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
@@ -47,42 +47,39 @@ public class AppalachiaBlockSapling extends BlockBush implements IGrowable, IApp
 
     @Override
     public String registryName() {
+
         return String.join("_", this.slug.split("\\."));
     }
 
-    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
-    {
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+
         return SAPLING_AABB;
     }
 
     @Override
-    public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
-    {
-        if (!worldIn.isRemote)
-        {
+    public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+
+        if (!worldIn.isRemote) {
             super.updateTick(worldIn, pos, state, rand);
 
-            if (worldIn.getLightFromNeighbors(pos.up()) >= 9 && rand.nextInt(7) == 0)
-            {
+            if (worldIn.getLightFromNeighbors(pos.up()) >= 9 && rand.nextInt(7) == 0) {
                 this.grow(worldIn, pos, state, rand);
             }
         }
     }
 
-    public void grow(World worldIn, BlockPos pos, IBlockState state, Random rand)
-    {
-        if (((Integer)state.getValue(STAGE)).intValue() == 0)
-        {
+    public void grow(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+
+        if (((Integer)state.getValue(STAGE)).intValue() == 0) {
             worldIn.setBlockState(pos, state.cycleProperty(STAGE), 4);
         }
-        else
-        {
+        else {
             this.generateTree(worldIn, pos, state, rand);
         }
     }
 
-    public void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand)
-    {
+    public void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+
         if (!TerrainGen.saplingGrowTree(worldIn, rand, pos)) {
             return;
         }
@@ -113,53 +110,53 @@ public class AppalachiaBlockSapling extends BlockBush implements IGrowable, IApp
     }
 
     @Override
-    public int damageDropped(IBlockState state)
-    {
+    public int damageDropped(IBlockState state) {
+
         return 0;
     }
 
     @SideOnly(Side.CLIENT)
     @Override
-    public void getSubBlocks(Item itemIn, CreativeTabs tab, List<ItemStack> list)
-    {
+    public void getSubBlocks(Item itemIn, CreativeTabs tab, List<ItemStack> list) {
+
         list.add(new ItemStack(itemIn));
     }
 
     @Override
-    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
-    {
+    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
+
         return true;
     }
 
     @Override
-    public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state)
-    {
+    public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
+
         return (double)worldIn.rand.nextFloat() < 0.45D;
     }
 
     @Override
-    public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state)
-    {
+    public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state) {
+
         this.grow(worldIn, pos, state, rand);
     }
 
     @Override
-    public IBlockState getStateFromMeta(int meta)
-    {
+    public IBlockState getStateFromMeta(int meta) {
+
         return this.getDefaultState().withProperty(STAGE, Integer.valueOf((meta & 8) >> 3));
     }
 
     @Override
-    public int getMetaFromState(IBlockState state)
-    {
+    public int getMetaFromState(IBlockState state) {
+
         int i = 0;
         i = i | ((Integer)state.getValue(STAGE)).intValue() << 3;
         return i;
     }
 
     @Override
-    protected BlockStateContainer createBlockState()
-    {
-        return new BlockStateContainer(this, new IProperty[] {STAGE});
+    protected BlockStateContainer createBlockState() {
+
+        return new BlockStateContainer(this, new IProperty[]{STAGE});
     }
 }

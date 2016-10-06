@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 
 /**
  * Acer Rubrum (Red Maple)
- *
+ * <p>
  * This tree was designed by Lentebriesje and released as part of the 'Custom Tree Repository' project
  * on Planet Minecraft (http://www.planetminecraft.com/project/native-trees-of-europe-template-repository-1779952/).
  * It was converted into Java from its original schematic using the 'Schematic To Java Converter [For Modders]' program

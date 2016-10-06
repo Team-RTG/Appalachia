@@ -11,16 +11,14 @@ import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import net.minecraftforge.common.BiomeDictionary;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.world.biome.decorator.DecoratorAppalachianMountains;
 
-public class BiomeAppalachianMountains extends AppalachiaBiome implements IAppalachiaBiome {
+public class BiomeBlueRidgeMountains extends AppalachiaBiome implements IAppalachiaBiome {
 
     public static BiomeDictionary.Type[] biomeTypes;
 
-    public BiomeAppalachianMountains(BiomeProperties props) {
+    public BiomeBlueRidgeMountains(BiomeProperties props) {
 
         super(props);
         topBlock = Blocks.GRASS.getDefaultState();
@@ -58,19 +56,19 @@ public class BiomeAppalachianMountains extends AppalachiaBiome implements IAppal
 //        return noise < -0.7D ? 0xD4DB55 : (noise < -0.3D ? 0xBBDD54 : 0xA3E053);
 //    }
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public int getGrassColorAtPos(BlockPos pos) {
-
-        double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
-        return noise < -0.1D ? 13741418 : 13018487;
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public int getFoliageColorAtPos(BlockPos pos) {
-
-        double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
-        return noise < -0.1D ? 13741418 : 13018487;
-    }
+//    @Override
+//    @SideOnly(Side.CLIENT)
+//    public int getGrassColorAtPos(BlockPos pos)
+//    {
+//        double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
+//        return noise < -0.1D ? 13741418 : 13018487;
+//    }
+//
+//    @Override
+//    @SideOnly(Side.CLIENT)
+//    public int getFoliageColorAtPos(BlockPos pos)
+//    {
+//        double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
+//        return noise < -0.1D ? 13741418 : 13018487;
+//    }
 }

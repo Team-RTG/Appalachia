@@ -16,43 +16,39 @@ import com.google.common.collect.Lists;
 
 public class ItemManager {
 
-    public static void registerItems()
-    {
+    public static void registerItems() {
 
     }
 
     @SideOnly(Side.CLIENT)
-    public static void registerModels()
-    {
+    public static void registerModels() {
 
     }
 
     @SideOnly(Side.CLIENT)
-    public static void registerModel(Item item, String modelName)
-    {
+    public static void registerModel(Item item, String modelName) {
+
         ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(ModInfo.MOD_ID + ":" + modelName, "inventory"));
     }
 
     @SideOnly(Side.CLIENT)
-    public static void registerModel(Item item)
-    {
+    public static void registerModel(Item item) {
+
         registerModel(item, item.getRegistryName().getResourcePath());
     }
 
     @SideOnly(Side.CLIENT)
-    public static void registerModelWithMeta(Item item, String... modelName)
-    {
+    public static void registerModelWithMeta(Item item, String... modelName) {
+
         List<ModelResourceLocation> models = Lists.newArrayList();
 
-        for (String model : modelName)
-        {
+        for (String model : modelName) {
             models.add(new ModelResourceLocation(ModInfo.MOD_ID + ":" + model, "inventory"));
         }
 
         ModelBakery.registerItemVariants(item, models.toArray(new ResourceLocation[models.size()]));
 
-        for (int i = 0; i < models.size(); ++i)
-        {
+        for (int i = 0; i < models.size(); ++i) {
             ModelLoader.setCustomModelResourceLocation(item, i, models.get(i));
         }
     }

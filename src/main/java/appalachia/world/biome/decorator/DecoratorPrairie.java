@@ -12,8 +12,7 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 
 import appalachia.api.world.gen.feature.tree.TreeQuercusRobur;
 
-public class DecoratorPrairie extends AppalachiaDecorator
-{
+public class DecoratorPrairie extends AppalachiaDecorator {
 
     public DecoratorPrairie() {
 
@@ -21,8 +20,8 @@ public class DecoratorPrairie extends AppalachiaDecorator
     }
 
     @Override
-    public void decorate(World worldIn, Random random, Biome biome, BlockPos pos)
-    {
+    public void decorate(World worldIn, Random random, Biome biome, BlockPos pos) {
+
         MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(worldIn, random, chunkPos));
         super.decorate(worldIn, random, biome, pos);
         this.generateTrees(biome, worldIn, random);

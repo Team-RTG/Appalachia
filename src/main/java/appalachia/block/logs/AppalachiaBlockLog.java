@@ -12,14 +12,14 @@ import net.minecraft.util.IStringSerializable;
 import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
 
-public class AppalachiaBlockLog extends BlockLog implements IAppalachiaBlock
-{
+public class AppalachiaBlockLog extends BlockLog implements IAppalachiaBlock {
+
     public static final PropertyEnum<EnumType> VARIANT = PropertyEnum.create("variant", EnumType.class);
 
     private String slug;
 
-    public AppalachiaBlockLog(String unlocalizedName)
-    {
+    public AppalachiaBlockLog(String unlocalizedName) {
+
         super();
         this.setUnlocalizedName(unlocalizedName);
         this.setHarvestLevel("axe", 0);
@@ -30,22 +30,22 @@ public class AppalachiaBlockLog extends BlockLog implements IAppalachiaBlock
 
     @Override
     public String registryName() {
+
         return String.join("_", this.slug.split("\\."));
     }
 
     @Override
-    protected BlockStateContainer createBlockState()
-    {
-        return new BlockStateContainer(this, new IProperty[] {VARIANT, LOG_AXIS});
+    protected BlockStateContainer createBlockState() {
+
+        return new BlockStateContainer(this, new IProperty[]{VARIANT, LOG_AXIS});
     }
 
     @Override
-    public IBlockState getStateFromMeta(int meta)
-    {
+    public IBlockState getStateFromMeta(int meta) {
+
         IBlockState state = getDefaultState().withProperty(VARIANT, EnumType.NORMAL);
 
-        switch (meta & 12)
-        {
+        switch (meta & 12) {
             case 0:
                 state = state.withProperty(LOG_AXIS, BlockLog.EnumAxis.Y);
                 break;
@@ -63,14 +63,13 @@ public class AppalachiaBlockLog extends BlockLog implements IAppalachiaBlock
     }
 
     @Override
-    public int getMetaFromState(IBlockState state)
-    {
+    public int getMetaFromState(IBlockState state) {
+
         int meta = 0;
 
         meta = meta | state.getValue(VARIANT).getMetadata();
 
-        switch (state.getValue(LOG_AXIS))
-        {
+        switch (state.getValue(LOG_AXIS)) {
             case X:
                 meta |= 4;
                 break;
@@ -87,19 +86,18 @@ public class AppalachiaBlockLog extends BlockLog implements IAppalachiaBlock
     }
 
     @Override
-    public MapColor getMapColor(IBlockState state)
-    {
+    public MapColor getMapColor(IBlockState state) {
+
         return BlockPlanks.EnumType.BIRCH.getMapColor();
     }
 
     @Override
-    public int getLightValue(IBlockState state)
-    {
+    public int getLightValue(IBlockState state) {
+
         return super.getLightValue(state);
     }
 
-    public enum EnumType implements IStringSerializable
-    {
+    public enum EnumType implements IStringSerializable {
         NORMAL(0, "normal");
 
         private static final EnumType[] META_LOOKUP = new EnumType[values().length];
@@ -107,41 +105,38 @@ public class AppalachiaBlockLog extends BlockLog implements IAppalachiaBlock
         private final int meta;
         private final String name;
 
-        static
-        {
-            for (EnumType type : values())
-            {
+        static {
+            for (EnumType type : values()) {
                 META_LOOKUP[type.getMetadata()] = type;
             }
         }
 
-        private EnumType(int meta, String name)
-        {
+        private EnumType(int meta, String name) {
+
             this.meta = meta;
             this.name = name;
         }
 
-        public int getMetadata()
-        {
+        public int getMetadata() {
+
             return meta;
         }
 
         @Override
-        public String getName()
-        {
+        public String getName() {
+
             return name;
         }
 
         @Override
-        public String toString()
-        {
+        public String toString() {
+
             return name;
         }
 
-        public static EnumType byMetadata(int meta)
-        {
-            if (meta < 0 || meta >= META_LOOKUP.length)
-            {
+        public static EnumType byMetadata(int meta) {
+
+            if (meta < 0 || meta >= META_LOOKUP.length) {
                 meta = 0;
             }
 

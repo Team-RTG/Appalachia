@@ -11,12 +11,12 @@ import net.minecraft.item.ItemStack;
 import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
 
-public class AppalachiaBlockSlab extends BlockSlab implements IAppalachiaBlock
-{
+public class AppalachiaBlockSlab extends BlockSlab implements IAppalachiaBlock {
+
     private String slug;
 
-    public AppalachiaBlockSlab(String unlocalizedName)
-    {
+    public AppalachiaBlockSlab(String unlocalizedName) {
+
         super(Material.WOOD);
         this.setUnlocalizedName(unlocalizedName);
         this.setHardness(1.75F);
@@ -31,48 +31,49 @@ public class AppalachiaBlockSlab extends BlockSlab implements IAppalachiaBlock
 
     @Override
     public String registryName() {
+
         return String.join("_", this.slug.split("\\."));
     }
 
     @Override
-    protected BlockStateContainer createBlockState()
-    {
-        return new BlockStateContainer(this, new IProperty[] {HALF});
+    protected BlockStateContainer createBlockState() {
+
+        return new BlockStateContainer(this, new IProperty[]{HALF});
     }
 
     @Override
-    public IBlockState getStateFromMeta(int meta)
-    {
+    public IBlockState getStateFromMeta(int meta) {
+
         return getDefaultState().withProperty(HALF, meta == 0 ? EnumBlockHalf.BOTTOM : EnumBlockHalf.TOP);
     }
 
     @Override
-    public int getMetaFromState(IBlockState state)
-    {
+    public int getMetaFromState(IBlockState state) {
+
         return state.getValue(HALF) == EnumBlockHalf.TOP ? 1 : 0;
     }
 
     @Override
-    public String getUnlocalizedName(int meta)
-    {
+    public String getUnlocalizedName(int meta) {
+
         return getUnlocalizedName();
     }
 
     @Override
-    public boolean isDouble()
-    {
+    public boolean isDouble() {
+
         return false;
     }
 
     @Override
-    public IProperty<?> getVariantProperty()
-    {
+    public IProperty<?> getVariantProperty() {
+
         return null;
     }
 
     @Override
-    public Comparable<?> getTypeForItem(ItemStack stack)
-    {
+    public Comparable<?> getTypeForItem(ItemStack stack) {
+
         return null;
     }
 }

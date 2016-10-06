@@ -8,12 +8,12 @@ import net.minecraft.block.material.Material;
 import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
 
-public class AppalachiaBlockFence extends BlockFence implements IAppalachiaBlock
-{
+public class AppalachiaBlockFence extends BlockFence implements IAppalachiaBlock {
+
     private String slug;
 
-    public AppalachiaBlockFence(String unlocalizedName)
-    {
+    public AppalachiaBlockFence(String unlocalizedName) {
+
         super(Material.WOOD, BlockPlanks.EnumType.BIRCH.getMapColor());
         this.setUnlocalizedName(unlocalizedName);
         this.setHardness(1.75F);
@@ -26,6 +26,7 @@ public class AppalachiaBlockFence extends BlockFence implements IAppalachiaBlock
 
     @Override
     public String registryName() {
+
         return String.join("_", this.slug.split("\\."));
     }
 }

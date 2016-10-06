@@ -10,21 +10,20 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
-import appalachia.world.biome.BiomeAutumnForest;
 import appalachia.api.world.gen.feature.tree.AppalachiaTree;
+import appalachia.world.biome.BiomeAutumnBlueRidgeForest;
 
-public class DecoratorAutumnForest extends AppalachiaDecorator
-{
+public class DecoratorAutumnBlueRidgeForest extends AppalachiaDecorator {
 
 
-    public DecoratorAutumnForest() {
+    public DecoratorAutumnBlueRidgeForest() {
 
         super();
     }
 
     @Override
-    public void decorate(World worldIn, Random random, Biome biome, BlockPos pos)
-    {
+    public void decorate(World worldIn, Random random, Biome biome, BlockPos pos) {
+
         MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(worldIn, random, pos));
         super.decorate(worldIn, random, biome, pos);
         this.generateTrees(biome, worldIn, random);
@@ -37,9 +36,9 @@ public class DecoratorAutumnForest extends AppalachiaDecorator
 
         if (TerrainGen.decorate(worldIn, random, chunkPos, DecorateBiomeEvent.Decorate.EventType.TREE)) {
 
-            if (biomeIn instanceof BiomeAutumnForest) {
+            if (biomeIn instanceof BiomeAutumnBlueRidgeForest) {
 
-                BiomeAutumnForest biome = (BiomeAutumnForest)biomeIn;
+                BiomeAutumnBlueRidgeForest biome = (BiomeAutumnBlueRidgeForest)biomeIn;
 
                 if (biome.appalachiaTrees.size() > 0) {
 

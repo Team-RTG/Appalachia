@@ -20,8 +20,8 @@ public class BiomeSmokyMountains extends AppalachiaBiome implements IAppalachiaB
 
     public static BiomeDictionary.Type[] biomeTypes;
 
-    public BiomeSmokyMountains(BiomeProperties props)
-    {
+    public BiomeSmokyMountains(BiomeProperties props) {
+
         super(props);
         topBlock = Blocks.GRASS.getDefaultState();
         fillerBlock = Blocks.DIRT.getDefaultState();
@@ -29,23 +29,24 @@ public class BiomeSmokyMountains extends AppalachiaBiome implements IAppalachiaB
         spawnableCreatureList.add(new SpawnListEntry(EntitySheep.class, 60, 1, 5));
         spawnableCreatureList.add(new SpawnListEntry(EntityRabbit.class, 60, 1, 3));
 
-        biomeTypes = new BiomeDictionary.Type[] { BiomeDictionary.Type.FOREST };
+        biomeTypes = new BiomeDictionary.Type[]{BiomeDictionary.Type.MOUNTAIN};
     }
 
     @Override
     public BiomeDecorator createBiomeDecorator() {
+
         return new DecoratorSmokyMountains();
     }
 
     @Override
-    public void decorate(World world, Random rand, BlockPos pos)
-    {
+    public void decorate(World world, Random rand, BlockPos pos) {
+
         super.decorate(world, rand, pos);
     }
 
     @Override
-    public WorldGenAbstractTree genBigTreeChance(Random rand)
-    {
+    public WorldGenAbstractTree genBigTreeChance(Random rand) {
+
         return rand.nextInt(3) == 0 ? TREE_FEATURE : rand.nextInt(5) == 0 ? BIG_TREE_FEATURE : TREE_FEATURE;
     }
 
@@ -59,16 +60,16 @@ public class BiomeSmokyMountains extends AppalachiaBiome implements IAppalachiaB
 
     @Override
     @SideOnly(Side.CLIENT)
-    public int getGrassColorAtPos(BlockPos pos)
-    {
+    public int getGrassColorAtPos(BlockPos pos) {
+
         double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
         return noise < -0.1D ? 13741418 : 13018487;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public int getFoliageColorAtPos(BlockPos pos)
-    {
+    public int getFoliageColorAtPos(BlockPos pos) {
+
         double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
         return noise < -0.1D ? 13741418 : 13018487;
     }

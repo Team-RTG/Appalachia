@@ -7,12 +7,12 @@ import net.minecraft.block.SoundType;
 import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
 
-public class AppalachiaBlockFenceGate extends BlockFenceGate implements IAppalachiaBlock
-{
+public class AppalachiaBlockFenceGate extends BlockFenceGate implements IAppalachiaBlock {
+
     private String slug;
 
-    public AppalachiaBlockFenceGate(String unlocalizedName)
-    {
+    public AppalachiaBlockFenceGate(String unlocalizedName) {
+
         super(BlockPlanks.EnumType.BIRCH);
         this.setUnlocalizedName(unlocalizedName);
         this.setHardness(1.75F);
@@ -25,6 +25,7 @@ public class AppalachiaBlockFenceGate extends BlockFenceGate implements IAppalac
 
     @Override
     public String registryName() {
+
         return String.join("_", this.slug.split("\\."));
     }
 }

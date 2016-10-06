@@ -16,26 +16,32 @@ public class BiomeUtils {
     }
 
     public static Biome[] getRegisteredBiomes() {
+
         return registeredBiomes;
     }
 
     public static int biomeIds() {
+
         return 256;
     }
 
     public static ResourceLocation getLocForBiome(Biome biome) {
+
         return REGISTRY.getNameForObject(biome);
     }
 
     public static Biome getBiomeForLoc(ResourceLocation location) {
+
         return REGISTRY.getObject(location);
     }
 
     public static int getId(Biome biome) {
+
         return Biome.getIdForBiome(biome);
     }
 
     public static String getName(Biome biome) {
+
         return biome.getBiomeName();
     }
 }

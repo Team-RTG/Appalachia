@@ -41,38 +41,55 @@ public class AppalachiaBiomeManager {
         Biome.EXPLORATION_BIOMES_LIST.add(appalachianMountains);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        // Autumn Forest
+        // Blue Ridge Forest
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-        autumnForest = new BiomeAutumnForest(AppalachiaBiomeProps.AUTUMN_FOREST.getProps());
+        blueRidgeForest = new BiomeBlueRidgeForest(AppalachiaBiomeProps.BLUE_RIDGE_FOREST.getProps());
         registerBiomeWithTypes(
-            autumnForest,
-            "autumnforest",
-            ConfigAppalachia.biomeWeight_AutumnForest,
+            blueRidgeForest,
+            "blueridgeforest",
+            ConfigAppalachia.biomeWeight_BlueRidgeForest,
             BiomeManager.BiomeType.COOL,
-            BiomeAutumnForest.biomeTypes
+            BiomeBlueRidgeForest.biomeTypes
         );
-        BiomeManager.addSpawnBiome(autumnForest);
-        BiomeManager.addVillageBiome(autumnForest, true);
-        BiomeManager.addStrongholdBiome(autumnForest);
-        Biome.EXPLORATION_BIOMES_LIST.add(autumnForest);
+        BiomeManager.addSpawnBiome(blueRidgeForest);
+        BiomeManager.addVillageBiome(blueRidgeForest, true);
+        BiomeManager.addStrongholdBiome(blueRidgeForest);
+        Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeForest);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        // Cove Forest
+        // Blue Ridge Mountains
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-        coveForest = new BiomeCoveForest(AppalachiaBiomeProps.COVE_FOREST.getProps());
+        blueRidgeMountains = new BiomeBlueRidgeMountains(AppalachiaBiomeProps.BLUE_RIDGE_MOUNTAINS.getProps());
         registerBiomeWithTypes(
-            coveForest,
-            "coveforest",
-            ConfigAppalachia.biomeWeight_CoveForest,
+            blueRidgeMountains,
+            "blueridgemountains",
+            ConfigAppalachia.biomeWeight_BlueRidgeMountains,
             BiomeManager.BiomeType.COOL,
-            BiomeCoveForest.biomeTypes
+            BiomeBlueRidgeMountains.biomeTypes
         );
-        BiomeManager.addSpawnBiome(coveForest);
-        BiomeManager.addVillageBiome(coveForest, true);
-        BiomeManager.addStrongholdBiome(coveForest);
-        Biome.EXPLORATION_BIOMES_LIST.add(coveForest);
+        BiomeManager.addSpawnBiome(blueRidgeMountains);
+        BiomeManager.addVillageBiome(blueRidgeMountains, true);
+        BiomeManager.addStrongholdBiome(blueRidgeMountains);
+        Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeMountains);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Autumn Blue Ridge Forest
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        autumnBlueRidgeForest = new BiomeAutumnBlueRidgeForest(AppalachiaBiomeProps.AUTUMN_BLUE_RIDGE_FOREST.getProps());
+        registerBiomeWithTypes(
+            autumnBlueRidgeForest,
+            "autumnblueridgeforest",
+            ConfigAppalachia.biomeWeight_AutumnBlueRidgeForest,
+            BiomeManager.BiomeType.COOL,
+            BiomeAutumnBlueRidgeForest.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(autumnBlueRidgeForest);
+        BiomeManager.addVillageBiome(autumnBlueRidgeForest, true);
+        BiomeManager.addStrongholdBiome(autumnBlueRidgeForest);
+        Biome.EXPLORATION_BIOMES_LIST.add(autumnBlueRidgeForest);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Prairie
@@ -109,20 +126,18 @@ public class AppalachiaBiomeManager {
         Biome.EXPLORATION_BIOMES_LIST.add(smokyMountains);
     }
 
-    public static void doBiomeCheck()
-    {
+    public static void doBiomeCheck() {
+
         Biome[] b = BiomeUtils.getRegisteredBiomes();
 
-        for (int i = 0; i < 256; i++)
-        {
-            if (b[i] != null)
-            {
+        for (int i = 0; i < 256; i++) {
+            if (b[i] != null) {
                 Biome biome = b[i];
                 int biomeId = BiomeUtils.getId(b[i]);
                 String biomeName = BiomeUtils.getName(b[i]);
                 String biomeClass = b[i].getBiomeClass().getName();
 
-                Logger.debug("Biome (" + biomeId + ") " + biomeName + " from " + biomeClass);
+                Logger.info("Biome (" + biomeId + ") " + biomeName + " from " + biomeClass);
 
                 switch (biomeId) {
 

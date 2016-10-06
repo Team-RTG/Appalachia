@@ -64,8 +64,7 @@ public class EventManager {
         @SubscribeEvent
         public void onBiomeDecorate(DecorateBiomeEvent.Decorate event) {
 
-            switch (event.getType())
-            {
+            switch (event.getType()) {
                 // Prevent all flowing liquids (waterfalls/lavafalls) from generating, no exceptions.
                 case LAKE_WATER:
                 case LAKE_LAVA:
@@ -127,6 +126,7 @@ public class EventManager {
     }
 
     private static void logEventMessage(String message) {
+
         Logger.debug("Appalachia Event System: " + message);
     }
 }

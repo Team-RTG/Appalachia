@@ -69,14 +69,12 @@ public class AppalachiaTree extends WorldGenAbstractTree {
     }
 
     @Override
-    protected void setBlockAndNotifyAdequately(World worldIn, BlockPos pos, IBlockState state)
-    {
-        if (this.generateFromSapling)
-        {
+    protected void setBlockAndNotifyAdequately(World worldIn, BlockPos pos, IBlockState state) {
+
+        if (this.generateFromSapling) {
             worldIn.setBlockState(pos, state, 3);
         }
-        else
-        {
+        else {
             worldIn.setBlockState(pos, state, 2);
         }
     }
@@ -96,17 +94,16 @@ public class AppalachiaTree extends WorldGenAbstractTree {
         return false;
     }
 
-    protected boolean isValidGroundBlock(World world, Random rand, BlockPos pos)
-    {
+    protected boolean isValidGroundBlock(World world, Random rand, BlockPos pos) {
+
         return this.isValidGroundBlock(world, rand, pos, 1);
     }
 
-    protected void setFallenLeaves(World world, Random random, BlockPos pos, int treeHeight)
-    {
+    protected void setFallenLeaves(World world, Random random, BlockPos pos, int treeHeight) {
+
         int leavesHeight = 12;
 
-        if (treeHeight - leavesHeight >= leavesHeight - 3)
-        {
+        if (treeHeight - leavesHeight >= leavesHeight - 3) {
             leavesHeight += 2;
         }
 
@@ -114,38 +111,31 @@ public class AppalachiaTree extends WorldGenAbstractTree {
         int leaveRange = leavesHeight / 3 - 1;
         int y = pos.getY() + treeHeight - leavesHeight - 3;
 
-        for (int x = pos.getX() - leaveRange; x <= pos.getX() + leaveRange; ++x)
-        {
-            for (int z = pos.getZ() - leaveRange; z <= pos.getZ() + leaveRange; ++z)
-            {
+        for (int x = pos.getX() - leaveRange; x <= pos.getX() + leaveRange; ++x) {
+            for (int z = pos.getZ() - leaveRange; z <= pos.getZ() + leaveRange; ++z) {
                 blockpos.setPos(x, y, z);
 
-                if (!world.isAirBlock(blockpos))
-                {
+                if (!world.isAirBlock(blockpos)) {
                     continue;
                 }
 
                 blockpos.move(EnumFacing.DOWN);
 
-                while (blockpos.getY() > 0 && world.isAirBlock(blockpos))
-                {
+                while (blockpos.getY() > 0 && world.isAirBlock(blockpos)) {
                     blockpos.move(EnumFacing.DOWN);
                 }
 
                 blockpos.move(EnumFacing.UP);
 
-                if (this.fallenLeavesBlock.getBlock().canPlaceBlockAt(world, blockpos) && random.nextInt(3) == 0)
-                {
+                if (this.fallenLeavesBlock.getBlock().canPlaceBlockAt(world, blockpos) && random.nextInt(3) == 0) {
                     setBlockAndNotifyAdequately(world, blockpos, this.fallenLeavesBlock);
                 }
-                else
-                {
+                else {
                     blockpos.move(EnumFacing.DOWN);
 
                     IBlockState state = world.getBlockState(blockpos);
 
-                    if (state.getBlock() instanceof IAppalachiaBlockLeavesFallen)
-                    {
+                    if (state.getBlock() instanceof IAppalachiaBlockLeavesFallen) {
                         int layers = state.getValue(IAppalachiaBlockLeavesFallen.LAYERS).intValue();
 
                         setBlockAndNotifyAdequately(world, blockpos, this.fallenLeavesBlock.withProperty(IAppalachiaBlockLeavesFallen.LAYERS, (layers & 7) + 1));

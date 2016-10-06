@@ -13,14 +13,14 @@ import net.minecraft.block.state.IBlockState;
 import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
 
-public class AppalachiaBlockPlanks extends Block implements IAppalachiaBlock
-{
+public class AppalachiaBlockPlanks extends Block implements IAppalachiaBlock {
+
     public static final PropertyBool DOUBLE = PropertyBool.create("double");
 
     private String slug;
 
-    public AppalachiaBlockPlanks(String unlocalizedName)
-    {
+    public AppalachiaBlockPlanks(String unlocalizedName) {
+
         super(Material.WOOD);
         this.setUnlocalizedName(unlocalizedName);
         this.setHardness(1.75F);
@@ -34,30 +34,31 @@ public class AppalachiaBlockPlanks extends Block implements IAppalachiaBlock
 
     @Override
     public String registryName() {
+
         return String.join("_", this.slug.split("\\."));
     }
 
     @Override
-    protected BlockStateContainer createBlockState()
-    {
-        return new BlockStateContainer(this, new IProperty[] {DOUBLE});
+    protected BlockStateContainer createBlockState() {
+
+        return new BlockStateContainer(this, new IProperty[]{DOUBLE});
     }
 
     @Override
-    public IBlockState getStateFromMeta(int meta)
-    {
+    public IBlockState getStateFromMeta(int meta) {
+
         return getDefaultState().withProperty(DOUBLE, Boolean.valueOf(meta == 1));
     }
 
     @Override
-    public int getMetaFromState(IBlockState state)
-    {
+    public int getMetaFromState(IBlockState state) {
+
         return state.getValue(DOUBLE).booleanValue() ? 1 : 0;
     }
 
     @Override
-    public int quantityDropped(IBlockState state, int fortune, Random random)
-    {
+    public int quantityDropped(IBlockState state, int fortune, Random random) {
+
         return state.getValue(DOUBLE).booleanValue() ? 2 : 1;
     }
 }

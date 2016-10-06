@@ -15,8 +15,8 @@ public class AppalachiaBiome extends Biome implements IAppalachiaBiome {
 
     public ArrayList<AppalachiaTree> appalachiaTrees;
 
-    public AppalachiaBiome(BiomeProperties props)
-    {
+    public AppalachiaBiome(BiomeProperties props) {
+
         super(props);
 
         topBlock = Blocks.GRASS.getDefaultState();
@@ -34,14 +34,14 @@ public class AppalachiaBiome extends Biome implements IAppalachiaBiome {
     }
 
     @Override
-    public void decorate(World world, Random rand, BlockPos pos)
-    {
+    public void decorate(World world, Random rand, BlockPos pos) {
+
         super.decorate(world, rand, pos);
     }
 
     @Override
-    public WorldGenAbstractTree genBigTreeChance(Random rand)
-    {
+    public WorldGenAbstractTree genBigTreeChance(Random rand) {
+
         return rand.nextInt(3) == 0 ? TREE_FEATURE : rand.nextInt(5) == 0 ? BIG_TREE_FEATURE : TREE_FEATURE;
     }
 
@@ -78,8 +78,9 @@ public class AppalachiaBiome extends Biome implements IAppalachiaBiome {
     public static enum AppalachiaBiomeProps {
 
         APPALACHIAN_MOUNTAINS("Appalachian Mountains", 1.0F, 0.5F, 0.2F, 0.3F, 2368150, false),
-        AUTUMN_FOREST("Autumn Forest", 0.2F, 0.2F, 0.3F, 0.8F, 4540477, false),
-        COVE_FOREST("Cove Forest", 0.2F, 0.2F, 0.25F, 0.8F, 2368150, false),
+        BLUE_RIDGE_MOUNTAINS("Blue Ridge Mountains", 1.0F, 0.5F, 0.2F, 0.3F, 2368150, false),
+        AUTUMN_BLUE_RIDGE_FOREST("Autumn Blue Ridge Forest", 0.2F, 0.2F, 0.3F, 0.8F, 4540477, false),
+        BLUE_RIDGE_FOREST("Blue Ridge Forest", 0.2F, 0.2F, 0.25F, 0.8F, 2368150, false),
         PRAIRIE("Prairie", 0.125F, 0.05F, 0.8F, 0.4F, 2368150, false),
         SMOKY_MOUNTAINS("Smoky Mountains", 1.0F, 0.5F, 0.2F, 0.3F, 2368150, false);
 
@@ -115,34 +116,42 @@ public class AppalachiaBiome extends Biome implements IAppalachiaBiome {
         }
 
         public String getBiomeName() {
+
             return this.biomeName;
         }
 
         public float getBaseHeight() {
+
             return this.baseHeight;
         }
 
         public float getHeightVariation() {
+
             return this.heightVariation;
         }
 
         public float getTemperature() {
+
             return this.temperature;
         }
 
         public float getRainfall() {
+
             return this.rainfall;
         }
 
         public int getWaterColour() {
+
             return this.waterColour;
         }
 
         public boolean getSnowEnabled() {
+
             return this.snowEnabled;
         }
 
         public Biome.BiomeProperties getProps() {
+
             return this.props;
         }
     }

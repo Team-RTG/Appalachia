@@ -8,21 +8,22 @@ import net.minecraft.item.Item;
 import appalachia.api.AppalachiaBlocks;
 import appalachia.block.IAppalachiaBlock;
 
-public class BlockPlanksAutumnGrey extends AppalachiaBlockPlanks implements IAppalachiaBlock
-{
-	public BlockPlanksAutumnGrey()
-	{
-		super("planks.autumn.grey");
-	}
+public class BlockPlanksAutumnGrey extends AppalachiaBlockPlanks implements IAppalachiaBlock {
 
-	@Override
-	public Item getItemDropped(IBlockState state, Random rand, int fortune)
-	{
-		return Item.getItemFromBlock(state.getValue(DOUBLE).booleanValue() ? AppalachiaBlocks.slab_autumn_grey : this);
-	}
+    public BlockPlanksAutumnGrey() {
 
-	@Override
-	public String registryName() {
-		return super.registryName();
-	}
+        super("planks.autumn.grey");
+    }
+
+    @Override
+    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+
+        return Item.getItemFromBlock(state.getValue(DOUBLE).booleanValue() ? AppalachiaBlocks.slab_autumn_grey : this);
+    }
+
+    @Override
+    public String registryName() {
+
+        return super.registryName();
+    }
 }

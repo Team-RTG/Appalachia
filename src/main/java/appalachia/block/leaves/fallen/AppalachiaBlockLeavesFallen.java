@@ -28,8 +28,7 @@ import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
 import com.google.common.collect.Lists;
 
-public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlock, IShearable, IAppalachiaBlockLeavesFallen
-{
+public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlock, IShearable, IAppalachiaBlockLeavesFallen {
     //public static final PropertyInteger LAYERS = PropertyInteger.create("layers", 1, 8);
 
     public static final AxisAlignedBB[] FALLEN_AABB = new AxisAlignedBB[]
@@ -47,8 +46,8 @@ public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlo
 
     private String slug;
 
-    public AppalachiaBlockLeavesFallen(String unlocalizedName)
-    {
+    public AppalachiaBlockLeavesFallen(String unlocalizedName) {
+
         super(Material.LEAVES);
         this.setUnlocalizedName(unlocalizedName);
         this.setHardness(0.1F);
@@ -61,20 +60,20 @@ public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlo
 
     @Override
     public String registryName() {
+
         return String.join("_", this.slug.split("\\."));
     }
 
     @Override
-    protected BlockStateContainer createBlockState()
-    {
-        return new BlockStateContainer(this, new IProperty[] {LAYERS});
+    protected BlockStateContainer createBlockState() {
+
+        return new BlockStateContainer(this, new IProperty[]{LAYERS});
     }
 
     @Override
-    public IBlockState getStateFromMeta(int meta)
-    {
-        if (meta >= 8)
-        {
+    public IBlockState getStateFromMeta(int meta) {
+
+        if (meta >= 8) {
             return getDefaultState().withProperty(LAYERS, Integer.valueOf((meta - 8 & 7) + 1));
         }
 
@@ -82,62 +81,60 @@ public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlo
     }
 
     @Override
-    public int getMetaFromState(IBlockState state)
-    {
+    public int getMetaFromState(IBlockState state) {
+
         int meta = state.getValue(LAYERS).intValue() - 1;
 
         return meta;
     }
 
     @Override
-    public void harvestBlock(World world, EntityPlayer player, BlockPos pos, IBlockState state, TileEntity tile, ItemStack stack)
-    {
+    public void harvestBlock(World world, EntityPlayer player, BlockPos pos, IBlockState state, TileEntity tile, ItemStack stack) {
+
         super.harvestBlock(world, player, pos, state, tile, stack);
 
         world.setBlockToAir(pos);
     }
 
     @Override
-    public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos)
-    {
+    public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos) {
+
         return item != null;
     }
 
     @Override
-    public List<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune)
-    {
+    public List<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
+
         return Lists.newArrayList(new ItemStack(this, world.getBlockState(pos).getValue(LAYERS).intValue()));
     }
 
     @SideOnly(Side.CLIENT)
     @Override
-    public BlockRenderLayer getBlockLayer()
-    {
+    public BlockRenderLayer getBlockLayer() {
+
         return BlockRenderLayer.CUTOUT_MIPPED;
     }
 
     @Override
-    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
-    {
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+
         return FALLEN_AABB[state.getValue(LAYERS).intValue()];
     }
 
     @Override
-    public boolean isFullyOpaque(IBlockState state)
-    {
+    public boolean isFullyOpaque(IBlockState state) {
+
         return state.getValue(LAYERS).intValue() == 7;
     }
 
     @SideOnly(Side.CLIENT)
     @Override
-    public boolean shouldSideBeRendered(IBlockState state, IBlockAccess source, BlockPos pos, EnumFacing side)
-    {
-        if (side == EnumFacing.UP)
-        {
+    public boolean shouldSideBeRendered(IBlockState state, IBlockAccess source, BlockPos pos, EnumFacing side) {
+
+        if (side == EnumFacing.UP) {
             return true;
         }
-        else
-        {
+        else {
             IBlockState blockState = source.getBlockState(pos.offset(side));
 
             return blockState.getBlock() == this && blockState.getValue(LAYERS).intValue() >= state.getValue(LAYERS).intValue() || super.shouldSideBeRendered(state, source, pos, side);
@@ -145,42 +142,39 @@ public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlo
     }
 
     @Override
-    public boolean isOpaqueCube(IBlockState state)
-    {
+    public boolean isOpaqueCube(IBlockState state) {
+
         return false;
     }
 
     @Override
-    public boolean isFullCube(IBlockState state)
-    {
+    public boolean isFullCube(IBlockState state) {
+
         return false;
     }
 
     @Override
-    public boolean isVisuallyOpaque()
-    {
+    public boolean isVisuallyOpaque() {
+
         return false;
     }
 
     @Override
-    public float getBlockHardness(IBlockState state, World world, BlockPos pos)
-    {
+    public float getBlockHardness(IBlockState state, World world, BlockPos pos) {
+
         float hardness = super.getBlockHardness(state, world, pos);
 
-        if (!state.getProperties().containsKey(LAYERS))
-        {
+        if (!state.getProperties().containsKey(LAYERS)) {
             return hardness;
         }
 
         int layers = state.getValue(LAYERS).intValue();
 
-        if (layers >= 6)
-        {
+        if (layers >= 6) {
             return hardness * 2.0F;
         }
 
-        if (layers >= 3)
-        {
+        if (layers >= 3) {
             return hardness * 1.5F;
         }
 
@@ -188,26 +182,26 @@ public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlo
     }
 
     @Override
-    public boolean isReplaceable(IBlockAccess source, BlockPos pos)
-    {
+    public boolean isReplaceable(IBlockAccess source, BlockPos pos) {
+
         return source.getBlockState(pos).getValue(LAYERS).intValue() == 1;
     }
 
     @Override
-    public boolean isPassable(IBlockAccess world, BlockPos pos)
-    {
+    public boolean isPassable(IBlockAccess world, BlockPos pos) {
+
         return world.getBlockState(pos).getValue(LAYERS).intValue() < 5;
     }
 
     @Override
-    public int quantityDropped(Random random)
-    {
+    public int quantityDropped(Random random) {
+
         return 0;
     }
 
     @Override
-    public boolean canPlaceBlockAt(World world, BlockPos pos)
-    {
+    public boolean canPlaceBlockAt(World world, BlockPos pos) {
+
         IBlockState state = world.getBlockState(pos.down());
         Block block = state.getBlock();
 
@@ -215,15 +209,14 @@ public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlo
     }
 
     @Override
-    public void neighborChanged(IBlockState state, World world, BlockPos pos, Block block)
-    {
+    public void neighborChanged(IBlockState state, World world, BlockPos pos, Block block) {
+
         checkAndDropBlock(world, pos, state);
     }
 
-    private boolean checkAndDropBlock(World world, BlockPos pos, IBlockState state)
-    {
-        if (!canPlaceBlockAt(world, pos))
-        {
+    private boolean checkAndDropBlock(World world, BlockPos pos, IBlockState state) {
+
+        if (!canPlaceBlockAt(world, pos)) {
             world.setBlockToAir(pos);
 
             return false;
