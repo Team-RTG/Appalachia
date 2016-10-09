@@ -144,4 +144,8 @@ public class AppalachiaTree extends WorldGenAbstractTree {
             }
         }
     }
+
+    protected int getSizeFromMinMax(Random rand, int min, int max) {
+        return min + rand.nextInt(max - min + 1);
+    }
 }

@@ -35,9 +35,8 @@ public class TreeAbiesGrandis extends AppalachiaTree {
     @Override
     public boolean generate(World world, Random rand, BlockPos pos) {
 
-        if (rand.nextInt(2) != 0) {
-            return false;
-        }
+        this.crownSize = this.getSizeFromMinMax(rand, this.minCrownSize, this.maxCrownSize);
+        this.trunkSize = this.getSizeFromMinMax(rand, this.minTrunkSize, this.maxTrunkSize);
 
         this.world = world;
         this.rand = rand;
