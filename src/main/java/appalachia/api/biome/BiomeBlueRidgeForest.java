@@ -1,4 +1,4 @@
-package appalachia.world.biome;
+package appalachia.api.biome;
 
 import java.util.Random;
 
@@ -11,14 +11,16 @@ import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
-import appalachia.world.biome.decorator.DecoratorPrairie;
+import appalachia.api.biome.decorator.DecoratorBlueRidgeForest;
 
-public class BiomePrairie extends AppalachiaBiome implements IAppalachiaBiome {
+public class BiomeBlueRidgeForest extends AppalachiaBiome implements IAppalachiaBiome {
 
     public static BiomeDictionary.Type[] biomeTypes;
 
-    public BiomePrairie(BiomeProperties props) {
+    public BiomeBlueRidgeForest(BiomeProperties props) {
 
         super(props);
         topBlock = Blocks.GRASS.getDefaultState();
@@ -27,13 +29,13 @@ public class BiomePrairie extends AppalachiaBiome implements IAppalachiaBiome {
         spawnableCreatureList.add(new SpawnListEntry(EntitySheep.class, 60, 1, 5));
         spawnableCreatureList.add(new SpawnListEntry(EntityRabbit.class, 60, 1, 3));
 
-        biomeTypes = new BiomeDictionary.Type[]{BiomeDictionary.Type.PLAINS};
+        biomeTypes = new BiomeDictionary.Type[]{BiomeDictionary.Type.FOREST};
     }
 
     @Override
     public BiomeDecorator createBiomeDecorator() {
 
-        return new DecoratorPrairie();
+        return new DecoratorBlueRidgeForest();
     }
 
     @Override
@@ -56,19 +58,19 @@ public class BiomePrairie extends AppalachiaBiome implements IAppalachiaBiome {
 //        return noise < -0.7D ? 0xD4DB55 : (noise < -0.3D ? 0xBBDD54 : 0xA3E053);
 //    }
 
-//    @Override
-//    @SideOnly(Side.CLIENT)
-//    public int getGrassColorAtPos(BlockPos pos)
-//    {
-//        double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
-//        return noise < -0.1D ? 13741418 : 13018487;
-//    }
+    @Override
+    @SideOnly(Side.CLIENT)
+    public int getGrassColorAtPos(BlockPos pos) {
 
-//    @Override
-//    @SideOnly(Side.CLIENT)
-//    public int getFoliageColorAtPos(BlockPos pos)
-//    {
-//        double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
-//        return noise < -0.1D ? 13741418 : 13018487;
-//    }
+        double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
+        return noise < -0.1D ? 13741418 : 13018487;
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public int getFoliageColorAtPos(BlockPos pos) {
+
+        double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
+        return noise < -0.1D ? 13741418 : 13018487;
+    }
 }

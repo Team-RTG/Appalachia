@@ -18,7 +18,7 @@ import appalachia.item.ItemManager;
 import appalachia.proxy.ClientProxy;
 import appalachia.proxy.CommonProxy;
 import appalachia.world.AppalachiaWorldGenerator;
-import appalachia.world.biome.AppalachiaBiomeManager;
+import appalachia.biome.AppalachiaBiomeManager;
 import static appalachia.reference.ModInfo.*;
 
 

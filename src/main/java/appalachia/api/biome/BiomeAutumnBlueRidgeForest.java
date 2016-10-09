@@ -1,4 +1,4 @@
-package appalachia.world.biome;
+package appalachia.api.biome;
 
 import java.util.Random;
 
@@ -16,7 +16,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.api.world.gen.feature.tree.AppalachiaTree;
 import appalachia.api.world.gen.feature.tree.TreeTiliaAmericana;
-import appalachia.world.biome.decorator.DecoratorAutumnBlueRidgeForest;
+import appalachia.api.biome.decorator.DecoratorAutumnBlueRidgeForest;
 
 public class BiomeAutumnBlueRidgeForest extends AppalachiaBiome implements IAppalachiaBiome {
 

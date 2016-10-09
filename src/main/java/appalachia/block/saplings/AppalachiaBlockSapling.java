@@ -27,7 +27,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import appalachia.api.world.gen.feature.tree.AppalachiaTree;
 import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
-import appalachia.world.biome.AppalachiaBiome;
+import appalachia.api.biome.AppalachiaBiome;
 
 public class AppalachiaBlockSapling extends BlockBush implements IGrowable, IAppalachiaBlock {
 

@@ -1,4 +1,4 @@
-package appalachia.world.biome.decorator;
+package appalachia.api.biome.decorator;
 
 import java.util.Random;
 
@@ -11,7 +11,7 @@ import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
 import appalachia.api.world.gen.feature.tree.AppalachiaTree;
-import appalachia.world.biome.BiomeAutumnBlueRidgeForest;
+import appalachia.api.biome.BiomeAutumnBlueRidgeForest;
 
 public class DecoratorAutumnBlueRidgeForest extends AppalachiaDecorator {
 

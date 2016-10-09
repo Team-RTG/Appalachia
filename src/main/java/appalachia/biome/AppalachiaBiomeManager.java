@@ -1,4 +1,4 @@
-package appalachia.world.biome;
+package appalachia.biome;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
@@ -7,10 +7,10 @@ import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+import appalachia.api.biome.*;
 import appalachia.config.ConfigAppalachia;
 import appalachia.util.BiomeUtils;
 import appalachia.util.Logger;
-import appalachia.world.biome.AppalachiaBiome.AppalachiaBiomeProps;
 import static appalachia.api.AppalachiaBiomes.*;
 import static appalachia.reference.ModInfo.MOD_ID;
 
@@ -27,7 +27,7 @@ public class AppalachiaBiomeManager {
         // Appalachian Mountains
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-        appalachianMountains = new BiomeAppalachianMountains(AppalachiaBiome.AppalachiaBiomeProps.APPALACHIAN_MOUNTAINS.getProps());
+        appalachianMountains = new BiomeAppalachianMountains(AppalachiaBiomeProps.APPALACHIAN_MOUNTAINS.getProps());
         registerBiomeWithTypes(
             appalachianMountains,
             "appalachianmountains",

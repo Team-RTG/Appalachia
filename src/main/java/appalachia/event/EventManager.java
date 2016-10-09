@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import appalachia.util.Logger;
-import appalachia.world.biome.decorator.AppalachiaDecorator;
+import appalachia.api.biome.decorator.AppalachiaDecorator;
 
 
 public class EventManager {

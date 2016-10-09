@@ -1,4 +1,4 @@
-package appalachia.world.biome.decorator;
+package appalachia.api.biome.decorator;
 
 import java.util.Random;
 
@@ -12,9 +12,9 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 
 import appalachia.api.world.gen.feature.tree.TreeQuercusRobur;
 
-public class DecoratorAppalachianMountains extends AppalachiaDecorator {
+public class DecoratorPrairie extends AppalachiaDecorator {
 
-    public DecoratorAppalachianMountains() {
+    public DecoratorPrairie() {
 
         super();
     }

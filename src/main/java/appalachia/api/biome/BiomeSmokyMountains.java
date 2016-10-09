@@ -1,4 +1,4 @@
-package appalachia.world.biome;
+package appalachia.api.biome;
 
 import java.util.Random;
 
@@ -14,13 +14,13 @@ import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import appalachia.world.biome.decorator.DecoratorAppalachianMountains;
+import appalachia.api.biome.decorator.DecoratorSmokyMountains;
 
-public class BiomeAppalachianMountains extends AppalachiaBiome implements IAppalachiaBiome {
+public class BiomeSmokyMountains extends AppalachiaBiome implements IAppalachiaBiome {
 
     public static BiomeDictionary.Type[] biomeTypes;
 
-    public BiomeAppalachianMountains(BiomeProperties props) {
+    public BiomeSmokyMountains(BiomeProperties props) {
 
         super(props);
         topBlock = Blocks.GRASS.getDefaultState();
@@ -35,7 +35,7 @@ public class BiomeAppalachianMountains extends AppalachiaBiome implements IAppal
     @Override
     public BiomeDecorator createBiomeDecorator() {
 
-        return new DecoratorAppalachianMountains();
+        return new DecoratorSmokyMountains();
     }
 
     @Override

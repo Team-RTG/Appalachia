@@ -1,4 +1,4 @@
-package appalachia.world.biome;
+package appalachia.api.biome;
 
 import java.util.Random;
 
@@ -12,7 +12,7 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import net.minecraftforge.common.BiomeDictionary;
 
-import appalachia.world.biome.decorator.DecoratorAppalachianMountains;
+import appalachia.api.biome.decorator.DecoratorAppalachianMountains;
 
 public class BiomeBlueRidgeMountains extends AppalachiaBiome implements IAppalachiaBiome {
 
