@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "half=bottom": { "model": "appalachia:slab_autumn_coffee" },
-        "half=top": { "model": "appalachia:slab_autumn_coffee_upper" }
-    }
-}

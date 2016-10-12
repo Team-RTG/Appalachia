@@ -20,22 +20,25 @@ import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import appalachia.api.AppalachiaBlocks;
-import appalachia.block.fencegates.*;
-import appalachia.block.fences.*;
+import appalachia.block.fencegates.AppalachiaBlockFenceGate;
+import appalachia.block.fencegates.BlockFenceGateAutumnGrey;
+import appalachia.block.fences.AppalachiaBlockFence;
+import appalachia.block.fences.BlockFenceAutumnGrey;
 import appalachia.block.leaves.AppalachiaBlockLeaves;
 import appalachia.block.leaves.BlockLeavesAutumnOrange;
 import appalachia.block.leaves.BlockLeavesAutumnRed;
 import appalachia.block.leaves.BlockLeavesAutumnYellow;
-import appalachia.block.leaves.fallen.AppalachiaBlockLeavesFallen;
-import appalachia.block.leaves.fallen.BlockLeavesAutumnOrangeFallen;
-import appalachia.block.leaves.fallen.BlockLeavesAutumnRedFallen;
-import appalachia.block.leaves.fallen.BlockLeavesAutumnYellowFallen;
-import appalachia.block.logs.*;
-import appalachia.block.planks.*;
+import appalachia.block.leaves.fallen.*;
+import appalachia.block.logs.AppalachiaBlockLog;
+import appalachia.block.logs.BlockLogAutumnGrey;
+import appalachia.block.planks.AppalachiaBlockPlanks;
+import appalachia.block.planks.BlockPlanksAutumnGrey;
 import appalachia.block.saplings.AppalachiaBlockSapling;
 import appalachia.block.saplings.BlockSaplingQuercusRobur;
-import appalachia.block.slabs.*;
-import appalachia.block.stairs.*;
+import appalachia.block.slabs.AppalachiaBlockSlab;
+import appalachia.block.slabs.BlockSlabAutumnGrey;
+import appalachia.block.stairs.AppalachiaBlockStairs;
+import appalachia.block.stairs.BlockStairsAutumnGrey;
 import appalachia.item.ItemManager;
 import appalachia.item.leaves.fallen.AppalachiaItemLeavesFallen;
 import appalachia.item.slabs.AppalachiaItemSlab;
@@ -75,45 +78,28 @@ public class BlockManager {
     };
 
     public static void registerBlocks() {
+
         //Logs.
-        AppalachiaBlocks.log_autumn_brown = new BlockLogAutumnBrown();
-        AppalachiaBlocks.log_autumn_charcoal = new BlockLogAutumnCharcoal();
-        AppalachiaBlocks.log_autumn_coffee = new BlockLogAutumnCoffee();
         AppalachiaBlocks.log_autumn_grey = new BlockLogAutumnGrey();
         addLogs();
 
         //Planks.
-        AppalachiaBlocks.planks_autumn_brown = new BlockPlanksAutumnBrown();
-        AppalachiaBlocks.planks_autumn_charcoal = new BlockPlanksAutumnCharcoal();
-        AppalachiaBlocks.planks_autumn_coffee = new BlockPlanksAutumnCoffee();
         AppalachiaBlocks.planks_autumn_grey = new BlockPlanksAutumnGrey();
         addPlanks();
 
         //Slabs.
-        AppalachiaBlocks.slab_autumn_brown = new BlockSlabAutumnBrown();
-        AppalachiaBlocks.slab_autumn_charcoal = new BlockSlabAutumnCharcoal();
-        AppalachiaBlocks.slab_autumn_coffee = new BlockSlabAutumnCoffee();
         slab_autumn_grey = new BlockSlabAutumnGrey();
         addSlabs();
 
         //Stairs.
-        AppalachiaBlocks.stairs_autumn_brown = new BlockStairsAutumnBrown();
-        AppalachiaBlocks.stairs_autumn_charcoal = new BlockStairsAutumnCharcoal();
-        AppalachiaBlocks.stairs_autumn_coffee = new BlockStairsAutumnCoffee();
         AppalachiaBlocks.stairs_autumn_grey = new BlockStairsAutumnGrey();
         addStairs();
 
         //Fences.
-        AppalachiaBlocks.fence_autumn_brown = new BlockFenceAutumnBrown();
-        AppalachiaBlocks.fence_autumn_charcoal = new BlockFenceAutumnCharcoal();
-        AppalachiaBlocks.fence_autumn_coffee = new BlockFenceAutumnCoffee();
         AppalachiaBlocks.fence_autumn_grey = new BlockFenceAutumnGrey();
         addFences();
 
         //Fence gates.
-        AppalachiaBlocks.fence_gate_autumn_brown = new BlockFenceGateAutumnBrown();
-        AppalachiaBlocks.fence_gate_autumn_charcoal = new BlockFenceGateAutumnCharcoal();
-        AppalachiaBlocks.fence_gate_autumn_coffee = new BlockFenceGateAutumnCoffee();
         AppalachiaBlocks.fence_gate_autumn_grey = new BlockFenceGateAutumnGrey();
         addFenceGates();
 
@@ -124,6 +110,7 @@ public class BlockManager {
         addLeaves();
 
         //Fallen leaves.
+        AppalachiaBlocks.leaves_oak_fallen = new BlockLeavesOakFallen();
         AppalachiaBlocks.leaves_autumn_orange_fallen = new BlockLeavesAutumnOrangeFallen();
         AppalachiaBlocks.leaves_autumn_red_fallen = new BlockLeavesAutumnRedFallen();
         AppalachiaBlocks.leaves_autumn_yellow_fallen = new BlockLeavesAutumnYellowFallen();
@@ -149,49 +136,31 @@ public class BlockManager {
 
     private static void addLogs() {
 
-        appalachiaLogs.add(AppalachiaBlocks.log_autumn_brown);
-        appalachiaLogs.add(AppalachiaBlocks.log_autumn_charcoal);
-        appalachiaLogs.add(AppalachiaBlocks.log_autumn_coffee);
         appalachiaLogs.add(AppalachiaBlocks.log_autumn_grey);
     }
 
     private static void addPlanks() {
 
-        appalachiaPlanks.add(AppalachiaBlocks.planks_autumn_brown);
-        appalachiaPlanks.add(AppalachiaBlocks.planks_autumn_charcoal);
-        appalachiaPlanks.add(AppalachiaBlocks.planks_autumn_coffee);
         appalachiaPlanks.add(AppalachiaBlocks.planks_autumn_grey);
     }
 
     private static void addSlabs() {
 
-        appalachiaSlabs.add(AppalachiaBlocks.slab_autumn_brown);
-        appalachiaSlabs.add(AppalachiaBlocks.slab_autumn_charcoal);
-        appalachiaSlabs.add(AppalachiaBlocks.slab_autumn_coffee);
         appalachiaSlabs.add(slab_autumn_grey);
     }
 
     private static void addStairs() {
 
-        appalachiaStairs.add(AppalachiaBlocks.stairs_autumn_brown);
-        appalachiaStairs.add(AppalachiaBlocks.stairs_autumn_charcoal);
-        appalachiaStairs.add(AppalachiaBlocks.stairs_autumn_coffee);
         appalachiaStairs.add(AppalachiaBlocks.stairs_autumn_grey);
     }
 
     private static void addFences() {
 
-        appalachiaFences.add(AppalachiaBlocks.fence_autumn_brown);
-        appalachiaFences.add(AppalachiaBlocks.fence_autumn_charcoal);
-        appalachiaFences.add(AppalachiaBlocks.fence_autumn_coffee);
         appalachiaFences.add(AppalachiaBlocks.fence_autumn_grey);
     }
 
     private static void addFenceGates() {
 
-        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_autumn_brown);
-        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_autumn_charcoal);
-        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_autumn_coffee);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_autumn_grey);
     }
 
@@ -204,6 +173,7 @@ public class BlockManager {
 
     private static void addFallenLeaves() {
 
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_oak_fallen);
         appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_autumn_orange_fallen);
         appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_autumn_red_fallen);
         appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_autumn_yellow_fallen);

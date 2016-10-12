@@ -2,6 +2,7 @@ package appalachia.block.leaves.fallen;
 
 import java.util.List;
 import java.util.Random;
+import javax.annotation.Nullable;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -9,6 +10,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.color.IBlockColor;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -24,6 +26,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.api.block.IAppalachiaBlockLeavesFallen;
+import appalachia.api.util.Simplex;
 import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
 import com.google.common.collect.Lists;
@@ -223,5 +226,33 @@ public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlo
         }
 
         return true;
+    }
+
+    public static class ColourHandler implements IBlockColor {
+
+        private static final int leafColours[] = {
+            15924992, 16776960, 16773632, 16770560, 16767232, 16763904,
+            16760576, 16757504, 16754176, 16750848, 16747520, 16744448,
+            16741120, 16737792, 16734464, 16731392, 16728064, 16724736, 16721408
+        };
+
+        private Simplex simplex = new Simplex(17781);
+
+        public ColourHandler() {
+
+        }
+
+        public int colorMultiplier(IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex)
+        {
+            //return BiomeColorHelper.getFoliageColorAtPos(worldIn, pos);
+
+            if (pos == null) {
+                return 16750848;
+            }
+
+            int noise = (int) (simplex.noise(pos.getX()/5, pos.getZ()/5)*9+9);
+
+            return leafColours[noise];
+        }
     }
 }

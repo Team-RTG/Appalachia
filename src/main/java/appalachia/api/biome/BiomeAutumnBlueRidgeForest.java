@@ -73,7 +73,7 @@ public class BiomeAutumnBlueRidgeForest extends AppalachiaBiome implements IAppa
     public int getFoliageColorAtPos(BlockPos pos) {
 
         double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
-        return (noise < -0.5D) ? 10703636 : ((noise > 0.5D) ? 11937822 : 12991488);
+        return (noise < -0.5D) ? 12991488 : ((noise > 0.5D) ? 10703636 : 11937822);
     }
 
     @Override

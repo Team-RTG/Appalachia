@@ -37,7 +37,7 @@ public class Appalachia {
     public static String configPath;
     public static EventManager eventMgr;
 
-    @SidedProxy(serverSide = CommonProxy.LOCATION, clientSide = ClientProxy.LOCATION)
+    @SidedProxy(clientSide = ClientProxy.LOCATION, serverSide = CommonProxy.LOCATION)
     public static CommonProxy proxy;
 
     private ConfigManager configManager = new ConfigManager();
@@ -59,6 +59,8 @@ public class Appalachia {
         }
 
         AppalachiaBiomeManager.registerBiomes();
+
+        proxy.preInit(event);
     }
 
     @EventHandler
@@ -70,10 +72,13 @@ public class Appalachia {
         BlockManager.addRecipes();
         GameRegistry.registerWorldGenerator(new AppalachiaWorldGenerator(), 0);
         AppalachiaBiomeManager.doBiomeCheck();
+
+        proxy.init(event);
     }
 
     @EventHandler
     public void initPost(FMLPostInitializationEvent event) {
 
+        proxy.postInit(event);
     }
 }
