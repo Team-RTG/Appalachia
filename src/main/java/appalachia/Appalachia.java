@@ -11,14 +11,17 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+import appalachia.biome.AppalachiaBiomeManager;
 import appalachia.block.BlockManager;
 import appalachia.config.ConfigManager;
 import appalachia.event.EventManager;
 import appalachia.item.ItemManager;
 import appalachia.proxy.ClientProxy;
 import appalachia.proxy.CommonProxy;
+import appalachia.rtg.config.BiomeConfigManagerAPL;
+import appalachia.rtg.config.ConfigManagerAPL;
+import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 import appalachia.world.AppalachiaWorldGenerator;
-import appalachia.biome.AppalachiaBiomeManager;
 import static appalachia.reference.ModInfo.*;
 
 
@@ -61,6 +64,9 @@ public class Appalachia {
         AppalachiaBiomeManager.registerBiomes();
 
         proxy.preInit(event);
+
+        BiomeConfigManagerAPL.initBiomeConfigs();
+        ConfigManagerAPL.init(event.getModConfigurationDirectory() + File.separator + "RTG" + File.separator);
     }
 
     @EventHandler
@@ -78,6 +84,10 @@ public class Appalachia {
 
     @EventHandler
     public void initPost(FMLPostInitializationEvent event) {
+
+        RealisticBiomeAPLBase.addBiomes();
+
+        //RealisticBiomePresenceTester.doBiomeCheck();
 
         proxy.postInit(event);
     }
