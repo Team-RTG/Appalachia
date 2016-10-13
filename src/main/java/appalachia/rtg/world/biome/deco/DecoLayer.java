@@ -56,7 +56,7 @@ public class DecoLayer extends DecoBase {
         this.notEqualsZerochance = 1;
         this.loops = 1;
 
-        //this.addDecoTypes(DecoType.LAYER, DecoType.LEAVES, DecoType.FALLEN_LEAVES);
+        this.addDecoTypes(DecoType.LAYER, DecoType.LEAVES, DecoType.FALLEN_LEAVES);
     }
 
     @Override
