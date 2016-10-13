@@ -62,8 +62,6 @@ public class TreeTiliaAmericana extends AppalachiaTree {
 
         this.spawn(world, x, currentY, z, this.logBlock, leaves);
 
-        this.setFallenLeaves(world, rand, pos, 29);
-
         return true;
     }
 
