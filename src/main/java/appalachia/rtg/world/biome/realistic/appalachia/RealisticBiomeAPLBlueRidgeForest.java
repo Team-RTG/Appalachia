@@ -50,7 +50,7 @@ public class RealisticBiomeAPLBlueRidgeForest extends RealisticBiomeAPLBase {
         aplGrandFirTreeOak.maxCrownSize = 30;
         DecoTree oakFir = new DecoTree(aplGrandFirTreeOak);
         oakFir.loops = 1;
-        oakFir.treeType = TreeType.WORLDGEN;
+        oakFir.treeType = TreeType.RTG_TREE;
         oakFir.distribution.noiseDivisor = 100f;
         oakFir.distribution.noiseFactor = 6f;
         oakFir.distribution.noiseAddend = 0.8f;
@@ -68,7 +68,7 @@ public class RealisticBiomeAPLBlueRidgeForest extends RealisticBiomeAPLBase {
         aplGrandFirTreeChestnut.maxCrownSize = 30;
         DecoTree chestnutFir = new DecoTree(aplGrandFirTreeChestnut);
         chestnutFir.loops = 1;
-        chestnutFir.treeType = TreeType.WORLDGEN;
+        chestnutFir.treeType = TreeType.RTG_TREE;
         chestnutFir.distribution.noiseDivisor = 100f;
         chestnutFir.distribution.noiseFactor = 6f;
         chestnutFir.distribution.noiseAddend = 0.8f;
@@ -88,7 +88,7 @@ public class RealisticBiomeAPLBlueRidgeForest extends RealisticBiomeAPLBase {
         aplRedMaple.maxCrownSize = 12;
         DecoTree oakMaple = new DecoTree(aplRedMaple);
         oakMaple.loops = 1;
-        oakMaple.treeType = TreeType.WORLDGEN;
+        oakMaple.treeType = TreeType.RTG_TREE;
         oakMaple.distribution.noiseDivisor = 80f;
         oakMaple.distribution.noiseFactor = 60f;
         oakMaple.distribution.noiseAddend = -15f;
