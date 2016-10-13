@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
-import appalachia.api.world.gen.feature.tree.AppalachiaTree;
+import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
 
 public class AppalachiaBiome extends Biome implements IAppalachiaBiome {
 

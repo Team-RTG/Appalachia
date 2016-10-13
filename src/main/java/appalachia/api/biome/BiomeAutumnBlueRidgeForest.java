@@ -14,8 +14,8 @@ import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import appalachia.api.world.gen.feature.tree.AppalachiaTree;
-import appalachia.api.world.gen.feature.tree.TreeTiliaAmericana;
+import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
+import appalachia.rtg.world.gen.feature.tree.rtg.TreeTiliaAmericana;
 import appalachia.api.biome.decorator.DecoratorAutumnBlueRidgeForest;
 
 public class BiomeAutumnBlueRidgeForest extends AppalachiaBiome implements IAppalachiaBiome {

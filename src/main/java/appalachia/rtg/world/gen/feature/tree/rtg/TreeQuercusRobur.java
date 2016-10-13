@@ -1,4 +1,4 @@
-package appalachia.api.world.gen.feature.tree;
+package appalachia.rtg.world.gen.feature.tree.rtg;
 
 import java.util.List;
 import java.util.Random;

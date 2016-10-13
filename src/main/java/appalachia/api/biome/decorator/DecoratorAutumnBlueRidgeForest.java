@@ -10,7 +10,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
-import appalachia.api.world.gen.feature.tree.AppalachiaTree;
+import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
 import appalachia.api.biome.BiomeAutumnBlueRidgeForest;
 
 public class DecoratorAutumnBlueRidgeForest extends AppalachiaDecorator {

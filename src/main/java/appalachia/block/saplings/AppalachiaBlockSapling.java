@@ -24,7 +24,7 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import appalachia.api.world.gen.feature.tree.AppalachiaTree;
+import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
 import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
 import appalachia.api.biome.AppalachiaBiome;

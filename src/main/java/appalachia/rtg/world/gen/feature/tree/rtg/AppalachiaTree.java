@@ -1,4 +1,4 @@
-package appalachia.api.world.gen.feature.tree;
+package appalachia.rtg.world.gen.feature.tree.rtg;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,19 +15,8 @@ import rtg.world.gen.feature.tree.rtg.TreeRTG;
 
 public class AppalachiaTree extends TreeRTG {
 
-    public IBlockState logBlock;
-    public IBlockState leavesBlock;
     public IBlockState fallenLeavesBlock;
-    public IBlockState saplingBlock;
-    public int trunkSize;
-    public int crownSize;
-    public int minTrunkSize;
-    public int maxTrunkSize;
-    public int minCrownSize;
-    public int maxCrownSize;
-    public boolean noLeaves;
     public boolean generateFromSapling;
-    public ArrayList<IBlockState> validGroundBlocks;
 
     public AppalachiaTree(boolean notify) {
         super(notify);
