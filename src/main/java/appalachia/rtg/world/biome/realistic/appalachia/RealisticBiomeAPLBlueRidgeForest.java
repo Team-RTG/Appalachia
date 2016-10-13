@@ -13,7 +13,6 @@ import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
 import appalachia.rtg.world.gen.feature.tree.rtg.TreeAbiesGrandis;
 import appalachia.rtg.world.gen.feature.tree.rtg.TreeAcerRubrum;
 import appalachia.rtg.api.biome.appalachia.config.BiomeConfigAPLBlueRidgeForest;
-import appalachia.rtg.world.biome.deco.DecoLayer;
 import appalachia.rtg.world.gen.surface.appalachia.SurfaceAPLBlueRidgeForest;
 import appalachia.rtg.world.gen.terrain.appalachia.TerrainAPLBlueRidgeForest;
 
