@@ -2,8 +2,6 @@ package appalachia.api.biome;
 
 import java.util.Random;
 
-import net.minecraft.entity.passive.EntityRabbit;
-import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -14,9 +12,9 @@ import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import appalachia.api.biome.decorator.DecoratorAutumnBlueRidgeForest;
 import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
 import appalachia.rtg.world.gen.feature.tree.rtg.TreeTiliaAmericana;
-import appalachia.api.biome.decorator.DecoratorAutumnBlueRidgeForest;
 
 public class BiomeAutumnBlueRidgeForest extends AppalachiaBiome implements IAppalachiaBiome {
 
@@ -28,8 +26,6 @@ public class BiomeAutumnBlueRidgeForest extends AppalachiaBiome implements IAppa
         topBlock = Blocks.GRASS.getDefaultState();
         fillerBlock = Blocks.DIRT.getDefaultState();
         theBiomeDecorator.treesPerChunk = 1;
-        spawnableCreatureList.add(new SpawnListEntry(EntitySheep.class, 60, 1, 5));
-        spawnableCreatureList.add(new SpawnListEntry(EntityRabbit.class, 60, 1, 3));
 
         biomeTypes = new BiomeDictionary.Type[]{BiomeDictionary.Type.FOREST};
     }

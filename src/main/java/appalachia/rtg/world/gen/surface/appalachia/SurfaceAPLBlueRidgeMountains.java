@@ -17,9 +17,26 @@ import rtg.world.gen.surface.SurfaceBase;
 
 public class SurfaceAPLBlueRidgeMountains extends SurfaceBase {
 
-    public SurfaceAPLBlueRidgeMountains(BiomeConfig config, IBlockState top, IBlockState filler) {
+
+    private IBlockState blockMixTop;
+    private IBlockState blockMixFiller;
+    private float floMixWidth;
+    private float floMixHeight;
+    private float floSmallWidth;
+    private float floSmallStrength;
+
+    public SurfaceAPLBlueRidgeMountains(BiomeConfig config, IBlockState top, IBlockState filler, IBlockState mixTop, IBlockState mixFiller,
+                                        float mixWidth, float mixHeight, float smallWidth, float smallStrength) {
 
         super(config, top, filler);
+
+        blockMixTop = mixTop;
+        blockMixFiller = mixFiller;
+
+        floMixWidth = mixWidth;
+        floMixHeight = mixHeight;
+        floSmallWidth = smallWidth;
+        floSmallStrength = smallStrength;
     }
 
     @Override
@@ -28,6 +45,7 @@ public class SurfaceAPLBlueRidgeMountains extends SurfaceBase {
 
         float c = CliffCalculator.calc(x, y, noise);
         boolean cliff = c > 1.4f ? true : false;
+        boolean mix = false;
 
         for (int k = 255; k > -1; k--) {
             Block b = primer.getBlockState(x, k, y).getBlock();
@@ -54,10 +72,23 @@ public class SurfaceAPLBlueRidgeMountains extends SurfaceBase {
                 }
                 else {
                     if (depth == 0 && k > 61) {
-                        primer.setBlockState(x, k, y, topBlock);
+                        if (simplex.noise2(i / floMixWidth, j / floMixWidth) + simplex.noise2(i / floSmallWidth, j / floSmallWidth)
+                            * floSmallStrength > floMixHeight) {
+                            primer.setBlockState(x, k, y, blockMixTop);
+
+                            mix = true;
+                        }
+                        else {
+                            primer.setBlockState(x, k, y, topBlock);
+                        }
                     }
                     else if (depth < 4) {
-                        primer.setBlockState(x, k, y, fillerBlock);
+                        if (mix) {
+                            primer.setBlockState(x, k, y, blockMixFiller);
+                        }
+                        else {
+                            primer.setBlockState(x, k, y, fillerBlock);
+                        }
                     }
                 }
             }

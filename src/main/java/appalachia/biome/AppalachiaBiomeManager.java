@@ -27,18 +27,18 @@ public class AppalachiaBiomeManager {
         // Appalachian Mountains
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-        appalachianMountains = new BiomeAppalachianMountains(AppalachiaBiomeProps.APPALACHIAN_MOUNTAINS.getProps());
-        registerBiomeWithTypes(
-            appalachianMountains,
-            "appalachianmountains",
-            ConfigAppalachia.biomeWeight_AppalachianMountains,
-            BiomeManager.BiomeType.COOL,
-            BiomeAppalachianMountains.biomeTypes
-        );
-        BiomeManager.addSpawnBiome(appalachianMountains);
-        BiomeManager.addVillageBiome(appalachianMountains, true);
-        BiomeManager.addStrongholdBiome(appalachianMountains);
-        Biome.EXPLORATION_BIOMES_LIST.add(appalachianMountains);
+//        appalachianMountains = new BiomeAppalachianMountains(AppalachiaBiomeProps.APPALACHIAN_MOUNTAINS.getProps());
+//        registerBiomeWithTypes(
+//            appalachianMountains,
+//            "appalachianmountains",
+//            ConfigAppalachia.biomeWeight_AppalachianMountains,
+//            BiomeManager.BiomeType.COOL,
+//            BiomeAppalachianMountains.biomeTypes
+//        );
+//        BiomeManager.addSpawnBiome(appalachianMountains);
+//        BiomeManager.addVillageBiome(appalachianMountains, true);
+//        BiomeManager.addStrongholdBiome(appalachianMountains);
+//        Biome.EXPLORATION_BIOMES_LIST.add(appalachianMountains);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Blue Ridge Forest
@@ -95,35 +95,35 @@ public class AppalachiaBiomeManager {
         // Prairie
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-        prairie = new BiomePrairie(AppalachiaBiomeProps.PRAIRIE.getProps());
-        registerBiomeWithTypes(
-            prairie,
-            "prairie",
-            ConfigAppalachia.biomeWeight_Prairie,
-            BiomeManager.BiomeType.WARM,
-            BiomePrairie.biomeTypes
-        );
-        BiomeManager.addSpawnBiome(prairie);
-        BiomeManager.addVillageBiome(prairie, true);
-        BiomeManager.addStrongholdBiome(prairie);
-        Biome.EXPLORATION_BIOMES_LIST.add(prairie);
+//        prairie = new BiomePrairie(AppalachiaBiomeProps.PRAIRIE.getProps());
+//        registerBiomeWithTypes(
+//            prairie,
+//            "prairie",
+//            ConfigAppalachia.biomeWeight_Prairie,
+//            BiomeManager.BiomeType.WARM,
+//            BiomePrairie.biomeTypes
+//        );
+//        BiomeManager.addSpawnBiome(prairie);
+//        BiomeManager.addVillageBiome(prairie, true);
+//        BiomeManager.addStrongholdBiome(prairie);
+//        Biome.EXPLORATION_BIOMES_LIST.add(prairie);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Smoky Mountains
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-        smokyMountains = new BiomeSmokyMountains(AppalachiaBiomeProps.SMOKY_MOUNTAINS.getProps());
-        registerBiomeWithTypes(
-            smokyMountains,
-            "smokymountains",
-            ConfigAppalachia.biomeWeight_SmokyMountains,
-            BiomeManager.BiomeType.COOL,
-            BiomeSmokyMountains.biomeTypes
-        );
-        BiomeManager.addSpawnBiome(smokyMountains);
-        BiomeManager.addVillageBiome(smokyMountains, true);
-        BiomeManager.addStrongholdBiome(smokyMountains);
-        Biome.EXPLORATION_BIOMES_LIST.add(smokyMountains);
+//        smokyMountains = new BiomeSmokyMountains(AppalachiaBiomeProps.SMOKY_MOUNTAINS.getProps());
+//        registerBiomeWithTypes(
+//            smokyMountains,
+//            "smokymountains",
+//            ConfigAppalachia.biomeWeight_SmokyMountains,
+//            BiomeManager.BiomeType.COOL,
+//            BiomeSmokyMountains.biomeTypes
+//        );
+//        BiomeManager.addSpawnBiome(smokyMountains);
+//        BiomeManager.addVillageBiome(smokyMountains, true);
+//        BiomeManager.addStrongholdBiome(smokyMountains);
+//        Biome.EXPLORATION_BIOMES_LIST.add(smokyMountains);
     }
 
     public static void doBiomeCheck() {

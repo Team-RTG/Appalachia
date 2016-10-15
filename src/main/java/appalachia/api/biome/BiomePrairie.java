@@ -2,6 +2,8 @@ package appalachia.api.biome;
 
 import java.util.Random;
 
+import net.minecraft.entity.passive.EntityCow;
+import net.minecraft.entity.passive.EntityHorse;
 import net.minecraft.entity.passive.EntityRabbit;
 import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.init.Blocks;
@@ -24,8 +26,12 @@ public class BiomePrairie extends AppalachiaBiome implements IAppalachiaBiome {
         topBlock = Blocks.GRASS.getDefaultState();
         fillerBlock = Blocks.DIRT.getDefaultState();
         theBiomeDecorator.treesPerChunk = 1;
+
+        spawnableCreatureList.clear();
         spawnableCreatureList.add(new SpawnListEntry(EntitySheep.class, 60, 1, 5));
-        spawnableCreatureList.add(new SpawnListEntry(EntityRabbit.class, 60, 1, 3));
+        spawnableCreatureList.add(new SpawnListEntry(EntityRabbit.class, 60, 1, 5));
+        spawnableCreatureList.add(new SpawnListEntry(EntityCow.class, 60, 1, 5));
+        spawnableCreatureList.add(new SpawnListEntry(EntityHorse.class, 60, 1, 3));
 
         biomeTypes = new BiomeDictionary.Type[]{BiomeDictionary.Type.PLAINS};
     }

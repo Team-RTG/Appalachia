@@ -3,6 +3,7 @@ package appalachia.api.biome;
 import java.util.ArrayList;
 import java.util.Random;
 
+import net.minecraft.entity.passive.EntityRabbit;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -28,6 +29,7 @@ public class AppalachiaBiome extends Biome implements IAppalachiaBiome {
         theBiomeDecorator.generateLakes = false;
 
         this.spawnableCreatureList.clear();
+        this.spawnableCreatureList.add(new SpawnListEntry(EntityRabbit.class, 60, 1, 5));
 
         appalachiaTrees = new ArrayList<AppalachiaTree>();
         this.addTreesToBiome();
