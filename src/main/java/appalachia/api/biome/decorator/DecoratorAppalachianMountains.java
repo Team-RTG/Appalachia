@@ -24,9 +24,9 @@ public class DecoratorAppalachianMountains extends AppalachiaDecorator {
 
         MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(worldIn, random, chunkPos));
         super.decorate(worldIn, random, biome, pos);
-        this.generateTrees(biome, worldIn, random);
-        this.generateFlowers(biome, worldIn, random);
-        this.generateGrass(biome, worldIn, random);
+        //this.generateTrees(biome, worldIn, random);
+        //this.generateFlowers(biome, worldIn, random);
+        //this.generateGrass(biome, worldIn, random);
         MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Post(worldIn, random, chunkPos));
     }
 
