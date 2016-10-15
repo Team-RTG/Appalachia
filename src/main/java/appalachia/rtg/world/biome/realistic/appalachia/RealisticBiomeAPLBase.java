@@ -1,5 +1,6 @@
 package appalachia.rtg.world.biome.realistic.appalachia;
 
+import net.minecraft.init.Biomes;
 import net.minecraft.world.biome.Biome;
 
 import net.minecraftforge.fml.common.Loader;
@@ -51,5 +52,10 @@ public class RealisticBiomeAPLBase extends RealisticBiomeBase {
                 aplSmokyMountains = new RealisticBiomeAPLSmokyMountains(BiomeConfigAPL.biomeConfigAPLSmokyMountains);
             }
         }
+    }
+
+    @Override
+    public Biome beachBiome() {
+        return this.beachBiome(Biomes.STONE_BEACH);
     }
 }
