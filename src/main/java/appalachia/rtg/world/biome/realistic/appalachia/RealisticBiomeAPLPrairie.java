@@ -25,4 +25,9 @@ public class RealisticBiomeAPLPrairie extends RealisticBiomeAPLBase {
         DecoBaseBiomeDecorations decoBaseBiomeDecorations = new DecoBaseBiomeDecorations();
         this.addDeco(decoBaseBiomeDecorations);
     }
+
+    @Override
+    public Biome beachBiome() {
+        return this.beachBiome(Biomes.BEACH);
+    }
 }
