@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "appalachia:blocks/planks_oak_180_60",
+        "top": "appalachia:blocks/planks_oak_180_60",
+        "side": "appalachia:blocks/planks_oak_180_60"
+    }
+}

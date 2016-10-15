@@ -67,7 +67,6 @@ public class AppalachiaBlocks {
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-    public static Block fence_gate_oak_10_0;
     public static Block fence_gate_oak_10_10;
     public static Block fence_gate_oak_10_20;
     public static Block fence_gate_oak_10_30;
@@ -88,7 +87,6 @@ public class AppalachiaBlocks {
     public static Block fence_gate_oak_10_180;
     public static Block fence_gate_oak_10_190;
     public static Block fence_gate_oak_10_200;
-    public static Block fence_gate_oak_20_0;
     public static Block fence_gate_oak_20_10;
     public static Block fence_gate_oak_20_20;
     public static Block fence_gate_oak_20_30;
@@ -109,7 +107,6 @@ public class AppalachiaBlocks {
     public static Block fence_gate_oak_20_180;
     public static Block fence_gate_oak_20_190;
     public static Block fence_gate_oak_20_200;
-    public static Block fence_gate_oak_30_0;
     public static Block fence_gate_oak_30_10;
     public static Block fence_gate_oak_30_20;
     public static Block fence_gate_oak_30_30;
@@ -135,7 +132,6 @@ public class AppalachiaBlocks {
     public static Block fence_gate_oak_30_230;
     public static Block fence_gate_oak_30_240;
     public static Block fence_gate_oak_30_250;
-    public static Block fence_gate_oak_40_0;
     public static Block fence_gate_oak_40_10;
     public static Block fence_gate_oak_40_20;
     public static Block fence_gate_oak_40_30;
@@ -156,9 +152,18 @@ public class AppalachiaBlocks {
     public static Block fence_gate_oak_40_180;
     public static Block fence_gate_oak_40_190;
     public static Block fence_gate_oak_40_200;
+    public static Block fence_gate_oak_180_10;
+    public static Block fence_gate_oak_180_20;
+    public static Block fence_gate_oak_180_30;
+    public static Block fence_gate_oak_180_40;
+    public static Block fence_gate_oak_180_50;
+    public static Block fence_gate_oak_180_60;
+    public static Block fence_gate_oak_180_70;
+    public static Block fence_gate_oak_180_80;
+    public static Block fence_gate_oak_180_90;
+    public static Block fence_gate_oak_180_100;
 
 
-    public static Block fence_oak_10_0;
     public static Block fence_oak_10_10;
     public static Block fence_oak_10_20;
     public static Block fence_oak_10_30;
@@ -179,7 +184,6 @@ public class AppalachiaBlocks {
     public static Block fence_oak_10_180;
     public static Block fence_oak_10_190;
     public static Block fence_oak_10_200;
-    public static Block fence_oak_20_0;
     public static Block fence_oak_20_10;
     public static Block fence_oak_20_20;
     public static Block fence_oak_20_30;
@@ -200,7 +204,6 @@ public class AppalachiaBlocks {
     public static Block fence_oak_20_180;
     public static Block fence_oak_20_190;
     public static Block fence_oak_20_200;
-    public static Block fence_oak_30_0;
     public static Block fence_oak_30_10;
     public static Block fence_oak_30_20;
     public static Block fence_oak_30_30;
@@ -226,7 +229,6 @@ public class AppalachiaBlocks {
     public static Block fence_oak_30_230;
     public static Block fence_oak_30_240;
     public static Block fence_oak_30_250;
-    public static Block fence_oak_40_0;
     public static Block fence_oak_40_10;
     public static Block fence_oak_40_20;
     public static Block fence_oak_40_30;
@@ -247,9 +249,18 @@ public class AppalachiaBlocks {
     public static Block fence_oak_40_180;
     public static Block fence_oak_40_190;
     public static Block fence_oak_40_200;
+    public static Block fence_oak_180_10;
+    public static Block fence_oak_180_20;
+    public static Block fence_oak_180_30;
+    public static Block fence_oak_180_40;
+    public static Block fence_oak_180_50;
+    public static Block fence_oak_180_60;
+    public static Block fence_oak_180_70;
+    public static Block fence_oak_180_80;
+    public static Block fence_oak_180_90;
+    public static Block fence_oak_180_100;
 
 
-    public static Block log_oak_10_0;
     public static Block log_oak_10_10;
     public static Block log_oak_10_20;
     public static Block log_oak_10_30;
@@ -270,7 +281,6 @@ public class AppalachiaBlocks {
     public static Block log_oak_10_180;
     public static Block log_oak_10_190;
     public static Block log_oak_10_200;
-    public static Block log_oak_20_0;
     public static Block log_oak_20_10;
     public static Block log_oak_20_20;
     public static Block log_oak_20_30;
@@ -291,7 +301,6 @@ public class AppalachiaBlocks {
     public static Block log_oak_20_180;
     public static Block log_oak_20_190;
     public static Block log_oak_20_200;
-    public static Block log_oak_30_0;
     public static Block log_oak_30_10;
     public static Block log_oak_30_20;
     public static Block log_oak_30_30;
@@ -317,7 +326,6 @@ public class AppalachiaBlocks {
     public static Block log_oak_30_230;
     public static Block log_oak_30_240;
     public static Block log_oak_30_250;
-    public static Block log_oak_40_0;
     public static Block log_oak_40_10;
     public static Block log_oak_40_20;
     public static Block log_oak_40_30;
@@ -338,9 +346,18 @@ public class AppalachiaBlocks {
     public static Block log_oak_40_180;
     public static Block log_oak_40_190;
     public static Block log_oak_40_200;
+    public static Block log_oak_180_10;
+    public static Block log_oak_180_20;
+    public static Block log_oak_180_30;
+    public static Block log_oak_180_40;
+    public static Block log_oak_180_50;
+    public static Block log_oak_180_60;
+    public static Block log_oak_180_70;
+    public static Block log_oak_180_80;
+    public static Block log_oak_180_90;
+    public static Block log_oak_180_100;
 
 
-    public static Block planks_oak_10_0;
     public static Block planks_oak_10_10;
     public static Block planks_oak_10_20;
     public static Block planks_oak_10_30;
@@ -361,7 +378,6 @@ public class AppalachiaBlocks {
     public static Block planks_oak_10_180;
     public static Block planks_oak_10_190;
     public static Block planks_oak_10_200;
-    public static Block planks_oak_20_0;
     public static Block planks_oak_20_10;
     public static Block planks_oak_20_20;
     public static Block planks_oak_20_30;
@@ -382,7 +398,6 @@ public class AppalachiaBlocks {
     public static Block planks_oak_20_180;
     public static Block planks_oak_20_190;
     public static Block planks_oak_20_200;
-    public static Block planks_oak_30_0;
     public static Block planks_oak_30_10;
     public static Block planks_oak_30_20;
     public static Block planks_oak_30_30;
@@ -408,7 +423,6 @@ public class AppalachiaBlocks {
     public static Block planks_oak_30_230;
     public static Block planks_oak_30_240;
     public static Block planks_oak_30_250;
-    public static Block planks_oak_40_0;
     public static Block planks_oak_40_10;
     public static Block planks_oak_40_20;
     public static Block planks_oak_40_30;
@@ -429,9 +443,18 @@ public class AppalachiaBlocks {
     public static Block planks_oak_40_180;
     public static Block planks_oak_40_190;
     public static Block planks_oak_40_200;
+    public static Block planks_oak_180_10;
+    public static Block planks_oak_180_20;
+    public static Block planks_oak_180_30;
+    public static Block planks_oak_180_40;
+    public static Block planks_oak_180_50;
+    public static Block planks_oak_180_60;
+    public static Block planks_oak_180_70;
+    public static Block planks_oak_180_80;
+    public static Block planks_oak_180_90;
+    public static Block planks_oak_180_100;
 
 
-    public static Block slab_oak_10_0;
     public static Block slab_oak_10_10;
     public static Block slab_oak_10_20;
     public static Block slab_oak_10_30;
@@ -452,7 +475,6 @@ public class AppalachiaBlocks {
     public static Block slab_oak_10_180;
     public static Block slab_oak_10_190;
     public static Block slab_oak_10_200;
-    public static Block slab_oak_20_0;
     public static Block slab_oak_20_10;
     public static Block slab_oak_20_20;
     public static Block slab_oak_20_30;
@@ -473,7 +495,6 @@ public class AppalachiaBlocks {
     public static Block slab_oak_20_180;
     public static Block slab_oak_20_190;
     public static Block slab_oak_20_200;
-    public static Block slab_oak_30_0;
     public static Block slab_oak_30_10;
     public static Block slab_oak_30_20;
     public static Block slab_oak_30_30;
@@ -499,7 +520,6 @@ public class AppalachiaBlocks {
     public static Block slab_oak_30_230;
     public static Block slab_oak_30_240;
     public static Block slab_oak_30_250;
-    public static Block slab_oak_40_0;
     public static Block slab_oak_40_10;
     public static Block slab_oak_40_20;
     public static Block slab_oak_40_30;
@@ -520,9 +540,18 @@ public class AppalachiaBlocks {
     public static Block slab_oak_40_180;
     public static Block slab_oak_40_190;
     public static Block slab_oak_40_200;
+    public static Block slab_oak_180_10;
+    public static Block slab_oak_180_20;
+    public static Block slab_oak_180_30;
+    public static Block slab_oak_180_40;
+    public static Block slab_oak_180_50;
+    public static Block slab_oak_180_60;
+    public static Block slab_oak_180_70;
+    public static Block slab_oak_180_80;
+    public static Block slab_oak_180_90;
+    public static Block slab_oak_180_100;
 
 
-    public static Block stairs_oak_10_0;
     public static Block stairs_oak_10_10;
     public static Block stairs_oak_10_20;
     public static Block stairs_oak_10_30;
@@ -543,7 +572,6 @@ public class AppalachiaBlocks {
     public static Block stairs_oak_10_180;
     public static Block stairs_oak_10_190;
     public static Block stairs_oak_10_200;
-    public static Block stairs_oak_20_0;
     public static Block stairs_oak_20_10;
     public static Block stairs_oak_20_20;
     public static Block stairs_oak_20_30;
@@ -564,7 +592,6 @@ public class AppalachiaBlocks {
     public static Block stairs_oak_20_180;
     public static Block stairs_oak_20_190;
     public static Block stairs_oak_20_200;
-    public static Block stairs_oak_30_0;
     public static Block stairs_oak_30_10;
     public static Block stairs_oak_30_20;
     public static Block stairs_oak_30_30;
@@ -590,7 +617,6 @@ public class AppalachiaBlocks {
     public static Block stairs_oak_30_230;
     public static Block stairs_oak_30_240;
     public static Block stairs_oak_30_250;
-    public static Block stairs_oak_40_0;
     public static Block stairs_oak_40_10;
     public static Block stairs_oak_40_20;
     public static Block stairs_oak_40_30;
@@ -611,5 +637,16 @@ public class AppalachiaBlocks {
     public static Block stairs_oak_40_180;
     public static Block stairs_oak_40_190;
     public static Block stairs_oak_40_200;
+    public static Block stairs_oak_180_10;
+    public static Block stairs_oak_180_20;
+    public static Block stairs_oak_180_30;
+    public static Block stairs_oak_180_40;
+    public static Block stairs_oak_180_50;
+    public static Block stairs_oak_180_60;
+    public static Block stairs_oak_180_70;
+    public static Block stairs_oak_180_80;
+    public static Block stairs_oak_180_90;
+    public static Block stairs_oak_180_100;
+
 
 }

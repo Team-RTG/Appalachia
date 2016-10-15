@@ -74,7 +74,7 @@ public class BlockManager {
 
         //Logs.
         AppalachiaBlocks.log_autumn_grey = new BlockLogAutumnGrey();
-        AppalachiaBlocks.log_oak_10_0 = new BlockLogOakH10S0();
+
         AppalachiaBlocks.log_oak_10_10 = new BlockLogOakH10S10();
         AppalachiaBlocks.log_oak_10_20 = new BlockLogOakH10S20();
         AppalachiaBlocks.log_oak_10_30 = new BlockLogOakH10S30();
@@ -95,7 +95,6 @@ public class BlockManager {
         AppalachiaBlocks.log_oak_10_180 = new BlockLogOakH10S180();
         AppalachiaBlocks.log_oak_10_190 = new BlockLogOakH10S190();
         AppalachiaBlocks.log_oak_10_200 = new BlockLogOakH10S200();
-        AppalachiaBlocks.log_oak_20_0 = new BlockLogOakH20S0();
         AppalachiaBlocks.log_oak_20_10 = new BlockLogOakH20S10();
         AppalachiaBlocks.log_oak_20_20 = new BlockLogOakH20S20();
         AppalachiaBlocks.log_oak_20_30 = new BlockLogOakH20S30();
@@ -116,7 +115,6 @@ public class BlockManager {
         AppalachiaBlocks.log_oak_20_180 = new BlockLogOakH20S180();
         AppalachiaBlocks.log_oak_20_190 = new BlockLogOakH20S190();
         AppalachiaBlocks.log_oak_20_200 = new BlockLogOakH20S200();
-        AppalachiaBlocks.log_oak_30_0 = new BlockLogOakH30S0();
         AppalachiaBlocks.log_oak_30_10 = new BlockLogOakH30S10();
         AppalachiaBlocks.log_oak_30_20 = new BlockLogOakH30S20();
         AppalachiaBlocks.log_oak_30_30 = new BlockLogOakH30S30();
@@ -142,7 +140,6 @@ public class BlockManager {
         AppalachiaBlocks.log_oak_30_230 = new BlockLogOakH30S230();
         AppalachiaBlocks.log_oak_30_240 = new BlockLogOakH30S240();
         AppalachiaBlocks.log_oak_30_250 = new BlockLogOakH30S250();
-        AppalachiaBlocks.log_oak_40_0 = new BlockLogOakH40S0();
         AppalachiaBlocks.log_oak_40_10 = new BlockLogOakH40S10();
         AppalachiaBlocks.log_oak_40_20 = new BlockLogOakH40S20();
         AppalachiaBlocks.log_oak_40_30 = new BlockLogOakH40S30();
@@ -163,11 +160,21 @@ public class BlockManager {
         AppalachiaBlocks.log_oak_40_180 = new BlockLogOakH40S180();
         AppalachiaBlocks.log_oak_40_190 = new BlockLogOakH40S190();
         AppalachiaBlocks.log_oak_40_200 = new BlockLogOakH40S200();
+        AppalachiaBlocks.log_oak_180_10 = new BlockLogOakH180S10();
+        AppalachiaBlocks.log_oak_180_20 = new BlockLogOakH180S20();
+        AppalachiaBlocks.log_oak_180_30 = new BlockLogOakH180S30();
+        AppalachiaBlocks.log_oak_180_40 = new BlockLogOakH180S40();
+        AppalachiaBlocks.log_oak_180_50 = new BlockLogOakH180S50();
+        AppalachiaBlocks.log_oak_180_60 = new BlockLogOakH180S60();
+        AppalachiaBlocks.log_oak_180_70 = new BlockLogOakH180S70();
+        AppalachiaBlocks.log_oak_180_80 = new BlockLogOakH180S80();
+        AppalachiaBlocks.log_oak_180_90 = new BlockLogOakH180S90();
+        AppalachiaBlocks.log_oak_180_100 = new BlockLogOakH180S100();
         addLogs();
 
         //Planks.
         AppalachiaBlocks.planks_autumn_grey = new BlockPlanksAutumnGrey();
-        AppalachiaBlocks.planks_oak_10_0 = new BlockPlanksOakH10S0();
+
         AppalachiaBlocks.planks_oak_10_10 = new BlockPlanksOakH10S10();
         AppalachiaBlocks.planks_oak_10_20 = new BlockPlanksOakH10S20();
         AppalachiaBlocks.planks_oak_10_30 = new BlockPlanksOakH10S30();
@@ -188,7 +195,6 @@ public class BlockManager {
         AppalachiaBlocks.planks_oak_10_180 = new BlockPlanksOakH10S180();
         AppalachiaBlocks.planks_oak_10_190 = new BlockPlanksOakH10S190();
         AppalachiaBlocks.planks_oak_10_200 = new BlockPlanksOakH10S200();
-        AppalachiaBlocks.planks_oak_20_0 = new BlockPlanksOakH20S0();
         AppalachiaBlocks.planks_oak_20_10 = new BlockPlanksOakH20S10();
         AppalachiaBlocks.planks_oak_20_20 = new BlockPlanksOakH20S20();
         AppalachiaBlocks.planks_oak_20_30 = new BlockPlanksOakH20S30();
@@ -209,7 +215,6 @@ public class BlockManager {
         AppalachiaBlocks.planks_oak_20_180 = new BlockPlanksOakH20S180();
         AppalachiaBlocks.planks_oak_20_190 = new BlockPlanksOakH20S190();
         AppalachiaBlocks.planks_oak_20_200 = new BlockPlanksOakH20S200();
-        AppalachiaBlocks.planks_oak_30_0 = new BlockPlanksOakH30S0();
         AppalachiaBlocks.planks_oak_30_10 = new BlockPlanksOakH30S10();
         AppalachiaBlocks.planks_oak_30_20 = new BlockPlanksOakH30S20();
         AppalachiaBlocks.planks_oak_30_30 = new BlockPlanksOakH30S30();
@@ -235,7 +240,6 @@ public class BlockManager {
         AppalachiaBlocks.planks_oak_30_230 = new BlockPlanksOakH30S230();
         AppalachiaBlocks.planks_oak_30_240 = new BlockPlanksOakH30S240();
         AppalachiaBlocks.planks_oak_30_250 = new BlockPlanksOakH30S250();
-        AppalachiaBlocks.planks_oak_40_0 = new BlockPlanksOakH40S0();
         AppalachiaBlocks.planks_oak_40_10 = new BlockPlanksOakH40S10();
         AppalachiaBlocks.planks_oak_40_20 = new BlockPlanksOakH40S20();
         AppalachiaBlocks.planks_oak_40_30 = new BlockPlanksOakH40S30();
@@ -256,11 +260,21 @@ public class BlockManager {
         AppalachiaBlocks.planks_oak_40_180 = new BlockPlanksOakH40S180();
         AppalachiaBlocks.planks_oak_40_190 = new BlockPlanksOakH40S190();
         AppalachiaBlocks.planks_oak_40_200 = new BlockPlanksOakH40S200();
+        AppalachiaBlocks.planks_oak_180_10 = new BlockPlanksOakH180S10();
+        AppalachiaBlocks.planks_oak_180_20 = new BlockPlanksOakH180S20();
+        AppalachiaBlocks.planks_oak_180_30 = new BlockPlanksOakH180S30();
+        AppalachiaBlocks.planks_oak_180_40 = new BlockPlanksOakH180S40();
+        AppalachiaBlocks.planks_oak_180_50 = new BlockPlanksOakH180S50();
+        AppalachiaBlocks.planks_oak_180_60 = new BlockPlanksOakH180S60();
+        AppalachiaBlocks.planks_oak_180_70 = new BlockPlanksOakH180S70();
+        AppalachiaBlocks.planks_oak_180_80 = new BlockPlanksOakH180S80();
+        AppalachiaBlocks.planks_oak_180_90 = new BlockPlanksOakH180S90();
+        AppalachiaBlocks.planks_oak_180_100 = new BlockPlanksOakH180S100();
         addPlanks();
 
         //Slabs.
         AppalachiaBlocks.slab_autumn_grey = new BlockSlabAutumnGrey();
-        AppalachiaBlocks.slab_oak_10_0 = new BlockSlabOakH10S0();
+
         AppalachiaBlocks.slab_oak_10_10 = new BlockSlabOakH10S10();
         AppalachiaBlocks.slab_oak_10_20 = new BlockSlabOakH10S20();
         AppalachiaBlocks.slab_oak_10_30 = new BlockSlabOakH10S30();
@@ -281,7 +295,6 @@ public class BlockManager {
         AppalachiaBlocks.slab_oak_10_180 = new BlockSlabOakH10S180();
         AppalachiaBlocks.slab_oak_10_190 = new BlockSlabOakH10S190();
         AppalachiaBlocks.slab_oak_10_200 = new BlockSlabOakH10S200();
-        AppalachiaBlocks.slab_oak_20_0 = new BlockSlabOakH20S0();
         AppalachiaBlocks.slab_oak_20_10 = new BlockSlabOakH20S10();
         AppalachiaBlocks.slab_oak_20_20 = new BlockSlabOakH20S20();
         AppalachiaBlocks.slab_oak_20_30 = new BlockSlabOakH20S30();
@@ -302,7 +315,6 @@ public class BlockManager {
         AppalachiaBlocks.slab_oak_20_180 = new BlockSlabOakH20S180();
         AppalachiaBlocks.slab_oak_20_190 = new BlockSlabOakH20S190();
         AppalachiaBlocks.slab_oak_20_200 = new BlockSlabOakH20S200();
-        AppalachiaBlocks.slab_oak_30_0 = new BlockSlabOakH30S0();
         AppalachiaBlocks.slab_oak_30_10 = new BlockSlabOakH30S10();
         AppalachiaBlocks.slab_oak_30_20 = new BlockSlabOakH30S20();
         AppalachiaBlocks.slab_oak_30_30 = new BlockSlabOakH30S30();
@@ -328,7 +340,6 @@ public class BlockManager {
         AppalachiaBlocks.slab_oak_30_230 = new BlockSlabOakH30S230();
         AppalachiaBlocks.slab_oak_30_240 = new BlockSlabOakH30S240();
         AppalachiaBlocks.slab_oak_30_250 = new BlockSlabOakH30S250();
-        AppalachiaBlocks.slab_oak_40_0 = new BlockSlabOakH40S0();
         AppalachiaBlocks.slab_oak_40_10 = new BlockSlabOakH40S10();
         AppalachiaBlocks.slab_oak_40_20 = new BlockSlabOakH40S20();
         AppalachiaBlocks.slab_oak_40_30 = new BlockSlabOakH40S30();
@@ -349,11 +360,21 @@ public class BlockManager {
         AppalachiaBlocks.slab_oak_40_180 = new BlockSlabOakH40S180();
         AppalachiaBlocks.slab_oak_40_190 = new BlockSlabOakH40S190();
         AppalachiaBlocks.slab_oak_40_200 = new BlockSlabOakH40S200();
+        AppalachiaBlocks.slab_oak_180_10 = new BlockSlabOakH180S10();
+        AppalachiaBlocks.slab_oak_180_20 = new BlockSlabOakH180S20();
+        AppalachiaBlocks.slab_oak_180_30 = new BlockSlabOakH180S30();
+        AppalachiaBlocks.slab_oak_180_40 = new BlockSlabOakH180S40();
+        AppalachiaBlocks.slab_oak_180_50 = new BlockSlabOakH180S50();
+        AppalachiaBlocks.slab_oak_180_60 = new BlockSlabOakH180S60();
+        AppalachiaBlocks.slab_oak_180_70 = new BlockSlabOakH180S70();
+        AppalachiaBlocks.slab_oak_180_80 = new BlockSlabOakH180S80();
+        AppalachiaBlocks.slab_oak_180_90 = new BlockSlabOakH180S90();
+        AppalachiaBlocks.slab_oak_180_100 = new BlockSlabOakH180S100();
         addSlabs();
 
         //Stairs.
         AppalachiaBlocks.stairs_autumn_grey = new BlockStairsAutumnGrey();
-        AppalachiaBlocks.stairs_oak_10_0 = new BlockStairsOakH10S0();
+
         AppalachiaBlocks.stairs_oak_10_10 = new BlockStairsOakH10S10();
         AppalachiaBlocks.stairs_oak_10_20 = new BlockStairsOakH10S20();
         AppalachiaBlocks.stairs_oak_10_30 = new BlockStairsOakH10S30();
@@ -374,7 +395,6 @@ public class BlockManager {
         AppalachiaBlocks.stairs_oak_10_180 = new BlockStairsOakH10S180();
         AppalachiaBlocks.stairs_oak_10_190 = new BlockStairsOakH10S190();
         AppalachiaBlocks.stairs_oak_10_200 = new BlockStairsOakH10S200();
-        AppalachiaBlocks.stairs_oak_20_0 = new BlockStairsOakH20S0();
         AppalachiaBlocks.stairs_oak_20_10 = new BlockStairsOakH20S10();
         AppalachiaBlocks.stairs_oak_20_20 = new BlockStairsOakH20S20();
         AppalachiaBlocks.stairs_oak_20_30 = new BlockStairsOakH20S30();
@@ -395,7 +415,6 @@ public class BlockManager {
         AppalachiaBlocks.stairs_oak_20_180 = new BlockStairsOakH20S180();
         AppalachiaBlocks.stairs_oak_20_190 = new BlockStairsOakH20S190();
         AppalachiaBlocks.stairs_oak_20_200 = new BlockStairsOakH20S200();
-        AppalachiaBlocks.stairs_oak_30_0 = new BlockStairsOakH30S0();
         AppalachiaBlocks.stairs_oak_30_10 = new BlockStairsOakH30S10();
         AppalachiaBlocks.stairs_oak_30_20 = new BlockStairsOakH30S20();
         AppalachiaBlocks.stairs_oak_30_30 = new BlockStairsOakH30S30();
@@ -421,7 +440,6 @@ public class BlockManager {
         AppalachiaBlocks.stairs_oak_30_230 = new BlockStairsOakH30S230();
         AppalachiaBlocks.stairs_oak_30_240 = new BlockStairsOakH30S240();
         AppalachiaBlocks.stairs_oak_30_250 = new BlockStairsOakH30S250();
-        AppalachiaBlocks.stairs_oak_40_0 = new BlockStairsOakH40S0();
         AppalachiaBlocks.stairs_oak_40_10 = new BlockStairsOakH40S10();
         AppalachiaBlocks.stairs_oak_40_20 = new BlockStairsOakH40S20();
         AppalachiaBlocks.stairs_oak_40_30 = new BlockStairsOakH40S30();
@@ -442,11 +460,21 @@ public class BlockManager {
         AppalachiaBlocks.stairs_oak_40_180 = new BlockStairsOakH40S180();
         AppalachiaBlocks.stairs_oak_40_190 = new BlockStairsOakH40S190();
         AppalachiaBlocks.stairs_oak_40_200 = new BlockStairsOakH40S200();
+        AppalachiaBlocks.stairs_oak_180_10 = new BlockStairsOakH180S10();
+        AppalachiaBlocks.stairs_oak_180_20 = new BlockStairsOakH180S20();
+        AppalachiaBlocks.stairs_oak_180_30 = new BlockStairsOakH180S30();
+        AppalachiaBlocks.stairs_oak_180_40 = new BlockStairsOakH180S40();
+        AppalachiaBlocks.stairs_oak_180_50 = new BlockStairsOakH180S50();
+        AppalachiaBlocks.stairs_oak_180_60 = new BlockStairsOakH180S60();
+        AppalachiaBlocks.stairs_oak_180_70 = new BlockStairsOakH180S70();
+        AppalachiaBlocks.stairs_oak_180_80 = new BlockStairsOakH180S80();
+        AppalachiaBlocks.stairs_oak_180_90 = new BlockStairsOakH180S90();
+        AppalachiaBlocks.stairs_oak_180_100 = new BlockStairsOakH180S100();
         addStairs();
 
         //Fences.
         AppalachiaBlocks.fence_autumn_grey = new BlockFenceAutumnGrey();
-        AppalachiaBlocks.fence_oak_10_0 = new BlockFenceOakH10S0();
+
         AppalachiaBlocks.fence_oak_10_10 = new BlockFenceOakH10S10();
         AppalachiaBlocks.fence_oak_10_20 = new BlockFenceOakH10S20();
         AppalachiaBlocks.fence_oak_10_30 = new BlockFenceOakH10S30();
@@ -467,7 +495,6 @@ public class BlockManager {
         AppalachiaBlocks.fence_oak_10_180 = new BlockFenceOakH10S180();
         AppalachiaBlocks.fence_oak_10_190 = new BlockFenceOakH10S190();
         AppalachiaBlocks.fence_oak_10_200 = new BlockFenceOakH10S200();
-        AppalachiaBlocks.fence_oak_20_0 = new BlockFenceOakH20S0();
         AppalachiaBlocks.fence_oak_20_10 = new BlockFenceOakH20S10();
         AppalachiaBlocks.fence_oak_20_20 = new BlockFenceOakH20S20();
         AppalachiaBlocks.fence_oak_20_30 = new BlockFenceOakH20S30();
@@ -488,7 +515,6 @@ public class BlockManager {
         AppalachiaBlocks.fence_oak_20_180 = new BlockFenceOakH20S180();
         AppalachiaBlocks.fence_oak_20_190 = new BlockFenceOakH20S190();
         AppalachiaBlocks.fence_oak_20_200 = new BlockFenceOakH20S200();
-        AppalachiaBlocks.fence_oak_30_0 = new BlockFenceOakH30S0();
         AppalachiaBlocks.fence_oak_30_10 = new BlockFenceOakH30S10();
         AppalachiaBlocks.fence_oak_30_20 = new BlockFenceOakH30S20();
         AppalachiaBlocks.fence_oak_30_30 = new BlockFenceOakH30S30();
@@ -514,7 +540,6 @@ public class BlockManager {
         AppalachiaBlocks.fence_oak_30_230 = new BlockFenceOakH30S230();
         AppalachiaBlocks.fence_oak_30_240 = new BlockFenceOakH30S240();
         AppalachiaBlocks.fence_oak_30_250 = new BlockFenceOakH30S250();
-        AppalachiaBlocks.fence_oak_40_0 = new BlockFenceOakH40S0();
         AppalachiaBlocks.fence_oak_40_10 = new BlockFenceOakH40S10();
         AppalachiaBlocks.fence_oak_40_20 = new BlockFenceOakH40S20();
         AppalachiaBlocks.fence_oak_40_30 = new BlockFenceOakH40S30();
@@ -535,11 +560,21 @@ public class BlockManager {
         AppalachiaBlocks.fence_oak_40_180 = new BlockFenceOakH40S180();
         AppalachiaBlocks.fence_oak_40_190 = new BlockFenceOakH40S190();
         AppalachiaBlocks.fence_oak_40_200 = new BlockFenceOakH40S200();
+        AppalachiaBlocks.fence_oak_180_10 = new BlockFenceOakH180S10();
+        AppalachiaBlocks.fence_oak_180_20 = new BlockFenceOakH180S20();
+        AppalachiaBlocks.fence_oak_180_30 = new BlockFenceOakH180S30();
+        AppalachiaBlocks.fence_oak_180_40 = new BlockFenceOakH180S40();
+        AppalachiaBlocks.fence_oak_180_50 = new BlockFenceOakH180S50();
+        AppalachiaBlocks.fence_oak_180_60 = new BlockFenceOakH180S60();
+        AppalachiaBlocks.fence_oak_180_70 = new BlockFenceOakH180S70();
+        AppalachiaBlocks.fence_oak_180_80 = new BlockFenceOakH180S80();
+        AppalachiaBlocks.fence_oak_180_90 = new BlockFenceOakH180S90();
+        AppalachiaBlocks.fence_oak_180_100 = new BlockFenceOakH180S100();
         addFences();
 
         //Fence gates.
         AppalachiaBlocks.fence_gate_autumn_grey = new BlockFenceGateAutumnGrey();
-        AppalachiaBlocks.fence_gate_oak_10_0 = new BlockFenceGateOakH10S0();
+
         AppalachiaBlocks.fence_gate_oak_10_10 = new BlockFenceGateOakH10S10();
         AppalachiaBlocks.fence_gate_oak_10_20 = new BlockFenceGateOakH10S20();
         AppalachiaBlocks.fence_gate_oak_10_30 = new BlockFenceGateOakH10S30();
@@ -560,7 +595,6 @@ public class BlockManager {
         AppalachiaBlocks.fence_gate_oak_10_180 = new BlockFenceGateOakH10S180();
         AppalachiaBlocks.fence_gate_oak_10_190 = new BlockFenceGateOakH10S190();
         AppalachiaBlocks.fence_gate_oak_10_200 = new BlockFenceGateOakH10S200();
-        AppalachiaBlocks.fence_gate_oak_20_0 = new BlockFenceGateOakH20S0();
         AppalachiaBlocks.fence_gate_oak_20_10 = new BlockFenceGateOakH20S10();
         AppalachiaBlocks.fence_gate_oak_20_20 = new BlockFenceGateOakH20S20();
         AppalachiaBlocks.fence_gate_oak_20_30 = new BlockFenceGateOakH20S30();
@@ -581,7 +615,6 @@ public class BlockManager {
         AppalachiaBlocks.fence_gate_oak_20_180 = new BlockFenceGateOakH20S180();
         AppalachiaBlocks.fence_gate_oak_20_190 = new BlockFenceGateOakH20S190();
         AppalachiaBlocks.fence_gate_oak_20_200 = new BlockFenceGateOakH20S200();
-        AppalachiaBlocks.fence_gate_oak_30_0 = new BlockFenceGateOakH30S0();
         AppalachiaBlocks.fence_gate_oak_30_10 = new BlockFenceGateOakH30S10();
         AppalachiaBlocks.fence_gate_oak_30_20 = new BlockFenceGateOakH30S20();
         AppalachiaBlocks.fence_gate_oak_30_30 = new BlockFenceGateOakH30S30();
@@ -607,7 +640,6 @@ public class BlockManager {
         AppalachiaBlocks.fence_gate_oak_30_230 = new BlockFenceGateOakH30S230();
         AppalachiaBlocks.fence_gate_oak_30_240 = new BlockFenceGateOakH30S240();
         AppalachiaBlocks.fence_gate_oak_30_250 = new BlockFenceGateOakH30S250();
-        AppalachiaBlocks.fence_gate_oak_40_0 = new BlockFenceGateOakH40S0();
         AppalachiaBlocks.fence_gate_oak_40_10 = new BlockFenceGateOakH40S10();
         AppalachiaBlocks.fence_gate_oak_40_20 = new BlockFenceGateOakH40S20();
         AppalachiaBlocks.fence_gate_oak_40_30 = new BlockFenceGateOakH40S30();
@@ -628,6 +660,16 @@ public class BlockManager {
         AppalachiaBlocks.fence_gate_oak_40_180 = new BlockFenceGateOakH40S180();
         AppalachiaBlocks.fence_gate_oak_40_190 = new BlockFenceGateOakH40S190();
         AppalachiaBlocks.fence_gate_oak_40_200 = new BlockFenceGateOakH40S200();
+        AppalachiaBlocks.fence_gate_oak_180_10 = new BlockFenceGateOakH180S10();
+        AppalachiaBlocks.fence_gate_oak_180_20 = new BlockFenceGateOakH180S20();
+        AppalachiaBlocks.fence_gate_oak_180_30 = new BlockFenceGateOakH180S30();
+        AppalachiaBlocks.fence_gate_oak_180_40 = new BlockFenceGateOakH180S40();
+        AppalachiaBlocks.fence_gate_oak_180_50 = new BlockFenceGateOakH180S50();
+        AppalachiaBlocks.fence_gate_oak_180_60 = new BlockFenceGateOakH180S60();
+        AppalachiaBlocks.fence_gate_oak_180_70 = new BlockFenceGateOakH180S70();
+        AppalachiaBlocks.fence_gate_oak_180_80 = new BlockFenceGateOakH180S80();
+        AppalachiaBlocks.fence_gate_oak_180_90 = new BlockFenceGateOakH180S90();
+        AppalachiaBlocks.fence_gate_oak_180_100 = new BlockFenceGateOakH180S100();
         addFenceGates();
 
         //Leaves.
@@ -664,7 +706,7 @@ public class BlockManager {
     private static void addLogs() {
 
         appalachiaLogs.add(AppalachiaBlocks.log_autumn_grey);
-        appalachiaLogs.add(AppalachiaBlocks.log_oak_10_0);
+
         appalachiaLogs.add(AppalachiaBlocks.log_oak_10_10);
         appalachiaLogs.add(AppalachiaBlocks.log_oak_10_20);
         appalachiaLogs.add(AppalachiaBlocks.log_oak_10_30);
@@ -685,7 +727,6 @@ public class BlockManager {
         appalachiaLogs.add(AppalachiaBlocks.log_oak_10_180);
         appalachiaLogs.add(AppalachiaBlocks.log_oak_10_190);
         appalachiaLogs.add(AppalachiaBlocks.log_oak_10_200);
-        appalachiaLogs.add(AppalachiaBlocks.log_oak_20_0);
         appalachiaLogs.add(AppalachiaBlocks.log_oak_20_10);
         appalachiaLogs.add(AppalachiaBlocks.log_oak_20_20);
         appalachiaLogs.add(AppalachiaBlocks.log_oak_20_30);
@@ -706,7 +747,6 @@ public class BlockManager {
         appalachiaLogs.add(AppalachiaBlocks.log_oak_20_180);
         appalachiaLogs.add(AppalachiaBlocks.log_oak_20_190);
         appalachiaLogs.add(AppalachiaBlocks.log_oak_20_200);
-        appalachiaLogs.add(AppalachiaBlocks.log_oak_30_0);
         appalachiaLogs.add(AppalachiaBlocks.log_oak_30_10);
         appalachiaLogs.add(AppalachiaBlocks.log_oak_30_20);
         appalachiaLogs.add(AppalachiaBlocks.log_oak_30_30);
@@ -732,7 +772,6 @@ public class BlockManager {
         appalachiaLogs.add(AppalachiaBlocks.log_oak_30_230);
         appalachiaLogs.add(AppalachiaBlocks.log_oak_30_240);
         appalachiaLogs.add(AppalachiaBlocks.log_oak_30_250);
-        appalachiaLogs.add(AppalachiaBlocks.log_oak_40_0);
         appalachiaLogs.add(AppalachiaBlocks.log_oak_40_10);
         appalachiaLogs.add(AppalachiaBlocks.log_oak_40_20);
         appalachiaLogs.add(AppalachiaBlocks.log_oak_40_30);
@@ -753,12 +792,22 @@ public class BlockManager {
         appalachiaLogs.add(AppalachiaBlocks.log_oak_40_180);
         appalachiaLogs.add(AppalachiaBlocks.log_oak_40_190);
         appalachiaLogs.add(AppalachiaBlocks.log_oak_40_200);
+        appalachiaLogs.add(AppalachiaBlocks.log_oak_180_10);
+        appalachiaLogs.add(AppalachiaBlocks.log_oak_180_20);
+        appalachiaLogs.add(AppalachiaBlocks.log_oak_180_30);
+        appalachiaLogs.add(AppalachiaBlocks.log_oak_180_40);
+        appalachiaLogs.add(AppalachiaBlocks.log_oak_180_50);
+        appalachiaLogs.add(AppalachiaBlocks.log_oak_180_60);
+        appalachiaLogs.add(AppalachiaBlocks.log_oak_180_70);
+        appalachiaLogs.add(AppalachiaBlocks.log_oak_180_80);
+        appalachiaLogs.add(AppalachiaBlocks.log_oak_180_90);
+        appalachiaLogs.add(AppalachiaBlocks.log_oak_180_100);
     }
 
     private static void addPlanks() {
 
         appalachiaPlanks.add(AppalachiaBlocks.planks_autumn_grey);
-        appalachiaPlanks.add(AppalachiaBlocks.planks_oak_10_0);
+
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_10_10);
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_10_20);
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_10_30);
@@ -779,7 +828,6 @@ public class BlockManager {
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_10_180);
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_10_190);
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_10_200);
-        appalachiaPlanks.add(AppalachiaBlocks.planks_oak_20_0);
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_20_10);
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_20_20);
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_20_30);
@@ -800,7 +848,6 @@ public class BlockManager {
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_20_180);
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_20_190);
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_20_200);
-        appalachiaPlanks.add(AppalachiaBlocks.planks_oak_30_0);
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_30_10);
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_30_20);
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_30_30);
@@ -826,7 +873,6 @@ public class BlockManager {
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_30_230);
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_30_240);
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_30_250);
-        appalachiaPlanks.add(AppalachiaBlocks.planks_oak_40_0);
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_40_10);
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_40_20);
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_40_30);
@@ -847,12 +893,22 @@ public class BlockManager {
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_40_180);
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_40_190);
         appalachiaPlanks.add(AppalachiaBlocks.planks_oak_40_200);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_oak_180_10);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_oak_180_20);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_oak_180_30);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_oak_180_40);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_oak_180_50);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_oak_180_60);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_oak_180_70);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_oak_180_80);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_oak_180_90);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_oak_180_100);
     }
 
     private static void addSlabs() {
 
         appalachiaSlabs.add(AppalachiaBlocks.slab_autumn_grey);
-        appalachiaSlabs.add(AppalachiaBlocks.slab_oak_10_0);
+
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_10_10);
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_10_20);
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_10_30);
@@ -873,7 +929,6 @@ public class BlockManager {
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_10_180);
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_10_190);
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_10_200);
-        appalachiaSlabs.add(AppalachiaBlocks.slab_oak_20_0);
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_20_10);
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_20_20);
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_20_30);
@@ -894,7 +949,6 @@ public class BlockManager {
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_20_180);
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_20_190);
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_20_200);
-        appalachiaSlabs.add(AppalachiaBlocks.slab_oak_30_0);
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_30_10);
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_30_20);
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_30_30);
@@ -920,7 +974,6 @@ public class BlockManager {
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_30_230);
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_30_240);
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_30_250);
-        appalachiaSlabs.add(AppalachiaBlocks.slab_oak_40_0);
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_40_10);
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_40_20);
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_40_30);
@@ -941,12 +994,22 @@ public class BlockManager {
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_40_180);
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_40_190);
         appalachiaSlabs.add(AppalachiaBlocks.slab_oak_40_200);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_oak_180_10);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_oak_180_20);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_oak_180_30);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_oak_180_40);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_oak_180_50);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_oak_180_60);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_oak_180_70);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_oak_180_80);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_oak_180_90);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_oak_180_100);
     }
 
     private static void addStairs() {
 
         appalachiaStairs.add(AppalachiaBlocks.stairs_autumn_grey);
-        appalachiaStairs.add(AppalachiaBlocks.stairs_oak_10_0);
+
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_10_10);
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_10_20);
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_10_30);
@@ -967,7 +1030,6 @@ public class BlockManager {
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_10_180);
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_10_190);
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_10_200);
-        appalachiaStairs.add(AppalachiaBlocks.stairs_oak_20_0);
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_20_10);
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_20_20);
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_20_30);
@@ -988,7 +1050,6 @@ public class BlockManager {
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_20_180);
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_20_190);
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_20_200);
-        appalachiaStairs.add(AppalachiaBlocks.stairs_oak_30_0);
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_30_10);
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_30_20);
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_30_30);
@@ -1014,7 +1075,6 @@ public class BlockManager {
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_30_230);
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_30_240);
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_30_250);
-        appalachiaStairs.add(AppalachiaBlocks.stairs_oak_40_0);
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_40_10);
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_40_20);
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_40_30);
@@ -1035,12 +1095,22 @@ public class BlockManager {
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_40_180);
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_40_190);
         appalachiaStairs.add(AppalachiaBlocks.stairs_oak_40_200);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_oak_180_10);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_oak_180_20);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_oak_180_30);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_oak_180_40);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_oak_180_50);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_oak_180_60);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_oak_180_70);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_oak_180_80);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_oak_180_90);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_oak_180_100);
     }
 
     private static void addFences() {
 
         appalachiaFences.add(AppalachiaBlocks.fence_autumn_grey);
-        appalachiaFences.add(AppalachiaBlocks.fence_oak_10_0);
+
         appalachiaFences.add(AppalachiaBlocks.fence_oak_10_10);
         appalachiaFences.add(AppalachiaBlocks.fence_oak_10_20);
         appalachiaFences.add(AppalachiaBlocks.fence_oak_10_30);
@@ -1061,7 +1131,6 @@ public class BlockManager {
         appalachiaFences.add(AppalachiaBlocks.fence_oak_10_180);
         appalachiaFences.add(AppalachiaBlocks.fence_oak_10_190);
         appalachiaFences.add(AppalachiaBlocks.fence_oak_10_200);
-        appalachiaFences.add(AppalachiaBlocks.fence_oak_20_0);
         appalachiaFences.add(AppalachiaBlocks.fence_oak_20_10);
         appalachiaFences.add(AppalachiaBlocks.fence_oak_20_20);
         appalachiaFences.add(AppalachiaBlocks.fence_oak_20_30);
@@ -1082,7 +1151,6 @@ public class BlockManager {
         appalachiaFences.add(AppalachiaBlocks.fence_oak_20_180);
         appalachiaFences.add(AppalachiaBlocks.fence_oak_20_190);
         appalachiaFences.add(AppalachiaBlocks.fence_oak_20_200);
-        appalachiaFences.add(AppalachiaBlocks.fence_oak_30_0);
         appalachiaFences.add(AppalachiaBlocks.fence_oak_30_10);
         appalachiaFences.add(AppalachiaBlocks.fence_oak_30_20);
         appalachiaFences.add(AppalachiaBlocks.fence_oak_30_30);
@@ -1108,7 +1176,6 @@ public class BlockManager {
         appalachiaFences.add(AppalachiaBlocks.fence_oak_30_230);
         appalachiaFences.add(AppalachiaBlocks.fence_oak_30_240);
         appalachiaFences.add(AppalachiaBlocks.fence_oak_30_250);
-        appalachiaFences.add(AppalachiaBlocks.fence_oak_40_0);
         appalachiaFences.add(AppalachiaBlocks.fence_oak_40_10);
         appalachiaFences.add(AppalachiaBlocks.fence_oak_40_20);
         appalachiaFences.add(AppalachiaBlocks.fence_oak_40_30);
@@ -1129,12 +1196,22 @@ public class BlockManager {
         appalachiaFences.add(AppalachiaBlocks.fence_oak_40_180);
         appalachiaFences.add(AppalachiaBlocks.fence_oak_40_190);
         appalachiaFences.add(AppalachiaBlocks.fence_oak_40_200);
+        appalachiaFences.add(AppalachiaBlocks.fence_oak_180_10);
+        appalachiaFences.add(AppalachiaBlocks.fence_oak_180_20);
+        appalachiaFences.add(AppalachiaBlocks.fence_oak_180_30);
+        appalachiaFences.add(AppalachiaBlocks.fence_oak_180_40);
+        appalachiaFences.add(AppalachiaBlocks.fence_oak_180_50);
+        appalachiaFences.add(AppalachiaBlocks.fence_oak_180_60);
+        appalachiaFences.add(AppalachiaBlocks.fence_oak_180_70);
+        appalachiaFences.add(AppalachiaBlocks.fence_oak_180_80);
+        appalachiaFences.add(AppalachiaBlocks.fence_oak_180_90);
+        appalachiaFences.add(AppalachiaBlocks.fence_oak_180_100);
     }
 
     private static void addFenceGates() {
 
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_autumn_grey);
-        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_10_0);
+
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_10_10);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_10_20);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_10_30);
@@ -1155,7 +1232,6 @@ public class BlockManager {
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_10_180);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_10_190);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_10_200);
-        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_20_0);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_20_10);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_20_20);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_20_30);
@@ -1176,7 +1252,6 @@ public class BlockManager {
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_20_180);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_20_190);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_20_200);
-        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_30_0);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_30_10);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_30_20);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_30_30);
@@ -1202,7 +1277,6 @@ public class BlockManager {
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_30_230);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_30_240);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_30_250);
-        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_40_0);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_40_10);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_40_20);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_40_30);
@@ -1223,6 +1297,16 @@ public class BlockManager {
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_40_180);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_40_190);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_40_200);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_180_10);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_180_20);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_180_30);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_180_40);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_180_50);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_180_60);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_180_70);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_180_80);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_180_90);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_oak_180_100);
     }
 
     private static void addLeaves() {
@@ -1459,10 +1543,6 @@ public class BlockManager {
     }
 
     private static void addSmeltingRecipes() {
-
-        for (int i = 0; i < appalachiaLogs.size(); i++) {
-            GameRegistry.addSmelting(appalachiaLogs.get(i), new ItemStack(Items.COAL, 1, 1), 0.15F);
-        }
 
         for (int i = 0; i < appalachiaLogs.size(); i++) {
             GameRegistry.addSmelting(appalachiaLogs.get(i), new ItemStack(Items.COAL, 1, 1), 0.15F);
