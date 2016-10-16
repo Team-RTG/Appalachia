@@ -1,31 +1,36 @@
 package appalachia.client.renderer.entity;
 
-import net.minecraft.client.model.ModelBase;
+import javax.annotation.Nonnull;
+
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
+import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import appalachia.client.model.ModelBlackBear;
 import appalachia.entity.monster.EntityBlackBear;
 import appalachia.reference.ModInfo;
 
 @SideOnly(Side.CLIENT)
 public class RenderBlackBear extends RenderLiving<EntityBlackBear>
 {
-    private static final ResourceLocation BLACK_BEAR_TEXTURE = new ResourceLocation("" + ModInfo.MOD_ID + ":textures/entity/bear/blackbear.png");
+    private ResourceLocation mobTexture = new ResourceLocation("" + ModInfo.MOD_ID + ":textures/entity/bear/blackbear.png");
+    public static final Factory FACTORY = new Factory();
 
-    public RenderBlackBear(RenderManager p_i47132_1_, ModelBase p_i47132_2_, float p_i47132_3_)
-    {
-        super(p_i47132_1_, p_i47132_2_, p_i47132_3_);
+
+    public RenderBlackBear(RenderManager rendermanagerIn) {
+        super(rendermanagerIn, new ModelBlackBear(), 0.5F);
     }
 
     @Override
-    protected ResourceLocation getEntityTexture(EntityBlackBear entity)
-    {
-        return BLACK_BEAR_TEXTURE;
+    @Nonnull
+    protected ResourceLocation getEntityTexture(@Nonnull EntityBlackBear entity) {
+        return mobTexture;
     }
 
     @Override
@@ -39,5 +44,14 @@ public class RenderBlackBear extends RenderLiving<EntityBlackBear>
     {
         GlStateManager.scale(1.2F, 1.2F, 1.2F);
         super.preRenderCallback(entitylivingbaseIn, partialTickTime);
+    }
+
+    public static class Factory implements IRenderFactory<EntityBlackBear> {
+
+        @Override
+        public Render<? super EntityBlackBear> createRenderFor(RenderManager manager) {
+            return new RenderBlackBear(manager);
+        }
+
     }
 }

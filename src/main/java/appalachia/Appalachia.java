@@ -15,7 +15,6 @@ import appalachia.biome.AppalachiaBiomeManager;
 import appalachia.block.BlockManager;
 import appalachia.client.sound.SoundManager;
 import appalachia.config.ConfigManager;
-import appalachia.entity.EntityManager;
 import appalachia.event.EventManager;
 import appalachia.item.ItemManager;
 import appalachia.proxy.ClientProxy;
@@ -58,7 +57,6 @@ public class Appalachia {
         BlockManager.registerBlocks();
         ItemManager.registerItems();
         SoundManager.registerSounds();
-        EntityManager.registerEntities();
 
         if (event.getSide().isClient()) {
             BlockManager.registerModels();

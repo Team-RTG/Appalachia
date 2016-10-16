@@ -1,79 +1,32 @@
 package appalachia.entity;
 
-import java.util.Map;
-
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityList;
-import net.minecraft.entity.EntityList.EntityEggInfo;
-import net.minecraft.world.World;
-
-import net.minecraftforge.fml.common.FMLCommonHandler;
-import net.minecraftforge.fml.common.ModContainer;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
-import net.minecraftforge.fml.common.registry.EntityRegistry.EntityRegistration;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.Appalachia;
+import appalachia.client.renderer.entity.RenderBlackBear;
 import appalachia.entity.monster.EntityBlackBear;
-import appalachia.util.Logger;
-import com.google.common.collect.Maps;
 
 public class EntityManager
 {
+    public static void registerEntities() {
 
-    public static final Map<Integer, EntityEggInfo> entityEggs = Maps.<Integer, EntityEggInfo>newLinkedHashMap();
-    public static final Map<Integer, String> idToEntityName = Maps.<Integer, String>newLinkedHashMap();
+        int id = 1;
 
-    private static int nextEntityId = 1;
+        EntityRegistry.registerModEntity(EntityBlackBear.class, "BlackBear", id++, Appalachia.instance, 64, 3, true, 0x000000, 0x80511a);
 
-    public static void registerEntities()
-    {
-        registerEntityWithSpawnEgg(EntityBlackBear.class, "blackbear", 80, 3, true, 0x000000, 0x80511a);
+        // We want our mob to spawn in Plains and ice plains biomes. If you don't add this then it will not spawn automatically
+        // but you can of course still make it spawn manually
+        //EntityRegistry.addSpawn(EntityWeirdZombie.class, 100, 3, 5, EnumCreatureType.MONSTER, Biomes.PLAINS, Biomes.ICE_PLAINS);
+
+        // This is the loot table for our mob
+        //LootTableList.register(EntityPolarBear.LOOT);
     }
 
-    // register an entity
-    public static int registerEntity(Class<? extends Entity> entityClass, String entityName, int trackingRange, int updateFrequency, boolean sendsVelocityUpdates)
-    {
-        int entityId = nextEntityId++;
-        EntityRegistry.registerModEntity(entityClass, entityName, entityId, Appalachia.instance, trackingRange, updateFrequency, sendsVelocityUpdates);
-        idToEntityName.put(entityId, entityName);
-        return entityId;
+    @SideOnly(Side.CLIENT)
+    public static void registerModels() {
+        RenderingRegistry.registerEntityRenderingHandler(EntityBlackBear.class, RenderBlackBear.FACTORY);
     }
-
-    // register an entity and in addition create a spawn egg for it
-    public static int registerEntityWithSpawnEgg(Class<? extends Entity> entityClass, String entityName, int trackingRange, int updateFrequency, boolean sendsVelocityUpdates, int eggBackgroundColor, int eggForegroundColor)
-    {
-        int entityId = registerEntity(entityClass, entityName, trackingRange, updateFrequency, sendsVelocityUpdates);
-        entityEggs.put(Integer.valueOf(entityId), new EntityList.EntityEggInfo(entityName, eggBackgroundColor, eggForegroundColor));
-        return entityId;
-    }
-
-
-    public static Entity createEntityByID(int entityId, World worldIn)
-    {
-        Entity entity = null;
-        ModContainer mc = FMLCommonHandler.instance().findContainerFor(Appalachia.instance);
-        EntityRegistration er = EntityRegistry.instance().lookupModSpawn(mc, entityId);
-        if (er != null)
-        {
-            Class<? extends Entity> clazz = er.getEntityClass();
-            try
-            {
-                if (clazz != null)
-                {
-                    entity = (Entity)clazz.getConstructor(new Class[] {World.class}).newInstance(new Object[] {worldIn});
-                }
-            }
-            catch (Exception exception)
-            {
-                exception.printStackTrace();
-            }
-        }
-        if (entity == null)
-        {
-            Logger.warn("Skipping Appalachia entity with id " + entityId);
-        }
-        return entity;
-    }
-
-
 }

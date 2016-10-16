@@ -39,16 +39,19 @@ public class EntityBlackBear extends EntityAnimal
         this.setSize(1.3F, 1.4F);
     }
 
+    @Override
     public EntityAgeable createChild(EntityAgeable ageable)
     {
         return new EntityBlackBear(this.worldObj);
     }
 
+    @Override
     public boolean isBreedingItem(ItemStack stack)
     {
         return false;
     }
 
+    @Override
     protected void initEntityAI()
     {
         super.initEntityAI();
@@ -63,6 +66,7 @@ public class EntityBlackBear extends EntityAnimal
         this.targetTasks.addTask(2, new EntityBlackBear.AIAttackPlayer());
     }
 
+    @Override
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
@@ -73,27 +77,31 @@ public class EntityBlackBear extends EntityAnimal
         this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6.0D);
     }
 
+    @Override
     protected SoundEvent getAmbientSound()
     {
         return this.isChild() ? AppalachiaSounds.entity_black_bear_baby_ambient : AppalachiaSounds.entity_black_bear_ambient;
     }
 
+    @Override
     protected SoundEvent getHurtSound()
     {
         return AppalachiaSounds.entity_black_bear_hurt;
     }
 
+    @Override
     protected SoundEvent getDeathSound()
     {
         return AppalachiaSounds.entity_black_bear_death;
     }
 
+    @Override
     protected void playStepSound(BlockPos pos, Block blockIn)
     {
         this.playSound(AppalachiaSounds.entity_black_bear_step, 0.15F, 1.0F);
     }
 
-    protected void func_189796_de()
+    protected void playWarningSound()
     {
         if (this.field_189797_bB <= 0)
         {
@@ -103,27 +111,32 @@ public class EntityBlackBear extends EntityAnimal
     }
 
     @Nullable
+    @Override
     protected ResourceLocation getLootTable()
     {
         return LootTableList.ENTITIES_POLAR_BEAR;
     }
 
+    @Override
     protected void entityInit()
     {
         super.entityInit();
         this.dataManager.register(IS_STANDING, Boolean.valueOf(false));
     }
 
+    @Override
     public void readEntityFromNBT(NBTTagCompound compound)
     {
         super.readEntityFromNBT(compound);
     }
 
+    @Override
     public void writeEntityToNBT(NBTTagCompound compound)
     {
         super.writeEntityToNBT(compound);
     }
 
+    @Override
     public void onUpdate()
     {
         super.onUpdate();
@@ -148,6 +161,7 @@ public class EntityBlackBear extends EntityAnimal
         }
     }
 
+    @Override
     public boolean attackEntityAsMob(Entity entityIn)
     {
         boolean flag = entityIn.attackEntityFrom(DamageSource.causeMobDamage(this), (float)((int)this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue()));
@@ -176,11 +190,13 @@ public class EntityBlackBear extends EntityAnimal
         return (this.field_189799_by + (this.field_189800_bz - this.field_189799_by) * p_189795_1_) / 6.0F;
     }
 
+    @Override
     protected float func_189749_co()
     {
         return 0.98F;
     }
 
+    @Override
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, IEntityLivingData livingdata)
     {
         if (livingdata instanceof EntityBlackBear.GroupData)
@@ -207,6 +223,7 @@ public class EntityBlackBear extends EntityAnimal
             super(EntityBlackBear.this, EntityPlayer.class, 20, true, true, null);
         }
 
+        @Override
         public boolean shouldExecute()
         {
             if (EntityBlackBear.this.isChild())
@@ -231,6 +248,7 @@ public class EntityBlackBear extends EntityAnimal
             }
         }
 
+        @Override
         protected double getTargetDistance()
         {
             return super.getTargetDistance() * 0.5D;
@@ -244,6 +262,7 @@ public class EntityBlackBear extends EntityAnimal
             super(EntityBlackBear.this, false, new Class[0]);
         }
 
+        @Override
         public void startExecuting()
         {
             super.startExecuting();
@@ -255,6 +274,7 @@ public class EntityBlackBear extends EntityAnimal
             }
         }
 
+        @Override
         protected void setEntityAttackTarget(EntityCreature creatureIn, EntityLivingBase entityLivingBaseIn)
         {
             if (creatureIn instanceof EntityBlackBear && !((EntityBlackBear)creatureIn).isChild())
@@ -271,6 +291,7 @@ public class EntityBlackBear extends EntityAnimal
             super(EntityBlackBear.this, 1.25D, true);
         }
 
+        @Override
         protected void func_190102_a(EntityLivingBase p_190102_1_, double p_190102_2_)
         {
             double d0 = this.getAttackReachSqr(p_190102_1_);
@@ -292,7 +313,7 @@ public class EntityBlackBear extends EntityAnimal
                 if (this.attackTick <= 10)
                 {
                     EntityBlackBear.this.setStanding(true);
-                    EntityBlackBear.this.func_189796_de();
+                    EntityBlackBear.this.playWarningSound();
                 }
             }
             else
@@ -302,12 +323,14 @@ public class EntityBlackBear extends EntityAnimal
             }
         }
 
+        @Override
         public void resetTask()
         {
             EntityBlackBear.this.setStanding(false);
             super.resetTask();
         }
 
+        @Override
         protected double getAttackReachSqr(EntityLivingBase attackTarget)
         {
             return (double)(4.0F + attackTarget.width);
@@ -321,6 +344,7 @@ public class EntityBlackBear extends EntityAnimal
             super(EntityBlackBear.this, 2.0D);
         }
 
+        @Override
         public boolean shouldExecute()
         {
             return !EntityBlackBear.this.isChild() && !EntityBlackBear.this.isBurning() ? false : super.shouldExecute();
