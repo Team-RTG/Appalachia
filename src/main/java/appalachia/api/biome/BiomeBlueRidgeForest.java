@@ -13,20 +13,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.api.biome.decorator.DecoratorBlueRidgeForest;
-import appalachia.api.util.Simplex;
 import appalachia.entity.monster.EntityBlackBear;
 
 public class BiomeBlueRidgeForest extends AppalachiaBiome implements IAppalachiaBiome {
 
     public static BiomeDictionary.Type[] biomeTypes;
-
-    private static final int leafColours[] = {
-        15924992, 16776960, 16773632, 16770560, 16767232, 16763904,
-        16760576, 16757504, 16754176, 16750848, 16747520, 16744448,
-        16741120, 16737792, 16734464, 16731392, 16728064, 16724736, 16721408
-    };
-
-    private Simplex simplex = new Simplex(17781);
 
     public BiomeBlueRidgeForest(BiomeProperties props) {
 
@@ -35,7 +26,7 @@ public class BiomeBlueRidgeForest extends AppalachiaBiome implements IAppalachia
         fillerBlock = Blocks.DIRT.getDefaultState();
         theBiomeDecorator.treesPerChunk = 1;
 
-        this.spawnableCreatureList.add(new SpawnListEntry(EntityBlackBear.class, 1, 1, 2));
+        this.spawnableCreatureList.add(new SpawnListEntry(EntityBlackBear.class, 4, 1, 2));
 
         biomeTypes = new BiomeDictionary.Type[]{BiomeDictionary.Type.FOREST};
     }

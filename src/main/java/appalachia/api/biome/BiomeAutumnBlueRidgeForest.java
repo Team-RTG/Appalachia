@@ -14,12 +14,20 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.api.biome.decorator.DecoratorAutumnBlueRidgeForest;
 import appalachia.entity.monster.EntityBlackBear;
-import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
-import appalachia.rtg.world.gen.feature.tree.rtg.TreeTiliaAmericana;
+
+import rtg.util.OpenSimplexNoise;
 
 public class BiomeAutumnBlueRidgeForest extends AppalachiaBiome implements IAppalachiaBiome {
 
     public static BiomeDictionary.Type[] biomeTypes;
+
+    private static final int leafColours[] = {
+        15924992, 16776960, 16773632, 16770560, 16767232, 16763904,
+        16760576, 16757504, 16754176, 16750848, 16747520, 16744448,
+        16741120, 16737792, 16734464, 16731392, 16728064, 16724736, 16721408
+    };
+
+    public OpenSimplexNoise simplex = new OpenSimplexNoise(4444);
 
     public BiomeAutumnBlueRidgeForest(BiomeProperties props) {
 
@@ -28,7 +36,7 @@ public class BiomeAutumnBlueRidgeForest extends AppalachiaBiome implements IAppa
         fillerBlock = Blocks.DIRT.getDefaultState();
         theBiomeDecorator.treesPerChunk = 1;
 
-        this.spawnableCreatureList.add(new SpawnListEntry(EntityBlackBear.class, 1, 1, 2));
+        this.spawnableCreatureList.add(new SpawnListEntry(EntityBlackBear.class, 4, 1, 2));
 
         biomeTypes = new BiomeDictionary.Type[]{BiomeDictionary.Type.FOREST};
     }
@@ -64,49 +72,15 @@ public class BiomeAutumnBlueRidgeForest extends AppalachiaBiome implements IAppa
     public int getGrassColorAtPos(BlockPos pos) {
 
         double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
-        return (noise < -0.5D) ? 10703636 : ((noise > 0.5D) ? 11937822 : 12991488);
+        //return noise < -0.1D ? 0x9c752a : 0x967129; // Brown.
+        return noise < -0.1D ? 0x968c29 : 0x968129;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public int getFoliageColorAtPos(BlockPos pos) {
 
-        double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
-        return (noise < -0.5D) ? 12991488 : ((noise > 0.5D) ? 10703636 : 11937822);
-    }
-
-    @Override
-    public void addTreesToBiome() {
-
-        AppalachiaTree tree = new TreeTiliaAmericana();
-        tree.logBlock = Blocks.LOG.getDefaultState();
-        tree.leavesBlock = Blocks.LEAVES.getDefaultState();
-        this.addTree(tree);
-
-//        Tree tree1 = new Tree();
-//        tree1.leavesBlock = AppalachiaBlocks.leaves_autumn_orange.getDefaultState();
-//        tree1.trunkWidthBottom = 2;
-//        tree1.trunkWidthTop = 2;
-//        tree1.crownWidthBottom = 2;
-//        tree1.crownWidthTop = 2;
-//        this.addTree(tree1);
-
-//        Tree tree2 = new Tree();
-//        tree2.leavesBlock = AppalachiaBlocks.leaves_autumn_yellow.getDefaultState();
-//        tree2.trunkWidthBottom = 2;
-//        tree2.crownWidthTop = 2;
-//        this.addTree(tree2);
-
-//        TreeQuercusRobur treeYellow = new TreeQuercusRobur();
-//        treeYellow.leavesBlock = AppalachiaBlocks.leaves_autumn_yellow.getDefaultState();
-//        this.addTree(treeYellow);
-//
-//        TreeQuercusRobur treeOrange = new TreeQuercusRobur();
-//        treeOrange.leavesBlock = AppalachiaBlocks.leaves_autumn_orange.getDefaultState();
-//        this.addTree(treeOrange);
-//
-//        TreeQuercusRobur treeRed = new TreeQuercusRobur();
-//        treeRed.leavesBlock = AppalachiaBlocks.leaves_autumn_red.getDefaultState();
-//        this.addTree(treeRed);
+        int noise = (int) (simplex.noise(pos.getX()/16, pos.getZ()/16)*9+9);
+        return leafColours[noise];
     }
 }
