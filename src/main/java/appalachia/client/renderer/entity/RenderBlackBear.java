@@ -24,7 +24,7 @@ public class RenderBlackBear extends RenderLiving<EntityBlackBear>
 
 
     public RenderBlackBear(RenderManager rendermanagerIn) {
-        super(rendermanagerIn, new ModelBlackBear(), 0.5F);
+        super(rendermanagerIn, new ModelBlackBear(), 0.7F);
     }
 
     @Override

@@ -35,7 +35,7 @@ public class BiomeBlueRidgeForest extends AppalachiaBiome implements IAppalachia
         fillerBlock = Blocks.DIRT.getDefaultState();
         theBiomeDecorator.treesPerChunk = 1;
 
-        this.spawnableCreatureList.add(new SpawnListEntry(EntityBlackBear.class, 60, 1, 10));
+        this.spawnableCreatureList.add(new SpawnListEntry(EntityBlackBear.class, 1, 1, 2));
 
         biomeTypes = new BiomeDictionary.Type[]{BiomeDictionary.Type.FOREST};
     }

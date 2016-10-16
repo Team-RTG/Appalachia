@@ -13,6 +13,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.api.biome.decorator.DecoratorAppalachianMountains;
+import appalachia.entity.monster.EntityBlackBear;
 
 public class BiomeBlueRidgeMountains extends AppalachiaBiome implements IAppalachiaBiome {
 
@@ -24,6 +25,8 @@ public class BiomeBlueRidgeMountains extends AppalachiaBiome implements IAppalac
         topBlock = Blocks.GRASS.getDefaultState();
         fillerBlock = Blocks.DIRT.getDefaultState();
         theBiomeDecorator.treesPerChunk = 1;
+
+        this.spawnableCreatureList.add(new SpawnListEntry(EntityBlackBear.class, 1, 1, 2));
 
         biomeTypes = new BiomeDictionary.Type[]{BiomeDictionary.Type.MOUNTAIN};
     }

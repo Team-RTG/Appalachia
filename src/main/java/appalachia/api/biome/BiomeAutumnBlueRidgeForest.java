@@ -13,6 +13,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.api.biome.decorator.DecoratorAutumnBlueRidgeForest;
+import appalachia.entity.monster.EntityBlackBear;
 import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
 import appalachia.rtg.world.gen.feature.tree.rtg.TreeTiliaAmericana;
 
@@ -26,6 +27,8 @@ public class BiomeAutumnBlueRidgeForest extends AppalachiaBiome implements IAppa
         topBlock = Blocks.GRASS.getDefaultState();
         fillerBlock = Blocks.DIRT.getDefaultState();
         theBiomeDecorator.treesPerChunk = 1;
+
+        this.spawnableCreatureList.add(new SpawnListEntry(EntityBlackBear.class, 1, 1, 2));
 
         biomeTypes = new BiomeDictionary.Type[]{BiomeDictionary.Type.FOREST};
     }

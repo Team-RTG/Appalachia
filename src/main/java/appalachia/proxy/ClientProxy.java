@@ -20,6 +20,8 @@ public class ClientProxy extends CommonProxy {
     public void preInit(FMLPreInitializationEvent event) {
 
         super.preInit(event);
+
+        EntityManager.registerModels();
     }
 
     @Override
@@ -28,7 +30,6 @@ public class ClientProxy extends CommonProxy {
         super.init(event);
 
         registerColorHandlers();
-        EntityManager.registerModels();
     }
 
     @Override

@@ -4,6 +4,7 @@ itemGroup.appalachiablocks=Appalachia Blocks
 itemGroup.appalachiadecorations=Appalachia Decorations
 
 #Mobs
+entity.appalachia.BlackBear.name=Black Bear
 entity.BlackBear.name=Black Bear
 subtitles.entity.black_bear.ambient=Black Bear groans
 subtitles.entity.black_bear.baby_ambient=Black Bear hums

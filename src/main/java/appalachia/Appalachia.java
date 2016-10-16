@@ -68,7 +68,7 @@ public class Appalachia {
         proxy.preInit(event);
 
         BiomeConfigManagerAPL.initBiomeConfigs();
-        ConfigManagerAPL.init(event.getModConfigurationDirectory() + File.separator + "RTG" + File.separator);
+        ConfigManagerAPL.init(event.getModConfigurationDirectory() + File.separator + rtg.reference.ModInfo.CONFIG_DIRECTORY + File.separator);
     }
 
     @EventHandler
