@@ -14,6 +14,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.api.biome.decorator.DecoratorBlueRidgeForest;
 import appalachia.api.util.Simplex;
+import appalachia.entity.monster.EntityBlackBear;
 
 public class BiomeBlueRidgeForest extends AppalachiaBiome implements IAppalachiaBiome {
 
@@ -33,6 +34,8 @@ public class BiomeBlueRidgeForest extends AppalachiaBiome implements IAppalachia
         topBlock = Blocks.GRASS.getDefaultState();
         fillerBlock = Blocks.DIRT.getDefaultState();
         theBiomeDecorator.treesPerChunk = 1;
+
+        this.spawnableCreatureList.add(new SpawnListEntry(EntityBlackBear.class, 60, 1, 10));
 
         biomeTypes = new BiomeDictionary.Type[]{BiomeDictionary.Type.FOREST};
     }

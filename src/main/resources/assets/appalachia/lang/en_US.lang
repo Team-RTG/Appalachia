@@ -3,6 +3,14 @@
 itemGroup.appalachiablocks=Appalachia Blocks
 itemGroup.appalachiadecorations=Appalachia Decorations
 
+#Mobs
+entity.BlackBear.name=Black Bear
+subtitles.entity.black_bear.ambient=Black Bear groans
+subtitles.entity.black_bear.baby_ambient=Black Bear hums
+subtitles.entity.black_bear.death=Black Bear dies
+subtitles.entity.black_bear.hurt=Black Bear hurts
+subtitles.entity.black_bear.warning=Black Bear roars
+
 #Blocks
 
 tile.log.autumn.grey.name=Grey Autumn Log
