@@ -29,7 +29,7 @@ public class AppalachiaBiome extends Biome implements IAppalachiaBiome {
         theBiomeDecorator.generateLakes = false;
 
         this.spawnableCreatureList.clear();
-        this.spawnableCreatureList.add(new SpawnListEntry(EntityRabbit.class, 60, 1, 5));
+        this.spawnableCreatureList.add(new SpawnListEntry(EntityRabbit.class, 20, 1, 4));
 
         appalachiaTrees = new ArrayList<AppalachiaTree>();
         this.addTreesToBiome();

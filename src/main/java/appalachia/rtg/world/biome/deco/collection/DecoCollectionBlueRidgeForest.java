@@ -189,17 +189,11 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
         this.addDeco(decoShrubOak);
 
         DecoBoulder decoBoulder1 = new DecoBoulder();
-        decoBoulder1.boulderBlock = Blocks.COBBLESTONE.getDefaultState();
+        decoBoulder1.boulderBlock = Blocks.MOSSY_COBBLESTONE.getDefaultState();
         decoBoulder1.maxY = 80;
         decoBoulder1.chance = 16;
         decoBoulder1.strengthFactor = 1f;
-        DecoBoulder decoBoulder2 = new DecoBoulder();
-        decoBoulder2.boulderBlock = Blocks.COBBLESTONE.getDefaultState();
-        decoBoulder2.maxY = 80;
-        decoBoulder2.chance = 16;
-        decoBoulder2.strengthFactor = 1f;
-        DecoHelper5050 decoHelper5050 = new DecoHelper5050(decoBoulder1, decoBoulder2);
-        this.addDeco(decoHelper5050);
+        this.addDeco(decoBoulder1);
 
         // Fallen leaves.
         DecoLayer decoFallenLeaves = new DecoLayer(AppalachiaBlocks.leaves_oak_fallen.getDefaultState(), IAppalachiaBlockLeavesFallen.LAYERS);
@@ -216,9 +210,9 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
 
         // Very rare 2-block-tall flowers. (TODO: Replace these with Appalachian flora.)
         DecoFlowersRTG decoFlowers2 = new DecoFlowersRTG();
-        decoFlowers2.flowers = new int[]{11, 14};
-        decoFlowers2.maxY = shrubMaxY;
-        decoFlowers2.loops = 1;
+        decoFlowers2.flowers = new int[]{11, 12, 13, 14};
+        decoFlowers2.maxY = 180;
+        decoFlowers2.strengthFactor = 3f;
         this.addDeco(decoFlowers2);
 
         // Ferns.
