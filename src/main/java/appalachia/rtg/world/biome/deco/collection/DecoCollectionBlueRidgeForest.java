@@ -210,10 +210,10 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
 
         // Very rare 2-block-tall flowers. (TODO: Replace these with Appalachian flora.)
         DecoFlowersRTG decoFlowers2 = new DecoFlowersRTG();
-        decoFlowers2.flowers = new int[]{11, 12, 13, 14};
+        decoFlowers2.flowers = new int[]{12, 13};
         decoFlowers2.minY = 63;
         decoFlowers2.maxY = 180;
-        decoFlowers2.loops = 6;
+        decoFlowers2.loops = 3;
         this.addDeco(decoFlowers2);
 
         // Ferns.
