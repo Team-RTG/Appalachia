@@ -1,7 +1,6 @@
 package appalachia.rtg.world.biome.realistic.appalachia;
 
 import net.minecraft.init.Biomes;
-import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.Biome;
 
 import appalachia.api.AppalachiaBiomes;
@@ -11,6 +10,7 @@ import appalachia.rtg.world.gen.surface.appalachia.SurfaceAPLBlueRidgeForest;
 import appalachia.rtg.world.gen.terrain.appalachia.TerrainAPLBlueRidgeForest;
 
 import rtg.api.biome.BiomeConfig;
+import rtg.util.BlockUtil;
 
 public class RealisticBiomeAPLBlueRidgeForest extends RealisticBiomeAPLBase {
 
@@ -21,7 +21,7 @@ public class RealisticBiomeAPLBlueRidgeForest extends RealisticBiomeAPLBase {
 
         super(config, biome, river,
             new TerrainAPLBlueRidgeForest(),
-            new SurfaceAPLBlueRidgeForest(config, biome.topBlock, biome.fillerBlock, 0f, 1.5f, 60f, 65f, 1.5f, Blocks.DIRT.getStateFromMeta(2), 0.15f)
+            new SurfaceAPLBlueRidgeForest(config, biome.topBlock, biome.fillerBlock, BlockUtil.getStateDirt(2), 12f, 0.27f)
         );
 
         this.addDecoCollection(new DecoCollectionBlueRidgeForest(this.config._boolean(BiomeConfigAPLBlueRidgeForest.decorationLogsId)));

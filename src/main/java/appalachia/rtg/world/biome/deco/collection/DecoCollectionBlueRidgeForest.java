@@ -40,13 +40,13 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
         aplGrandFirTreeOak.minCrownSize = 15;
         aplGrandFirTreeOak.maxCrownSize = 30;
         DecoTree oakFir = new DecoTree(aplGrandFirTreeOak);
-        oakFir.loops = 1;
+        oakFir.loops = 2;
         oakFir.treeType = TreeType.RTG_TREE;
         oakFir.distribution.noiseDivisor = 100f;
         oakFir.distribution.noiseFactor = 6f;
         oakFir.distribution.noiseAddend = 0.8f;
         oakFir.treeCondition = TreeCondition.NOISE_GREATER_AND_RANDOM_CHANCE;
-        oakFir.treeConditionNoise = 0f;
+        oakFir.treeConditionNoise = -0.5f;
         oakFir.treeConditionChance = 1;
         oakFir.maxY = treeMaxY;
 
@@ -58,14 +58,14 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
         aplGrandFirTreeChestnut.minCrownSize = 15;
         aplGrandFirTreeChestnut.maxCrownSize = 30;
         DecoTree chestnutFir = new DecoTree(aplGrandFirTreeChestnut);
-        chestnutFir.loops = 1;
+        chestnutFir.loops = 2;
         chestnutFir.treeType = TreeType.RTG_TREE;
         chestnutFir.distribution.noiseDivisor = 100f;
         chestnutFir.distribution.noiseFactor = 6f;
         chestnutFir.distribution.noiseAddend = 0.8f;
         chestnutFir.treeCondition = TreeCondition.NOISE_GREATER_AND_RANDOM_CHANCE;
-        chestnutFir.treeConditionNoise = -0.8f;
-        chestnutFir.treeConditionChance = 2;
+        chestnutFir.treeConditionNoise = -0.5f;
+        chestnutFir.treeConditionChance = 1;
         chestnutFir.maxY = treeMaxY;
         DecoHelper5050 firTrees = new DecoHelper5050(oakFir, chestnutFir);
         this.addDeco(firTrees);
@@ -80,12 +80,12 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
         DecoTree oakMaple = new DecoTree(aplRedMaple);
         oakMaple.loops = 1;
         oakMaple.treeType = TreeType.RTG_TREE;
-        oakMaple.distribution.noiseDivisor = 80f;
-        oakMaple.distribution.noiseFactor = 60f;
-        oakMaple.distribution.noiseAddend = -15f;
+        oakMaple.distribution.noiseDivisor = 100f;
+        oakMaple.distribution.noiseFactor = 6f;
+        oakMaple.distribution.noiseAddend = 0.8f;
         oakMaple.treeCondition = TreeCondition.NOISE_LESSER_AND_RANDOM_CHANCE;
-        oakMaple.treeConditionNoise = 0f;
-        oakMaple.treeConditionChance = 2;
+        oakMaple.treeConditionNoise = 0.2f;
+        oakMaple.treeConditionChance = 1;
         oakMaple.maxY = treeMaxY;
         this.addDeco(oakMaple);
 
@@ -99,13 +99,13 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
         this.addTree(ponderosaOakTree);
 
         DecoTree oakPines = new DecoTree(ponderosaOakTree);
-        oakPines.strengthFactorForLoops = 8f;
+        oakPines.strengthFactorForLoops = 10f;
         oakPines.treeType = TreeType.RTG_TREE;
         oakPines.distribution.noiseDivisor = 100f;
         oakPines.distribution.noiseFactor = 6f;
         oakPines.distribution.noiseAddend = 0.8f;
-        oakPines.treeCondition = TreeCondition.NOISE_GREATER_AND_RANDOM_CHANCE;
-        oakPines.treeConditionNoise = 0f;
+        oakPines.treeCondition = TreeCondition.NOISE_LESSER_AND_RANDOM_CHANCE;
+        oakPines.treeConditionNoise = 0.2f;
         oakPines.treeConditionChance = 1;
         oakPines.maxY = 85;
 
@@ -119,13 +119,13 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
         this.addTree(ponderosaChestnutTree);
 
         DecoTree chestnutPines = new DecoTree(ponderosaChestnutTree);
-        chestnutPines.strengthFactorForLoops = 8f;
+        chestnutPines.strengthFactorForLoops = 10f;
         chestnutPines.treeType = TreeType.RTG_TREE;
         chestnutPines.distribution.noiseDivisor = 100f;
         chestnutPines.distribution.noiseFactor = 6f;
         chestnutPines.distribution.noiseAddend = 0.8f;
-        chestnutPines.treeCondition = TreeCondition.NOISE_GREATER_AND_RANDOM_CHANCE;
-        chestnutPines.treeConditionNoise = 0f;
+        chestnutPines.treeCondition = TreeCondition.NOISE_LESSER_AND_RANDOM_CHANCE;
+        chestnutPines.treeConditionNoise = 0.2f;
         chestnutPines.treeConditionChance = 1;
         chestnutPines.maxY = 85;
 
@@ -141,17 +141,17 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
         sitchensisTree.maxCrownSize = 14;
         this.addTree(sitchensisTree);
         DecoTree oakPine = new DecoTree(sitchensisTree);
-        oakPine.strengthFactorForLoops = 4f;
+        oakPine.strengthFactorForLoops = 8f;
         oakPine.treeType = TreeType.RTG_TREE;
         oakPine.treeCondition = TreeCondition.RANDOM_CHANCE;
-        oakPine.treeConditionChance = 3;
+        oakPine.treeConditionChance = 1;
         oakPine.maxY = treeMaxY;
         WorldGenerator vanillaTreeDefinition = new WorldGenTrees(false);
         DecoTree vanillaTrees = new DecoTree(vanillaTreeDefinition);
-        vanillaTrees.strengthFactorForLoops = 2f;
+        vanillaTrees.strengthFactorForLoops = 3f;
         vanillaTrees.treeType = TreeType.WORLDGEN;
         vanillaTrees.treeCondition = TreeCondition.RANDOM_CHANCE;
-        vanillaTrees.treeConditionChance = 4;
+        vanillaTrees.treeConditionChance = 2;
         vanillaTrees.maxY = treeMaxY;
         DecoHelperRandomSplit decoHelperRandomSplit = new DecoHelperRandomSplit();
         decoHelperRandomSplit.decos = new DecoBase[]{oakPine, vanillaTrees};
@@ -197,7 +197,7 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
 
         // Fallen leaves.
         DecoLayer decoFallenLeaves = new DecoLayer(AppalachiaBlocks.leaves_oak_fallen.getDefaultState(), IAppalachiaBlockLeavesFallen.LAYERS);
-        decoFallenLeaves.loops = 5;
+        decoFallenLeaves.loops = 7;
         this.addDeco(decoFallenLeaves);
 
         // Only 1-block-tall flowers so we can see the trees better.

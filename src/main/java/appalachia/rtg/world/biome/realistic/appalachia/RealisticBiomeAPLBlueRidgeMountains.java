@@ -1,7 +1,6 @@
 package appalachia.rtg.world.biome.realistic.appalachia;
 
 import net.minecraft.init.Biomes;
-import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.Biome;
 
 import appalachia.api.AppalachiaBiomes;
@@ -11,6 +10,7 @@ import appalachia.rtg.world.gen.surface.appalachia.SurfaceAPLBlueRidgeMountains;
 import appalachia.rtg.world.gen.terrain.appalachia.TerrainAPLBlueRidgeMountains;
 
 import rtg.api.biome.BiomeConfig;
+import rtg.util.BlockUtil;
 
 public class RealisticBiomeAPLBlueRidgeMountains extends RealisticBiomeAPLBase {
 
@@ -21,16 +21,7 @@ public class RealisticBiomeAPLBlueRidgeMountains extends RealisticBiomeAPLBase {
 
         super(config, biome, river,
             new TerrainAPLBlueRidgeMountains(120f, 100f),
-            new SurfaceAPLBlueRidgeMountains(config,
-                biome.topBlock, //Block top
-                biome.fillerBlock, //Block filler,
-                Blocks.DIRT.getStateFromMeta(2), //IBlockState mixTop,
-                biome.fillerBlock, //IBlockState mixFill,
-                80f, //float mixWidth,
-                -0.15f, //float mixHeight,
-                10f, //float smallWidth,
-                0.5f //float smallStrength
-            )
+            new SurfaceAPLBlueRidgeMountains(config, biome.topBlock, biome.fillerBlock, BlockUtil.getStateDirt(2), 12f, 0.27f)
         );
 
         this.noWaterFeatures = true;
