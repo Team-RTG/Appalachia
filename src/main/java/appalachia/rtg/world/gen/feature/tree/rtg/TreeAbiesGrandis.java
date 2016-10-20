@@ -64,7 +64,7 @@ public class TreeAbiesGrandis extends AppalachiaTree {
 
         IBlockState leaves = this.leavesBlock.withProperty(BlockLeaves.CHECK_DECAY, false);
         //IBlockState leaves = this.leavesBlock.withProperty(BlockLeaves.DECAYABLE, false);
-        int currentY = y - 1;
+        int currentY = y - 2;
 
         this.spawn(world, x, currentY, z, this.logBlock, leaves);
 
