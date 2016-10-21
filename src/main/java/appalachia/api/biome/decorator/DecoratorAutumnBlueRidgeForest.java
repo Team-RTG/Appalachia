@@ -8,10 +8,6 @@ import net.minecraft.world.biome.Biome;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
-import net.minecraftforge.event.terraingen.TerrainGen;
-
-import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
-import appalachia.api.biome.BiomeAutumnBlueRidgeForest;
 
 public class DecoratorAutumnBlueRidgeForest extends AppalachiaDecorator {
 
@@ -34,29 +30,5 @@ public class DecoratorAutumnBlueRidgeForest extends AppalachiaDecorator {
 
     protected void generateTrees(Biome biomeIn, World worldIn, Random random) {
 
-        if (TerrainGen.decorate(worldIn, random, chunkPos, DecorateBiomeEvent.Decorate.EventType.TREE)) {
-
-            if (biomeIn instanceof BiomeAutumnBlueRidgeForest) {
-
-                BiomeAutumnBlueRidgeForest biome = (BiomeAutumnBlueRidgeForest)biomeIn;
-
-                if (biome.appalachiaTrees.size() > 0) {
-
-                    AppalachiaTree tree = biome.appalachiaTrees.get(random.nextInt(biome.appalachiaTrees.size()));
-
-                    tree.trunkSize = random.nextInt(2) + 2;
-
-                    for (int j2 = 0; j2 < treesPerChunk; ++j2) {
-
-                        int k6 = random.nextInt(16) + 8;
-                        int l = random.nextInt(16) + 8;
-
-                        BlockPos blockpos = worldIn.getHeight(this.chunkPos.add(k6, 0, l));
-
-                        tree.generate(worldIn, random, blockpos);
-                    }
-                }
-            }
-        }
     }
 }

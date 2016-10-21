@@ -9,9 +9,9 @@ import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 
-public class DecoratorBlueRidgeForest extends AppalachiaDecorator {
+public class DecoratorBlueRidgeMountains extends AppalachiaDecorator {
 
-    public DecoratorBlueRidgeForest() {
+    public DecoratorBlueRidgeMountains() {
 
         super();
     }

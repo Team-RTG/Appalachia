@@ -12,7 +12,7 @@ import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import appalachia.api.biome.decorator.DecoratorAppalachianMountains;
+import appalachia.api.biome.decorator.DecoratorBlueRidgeMountains;
 import appalachia.entity.monster.EntityBlackBear;
 
 public class BiomeBlueRidgeMountains extends AppalachiaBiome implements IAppalachiaBiome {
@@ -34,7 +34,7 @@ public class BiomeBlueRidgeMountains extends AppalachiaBiome implements IAppalac
     @Override
     public BiomeDecorator createBiomeDecorator() {
 
-        return new DecoratorAppalachianMountains();
+        return new DecoratorBlueRidgeMountains();
     }
 
     @Override
