@@ -26,4 +26,9 @@ public class RealisticBiomeAPLAutumnBlueRidgeForest extends RealisticBiomeAPLBas
 
         this.addDecoCollection(new DecoCollectionBlueRidgeForest(this.config._boolean(BiomeConfigAPLAutumnBlueRidgeForest.decorationLogsId)));
     }
+
+    @Override
+    public Biome beachBiome() {
+        return this.beachBiome(AppalachiaBiomes.blueRidgeBeach);
+    }
 }
