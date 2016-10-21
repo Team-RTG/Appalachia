@@ -12,6 +12,7 @@ import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import appalachia.api.AppalachiaBiomeTypes;
 import appalachia.api.biome.decorator.DecoratorBlueRidgeMountains;
 import appalachia.entity.monster.EntityBlackBear;
 
@@ -28,7 +29,13 @@ public class BiomeBlueRidgeMountains extends AppalachiaBiome implements IAppalac
 
         this.spawnableCreatureList.add(new SpawnListEntry(EntityBlackBear.class, 8, 1, 2));
 
-        biomeTypes = new BiomeDictionary.Type[]{BiomeDictionary.Type.MOUNTAIN};
+        biomeTypes = new BiomeDictionary.Type[]{
+            BiomeDictionary.Type.HILLS,
+            BiomeDictionary.Type.MOUNTAIN,
+            BiomeDictionary.Type.FOREST,
+            BiomeDictionary.Type.DENSE,
+            AppalachiaBiomeTypes.BLUE_RIDGE
+        };
     }
 
     @Override

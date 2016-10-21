@@ -107,6 +107,20 @@ public class AppalachiaBiomeManager {
         Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeForest);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Blue Ridge River
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        blueRidgeRiver = new BiomeBlueRidgeRiver(AppalachiaBiomeProps.BLUE_RIDGE_RIVER.getProps());
+        registerBiomeWithTypes(
+            blueRidgeRiver,
+            "blueridgeriver",
+            ConfigAppalachia.biomeWeight_BlueRidgeRiver,
+            BiomeManager.BiomeType.COOL,
+            BiomeBlueRidgeRiver.biomeTypes
+        );
+        Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeRiver);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Prairie
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

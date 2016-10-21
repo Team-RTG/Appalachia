@@ -12,6 +12,7 @@ import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import appalachia.api.AppalachiaBiomeTypes;
 import appalachia.api.biome.decorator.DecoratorBlueRidgeBeach;
 import appalachia.entity.monster.EntityBlackBear;
 
@@ -28,7 +29,10 @@ public class BiomeBlueRidgeBeach extends AppalachiaBiome implements IAppalachiaB
 
         this.spawnableCreatureList.add(new SpawnListEntry(EntityBlackBear.class, 8, 1, 2));
 
-        biomeTypes = new BiomeDictionary.Type[]{BiomeDictionary.Type.BEACH};
+        biomeTypes = new BiomeDictionary.Type[]{
+            BiomeDictionary.Type.BEACH,
+            AppalachiaBiomeTypes.BLUE_RIDGE
+        };
     }
 
     @Override

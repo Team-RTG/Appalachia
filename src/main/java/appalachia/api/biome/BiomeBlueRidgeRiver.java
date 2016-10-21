@@ -13,14 +13,14 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.api.AppalachiaBiomeTypes;
-import appalachia.api.biome.decorator.DecoratorBlueRidgeForest;
+import appalachia.api.biome.decorator.DecoratorBlueRidgeRiver;
 import appalachia.entity.monster.EntityBlackBear;
 
-public class BiomeBlueRidgeForest extends AppalachiaBiome implements IAppalachiaBiome {
+public class BiomeBlueRidgeRiver extends AppalachiaBiome implements IAppalachiaBiome {
 
     public static BiomeDictionary.Type[] biomeTypes;
 
-    public BiomeBlueRidgeForest(BiomeProperties props) {
+    public BiomeBlueRidgeRiver(BiomeProperties props) {
 
         super(props);
         topBlock = Blocks.GRASS.getDefaultState();
@@ -30,8 +30,8 @@ public class BiomeBlueRidgeForest extends AppalachiaBiome implements IAppalachia
         this.spawnableCreatureList.add(new SpawnListEntry(EntityBlackBear.class, 8, 1, 2));
 
         biomeTypes = new BiomeDictionary.Type[]{
-            BiomeDictionary.Type.FOREST,
-            BiomeDictionary.Type.DENSE,
+            BiomeDictionary.Type.RIVER,
+            BiomeDictionary.Type.WATER,
             AppalachiaBiomeTypes.BLUE_RIDGE
         };
     }
@@ -39,7 +39,7 @@ public class BiomeBlueRidgeForest extends AppalachiaBiome implements IAppalachia
     @Override
     public BiomeDecorator createBiomeDecorator() {
 
-        return new DecoratorBlueRidgeForest();
+        return new DecoratorBlueRidgeRiver();
     }
 
     @Override

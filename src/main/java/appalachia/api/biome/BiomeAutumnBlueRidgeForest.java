@@ -12,6 +12,7 @@ import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import appalachia.api.AppalachiaBiomeTypes;
 import appalachia.api.biome.decorator.DecoratorAutumnBlueRidgeForest;
 import appalachia.entity.monster.EntityBlackBear;
 
@@ -38,7 +39,12 @@ public class BiomeAutumnBlueRidgeForest extends AppalachiaBiome implements IAppa
 
         this.spawnableCreatureList.add(new SpawnListEntry(EntityBlackBear.class, 8, 1, 2));
 
-        biomeTypes = new BiomeDictionary.Type[]{BiomeDictionary.Type.FOREST};
+        biomeTypes = new BiomeDictionary.Type[]{
+            BiomeDictionary.Type.FOREST,
+            BiomeDictionary.Type.DENSE,
+            AppalachiaBiomeTypes.AUTUMN,
+            AppalachiaBiomeTypes.BLUE_RIDGE
+        };
     }
 
     @Override

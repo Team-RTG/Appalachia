@@ -25,7 +25,7 @@ public class BiomeAppalachianMountains extends AppalachiaBiome implements IAppal
         fillerBlock = Blocks.DIRT.getDefaultState();
         theBiomeDecorator.treesPerChunk = 1;
 
-        biomeTypes = new BiomeDictionary.Type[]{BiomeDictionary.Type.MOUNTAIN};
+        biomeTypes = new BiomeDictionary.Type[]{BiomeDictionary.Type.HILLS, BiomeDictionary.Type.MOUNTAIN};
     }
 
     @Override

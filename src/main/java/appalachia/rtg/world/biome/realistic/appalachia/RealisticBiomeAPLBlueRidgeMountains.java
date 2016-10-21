@@ -1,6 +1,5 @@
 package appalachia.rtg.world.biome.realistic.appalachia;
 
-import net.minecraft.init.Biomes;
 import net.minecraft.world.biome.Biome;
 
 import appalachia.api.AppalachiaBiomes;
@@ -15,7 +14,7 @@ import rtg.util.BlockUtil;
 public class RealisticBiomeAPLBlueRidgeMountains extends RealisticBiomeAPLBase {
 
     public static Biome biome = AppalachiaBiomes.blueRidgeMountains;
-    public static Biome river = Biomes.RIVER;
+    public static Biome river = AppalachiaBiomes.blueRidgeRiver;
 
     public RealisticBiomeAPLBlueRidgeMountains(BiomeConfig config) {
 

@@ -8,6 +8,7 @@ public class BiomeConfigAPL {
     public static BiomeConfig biomeConfigAPLAutumnBlueRidgeForest;
     public static BiomeConfig biomeConfigAPLBlueRidgeForest;
     public static BiomeConfig biomeConfigAPLBlueRidgeBeach;
+    public static BiomeConfig biomeConfigAPLBlueRidgeRiver;
     public static BiomeConfig biomeConfigAPLBlueRidgeMountains;
     public static BiomeConfig biomeConfigAPLPrairie;
     public static BiomeConfig biomeConfigAPLSmokyMountains;
@@ -19,6 +20,7 @@ public class BiomeConfigAPL {
             biomeConfigAPLAutumnBlueRidgeForest,
             biomeConfigAPLBlueRidgeForest,
             biomeConfigAPLBlueRidgeBeach,
+            biomeConfigAPLBlueRidgeRiver,
             biomeConfigAPLBlueRidgeMountains,
             biomeConfigAPLPrairie,
             biomeConfigAPLSmokyMountains
