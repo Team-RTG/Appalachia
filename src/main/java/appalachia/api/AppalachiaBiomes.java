@@ -7,6 +7,7 @@ public class AppalachiaBiomes {
     public static Biome appalachianMountains;
     public static Biome blueRidgeForest;
     public static Biome blueRidgeMountains;
+    public static Biome blueRidgeBeach;
     public static Biome prairie;
     public static Biome smokyMountains;
 
@@ -18,6 +19,7 @@ public class AppalachiaBiomes {
         BLUE_RIDGE_MOUNTAINS("Blue Ridge Mountains", 0.2F, 0.2F, 0.3F, 0.8F, 16777215, false),
         AUTUMN_BLUE_RIDGE_FOREST("Autumn Blue Ridge Forest", 0.2F, 0.2F, 0.25F, 0.8F, 16777215, false),
         BLUE_RIDGE_FOREST("Blue Ridge Forest", 0.2F, 0.2F, 0.3F, 0.8F, 16777215, false),
+        BLUE_RIDGE_BEACH("Blue Ridge Beach", 0.2F, 0.2F, 0.3F, 0.8F, 16777215, false),
         PRAIRIE("Prairie", 0.125F, 0.05F, 0.8F, 0.4F, 16777215, false),
         SMOKY_MOUNTAINS("Smoky Mountains", 1.0F, 0.5F, 0.2F, 0.3F, 16777215, false);
 

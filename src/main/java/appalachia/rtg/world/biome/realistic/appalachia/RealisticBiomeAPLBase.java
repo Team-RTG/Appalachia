@@ -18,6 +18,7 @@ public class RealisticBiomeAPLBase extends RealisticBiomeBase {
     public static RealisticBiomeBase aplAppalachianMountains;
     public static RealisticBiomeBase aplAutumnBlueRidgeForest;
     public static RealisticBiomeBase aplBlueRidgeForest;
+    public static RealisticBiomeBase aplBlueRidgeBeach;
     public static RealisticBiomeBase aplBlueRidgeMountains;
     public static RealisticBiomeBase aplPrairie;
     public static RealisticBiomeBase aplSmokyMountains;
@@ -41,6 +42,9 @@ public class RealisticBiomeAPLBase extends RealisticBiomeBase {
             }
             if (AppalachiaBiomes.blueRidgeForest != null) {
                 aplBlueRidgeForest = new RealisticBiomeAPLBlueRidgeForest(BiomeConfigAPL.biomeConfigAPLBlueRidgeForest);
+            }
+            if (AppalachiaBiomes.blueRidgeBeach != null) {
+                aplBlueRidgeBeach = new RealisticBiomeAPLBlueRidgeBeach(BiomeConfigAPL.biomeConfigAPLBlueRidgeBeach);
             }
             if (AppalachiaBiomes.blueRidgeMountains != null) {
                 aplBlueRidgeMountains = new RealisticBiomeAPLBlueRidgeMountains(BiomeConfigAPL.biomeConfigAPLBlueRidgeMountains);

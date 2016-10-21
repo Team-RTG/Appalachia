@@ -92,6 +92,21 @@ public class AppalachiaBiomeManager {
         Biome.EXPLORATION_BIOMES_LIST.add(autumnBlueRidgeForest);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Blue Ridge Beach
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        blueRidgeBeach = new BiomeBlueRidgeBeach(AppalachiaBiomeProps.BLUE_RIDGE_BEACH.getProps());
+        registerBiomeWithTypes(
+            blueRidgeBeach,
+            "blueridgebeach",
+            ConfigAppalachia.biomeWeight_BlueRidgeBeach,
+            BiomeManager.BiomeType.COOL,
+            BiomeBlueRidgeBeach.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(blueRidgeBeach);
+        Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeForest);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Prairie
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
