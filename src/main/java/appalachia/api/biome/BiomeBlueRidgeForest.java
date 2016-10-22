@@ -32,7 +32,7 @@ public class BiomeBlueRidgeForest extends AppalachiaBiome implements IAppalachia
         biomeTypes = new BiomeDictionary.Type[]{
             BiomeDictionary.Type.FOREST,
             BiomeDictionary.Type.DENSE,
-            AppalachiaBiomeTypes.BLUE_RIDGE
+            AppalachiaBiomeTypes.BLUERIDGE
         };
     }
 

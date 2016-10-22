@@ -32,7 +32,7 @@ public class BiomeBlueRidgeRiver extends AppalachiaBiome implements IAppalachiaB
         biomeTypes = new BiomeDictionary.Type[]{
             BiomeDictionary.Type.RIVER,
             BiomeDictionary.Type.WATER,
-            AppalachiaBiomeTypes.BLUE_RIDGE
+            AppalachiaBiomeTypes.BLUERIDGE
         };
     }
 

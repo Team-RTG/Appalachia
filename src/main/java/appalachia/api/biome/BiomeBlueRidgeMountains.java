@@ -34,7 +34,7 @@ public class BiomeBlueRidgeMountains extends AppalachiaBiome implements IAppalac
             BiomeDictionary.Type.MOUNTAIN,
             BiomeDictionary.Type.FOREST,
             BiomeDictionary.Type.DENSE,
-            AppalachiaBiomeTypes.BLUE_RIDGE
+            AppalachiaBiomeTypes.BLUERIDGE
         };
     }
 

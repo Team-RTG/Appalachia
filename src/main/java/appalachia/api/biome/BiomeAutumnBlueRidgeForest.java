@@ -43,7 +43,7 @@ public class BiomeAutumnBlueRidgeForest extends AppalachiaBiome implements IAppa
             BiomeDictionary.Type.FOREST,
             BiomeDictionary.Type.DENSE,
             AppalachiaBiomeTypes.AUTUMN,
-            AppalachiaBiomeTypes.BLUE_RIDGE
+            AppalachiaBiomeTypes.BLUERIDGE
         };
     }
 

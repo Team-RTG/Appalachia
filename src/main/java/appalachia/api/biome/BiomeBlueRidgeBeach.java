@@ -31,7 +31,7 @@ public class BiomeBlueRidgeBeach extends AppalachiaBiome implements IAppalachiaB
 
         biomeTypes = new BiomeDictionary.Type[]{
             BiomeDictionary.Type.BEACH,
-            AppalachiaBiomeTypes.BLUE_RIDGE
+            AppalachiaBiomeTypes.BLUERIDGE
         };
     }
 
