@@ -10,6 +10,7 @@ import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
 import appalachia.rtg.world.gen.feature.tree.rtg.TreeAbiesGrandis;
 import appalachia.rtg.world.gen.feature.tree.rtg.TreeAcerRubrum;
 
+import rtg.util.BlockUtil;
 import rtg.world.biome.deco.*;
 import rtg.world.biome.deco.DecoFallenTree.LogCondition;
 import rtg.world.biome.deco.DecoTree.TreeCondition;
@@ -51,7 +52,7 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
         oakFir.maxY = treeMaxY;
 
         AppalachiaTree aplGrandFirTreeChestnut = new TreeAbiesGrandis();
-        aplGrandFirTreeChestnut.logBlock = AppalachiaBlocks.log_oak_30_30.getDefaultState();
+        aplGrandFirTreeChestnut.logBlock = BlockUtil.getStateLog(2);
         aplGrandFirTreeChestnut.leavesBlock = Blocks.LEAVES.getStateFromMeta(3);
         aplGrandFirTreeChestnut.minTrunkSize = 10;
         aplGrandFirTreeChestnut.maxTrunkSize = 20;
@@ -110,7 +111,7 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
         oakPines.maxY = 85;
 
         TreeRTG ponderosaChestnutTree = new TreeRTGPinusPonderosa();
-        ponderosaChestnutTree.logBlock = AppalachiaBlocks.log_oak_40_30.getDefaultState();
+        ponderosaChestnutTree.logBlock = BlockUtil.getStateLog(2);
         ponderosaChestnutTree.leavesBlock = Blocks.LEAVES.getStateFromMeta(3);
         ponderosaChestnutTree.minTrunkSize = 11;
         ponderosaChestnutTree.maxTrunkSize = 21;
