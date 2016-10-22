@@ -80,32 +80,37 @@ public class EntityBlackBear extends EntityAnimal
     @Override
     protected SoundEvent getAmbientSound()
     {
-        return this.isChild() ? AppalachiaSounds.entity_black_bear_baby_ambient : AppalachiaSounds.entity_black_bear_ambient;
+        if (this.isChild()) {
+            return AppalachiaSounds.getRandomSound(AppalachiaSounds.entity_blackbear_baby_idle);
+        }
+        else {
+            return AppalachiaSounds.getRandomSound(AppalachiaSounds.entity_blackbear_idle);
+        }
     }
 
     @Override
     protected SoundEvent getHurtSound()
     {
-        return AppalachiaSounds.entity_black_bear_hurt;
+        return AppalachiaSounds.getRandomSound(AppalachiaSounds.entity_blackbear_hurt);
     }
 
     @Override
     protected SoundEvent getDeathSound()
     {
-        return AppalachiaSounds.entity_black_bear_death;
+        return AppalachiaSounds.getRandomSound(AppalachiaSounds.entity_blackbear_death);
     }
 
     @Override
     protected void playStepSound(BlockPos pos, Block blockIn)
     {
-        this.playSound(AppalachiaSounds.entity_black_bear_step, 0.15F, 1.0F);
+        this.playSound(AppalachiaSounds.getRandomSound(AppalachiaSounds.entity_blackbear_step), 0.15F, 1.0F);
     }
 
     protected void playWarningSound()
     {
         if (this.field_189797_bB <= 0)
         {
-            this.playSound(AppalachiaSounds.entity_black_bear_warning, 1.0F, 1.0F);
+            this.playSound(AppalachiaSounds.getRandomSound(AppalachiaSounds.entity_blackbear_warning), 1.0F, 1.0F);
             this.field_189797_bB = 40;
         }
     }
