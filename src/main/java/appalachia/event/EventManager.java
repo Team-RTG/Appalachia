@@ -1,5 +1,7 @@
 package appalachia.event;
 
+import java.util.Random;
+
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 
@@ -10,8 +12,9 @@ import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import appalachia.util.Logger;
+import appalachia.api.AppalachiaAPI;
 import appalachia.api.biome.decorator.AppalachiaDecorator;
+import appalachia.util.Logger;
 
 
 public class EventManager {
@@ -44,6 +47,9 @@ public class EventManager {
                 worldSeed = event.getWorld().getSeed();
                 Logger.info("World Seed: " + worldSeed);
             }
+
+            // Use the world seed to set the global random.
+            AppalachiaAPI.rand = new Random(worldSeed);
         }
 
         @SubscribeEvent
