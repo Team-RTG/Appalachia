@@ -21,4 +21,9 @@ public class RealisticBiomeAPLBlueRidgeBeach extends RealisticBiomeAPLBase {
             new SurfaceAPLBlueRidgeBeach(config, biome.topBlock, biome.fillerBlock, BlockUtil.getStateDirt(2), 12f, 0.27f)
         );
     }
+
+    @Override
+    public Biome beachBiome() {
+        return this.beachBiome(AppalachiaBiomes.blueRidgeBeach);
+    }
 }

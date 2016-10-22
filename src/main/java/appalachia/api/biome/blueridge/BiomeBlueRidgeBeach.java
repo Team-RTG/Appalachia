@@ -1,5 +1,6 @@
 package appalachia.api.biome.blueridge;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeDecorator;
 
 import net.minecraftforge.common.BiomeDictionary;
@@ -13,6 +14,8 @@ public class BiomeBlueRidgeBeach extends BiomeBlueRidge implements IAppalachiaBi
     public BiomeBlueRidgeBeach(BiomeProperties props) {
 
         super(props);
+
+        this.topBlock = Blocks.GRAVEL.getDefaultState();
 
         biomeTypes = new BiomeDictionary.Type[]{
             BiomeDictionary.Type.BEACH,
