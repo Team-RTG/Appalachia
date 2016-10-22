@@ -3,7 +3,7 @@ package appalachia.rtg.api.biome.appalachia.config;
 import rtg.api.biome.BiomeConfigProperty;
 
 
-public class BiomeConfigAPLAutumnBlueRidgeForest extends BiomeConfigAPLBase {
+public class BiomeConfigAPLBlueRidgeForestAutumn extends BiomeConfigAPLBase {
 
     public static final String decorationLogsId = "decorationLogs";
     public static final String decorationLogsName = "RTG Decoration: Logs";
@@ -14,9 +14,9 @@ public class BiomeConfigAPLAutumnBlueRidgeForest extends BiomeConfigAPLBase {
     public static final String surfaceMixBlockMetaId = "surfaceMixBlockMeta";
     public static final String surfaceMixBlockMetaName = "RTG Surface: Mix Block Meta";
 
-    public BiomeConfigAPLAutumnBlueRidgeForest() {
+    public BiomeConfigAPLBlueRidgeForestAutumn() {
 
-        super("autumnblueridgeforest");
+        super("blueridgeforestautumn");
 
         this.addProperty(new BiomeConfigProperty(decorationLogsId, BiomeConfigProperty.Type.BOOLEAN, decorationLogsName, "", true));
 

@@ -1,4 +1,4 @@
-package appalachia.api.biome;
+package appalachia.api.biome.blueridge;
 
 import java.util.Random;
 
@@ -13,7 +13,9 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.api.AppalachiaBiomeTypes;
-import appalachia.api.biome.decorator.DecoratorBlueRidgeRiver;
+import appalachia.api.biome.AppalachiaBiome;
+import appalachia.api.biome.IAppalachiaBiome;
+import appalachia.api.biome.decorator.blueridge.DecoratorBlueRidgeRiver;
 import appalachia.entity.monster.EntityBlackBear;
 
 public class BiomeBlueRidgeRiver extends AppalachiaBiome implements IAppalachiaBiome {

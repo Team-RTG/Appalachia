@@ -1,4 +1,4 @@
-package appalachia.api.biome.decorator;
+package appalachia.api.biome.decorator.blueridge;
 
 import java.util.Random;
 
@@ -8,6 +8,8 @@ import net.minecraft.world.biome.Biome;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
+
+import appalachia.api.biome.decorator.AppalachiaDecorator;
 
 public class DecoratorBlueRidgeBeach extends AppalachiaDecorator {
 

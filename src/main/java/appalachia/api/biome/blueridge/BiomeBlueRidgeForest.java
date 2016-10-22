@@ -1,4 +1,4 @@
-package appalachia.api.biome;
+package appalachia.api.biome.blueridge;
 
 import java.util.Random;
 
@@ -13,24 +13,27 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.api.AppalachiaBiomeTypes;
-import appalachia.api.biome.decorator.DecoratorBlueRidgeBeach;
+import appalachia.api.biome.AppalachiaBiome;
+import appalachia.api.biome.IAppalachiaBiome;
+import appalachia.api.biome.decorator.blueridge.DecoratorBlueRidgeForest;
 import appalachia.entity.monster.EntityBlackBear;
 
-public class BiomeBlueRidgeBeach extends AppalachiaBiome implements IAppalachiaBiome {
+public class BiomeBlueRidgeForest extends AppalachiaBiome implements IAppalachiaBiome {
 
     public static BiomeDictionary.Type[] biomeTypes;
 
-    public BiomeBlueRidgeBeach(BiomeProperties props) {
+    public BiomeBlueRidgeForest(BiomeProperties props) {
 
         super(props);
-        topBlock = Blocks.GRAVEL.getDefaultState();
+        topBlock = Blocks.GRASS.getDefaultState();
         fillerBlock = Blocks.DIRT.getDefaultState();
-        theBiomeDecorator.treesPerChunk = 0;
+        theBiomeDecorator.treesPerChunk = 1;
 
         this.spawnableCreatureList.add(new SpawnListEntry(EntityBlackBear.class, 8, 1, 2));
 
         biomeTypes = new BiomeDictionary.Type[]{
-            BiomeDictionary.Type.BEACH,
+            BiomeDictionary.Type.FOREST,
+            BiomeDictionary.Type.DENSE,
             AppalachiaBiomeTypes.BLUERIDGE
         };
     }
@@ -38,7 +41,7 @@ public class BiomeBlueRidgeBeach extends AppalachiaBiome implements IAppalachiaB
     @Override
     public BiomeDecorator createBiomeDecorator() {
 
-        return new DecoratorBlueRidgeBeach();
+        return new DecoratorBlueRidgeForest();
     }
 
     @Override

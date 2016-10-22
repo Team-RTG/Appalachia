@@ -16,7 +16,7 @@ import rtg.world.gen.terrain.TerrainBase;
 public class RealisticBiomeAPLBase extends RealisticBiomeBase {
 
     public static RealisticBiomeBase aplAppalachianMountains;
-    public static RealisticBiomeBase aplAutumnBlueRidgeForest;
+    public static RealisticBiomeBase aplBlueRidgeForestAutumn;
     public static RealisticBiomeBase aplBlueRidgeForest;
     public static RealisticBiomeBase aplBlueRidgeBeach;
     public static RealisticBiomeBase aplBlueRidgeRiver;
@@ -38,8 +38,8 @@ public class RealisticBiomeAPLBase extends RealisticBiomeBase {
             if (AppalachiaBiomes.appalachianMountains != null) {
                 aplAppalachianMountains = new RealisticBiomeAPLAppalachianMountains(BiomeConfigAPL.biomeConfigAPLAppalachianMountains);
             }
-            if (AppalachiaBiomes.autumnBlueRidgeForest != null) {
-                aplAutumnBlueRidgeForest = new RealisticBiomeAPLAutumnBlueRidgeForest(BiomeConfigAPL.biomeConfigAPLAutumnBlueRidgeForest);
+            if (AppalachiaBiomes.blueRidgeForestAutumn != null) {
+                aplBlueRidgeForestAutumn = new RealisticBiomeAPLBlueRidgeForestAutumn(BiomeConfigAPL.biomeConfigAPLBlueRidgeForestAutumn);
             }
             if (AppalachiaBiomes.blueRidgeForest != null) {
                 aplBlueRidgeForest = new RealisticBiomeAPLBlueRidgeForest(BiomeConfigAPL.biomeConfigAPLBlueRidgeForest);

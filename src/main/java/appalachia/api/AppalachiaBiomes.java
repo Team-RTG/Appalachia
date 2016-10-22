@@ -12,13 +12,13 @@ public class AppalachiaBiomes {
     public static Biome prairie;
     public static Biome smokyMountains;
 
-    public static Biome autumnBlueRidgeForest;
+    public static Biome blueRidgeForestAutumn;
 
     public static enum AppalachiaBiomeProps {
         //                                                      BH      HV      Temp    Rain    H2OColour   Snow?
         APPALACHIAN_MOUNTAINS("Appalachian Mountains",          1.0F,   0.5F,   0.2F,   0.3F,   16777215,   false),
 
-        AUTUMN_BLUE_RIDGE_FOREST("Autumn Blue Ridge Forest",    0.1F,   0.2F,   0.25F,  0.8F,   16777215,   false),
+        BLUE_RIDGE_FOREST_AUTUMN("Autumn Blue Ridge Forest",    0.1F,   0.2F,   0.25F,  0.8F,   16777215,   false),
 
         BLUE_RIDGE_FOREST("Blue Ridge Forest",                  0.1F,   0.2F,   0.34F,  0.8F,   16777215,   false),
         BLUE_RIDGE_MOUNTAINS("Blue Ridge Mountains",            0.2F,   0.2F,   0.34F,  0.8F,   16777215,   false),

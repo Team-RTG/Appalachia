@@ -1,4 +1,4 @@
-package appalachia.api.biome;
+package appalachia.api.biome.blueridge.autumn;
 
 import java.util.Random;
 
@@ -13,12 +13,14 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.api.AppalachiaBiomeTypes;
-import appalachia.api.biome.decorator.DecoratorAutumnBlueRidgeForest;
+import appalachia.api.biome.AppalachiaBiome;
+import appalachia.api.biome.IAppalachiaBiome;
+import appalachia.api.biome.decorator.blueridge.DecoratorBlueRidgeForestAutumn;
 import appalachia.entity.monster.EntityBlackBear;
 
 import rtg.util.OpenSimplexNoise;
 
-public class BiomeAutumnBlueRidgeForest extends AppalachiaBiome implements IAppalachiaBiome {
+public class BiomeBlueRidgeForestAutumn extends AppalachiaBiome implements IAppalachiaBiome {
 
     public static BiomeDictionary.Type[] biomeTypes;
 
@@ -30,7 +32,7 @@ public class BiomeAutumnBlueRidgeForest extends AppalachiaBiome implements IAppa
 
     public OpenSimplexNoise simplex = new OpenSimplexNoise(4444);
 
-    public BiomeAutumnBlueRidgeForest(BiomeProperties props) {
+    public BiomeBlueRidgeForestAutumn(BiomeProperties props) {
 
         super(props);
         topBlock = Blocks.GRASS.getDefaultState();
@@ -50,7 +52,7 @@ public class BiomeAutumnBlueRidgeForest extends AppalachiaBiome implements IAppa
     @Override
     public BiomeDecorator createBiomeDecorator() {
 
-        return new DecoratorAutumnBlueRidgeForest();
+        return new DecoratorBlueRidgeForestAutumn();
     }
 
     @Override
