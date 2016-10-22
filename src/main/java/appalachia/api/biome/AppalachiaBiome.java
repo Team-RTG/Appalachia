@@ -12,9 +12,18 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
 
+import rtg.util.OpenSimplexNoise;
+
 public class AppalachiaBiome extends Biome implements IAppalachiaBiome {
 
     public ArrayList<AppalachiaTree> appalachiaTrees;
+    public OpenSimplexNoise simplex = new OpenSimplexNoise(4444);
+
+    public static final int leafColours[] = {
+        15924992, 16776960, 16773632, 16770560, 16767232, 16763904,
+        16760576, 16757504, 16754176, 16750848, 16747520, 16744448,
+        16741120, 16737792, 16734464, 16731392, 16728064, 16724736, 16721408
+    };
 
     public AppalachiaBiome(BiomeProperties props) {
 
