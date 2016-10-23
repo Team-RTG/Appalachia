@@ -1,8 +1,0 @@
-{
-    "parent": "block/upper_slab",
-    "textures": {
-        "bottom": "appalachia:blocks/planks_oak_30_90",
-        "top": "appalachia:blocks/planks_oak_30_90",
-        "side": "appalachia:blocks/planks_oak_30_90"
-    }
-}

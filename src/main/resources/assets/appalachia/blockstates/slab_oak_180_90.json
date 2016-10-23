@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "half=bottom": { "model": "appalachia:slab_oak_180_90" },
-        "half=top": { "model": "appalachia:slab_oak_180_90_upper" }
-    }
-}
