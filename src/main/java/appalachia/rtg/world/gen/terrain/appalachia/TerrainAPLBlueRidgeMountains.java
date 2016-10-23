@@ -7,10 +7,10 @@ import rtg.world.gen.terrain.MountainsWithPassesEffect;
 
 public class TerrainAPLBlueRidgeMountains extends FunctionalTerrainBase {
 
-    private float width;
-    private float strength;
-    private float spikeWidth = 40;
-    private float spikeHeight = 20;
+    protected float width;
+    protected float strength;
+    protected float spikeWidth = 40;
+    protected float spikeHeight = 20;
 
     public TerrainAPLBlueRidgeMountains(float mountainWidth, float mountainStrength) {
 

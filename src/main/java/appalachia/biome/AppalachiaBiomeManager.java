@@ -10,6 +10,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import appalachia.api.biome.*;
 import appalachia.api.biome.blueridge.*;
 import appalachia.api.biome.blueridge.autumn.BiomeBlueRidgeForestAutumn;
+import appalachia.api.biome.blueridge.autumn.BiomeBlueRidgeHillsAutumn;
+import appalachia.api.biome.blueridge.autumn.BiomeBlueRidgeMountainsAutumn;
 import appalachia.config.ConfigAppalachia;
 import appalachia.util.BiomeUtils;
 import appalachia.util.Logger;
@@ -109,6 +111,40 @@ public class AppalachiaBiomeManager {
         BiomeManager.addVillageBiome(blueRidgeForestAutumn, true);
         BiomeManager.addStrongholdBiome(blueRidgeForestAutumn);
         Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeForestAutumn);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Autumn Blue Ridge Hills
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        blueRidgeHillsAutumn = new BiomeBlueRidgeHillsAutumn(AppalachiaBiomeProps.BLUE_RIDGE_HILLS_AUTUMN.getProps());
+        registerBiomeWithTypes(
+            blueRidgeHillsAutumn,
+            "blueridgehillsautumn",
+            ConfigAppalachia.biomeWeight_BlueRidgeHillsAutumn,
+            BiomeManager.BiomeType.COOL,
+            BiomeBlueRidgeHillsAutumn.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(blueRidgeHillsAutumn);
+        BiomeManager.addVillageBiome(blueRidgeHillsAutumn, true);
+        BiomeManager.addStrongholdBiome(blueRidgeHillsAutumn);
+        Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeHillsAutumn);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Autumn Blue Ridge Mountains
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        blueRidgeMountainsAutumn = new BiomeBlueRidgeMountainsAutumn(AppalachiaBiomeProps.BLUE_RIDGE_MOUNTAINS_AUTUMN.getProps());
+        registerBiomeWithTypes(
+            blueRidgeMountainsAutumn,
+            "blueridgemountainsautumn",
+            ConfigAppalachia.biomeWeight_BlueRidgeMountainsAutumn,
+            BiomeManager.BiomeType.COOL,
+            BiomeBlueRidgeMountainsAutumn.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(blueRidgeMountainsAutumn);
+        BiomeManager.addVillageBiome(blueRidgeMountainsAutumn, true);
+        BiomeManager.addStrongholdBiome(blueRidgeMountainsAutumn);
+        Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeMountainsAutumn);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Blue Ridge Beach

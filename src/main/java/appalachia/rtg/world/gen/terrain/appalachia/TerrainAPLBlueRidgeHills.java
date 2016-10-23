@@ -6,7 +6,7 @@ import rtg.world.gen.terrain.TerrainBase;
 
 public class TerrainAPLBlueRidgeHills extends TerrainBase {
 
-    private float hillStrength = 30f;
+    protected float hillStrength = 30f;
 
     public TerrainAPLBlueRidgeHills() {
 

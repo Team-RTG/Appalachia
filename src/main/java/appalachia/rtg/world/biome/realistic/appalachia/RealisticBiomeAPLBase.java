@@ -9,6 +9,8 @@ import appalachia.api.AppalachiaBiomes;
 import appalachia.rtg.api.biome.appalachia.config.BiomeConfigAPL;
 import appalachia.rtg.world.biome.realistic.appalachia.blueridge.*;
 import appalachia.rtg.world.biome.realistic.appalachia.blueridge.autumn.RealisticBiomeAPLBlueRidgeForestAutumn;
+import appalachia.rtg.world.biome.realistic.appalachia.blueridge.autumn.RealisticBiomeAPLBlueRidgeHillsAutumn;
+import appalachia.rtg.world.biome.realistic.appalachia.blueridge.autumn.RealisticBiomeAPLBlueRidgeMountainsAutumn;
 
 import rtg.api.biome.BiomeConfig;
 import rtg.world.biome.realistic.RealisticBiomeBase;
@@ -19,6 +21,8 @@ public class RealisticBiomeAPLBase extends RealisticBiomeBase {
 
     public static RealisticBiomeBase aplAppalachianMountains;
     public static RealisticBiomeBase aplBlueRidgeForestAutumn;
+    public static RealisticBiomeBase aplBlueRidgeHillsAutumn;
+    public static RealisticBiomeBase aplBlueRidgeMountainsAutumn;
     public static RealisticBiomeBase aplBlueRidgeForest;
     public static RealisticBiomeBase aplBlueRidgeHills;
     public static RealisticBiomeBase aplBlueRidgeBeach;
@@ -43,6 +47,12 @@ public class RealisticBiomeAPLBase extends RealisticBiomeBase {
             }
             if (AppalachiaBiomes.blueRidgeForestAutumn != null) {
                 aplBlueRidgeForestAutumn = new RealisticBiomeAPLBlueRidgeForestAutumn(BiomeConfigAPL.biomeConfigAPLBlueRidgeForestAutumn);
+            }
+            if (AppalachiaBiomes.blueRidgeHillsAutumn != null) {
+                aplBlueRidgeHillsAutumn = new RealisticBiomeAPLBlueRidgeHillsAutumn(BiomeConfigAPL.biomeConfigAPLBlueRidgeHillsAutumn);
+            }
+            if (AppalachiaBiomes.blueRidgeMountainsAutumn != null) {
+                aplBlueRidgeMountainsAutumn = new RealisticBiomeAPLBlueRidgeMountainsAutumn(BiomeConfigAPL.biomeConfigAPLBlueRidgeMountainsAutumn);
             }
             if (AppalachiaBiomes.blueRidgeForest != null) {
                 aplBlueRidgeForest = new RealisticBiomeAPLBlueRidgeForest(BiomeConfigAPL.biomeConfigAPLBlueRidgeForest);
