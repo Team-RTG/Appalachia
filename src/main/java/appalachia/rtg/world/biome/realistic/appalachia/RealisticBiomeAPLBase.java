@@ -7,6 +7,8 @@ import net.minecraftforge.fml.common.Loader;
 
 import appalachia.api.AppalachiaBiomes;
 import appalachia.rtg.api.biome.appalachia.config.BiomeConfigAPL;
+import appalachia.rtg.world.biome.realistic.appalachia.blueridge.*;
+import appalachia.rtg.world.biome.realistic.appalachia.blueridge.autumn.RealisticBiomeAPLBlueRidgeForestAutumn;
 
 import rtg.api.biome.BiomeConfig;
 import rtg.world.biome.realistic.RealisticBiomeBase;

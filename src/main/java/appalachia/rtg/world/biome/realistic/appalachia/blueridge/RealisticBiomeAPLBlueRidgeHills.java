@@ -1,10 +1,11 @@
-package appalachia.rtg.world.biome.realistic.appalachia;
+package appalachia.rtg.world.biome.realistic.appalachia.blueridge;
 
 import net.minecraft.world.biome.Biome;
 
 import appalachia.api.AppalachiaBiomes;
 import appalachia.rtg.api.biome.appalachia.config.BiomeConfigAPLBlueRidgeHills;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionBlueRidgeForest;
+import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 import appalachia.rtg.world.gen.surface.appalachia.SurfaceAPLBlueRidgeHills;
 import appalachia.rtg.world.gen.terrain.appalachia.TerrainAPLBlueRidgeHills;
 
