@@ -35,7 +35,7 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
     public DecoCollectionBlueRidgeForest(boolean fallenTrees) {
 
         AppalachiaTree aplGrandFirTreeOak = new TreeAbiesGrandis();
-        aplGrandFirTreeOak.logBlock = Blocks.LOG.getDefaultState();
+        aplGrandFirTreeOak.logBlock = AppalachiaBlocks.log_blueridge_01.getDefaultState();
         aplGrandFirTreeOak.leavesBlock = Blocks.LEAVES.getDefaultState();
         aplGrandFirTreeOak.minTrunkSize = 10;
         aplGrandFirTreeOak.maxTrunkSize = 20;
@@ -52,7 +52,7 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
         oakFir.treeConditionChance = 2;
         oakFir.maxY = treeMaxY;
         AppalachiaTree aplGrandFirTreeChestnut = new TreeAbiesGrandis();
-        aplGrandFirTreeChestnut.logBlock = BlockUtil.getStateLog(1);
+        aplGrandFirTreeChestnut.logBlock = AppalachiaBlocks.log_blueridge_03.getDefaultState();
         aplGrandFirTreeChestnut.leavesBlock = Blocks.LEAVES.getDefaultState();
         aplGrandFirTreeChestnut.minTrunkSize = 10;
         aplGrandFirTreeChestnut.maxTrunkSize = 20;
@@ -72,7 +72,7 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
         this.addDeco(firTrees);
 
         AppalachiaTree aplRedMaple = new TreeAcerRubrum();
-        aplRedMaple.logBlock = Blocks.LOG.getDefaultState();
+        aplRedMaple.logBlock = AppalachiaBlocks.log_blueridge_02.getDefaultState();
         aplRedMaple.leavesBlock = Blocks.LEAVES.getDefaultState();
         aplRedMaple.minTrunkSize = 4;
         aplRedMaple.maxTrunkSize = 8;
@@ -91,7 +91,7 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
         this.addDeco(oakMaple);
 
         TreeRTG papyriferaTreeOak = new TreeRTGBetulaPapyrifera();
-        papyriferaTreeOak.logBlock = Blocks.LOG.getDefaultState();
+        papyriferaTreeOak.logBlock = AppalachiaBlocks.log_blueridge_01.getDefaultState();
         papyriferaTreeOak.leavesBlock = Blocks.LEAVES.getDefaultState();
         papyriferaTreeOak.minTrunkSize = 4;
         papyriferaTreeOak.maxTrunkSize = 8;
@@ -105,7 +105,7 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
         paperOak.treeConditionChance = 1;
         paperOak.maxY = treeMaxY;
         TreeRTG papyriferaTreeSpruce = new TreeRTGBetulaPapyrifera();
-        papyriferaTreeSpruce.logBlock = BlockUtil.getStateLog(1);
+        papyriferaTreeSpruce.logBlock = AppalachiaBlocks.log_blueridge_03.getDefaultState();
         papyriferaTreeSpruce.leavesBlock = BlockUtil.getStateLeaf(3);
         papyriferaTreeSpruce.minTrunkSize = 4;
         papyriferaTreeSpruce.maxTrunkSize = 8;
@@ -122,14 +122,13 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
         this.addDeco(decoPaper);
 
         TreeRTG ponderosaOakTree = new TreeRTGPinusPonderosa();
-        ponderosaOakTree.logBlock = Blocks.LOG.getDefaultState();
+        ponderosaOakTree.logBlock = AppalachiaBlocks.log_blueridge_01.getDefaultState();
         ponderosaOakTree.leavesBlock = Blocks.LEAVES.getDefaultState();
         ponderosaOakTree.minTrunkSize = 11;
         ponderosaOakTree.maxTrunkSize = 21;
         ponderosaOakTree.minCrownSize = 15;
         ponderosaOakTree.maxCrownSize = 29;
         this.addTree(ponderosaOakTree);
-
         DecoTree oakPines = new DecoTree(ponderosaOakTree);
         oakPines.strengthFactorForLoops = 10f;
         oakPines.treeType = TreeType.RTG_TREE;
@@ -140,16 +139,14 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
         oakPines.treeConditionNoise = 0.2f;
         oakPines.treeConditionChance = 1;
         oakPines.maxY = 85;
-
         TreeRTG ponderosaChestnutTree = new TreeRTGPinusPonderosa();
-        ponderosaChestnutTree.logBlock = BlockUtil.getStateLog(3);
+        ponderosaChestnutTree.logBlock = AppalachiaBlocks.log_blueridge_03.getDefaultState();
         ponderosaChestnutTree.leavesBlock = Blocks.LEAVES.getStateFromMeta(3);
         ponderosaChestnutTree.minTrunkSize = 11;
         ponderosaChestnutTree.maxTrunkSize = 21;
         ponderosaChestnutTree.minCrownSize = 15;
         ponderosaChestnutTree.maxCrownSize = 29;
         this.addTree(ponderosaChestnutTree);
-
         DecoTree chestnutPines = new DecoTree(ponderosaChestnutTree);
         chestnutPines.strengthFactorForLoops = 10f;
         chestnutPines.treeType = TreeType.RTG_TREE;
@@ -160,12 +157,11 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
         chestnutPines.treeConditionNoise = 0.2f;
         chestnutPines.treeConditionChance = 1;
         chestnutPines.maxY = 85;
-
         DecoHelper5050 decoPines = new DecoHelper5050(oakPines, chestnutPines);
         this.addDeco(decoPines);
 
         TreeRTG sitchensisTree = new TreeRTGPiceaSitchensis();
-        sitchensisTree.logBlock = Blocks.LOG.getDefaultState();
+        sitchensisTree.logBlock = AppalachiaBlocks.log_blueridge_01.getDefaultState();
         sitchensisTree.leavesBlock = Blocks.LEAVES.getDefaultState();
         sitchensisTree.minTrunkSize = 4;
         sitchensisTree.maxTrunkSize = 10;
@@ -195,20 +191,18 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
         decoFallenOak.logCondition = LogCondition.RANDOM_CHANCE;
         decoFallenOak.logConditionChance = 16;
         decoFallenOak.maxY = 80;
-        decoFallenOak.logBlock = Blocks.LOG.getDefaultState();
+        decoFallenOak.logBlock = AppalachiaBlocks.log_blueridge_01.getDefaultState();
         decoFallenOak.leavesBlock = Blocks.LEAVES.getDefaultState();
         decoFallenOak.minSize = 3;
         decoFallenOak.maxSize = 6;
-
         DecoFallenTree decoFallenSpruce = new DecoFallenTree();
         decoFallenSpruce.logCondition = LogCondition.RANDOM_CHANCE;
         decoFallenSpruce.logConditionChance = 24;
         decoFallenSpruce.maxY = 80;
-        decoFallenSpruce.logBlock = Blocks.LOG.getDefaultState();
+        decoFallenSpruce.logBlock = AppalachiaBlocks.log_blueridge_03.getDefaultState();
         decoFallenSpruce.leavesBlock = Blocks.LEAVES.getDefaultState();
         decoFallenSpruce.minSize = 3;
         decoFallenSpruce.maxSize = 6;
-
         DecoHelper5050 decoFallenTree = new DecoHelper5050(decoFallenOak, decoFallenSpruce);
         this.addDeco(decoFallenTree, fallenTrees);
 
