@@ -65,4 +65,36 @@ public class AppalachiaBlocks {
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+    public static Block fence_gate_blueridge_01;
+    public static Block fence_gate_blueridge_02;
+    public static Block fence_gate_blueridge_03;
+
+
+    public static Block fence_blueridge_01;
+    public static Block fence_blueridge_02;
+    public static Block fence_blueridge_03;
+
+
+    public static Block log_blueridge_01;
+    public static Block log_blueridge_02;
+    public static Block log_blueridge_03;
+
+
+    public static Block planks_blueridge_01;
+    public static Block planks_blueridge_02;
+    public static Block planks_blueridge_03;
+
+
+    public static Block slab_blueridge_01;
+    public static Block slab_blueridge_02;
+    public static Block slab_blueridge_03;
+
+
+    public static Block stairs_blueridge_01;
+    public static Block stairs_blueridge_02;
+    public static Block stairs_blueridge_03;
+
+
 }

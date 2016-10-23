@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "appalachia:blocks/log_blueridge_top_03",
+        "side": "appalachia:blocks/log_blueridge_03"
+    }
+}

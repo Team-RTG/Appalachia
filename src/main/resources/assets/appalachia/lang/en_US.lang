@@ -44,3 +44,25 @@ tile.leaves.autumn.yellow.name=Yellow Autumn Leaves
 tile.leaves.autumn.yellow.fallen.name=Yellow Autumn Fallen Leaves
 
 tile.sapling.quercus.robur.name=Quercus Robur Sapling
+
+
+tile.log.blueridge.01.name=Blue Ridge Log (01)
+tile.planks.blueridge.01.name=Blue Ridge Planks (01)
+tile.slab.blueridge.01.name=Blue Ridge Slab (01)
+tile.stairs.blueridge.01.name=Blue Ridge Stairs (01)
+tile.fence.blueridge.01.name=Blue Ridge Fence (01)
+tile.fence.gate.blueridge.01.name=Blue Ridge Fence Gate (01)
+
+tile.log.blueridge.02.name=Blue Ridge Log (02)
+tile.planks.blueridge.02.name=Blue Ridge Planks (02)
+tile.slab.blueridge.02.name=Blue Ridge Slab (02)
+tile.stairs.blueridge.02.name=Blue Ridge Stairs (02)
+tile.fence.blueridge.02.name=Blue Ridge Fence (02)
+tile.fence.gate.blueridge.02.name=Blue Ridge Fence Gate (02)
+
+tile.log.blueridge.03.name=Blue Ridge Log (03)
+tile.planks.blueridge.03.name=Blue Ridge Planks (03)
+tile.slab.blueridge.03.name=Blue Ridge Slab (03)
+tile.stairs.blueridge.03.name=Blue Ridge Stairs (03)
+tile.fence.blueridge.03.name=Blue Ridge Fence (03)
+tile.fence.gate.blueridge.03.name=Blue Ridge Fence Gate (03)
