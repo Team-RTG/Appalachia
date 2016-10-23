@@ -19,6 +19,7 @@ import rtg.world.biome.deco.collection.DecoCollectionBase;
 import rtg.world.biome.deco.helper.DecoHelper5050;
 import rtg.world.biome.deco.helper.DecoHelperRandomSplit;
 import rtg.world.gen.feature.tree.rtg.TreeRTG;
+import rtg.world.gen.feature.tree.rtg.TreeRTGBetulaPapyrifera;
 import rtg.world.gen.feature.tree.rtg.TreeRTGPiceaSitchensis;
 import rtg.world.gen.feature.tree.rtg.TreeRTGPinusPonderosa;
 
@@ -41,32 +42,31 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
         aplGrandFirTreeOak.minCrownSize = 15;
         aplGrandFirTreeOak.maxCrownSize = 30;
         DecoTree oakFir = new DecoTree(aplGrandFirTreeOak);
-        oakFir.loops = 2;
+        oakFir.loops = 1;
         oakFir.treeType = TreeType.RTG_TREE;
         oakFir.distribution.noiseDivisor = 100f;
         oakFir.distribution.noiseFactor = 6f;
         oakFir.distribution.noiseAddend = 0.8f;
         oakFir.treeCondition = TreeCondition.NOISE_GREATER_AND_RANDOM_CHANCE;
         oakFir.treeConditionNoise = -0.5f;
-        oakFir.treeConditionChance = 1;
+        oakFir.treeConditionChance = 2;
         oakFir.maxY = treeMaxY;
-
         AppalachiaTree aplGrandFirTreeChestnut = new TreeAbiesGrandis();
-        aplGrandFirTreeChestnut.logBlock = BlockUtil.getStateLog(2);
-        aplGrandFirTreeChestnut.leavesBlock = Blocks.LEAVES.getStateFromMeta(3);
+        aplGrandFirTreeChestnut.logBlock = BlockUtil.getStateLog(1);
+        aplGrandFirTreeChestnut.leavesBlock = Blocks.LEAVES.getDefaultState();
         aplGrandFirTreeChestnut.minTrunkSize = 10;
         aplGrandFirTreeChestnut.maxTrunkSize = 20;
         aplGrandFirTreeChestnut.minCrownSize = 15;
         aplGrandFirTreeChestnut.maxCrownSize = 30;
         DecoTree chestnutFir = new DecoTree(aplGrandFirTreeChestnut);
-        chestnutFir.loops = 2;
+        chestnutFir.loops = 1;
         chestnutFir.treeType = TreeType.RTG_TREE;
         chestnutFir.distribution.noiseDivisor = 100f;
         chestnutFir.distribution.noiseFactor = 6f;
         chestnutFir.distribution.noiseAddend = 0.8f;
         chestnutFir.treeCondition = TreeCondition.NOISE_GREATER_AND_RANDOM_CHANCE;
         chestnutFir.treeConditionNoise = -0.5f;
-        chestnutFir.treeConditionChance = 1;
+        chestnutFir.treeConditionChance = 2;
         chestnutFir.maxY = treeMaxY;
         DecoHelper5050 firTrees = new DecoHelper5050(oakFir, chestnutFir);
         this.addDeco(firTrees);
@@ -90,6 +90,37 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
         oakMaple.maxY = treeMaxY;
         this.addDeco(oakMaple);
 
+        TreeRTG papyriferaTreeOak = new TreeRTGBetulaPapyrifera();
+        papyriferaTreeOak.logBlock = Blocks.LOG.getDefaultState();
+        papyriferaTreeOak.leavesBlock = Blocks.LEAVES.getDefaultState();
+        papyriferaTreeOak.minTrunkSize = 4;
+        papyriferaTreeOak.maxTrunkSize = 8;
+        papyriferaTreeOak.minCrownSize = 6;
+        papyriferaTreeOak.maxCrownSize = 16;
+        this.addTree(papyriferaTreeOak);
+        DecoTree paperOak = new DecoTree(papyriferaTreeOak);
+        paperOak.strengthFactorForLoops = 8f;
+        paperOak.treeType = TreeType.RTG_TREE;
+        paperOak.treeCondition = TreeCondition.RANDOM_CHANCE;
+        paperOak.treeConditionChance = 1;
+        paperOak.maxY = treeMaxY;
+        TreeRTG papyriferaTreeSpruce = new TreeRTGBetulaPapyrifera();
+        papyriferaTreeSpruce.logBlock = BlockUtil.getStateLog(1);
+        papyriferaTreeSpruce.leavesBlock = BlockUtil.getStateLeaf(3);
+        papyriferaTreeSpruce.minTrunkSize = 4;
+        papyriferaTreeSpruce.maxTrunkSize = 8;
+        papyriferaTreeSpruce.minCrownSize = 6;
+        papyriferaTreeSpruce.maxCrownSize = 16;
+        this.addTree(papyriferaTreeSpruce);
+        DecoTree paperSpruce = new DecoTree(papyriferaTreeSpruce);
+        paperSpruce.strengthFactorForLoops = 8f;
+        paperSpruce.treeType = TreeType.RTG_TREE;
+        paperSpruce.treeCondition = TreeCondition.RANDOM_CHANCE;
+        paperSpruce.treeConditionChance = 1;
+        paperSpruce.maxY = treeMaxY;
+        DecoHelper5050 decoPaper = new DecoHelper5050(paperOak, paperSpruce);
+        this.addDeco(decoPaper);
+
         TreeRTG ponderosaOakTree = new TreeRTGPinusPonderosa();
         ponderosaOakTree.logBlock = Blocks.LOG.getDefaultState();
         ponderosaOakTree.leavesBlock = Blocks.LEAVES.getDefaultState();
@@ -111,7 +142,7 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
         oakPines.maxY = 85;
 
         TreeRTG ponderosaChestnutTree = new TreeRTGPinusPonderosa();
-        ponderosaChestnutTree.logBlock = BlockUtil.getStateLog(2);
+        ponderosaChestnutTree.logBlock = BlockUtil.getStateLog(3);
         ponderosaChestnutTree.leavesBlock = Blocks.LEAVES.getStateFromMeta(3);
         ponderosaChestnutTree.minTrunkSize = 11;
         ponderosaChestnutTree.maxTrunkSize = 21;
@@ -184,13 +215,14 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
         // Shrubs to fill in the blanks.
         DecoShrub decoShrubOak = new DecoShrub();
         decoShrubOak.size = 1;
+        decoShrubOak.minY = 64;
         decoShrubOak.maxY = shrubMaxY;
         decoShrubOak.strengthFactor = 8f;
         decoShrubOak.chance = 2;
         this.addDeco(decoShrubOak);
 
         DecoBoulder decoBoulder1 = new DecoBoulder();
-        decoBoulder1.boulderBlock = Blocks.MOSSY_COBBLESTONE.getDefaultState();
+        decoBoulder1.boulderBlock = Blocks.COBBLESTONE.getDefaultState();
         decoBoulder1.maxY = 80;
         decoBoulder1.chance = 16;
         decoBoulder1.strengthFactor = 1f;
@@ -219,16 +251,20 @@ public class DecoCollectionBlueRidgeForest extends DecoCollectionBase {
 
         // Ferns.
         DecoGrass decoFern = new DecoGrass(2);
-        decoFern.minY = 60;
+        decoFern.minY = 63;
         decoFern.maxY = shrubMaxY;
         decoFern.loops = 2;
         this.addDeco(decoFern);
 
+        // A combo-deal of grass and vines. (This could probably be pulled out into individual decos.)
+        DecoJungleGrassVines decoJungleGrassVines = new DecoJungleGrassVines();
+        this.addDeco(decoJungleGrassVines);
+
         // Grass filler.
         DecoGrass decoGrass = new DecoGrass();
-        decoGrass.minY = 60;
+        decoGrass.minY = 63;
         decoGrass.maxY = shrubMaxY;
-        decoGrass.loops = 8;
+        decoGrass.strengthFactor = 12f;
         this.addDeco(decoGrass);
     }
 }
