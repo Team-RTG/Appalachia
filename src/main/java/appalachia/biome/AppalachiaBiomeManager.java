@@ -60,6 +60,23 @@ public class AppalachiaBiomeManager {
         Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeForest);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Blue Ridge Hills
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        blueRidgeHills = new BiomeBlueRidgeHills(AppalachiaBiomeProps.BLUE_RIDGE_HILLS.getProps());
+        registerBiomeWithTypes(
+            blueRidgeHills,
+            "blueridgehills",
+            ConfigAppalachia.biomeWeight_BlueRidgeHills,
+            BiomeManager.BiomeType.COOL,
+            BiomeBlueRidgeHills.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(blueRidgeHills);
+        BiomeManager.addVillageBiome(blueRidgeHills, true);
+        BiomeManager.addStrongholdBiome(blueRidgeHills);
+        Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeHills);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Blue Ridge Mountains
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -15,6 +15,7 @@ public class BiomeConfigManagerAPL {
         BiomeConfigAPL.biomeConfigAPLAppalachianMountains = new BiomeConfigAPLAppalachianMountains();
         BiomeConfigAPL.biomeConfigAPLBlueRidgeForestAutumn = new BiomeConfigAPLBlueRidgeForestAutumn();
         BiomeConfigAPL.biomeConfigAPLBlueRidgeForest = new BiomeConfigAPLBlueRidgeForest();
+        BiomeConfigAPL.biomeConfigAPLBlueRidgeHills = new BiomeConfigAPLBlueRidgeHills();
         BiomeConfigAPL.biomeConfigAPLBlueRidgeBeach = new BiomeConfigAPLBlueRidgeBeach();
         BiomeConfigAPL.biomeConfigAPLBlueRidgeRiver = new BiomeConfigAPLBlueRidgeRiver();
         BiomeConfigAPL.biomeConfigAPLBlueRidgeMountains = new BiomeConfigAPLBlueRidgeMountains();
