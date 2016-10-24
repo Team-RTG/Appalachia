@@ -1,0 +1,112 @@
+{
+    "entity.blackbear.idle1": {
+        "sounds": [
+            "appalachia:entity/blackbear/idle1"
+        ]
+    },
+    "entity.blackbear.idle2": {
+        "sounds": [
+            "appalachia:entity/blackbear/idle2"
+        ]
+    },
+    "entity.blackbear.idle3": {
+        "sounds": [
+            "appalachia:entity/blackbear/idle3"
+        ]
+    },
+    "entity.blackbear.idle4": {
+        "sounds": [
+            "appalachia:entity/blackbear/idle4"
+        ]
+    },
+    "entity.blackbear.step1": {
+        "sounds": [
+            "appalachia:entity/blackbear/step1"
+        ]
+    },
+    "entity.blackbear.step2": {
+        "sounds": [
+            "appalachia:entity/blackbear/step2"
+        ]
+    },
+    "entity.blackbear.step3": {
+        "sounds": [
+            "appalachia:entity/blackbear/step3"
+        ]
+    },
+    "entity.blackbear.step4": {
+        "sounds": [
+            "appalachia:entity/blackbear/step4"
+        ]
+    },
+    "entity.blackbear.hurt1": {
+        "sounds": [
+            "appalachia:entity/blackbear/hurt1"
+        ]
+    },
+    "entity.blackbear.hurt2": {
+        "sounds": [
+            "appalachia:entity/blackbear/hurt2"
+        ]
+    },
+    "entity.blackbear.hurt3": {
+        "sounds": [
+            "appalachia:entity/blackbear/hurt3"
+        ]
+    },
+    "entity.blackbear.hurt4": {
+        "sounds": [
+            "appalachia:entity/blackbear/hurt4"
+        ]
+    },
+    "entity.blackbear.warning1": {
+        "sounds": [
+            "appalachia:entity/blackbear/warning1"
+        ]
+    },
+    "entity.blackbear.warning2": {
+        "sounds": [
+            "appalachia:entity/blackbear/warning2"
+        ]
+    },
+    "entity.blackbear.warning3": {
+        "sounds": [
+            "appalachia:entity/blackbear/warning3"
+        ]
+    },
+    "entity.blackbear.death1": {
+        "sounds": [
+            "appalachia:entity/blackbear/death1"
+        ]
+    },
+    "entity.blackbear.death2": {
+        "sounds": [
+            "appalachia:entity/blackbear/death2"
+        ]
+    },
+    "entity.blackbear.death3": {
+        "sounds": [
+            "appalachia:entity/blackbear/death3"
+        ]
+    },
+    "entity.blackbear_baby.idle1": {
+        "sounds": [
+            "appalachia:entity/blackbear_baby/idle1"
+        ]
+    },
+    "entity.blackbear_baby.idle2": {
+        "sounds": [
+            "appalachia:entity/blackbear_baby/idle2"
+        ]
+    },
+    "entity.blackbear_baby.idle3": {
+        "sounds": [
+            "appalachia:entity/blackbear_baby/idle3"
+        ]
+    },
+    "entity.blackbear_baby.idle4": {
+        "sounds": [
+            "appalachia:entity/blackbear_baby/idle4"
+        ]
+    }
+}
