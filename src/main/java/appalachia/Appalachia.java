@@ -23,20 +23,20 @@ import appalachia.rtg.config.BiomeConfigManagerAPL;
 import appalachia.rtg.config.ConfigManagerAPL;
 import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 import appalachia.world.AppalachiaWorldGenerator;
-import static appalachia.reference.ModInfo.*;
+import appalachia.reference.ModInfo;
 
 
 @SuppressWarnings({"WeakerAccess", "unused"})
 @Mod(
-    modid = MOD_ID,
-    name = MOD_NAME,
-    version = MOD_VERSION,
-    dependencies = "required-after:Forge@[" + MCF_MINVER + "," + MCF_MAXVER + ")" + MOD_DEPS,
+    modid = ModInfo.MOD_ID,
+    name = ModInfo.MOD_NAME,
+    version = ModInfo.MOD_VERSION,
+    dependencies = "required-after:Forge@[" + ModInfo.MCF_MINVER + "," + ModInfo.MCF_MAXVER + ");required-before:RTG@[" + ModInfo.RTG_MINVER + "," + ModInfo.RTG_MAXVER + ")",
     acceptableRemoteVersions = "*"
 )
 public class Appalachia {
 
-    @Instance(MOD_ID)
+    @Instance(ModInfo.MOD_ID)
     public static Appalachia instance;
     public static String configPath;
     public static EventManager eventMgr;
@@ -51,7 +51,7 @@ public class Appalachia {
 
         instance = this;
 
-        configPath = event.getModConfigurationDirectory() + File.separator + CONFIG_DIRECTORY + File.separator;
+        configPath = event.getModConfigurationDirectory() + File.separator + ModInfo.CONFIG_DIRECTORY + File.separator;
         ConfigManager.init(configPath);
 
         BlockManager.registerBlocks();
