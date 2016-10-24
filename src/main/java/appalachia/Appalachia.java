@@ -31,7 +31,7 @@ import appalachia.reference.ModInfo;
     modid = ModInfo.MOD_ID,
     name = ModInfo.MOD_NAME,
     version = ModInfo.MOD_VERSION,
-    dependencies = "required-after:Forge@[" + ModInfo.MCF_MINVER + "," + ModInfo.MCF_MAXVER + ");required-after:RTG@[" + ModInfo.RTG_MINVER + "," + ModInfo.RTG_MAXVER + ")",
+    dependencies = "required-after:Forge@[" + ModInfo.MCF_MINVER + "," + ModInfo.MCF_MAXVER + ");required-before:RTG@[" + ModInfo.RTG_MINVER + "," + ModInfo.RTG_MAXVER + ")",
     acceptableRemoteVersions = "*"
 )
 public class Appalachia {
