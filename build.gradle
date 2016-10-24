@@ -14,7 +14,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 
 sourceCompatibility = targetCompatibility = 1.8
 
-def parseprops(File cfg) {
+static def parseprops(File cfg) {
     cfg.withReader {
         def prop = new Properties()
         prop.load(it)
@@ -23,7 +23,6 @@ def parseprops(File cfg) {
 }
 
 ext.ref = parseprops(file('build.properties'))
-ext.ref.mod_deps = parseprops(file('mod_deps.properties'))
 
 group = ref.package_base + '.' + ref.mod_id
 archivesBaseName = (ref.mod_name as String) + '-' + (ref.mc_version as String)
@@ -43,8 +42,8 @@ minecraft {
     replace '@MOD_VERSION@', project.version
     replace '0.0-MCF+MINVER', ref.mcf_minver
     replace '9001.0-MCF+MAXVER', ref.mcf_maxver
-    if (ref.mod_deps!="") replace ';after:MODDEPS', ";" + (ref.mod_deps.depstring as String)
-    else replace ';after:MODDEPS', ''
+    replace '0.0-RTG+MINVER', ref.rtg_minver
+    replace '9001.0-RTG+MINVER', ref.rtg_maxver
     replaceIn 'ModInfo.java'
 }
 
