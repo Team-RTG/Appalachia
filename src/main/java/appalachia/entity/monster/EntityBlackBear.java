@@ -196,7 +196,7 @@ public class EntityBlackBear extends EntityAnimal
     }
 
     @Override
-    protected float func_189749_co()
+    protected float getWaterSlowDown()
     {
         return 0.98F;
     }
@@ -274,7 +274,7 @@ public class EntityBlackBear extends EntityAnimal
 
             if (EntityBlackBear.this.isChild())
             {
-                this.func_190105_f();
+                this.alertOthers();
                 this.resetTask();
             }
         }
@@ -297,7 +297,7 @@ public class EntityBlackBear extends EntityAnimal
         }
 
         @Override
-        protected void func_190102_a(EntityLivingBase p_190102_1_, double p_190102_2_)
+        protected void checkAndPerformAttack(EntityLivingBase p_190102_1_, double p_190102_2_)
         {
             double d0 = this.getAttackReachSqr(p_190102_1_);
 

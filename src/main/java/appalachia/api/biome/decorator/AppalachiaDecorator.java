@@ -88,7 +88,7 @@ public class AppalachiaDecorator extends BiomeDecorator {
 
         int k1 = this.treesPerChunk;
 
-        if (random.nextFloat() < this.field_189870_A) {
+        if (random.nextFloat() < this.extraTreeChance) {
             ++k1;
         }
 
