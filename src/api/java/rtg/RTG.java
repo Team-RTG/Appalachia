@@ -31,7 +31,9 @@ import rtg.world.biome.realistic.betteragriculture.RealisticBiomeBABase;
 import rtg.world.biome.realistic.biomesoplenty.RealisticBiomeBOPBase;
 import rtg.world.biome.realistic.biomesyougo.RealisticBiomeBYGBase;
 import rtg.world.biome.realistic.flowercraft.RealisticBiomeFCBase;
+import rtg.world.biome.realistic.mineworld.RealisticBiomeMWBase;
 import rtg.world.biome.realistic.mithwoodforest.RealisticBiomeMFBase;
+import rtg.world.biome.realistic.morechinesemc.RealisticBiomeMCMBase;
 import rtg.world.biome.realistic.sugiforest.RealisticBiomeSFBase;
 import rtg.world.biome.realistic.vanilla.RealisticBiomeVanillaBase;
 import rtg.world.gen.structure.MapGenScatteredFeatureRTG;
@@ -40,6 +42,14 @@ import rtg.world.gen.structure.MapGenVillageRTG;
 import rtg.world.gen.structure.StructureOceanMonumentRTG;
 
 
+@SuppressWarnings({"WeakerAccess", "unused"})
+//@Mod(
+//    modid                    = ModInfo.MOD_ID,
+//    name                     = ModInfo.MOD_NAME,
+//    version                  = ModInfo.MOD_VERSION,
+//    dependencies             = "required-after:Forge@[" + ModInfo.MCF_MINVER + "," + ModInfo.MCF_MAXVER + ")" + ModInfo.MOD_DEPS,
+//    acceptableRemoteVersions = "*"
+//)
 public class RTG {
 
     public static String configPath;
@@ -96,7 +106,9 @@ public class RTG {
         RealisticBiomeBOPBase.addBiomes();
         RealisticBiomeBYGBase.addBiomes();
         RealisticBiomeFCBase.addBiomes();
+        RealisticBiomeMCMBase.addBiomes();
         RealisticBiomeMFBase.addBiomes();
+        RealisticBiomeMWBase.addBiomes();
         RealisticBiomeSFBase.addBiomes();
         
         RealisticBiomePresenceTester.doBiomeCheck();
