@@ -12,6 +12,9 @@ import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.LAKE_LAVA;
+import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.LAKE_WATER;
+
 import appalachia.api.AppalachiaAPI;
 import appalachia.api.biome.decorator.AppalachiaDecorator;
 import appalachia.util.Logger;
@@ -45,11 +48,10 @@ public class EventManager {
             if (worldSeed != event.getWorld().getSeed() && event.getWorld().getSeed() != 0) {
 
                 worldSeed = event.getWorld().getSeed();
-                Logger.info("World Seed: " + worldSeed);
-            }
 
-            // Use the world seed to set the global random.
-            AppalachiaAPI.rand = new Random(worldSeed);
+                // Use the world seed to set the global random.
+                AppalachiaAPI.rand = new Random(worldSeed);
+            }
         }
 
         @SubscribeEvent
@@ -70,15 +72,9 @@ public class EventManager {
         @SubscribeEvent
         public void onBiomeDecorate(DecorateBiomeEvent.Decorate event) {
 
-            switch (event.getType()) {
-                // Prevent all flowing liquids (waterfalls/lavafalls) from generating, no exceptions.
-                case LAKE_WATER:
-                case LAKE_LAVA:
-
-                    event.setResult(Event.Result.DENY);
-
-                default:
-                    break;
+            // Apparently, using switch statements here is bad. Because ASM.
+            if (event.getType() == LAKE_WATER || event.getType() == LAKE_LAVA) {
+                event.setResult(Event.Result.DENY);
             }
         }
     }
