@@ -1,10 +1,13 @@
 package rtg.world.biome.realistic.vanilla;
 
+import java.util.Random;
+
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
+
 import rtg.api.biome.BiomeConfig;
 import rtg.util.BlockUtil;
 import rtg.util.CellNoise;
@@ -14,12 +17,9 @@ import rtg.world.biome.deco.DecoCactus;
 import rtg.world.biome.deco.DecoDeadBush;
 import rtg.world.biome.deco.DecoShrub;
 import rtg.world.biome.deco.collection.DecoCollectionDesertRiver;
-import rtg.world.gen.surface.SurfaceBase;
-import rtg.world.gen.surface.SurfaceRiverOasis;
 import rtg.world.gen.surface.vanilla.SurfaceVanillaMesa;
-import rtg.world.gen.terrain.vanilla.TerrainVanillaMesa;
-
-import java.util.Random;
+import rtg.world.gen.terrain.GroundEffect;
+import rtg.world.gen.terrain.TerrainBase;
 
 public class RealisticBiomeVanillaMesa extends RealisticBiomeVanillaBase {
 
@@ -29,7 +29,6 @@ public class RealisticBiomeVanillaMesa extends RealisticBiomeVanillaBase {
     public RealisticBiomeVanillaMesa(BiomeConfig config) {
 
         super(config, biome, river,
-            new TerrainVanillaMesa(),
             new SurfaceVanillaMesa(
                 config,
                 BlockUtil.getStateSand(1),
@@ -65,13 +64,30 @@ public class RealisticBiomeVanillaMesa extends RealisticBiomeVanillaBase {
     }
 
     @Override
-    public void rReplace(ChunkPrimer primer, int i, int j, int x, int y, int depth, World world, Random rand,
-                         OpenSimplexNoise simplex, CellNoise cell, float[] noise, float river, Biome[] base) {
+    public TerrainBase initTerrain() {
 
-        this.getSurface().paintTerrain(primer, i, j, x, y, depth, world, rand, simplex, cell, noise, river, base);
+        return new TerrainVanillaMesa();
+    }
 
-        SurfaceBase riverSurface = new SurfaceRiverOasis(this.config);
-        riverSurface.paintTerrain(primer, i, j, x, y, depth, world, rand, simplex, cell, noise, river, base);
+    public class TerrainVanillaMesa extends TerrainBase {
+
+        private GroundEffect groundEffect = new GroundEffect(4f);
+
+        public TerrainVanillaMesa() {
+
+        }
+
+        @Override
+        public float generateNoise(OpenSimplexNoise simplex, CellNoise cell, int x, int y, float border, float river) {
+
+            return riverized(68f + groundEffect.added(simplex, cell, x, y), river);
+        }
+    }
+
+    @Override
+    public void rReplace(ChunkPrimer primer, int i, int j, int x, int y, int depth, World world, Random rand, OpenSimplexNoise simplex, CellNoise cell, float[] noise, float river, Biome[] base) {
+
+        this.rReplaceRiverSurface(primer, i, j, x, y, depth, world, rand, simplex, cell, noise, river, base);
     }
 
     @Override
