@@ -7,10 +7,15 @@ import net.minecraft.world.biome.Biome;
 import appalachia.api.AppalachiaBiomes;
 import appalachia.rtg.api.biome.appalachia.config.BiomeConfigAPLSmokyMountains;
 import appalachia.rtg.world.gen.surface.appalachia.SurfaceAPLSmokyMountains;
-import appalachia.rtg.world.gen.terrain.appalachia.TerrainAPLSmokyMountains;
 
 import rtg.api.biome.BiomeConfig;
+import rtg.util.CellNoise;
+import rtg.util.OpenSimplexNoise;
 import rtg.world.biome.deco.*;
+import rtg.world.gen.terrain.HeightEffect;
+import rtg.world.gen.terrain.JitterEffect;
+import rtg.world.gen.terrain.MountainsWithPassesEffect;
+import rtg.world.gen.terrain.TerrainBase;
 
 public class RealisticBiomeAPLSmokyMountains extends RealisticBiomeAPLBase {
 
@@ -20,7 +25,6 @@ public class RealisticBiomeAPLSmokyMountains extends RealisticBiomeAPLBase {
     public RealisticBiomeAPLSmokyMountains(BiomeConfig config) {
 
         super(config, biome, river,
-            new TerrainAPLSmokyMountains(120f, 100f),
             new SurfaceAPLSmokyMountains(config,
                 biome.topBlock, //Block top
                 biome.fillerBlock, //Block filler,
@@ -69,5 +73,49 @@ public class RealisticBiomeAPLSmokyMountains extends RealisticBiomeAPLBase {
         decoGrass.maxY = 128;
         decoGrass.strengthFactor = 3f;
         this.addDeco(decoGrass);
+    }
+
+    @Override
+    public TerrainBase initTerrain() {
+
+        return new TerrainAPLSmokyMountains(120f, 100f);
+    }
+
+    public class TerrainAPLSmokyMountains extends TerrainBase {
+
+        private float width;
+        private float strength;
+        private float terrainHeight;
+        private float spikeWidth = 30;
+        private float spikeHeight = 50;
+        private HeightEffect heightEffect;
+
+        public TerrainAPLSmokyMountains(float mountainWidth, float mountainStrength) {
+
+            this(mountainWidth, mountainStrength, 90f);
+        }
+
+        public TerrainAPLSmokyMountains(float mountainWidth, float mountainStrength, float height) {
+
+            width = mountainWidth;
+            strength = mountainStrength;
+            terrainHeight = height;
+            MountainsWithPassesEffect mountainEffect = new MountainsWithPassesEffect();
+            mountainEffect.mountainHeight = strength;
+            mountainEffect.mountainWavelength = width;
+            mountainEffect.spikeHeight = this.spikeHeight;
+            mountainEffect.spikeWavelength = this.spikeWidth;
+
+
+            heightEffect = new JitterEffect(7f, 10f, mountainEffect);
+            heightEffect = new JitterEffect(3f, 6f, heightEffect);
+
+        }
+
+        @Override
+        public float generateNoise(OpenSimplexNoise simplex, CellNoise cell, int x, int y, float border, float river) {
+
+            return riverized(heightEffect.added(simplex, cell, x, y) + terrainHeight, river);
+        }
     }
 }

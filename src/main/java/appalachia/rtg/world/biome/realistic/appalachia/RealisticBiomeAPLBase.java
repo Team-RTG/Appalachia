@@ -15,9 +15,8 @@ import appalachia.rtg.world.biome.realistic.appalachia.blueridge.autumn.Realisti
 import rtg.api.biome.BiomeConfig;
 import rtg.world.biome.realistic.RealisticBiomeBase;
 import rtg.world.gen.surface.SurfaceBase;
-import rtg.world.gen.terrain.TerrainBase;
 
-public class RealisticBiomeAPLBase extends RealisticBiomeBase {
+public abstract class RealisticBiomeAPLBase extends RealisticBiomeBase {
 
     public static RealisticBiomeBase aplAppalachianMountains;
     public static RealisticBiomeBase aplBlueRidgeForestAutumn;
@@ -31,9 +30,9 @@ public class RealisticBiomeAPLBase extends RealisticBiomeBase {
     public static RealisticBiomeBase aplPrairie;
     public static RealisticBiomeBase aplSmokyMountains;
 
-    public RealisticBiomeAPLBase(BiomeConfig config, Biome b, Biome riverbiome, TerrainBase t, SurfaceBase s) {
+    public RealisticBiomeAPLBase(BiomeConfig config, Biome b, Biome riverbiome, SurfaceBase s) {
 
-        super(config, b, riverbiome, t, s);
+        super(config, b, riverbiome, s);
 
         this.waterSurfaceLakeChance = 0;
         this.lavaSurfaceLakeChance = 0;
@@ -44,15 +43,6 @@ public class RealisticBiomeAPLBase extends RealisticBiomeBase {
         if (Loader.isModLoaded("appalachia")) {
             if (AppalachiaBiomes.appalachianMountains != null) {
                 aplAppalachianMountains = new RealisticBiomeAPLAppalachianMountains(BiomeConfigAPL.biomeConfigAPLAppalachianMountains);
-            }
-            if (AppalachiaBiomes.blueRidgeForestAutumn != null) {
-                aplBlueRidgeForestAutumn = new RealisticBiomeAPLBlueRidgeForestAutumn(BiomeConfigAPL.biomeConfigAPLBlueRidgeForestAutumn);
-            }
-            if (AppalachiaBiomes.blueRidgeHillsAutumn != null) {
-                aplBlueRidgeHillsAutumn = new RealisticBiomeAPLBlueRidgeHillsAutumn(BiomeConfigAPL.biomeConfigAPLBlueRidgeHillsAutumn);
-            }
-            if (AppalachiaBiomes.blueRidgeMountainsAutumn != null) {
-                aplBlueRidgeMountainsAutumn = new RealisticBiomeAPLBlueRidgeMountainsAutumn(BiomeConfigAPL.biomeConfigAPLBlueRidgeMountainsAutumn);
             }
             if (AppalachiaBiomes.blueRidgeForest != null) {
                 aplBlueRidgeForest = new RealisticBiomeAPLBlueRidgeForest(BiomeConfigAPL.biomeConfigAPLBlueRidgeForest);
@@ -74,6 +64,17 @@ public class RealisticBiomeAPLBase extends RealisticBiomeBase {
             }
             if (AppalachiaBiomes.smokyMountains != null) {
                 aplSmokyMountains = new RealisticBiomeAPLSmokyMountains(BiomeConfigAPL.biomeConfigAPLSmokyMountains);
+            }
+
+            // Autumnal biomes must be added last.
+            if (AppalachiaBiomes.blueRidgeForestAutumn != null) {
+                aplBlueRidgeForestAutumn = new RealisticBiomeAPLBlueRidgeForestAutumn(BiomeConfigAPL.biomeConfigAPLBlueRidgeForestAutumn);
+            }
+            if (AppalachiaBiomes.blueRidgeHillsAutumn != null) {
+                aplBlueRidgeHillsAutumn = new RealisticBiomeAPLBlueRidgeHillsAutumn(BiomeConfigAPL.biomeConfigAPLBlueRidgeHillsAutumn);
+            }
+            if (AppalachiaBiomes.blueRidgeMountainsAutumn != null) {
+                aplBlueRidgeMountainsAutumn = new RealisticBiomeAPLBlueRidgeMountainsAutumn(BiomeConfigAPL.biomeConfigAPLBlueRidgeMountainsAutumn);
             }
         }
     }

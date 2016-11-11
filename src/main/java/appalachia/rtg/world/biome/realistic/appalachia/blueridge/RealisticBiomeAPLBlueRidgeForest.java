@@ -7,10 +7,12 @@ import appalachia.rtg.api.biome.appalachia.config.BiomeConfigAPLBlueRidgeForest;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionBlueRidgeForest;
 import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 import appalachia.rtg.world.gen.surface.appalachia.SurfaceAPLBlueRidgeForest;
-import appalachia.rtg.world.gen.terrain.appalachia.TerrainAPLBlueRidgeForest;
 
 import rtg.api.biome.BiomeConfig;
 import rtg.util.BlockUtil;
+import rtg.util.CellNoise;
+import rtg.util.OpenSimplexNoise;
+import rtg.world.gen.terrain.TerrainBase;
 
 public class RealisticBiomeAPLBlueRidgeForest extends RealisticBiomeAPLBase {
 
@@ -20,11 +22,37 @@ public class RealisticBiomeAPLBlueRidgeForest extends RealisticBiomeAPLBase {
     public RealisticBiomeAPLBlueRidgeForest(BiomeConfig config) {
 
         super(config, biome, river,
-            new TerrainAPLBlueRidgeForest(),
             new SurfaceAPLBlueRidgeForest(config, biome.topBlock, biome.fillerBlock, BlockUtil.getStateDirt(2), 12f, 0.27f)
         );
 
         this.addDecoCollection(new DecoCollectionBlueRidgeForest(this.config._boolean(BiomeConfigAPLBlueRidgeForest.decorationLogsId)));
+    }
+
+    @Override
+    public TerrainBase initTerrain() {
+
+        return new TerrainAPLBlueRidgeForest();
+    }
+
+    public class TerrainAPLBlueRidgeForest extends TerrainBase {
+
+        protected float hillStrength = 10f;// this needs to be linked to the
+
+        public TerrainAPLBlueRidgeForest() {
+
+        }
+
+        @Override
+        public float generateNoise(OpenSimplexNoise simplex, CellNoise cell, int x, int y, float border, float river) {
+
+            groundNoise = groundNoise(x, y, groundVariation, simplex);
+
+            float m = hills(x, y, hillStrength, simplex, river);
+
+            float floNoise = 65f + groundNoise + m;
+
+            return riverized(floNoise, river);
+        }
     }
 
     @Override

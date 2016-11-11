@@ -7,10 +7,11 @@ import appalachia.rtg.api.biome.appalachia.config.BiomeConfigAPLBlueRidgeForestA
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionBlueRidgeForest;
 import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 import appalachia.rtg.world.gen.surface.appalachia.SurfaceAPLBlueRidgeForestAutumn;
-import appalachia.rtg.world.gen.terrain.appalachia.TerrainAPLBlueRidgeForestAutumn;
 
 import rtg.api.biome.BiomeConfig;
 import rtg.util.BlockUtil;
+import rtg.world.biome.realistic.RealisticBiomeBase;
+import rtg.world.gen.terrain.TerrainBase;
 
 public class RealisticBiomeAPLBlueRidgeForestAutumn extends RealisticBiomeAPLBase {
 
@@ -20,11 +21,16 @@ public class RealisticBiomeAPLBlueRidgeForestAutumn extends RealisticBiomeAPLBas
     public RealisticBiomeAPLBlueRidgeForestAutumn(BiomeConfig config) {
 
         super(config, biome, river,
-            new TerrainAPLBlueRidgeForestAutumn(),
             new SurfaceAPLBlueRidgeForestAutumn(config, biome.topBlock, biome.fillerBlock, BlockUtil.getStateDirt(2), 12f, 0.27f)
         );
 
         this.addDecoCollection(new DecoCollectionBlueRidgeForest(this.config._boolean(BiomeConfigAPLBlueRidgeForestAutumn.decorationLogsId)));
+    }
+
+    @Override
+    public TerrainBase initTerrain() {
+
+        return RealisticBiomeBase.getBiome(Biome.getIdForBiome(AppalachiaBiomes.blueRidgeForest)).getTerrain();
     }
 
     @Override
