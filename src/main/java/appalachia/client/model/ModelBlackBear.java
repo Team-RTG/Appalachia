@@ -93,7 +93,7 @@ public class ModelBlackBear extends ModelQuadruped
     {
         super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entityIn);
         float f = ageInTicks - (float)entityIn.ticksExisted;
-        float f1 = ((EntityBlackBear)entityIn).func_189795_r(f);
+        float f1 = ((EntityBlackBear)entityIn).getStandingAnimationScale(f);
         f1 = f1 * f1;
         float f2 = 1.0F - f1;
         this.body.rotateAngleX = ((float)Math.PI / 2F) - f1 * (float)Math.PI * 0.35F;

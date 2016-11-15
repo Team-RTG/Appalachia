@@ -190,7 +190,7 @@ public class EntityBlackBear extends EntityAnimal
     }
 
     @SideOnly(Side.CLIENT)
-    public float func_189795_r(float p_189795_1_)
+    public float getStandingAnimationScale(float p_189795_1_)
     {
         return (this.clientSideStandAnimation0 + (this.clientSideStandAnimation - this.clientSideStandAnimation0) * p_189795_1_) / 6.0F;
     }
@@ -206,7 +206,7 @@ public class EntityBlackBear extends EntityAnimal
     {
         if (livingdata instanceof EntityBlackBear.GroupData)
         {
-            if (((EntityBlackBear.GroupData)livingdata).field_190101_a)
+            if (((EntityBlackBear.GroupData)livingdata).madeParent)
             {
                 this.setGrowingAge(-24000);
             }
@@ -214,7 +214,7 @@ public class EntityBlackBear extends EntityAnimal
         else
         {
             EntityBlackBear.GroupData entityblackbear$groupdata = new EntityBlackBear.GroupData();
-            entityblackbear$groupdata.field_190101_a = true;
+            entityblackbear$groupdata.madeParent = true;
             livingdata = entityblackbear$groupdata;
         }
 
@@ -358,7 +358,7 @@ public class EntityBlackBear extends EntityAnimal
 
     static class GroupData implements IEntityLivingData
     {
-        public boolean field_190101_a;
+        public boolean madeParent;
 
         private GroupData()
         {
