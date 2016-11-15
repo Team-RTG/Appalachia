@@ -30,8 +30,8 @@ public class EntityBlackBear extends EntityAnimal
 {
     private static final DataParameter<Boolean> IS_STANDING = EntityDataManager.<Boolean>createKey(EntityBlackBear.class, DataSerializers.BOOLEAN);
     private float clientSideStandAnimation0;
-    private float field_189800_bz;
-    private int field_189797_bB;
+    private float clientSideStandAnimation;
+    private int warningSoundTicks;
 
     public EntityBlackBear(World worldIn)
     {
@@ -108,10 +108,10 @@ public class EntityBlackBear extends EntityAnimal
 
     protected void playWarningSound()
     {
-        if (this.field_189797_bB <= 0)
+        if (this.warningSoundTicks <= 0)
         {
             this.playSound(AppalachiaSounds.getRandomSound(AppalachiaSounds.entity_blackbear_warning), 1.0F, 1.0F);
-            this.field_189797_bB = 40;
+            this.warningSoundTicks = 40;
         }
     }
 
@@ -148,21 +148,21 @@ public class EntityBlackBear extends EntityAnimal
 
         if (this.worldObj.isRemote)
         {
-            this.clientSideStandAnimation0 = this.field_189800_bz;
+            this.clientSideStandAnimation0 = this.clientSideStandAnimation;
 
             if (this.isStanding())
             {
-                this.field_189800_bz = MathHelper.clamp_float(this.field_189800_bz + 1.0F, 0.0F, 6.0F);
+                this.clientSideStandAnimation = MathHelper.clamp_float(this.clientSideStandAnimation + 1.0F, 0.0F, 6.0F);
             }
             else
             {
-                this.field_189800_bz = MathHelper.clamp_float(this.field_189800_bz - 1.0F, 0.0F, 6.0F);
+                this.clientSideStandAnimation = MathHelper.clamp_float(this.clientSideStandAnimation - 1.0F, 0.0F, 6.0F);
             }
         }
 
-        if (this.field_189797_bB > 0)
+        if (this.warningSoundTicks > 0)
         {
-            --this.field_189797_bB;
+            --this.warningSoundTicks;
         }
     }
 
@@ -192,7 +192,7 @@ public class EntityBlackBear extends EntityAnimal
     @SideOnly(Side.CLIENT)
     public float func_189795_r(float p_189795_1_)
     {
-        return (this.clientSideStandAnimation0 + (this.field_189800_bz - this.clientSideStandAnimation0) * p_189795_1_) / 6.0F;
+        return (this.clientSideStandAnimation0 + (this.clientSideStandAnimation - this.clientSideStandAnimation0) * p_189795_1_) / 6.0F;
     }
 
     @Override
@@ -206,7 +206,7 @@ public class EntityBlackBear extends EntityAnimal
     {
         if (livingdata instanceof EntityBlackBear.GroupData)
         {
-            if (((EntityBlackBear.GroupData)livingdata).madeParent)
+            if (((EntityBlackBear.GroupData)livingdata).field_190101_a)
             {
                 this.setGrowingAge(-24000);
             }
@@ -214,7 +214,7 @@ public class EntityBlackBear extends EntityAnimal
         else
         {
             EntityBlackBear.GroupData entityblackbear$groupdata = new EntityBlackBear.GroupData();
-            entityblackbear$groupdata.madeParent = true;
+            entityblackbear$groupdata.field_190101_a = true;
             livingdata = entityblackbear$groupdata;
         }
 
@@ -358,7 +358,7 @@ public class EntityBlackBear extends EntityAnimal
 
     static class GroupData implements IEntityLivingData
     {
-        public boolean madeParent;
+        public boolean field_190101_a;
 
         private GroupData()
         {
