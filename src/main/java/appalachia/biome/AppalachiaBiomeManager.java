@@ -7,7 +7,7 @@ import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-import appalachia.api.biome.*;
+import appalachia.api.biome.AppalachiaBiome;
 import appalachia.api.biome.blueridge.*;
 import appalachia.api.biome.blueridge.autumn.BiomeBlueRidgeForestAutumn;
 import appalachia.api.biome.blueridge.autumn.BiomeBlueRidgeHillsAutumn;

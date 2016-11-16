@@ -19,11 +19,9 @@ import appalachia.event.EventManager;
 import appalachia.item.ItemManager;
 import appalachia.proxy.ClientProxy;
 import appalachia.proxy.CommonProxy;
-import appalachia.rtg.config.BiomeConfigManagerAPL;
-import appalachia.rtg.config.ConfigManagerAPL;
+import appalachia.reference.ModInfo;
 import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 import appalachia.world.AppalachiaWorldGenerator;
-import appalachia.reference.ModInfo;
 
 
 @SuppressWarnings({"WeakerAccess", "unused"})
@@ -66,9 +64,6 @@ public class Appalachia {
         AppalachiaBiomeManager.registerBiomes();
 
         proxy.preInit(event);
-
-        BiomeConfigManagerAPL.initBiomeConfigs();
-        ConfigManagerAPL.init(event.getModConfigurationDirectory() + File.separator + rtg.reference.ModInfo.CONFIG_DIRECTORY + File.separator);
     }
 
     @EventHandler
