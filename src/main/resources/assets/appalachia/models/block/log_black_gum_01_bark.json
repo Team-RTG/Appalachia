@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "appalachia:blocks/log_black_gum_01"
+    }
+}

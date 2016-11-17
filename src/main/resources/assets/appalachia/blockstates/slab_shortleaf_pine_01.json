@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "half=bottom": { "model": "appalachia:slab_shortleaf_pine_01" },
+        "half=top": { "model": "appalachia:slab_shortleaf_pine_01_upper" }
+    }
+}

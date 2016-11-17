@@ -1,0 +1,6 @@
+{
+    "parent": "block/fence_post",
+    "textures": {
+        "texture": "appalachia:blocks/log_sugar_maple_01"
+    }
+}

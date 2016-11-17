@@ -1,0 +1,6 @@
+{
+    "parent": "block/fence_gate_closed",
+    "textures": {
+        "texture": "appalachia:blocks/planks_bitternut_hickory_01"
+    }
+}

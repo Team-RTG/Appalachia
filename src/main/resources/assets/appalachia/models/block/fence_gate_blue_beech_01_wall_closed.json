@@ -1,0 +1,6 @@
+{
+    "parent": "block/wall_gate_closed",
+    "textures": {
+        "texture": "appalachia:blocks/planks_blue_beech_01"
+    }
+}
