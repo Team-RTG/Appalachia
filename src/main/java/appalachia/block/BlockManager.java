@@ -77,6 +77,41 @@ public class BlockManager {
         AppalachiaBlocks.log_blueridge_02 = new BlockLogBlueRidge02();
         AppalachiaBlocks.log_blueridge_03 = new BlockLogBlueRidge03();
 
+        AppalachiaBlocks.log_american_beech_01 = new BlockLogAmericanBeech01();
+        AppalachiaBlocks.log_american_chestnut_01 = new BlockLogAmericanChestnut01();
+        AppalachiaBlocks.log_american_elm_01 = new BlockLogAmericanElm01();
+        AppalachiaBlocks.log_ash_01 = new BlockLogAsh01();
+        AppalachiaBlocks.log_bitternut_hickory_01 = new BlockLogBitternutHickory01();
+        AppalachiaBlocks.log_black_cherry_01 = new BlockLogBlackCherry01();
+        AppalachiaBlocks.log_black_gum_01 = new BlockLogBlackGum01();
+        AppalachiaBlocks.log_black_locust_01 = new BlockLogBlackLocust01();
+        AppalachiaBlocks.log_black_oak_01 = new BlockLogBlackOak01();
+        AppalachiaBlocks.log_black_walnut_01 = new BlockLogBlackWalnut01();
+        AppalachiaBlocks.log_blue_beech_01 = new BlockLogBlueBeech01();
+        AppalachiaBlocks.log_box_elder_01 = new BlockLogBoxElder01();
+        AppalachiaBlocks.log_buckeye_01 = new BlockLogBuckeye01();
+        AppalachiaBlocks.log_cedar_01 = new BlockLogCedar01();
+        AppalachiaBlocks.log_dogwood_01 = new BlockLogDogwood01();
+        AppalachiaBlocks.log_hackberry_01 = new BlockLogHackberry01();
+        AppalachiaBlocks.log_honey_locust_01 = new BlockLogHoneyLocust01();
+        AppalachiaBlocks.log_hop_hornbeam_01 = new BlockLogHopHornbeam01();
+        AppalachiaBlocks.log_persimmon_01 = new BlockLogPersimmon01();
+        AppalachiaBlocks.log_pignut_hickory_01 = new BlockLogPignutHickory01();
+        AppalachiaBlocks.log_red_elm_01 = new BlockLogRedElm01();
+        AppalachiaBlocks.log_red_maple_01 = new BlockLogRedMaple01();
+        AppalachiaBlocks.log_red_oak_01 = new BlockLogRedOak01();
+        AppalachiaBlocks.log_river_birch_01 = new BlockLogRiverBirch01();
+        AppalachiaBlocks.log_sassafras_01 = new BlockLogSassafras01();
+        AppalachiaBlocks.log_shagbark_hickory_01 = new BlockLogShagbarkHickory01();
+        AppalachiaBlocks.log_shortleaf_pine_01 = new BlockLogShortleafPine01();
+        AppalachiaBlocks.log_sugar_maple_01 = new BlockLogSugarMaple01();
+        AppalachiaBlocks.log_sycamore_01 = new BlockLogSycamore01();
+        AppalachiaBlocks.log_tulip_poplar_01 = new BlockLogTulipPoplar01();
+        AppalachiaBlocks.log_white_oak_01 = new BlockLogWhiteOak01();
+        AppalachiaBlocks.log_white_pine_01 = new BlockLogWhitePine01();
+        AppalachiaBlocks.log_white_walnut_01 = new BlockLogWhiteWalnut01();
+        AppalachiaBlocks.log_yellow_birch_01 = new BlockLogYellowBirch01();
+
         addLogs();
 
         //Planks.
@@ -85,6 +120,41 @@ public class BlockManager {
         AppalachiaBlocks.planks_blueridge_01 = new BlockPlanksBlueRidge01();
         AppalachiaBlocks.planks_blueridge_02 = new BlockPlanksBlueRidge02();
         AppalachiaBlocks.planks_blueridge_03 = new BlockPlanksBlueRidge03();
+
+        AppalachiaBlocks.planks_american_beech_01 = new BlockPlanksAmericanBeech01();
+        AppalachiaBlocks.planks_american_chestnut_01 = new BlockPlanksAmericanChestnut01();
+        AppalachiaBlocks.planks_american_elm_01 = new BlockPlanksAmericanElm01();
+        AppalachiaBlocks.planks_ash_01 = new BlockPlanksAsh01();
+        AppalachiaBlocks.planks_bitternut_hickory_01 = new BlockPlanksBitternutHickory01();
+        AppalachiaBlocks.planks_black_cherry_01 = new BlockPlanksBlackCherry01();
+        AppalachiaBlocks.planks_black_gum_01 = new BlockPlanksBlackGum01();
+        AppalachiaBlocks.planks_black_locust_01 = new BlockPlanksBlackLocust01();
+        AppalachiaBlocks.planks_black_oak_01 = new BlockPlanksBlackOak01();
+        AppalachiaBlocks.planks_black_walnut_01 = new BlockPlanksBlackWalnut01();
+        AppalachiaBlocks.planks_blue_beech_01 = new BlockPlanksBlueBeech01();
+        AppalachiaBlocks.planks_box_elder_01 = new BlockPlanksBoxElder01();
+        AppalachiaBlocks.planks_buckeye_01 = new BlockPlanksBuckeye01();
+        AppalachiaBlocks.planks_cedar_01 = new BlockPlanksCedar01();
+        AppalachiaBlocks.planks_dogwood_01 = new BlockPlanksDogwood01();
+        AppalachiaBlocks.planks_hackberry_01 = new BlockPlanksHackberry01();
+        AppalachiaBlocks.planks_honey_locust_01 = new BlockPlanksHoneyLocust01();
+        AppalachiaBlocks.planks_hop_hornbeam_01 = new BlockPlanksHopHornbeam01();
+        AppalachiaBlocks.planks_persimmon_01 = new BlockPlanksPersimmon01();
+        AppalachiaBlocks.planks_pignut_hickory_01 = new BlockPlanksPignutHickory01();
+        AppalachiaBlocks.planks_red_elm_01 = new BlockPlanksRedElm01();
+        AppalachiaBlocks.planks_red_maple_01 = new BlockPlanksRedMaple01();
+        AppalachiaBlocks.planks_red_oak_01 = new BlockPlanksRedOak01();
+        AppalachiaBlocks.planks_river_birch_01 = new BlockPlanksRiverBirch01();
+        AppalachiaBlocks.planks_sassafras_01 = new BlockPlanksSassafras01();
+        AppalachiaBlocks.planks_shagbark_hickory_01 = new BlockPlanksShagbarkHickory01();
+        AppalachiaBlocks.planks_shortleaf_pine_01 = new BlockPlanksShortleafPine01();
+        AppalachiaBlocks.planks_sugar_maple_01 = new BlockPlanksSugarMaple01();
+        AppalachiaBlocks.planks_sycamore_01 = new BlockPlanksSycamore01();
+        AppalachiaBlocks.planks_tulip_poplar_01 = new BlockPlanksTulipPoplar01();
+        AppalachiaBlocks.planks_white_oak_01 = new BlockPlanksWhiteOak01();
+        AppalachiaBlocks.planks_white_pine_01 = new BlockPlanksWhitePine01();
+        AppalachiaBlocks.planks_white_walnut_01 = new BlockPlanksWhiteWalnut01();
+        AppalachiaBlocks.planks_yellow_birch_01 = new BlockPlanksYellowBirch01();
 
         addPlanks();
 
@@ -95,6 +165,41 @@ public class BlockManager {
         AppalachiaBlocks.slab_blueridge_02 = new BlockSlabBlueRidge02();
         AppalachiaBlocks.slab_blueridge_03 = new BlockSlabBlueRidge03();
 
+        AppalachiaBlocks.slab_american_beech_01 = new BlockSlabAmericanBeech01();
+        AppalachiaBlocks.slab_american_chestnut_01 = new BlockSlabAmericanChestnut01();
+        AppalachiaBlocks.slab_american_elm_01 = new BlockSlabAmericanElm01();
+        AppalachiaBlocks.slab_ash_01 = new BlockSlabAsh01();
+        AppalachiaBlocks.slab_bitternut_hickory_01 = new BlockSlabBitternutHickory01();
+        AppalachiaBlocks.slab_black_cherry_01 = new BlockSlabBlackCherry01();
+        AppalachiaBlocks.slab_black_gum_01 = new BlockSlabBlackGum01();
+        AppalachiaBlocks.slab_black_locust_01 = new BlockSlabBlackLocust01();
+        AppalachiaBlocks.slab_black_oak_01 = new BlockSlabBlackOak01();
+        AppalachiaBlocks.slab_black_walnut_01 = new BlockSlabBlackWalnut01();
+        AppalachiaBlocks.slab_blue_beech_01 = new BlockSlabBlueBeech01();
+        AppalachiaBlocks.slab_box_elder_01 = new BlockSlabBoxElder01();
+        AppalachiaBlocks.slab_buckeye_01 = new BlockSlabBuckeye01();
+        AppalachiaBlocks.slab_cedar_01 = new BlockSlabCedar01();
+        AppalachiaBlocks.slab_dogwood_01 = new BlockSlabDogwood01();
+        AppalachiaBlocks.slab_hackberry_01 = new BlockSlabHackberry01();
+        AppalachiaBlocks.slab_honey_locust_01 = new BlockSlabHoneyLocust01();
+        AppalachiaBlocks.slab_hop_hornbeam_01 = new BlockSlabHopHornbeam01();
+        AppalachiaBlocks.slab_persimmon_01 = new BlockSlabPersimmon01();
+        AppalachiaBlocks.slab_pignut_hickory_01 = new BlockSlabPignutHickory01();
+        AppalachiaBlocks.slab_red_elm_01 = new BlockSlabRedElm01();
+        AppalachiaBlocks.slab_red_maple_01 = new BlockSlabRedMaple01();
+        AppalachiaBlocks.slab_red_oak_01 = new BlockSlabRedOak01();
+        AppalachiaBlocks.slab_river_birch_01 = new BlockSlabRiverBirch01();
+        AppalachiaBlocks.slab_sassafras_01 = new BlockSlabSassafras01();
+        AppalachiaBlocks.slab_shagbark_hickory_01 = new BlockSlabShagbarkHickory01();
+        AppalachiaBlocks.slab_shortleaf_pine_01 = new BlockSlabShortleafPine01();
+        AppalachiaBlocks.slab_sugar_maple_01 = new BlockSlabSugarMaple01();
+        AppalachiaBlocks.slab_sycamore_01 = new BlockSlabSycamore01();
+        AppalachiaBlocks.slab_tulip_poplar_01 = new BlockSlabTulipPoplar01();
+        AppalachiaBlocks.slab_white_oak_01 = new BlockSlabWhiteOak01();
+        AppalachiaBlocks.slab_white_pine_01 = new BlockSlabWhitePine01();
+        AppalachiaBlocks.slab_white_walnut_01 = new BlockSlabWhiteWalnut01();
+        AppalachiaBlocks.slab_yellow_birch_01 = new BlockSlabYellowBirch01();
+
         addSlabs();
 
         //Stairs.
@@ -103,6 +208,41 @@ public class BlockManager {
         AppalachiaBlocks.stairs_blueridge_01 = new BlockStairsBlueRidge01();
         AppalachiaBlocks.stairs_blueridge_02 = new BlockStairsBlueRidge02();
         AppalachiaBlocks.stairs_blueridge_03 = new BlockStairsBlueRidge03();
+
+        AppalachiaBlocks.stairs_american_beech_01 = new BlockStairsAmericanBeech01();
+        AppalachiaBlocks.stairs_american_chestnut_01 = new BlockStairsAmericanChestnut01();
+        AppalachiaBlocks.stairs_american_elm_01 = new BlockStairsAmericanElm01();
+        AppalachiaBlocks.stairs_ash_01 = new BlockStairsAsh01();
+        AppalachiaBlocks.stairs_bitternut_hickory_01 = new BlockStairsBitternutHickory01();
+        AppalachiaBlocks.stairs_black_cherry_01 = new BlockStairsBlackCherry01();
+        AppalachiaBlocks.stairs_black_gum_01 = new BlockStairsBlackGum01();
+        AppalachiaBlocks.stairs_black_locust_01 = new BlockStairsBlackLocust01();
+        AppalachiaBlocks.stairs_black_oak_01 = new BlockStairsBlackOak01();
+        AppalachiaBlocks.stairs_black_walnut_01 = new BlockStairsBlackWalnut01();
+        AppalachiaBlocks.stairs_blue_beech_01 = new BlockStairsBlueBeech01();
+        AppalachiaBlocks.stairs_box_elder_01 = new BlockStairsBoxElder01();
+        AppalachiaBlocks.stairs_buckeye_01 = new BlockStairsBuckeye01();
+        AppalachiaBlocks.stairs_cedar_01 = new BlockStairsCedar01();
+        AppalachiaBlocks.stairs_dogwood_01 = new BlockStairsDogwood01();
+        AppalachiaBlocks.stairs_hackberry_01 = new BlockStairsHackberry01();
+        AppalachiaBlocks.stairs_honey_locust_01 = new BlockStairsHoneyLocust01();
+        AppalachiaBlocks.stairs_hop_hornbeam_01 = new BlockStairsHopHornbeam01();
+        AppalachiaBlocks.stairs_persimmon_01 = new BlockStairsPersimmon01();
+        AppalachiaBlocks.stairs_pignut_hickory_01 = new BlockStairsPignutHickory01();
+        AppalachiaBlocks.stairs_red_elm_01 = new BlockStairsRedElm01();
+        AppalachiaBlocks.stairs_red_maple_01 = new BlockStairsRedMaple01();
+        AppalachiaBlocks.stairs_red_oak_01 = new BlockStairsRedOak01();
+        AppalachiaBlocks.stairs_river_birch_01 = new BlockStairsRiverBirch01();
+        AppalachiaBlocks.stairs_sassafras_01 = new BlockStairsSassafras01();
+        AppalachiaBlocks.stairs_shagbark_hickory_01 = new BlockStairsShagbarkHickory01();
+        AppalachiaBlocks.stairs_shortleaf_pine_01 = new BlockStairsShortleafPine01();
+        AppalachiaBlocks.stairs_sugar_maple_01 = new BlockStairsSugarMaple01();
+        AppalachiaBlocks.stairs_sycamore_01 = new BlockStairsSycamore01();
+        AppalachiaBlocks.stairs_tulip_poplar_01 = new BlockStairsTulipPoplar01();
+        AppalachiaBlocks.stairs_white_oak_01 = new BlockStairsWhiteOak01();
+        AppalachiaBlocks.stairs_white_pine_01 = new BlockStairsWhitePine01();
+        AppalachiaBlocks.stairs_white_walnut_01 = new BlockStairsWhiteWalnut01();
+        AppalachiaBlocks.stairs_yellow_birch_01 = new BlockStairsYellowBirch01();
 
         addStairs();
 
@@ -113,6 +253,41 @@ public class BlockManager {
         AppalachiaBlocks.fence_blueridge_02 = new BlockFenceBlueRidge02();
         AppalachiaBlocks.fence_blueridge_03 = new BlockFenceBlueRidge03();
 
+        AppalachiaBlocks.fence_american_beech_01 = new BlockFenceAmericanBeech01();
+        AppalachiaBlocks.fence_american_chestnut_01 = new BlockFenceAmericanChestnut01();
+        AppalachiaBlocks.fence_american_elm_01 = new BlockFenceAmericanElm01();
+        AppalachiaBlocks.fence_ash_01 = new BlockFenceAsh01();
+        AppalachiaBlocks.fence_bitternut_hickory_01 = new BlockFenceBitternutHickory01();
+        AppalachiaBlocks.fence_black_cherry_01 = new BlockFenceBlackCherry01();
+        AppalachiaBlocks.fence_black_gum_01 = new BlockFenceBlackGum01();
+        AppalachiaBlocks.fence_black_locust_01 = new BlockFenceBlackLocust01();
+        AppalachiaBlocks.fence_black_oak_01 = new BlockFenceBlackOak01();
+        AppalachiaBlocks.fence_black_walnut_01 = new BlockFenceBlackWalnut01();
+        AppalachiaBlocks.fence_blue_beech_01 = new BlockFenceBlueBeech01();
+        AppalachiaBlocks.fence_box_elder_01 = new BlockFenceBoxElder01();
+        AppalachiaBlocks.fence_buckeye_01 = new BlockFenceBuckeye01();
+        AppalachiaBlocks.fence_cedar_01 = new BlockFenceCedar01();
+        AppalachiaBlocks.fence_dogwood_01 = new BlockFenceDogwood01();
+        AppalachiaBlocks.fence_hackberry_01 = new BlockFenceHackberry01();
+        AppalachiaBlocks.fence_honey_locust_01 = new BlockFenceHoneyLocust01();
+        AppalachiaBlocks.fence_hop_hornbeam_01 = new BlockFenceHopHornbeam01();
+        AppalachiaBlocks.fence_persimmon_01 = new BlockFencePersimmon01();
+        AppalachiaBlocks.fence_pignut_hickory_01 = new BlockFencePignutHickory01();
+        AppalachiaBlocks.fence_red_elm_01 = new BlockFenceRedElm01();
+        AppalachiaBlocks.fence_red_maple_01 = new BlockFenceRedMaple01();
+        AppalachiaBlocks.fence_red_oak_01 = new BlockFenceRedOak01();
+        AppalachiaBlocks.fence_river_birch_01 = new BlockFenceRiverBirch01();
+        AppalachiaBlocks.fence_sassafras_01 = new BlockFenceSassafras01();
+        AppalachiaBlocks.fence_shagbark_hickory_01 = new BlockFenceShagbarkHickory01();
+        AppalachiaBlocks.fence_shortleaf_pine_01 = new BlockFenceShortleafPine01();
+        AppalachiaBlocks.fence_sugar_maple_01 = new BlockFenceSugarMaple01();
+        AppalachiaBlocks.fence_sycamore_01 = new BlockFenceSycamore01();
+        AppalachiaBlocks.fence_tulip_poplar_01 = new BlockFenceTulipPoplar01();
+        AppalachiaBlocks.fence_white_oak_01 = new BlockFenceWhiteOak01();
+        AppalachiaBlocks.fence_white_pine_01 = new BlockFenceWhitePine01();
+        AppalachiaBlocks.fence_white_walnut_01 = new BlockFenceWhiteWalnut01();
+        AppalachiaBlocks.fence_yellow_birch_01 = new BlockFenceYellowBirch01();
+
         addFences();
 
         //Fence gates.
@@ -121,6 +296,41 @@ public class BlockManager {
         AppalachiaBlocks.fence_gate_blueridge_01 = new BlockFenceGateBlueRidge01();
         AppalachiaBlocks.fence_gate_blueridge_02 = new BlockFenceGateBlueRidge02();
         AppalachiaBlocks.fence_gate_blueridge_03 = new BlockFenceGateBlueRidge03();
+
+        AppalachiaBlocks.fence_gate_american_beech_01 = new BlockFenceGateAmericanBeech01();
+        AppalachiaBlocks.fence_gate_american_chestnut_01 = new BlockFenceGateAmericanChestnut01();
+        AppalachiaBlocks.fence_gate_american_elm_01 = new BlockFenceGateAmericanElm01();
+        AppalachiaBlocks.fence_gate_ash_01 = new BlockFenceGateAsh01();
+        AppalachiaBlocks.fence_gate_bitternut_hickory_01 = new BlockFenceGateBitternutHickory01();
+        AppalachiaBlocks.fence_gate_black_cherry_01 = new BlockFenceGateBlackCherry01();
+        AppalachiaBlocks.fence_gate_black_gum_01 = new BlockFenceGateBlackGum01();
+        AppalachiaBlocks.fence_gate_black_locust_01 = new BlockFenceGateBlackLocust01();
+        AppalachiaBlocks.fence_gate_black_oak_01 = new BlockFenceGateBlackOak01();
+        AppalachiaBlocks.fence_gate_black_walnut_01 = new BlockFenceGateBlackWalnut01();
+        AppalachiaBlocks.fence_gate_blue_beech_01 = new BlockFenceGateBlueBeech01();
+        AppalachiaBlocks.fence_gate_box_elder_01 = new BlockFenceGateBoxElder01();
+        AppalachiaBlocks.fence_gate_buckeye_01 = new BlockFenceGateBuckeye01();
+        AppalachiaBlocks.fence_gate_cedar_01 = new BlockFenceGateCedar01();
+        AppalachiaBlocks.fence_gate_dogwood_01 = new BlockFenceGateDogwood01();
+        AppalachiaBlocks.fence_gate_hackberry_01 = new BlockFenceGateHackberry01();
+        AppalachiaBlocks.fence_gate_honey_locust_01 = new BlockFenceGateHoneyLocust01();
+        AppalachiaBlocks.fence_gate_hop_hornbeam_01 = new BlockFenceGateHopHornbeam01();
+        AppalachiaBlocks.fence_gate_persimmon_01 = new BlockFenceGatePersimmon01();
+        AppalachiaBlocks.fence_gate_pignut_hickory_01 = new BlockFenceGatePignutHickory01();
+        AppalachiaBlocks.fence_gate_red_elm_01 = new BlockFenceGateRedElm01();
+        AppalachiaBlocks.fence_gate_red_maple_01 = new BlockFenceGateRedMaple01();
+        AppalachiaBlocks.fence_gate_red_oak_01 = new BlockFenceGateRedOak01();
+        AppalachiaBlocks.fence_gate_river_birch_01 = new BlockFenceGateRiverBirch01();
+        AppalachiaBlocks.fence_gate_sassafras_01 = new BlockFenceGateSassafras01();
+        AppalachiaBlocks.fence_gate_shagbark_hickory_01 = new BlockFenceGateShagbarkHickory01();
+        AppalachiaBlocks.fence_gate_shortleaf_pine_01 = new BlockFenceGateShortleafPine01();
+        AppalachiaBlocks.fence_gate_sugar_maple_01 = new BlockFenceGateSugarMaple01();
+        AppalachiaBlocks.fence_gate_sycamore_01 = new BlockFenceGateSycamore01();
+        AppalachiaBlocks.fence_gate_tulip_poplar_01 = new BlockFenceGateTulipPoplar01();
+        AppalachiaBlocks.fence_gate_white_oak_01 = new BlockFenceGateWhiteOak01();
+        AppalachiaBlocks.fence_gate_white_pine_01 = new BlockFenceGateWhitePine01();
+        AppalachiaBlocks.fence_gate_white_walnut_01 = new BlockFenceGateWhiteWalnut01();
+        AppalachiaBlocks.fence_gate_yellow_birch_01 = new BlockFenceGateYellowBirch01();
 
         addFenceGates();
 
@@ -162,6 +372,41 @@ public class BlockManager {
         appalachiaLogs.add(AppalachiaBlocks.log_blueridge_01);
         appalachiaLogs.add(AppalachiaBlocks.log_blueridge_02);
         appalachiaLogs.add(AppalachiaBlocks.log_blueridge_03);
+
+        appalachiaLogs.add(AppalachiaBlocks.log_american_beech_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_american_chestnut_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_american_elm_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_ash_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_bitternut_hickory_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_black_cherry_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_black_gum_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_black_locust_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_black_oak_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_black_walnut_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_blue_beech_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_box_elder_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_buckeye_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_cedar_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_dogwood_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_hackberry_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_honey_locust_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_hop_hornbeam_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_persimmon_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_pignut_hickory_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_red_elm_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_red_maple_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_red_oak_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_river_birch_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_sassafras_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_shagbark_hickory_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_shortleaf_pine_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_sugar_maple_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_sycamore_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_tulip_poplar_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_white_oak_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_white_pine_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_white_walnut_01);
+        appalachiaLogs.add(AppalachiaBlocks.log_yellow_birch_01);
     }
 
     private static void addPlanks() {
@@ -171,6 +416,41 @@ public class BlockManager {
         appalachiaPlanks.add(AppalachiaBlocks.planks_blueridge_01);
         appalachiaPlanks.add(AppalachiaBlocks.planks_blueridge_02);
         appalachiaPlanks.add(AppalachiaBlocks.planks_blueridge_03);
+
+        appalachiaPlanks.add(AppalachiaBlocks.planks_american_beech_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_american_chestnut_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_american_elm_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_ash_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_bitternut_hickory_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_black_cherry_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_black_gum_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_black_locust_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_black_oak_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_black_walnut_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_blue_beech_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_box_elder_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_buckeye_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_cedar_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_dogwood_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_hackberry_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_honey_locust_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_hop_hornbeam_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_persimmon_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_pignut_hickory_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_red_elm_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_red_maple_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_red_oak_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_river_birch_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_sassafras_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_shagbark_hickory_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_shortleaf_pine_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_sugar_maple_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_sycamore_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_tulip_poplar_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_white_oak_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_white_pine_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_white_walnut_01);
+        appalachiaPlanks.add(AppalachiaBlocks.planks_yellow_birch_01);
     }
 
     private static void addSlabs() {
@@ -180,6 +460,41 @@ public class BlockManager {
         appalachiaSlabs.add(AppalachiaBlocks.slab_blueridge_01);
         appalachiaSlabs.add(AppalachiaBlocks.slab_blueridge_02);
         appalachiaSlabs.add(AppalachiaBlocks.slab_blueridge_03);
+
+        appalachiaSlabs.add(AppalachiaBlocks.slab_american_beech_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_american_chestnut_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_american_elm_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_ash_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_bitternut_hickory_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_black_cherry_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_black_gum_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_black_locust_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_black_oak_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_black_walnut_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_blue_beech_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_box_elder_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_buckeye_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_cedar_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_dogwood_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_hackberry_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_honey_locust_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_hop_hornbeam_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_persimmon_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_pignut_hickory_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_red_elm_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_red_maple_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_red_oak_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_river_birch_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_sassafras_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_shagbark_hickory_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_shortleaf_pine_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_sugar_maple_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_sycamore_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_tulip_poplar_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_white_oak_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_white_pine_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_white_walnut_01);
+        appalachiaSlabs.add(AppalachiaBlocks.slab_yellow_birch_01);
     }
 
     private static void addStairs() {
@@ -189,6 +504,41 @@ public class BlockManager {
         appalachiaStairs.add(AppalachiaBlocks.stairs_blueridge_01);
         appalachiaStairs.add(AppalachiaBlocks.stairs_blueridge_02);
         appalachiaStairs.add(AppalachiaBlocks.stairs_blueridge_03);
+
+        appalachiaStairs.add(AppalachiaBlocks.stairs_american_beech_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_american_chestnut_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_american_elm_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_ash_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_bitternut_hickory_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_black_cherry_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_black_gum_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_black_locust_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_black_oak_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_black_walnut_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_blue_beech_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_box_elder_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_buckeye_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_cedar_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_dogwood_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_hackberry_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_honey_locust_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_hop_hornbeam_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_persimmon_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_pignut_hickory_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_red_elm_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_red_maple_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_red_oak_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_river_birch_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_sassafras_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_shagbark_hickory_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_shortleaf_pine_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_sugar_maple_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_sycamore_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_tulip_poplar_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_white_oak_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_white_pine_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_white_walnut_01);
+        appalachiaStairs.add(AppalachiaBlocks.stairs_yellow_birch_01);
     }
 
     private static void addFences() {
@@ -198,6 +548,41 @@ public class BlockManager {
         appalachiaFences.add(AppalachiaBlocks.fence_blueridge_01);
         appalachiaFences.add(AppalachiaBlocks.fence_blueridge_02);
         appalachiaFences.add(AppalachiaBlocks.fence_blueridge_03);
+
+        appalachiaFences.add(AppalachiaBlocks.fence_american_beech_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_american_chestnut_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_american_elm_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_ash_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_bitternut_hickory_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_black_cherry_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_black_gum_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_black_locust_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_black_oak_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_black_walnut_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_blue_beech_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_box_elder_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_buckeye_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_cedar_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_dogwood_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_hackberry_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_honey_locust_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_hop_hornbeam_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_persimmon_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_pignut_hickory_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_red_elm_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_red_maple_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_red_oak_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_river_birch_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_sassafras_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_shagbark_hickory_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_shortleaf_pine_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_sugar_maple_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_sycamore_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_tulip_poplar_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_white_oak_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_white_pine_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_white_walnut_01);
+        appalachiaFences.add(AppalachiaBlocks.fence_yellow_birch_01);
     }
 
     private static void addFenceGates() {
@@ -207,6 +592,41 @@ public class BlockManager {
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_blueridge_01);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_blueridge_02);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_blueridge_03);
+
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_american_beech_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_american_chestnut_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_american_elm_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_ash_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_bitternut_hickory_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_black_cherry_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_black_gum_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_black_locust_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_black_oak_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_black_walnut_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_blue_beech_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_box_elder_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_buckeye_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_cedar_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_dogwood_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_hackberry_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_honey_locust_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_hop_hornbeam_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_persimmon_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_pignut_hickory_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_red_elm_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_red_maple_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_red_oak_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_river_birch_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_sassafras_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_shagbark_hickory_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_shortleaf_pine_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_sugar_maple_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_sycamore_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_tulip_poplar_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_white_oak_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_white_pine_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_white_walnut_01);
+        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_yellow_birch_01);
     }
 
     private static void addLeaves() {

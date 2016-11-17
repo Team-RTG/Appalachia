@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "appalachia:blocks/planks_shagbark_hickory_01"
+    }
+}

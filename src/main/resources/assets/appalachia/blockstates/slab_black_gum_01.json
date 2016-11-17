@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "half=bottom": { "model": "appalachia:slab_black_gum_01" },
+        "half=top": { "model": "appalachia:slab_black_gum_01_upper" }
+    }
+}

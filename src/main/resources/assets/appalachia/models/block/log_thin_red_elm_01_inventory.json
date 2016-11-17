@@ -1,0 +1,6 @@
+{
+    "parent": "block/fence_inventory",
+    "textures": {
+        "texture": "appalachia:blocks/log_red_elm_01"
+    }
+}

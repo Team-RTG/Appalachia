@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "half=bottom": { "model": "appalachia:slab_hop_hornbeam_01" },
+        "half=top": { "model": "appalachia:slab_hop_hornbeam_01_upper" }
+    }
+}

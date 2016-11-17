@@ -1,0 +1,6 @@
+{
+    "parent": "block/fence_post",
+    "textures": {
+        "texture": "appalachia:blocks/planks_black_walnut_01"
+    }
+}
