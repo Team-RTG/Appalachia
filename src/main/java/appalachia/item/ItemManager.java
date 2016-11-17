@@ -1,28 +1,43 @@
 package appalachia.item;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import appalachia.api.AppalachiaItems;
+import appalachia.item.entity.AppalachiaItemRawBear;
+import appalachia.reference.ModInfo;
+import com.google.common.collect.Lists;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
-
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import appalachia.reference.ModInfo;
-import com.google.common.collect.Lists;
-
 public class ItemManager {
 
-    public static void registerItems() {
+    public static ArrayList<Item> appalachiaItems = new ArrayList<>();
 
+    public static void registerItems() {
+        AppalachiaItems.rawBear = new AppalachiaItemRawBear(3, 0.3f, false);
+        AppalachiaItems.rawBear.setRegistryName(ModInfo.MOD_ID, "raw_bear");
+        AppalachiaItems.rawBear.setUnlocalizedName(AppalachiaItems.rawBear.getRegistryName().toString());
+
+        addFoodItems();
+        registerModels();
+    }
+
+    public static void addFoodItems() {
+        appalachiaItems.add(AppalachiaItems.rawBear);
+
+        appalachiaItems.forEach(GameRegistry::register);
     }
 
     @SideOnly(Side.CLIENT)
     public static void registerModels() {
-
+        appalachiaItems.forEach(ItemManager::registerModel);
     }
 
     @SideOnly(Side.CLIENT)

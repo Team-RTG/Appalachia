@@ -66,3 +66,6 @@ tile.slab.blueridge.03.name=Blue Ridge Slab (03)
 tile.stairs.blueridge.03.name=Blue Ridge Stairs (03)
 tile.fence.blueridge.03.name=Blue Ridge Fence (03)
 tile.fence.gate.blueridge.03.name=Blue Ridge Fence Gate (03)
+
+
+item.appalachia:raw_bear.name=Raw Bear
