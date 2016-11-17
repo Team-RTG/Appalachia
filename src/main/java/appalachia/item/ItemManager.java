@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import appalachia.api.AppalachiaItems;
+import appalachia.gui.AppalachiaTabs;
 import appalachia.reference.ModInfo;
 import com.google.common.collect.Lists;
 import net.minecraft.client.renderer.block.model.ModelBakery;
@@ -22,13 +23,15 @@ public class ItemManager {
     public static ArrayList<Item> appalachiaItems = new ArrayList<>();
 
     public static void registerItems() {
-        AppalachiaItems.rawBear = new ItemFood(3, 0.3f, false);
+        AppalachiaItems.rawBear = new ItemFood(4, 0.3f, false);
         AppalachiaItems.rawBear.setRegistryName(ModInfo.MOD_ID, "raw_bear");
         AppalachiaItems.rawBear.setUnlocalizedName(AppalachiaItems.rawBear.getRegistryName().toString());
+        AppalachiaItems.rawBear.setCreativeTab(AppalachiaTabs.tabItem);
 
-        AppalachiaItems.cookedBear = new ItemFood(8, 0.8f, false);
+        AppalachiaItems.cookedBear = new ItemFood(10, 0.9f, false);
         AppalachiaItems.cookedBear.setRegistryName(ModInfo.MOD_ID, "cooked_bear");
         AppalachiaItems.cookedBear.setUnlocalizedName(AppalachiaItems.cookedBear.getRegistryName().toString());
+        AppalachiaItems.cookedBear.setCreativeTab(AppalachiaTabs.tabItem);
 
         addFoodItems();
         registerModels();
