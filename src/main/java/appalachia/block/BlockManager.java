@@ -39,9 +39,7 @@ import appalachia.item.slabs.AppalachiaItemSlab;
 
 public class BlockManager {
 
-    public static ArrayList<Block> appalachiaBlocks = new ArrayList<Block>() {
-
-    };
+    public static ArrayList<Block> appalachiaBlocks = new ArrayList<>();
     public static ArrayList<Block> appalachiaLogs = new ArrayList<Block>() {
 
     };

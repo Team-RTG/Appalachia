@@ -1,28 +1,54 @@
 package appalachia.item;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import appalachia.api.AppalachiaItems;
+import appalachia.reference.ModInfo;
+import com.google.common.collect.Lists;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import appalachia.reference.ModInfo;
-import com.google.common.collect.Lists;
-
 public class ItemManager {
 
-    public static void registerItems() {
+    public static ArrayList<Item> appalachiaItems = new ArrayList<>();
 
+    public static void registerItems() {
+        AppalachiaItems.rawBear = new ItemFood(3, 0.3f, false);
+        AppalachiaItems.rawBear.setRegistryName(ModInfo.MOD_ID, "raw_bear");
+        AppalachiaItems.rawBear.setUnlocalizedName(AppalachiaItems.rawBear.getRegistryName().toString());
+
+        AppalachiaItems.cookedBear = new ItemFood(8, 0.8f, false);
+        AppalachiaItems.cookedBear.setRegistryName(ModInfo.MOD_ID, "cooked_bear");
+        AppalachiaItems.cookedBear.setUnlocalizedName(AppalachiaItems.cookedBear.getRegistryName().toString());
+
+        addFoodItems();
+        registerModels();
+        cookFood();
+    }
+
+    public static void addFoodItems() {
+        appalachiaItems.add(AppalachiaItems.rawBear);
+        appalachiaItems.add(AppalachiaItems.cookedBear);
+
+        appalachiaItems.forEach(GameRegistry::register);
+    }
+
+    public static void cookFood() {
+        GameRegistry.addSmelting(AppalachiaItems.rawBear, new ItemStack(AppalachiaItems.cookedBear, 1), 0.1f);
     }
 
     @SideOnly(Side.CLIENT)
     public static void registerModels() {
-
+        appalachiaItems.forEach(ItemManager::registerModel);
     }
 
     @SideOnly(Side.CLIENT)
