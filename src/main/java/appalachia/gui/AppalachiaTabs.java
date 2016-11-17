@@ -1,5 +1,6 @@
 package appalachia.gui;
 
+import appalachia.api.AppalachiaItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
@@ -22,6 +23,15 @@ public class AppalachiaTabs {
         public Item getTabIconItem() {
 
             return Item.getItemFromBlock(AppalachiaBlocks.leaves_autumn_red);
+        }
+    };
+
+    public static final CreativeTabs tabItem = new CreativeTabs("appalachiaitems") {
+
+        @Override
+        public Item getTabIconItem() {
+
+            return AppalachiaItems.rawBear;
         }
     };
 }
