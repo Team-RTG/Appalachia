@@ -4,6 +4,7 @@ itemGroup.appalachiablocks=Appalachia Blocks
 itemGroup.appalachiadecorations=Appalachia Decorations
 
 #Mobs
+
 entity.appalachia.BlackBear.name=Black Bear
 entity.BlackBear.name=Black Bear
 subtitles.entity.black_bear.idle1=Black Bear groans
@@ -24,6 +25,11 @@ subtitles.entity.black_bear.warning3=Black Bear roars
 subtitles.entity.black_bear.death1=Black Bear dies
 subtitles.entity.black_bear.death2=Black Bear dies
 subtitles.entity.black_bear.death3=Black Bear dies
+
+#Items
+
+item.appalachia:cooked_bear.name=Cooked Bear
+item.appalachia:raw_bear.name=Raw Bear
 
 #Blocks
 
@@ -66,7 +72,6 @@ tile.slab.blueridge.03.name=Blue Ridge Slab (03)
 tile.stairs.blueridge.03.name=Blue Ridge Stairs (03)
 tile.fence.blueridge.03.name=Blue Ridge Fence (03)
 tile.fence.gate.blueridge.03.name=Blue Ridge Fence Gate (03)
-
 
 
 tile.log.american_beech.01.name=American Beech Log (01)
@@ -340,5 +345,3 @@ tile.slab.yellow_birch.01.name=Yellow Birch Slab (01)
 tile.stairs.yellow_birch.01.name=Yellow Birch Stairs (01)
 tile.fence.yellow_birch.01.name=Yellow Birch Fence (01)
 tile.fence.gate.yellow_birch.01.name=Yellow Birch Fence Gate (01)
-
-
