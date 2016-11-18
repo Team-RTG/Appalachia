@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
 
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -41,13 +42,13 @@ import rtg.world.gen.structure.StructureOceanMonumentRTG;
 
 
 @SuppressWarnings({"WeakerAccess", "unused"})
-//@Mod(
-//    modid                    = ModInfo.MOD_ID,
-//    name                     = ModInfo.MOD_NAME,
-//    version                  = ModInfo.MOD_VERSION,
-//    dependencies             = "required-after:Forge@[" + ModInfo.MCF_MINVER + "," + ModInfo.MCF_MAXVER + ")" + ModInfo.MOD_DEPS,
-//    acceptableRemoteVersions = "*"
-//)
+@Mod(
+    modid                    = ModInfo.MOD_ID,
+    name                     = ModInfo.MOD_NAME,
+    version                  = "4.1.1.x",
+    dependencies             = "required-after:Forge@[12.18.2.2099,)" + ModInfo.MOD_DEPS,
+    acceptableRemoteVersions = "*"
+)
 public class RTG {
 
     public static String configPath;
