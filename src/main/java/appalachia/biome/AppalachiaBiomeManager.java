@@ -8,8 +8,8 @@ import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import appalachia.api.biome.AppalachiaBiome;
-import appalachia.api.biome.BiomeBorealBog;
 import appalachia.api.biome.blueridge.*;
+import appalachia.api.biome.blueridge.autumn.BiomeBlueRidgeBogAutumn;
 import appalachia.api.biome.blueridge.autumn.BiomeBlueRidgeForestAutumn;
 import appalachia.api.biome.blueridge.autumn.BiomeBlueRidgeHillsAutumn;
 import appalachia.api.biome.blueridge.autumn.BiomeBlueRidgeMountainsAutumn;
@@ -97,6 +97,23 @@ public class AppalachiaBiomeManager {
         Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeMountains);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Blue Ridge Bog
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        blueRidgeBog = new BiomeBlueRidgeBog(AppalachiaBiomeProps.BLUE_RIDGE_BOG.getProps());
+        registerBiomeWithTypes(
+            blueRidgeBog,
+            "blueridgebog",
+            ConfigAppalachia.biomeWeight_BlueRidgeBog,
+            BiomeManager.BiomeType.COOL,
+            BiomeBlueRidgeForest.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(blueRidgeBog);
+        BiomeManager.addVillageBiome(blueRidgeBog, true);
+        BiomeManager.addStrongholdBiome(blueRidgeBog);
+        Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeBog);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Autumn Blue Ridge Forest
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -148,6 +165,23 @@ public class AppalachiaBiomeManager {
         Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeMountainsAutumn);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Autumn Blue Ridge Bog
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        blueRidgeBogAutumn = new BiomeBlueRidgeBogAutumn(AppalachiaBiomeProps.BLUE_RIDGE_BOG_AUTUMN.getProps());
+        registerBiomeWithTypes(
+            blueRidgeBogAutumn,
+            "blueridgebogautumn",
+            ConfigAppalachia.biomeWeight_BlueRidgeBogAutumn,
+            BiomeManager.BiomeType.COOL,
+            BiomeBlueRidgeForest.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(blueRidgeBogAutumn);
+        BiomeManager.addVillageBiome(blueRidgeBogAutumn, true);
+        BiomeManager.addStrongholdBiome(blueRidgeBogAutumn);
+        Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeBogAutumn);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Blue Ridge Beach
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -175,23 +209,6 @@ public class AppalachiaBiomeManager {
             BiomeBlueRidgeRiver.biomeTypes
         );
         Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeRiver);
-
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        // Boreal Bog
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-        borealBog = new BiomeBorealBog(AppalachiaBiomeProps.BOREAL_BOG.getProps());
-        registerBiomeWithTypes(
-            borealBog,
-            "borealbog",
-            ConfigAppalachia.biomeWeight_BorealBog,
-            BiomeManager.BiomeType.COOL,
-            BiomeBlueRidgeForest.biomeTypes
-        );
-        BiomeManager.addSpawnBiome(borealBog);
-        BiomeManager.addVillageBiome(borealBog, true);
-        BiomeManager.addStrongholdBiome(borealBog);
-        Biome.EXPLORATION_BIOMES_LIST.add(borealBog);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Prairie

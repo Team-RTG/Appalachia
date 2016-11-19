@@ -1,26 +1,25 @@
-package appalachia.api.biome;
-
-import java.util.Random;
+package appalachia.api.biome.blueridge;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
-import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import appalachia.api.biome.decorator.DecoratorBorealBog;
+import appalachia.api.AppalachiaBiomeTypes;
+import appalachia.api.biome.IAppalachiaBiome;
+import appalachia.api.biome.decorator.blueridge.DecoratorBlueRidgeBog;
 
-public class BiomeBorealBog extends AppalachiaBiome implements IAppalachiaBiome {
+public class BiomeBlueRidgeBog extends BiomeBlueRidge implements IAppalachiaBiome {
 
     public static BiomeDictionary.Type[] biomeTypes;
 
-    public BiomeBorealBog(BiomeProperties props) {
+    public BiomeBlueRidgeBog(BiomeProperties props) {
 
         super(props);
+
         topBlock = Blocks.GRASS.getDefaultState();
         fillerBlock = Blocks.DIRT.getDefaultState();
         theBiomeDecorator.treesPerChunk = 2;
@@ -29,25 +28,14 @@ public class BiomeBorealBog extends AppalachiaBiome implements IAppalachiaBiome 
 
         biomeTypes = new BiomeDictionary.Type[]{
             BiomeDictionary.Type.SWAMP,
-            BiomeDictionary.Type.LUSH
+            BiomeDictionary.Type.LUSH,
+            AppalachiaBiomeTypes.BLUERIDGE
         };
     }
 
     @Override
     public BiomeDecorator createBiomeDecorator() {
-        return new DecoratorBorealBog();
-    }
-
-    @Override
-    public void decorate(World world, Random rand, BlockPos pos) {
-
-        super.decorate(world, rand, pos);
-    }
-
-    @Override
-    public WorldGenAbstractTree genBigTreeChance(Random rand) {
-
-        return rand.nextInt(3) == 0 ? TREE_FEATURE : rand.nextInt(5) == 0 ? BIG_TREE_FEATURE : TREE_FEATURE;
+        return new DecoratorBlueRidgeBog();
     }
 
 //    @Override
@@ -62,7 +50,7 @@ public class BiomeBorealBog extends AppalachiaBiome implements IAppalachiaBiome 
     public int getGrassColorAtPos(BlockPos pos) {
 
         double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
-        return noise < -0.1D ? 0x695F3A : 0x554921;
+        return noise < -0.1D ? 0x6E661E : 0x7B7322;
     }
 
     @Override
@@ -70,6 +58,6 @@ public class BiomeBorealBog extends AppalachiaBiome implements IAppalachiaBiome 
     public int getFoliageColorAtPos(BlockPos pos) {
 
         double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
-        return noise < -0.1D ? 0x9c752a : 0x967129;
+        return noise < -0.1D ? 0x6E661E : 0x7B7322;
     }
 }

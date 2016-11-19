@@ -1,4 +1,4 @@
-package appalachia.rtg.world.biome.realistic.appalachia;
+package appalachia.rtg.world.biome.realistic.appalachia.blueridge;
 
 import java.util.Random;
 
@@ -15,6 +15,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import appalachia.api.AppalachiaBiomes;
 import appalachia.api.AppalachiaBlocks;
 import appalachia.api.block.IAppalachiaBlockLeavesFallen;
+import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
 import appalachia.rtg.world.gen.feature.tree.rtg.TreeAcerRubrum;
 
@@ -39,15 +40,15 @@ import rtg.world.gen.terrain.HeightVariation;
 import rtg.world.gen.terrain.JitterEffect;
 import rtg.world.gen.terrain.TerrainBase;
 
-public class RealisticBiomeAPLBorealBog extends RealisticBiomeAPLBase {
+public class RealisticBiomeAPLBlueRidgeBog extends RealisticBiomeAPLBase {
 
-    public static Biome biome = AppalachiaBiomes.borealBog;
+    public static Biome biome = AppalachiaBiomes.blueRidgeBog;
     public static Biome river = Biomes.RIVER;
 
     protected static int treeMaxY = 220;
     protected static int shrubMaxY = 220;
 
-    public RealisticBiomeAPLBorealBog() {
+    public RealisticBiomeAPLBlueRidgeBog() {
 
         super(biome, river);
     }
@@ -61,18 +62,18 @@ public class RealisticBiomeAPLBorealBog extends RealisticBiomeAPLBase {
     @Override
     public TerrainBase initTerrain() {
 
-        return new TerrainAPLBorealBog();
+        return new TerrainAPLBlueRidgeBog();
     }
 
     @Override
     public SurfaceBase initSurface() {
 
-        return new SurfaceAPLBorealBog(config, biome.topBlock, biome.fillerBlock);
+        return new SurfaceAPLBlueRidgeBog(config, biome.topBlock, biome.fillerBlock);
     }
 
-    public class SurfaceAPLBorealBog extends SurfaceBase {
+    public class SurfaceAPLBlueRidgeBog extends SurfaceBase {
 
-        public SurfaceAPLBorealBog(BiomeConfig config, IBlockState top, IBlockState filler) {
+        public SurfaceAPLBlueRidgeBog(BiomeConfig config, IBlockState top, IBlockState filler) {
 
             super(config, top, filler);
         }
@@ -120,11 +121,11 @@ public class RealisticBiomeAPLBorealBog extends RealisticBiomeAPLBase {
         }
     }
 
-    public class TerrainAPLBorealBog extends TerrainBase {
+    public class TerrainAPLBlueRidgeBog extends TerrainBase {
 
         private HeightEffect height;
 
-        public TerrainAPLBorealBog() {
+        public TerrainAPLBlueRidgeBog() {
 
             HeightVariation waterLand = new HeightVariation();
             waterLand.height = 1f;
@@ -301,14 +302,6 @@ public class RealisticBiomeAPLBorealBog extends RealisticBiomeAPLBase {
         decoFallenLeaves.loops = 8;
         this.addDeco(decoFallenLeaves);
 
-        // Only 1-block-tall flowers so we can see the trees better.
-        // And only white ones because they go with everything.
-        DecoFlowersRTG decoFlowers1 = new DecoFlowersRTG();
-        decoFlowers1.flowers = new int[]{3, 6};
-        decoFlowers1.maxY = shrubMaxY;
-        decoFlowers1.strengthFactor = 6f;
-        this.addDeco(decoFlowers1);
-
         // Very rare 2-block-tall flowers. (TODO: Replace these with Appalachian flora.)
         DecoFlowersRTG decoFlowers2 = new DecoFlowersRTG();
         decoFlowers2.flowers = new int[]{12, 13};
@@ -334,6 +327,6 @@ public class RealisticBiomeAPLBorealBog extends RealisticBiomeAPLBase {
 
     @Override
     public Biome beachBiome() {
-        return this.beachBiome(Biomes.BEACH);
+        return this.beachBiome(AppalachiaBiomes.blueRidgeBeach);
     }
 }
