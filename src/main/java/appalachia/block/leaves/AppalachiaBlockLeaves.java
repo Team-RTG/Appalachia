@@ -48,6 +48,12 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
     }
 
     @Override
+    public void beginLeavesDecay(IBlockState state, World world, BlockPos pos) {
+
+        super.beginLeavesDecay(state, world, pos);
+    }
+
+    @Override
     protected BlockStateContainer createBlockState() {
 
         return new BlockStateContainer(this, new IProperty[]{DECAYABLE, CHECK_DECAY});
