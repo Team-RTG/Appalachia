@@ -26,6 +26,7 @@ public abstract class RealisticBiomeAPLBase extends RealisticBiomeBase {
     public static RealisticBiomeBase aplBlueRidgeMountains;
     public static RealisticBiomeBase aplPrairie;
     public static RealisticBiomeBase aplSmokyMountains;
+    public static RealisticBiomeBase aplBorealBog;
 
     public RealisticBiomeAPLBase(Biome b, Biome riverbiome) {
 
@@ -66,6 +67,9 @@ public abstract class RealisticBiomeAPLBase extends RealisticBiomeBase {
             }
             if (AppalachiaBiomes.smokyMountains != null) {
                 aplSmokyMountains = new RealisticBiomeAPLSmokyMountains();
+            }
+            if (AppalachiaBiomes.borealBog != null) {
+                aplBorealBog = new RealisticBiomeAPLBorealBog();
             }
 
             // Autumnal biomes must be added last.

@@ -8,6 +8,7 @@ import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import appalachia.api.biome.AppalachiaBiome;
+import appalachia.api.biome.BiomeBorealBog;
 import appalachia.api.biome.blueridge.*;
 import appalachia.api.biome.blueridge.autumn.BiomeBlueRidgeForestAutumn;
 import appalachia.api.biome.blueridge.autumn.BiomeBlueRidgeHillsAutumn;
@@ -174,6 +175,23 @@ public class AppalachiaBiomeManager {
             BiomeBlueRidgeRiver.biomeTypes
         );
         Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeRiver);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Boreal Bog
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        borealBog = new BiomeBorealBog(AppalachiaBiomeProps.BOREAL_BOG.getProps());
+        registerBiomeWithTypes(
+            borealBog,
+            "borealbog",
+            ConfigAppalachia.biomeWeight_BorealBog,
+            BiomeManager.BiomeType.COOL,
+            BiomeBlueRidgeForest.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(borealBog);
+        BiomeManager.addVillageBiome(borealBog, true);
+        BiomeManager.addStrongholdBiome(borealBog);
+        Biome.EXPLORATION_BIOMES_LIST.add(borealBog);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Prairie
