@@ -45,8 +45,8 @@ import rtg.world.gen.structure.StructureOceanMonumentRTG;
 @Mod(
     modid                    = ModInfo.MOD_ID,
     name                     = ModInfo.MOD_NAME,
-    version                  = "4.1.1.x",
-    dependencies             = "required-after:Forge@[12.18.2.2099,)" + ModInfo.MOD_DEPS,
+    version                  = "5.0.0.0",
+    dependencies             = "required-after:Forge@[12.18.1.2011,)" + ModInfo.MOD_DEPS,
     acceptableRemoteVersions = "*"
 )
 public class RTG {
