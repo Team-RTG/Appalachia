@@ -211,23 +211,6 @@ public class AppalachiaBiomeManager {
         Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeRiver);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        // Prairie
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-//        prairie = new BiomePrairie(AppalachiaBiomeProps.PRAIRIE.getProps());
-//        registerBiomeWithTypes(
-//            prairie,
-//            "prairie",
-//            ConfigAppalachia.biomeWeight_Prairie,
-//            BiomeManager.BiomeType.WARM,
-//            BiomePrairie.biomeTypes
-//        );
-//        BiomeManager.addSpawnBiome(prairie);
-//        BiomeManager.addVillageBiome(prairie, true);
-//        BiomeManager.addStrongholdBiome(prairie);
-//        Biome.EXPLORATION_BIOMES_LIST.add(prairie);
-
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Smoky Mountains
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
