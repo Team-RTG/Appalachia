@@ -29,23 +29,6 @@ public class AppalachiaBiomeManager {
     public static void registerBiomes() {
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        // Appalachian Mountains
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-//        appalachianMountains = new BiomeAppalachianMountains(AppalachiaBiomeProps.APPALACHIAN_MOUNTAINS.getProps());
-//        registerBiomeWithTypes(
-//            appalachianMountains,
-//            "appalachianmountains",
-//            ConfigAppalachia.biomeWeight_AppalachianMountains,
-//            BiomeManager.BiomeType.COOL,
-//            BiomeAppalachianMountains.biomeTypes
-//        );
-//        BiomeManager.addSpawnBiome(appalachianMountains);
-//        BiomeManager.addVillageBiome(appalachianMountains, true);
-//        BiomeManager.addStrongholdBiome(appalachianMountains);
-//        Biome.EXPLORATION_BIOMES_LIST.add(appalachianMountains);
-
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Blue Ridge Forest
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -16,7 +16,6 @@ public class ConfigAppalachia {
     // Biome IDs
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    public static int biomeID_AppalachianMountains = biomeIDCounter++;
     public static int biomeID_BlueRidgeMountains = biomeIDCounter++;
     public static int biomeID_BlueRidgeForest = biomeIDCounter++;
     public static int biomeID_BlueRidgeHills = biomeIDCounter++;
@@ -34,7 +33,6 @@ public class ConfigAppalachia {
     // Biome Weights
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    public static int biomeWeight_AppalachianMountains = 20;
     public static int biomeWeight_BlueRidgeMountains = 20;
     public static int biomeWeight_BlueRidgeForest = 20;
     public static int biomeWeight_BlueRidgeHills = 20;
@@ -71,7 +69,6 @@ public class ConfigAppalachia {
             // Biome IDs
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-            biomeID_AppalachianMountains = config.getInt("Appalachian Mountains Biome ID", "Biome IDs", biomeID_AppalachianMountains, 0, 255, "");
             biomeID_BlueRidgeMountains = config.getInt("Blue Ridge Mountains Biome ID", "Biome IDs", biomeID_BlueRidgeMountains, 0, 255, "");
             biomeID_BlueRidgeForest = config.getInt("Blue Ridge Forest Biome ID", "Biome IDs", biomeID_BlueRidgeForest, 0, 255, "");
             biomeID_BlueRidgeHills = config.getInt("Blue Ridge Hills Biome ID", "Biome IDs", biomeID_BlueRidgeHills, 0, 255, "");
@@ -89,7 +86,6 @@ public class ConfigAppalachia {
             // Biome Weights
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-            biomeWeight_AppalachianMountains = config.getInt("Appalachian Mountains Biome Weight", "Biome Weights", biomeWeight_AppalachianMountains, 0, Integer.MAX_VALUE, "");
             biomeWeight_BlueRidgeMountains = config.getInt("Blue Ridge Mountains Biome Weight", "Biome Weights", biomeWeight_BlueRidgeMountains, 0, Integer.MAX_VALUE, "");
             biomeWeight_BlueRidgeForest = config.getInt("Blue Ridge Forest Biome Weight", "Biome Weights", biomeWeight_BlueRidgeForest, 0, Integer.MAX_VALUE, "");
             biomeWeight_BlueRidgeHills = config.getInt("Blue Ridge Hills Biome Weight", "Biome Weights", biomeWeight_BlueRidgeHills, 0, Integer.MAX_VALUE, "");

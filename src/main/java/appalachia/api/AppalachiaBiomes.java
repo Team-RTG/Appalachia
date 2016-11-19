@@ -4,7 +4,6 @@ import net.minecraft.world.biome.Biome;
 
 public class AppalachiaBiomes {
 
-    public static Biome appalachianMountains;
     public static Biome blueRidgeForest;
     public static Biome blueRidgeHills;
     public static Biome blueRidgeMountains;
@@ -21,8 +20,6 @@ public class AppalachiaBiomes {
 
     public static enum AppalachiaBiomeProps {
         //                                                          BH      HV      Temp    Rain    H2OColour   Snow?
-        APPALACHIAN_MOUNTAINS("Appalachian Mountains",              1.0F,   0.5F,   0.2F,   0.3F,   16777215,   false),
-
         BLUE_RIDGE_FOREST_AUTUMN("Autumn Blue Ridge Forest",        0.1F,   0.1F,   0.34F,  0.8F,   16777215,   false),
         BLUE_RIDGE_HILLS_AUTUMN("Autumn Blue Ridge Hills",          0.15F,  0.15F,  0.34F,  0.8F,   16777215,   false),
         BLUE_RIDGE_MOUNTAINS_AUTUMN("Autumn Blue Ridge Mountains",  0.2F,   0.2F,   0.34F,  0.8F,   16777215,   false),

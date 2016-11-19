@@ -16,7 +16,6 @@ import rtg.world.biome.realistic.RealisticBiomeBase;
 
 public abstract class RealisticBiomeAPLBase extends RealisticBiomeBase {
 
-    public static RealisticBiomeBase aplAppalachianMountains;
     public static RealisticBiomeBase aplBlueRidgeForestAutumn;
     public static RealisticBiomeBase aplBlueRidgeHillsAutumn;
     public static RealisticBiomeBase aplBlueRidgeMountainsAutumn;
@@ -45,9 +44,7 @@ public abstract class RealisticBiomeAPLBase extends RealisticBiomeBase {
     public static void addBiomes() {
 
         if (Loader.isModLoaded("appalachia")) {
-            if (AppalachiaBiomes.appalachianMountains != null) {
-                aplAppalachianMountains = new RealisticBiomeAPLAppalachianMountains();
-            }
+
             if (AppalachiaBiomes.blueRidgeForest != null) {
                 aplBlueRidgeForest = new RealisticBiomeAPLBlueRidgeForest();
             }
