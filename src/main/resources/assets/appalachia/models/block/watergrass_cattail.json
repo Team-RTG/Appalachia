@@ -1,0 +1,8 @@
+{
+    "parent": "block/watergrass",
+    "textures": {
+        "cross": "blocks/watergrass_top",
+		"cross2": "blocks/watergrass_bottom",
+		"cross3": "blocks/watergrass_cattail"
+    }
+}
