@@ -192,23 +192,6 @@ public class AppalachiaBiomeManager {
             BiomeBlueRidgeRiver.biomeTypes
         );
         Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeRiver);
-
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        // Smoky Mountains
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-//        smokyMountains = new BiomeSmokyMountains(AppalachiaBiomeProps.SMOKY_MOUNTAINS.getProps());
-//        registerBiomeWithTypes(
-//            smokyMountains,
-//            "smokymountains",
-//            ConfigAppalachia.biomeWeight_SmokyMountains,
-//            BiomeManager.BiomeType.COOL,
-//            BiomeSmokyMountains.biomeTypes
-//        );
-//        BiomeManager.addSpawnBiome(smokyMountains);
-//        BiomeManager.addVillageBiome(smokyMountains, true);
-//        BiomeManager.addStrongholdBiome(smokyMountains);
-//        Biome.EXPLORATION_BIOMES_LIST.add(smokyMountains);
     }
 
     public static void doBiomeCheck() {

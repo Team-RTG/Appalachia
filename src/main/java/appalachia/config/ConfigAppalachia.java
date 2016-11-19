@@ -22,7 +22,6 @@ public class ConfigAppalachia {
     public static int biomeID_BlueRidgeBog = biomeIDCounter++;
     public static int biomeID_BlueRidgeBeach = biomeIDCounter++;
     public static int biomeID_BlueRidgeRiver = biomeIDCounter++;
-    public static int biomeID_SmokyMountains = biomeIDCounter++;
 
     public static int biomeID_BlueRidgeForestAutumn = biomeIDCounter++;
     public static int biomeID_BlueRidgeHillsAutumn = biomeIDCounter++;
@@ -39,7 +38,6 @@ public class ConfigAppalachia {
     public static int biomeWeight_BlueRidgeBog = 10;
     public static int biomeWeight_BlueRidgeBeach = 0;
     public static int biomeWeight_BlueRidgeRiver = 0;
-    public static int biomeWeight_SmokyMountains = 20;
 
     public static int biomeWeight_BlueRidgeForestAutumn = 20;
     public static int biomeWeight_BlueRidgeHillsAutumn = 20;
@@ -75,7 +73,6 @@ public class ConfigAppalachia {
             biomeID_BlueRidgeBog = config.getInt("Blue Ridge Bog Biome ID", "Biome IDs", biomeID_BlueRidgeBog, 0, 255, "");
             biomeID_BlueRidgeBeach = config.getInt("Blue Ridge Beach Biome ID", "Biome IDs", biomeID_BlueRidgeBeach, 0, 255, "");
             biomeID_BlueRidgeRiver = config.getInt("Blue Ridge River Biome ID", "Biome IDs", biomeID_BlueRidgeRiver, 0, 255, "");
-            biomeID_SmokyMountains = config.getInt("Smoky Mountains Biome ID", "Biome IDs", biomeID_SmokyMountains, 0, 255, "");
 
             biomeID_BlueRidgeForestAutumn = config.getInt("Autumn Blue Ridge Forest Biome ID", "Biome IDs", biomeID_BlueRidgeForestAutumn, 0, 255, "");
             biomeID_BlueRidgeHillsAutumn = config.getInt("Autumn Blue Ridge Hills Biome ID", "Biome IDs", biomeID_BlueRidgeHillsAutumn, 0, 255, "");
@@ -92,7 +89,6 @@ public class ConfigAppalachia {
             biomeWeight_BlueRidgeBog = config.getInt("Blue Ridge Bog Biome Weight", "Biome Weights", biomeWeight_BlueRidgeBog, 0, Integer.MAX_VALUE, "");
             biomeWeight_BlueRidgeBeach = config.getInt("Blue Ridge Beach Biome Weight", "Biome Weights", biomeWeight_BlueRidgeBeach, 0, Integer.MAX_VALUE, "");
             biomeWeight_BlueRidgeRiver = config.getInt("Blue Ridge River Biome Weight", "Biome Weights", biomeWeight_BlueRidgeRiver, 0, Integer.MAX_VALUE, "");
-            biomeWeight_SmokyMountains = config.getInt("Smoky Mountains Biome Weight", "Biome Weights", biomeWeight_SmokyMountains, 0, Integer.MAX_VALUE, "");
 
             biomeWeight_BlueRidgeForestAutumn = config.getInt("Autumn Blue Ridge Forest Biome Weight", "Biome Weights", biomeWeight_BlueRidgeForestAutumn, 0, Integer.MAX_VALUE, "");
             biomeWeight_BlueRidgeHillsAutumn = config.getInt("Autumn Blue Ridge Hills Biome Weight", "Biome Weights", biomeWeight_BlueRidgeHillsAutumn, 0, Integer.MAX_VALUE, "");
