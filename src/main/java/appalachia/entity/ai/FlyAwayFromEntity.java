@@ -1,6 +1,6 @@
 package appalachia.entity.ai;
 
-import de.garantiertnicht.mobexample.Util.MoveUtil;
+import appalachia.util.PositionUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityFlying;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -36,7 +36,7 @@ public class FlyAwayFromEntity extends FlyRandomly {
             return super.getRotation(spot);
         }
 
-        return MoveUtil.getRotationAwayFromEntity(spot, new BlockPos(nearest));
+        return PositionUtil.getRotationAwayFromEntity(spot, new BlockPos(nearest));
     }
 
     @Override

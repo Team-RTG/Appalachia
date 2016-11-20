@@ -1,6 +1,7 @@
 package appalachia.entity.ai;
 
 import appalachia.entity.passive.EntityFireFly;
+import appalachia.util.PositionUtil;
 import net.minecraft.entity.EntityFlying;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -138,7 +139,7 @@ public class FlyRandomly extends EntityAIBase {
 
     protected float getHeight() {
         BlockPos pos = new BlockPos(entity);
-        BlockPos nextBlock = EntityFireFly.nextSolidBlock(entity.worldObj, pos);
+        BlockPos nextBlock = PositionUtil.nextSolidBlock(entity.worldObj, pos);
 
         return (float) (entity.posY - nextBlock.getY());
     }
