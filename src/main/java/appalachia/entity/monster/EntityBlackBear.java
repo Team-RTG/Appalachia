@@ -2,8 +2,6 @@ package appalachia.entity.monster;
 
 import javax.annotation.Nullable;
 
-import appalachia.api.AppalachiaSounds;
-import appalachia.loot.LootAppalachia;
 import net.minecraft.block.Block;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.*;
@@ -21,9 +19,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
-import net.minecraft.world.storage.loot.LootTableList;
+
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import appalachia.api.AppalachiaSounds;
+import appalachia.loot.LootAppalachia;
 
 public class EntityBlackBear extends EntityAnimal {
     private static final DataParameter<Boolean> IS_STANDING = EntityDataManager.createKey(EntityBlackBear.class, DataSerializers.BOOLEAN);

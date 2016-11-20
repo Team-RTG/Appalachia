@@ -1,10 +1,10 @@
 package appalachia.gui;
 
-import appalachia.api.AppalachiaItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
 import appalachia.api.AppalachiaBlocks;
+import appalachia.api.AppalachiaItems;
 
 public class AppalachiaTabs {
 
@@ -13,7 +13,7 @@ public class AppalachiaTabs {
         @Override
         public Item getTabIconItem() {
 
-            return Item.getItemFromBlock(AppalachiaBlocks.log_autumn_grey);
+            return Item.getItemFromBlock(AppalachiaBlocks.log_red_oak_01);
         }
     };
 

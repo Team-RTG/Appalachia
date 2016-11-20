@@ -71,11 +71,6 @@ public class BlockManager {
     public static void registerBlocks() {
 
         //Logs.
-        AppalachiaBlocks.log_autumn_grey = new BlockLogAutumnGrey();
-
-        AppalachiaBlocks.log_blueridge_01 = new BlockLogBlueRidge01();
-        AppalachiaBlocks.log_blueridge_02 = new BlockLogBlueRidge02();
-        AppalachiaBlocks.log_blueridge_03 = new BlockLogBlueRidge03();
 
         AppalachiaBlocks.log_american_beech_01 = new BlockLogAmericanBeech01();
         AppalachiaBlocks.log_american_chestnut_01 = new BlockLogAmericanChestnut01();
@@ -115,11 +110,6 @@ public class BlockManager {
         addLogs();
 
         //Planks.
-        AppalachiaBlocks.planks_autumn_grey = new BlockPlanksAutumnGrey();
-
-        AppalachiaBlocks.planks_blueridge_01 = new BlockPlanksBlueRidge01();
-        AppalachiaBlocks.planks_blueridge_02 = new BlockPlanksBlueRidge02();
-        AppalachiaBlocks.planks_blueridge_03 = new BlockPlanksBlueRidge03();
 
         AppalachiaBlocks.planks_american_beech_01 = new BlockPlanksAmericanBeech01();
         AppalachiaBlocks.planks_american_chestnut_01 = new BlockPlanksAmericanChestnut01();
@@ -159,11 +149,6 @@ public class BlockManager {
         addPlanks();
 
         //Slabs.
-        AppalachiaBlocks.slab_autumn_grey = new BlockSlabAutumnGrey();
-
-        AppalachiaBlocks.slab_blueridge_01 = new BlockSlabBlueRidge01();
-        AppalachiaBlocks.slab_blueridge_02 = new BlockSlabBlueRidge02();
-        AppalachiaBlocks.slab_blueridge_03 = new BlockSlabBlueRidge03();
 
         AppalachiaBlocks.slab_american_beech_01 = new BlockSlabAmericanBeech01();
         AppalachiaBlocks.slab_american_chestnut_01 = new BlockSlabAmericanChestnut01();
@@ -203,11 +188,6 @@ public class BlockManager {
         addSlabs();
 
         //Stairs.
-        AppalachiaBlocks.stairs_autumn_grey = new BlockStairsAutumnGrey();
-
-        AppalachiaBlocks.stairs_blueridge_01 = new BlockStairsBlueRidge01();
-        AppalachiaBlocks.stairs_blueridge_02 = new BlockStairsBlueRidge02();
-        AppalachiaBlocks.stairs_blueridge_03 = new BlockStairsBlueRidge03();
 
         AppalachiaBlocks.stairs_american_beech_01 = new BlockStairsAmericanBeech01();
         AppalachiaBlocks.stairs_american_chestnut_01 = new BlockStairsAmericanChestnut01();
@@ -247,11 +227,6 @@ public class BlockManager {
         addStairs();
 
         //Fences.
-        AppalachiaBlocks.fence_autumn_grey = new BlockFenceAutumnGrey();
-
-        AppalachiaBlocks.fence_blueridge_01 = new BlockFenceBlueRidge01();
-        AppalachiaBlocks.fence_blueridge_02 = new BlockFenceBlueRidge02();
-        AppalachiaBlocks.fence_blueridge_03 = new BlockFenceBlueRidge03();
 
         AppalachiaBlocks.fence_american_beech_01 = new BlockFenceAmericanBeech01();
         AppalachiaBlocks.fence_american_chestnut_01 = new BlockFenceAmericanChestnut01();
@@ -291,11 +266,6 @@ public class BlockManager {
         addFences();
 
         //Fence gates.
-        AppalachiaBlocks.fence_gate_autumn_grey = new BlockFenceGateAutumnGrey();
-
-        AppalachiaBlocks.fence_gate_blueridge_01 = new BlockFenceGateBlueRidge01();
-        AppalachiaBlocks.fence_gate_blueridge_02 = new BlockFenceGateBlueRidge02();
-        AppalachiaBlocks.fence_gate_blueridge_03 = new BlockFenceGateBlueRidge03();
 
         AppalachiaBlocks.fence_gate_american_beech_01 = new BlockFenceGateAmericanBeech01();
         AppalachiaBlocks.fence_gate_american_chestnut_01 = new BlockFenceGateAmericanChestnut01();
@@ -367,12 +337,6 @@ public class BlockManager {
 
     private static void addLogs() {
 
-        appalachiaLogs.add(AppalachiaBlocks.log_autumn_grey);
-
-        appalachiaLogs.add(AppalachiaBlocks.log_blueridge_01);
-        appalachiaLogs.add(AppalachiaBlocks.log_blueridge_02);
-        appalachiaLogs.add(AppalachiaBlocks.log_blueridge_03);
-
         appalachiaLogs.add(AppalachiaBlocks.log_american_beech_01);
         appalachiaLogs.add(AppalachiaBlocks.log_american_chestnut_01);
         appalachiaLogs.add(AppalachiaBlocks.log_american_elm_01);
@@ -410,12 +374,6 @@ public class BlockManager {
     }
 
     private static void addPlanks() {
-
-        appalachiaPlanks.add(AppalachiaBlocks.planks_autumn_grey);
-
-        appalachiaPlanks.add(AppalachiaBlocks.planks_blueridge_01);
-        appalachiaPlanks.add(AppalachiaBlocks.planks_blueridge_02);
-        appalachiaPlanks.add(AppalachiaBlocks.planks_blueridge_03);
 
         appalachiaPlanks.add(AppalachiaBlocks.planks_american_beech_01);
         appalachiaPlanks.add(AppalachiaBlocks.planks_american_chestnut_01);
@@ -455,12 +413,6 @@ public class BlockManager {
 
     private static void addSlabs() {
 
-        appalachiaSlabs.add(AppalachiaBlocks.slab_autumn_grey);
-
-        appalachiaSlabs.add(AppalachiaBlocks.slab_blueridge_01);
-        appalachiaSlabs.add(AppalachiaBlocks.slab_blueridge_02);
-        appalachiaSlabs.add(AppalachiaBlocks.slab_blueridge_03);
-
         appalachiaSlabs.add(AppalachiaBlocks.slab_american_beech_01);
         appalachiaSlabs.add(AppalachiaBlocks.slab_american_chestnut_01);
         appalachiaSlabs.add(AppalachiaBlocks.slab_american_elm_01);
@@ -498,12 +450,6 @@ public class BlockManager {
     }
 
     private static void addStairs() {
-
-        appalachiaStairs.add(AppalachiaBlocks.stairs_autumn_grey);
-
-        appalachiaStairs.add(AppalachiaBlocks.stairs_blueridge_01);
-        appalachiaStairs.add(AppalachiaBlocks.stairs_blueridge_02);
-        appalachiaStairs.add(AppalachiaBlocks.stairs_blueridge_03);
 
         appalachiaStairs.add(AppalachiaBlocks.stairs_american_beech_01);
         appalachiaStairs.add(AppalachiaBlocks.stairs_american_chestnut_01);
@@ -543,12 +489,6 @@ public class BlockManager {
 
     private static void addFences() {
 
-        appalachiaFences.add(AppalachiaBlocks.fence_autumn_grey);
-
-        appalachiaFences.add(AppalachiaBlocks.fence_blueridge_01);
-        appalachiaFences.add(AppalachiaBlocks.fence_blueridge_02);
-        appalachiaFences.add(AppalachiaBlocks.fence_blueridge_03);
-
         appalachiaFences.add(AppalachiaBlocks.fence_american_beech_01);
         appalachiaFences.add(AppalachiaBlocks.fence_american_chestnut_01);
         appalachiaFences.add(AppalachiaBlocks.fence_american_elm_01);
@@ -586,12 +526,6 @@ public class BlockManager {
     }
 
     private static void addFenceGates() {
-
-        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_autumn_grey);
-
-        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_blueridge_01);
-        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_blueridge_02);
-        appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_blueridge_03);
 
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_american_beech_01);
         appalachiaFenceGates.add(AppalachiaBlocks.fence_gate_american_chestnut_01);

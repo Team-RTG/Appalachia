@@ -9,9 +9,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import appalachia.api.biome.AppalachiaBiome;
 import appalachia.api.biome.blueridge.*;
-import appalachia.api.biome.blueridge.autumn.BiomeBlueRidgeForestAutumn;
-import appalachia.api.biome.blueridge.autumn.BiomeBlueRidgeHillsAutumn;
-import appalachia.api.biome.blueridge.autumn.BiomeBlueRidgeMountainsAutumn;
+import appalachia.api.biome.smoky.*;
 import appalachia.config.ConfigAppalachia;
 import appalachia.util.BiomeUtils;
 import appalachia.util.Logger;
@@ -26,23 +24,6 @@ public class AppalachiaBiomeManager {
     }
 
     public static void registerBiomes() {
-
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        // Appalachian Mountains
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-//        appalachianMountains = new BiomeAppalachianMountains(AppalachiaBiomeProps.APPALACHIAN_MOUNTAINS.getProps());
-//        registerBiomeWithTypes(
-//            appalachianMountains,
-//            "appalachianmountains",
-//            ConfigAppalachia.biomeWeight_AppalachianMountains,
-//            BiomeManager.BiomeType.COOL,
-//            BiomeAppalachianMountains.biomeTypes
-//        );
-//        BiomeManager.addSpawnBiome(appalachianMountains);
-//        BiomeManager.addVillageBiome(appalachianMountains, true);
-//        BiomeManager.addStrongholdBiome(appalachianMountains);
-//        Biome.EXPLORATION_BIOMES_LIST.add(appalachianMountains);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Blue Ridge Forest
@@ -62,40 +43,6 @@ public class AppalachiaBiomeManager {
         Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeForest);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        // Blue Ridge Hills
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-        blueRidgeHills = new BiomeBlueRidgeHills(AppalachiaBiomeProps.BLUE_RIDGE_HILLS.getProps());
-        registerBiomeWithTypes(
-            blueRidgeHills,
-            "blueridgehills",
-            ConfigAppalachia.biomeWeight_BlueRidgeHills,
-            BiomeManager.BiomeType.COOL,
-            BiomeBlueRidgeHills.biomeTypes
-        );
-        BiomeManager.addSpawnBiome(blueRidgeHills);
-        BiomeManager.addVillageBiome(blueRidgeHills, true);
-        BiomeManager.addStrongholdBiome(blueRidgeHills);
-        Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeHills);
-
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        // Blue Ridge Mountains
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-        blueRidgeMountains = new BiomeBlueRidgeMountains(AppalachiaBiomeProps.BLUE_RIDGE_MOUNTAINS.getProps());
-        registerBiomeWithTypes(
-            blueRidgeMountains,
-            "blueridgemountains",
-            ConfigAppalachia.biomeWeight_BlueRidgeMountains,
-            BiomeManager.BiomeType.COOL,
-            BiomeBlueRidgeMountains.biomeTypes
-        );
-        BiomeManager.addSpawnBiome(blueRidgeMountains);
-        BiomeManager.addVillageBiome(blueRidgeMountains, true);
-        BiomeManager.addStrongholdBiome(blueRidgeMountains);
-        Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeMountains);
-
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Autumn Blue Ridge Forest
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -111,6 +58,23 @@ public class AppalachiaBiomeManager {
         BiomeManager.addVillageBiome(blueRidgeForestAutumn, true);
         BiomeManager.addStrongholdBiome(blueRidgeForestAutumn);
         Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeForestAutumn);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Blue Ridge Hills
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        blueRidgeHills = new BiomeBlueRidgeHills(AppalachiaBiomeProps.BLUE_RIDGE_HILLS.getProps());
+        registerBiomeWithTypes(
+            blueRidgeHills,
+            "blueridgehills",
+            ConfigAppalachia.biomeWeight_BlueRidgeHills,
+            BiomeManager.BiomeType.COOL,
+            BiomeBlueRidgeHills.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(blueRidgeHills);
+        BiomeManager.addVillageBiome(blueRidgeHills, true);
+        BiomeManager.addStrongholdBiome(blueRidgeHills);
+        Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeHills);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Autumn Blue Ridge Hills
@@ -130,6 +94,23 @@ public class AppalachiaBiomeManager {
         Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeHillsAutumn);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Blue Ridge Mountains
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        blueRidgeMountains = new BiomeBlueRidgeMountains(AppalachiaBiomeProps.BLUE_RIDGE_MOUNTAINS.getProps());
+        registerBiomeWithTypes(
+            blueRidgeMountains,
+            "blueridgemountains",
+            ConfigAppalachia.biomeWeight_BlueRidgeMountains,
+            BiomeManager.BiomeType.COOL,
+            BiomeBlueRidgeMountains.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(blueRidgeMountains);
+        BiomeManager.addVillageBiome(blueRidgeMountains, true);
+        BiomeManager.addStrongholdBiome(blueRidgeMountains);
+        Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeMountains);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Autumn Blue Ridge Mountains
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -145,6 +126,40 @@ public class AppalachiaBiomeManager {
         BiomeManager.addVillageBiome(blueRidgeMountainsAutumn, true);
         BiomeManager.addStrongholdBiome(blueRidgeMountainsAutumn);
         Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeMountainsAutumn);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Blue Ridge Bog
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        blueRidgeBog = new BiomeBlueRidgeBog(AppalachiaBiomeProps.BLUE_RIDGE_BOG.getProps());
+        registerBiomeWithTypes(
+            blueRidgeBog,
+            "blueridgebog",
+            ConfigAppalachia.biomeWeight_BlueRidgeBog,
+            BiomeManager.BiomeType.COOL,
+            BiomeBlueRidgeForest.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(blueRidgeBog);
+        BiomeManager.addVillageBiome(blueRidgeBog, true);
+        BiomeManager.addStrongholdBiome(blueRidgeBog);
+        Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeBog);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Autumn Blue Ridge Bog
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        blueRidgeBogAutumn = new BiomeBlueRidgeBogAutumn(AppalachiaBiomeProps.BLUE_RIDGE_BOG_AUTUMN.getProps());
+        registerBiomeWithTypes(
+            blueRidgeBogAutumn,
+            "blueridgebogautumn",
+            ConfigAppalachia.biomeWeight_BlueRidgeBogAutumn,
+            BiomeManager.BiomeType.COOL,
+            BiomeBlueRidgeForest.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(blueRidgeBogAutumn);
+        BiomeManager.addVillageBiome(blueRidgeBogAutumn, true);
+        BiomeManager.addStrongholdBiome(blueRidgeBogAutumn);
+        Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeBogAutumn);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Blue Ridge Beach
@@ -176,38 +191,169 @@ public class AppalachiaBiomeManager {
         Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeRiver);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        // Prairie
+        // Smoky Forest
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-//        prairie = new BiomePrairie(AppalachiaBiomeProps.PRAIRIE.getProps());
-//        registerBiomeWithTypes(
-//            prairie,
-//            "prairie",
-//            ConfigAppalachia.biomeWeight_Prairie,
-//            BiomeManager.BiomeType.WARM,
-//            BiomePrairie.biomeTypes
-//        );
-//        BiomeManager.addSpawnBiome(prairie);
-//        BiomeManager.addVillageBiome(prairie, true);
-//        BiomeManager.addStrongholdBiome(prairie);
-//        Biome.EXPLORATION_BIOMES_LIST.add(prairie);
+        smokyForest = new BiomeSmokyForest(AppalachiaBiomeProps.SMOKY_FOREST.getProps());
+        registerBiomeWithTypes(
+            smokyForest,
+            "smokyforest",
+            ConfigAppalachia.biomeWeight_SmokyForest,
+            BiomeManager.BiomeType.COOL,
+            BiomeSmokyForest.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(smokyForest);
+        BiomeManager.addVillageBiome(smokyForest, true);
+        BiomeManager.addStrongholdBiome(smokyForest);
+        Biome.EXPLORATION_BIOMES_LIST.add(smokyForest);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Autumn Smoky Forest
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        smokyForestAutumn = new BiomeSmokyForestAutumn(AppalachiaBiomeProps.SMOKY_FOREST_AUTUMN.getProps());
+        registerBiomeWithTypes(
+            smokyForestAutumn,
+            "smokyforestautumn",
+            ConfigAppalachia.biomeWeight_SmokyForestAutumn,
+            BiomeManager.BiomeType.COOL,
+            BiomeSmokyForestAutumn.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(smokyForestAutumn);
+        BiomeManager.addVillageBiome(smokyForestAutumn, true);
+        BiomeManager.addStrongholdBiome(smokyForestAutumn);
+        Biome.EXPLORATION_BIOMES_LIST.add(smokyForestAutumn);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Smoky Hills
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        smokyHills = new BiomeSmokyHills(AppalachiaBiomeProps.SMOKY_HILLS.getProps());
+        registerBiomeWithTypes(
+            smokyHills,
+            "smokyhills",
+            ConfigAppalachia.biomeWeight_SmokyHills,
+            BiomeManager.BiomeType.COOL,
+            BiomeSmokyHills.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(smokyHills);
+        BiomeManager.addVillageBiome(smokyHills, true);
+        BiomeManager.addStrongholdBiome(smokyHills);
+        Biome.EXPLORATION_BIOMES_LIST.add(smokyHills);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Autumn Smoky Hills
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        smokyHillsAutumn = new BiomeSmokyHillsAutumn(AppalachiaBiomeProps.SMOKY_HILLS_AUTUMN.getProps());
+        registerBiomeWithTypes(
+            smokyHillsAutumn,
+            "smokyhillsautumn",
+            ConfigAppalachia.biomeWeight_SmokyHillsAutumn,
+            BiomeManager.BiomeType.COOL,
+            BiomeSmokyHillsAutumn.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(smokyHillsAutumn);
+        BiomeManager.addVillageBiome(smokyHillsAutumn, true);
+        BiomeManager.addStrongholdBiome(smokyHillsAutumn);
+        Biome.EXPLORATION_BIOMES_LIST.add(smokyHillsAutumn);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Smoky Mountains
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-//        smokyMountains = new BiomeSmokyMountains(AppalachiaBiomeProps.SMOKY_MOUNTAINS.getProps());
-//        registerBiomeWithTypes(
-//            smokyMountains,
-//            "smokymountains",
-//            ConfigAppalachia.biomeWeight_SmokyMountains,
-//            BiomeManager.BiomeType.COOL,
-//            BiomeSmokyMountains.biomeTypes
-//        );
-//        BiomeManager.addSpawnBiome(smokyMountains);
-//        BiomeManager.addVillageBiome(smokyMountains, true);
-//        BiomeManager.addStrongholdBiome(smokyMountains);
-//        Biome.EXPLORATION_BIOMES_LIST.add(smokyMountains);
+        smokyMountains = new BiomeSmokyMountains(AppalachiaBiomeProps.SMOKY_MOUNTAINS.getProps());
+        registerBiomeWithTypes(
+            smokyMountains,
+            "smokymountains",
+            ConfigAppalachia.biomeWeight_SmokyMountains,
+            BiomeManager.BiomeType.COOL,
+            BiomeSmokyMountains.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(smokyMountains);
+        BiomeManager.addVillageBiome(smokyMountains, true);
+        BiomeManager.addStrongholdBiome(smokyMountains);
+        Biome.EXPLORATION_BIOMES_LIST.add(smokyMountains);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Autumn Smoky Mountains
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        smokyMountainsAutumn = new BiomeSmokyMountainsAutumn(AppalachiaBiomeProps.SMOKY_MOUNTAINS_AUTUMN.getProps());
+        registerBiomeWithTypes(
+            smokyMountainsAutumn,
+            "smokymountainsautumn",
+            ConfigAppalachia.biomeWeight_SmokyMountainsAutumn,
+            BiomeManager.BiomeType.COOL,
+            BiomeSmokyMountainsAutumn.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(smokyMountainsAutumn);
+        BiomeManager.addVillageBiome(smokyMountainsAutumn, true);
+        BiomeManager.addStrongholdBiome(smokyMountainsAutumn);
+        Biome.EXPLORATION_BIOMES_LIST.add(smokyMountainsAutumn);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Smoky Bog
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        smokyBog = new BiomeSmokyBog(AppalachiaBiomeProps.SMOKY_BOG.getProps());
+        registerBiomeWithTypes(
+            smokyBog,
+            "smokybog",
+            ConfigAppalachia.biomeWeight_SmokyBog,
+            BiomeManager.BiomeType.COOL,
+            BiomeSmokyForest.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(smokyBog);
+        BiomeManager.addVillageBiome(smokyBog, true);
+        BiomeManager.addStrongholdBiome(smokyBog);
+        Biome.EXPLORATION_BIOMES_LIST.add(smokyBog);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Autumn Smoky Bog
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        smokyBogAutumn = new BiomeSmokyBogAutumn(AppalachiaBiomeProps.SMOKY_BOG_AUTUMN.getProps());
+        registerBiomeWithTypes(
+            smokyBogAutumn,
+            "smokybogautumn",
+            ConfigAppalachia.biomeWeight_SmokyBogAutumn,
+            BiomeManager.BiomeType.COOL,
+            BiomeSmokyForest.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(smokyBogAutumn);
+        BiomeManager.addVillageBiome(smokyBogAutumn, true);
+        BiomeManager.addStrongholdBiome(smokyBogAutumn);
+        Biome.EXPLORATION_BIOMES_LIST.add(smokyBogAutumn);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Smoky Beach
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        smokyBeach = new BiomeSmokyBeach(AppalachiaBiomeProps.SMOKY_BEACH.getProps());
+        registerBiomeWithTypes(
+            smokyBeach,
+            "smokybeach",
+            ConfigAppalachia.biomeWeight_SmokyBeach,
+            BiomeManager.BiomeType.COOL,
+            BiomeSmokyBeach.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(smokyBeach);
+        Biome.EXPLORATION_BIOMES_LIST.add(smokyForest);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Smoky River
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        smokyRiver = new BiomeSmokyRiver(AppalachiaBiomeProps.SMOKY_RIVER.getProps());
+        registerBiomeWithTypes(
+            smokyRiver,
+            "smokyriver",
+            ConfigAppalachia.biomeWeight_SmokyRiver,
+            BiomeManager.BiomeType.COOL,
+            BiomeSmokyRiver.biomeTypes
+        );
+        Biome.EXPLORATION_BIOMES_LIST.add(smokyRiver);
     }
 
     public static void doBiomeCheck() {

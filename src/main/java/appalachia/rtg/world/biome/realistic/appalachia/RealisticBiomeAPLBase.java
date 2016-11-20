@@ -7,25 +7,33 @@ import net.minecraftforge.fml.common.Loader;
 
 import appalachia.api.AppalachiaBiomes;
 import appalachia.rtg.world.biome.realistic.appalachia.blueridge.*;
-import appalachia.rtg.world.biome.realistic.appalachia.blueridge.autumn.RealisticBiomeAPLBlueRidgeForestAutumn;
-import appalachia.rtg.world.biome.realistic.appalachia.blueridge.autumn.RealisticBiomeAPLBlueRidgeHillsAutumn;
-import appalachia.rtg.world.biome.realistic.appalachia.blueridge.autumn.RealisticBiomeAPLBlueRidgeMountainsAutumn;
+import appalachia.rtg.world.biome.realistic.appalachia.smoky.*;
 
 import rtg.world.biome.realistic.RealisticBiomeBase;
 
 public abstract class RealisticBiomeAPLBase extends RealisticBiomeBase {
 
-    public static RealisticBiomeBase aplAppalachianMountains;
-    public static RealisticBiomeBase aplBlueRidgeForestAutumn;
-    public static RealisticBiomeBase aplBlueRidgeHillsAutumn;
-    public static RealisticBiomeBase aplBlueRidgeMountainsAutumn;
     public static RealisticBiomeBase aplBlueRidgeForest;
+    public static RealisticBiomeBase aplBlueRidgeForestAutumn;
     public static RealisticBiomeBase aplBlueRidgeHills;
+    public static RealisticBiomeBase aplBlueRidgeHillsAutumn;
+    public static RealisticBiomeBase aplBlueRidgeMountains;
+    public static RealisticBiomeBase aplBlueRidgeMountainsAutumn;
+    public static RealisticBiomeBase aplBlueRidgeBog;
+    public static RealisticBiomeBase aplBlueRidgeBogAutumn;
     public static RealisticBiomeBase aplBlueRidgeBeach;
     public static RealisticBiomeBase aplBlueRidgeRiver;
-    public static RealisticBiomeBase aplBlueRidgeMountains;
-    public static RealisticBiomeBase aplPrairie;
+
+    public static RealisticBiomeBase aplSmokyForest;
+    public static RealisticBiomeBase aplSmokyForestAutumn;
+    public static RealisticBiomeBase aplSmokyHills;
+    public static RealisticBiomeBase aplSmokyHillsAutumn;
     public static RealisticBiomeBase aplSmokyMountains;
+    public static RealisticBiomeBase aplSmokyMountainsAutumn;
+    public static RealisticBiomeBase aplSmokyBog;
+    public static RealisticBiomeBase aplSmokyBogAutumn;
+    public static RealisticBiomeBase aplSmokyBeach;
+    public static RealisticBiomeBase aplSmokyRiver;
 
     public RealisticBiomeAPLBase(Biome b, Biome riverbiome) {
 
@@ -43,14 +51,18 @@ public abstract class RealisticBiomeAPLBase extends RealisticBiomeBase {
     public static void addBiomes() {
 
         if (Loader.isModLoaded("appalachia")) {
-            if (AppalachiaBiomes.appalachianMountains != null) {
-                aplAppalachianMountains = new RealisticBiomeAPLAppalachianMountains();
-            }
+
             if (AppalachiaBiomes.blueRidgeForest != null) {
                 aplBlueRidgeForest = new RealisticBiomeAPLBlueRidgeForest();
             }
             if (AppalachiaBiomes.blueRidgeHills != null) {
                 aplBlueRidgeHills = new RealisticBiomeAPLBlueRidgeHills();
+            }
+            if (AppalachiaBiomes.blueRidgeMountains != null) {
+                aplBlueRidgeMountains = new RealisticBiomeAPLBlueRidgeMountains();
+            }
+            if (AppalachiaBiomes.blueRidgeBog != null) {
+                aplBlueRidgeBog = new RealisticBiomeAPLBlueRidgeBog();
             }
             if (AppalachiaBiomes.blueRidgeBeach != null) {
                 aplBlueRidgeBeach = new RealisticBiomeAPLBlueRidgeBeach();
@@ -58,17 +70,28 @@ public abstract class RealisticBiomeAPLBase extends RealisticBiomeBase {
             if (AppalachiaBiomes.blueRidgeRiver != null) {
                 aplBlueRidgeRiver = new RealisticBiomeAPLBlueRidgeRiver();
             }
-            if (AppalachiaBiomes.blueRidgeMountains != null) {
-                aplBlueRidgeMountains = new RealisticBiomeAPLBlueRidgeMountains();
+
+            if (AppalachiaBiomes.smokyForest != null) {
+                aplSmokyForest = new RealisticBiomeAPLSmokyForest();
             }
-            if (AppalachiaBiomes.prairie != null) {
-                aplPrairie = new RealisticBiomeAPLPrairie();
+            if (AppalachiaBiomes.smokyHills != null) {
+                aplSmokyHills = new RealisticBiomeAPLSmokyHills();
             }
             if (AppalachiaBiomes.smokyMountains != null) {
                 aplSmokyMountains = new RealisticBiomeAPLSmokyMountains();
             }
+            if (AppalachiaBiomes.smokyBog != null) {
+                aplSmokyBog = new RealisticBiomeAPLSmokyBog();
+            }
+            if (AppalachiaBiomes.smokyBeach != null) {
+                aplSmokyBeach = new RealisticBiomeAPLSmokyBeach();
+            }
+            if (AppalachiaBiomes.smokyRiver != null) {
+                aplSmokyRiver = new RealisticBiomeAPLSmokyRiver();
+            }
 
             // Autumnal biomes must be added last.
+
             if (AppalachiaBiomes.blueRidgeForestAutumn != null) {
                 aplBlueRidgeForestAutumn = new RealisticBiomeAPLBlueRidgeForestAutumn();
             }
@@ -77,6 +100,22 @@ public abstract class RealisticBiomeAPLBase extends RealisticBiomeBase {
             }
             if (AppalachiaBiomes.blueRidgeMountainsAutumn != null) {
                 aplBlueRidgeMountainsAutumn = new RealisticBiomeAPLBlueRidgeMountainsAutumn();
+            }
+            if (AppalachiaBiomes.blueRidgeBogAutumn != null) {
+                aplBlueRidgeBogAutumn = new RealisticBiomeAPLBlueRidgeBogAutumn();
+            }
+
+            if (AppalachiaBiomes.smokyForestAutumn != null) {
+                aplSmokyForestAutumn = new RealisticBiomeAPLSmokyForestAutumn();
+            }
+            if (AppalachiaBiomes.smokyHillsAutumn != null) {
+                aplSmokyHillsAutumn = new RealisticBiomeAPLSmokyHillsAutumn();
+            }
+            if (AppalachiaBiomes.smokyMountainsAutumn != null) {
+                aplSmokyMountainsAutumn = new RealisticBiomeAPLSmokyMountainsAutumn();
+            }
+            if (AppalachiaBiomes.smokyBogAutumn != null) {
+                aplSmokyBogAutumn = new RealisticBiomeAPLSmokyBogAutumn();
             }
         }
     }
