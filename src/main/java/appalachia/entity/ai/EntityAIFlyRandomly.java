@@ -1,14 +1,17 @@
 package appalachia.entity.ai;
 
 import appalachia.entity.passive.EntityFireFly;
-import appalachia.util.PositionUtil;
+import appalachia.util.EntityUtil;
+import appalachia.util.MathUtil;
+import appalachia.util.WorldUtil;
 import net.minecraft.entity.EntityFlying;
 import net.minecraft.entity.ai.EntityAIBase;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
-public class FlyRandomly extends EntityAIBase {
+public class EntityAIFlyRandomly extends EntityAIBase {
     protected EntityFlying entity;
     protected float flyHeight;
     protected Action action;
@@ -16,7 +19,7 @@ public class FlyRandomly extends EntityAIBase {
     private Vec3d lastPosition;
     private float speedModifier;
 
-    public FlyRandomly(EntityFlying entity, float speedModifier) {
+    public EntityAIFlyRandomly(EntityFlying entity, float speedModifier) {
         this.entity = entity;
         this.speedModifier = speedModifier;
         setMutexBits(1);
@@ -97,8 +100,10 @@ public class FlyRandomly extends EntityAIBase {
 
     @Override
     public void startExecuting() {
+        additionalSetup();
+
         float currentHeight = getHeight();
-        flyHeight = currentHeight > 2 ? currentHeight : 1 + (float) (Math.abs(entity.getRNG().nextGaussian()) * 0.75F) + entity.getRNG().nextFloat();
+        flyHeight = currentHeight > 2 ? currentHeight : (float) MathUtil.weightedRandom(entity.getRNG(), 1, 0.75F) + entity.getRNG().nextFloat();
         entity.rotationYaw = getRotation(new BlockPos(entity));
         entity.rotationYawHead = entity.rotationYaw;
 
@@ -106,6 +111,8 @@ public class FlyRandomly extends EntityAIBase {
 
         action = Action.GAIN_HEIGHT;
     }
+
+    protected void additionalSetup() { /* For overriding */ }
 
     protected int getRotation(BlockPos spot) {
         return entity.getRNG().nextInt(360);
@@ -134,12 +141,12 @@ public class FlyRandomly extends EntityAIBase {
     }
 
     protected boolean isSpotGood(BlockPos spot) {
-        return EntityFireFly.isSpotViable(entity.worldObj, spot) && entity.worldObj.getNearestPlayerNotCreative(entity, 5.5F) == null && entity.worldObj.findNearestEntityWithinAABB(entity.getClass(), new AxisAlignedBB(spot.add(-4, -4, -4), spot.add(4, 4, 4)), entity) != null;
+        return EntityFireFly.isSpotViable(entity.worldObj, spot) && entity.worldObj.getNearestPlayerNotCreative(entity, 5.5F) == null;
     }
 
     protected float getHeight() {
         BlockPos pos = new BlockPos(entity);
-        BlockPos nextBlock = PositionUtil.nextSolidBlock(entity.worldObj, pos);
+        BlockPos nextBlock = WorldUtil.nextSolidBlock(entity.worldObj, pos, EnumFacing.DOWN);
 
         return (float) (entity.posY - nextBlock.getY());
     }

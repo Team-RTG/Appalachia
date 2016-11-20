@@ -1,19 +1,20 @@
 package appalachia.entity.ai;
 
-import appalachia.util.PositionUtil;
+import appalachia.util.EntityUtil;
+import appalachia.util.MathUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityFlying;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
-public class FlyAwayFromEntity extends FlyRandomly {
+public class EntityAIFlyAwayFromEntity extends EntityAIFlyRandomly {
     protected Class<? extends Entity> living;
     protected float defaultRange;
     protected float derivation;
 
     private float maxRange;
 
-    public FlyAwayFromEntity(EntityFlying entity, Class<? extends Entity> living, float defaultRange, float distribution, float speedModifier) {
+    public EntityAIFlyAwayFromEntity(EntityFlying entity, Class<? extends Entity> living, float defaultRange, float distribution, float speedModifier) {
         super(entity, speedModifier);
         this.living = living;
         this.defaultRange = defaultRange;
@@ -25,7 +26,7 @@ public class FlyAwayFromEntity extends FlyRandomly {
     @Override
     public boolean shouldExecute() {
         BlockPos pos = new BlockPos(entity);
-        return entity.ticksExisted % 7 == 0 && entityNearby(pos, defaultRange + (float) Math.abs(entity.getRNG().nextGaussian()) * derivation);
+        return entity.ticksExisted % 7 == 0 && entityNearby(pos, (int) MathUtil.weightedRandom(entity.getRNG(), defaultRange, derivation));
     }
 
     @Override
@@ -36,7 +37,7 @@ public class FlyAwayFromEntity extends FlyRandomly {
             return super.getRotation(spot);
         }
 
-        return PositionUtil.getRotationAwayFromEntity(spot, new BlockPos(nearest));
+        return EntityUtil.getRotationAwayFromEntity(spot, new BlockPos(nearest));
     }
 
     @Override

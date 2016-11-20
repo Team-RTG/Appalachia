@@ -3,11 +3,12 @@ package appalachia.entity.passive;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import appalachia.entity.ai.FlyAwayFromEntity;
-import appalachia.entity.ai.FlyPanic;
-import appalachia.entity.ai.FlyRandomly;
+import appalachia.entity.ai.EntityAIFlyAwayFromEntity;
+import appalachia.entity.ai.EntityAIFlyPanic;
+import appalachia.entity.ai.EntityAIFlyRandomly;
 import appalachia.loot.LootAppalachia;
-import appalachia.util.PositionUtil;
+import appalachia.util.EntityUtil;
+import appalachia.util.WorldUtil;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityFlying;
@@ -20,7 +21,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
@@ -57,9 +58,9 @@ public class EntityFireFly extends EntityFlying {
 
     @Override
     protected void initEntityAI() {
-        this.tasks.addTask(0, new FlyPanic(this, 3));
-        this.tasks.addTask(1, new FlyAwayFromEntity(this, EntityPlayer.class, 2, 0.874F, 1.25F));
-        this.tasks.addTask(2, new FlyRandomly(this, 1));
+        this.tasks.addTask(0, new EntityAIFlyPanic(this, 3));
+        this.tasks.addTask(1, new EntityAIFlyAwayFromEntity(this, EntityPlayer.class, 2, 0.874F, 1.25F));
+        this.tasks.addTask(2, new EntityAIFlyRandomly(this, 1));
         this.tasks.addTask(99, new EntityAILookIdle(this));
     }
 
@@ -143,7 +144,7 @@ public class EntityFireFly extends EntityFlying {
     private void updateVariant() {
         Color color = Color.DEFAULT;
 
-        BlockPos pos = PositionUtil.nextSolidBlock(worldObj, new BlockPos(this));
+        BlockPos pos = WorldUtil.nextSolidBlock(worldObj, new BlockPos(this), EnumFacing.DOWN);
         IBlockState block = worldObj.getBlockState(pos);
 
         if (block.getBlock().equals(Blocks.DIRT) && block.getBlock().getMetaFromState(block) == 0) {
@@ -186,12 +187,12 @@ public class EntityFireFly extends EntityFlying {
             return false;
         }
 
-        while (PositionUtil.isNotSolid(world, pos)) {
+        while (WorldUtil.isNotSolid(world, pos)) {
             pos = pos.down();
         }
 
         for (byte i = 1; i < 4; i++) {
-            if (!PositionUtil.isNotSolid(world, pos.up(i))) {
+            if (!WorldUtil.isNotSolid(world, pos.up(i))) {
                 return false;
             }
         }
