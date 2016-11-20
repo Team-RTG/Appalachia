@@ -1,9 +1,10 @@
 package appalachia.loot;
 
-import appalachia.reference.ModInfo;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.storage.loot.LootTable;
 import net.minecraft.world.storage.loot.LootTableList;
+
+import appalachia.reference.ModInfo;
 
 public class LootAppalachia {
     public static final ResourceLocation LOOT_TABLE_BLACK_BEAR = register("entities/black_bear");
