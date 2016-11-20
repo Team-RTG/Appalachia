@@ -1,0 +1,6 @@
+{
+    "parent": "block/leaves",
+    "textures": {
+        "all": "appalachia:blocks/leaves_shagbark_hickory_01"
+    }
+}

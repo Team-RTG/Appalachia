@@ -1,0 +1,6 @@
+{
+    "parent": "block/leaves",
+    "textures": {
+        "all": "appalachia:blocks/leaves_black_gum_01"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "block/leaves",
+    "textures": {
+        "all": "appalachia:blocks/leaves_shortleaf_pine_01"
+    }
+}
