@@ -4,7 +4,6 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -43,7 +42,7 @@ import rtg.world.gen.terrain.TerrainBase;
 public class RealisticBiomeAPLBlueRidgeBogAutumn extends RealisticBiomeAPLBase {
 
     public static Biome biome = AppalachiaBiomes.blueRidgeBogAutumn;
-    public static Biome river = Biomes.RIVER;
+    public static Biome river = AppalachiaBiomes.blueRidgeRiver;
 
     protected static int treeMaxY = 220;
     protected static int shrubMaxY = 220;
