@@ -1,4 +1,4 @@
-package appalachia.rtg.world.biome.realistic.appalachia.blueridge.autumn;
+package appalachia.rtg.world.biome.realistic.appalachia.smoky;
 
 import java.util.Random;
 
@@ -10,7 +10,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
 import appalachia.api.AppalachiaBiomes;
-import appalachia.rtg.world.biome.deco.collection.DecoCollectionBlueRidgeForest;
+import appalachia.rtg.world.biome.deco.collection.DecoCollectionSmokyForest;
 import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 
 import rtg.config.BiomeConfig;
@@ -18,16 +18,15 @@ import rtg.util.BlockUtil;
 import rtg.util.CellNoise;
 import rtg.util.CliffCalculator;
 import rtg.util.OpenSimplexNoise;
-import rtg.world.biome.realistic.RealisticBiomeBase;
 import rtg.world.gen.surface.SurfaceBase;
 import rtg.world.gen.terrain.TerrainBase;
 
-public class RealisticBiomeAPLBlueRidgeForestAutumn extends RealisticBiomeAPLBase {
+public class RealisticBiomeAPLSmokyForest extends RealisticBiomeAPLBase {
 
-    public static Biome biome = AppalachiaBiomes.blueRidgeForestAutumn;
-    public static Biome river = AppalachiaBiomes.blueRidgeRiver;
+    public static Biome biome = AppalachiaBiomes.smokyForest;
+    public static Biome river = AppalachiaBiomes.smokyRiver;
 
-    public RealisticBiomeAPLBlueRidgeForestAutumn() {
+    public RealisticBiomeAPLSmokyForest() {
 
         super(biome, river);
     }
@@ -44,22 +43,22 @@ public class RealisticBiomeAPLBlueRidgeForestAutumn extends RealisticBiomeAPLBas
     @Override
     public TerrainBase initTerrain() {
 
-        return RealisticBiomeBase.getBiome(Biome.getIdForBiome(AppalachiaBiomes.blueRidgeForest)).getTerrain();
+        return new TerrainAPLSmokyForest();
     }
 
     @Override
     public SurfaceBase initSurface() {
 
-        return new SurfaceAPLBlueRidgeForestAutumn(config, biome.topBlock, biome.fillerBlock, BlockUtil.getStateDirt(2), 12f, 0.27f);
+        return new SurfaceAPLSmokyForest(config, biome.topBlock, biome.fillerBlock, BlockUtil.getStateDirt(2), 12f, 0.27f);
     }
 
-    public class SurfaceAPLBlueRidgeForestAutumn extends SurfaceBase {
+    public class SurfaceAPLSmokyForest extends SurfaceBase {
 
         public IBlockState mixBlock;
         public float width;
         public float height;
 
-        public SurfaceAPLBlueRidgeForestAutumn(BiomeConfig config, IBlockState top, IBlockState filler, IBlockState mix, float mixWidth, float mixHeight) {
+        public SurfaceAPLSmokyForest(BiomeConfig config, IBlockState top, IBlockState filler, IBlockState mix, float mixWidth, float mixHeight) {
 
             super(config, top, filler);
 
@@ -120,11 +119,32 @@ public class RealisticBiomeAPLBlueRidgeForestAutumn extends RealisticBiomeAPLBas
     @Override
     public void initDecos() {
 
-        this.addDecoCollection(new DecoCollectionBlueRidgeForest(this.getConfig().ALLOW_LOGS.get()));
+        this.addDecoCollection(new DecoCollectionSmokyForest(this.getConfig().ALLOW_LOGS.get()));
+    }
+
+    public class TerrainAPLSmokyForest extends TerrainBase {
+
+        protected float hillStrength = 10f;// this needs to be linked to the
+
+        public TerrainAPLSmokyForest() {
+
+        }
+
+        @Override
+        public float generateNoise(OpenSimplexNoise simplex, CellNoise cell, int x, int y, float border, float river) {
+
+            groundNoise = groundNoise(x, y, groundVariation, simplex);
+
+            float m = hills(x, y, hillStrength, simplex, river);
+
+            float floNoise = 65f + groundNoise + m;
+
+            return riverized(floNoise, river);
+        }
     }
 
     @Override
     public Biome beachBiome() {
-        return this.beachBiome(AppalachiaBiomes.blueRidgeBeach);
+        return this.beachBiome(AppalachiaBiomes.smokyBeach);
     }
 }

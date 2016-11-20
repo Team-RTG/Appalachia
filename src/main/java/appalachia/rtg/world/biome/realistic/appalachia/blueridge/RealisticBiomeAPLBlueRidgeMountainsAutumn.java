@@ -1,4 +1,4 @@
-package appalachia.rtg.world.biome.realistic.appalachia.blueridge.autumn;
+package appalachia.rtg.world.biome.realistic.appalachia.blueridge;
 
 import java.util.Random;
 

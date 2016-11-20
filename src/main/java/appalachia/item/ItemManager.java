@@ -3,20 +3,22 @@ package appalachia.item;
 import java.util.ArrayList;
 import java.util.List;
 
-import appalachia.api.AppalachiaItems;
-import appalachia.gui.AppalachiaTabs;
-import appalachia.reference.ModInfo;
-import com.google.common.collect.Lists;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import appalachia.api.AppalachiaItems;
+import appalachia.gui.AppalachiaTabs;
+import appalachia.reference.ModInfo;
+import com.google.common.collect.Lists;
 
 public class ItemManager {
 

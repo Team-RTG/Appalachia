@@ -1,10 +1,10 @@
 package appalachia.gui;
 
-import appalachia.api.AppalachiaItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
 import appalachia.api.AppalachiaBlocks;
+import appalachia.api.AppalachiaItems;
 
 public class AppalachiaTabs {
 

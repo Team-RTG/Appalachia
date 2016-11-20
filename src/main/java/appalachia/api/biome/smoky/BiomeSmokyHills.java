@@ -1,13 +1,13 @@
-package appalachia.api.biome.blueridge;
+package appalachia.api.biome.smoky;
 
 import net.minecraftforge.common.BiomeDictionary;
 
 import appalachia.api.AppalachiaBiomeTypes;
 import appalachia.api.biome.IAppalachiaBiome;
 
-public class BiomeBlueRidgeHills extends BiomeBlueRidge implements IAppalachiaBiome {
+public class BiomeSmokyHills extends BiomeSmoky implements IAppalachiaBiome {
 
-    public BiomeBlueRidgeHills(BiomeProperties props) {
+    public BiomeSmokyHills(BiomeProperties props) {
 
         super(props);
 
@@ -15,7 +15,7 @@ public class BiomeBlueRidgeHills extends BiomeBlueRidge implements IAppalachiaBi
             BiomeDictionary.Type.FOREST,
             BiomeDictionary.Type.DENSE,
             BiomeDictionary.Type.HILLS,
-            AppalachiaBiomeTypes.BLUERIDGE
+            AppalachiaBiomeTypes.SMOKY
         };
     }
 }

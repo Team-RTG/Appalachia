@@ -1,149 +1,75 @@
-package appalachia.rtg.world.biome.realistic.appalachia.blueridge;
+package appalachia.rtg.world.biome.deco.collection;
 
-import java.util.Random;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
-import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenTrees;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-import appalachia.api.AppalachiaBiomes;
 import appalachia.api.AppalachiaBlocks;
 import appalachia.api.block.IAppalachiaBlockLeavesFallen;
-import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
+import appalachia.rtg.world.gen.feature.tree.rtg.TreeAbiesGrandis;
 import appalachia.rtg.world.gen.feature.tree.rtg.TreeAcerRubrum;
 
-import rtg.config.BiomeConfig;
 import rtg.util.BlockUtil;
-import rtg.util.CellNoise;
-import rtg.util.CliffCalculator;
-import rtg.util.OpenSimplexNoise;
 import rtg.world.biome.deco.*;
 import rtg.world.biome.deco.DecoFallenTree.LogCondition;
 import rtg.world.biome.deco.DecoTree.TreeCondition;
 import rtg.world.biome.deco.DecoTree.TreeType;
+import rtg.world.biome.deco.collection.DecoCollectionBase;
 import rtg.world.biome.deco.helper.DecoHelper5050;
 import rtg.world.biome.deco.helper.DecoHelperRandomSplit;
 import rtg.world.gen.feature.tree.rtg.TreeRTG;
 import rtg.world.gen.feature.tree.rtg.TreeRTGBetulaPapyrifera;
 import rtg.world.gen.feature.tree.rtg.TreeRTGPiceaSitchensis;
 import rtg.world.gen.feature.tree.rtg.TreeRTGPinusPonderosa;
-import rtg.world.gen.surface.SurfaceBase;
-import rtg.world.gen.terrain.HeightEffect;
-import rtg.world.gen.terrain.HeightVariation;
-import rtg.world.gen.terrain.JitterEffect;
-import rtg.world.gen.terrain.TerrainBase;
 
-public class RealisticBiomeAPLBlueRidgeBog extends RealisticBiomeAPLBase {
 
-    public static Biome biome = AppalachiaBiomes.blueRidgeBog;
-    public static Biome river = AppalachiaBiomes.blueRidgeRiver;
+/**
+ * @author WhichOnesPink
+ */
+public class DecoCollectionSmokyForest extends DecoCollectionBase {
 
     protected static int treeMaxY = 220;
     protected static int shrubMaxY = 220;
 
-    public RealisticBiomeAPLBlueRidgeBog() {
+    public DecoCollectionSmokyForest(boolean fallenTrees) {
 
-        super(biome, river);
-    }
-
-    @Override
-    public void initConfig() {
-
-        this.getConfig().addProperty(this.getConfig().ALLOW_LOGS).set(true);
-    }
-
-    @Override
-    public TerrainBase initTerrain() {
-
-        return new TerrainAPLBlueRidgeBog();
-    }
-
-    @Override
-    public SurfaceBase initSurface() {
-
-        return new SurfaceAPLBlueRidgeBog(config, biome.topBlock, biome.fillerBlock);
-    }
-
-    public class SurfaceAPLBlueRidgeBog extends SurfaceBase {
-
-        public SurfaceAPLBlueRidgeBog(BiomeConfig config, IBlockState top, IBlockState filler) {
-
-            super(config, top, filler);
-        }
-
-        @Override
-        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int y, int depth, World world, Random rand,
-                                 OpenSimplexNoise simplex, CellNoise cell, float[] noise, float river, Biome[] base) {
-
-            float c = CliffCalculator.calc(x, y, noise);
-            boolean cliff = c > 1.4f ? true : false;
-
-            for (int k = 255; k > -1; k--) {
-                Block b = primer.getBlockState(x, k, y).getBlock();
-                if (b == Blocks.AIR) {
-                    depth = -1;
-                }
-                else if (b == Blocks.STONE) {
-                    depth++;
-
-                    if (cliff) {
-                        if (depth > -1 && depth < 2) {
-                            if (rand.nextInt(3) == 0) {
-
-                                primer.setBlockState(x, k, y, hcCobble(world, i, j, x, y, k));
-                            }
-                            else {
-
-                                primer.setBlockState(x, k, y, hcStone(world, i, j, x, y, k));
-                            }
-                        }
-                        else if (depth < 10) {
-                            primer.setBlockState(x, k, y, hcStone(world, i, j, x, y, k));
-                        }
-                    }
-                    else {
-                        if (depth == 0 && k > 61) {
-                            primer.setBlockState(x, k, y, topBlock);
-                        }
-                        else if (depth < 4) {
-                            primer.setBlockState(x, k, y, fillerBlock);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    public class TerrainAPLBlueRidgeBog extends TerrainBase {
-
-        private HeightEffect height;
-
-        public TerrainAPLBlueRidgeBog() {
-
-            HeightVariation waterLand = new HeightVariation();
-            waterLand.height = 1f;
-            waterLand.wavelength = 40f;
-            waterLand.octave = 0;
-
-            height = new JitterEffect(5f, 10f, waterLand);
-
-        }
-
-        @Override
-        public float generateNoise(OpenSimplexNoise simplex, CellNoise cell, int x, int y, float border, float river) {
-
-            return 62f + height.added(simplex, cell, x, y);
-        }
-    }
-
-    @Override
-    public void initDecos() {
+        AppalachiaTree aplGrandFirTreeOak = new TreeAbiesGrandis();
+        aplGrandFirTreeOak.logBlock = AppalachiaBlocks.log_red_oak_01.getDefaultState();
+        aplGrandFirTreeOak.leavesBlock = Blocks.LEAVES.getDefaultState();
+        aplGrandFirTreeOak.minTrunkSize = 10;
+        aplGrandFirTreeOak.maxTrunkSize = 20;
+        aplGrandFirTreeOak.minCrownSize = 15;
+        aplGrandFirTreeOak.maxCrownSize = 30;
+        DecoTree oakFir = new DecoTree(aplGrandFirTreeOak);
+        oakFir.loops = 1;
+        oakFir.treeType = TreeType.RTG_TREE;
+        oakFir.distribution.noiseDivisor = 100f;
+        oakFir.distribution.noiseFactor = 6f;
+        oakFir.distribution.noiseAddend = 0.8f;
+        oakFir.treeCondition = TreeCondition.NOISE_GREATER_AND_RANDOM_CHANCE;
+        oakFir.treeConditionNoise = -0.5f;
+        oakFir.treeConditionChance = 2;
+        oakFir.maxY = treeMaxY;
+        AppalachiaTree aplGrandFirTreeChestnut = new TreeAbiesGrandis();
+        aplGrandFirTreeChestnut.logBlock = AppalachiaBlocks.log_american_chestnut_01.getDefaultState();
+        aplGrandFirTreeChestnut.leavesBlock = Blocks.LEAVES.getDefaultState();
+        aplGrandFirTreeChestnut.minTrunkSize = 10;
+        aplGrandFirTreeChestnut.maxTrunkSize = 20;
+        aplGrandFirTreeChestnut.minCrownSize = 15;
+        aplGrandFirTreeChestnut.maxCrownSize = 30;
+        DecoTree chestnutFir = new DecoTree(aplGrandFirTreeChestnut);
+        chestnutFir.loops = 1;
+        chestnutFir.treeType = TreeType.RTG_TREE;
+        chestnutFir.distribution.noiseDivisor = 100f;
+        chestnutFir.distribution.noiseFactor = 6f;
+        chestnutFir.distribution.noiseAddend = 0.8f;
+        chestnutFir.treeCondition = TreeCondition.NOISE_GREATER_AND_RANDOM_CHANCE;
+        chestnutFir.treeConditionNoise = -0.5f;
+        chestnutFir.treeConditionChance = 2;
+        chestnutFir.maxY = treeMaxY;
+        DecoHelper5050 firTrees = new DecoHelper5050(oakFir, chestnutFir);
+        this.addDeco(firTrees);
 
         AppalachiaTree aplRedMaple = new TreeAcerRubrum();
         aplRedMaple.logBlock = AppalachiaBlocks.log_red_maple_01.getDefaultState();
@@ -278,7 +204,7 @@ public class RealisticBiomeAPLBlueRidgeBog extends RealisticBiomeAPLBase {
         decoFallenSpruce.minSize = 3;
         decoFallenSpruce.maxSize = 6;
         DecoHelper5050 decoFallenTree = new DecoHelper5050(decoFallenOak, decoFallenSpruce);
-        this.addDeco(decoFallenTree, this.getConfig().ALLOW_LOGS.get());
+        this.addDeco(decoFallenTree, fallenTrees);
 
         // Shrubs to fill in the blanks.
         DecoShrub decoShrubOak = new DecoShrub();
@@ -301,6 +227,14 @@ public class RealisticBiomeAPLBlueRidgeBog extends RealisticBiomeAPLBase {
         decoFallenLeaves.loops = 8;
         this.addDeco(decoFallenLeaves);
 
+        // Only 1-block-tall flowers so we can see the trees better.
+        // And only white ones because they go with everything.
+        DecoFlowersRTG decoFlowers1 = new DecoFlowersRTG();
+        decoFlowers1.flowers = new int[]{3, 6};
+        decoFlowers1.maxY = shrubMaxY;
+        decoFlowers1.strengthFactor = 6f;
+        this.addDeco(decoFlowers1);
+
         // Very rare 2-block-tall flowers. (TODO: Replace these with Appalachian flora.)
         DecoFlowersRTG decoFlowers2 = new DecoFlowersRTG();
         decoFlowers2.flowers = new int[]{12, 13};
@@ -316,16 +250,15 @@ public class RealisticBiomeAPLBlueRidgeBog extends RealisticBiomeAPLBase {
         decoFern.loops = 2;
         this.addDeco(decoFern);
 
+        // A combo-deal of grass and vines. (This could probably be pulled out into individual decos.)
+        DecoJungleGrassVines decoJungleGrassVines = new DecoJungleGrassVines();
+        this.addDeco(decoJungleGrassVines);
+
         // Grass filler.
         DecoGrass decoGrass = new DecoGrass();
         decoGrass.minY = 63;
         decoGrass.maxY = shrubMaxY;
         decoGrass.strengthFactor = 12f;
         this.addDeco(decoGrass);
-    }
-
-    @Override
-    public Biome beachBiome() {
-        return this.beachBiome(AppalachiaBiomes.blueRidgeBeach);
     }
 }
