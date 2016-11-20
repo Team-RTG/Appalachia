@@ -22,10 +22,7 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import appalachia.api.AppalachiaBlocks;
 import appalachia.block.fencegates.*;
 import appalachia.block.fences.*;
-import appalachia.block.leaves.AppalachiaBlockLeaves;
-import appalachia.block.leaves.BlockLeavesAutumnOrange;
-import appalachia.block.leaves.BlockLeavesAutumnRed;
-import appalachia.block.leaves.BlockLeavesAutumnYellow;
+import appalachia.block.leaves.*;
 import appalachia.block.leaves.fallen.*;
 import appalachia.block.logs.*;
 import appalachia.block.planks.*;
@@ -69,6 +66,94 @@ public class BlockManager {
     };
 
     public static void registerBlocks() {
+
+        //Leaves.
+
+        AppalachiaBlocks.leaves_autumn_orange = new BlockLeavesAutumnOrange();
+        AppalachiaBlocks.leaves_autumn_red = new BlockLeavesAutumnRed();
+        AppalachiaBlocks.leaves_autumn_yellow = new BlockLeavesAutumnYellow();
+
+        AppalachiaBlocks.leaves_american_beech_01 = new BlockLeavesAmericanBeech01();
+        AppalachiaBlocks.leaves_american_chestnut_01 = new BlockLeavesAmericanChestnut01();
+        AppalachiaBlocks.leaves_american_elm_01 = new BlockLeavesAmericanElm01();
+        AppalachiaBlocks.leaves_ash_01 = new BlockLeavesAsh01();
+        AppalachiaBlocks.leaves_bitternut_hickory_01 = new BlockLeavesBitternutHickory01();
+        AppalachiaBlocks.leaves_black_cherry_01 = new BlockLeavesBlackCherry01();
+        AppalachiaBlocks.leaves_black_gum_01 = new BlockLeavesBlackGum01();
+        AppalachiaBlocks.leaves_black_locust_01 = new BlockLeavesBlackLocust01();
+        AppalachiaBlocks.leaves_black_oak_01 = new BlockLeavesBlackOak01();
+        AppalachiaBlocks.leaves_black_walnut_01 = new BlockLeavesBlackWalnut01();
+        AppalachiaBlocks.leaves_blue_beech_01 = new BlockLeavesBlueBeech01();
+        AppalachiaBlocks.leaves_box_elder_01 = new BlockLeavesBoxElder01();
+        AppalachiaBlocks.leaves_buckeye_01 = new BlockLeavesBuckeye01();
+        AppalachiaBlocks.leaves_cedar_01 = new BlockLeavesCedar01();
+        AppalachiaBlocks.leaves_dogwood_01 = new BlockLeavesDogwood01();
+        AppalachiaBlocks.leaves_hackberry_01 = new BlockLeavesHackberry01();
+        AppalachiaBlocks.leaves_honey_locust_01 = new BlockLeavesHoneyLocust01();
+        AppalachiaBlocks.leaves_hop_hornbeam_01 = new BlockLeavesHopHornbeam01();
+        AppalachiaBlocks.leaves_persimmon_01 = new BlockLeavesPersimmon01();
+        AppalachiaBlocks.leaves_pignut_hickory_01 = new BlockLeavesPignutHickory01();
+        AppalachiaBlocks.leaves_red_elm_01 = new BlockLeavesRedElm01();
+        AppalachiaBlocks.leaves_red_maple_01 = new BlockLeavesRedMaple01();
+        AppalachiaBlocks.leaves_red_oak_01 = new BlockLeavesRedOak01();
+        AppalachiaBlocks.leaves_river_birch_01 = new BlockLeavesRiverBirch01();
+        AppalachiaBlocks.leaves_sassafras_01 = new BlockLeavesSassafras01();
+        AppalachiaBlocks.leaves_shagbark_hickory_01 = new BlockLeavesShagbarkHickory01();
+        AppalachiaBlocks.leaves_shortleaf_pine_01 = new BlockLeavesShortleafPine01();
+        AppalachiaBlocks.leaves_sugar_maple_01 = new BlockLeavesSugarMaple01();
+        AppalachiaBlocks.leaves_sycamore_01 = new BlockLeavesSycamore01();
+        AppalachiaBlocks.leaves_tulip_poplar_01 = new BlockLeavesTulipPoplar01();
+        AppalachiaBlocks.leaves_white_oak_01 = new BlockLeavesWhiteOak01();
+        AppalachiaBlocks.leaves_white_pine_01 = new BlockLeavesWhitePine01();
+        AppalachiaBlocks.leaves_white_walnut_01 = new BlockLeavesWhiteWalnut01();
+        AppalachiaBlocks.leaves_yellow_birch_01 = new BlockLeavesYellowBirch01();
+
+        addLeaves();
+
+        //Fallen leaves.
+
+        AppalachiaBlocks.leaves_oak_fallen = new BlockLeavesOakFallen();
+
+        AppalachiaBlocks.leaves_autumn_orange_fallen = new BlockLeavesAutumnOrangeFallen();
+        AppalachiaBlocks.leaves_autumn_red_fallen = new BlockLeavesAutumnRedFallen();
+        AppalachiaBlocks.leaves_autumn_yellow_fallen = new BlockLeavesAutumnYellowFallen();
+
+        AppalachiaBlocks.leaves_american_beech_01_fallen = new BlockLeavesAmericanBeech01Fallen();
+        AppalachiaBlocks.leaves_american_chestnut_01_fallen = new BlockLeavesAmericanChestnut01Fallen();
+        AppalachiaBlocks.leaves_american_elm_01_fallen = new BlockLeavesAmericanElm01Fallen();
+        AppalachiaBlocks.leaves_ash_01_fallen = new BlockLeavesAsh01Fallen();
+        AppalachiaBlocks.leaves_bitternut_hickory_01_fallen = new BlockLeavesBitternutHickory01Fallen();
+        AppalachiaBlocks.leaves_black_cherry_01_fallen = new BlockLeavesBlackCherry01Fallen();
+        AppalachiaBlocks.leaves_black_gum_01_fallen = new BlockLeavesBlackGum01Fallen();
+        AppalachiaBlocks.leaves_black_locust_01_fallen = new BlockLeavesBlackLocust01Fallen();
+        AppalachiaBlocks.leaves_black_oak_01_fallen = new BlockLeavesBlackOak01Fallen();
+        AppalachiaBlocks.leaves_black_walnut_01_fallen = new BlockLeavesBlackWalnut01Fallen();
+        AppalachiaBlocks.leaves_blue_beech_01_fallen = new BlockLeavesBlueBeech01Fallen();
+        AppalachiaBlocks.leaves_box_elder_01_fallen = new BlockLeavesBoxElder01Fallen();
+        AppalachiaBlocks.leaves_buckeye_01_fallen = new BlockLeavesBuckeye01Fallen();
+        AppalachiaBlocks.leaves_cedar_01_fallen = new BlockLeavesCedar01Fallen();
+        AppalachiaBlocks.leaves_dogwood_01_fallen = new BlockLeavesDogwood01Fallen();
+        AppalachiaBlocks.leaves_hackberry_01_fallen = new BlockLeavesHackberry01Fallen();
+        AppalachiaBlocks.leaves_honey_locust_01_fallen = new BlockLeavesHoneyLocust01Fallen();
+        AppalachiaBlocks.leaves_hop_hornbeam_01_fallen = new BlockLeavesHopHornbeam01Fallen();
+        AppalachiaBlocks.leaves_persimmon_01_fallen = new BlockLeavesPersimmon01Fallen();
+        AppalachiaBlocks.leaves_pignut_hickory_01_fallen = new BlockLeavesPignutHickory01Fallen();
+        AppalachiaBlocks.leaves_red_elm_01_fallen = new BlockLeavesRedElm01Fallen();
+        AppalachiaBlocks.leaves_red_maple_01_fallen = new BlockLeavesRedMaple01Fallen();
+        AppalachiaBlocks.leaves_red_oak_01_fallen = new BlockLeavesRedOak01Fallen();
+        AppalachiaBlocks.leaves_river_birch_01_fallen = new BlockLeavesRiverBirch01Fallen();
+        AppalachiaBlocks.leaves_sassafras_01_fallen = new BlockLeavesSassafras01Fallen();
+        AppalachiaBlocks.leaves_shagbark_hickory_01_fallen = new BlockLeavesShagbarkHickory01Fallen();
+        AppalachiaBlocks.leaves_shortleaf_pine_01_fallen = new BlockLeavesShortleafPine01Fallen();
+        AppalachiaBlocks.leaves_sugar_maple_01_fallen = new BlockLeavesSugarMaple01Fallen();
+        AppalachiaBlocks.leaves_sycamore_01_fallen = new BlockLeavesSycamore01Fallen();
+        AppalachiaBlocks.leaves_tulip_poplar_01_fallen = new BlockLeavesTulipPoplar01Fallen();
+        AppalachiaBlocks.leaves_white_oak_01_fallen = new BlockLeavesWhiteOak01Fallen();
+        AppalachiaBlocks.leaves_white_pine_01_fallen = new BlockLeavesWhitePine01Fallen();
+        AppalachiaBlocks.leaves_white_walnut_01_fallen = new BlockLeavesWhiteWalnut01Fallen();
+        AppalachiaBlocks.leaves_yellow_birch_01_fallen = new BlockLeavesYellowBirch01Fallen();
+
+        addFallenLeaves();
 
         //Logs.
 
@@ -303,19 +388,6 @@ public class BlockManager {
         AppalachiaBlocks.fence_gate_yellow_birch_01 = new BlockFenceGateYellowBirch01();
 
         addFenceGates();
-
-        //Leaves.
-        AppalachiaBlocks.leaves_autumn_orange = new BlockLeavesAutumnOrange();
-        AppalachiaBlocks.leaves_autumn_red = new BlockLeavesAutumnRed();
-        AppalachiaBlocks.leaves_autumn_yellow = new BlockLeavesAutumnYellow();
-        addLeaves();
-
-        //Fallen leaves.
-        AppalachiaBlocks.leaves_oak_fallen = new BlockLeavesOakFallen();
-        AppalachiaBlocks.leaves_autumn_orange_fallen = new BlockLeavesAutumnOrangeFallen();
-        AppalachiaBlocks.leaves_autumn_red_fallen = new BlockLeavesAutumnRedFallen();
-        AppalachiaBlocks.leaves_autumn_yellow_fallen = new BlockLeavesAutumnYellowFallen();
-        addFallenLeaves();
 
         //Saplings.
         AppalachiaBlocks.sapling_quercus_robur = new BlockSaplingQuercusRobur();
@@ -568,14 +640,85 @@ public class BlockManager {
         appalachiaLeaves.add(AppalachiaBlocks.leaves_autumn_orange);
         appalachiaLeaves.add(AppalachiaBlocks.leaves_autumn_red);
         appalachiaLeaves.add(AppalachiaBlocks.leaves_autumn_yellow);
+
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_american_beech_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_american_chestnut_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_american_elm_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_ash_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_bitternut_hickory_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_black_cherry_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_black_gum_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_black_locust_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_black_oak_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_black_walnut_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_blue_beech_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_box_elder_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_buckeye_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_cedar_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_dogwood_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_hackberry_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_honey_locust_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_hop_hornbeam_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_persimmon_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_pignut_hickory_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_red_elm_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_red_maple_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_red_oak_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_river_birch_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_sassafras_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_shagbark_hickory_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_shortleaf_pine_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_sugar_maple_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_sycamore_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_tulip_poplar_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_white_oak_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_white_pine_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_white_walnut_01);
+        appalachiaLeaves.add(AppalachiaBlocks.leaves_yellow_birch_01);
     }
 
     private static void addFallenLeaves() {
 
         appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_oak_fallen);
+
         appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_autumn_orange_fallen);
         appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_autumn_red_fallen);
         appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_autumn_yellow_fallen);
+
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_american_beech_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_american_chestnut_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_american_elm_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_ash_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_bitternut_hickory_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_black_cherry_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_black_gum_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_black_locust_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_black_oak_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_black_walnut_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_blue_beech_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_box_elder_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_buckeye_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_cedar_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_dogwood_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_hackberry_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_honey_locust_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_hop_hornbeam_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_persimmon_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_pignut_hickory_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_red_elm_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_red_maple_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_red_oak_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_river_birch_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_sassafras_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_shagbark_hickory_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_shortleaf_pine_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_sugar_maple_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_sycamore_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_tulip_poplar_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_white_oak_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_white_pine_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_white_walnut_01_fallen);
+        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_yellow_birch_01_fallen);
     }
 
     private static void addSaplings() {
