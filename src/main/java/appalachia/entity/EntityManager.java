@@ -18,6 +18,7 @@ public class EntityManager
         int id = 1;
 
         EntityRegistry.registerModEntity(EntityBlackBear.class, "BlackBear", id++, Appalachia.instance, 64, 3, true, 0x000000, 0x80511a);
+        EntityRegistry.registerModEntity(EntityFireFly.class, "FireFly", id++, Appalachia.instance, 64, 3, true, 0x110000, 0xFF0000);
 
         // We want our mob to spawn in Plains and ice plains biomes. If you don't add this then it will not spawn automatically
         // but you can of course still make it spawn manually

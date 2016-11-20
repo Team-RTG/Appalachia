@@ -15,7 +15,7 @@ public class FlyPanic extends FlyRandomly {
         return entity.getLastAttackerTime() != 0 &&
             entity.getLastAttacker() != null &&
             entity.getLastAttacker().isEntityAlive() &&
-            entity.getLastAttackerTime() - entity.ticksExisted < 10;
+            entity.ticksExisted - entity.getLastAttackerTime() < 10;
     }
 
     @Override

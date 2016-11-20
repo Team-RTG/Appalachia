@@ -20,6 +20,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
@@ -98,7 +99,7 @@ public class EntityFireFly extends EntityFlying {
                 this.setHealth(this.getHealth() - 0.5F); // Entities will disappear in the sun to save performance, but only if they are grounded.
             }
 
-            if (doFlash && worldObj.getLightFromNeighbors(pos) < 9) {
+            if (doFlash && getHealth() != 0 && worldObj.getLightFromNeighbors(pos) < 9) {
                 if (sync) {
                     if (worldObj.getWorldTime() % 40 == 0) {
                         setFlashStatus(true);
