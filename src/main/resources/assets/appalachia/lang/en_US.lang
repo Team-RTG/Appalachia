@@ -27,6 +27,9 @@ subtitles.entity.black_bear.death1=Black Bear dies
 subtitles.entity.black_bear.death2=Black Bear dies
 subtitles.entity.black_bear.death3=Black Bear dies
 
+entity.appalachia.FireFly.name=Fire Fly
+entity.FireFly.name=Fire Fly
+
 #Items
 
 item.appalachia:cooked_bear.name=Cooked Bear
