@@ -34,13 +34,6 @@ item.appalachia:raw_bear.name=Raw Bear
 
 #Blocks
 
-tile.log.autumn.grey.name=Grey Autumn Log
-tile.planks.autumn.grey.name=Grey Autumn Planks
-tile.slab.autumn.grey.name=Grey Autumn Slab
-tile.stairs.autumn.grey.name=Grey Autumn Stairs
-tile.fence.autumn.grey.name=Grey Autumn Fence
-tile.fence.gate.autumn.grey.name=Grey Autumn Fence Gate
-
 tile.leaves.oak.fallen.name=Oak Fallen Leaves
 
 tile.leaves.autumn.red.name=Red Autumn Leaves
@@ -53,27 +46,9 @@ tile.leaves.autumn.yellow.fallen.name=Yellow Autumn Fallen Leaves
 tile.sapling.quercus.robur.name=Quercus Robur Sapling
 
 
-tile.log.blueridge.01.name=Blue Ridge Log (01)
-tile.planks.blueridge.01.name=Blue Ridge Planks (01)
-tile.slab.blueridge.01.name=Blue Ridge Slab (01)
-tile.stairs.blueridge.01.name=Blue Ridge Stairs (01)
-tile.fence.blueridge.01.name=Blue Ridge Fence (01)
-tile.fence.gate.blueridge.01.name=Blue Ridge Fence Gate (01)
-
-tile.log.blueridge.02.name=Blue Ridge Log (02)
-tile.planks.blueridge.02.name=Blue Ridge Planks (02)
-tile.slab.blueridge.02.name=Blue Ridge Slab (02)
-tile.stairs.blueridge.02.name=Blue Ridge Stairs (02)
-tile.fence.blueridge.02.name=Blue Ridge Fence (02)
-tile.fence.gate.blueridge.02.name=Blue Ridge Fence Gate (02)
-
-tile.log.blueridge.03.name=Blue Ridge Log (03)
-tile.planks.blueridge.03.name=Blue Ridge Planks (03)
-tile.slab.blueridge.03.name=Blue Ridge Slab (03)
-tile.stairs.blueridge.03.name=Blue Ridge Stairs (03)
-tile.fence.blueridge.03.name=Blue Ridge Fence (03)
-tile.fence.gate.blueridge.03.name=Blue Ridge Fence Gate (03)
-
+#######################################################################
+# DYNAMICALLY-GENERATED CODE - PLEASE DO NO MODIFY BELOW THIS LINE
+#######################################################################
 
 tile.log.american_beech.01.name=American Beech Log (01)
 tile.log.thin.american_beech.01.name=American Beech Thin Log (01)

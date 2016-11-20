@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "axis=y":  { "model": "appalachia:log_autumn_grey" },
-        "axis=z":   { "model": "appalachia:log_autumn_grey", "x": 90 },
-        "axis=x":   { "model": "appalachia:log_autumn_grey", "x": 90, "y": 90 },
-        "axis=none": { "model": "appalachia:log_autumn_grey_bark" }
-    }
-}

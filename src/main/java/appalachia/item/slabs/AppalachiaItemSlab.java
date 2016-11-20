@@ -28,7 +28,7 @@ public class AppalachiaItemSlab extends ItemBlock {
     public AppalachiaItemSlab(Block block) {
 
         super(block);
-        this.fullBlock = AppalachiaBlocks.planks_autumn_grey.getDefaultState();
+        this.fullBlock = AppalachiaBlocks.planks_red_oak_01.getDefaultState();
     }
 
     public AppalachiaItemSlab(Block block, IBlockState fullBlock) {
