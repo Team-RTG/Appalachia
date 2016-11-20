@@ -1,5 +1,7 @@
 package appalachia.entity;
 
+import appalachia.client.renderer.entity.RenderFireFly;
+import appalachia.entity.passive.EntityFireFly;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -28,5 +30,6 @@ public class EntityManager
     @SideOnly(Side.CLIENT)
     public static void registerModels() {
         RenderingRegistry.registerEntityRenderingHandler(EntityBlackBear.class, RenderBlackBear.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityFireFly.class, RenderFireFly.FACTORY);
     }
 }
