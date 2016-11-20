@@ -1,4 +1,4 @@
-package appalachia.api.biome.blueridge;
+package appalachia.api.biome.smoky;
 
 import net.minecraft.init.Blocks;
 
@@ -7,9 +7,9 @@ import net.minecraftforge.common.BiomeDictionary;
 import appalachia.api.AppalachiaBiomeTypes;
 import appalachia.api.biome.IAppalachiaBiome;
 
-public class BiomeBlueRidgeBeach extends BiomeBlueRidge implements IAppalachiaBiome {
+public class BiomeSmokyBeach extends BiomeSmoky implements IAppalachiaBiome {
 
-    public BiomeBlueRidgeBeach(BiomeProperties props) {
+    public BiomeSmokyBeach(BiomeProperties props) {
 
         super(props);
 
@@ -17,7 +17,7 @@ public class BiomeBlueRidgeBeach extends BiomeBlueRidge implements IAppalachiaBi
 
         biomeTypes = new BiomeDictionary.Type[]{
             BiomeDictionary.Type.BEACH,
-            AppalachiaBiomeTypes.BLUERIDGE
+            AppalachiaBiomeTypes.SMOKY
         };
     }
 }

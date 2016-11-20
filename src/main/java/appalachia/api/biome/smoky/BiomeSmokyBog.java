@@ -1,4 +1,4 @@
-package appalachia.api.biome.blueridge;
+package appalachia.api.biome.smoky;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -10,11 +10,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import appalachia.api.AppalachiaBiomeTypes;
 import appalachia.api.biome.IAppalachiaBiome;
 
-public class BiomeBlueRidgeBog extends BiomeBlueRidge implements IAppalachiaBiome {
+public class BiomeSmokyBog extends BiomeSmoky implements IAppalachiaBiome {
 
     public static BiomeDictionary.Type[] biomeTypes;
 
-    public BiomeBlueRidgeBog(BiomeProperties props) {
+    public BiomeSmokyBog(BiomeProperties props) {
 
         super(props);
 
@@ -27,7 +27,7 @@ public class BiomeBlueRidgeBog extends BiomeBlueRidge implements IAppalachiaBiom
         biomeTypes = new BiomeDictionary.Type[]{
             BiomeDictionary.Type.SWAMP,
             BiomeDictionary.Type.LUSH,
-            AppalachiaBiomeTypes.BLUERIDGE
+            AppalachiaBiomeTypes.SMOKY
         };
     }
 

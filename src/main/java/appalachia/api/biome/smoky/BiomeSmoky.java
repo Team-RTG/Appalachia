@@ -1,4 +1,4 @@
-package appalachia.api.biome.blueridge;
+package appalachia.api.biome.smoky;
 
 import java.util.Random;
 
@@ -16,11 +16,11 @@ import appalachia.api.biome.AppalachiaBiome;
 import appalachia.api.biome.IAppalachiaBiome;
 import appalachia.entity.monster.EntityBlackBear;
 
-public abstract class BiomeBlueRidge extends AppalachiaBiome implements IAppalachiaBiome {
+public abstract class BiomeSmoky extends AppalachiaBiome implements IAppalachiaBiome {
 
     public static BiomeDictionary.Type[] biomeTypes;
 
-    public BiomeBlueRidge(BiomeProperties props) {
+    public BiomeSmoky(BiomeProperties props) {
 
         super(props);
         topBlock = Blocks.GRASS.getDefaultState();
@@ -32,7 +32,7 @@ public abstract class BiomeBlueRidge extends AppalachiaBiome implements IAppalac
         biomeTypes = new BiomeDictionary.Type[]{
             BiomeDictionary.Type.FOREST,
             BiomeDictionary.Type.DENSE,
-            AppalachiaBiomeTypes.BLUERIDGE
+            AppalachiaBiomeTypes.SMOKY
         };
     }
 

@@ -1,4 +1,4 @@
-package appalachia.rtg.world.biome.realistic.appalachia.blueridge.autumn;
+package appalachia.rtg.world.biome.realistic.appalachia.smoky;
 
 import java.util.Random;
 
@@ -40,15 +40,15 @@ import rtg.world.gen.terrain.HeightVariation;
 import rtg.world.gen.terrain.JitterEffect;
 import rtg.world.gen.terrain.TerrainBase;
 
-public class RealisticBiomeAPLBlueRidgeBogAutumn extends RealisticBiomeAPLBase {
+public class RealisticBiomeAPLSmokyBog extends RealisticBiomeAPLBase {
 
-    public static Biome biome = AppalachiaBiomes.blueRidgeBogAutumn;
+    public static Biome biome = AppalachiaBiomes.smokyBog;
     public static Biome river = Biomes.RIVER;
 
     protected static int treeMaxY = 220;
     protected static int shrubMaxY = 220;
 
-    public RealisticBiomeAPLBlueRidgeBogAutumn() {
+    public RealisticBiomeAPLSmokyBog() {
 
         super(biome, river);
     }
@@ -62,18 +62,18 @@ public class RealisticBiomeAPLBlueRidgeBogAutumn extends RealisticBiomeAPLBase {
     @Override
     public TerrainBase initTerrain() {
 
-        return new TerrainAPLBlueRidgeBogAutumn();
+        return new TerrainAPLSmokyBog();
     }
 
     @Override
     public SurfaceBase initSurface() {
 
-        return new SurfaceAPLBlueRidgeBogAutumn(config, biome.topBlock, biome.fillerBlock);
+        return new SurfaceAPLSmokyBog(config, biome.topBlock, biome.fillerBlock);
     }
 
-    public class SurfaceAPLBlueRidgeBogAutumn extends SurfaceBase {
+    public class SurfaceAPLSmokyBog extends SurfaceBase {
 
-        public SurfaceAPLBlueRidgeBogAutumn(BiomeConfig config, IBlockState top, IBlockState filler) {
+        public SurfaceAPLSmokyBog(BiomeConfig config, IBlockState top, IBlockState filler) {
 
             super(config, top, filler);
         }
@@ -121,11 +121,11 @@ public class RealisticBiomeAPLBlueRidgeBogAutumn extends RealisticBiomeAPLBase {
         }
     }
 
-    public class TerrainAPLBlueRidgeBogAutumn extends TerrainBase {
+    public class TerrainAPLSmokyBog extends TerrainBase {
 
         private HeightEffect height;
 
-        public TerrainAPLBlueRidgeBogAutumn() {
+        public TerrainAPLSmokyBog() {
 
             HeightVariation waterLand = new HeightVariation();
             waterLand.height = 1f;
@@ -327,6 +327,6 @@ public class RealisticBiomeAPLBlueRidgeBogAutumn extends RealisticBiomeAPLBase {
 
     @Override
     public Biome beachBiome() {
-        return this.beachBiome(AppalachiaBiomes.blueRidgeBeach);
+        return this.beachBiome(AppalachiaBiomes.smokyBeach);
     }
 }

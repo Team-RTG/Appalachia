@@ -1,4 +1,4 @@
-package appalachia.rtg.world.biome.realistic.appalachia.blueridge.autumn;
+package appalachia.rtg.world.biome.realistic.appalachia.blueridge;
 
 import java.util.Random;
 
@@ -22,12 +22,12 @@ import rtg.world.biome.realistic.RealisticBiomeBase;
 import rtg.world.gen.surface.SurfaceBase;
 import rtg.world.gen.terrain.TerrainBase;
 
-public class RealisticBiomeAPLBlueRidgeHillsAutumn extends RealisticBiomeAPLBase {
+public class RealisticBiomeAPLBlueRidgeForestAutumn extends RealisticBiomeAPLBase {
 
-    public static Biome biome = AppalachiaBiomes.blueRidgeHillsAutumn;
+    public static Biome biome = AppalachiaBiomes.blueRidgeForestAutumn;
     public static Biome river = AppalachiaBiomes.blueRidgeRiver;
 
-    public RealisticBiomeAPLBlueRidgeHillsAutumn() {
+    public RealisticBiomeAPLBlueRidgeForestAutumn() {
 
         super(biome, river);
     }
@@ -44,22 +44,22 @@ public class RealisticBiomeAPLBlueRidgeHillsAutumn extends RealisticBiomeAPLBase
     @Override
     public TerrainBase initTerrain() {
 
-        return RealisticBiomeBase.getBiome(Biome.getIdForBiome(AppalachiaBiomes.blueRidgeHills)).getTerrain();
+        return RealisticBiomeBase.getBiome(Biome.getIdForBiome(AppalachiaBiomes.blueRidgeForest)).getTerrain();
     }
 
     @Override
     public SurfaceBase initSurface() {
 
-        return new SurfaceAPLBlueRidgeHillsAutumn(config, biome.topBlock, biome.fillerBlock, BlockUtil.getStateDirt(2), 12f, 0.27f);
+        return new SurfaceAPLBlueRidgeForestAutumn(config, biome.topBlock, biome.fillerBlock, BlockUtil.getStateDirt(2), 12f, 0.27f);
     }
 
-    public class SurfaceAPLBlueRidgeHillsAutumn extends SurfaceBase {
+    public class SurfaceAPLBlueRidgeForestAutumn extends SurfaceBase {
 
         public IBlockState mixBlock;
         public float width;
         public float height;
 
-        public SurfaceAPLBlueRidgeHillsAutumn(BiomeConfig config, IBlockState top, IBlockState filler, IBlockState mix, float mixWidth, float mixHeight) {
+        public SurfaceAPLBlueRidgeForestAutumn(BiomeConfig config, IBlockState top, IBlockState filler, IBlockState mix, float mixWidth, float mixHeight) {
 
             super(config, top, filler);
 

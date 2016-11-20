@@ -1,7 +1,6 @@
-package appalachia.api.biome.blueridge.autumn;
+package appalachia.api.biome.smoky;
 
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.biome.BiomeDecorator;
 
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.relauncher.Side;
@@ -9,12 +8,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.api.AppalachiaBiomeTypes;
 import appalachia.api.biome.IAppalachiaBiome;
-import appalachia.api.biome.blueridge.BiomeBlueRidgeForest;
-import appalachia.api.biome.decorator.blueridge.DecoratorBlueRidgeForestAutumn;
 
-public class BiomeBlueRidgeForestAutumn extends BiomeBlueRidgeForest implements IAppalachiaBiome {
+public class BiomeSmokyForestAutumn extends BiomeSmokyForest implements IAppalachiaBiome {
 
-    public BiomeBlueRidgeForestAutumn(BiomeProperties props) {
+    public BiomeSmokyForestAutumn(BiomeProperties props) {
 
         super(props);
 
@@ -22,13 +19,8 @@ public class BiomeBlueRidgeForestAutumn extends BiomeBlueRidgeForest implements 
             BiomeDictionary.Type.FOREST,
             BiomeDictionary.Type.DENSE,
             AppalachiaBiomeTypes.AUTUMN,
-            AppalachiaBiomeTypes.BLUERIDGE
+            AppalachiaBiomeTypes.SMOKY
         };
-    }
-
-    @Override
-    public BiomeDecorator createBiomeDecorator() {
-        return new DecoratorBlueRidgeForestAutumn();
     }
 
     @Override
