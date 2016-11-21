@@ -28,7 +28,7 @@ public class AppalachiaTree extends TreeRTG {
 
         this.logBlock = Blocks.LOG.getDefaultState();
         this.leavesBlock = Blocks.LEAVES.getDefaultState();
-        this.fallenLeavesBlock = AppalachiaBlocks.leaves_autumn_red_fallen.getDefaultState();
+        this.fallenLeavesBlock = AppalachiaBlocks.leaves_red_oak_01_fallen.getDefaultState();
         this.saplingBlock = AppalachiaBlocks.sapling_quercus_robur.getDefaultState();
 
         this.minTrunkSize = -1;

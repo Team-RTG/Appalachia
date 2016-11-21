@@ -37,15 +37,6 @@ item.appalachia:raw_bear.name=Raw Bear
 
 #Blocks
 
-tile.leaves.oak.fallen.name=Oak Fallen Leaves
-
-tile.leaves.autumn.red.name=Red Autumn Leaves
-tile.leaves.autumn.red.fallen.name=Red Autumn Fallen Leaves
-tile.leaves.autumn.orange.name=Orange Autumn Leaves
-tile.leaves.autumn.orange.fallen.name=Orange Autumn Fallen Leaves
-tile.leaves.autumn.yellow.name=Yellow Autumn Leaves
-tile.leaves.autumn.yellow.fallen.name=Yellow Autumn Fallen Leaves
-
 tile.sapling.quercus.robur.name=Quercus Robur Sapling
 
 

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 import javax.annotation.Nullable;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks.EnumType;
 import net.minecraft.block.properties.IProperty;
@@ -24,7 +25,9 @@ import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import appalachia.api.AppalachiaAPI;
 import appalachia.api.AppalachiaBlocks;
+import appalachia.block.BlockManager;
 import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
 import com.google.common.collect.Lists;
@@ -137,5 +140,10 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
         {
             return BiomeColorHelper.getFoliageColorAtPos(worldIn, pos);
         }
+    }
+
+    public static Block getRandomLeaves() {
+
+        return (AppalachiaBlockLeaves)BlockManager.appalachiaLeaves.get(AppalachiaAPI.rand.nextInt(BlockManager.appalachiaLeaves.size()));
     }
 }

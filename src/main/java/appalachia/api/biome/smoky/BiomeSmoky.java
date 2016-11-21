@@ -61,7 +61,7 @@ public abstract class BiomeSmoky extends AppalachiaBiome implements IAppalachiaB
 
         double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
         //return noise < -0.1D ? 0x9c752a : 0x967129; // Brown.
-        return noise < -0.1D ? 0x968c29 : 0x968129;
+        return noise < -0.1D ? 0x809124 : 0x758421;
     }
 
     @Override
@@ -69,6 +69,6 @@ public abstract class BiomeSmoky extends AppalachiaBiome implements IAppalachiaB
     public int getFoliageColorAtPos(BlockPos pos) {
 
         double noise = GRASS_COLOR_NOISE.getValue((double)pos.getX() * 0.0225D, (double)pos.getZ() * 0.0225D);
-        return noise < -0.1D ? 0x968129 : 0x968c29;
+        return noise < -0.1D ? 0x758421 : 0x809124;
     }
 }

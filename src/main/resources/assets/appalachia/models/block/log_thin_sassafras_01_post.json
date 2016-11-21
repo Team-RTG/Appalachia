@@ -1,6 +1,0 @@
-{
-    "parent": "block/fence_post",
-    "textures": {
-        "texture": "appalachia:blocks/log_sassafras_01"
-    }
-}
