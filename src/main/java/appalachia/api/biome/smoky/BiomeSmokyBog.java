@@ -9,6 +9,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.api.AppalachiaBiomeTypes;
 import appalachia.api.biome.IAppalachiaBiome;
+import appalachia.entity.passive.EntityFireFly;
 
 public class BiomeSmokyBog extends BiomeSmoky implements IAppalachiaBiome {
 
@@ -23,6 +24,7 @@ public class BiomeSmokyBog extends BiomeSmoky implements IAppalachiaBiome {
         theBiomeDecorator.treesPerChunk = 2;
 
         this.spawnableCreatureList.clear();
+        this.spawnableCreatureList.add(new SpawnListEntry(EntityFireFly.class, 15, 4, 10));
 
         biomeTypes = new BiomeDictionary.Type[]{
             BiomeDictionary.Type.SWAMP,
