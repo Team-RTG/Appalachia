@@ -11,6 +11,7 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.color.IBlockColor;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -62,6 +63,13 @@ public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlo
         this.setDefaultState(blockState.getBaseState().withProperty(LAYERS, Integer.valueOf(1)));
         this.slug = unlocalizedName;
     }
+
+    @Nullable
+    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, World worldIn, BlockPos pos)
+    {
+        return NULL_AABB;
+    }
+
 
     @Override
     public String registryName() {
