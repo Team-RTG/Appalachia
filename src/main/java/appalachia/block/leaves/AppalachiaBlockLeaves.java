@@ -2,12 +2,14 @@ package appalachia.block.leaves;
 
 import java.util.List;
 import java.util.Random;
+import javax.annotation.Nullable;
 
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks.EnumType;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.color.IBlockColor;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -17,6 +19,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeColorHelper;
 
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -121,5 +124,18 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
     public List<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
 
         return Lists.newArrayList(new ItemStack(this));
+    }
+
+    public static class ColourHandler implements IBlockColor {
+
+        public ColourHandler() {
+
+        }
+
+        @Override
+        public int colorMultiplier(IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex)
+        {
+            return BiomeColorHelper.getFoliageColorAtPos(worldIn, pos);
+        }
     }
 }
