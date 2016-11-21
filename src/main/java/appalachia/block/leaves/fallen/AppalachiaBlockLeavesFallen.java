@@ -25,8 +25,10 @@ import net.minecraftforge.common.IShearable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import appalachia.api.AppalachiaAPI;
 import appalachia.api.block.IAppalachiaBlockLeavesFallen;
 import appalachia.api.util.Simplex;
+import appalachia.block.BlockManager;
 import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
 import com.google.common.collect.Lists;
@@ -254,5 +256,10 @@ public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlo
 
             return leafColours[noise];
         }
+    }
+
+    public static Block getRandomFallenLeaves() {
+
+        return (AppalachiaBlockLeavesFallen)BlockManager.appalachiaLeavesFallen.get(AppalachiaAPI.rand.nextInt(BlockManager.appalachiaLeavesFallen.size()));
     }
 }
