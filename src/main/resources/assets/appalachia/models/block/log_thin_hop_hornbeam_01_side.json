@@ -1,6 +1,0 @@
-{
-    "parent": "block/fence_side",
-    "textures": {
-        "texture": "appalachia:blocks/log_hop_hornbeam_01"
-    }
-}

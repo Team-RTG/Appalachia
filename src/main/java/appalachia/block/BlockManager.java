@@ -69,10 +69,6 @@ public class BlockManager {
 
         //Leaves.
 
-        AppalachiaBlocks.leaves_autumn_orange = new BlockLeavesAutumnOrange();
-        AppalachiaBlocks.leaves_autumn_red = new BlockLeavesAutumnRed();
-        AppalachiaBlocks.leaves_autumn_yellow = new BlockLeavesAutumnYellow();
-
         AppalachiaBlocks.leaves_american_beech_01 = new BlockLeavesAmericanBeech01();
         AppalachiaBlocks.leaves_american_chestnut_01 = new BlockLeavesAmericanChestnut01();
         AppalachiaBlocks.leaves_american_elm_01 = new BlockLeavesAmericanElm01();
@@ -111,12 +107,6 @@ public class BlockManager {
         addLeaves();
 
         //Fallen leaves.
-
-        AppalachiaBlocks.leaves_oak_fallen = new BlockLeavesOakFallen();
-
-        AppalachiaBlocks.leaves_autumn_orange_fallen = new BlockLeavesAutumnOrangeFallen();
-        AppalachiaBlocks.leaves_autumn_red_fallen = new BlockLeavesAutumnRedFallen();
-        AppalachiaBlocks.leaves_autumn_yellow_fallen = new BlockLeavesAutumnYellowFallen();
 
         AppalachiaBlocks.leaves_american_beech_01_fallen = new BlockLeavesAmericanBeech01Fallen();
         AppalachiaBlocks.leaves_american_chestnut_01_fallen = new BlockLeavesAmericanChestnut01Fallen();
@@ -637,10 +627,6 @@ public class BlockManager {
 
     private static void addLeaves() {
 
-        appalachiaLeaves.add(AppalachiaBlocks.leaves_autumn_orange);
-        appalachiaLeaves.add(AppalachiaBlocks.leaves_autumn_red);
-        appalachiaLeaves.add(AppalachiaBlocks.leaves_autumn_yellow);
-
         appalachiaLeaves.add(AppalachiaBlocks.leaves_american_beech_01);
         appalachiaLeaves.add(AppalachiaBlocks.leaves_american_chestnut_01);
         appalachiaLeaves.add(AppalachiaBlocks.leaves_american_elm_01);
@@ -678,12 +664,6 @@ public class BlockManager {
     }
 
     private static void addFallenLeaves() {
-
-        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_oak_fallen);
-
-        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_autumn_orange_fallen);
-        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_autumn_red_fallen);
-        appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_autumn_yellow_fallen);
 
         appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_american_beech_01_fallen);
         appalachiaLeavesFallen.add(AppalachiaBlocks.leaves_american_chestnut_01_fallen);
