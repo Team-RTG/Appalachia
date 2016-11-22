@@ -26,8 +26,7 @@ import appalachia.block.leaves.*;
 import appalachia.block.leaves.fallen.*;
 import appalachia.block.logs.*;
 import appalachia.block.planks.*;
-import appalachia.block.saplings.AppalachiaBlockSapling;
-import appalachia.block.saplings.BlockSaplingQuercusRobur;
+import appalachia.block.saplings.*;
 import appalachia.block.slabs.*;
 import appalachia.block.stairs.*;
 import appalachia.item.ItemManager;
@@ -380,7 +379,42 @@ public class BlockManager {
         addFenceGates();
 
         //Saplings.
-        AppalachiaBlocks.sapling_quercus_robur = new BlockSaplingQuercusRobur();
+
+        AppalachiaBlocks.sapling_american_beech_01 = new BlockSaplingAmericanBeech01();
+        AppalachiaBlocks.sapling_american_chestnut_01 = new BlockSaplingAmericanChestnut01();
+        AppalachiaBlocks.sapling_american_elm_01 = new BlockSaplingAmericanElm01();
+        AppalachiaBlocks.sapling_ash_01 = new BlockSaplingAsh01();
+        AppalachiaBlocks.sapling_bitternut_hickory_01 = new BlockSaplingBitternutHickory01();
+        AppalachiaBlocks.sapling_black_cherry_01 = new BlockSaplingBlackCherry01();
+        AppalachiaBlocks.sapling_black_gum_01 = new BlockSaplingBlackGum01();
+        AppalachiaBlocks.sapling_black_locust_01 = new BlockSaplingBlackLocust01();
+        AppalachiaBlocks.sapling_black_oak_01 = new BlockSaplingBlackOak01();
+        AppalachiaBlocks.sapling_black_walnut_01 = new BlockSaplingBlackWalnut01();
+        AppalachiaBlocks.sapling_blue_beech_01 = new BlockSaplingBlueBeech01();
+        AppalachiaBlocks.sapling_box_elder_01 = new BlockSaplingBoxElder01();
+        AppalachiaBlocks.sapling_buckeye_01 = new BlockSaplingBuckeye01();
+        AppalachiaBlocks.sapling_cedar_01 = new BlockSaplingCedar01();
+        AppalachiaBlocks.sapling_dogwood_01 = new BlockSaplingDogwood01();
+        AppalachiaBlocks.sapling_hackberry_01 = new BlockSaplingHackberry01();
+        AppalachiaBlocks.sapling_honey_locust_01 = new BlockSaplingHoneyLocust01();
+        AppalachiaBlocks.sapling_hop_hornbeam_01 = new BlockSaplingHopHornbeam01();
+        AppalachiaBlocks.sapling_persimmon_01 = new BlockSaplingPersimmon01();
+        AppalachiaBlocks.sapling_pignut_hickory_01 = new BlockSaplingPignutHickory01();
+        AppalachiaBlocks.sapling_red_elm_01 = new BlockSaplingRedElm01();
+        AppalachiaBlocks.sapling_red_maple_01 = new BlockSaplingRedMaple01();
+        AppalachiaBlocks.sapling_red_oak_01 = new BlockSaplingRedOak01();
+        AppalachiaBlocks.sapling_river_birch_01 = new BlockSaplingRiverBirch01();
+        AppalachiaBlocks.sapling_sassafras_01 = new BlockSaplingSassafras01();
+        AppalachiaBlocks.sapling_shagbark_hickory_01 = new BlockSaplingShagbarkHickory01();
+        AppalachiaBlocks.sapling_shortleaf_pine_01 = new BlockSaplingShortleafPine01();
+        AppalachiaBlocks.sapling_sugar_maple_01 = new BlockSaplingSugarMaple01();
+        AppalachiaBlocks.sapling_sycamore_01 = new BlockSaplingSycamore01();
+        AppalachiaBlocks.sapling_tulip_poplar_01 = new BlockSaplingTulipPoplar01();
+        AppalachiaBlocks.sapling_white_oak_01 = new BlockSaplingWhiteOak01();
+        AppalachiaBlocks.sapling_white_pine_01 = new BlockSaplingWhitePine01();
+        AppalachiaBlocks.sapling_white_walnut_01 = new BlockSaplingWhiteWalnut01();
+        AppalachiaBlocks.sapling_yellow_birch_01 = new BlockSaplingYellowBirch01();
+
         addSaplings();
 
         addAppalachiaBlocks();
@@ -703,7 +737,40 @@ public class BlockManager {
 
     private static void addSaplings() {
 
-        appalachiaSaplings.add(AppalachiaBlocks.sapling_quercus_robur);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_american_beech_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_american_chestnut_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_american_elm_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_ash_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_bitternut_hickory_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_black_cherry_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_black_gum_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_black_locust_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_black_oak_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_black_walnut_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_blue_beech_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_box_elder_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_buckeye_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_cedar_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_dogwood_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_hackberry_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_honey_locust_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_hop_hornbeam_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_persimmon_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_pignut_hickory_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_red_elm_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_red_maple_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_red_oak_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_river_birch_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_sassafras_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_shagbark_hickory_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_shortleaf_pine_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_sugar_maple_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_sycamore_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_tulip_poplar_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_white_oak_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_white_pine_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_white_walnut_01);
+        appalachiaSaplings.add(AppalachiaBlocks.sapling_yellow_birch_01);
     }
 
     private static void addAppalachiaBlocks() {

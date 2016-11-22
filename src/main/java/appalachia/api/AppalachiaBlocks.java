@@ -4,14 +4,7 @@ import net.minecraft.block.Block;
 
 public class AppalachiaBlocks {
 
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    // Saplings
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    public static Block sapling_quercus_robur;
-
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // DYNAMICALLY-GENERATED CODE - PLEASE DO NOT MODIFY BELOW THIS LINE
@@ -305,5 +298,39 @@ public class AppalachiaBlocks {
     public static Block stairs_yellow_birch_01;
 
 
+    public static Block sapling_american_beech_01;
+    public static Block sapling_american_chestnut_01;
+    public static Block sapling_american_elm_01;
+    public static Block sapling_ash_01;
+    public static Block sapling_bitternut_hickory_01;
+    public static Block sapling_black_cherry_01;
+    public static Block sapling_black_gum_01;
+    public static Block sapling_black_locust_01;
+    public static Block sapling_black_oak_01;
+    public static Block sapling_black_walnut_01;
+    public static Block sapling_blue_beech_01;
+    public static Block sapling_box_elder_01;
+    public static Block sapling_buckeye_01;
+    public static Block sapling_cedar_01;
+    public static Block sapling_dogwood_01;
+    public static Block sapling_hackberry_01;
+    public static Block sapling_honey_locust_01;
+    public static Block sapling_hop_hornbeam_01;
+    public static Block sapling_persimmon_01;
+    public static Block sapling_pignut_hickory_01;
+    public static Block sapling_red_elm_01;
+    public static Block sapling_red_maple_01;
+    public static Block sapling_red_oak_01;
+    public static Block sapling_river_birch_01;
+    public static Block sapling_sassafras_01;
+    public static Block sapling_shagbark_hickory_01;
+    public static Block sapling_shortleaf_pine_01;
+    public static Block sapling_sugar_maple_01;
+    public static Block sapling_sycamore_01;
+    public static Block sapling_tulip_poplar_01;
+    public static Block sapling_white_oak_01;
+    public static Block sapling_white_pine_01;
+    public static Block sapling_white_walnut_01;
+    public static Block sapling_yellow_birch_01;
 
 }

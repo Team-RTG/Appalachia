@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "appalachia:blocks/sapling_blue_beech_01"
+    }
+}

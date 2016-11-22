@@ -11,7 +11,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
-import appalachia.api.AppalachiaBlocks;
 import com.google.common.collect.Lists;
 
 public class TreeQuercusRobur extends AppalachiaTree {
@@ -40,7 +39,7 @@ public class TreeQuercusRobur extends AppalachiaTree {
         super(notify);
 
         this.trunkType = TrunkType.THIN;
-        this.saplingBlock = AppalachiaBlocks.sapling_quercus_robur.getDefaultState();
+        this.saplingBlock = Blocks.SAPLING.getDefaultState();
     }
 
     void generateLeafNodeList() {

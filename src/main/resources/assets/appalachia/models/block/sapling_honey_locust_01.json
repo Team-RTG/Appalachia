@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "appalachia:blocks/sapling_honey_locust_01"
+    }
+}
