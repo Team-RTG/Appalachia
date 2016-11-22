@@ -24,7 +24,7 @@ public class BiomeSmokyBog extends BiomeSmoky implements IAppalachiaBiome {
         theBiomeDecorator.treesPerChunk = 2;
 
         this.spawnableCreatureList.clear();
-        this.spawnableCreatureList.add(new SpawnListEntry(EntityFireFly.class, 15, 4, 10));
+        this.spawnableCaveCreatureList.add(new SpawnListEntry(EntityFireFly.class, 10, 4, 8));
 
         biomeTypes = new BiomeDictionary.Type[]{
             BiomeDictionary.Type.SWAMP,

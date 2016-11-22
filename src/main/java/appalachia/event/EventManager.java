@@ -13,6 +13,8 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.LAKE_LAVA;
 import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.LAKE_WATER;
+import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE;
+import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAVA;
 
 import appalachia.api.AppalachiaAPI;
 import appalachia.api.biome.decorator.AppalachiaDecorator;
@@ -72,6 +74,7 @@ public class EventManager {
         public void onBiomeDecorate(DecorateBiomeEvent.Decorate event) {
 
             // Apparently, using switch statements here is bad. Because ASM.
+            // No switch statements allowed! - Pink
             if (event.getType() == LAKE_WATER || event.getType() == LAKE_LAVA) {
                 event.setResult(Event.Result.DENY);
             }
@@ -88,26 +91,22 @@ public class EventManager {
         @SubscribeEvent
         public void onPopulate(PopulateChunkEvent.Populate event) {
 
-            switch (event.getType()) {
+            // Prevent ponds from generating, depending on the biome.
+            // Apparently, using switch statements here is bad. Because ASM.
+            // No switch statements allowed! - Pink
+            if (event.getType() == LAKE || event.getType() == LAVA) {
 
-                // Prevent ponds from generating, depending on the biome.
-                case LAKE:
-                case LAVA:
+                Biome biome = event.getWorld().getBiome(new BlockPos(event.getChunkX() * 16 + 8, 0, event.getChunkZ() * 16 + 8));
 
-                    Biome biome = event.getWorld().getBiome(new BlockPos(event.getChunkX() * 16 + 8, 0, event.getChunkZ() * 16 + 8));
+                if (biome.theBiomeDecorator instanceof AppalachiaDecorator) {
 
-                    if (biome.theBiomeDecorator instanceof AppalachiaDecorator) {
+                    AppalachiaDecorator decorator = (AppalachiaDecorator)biome.theBiomeDecorator;
 
-                        AppalachiaDecorator decorator = (AppalachiaDecorator)biome.theBiomeDecorator;
-
-                        if (!decorator.generatePonds) {
-                            event.setResult(Event.Result.DENY);
-                            return;
-                        }
+                    if (!decorator.generatePonds) {
+                        event.setResult(Event.Result.DENY);
+                        return;
                     }
-
-                default:
-                    break;
+                }
             }
         }
     }

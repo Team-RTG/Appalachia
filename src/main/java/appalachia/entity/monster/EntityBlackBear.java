@@ -24,7 +24,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.api.AppalachiaSounds;
-import appalachia.loot.LootAppalachia;
+import appalachia.loot.LootManager;
 
 public class EntityBlackBear extends EntityAnimal {
     private static final DataParameter<Boolean> IS_STANDING = EntityDataManager.createKey(EntityBlackBear.class, DataSerializers.BOOLEAN);
@@ -105,7 +105,7 @@ public class EntityBlackBear extends EntityAnimal {
     @Nullable
     @Override
     protected ResourceLocation getLootTable() {
-        return LootAppalachia.LOOT_TABLE_BLACK_BEAR;
+        return LootManager.LOOT_TABLE_BLACK_BEAR;
     }
 
     @Override

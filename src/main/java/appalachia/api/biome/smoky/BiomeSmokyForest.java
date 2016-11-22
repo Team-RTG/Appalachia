@@ -12,7 +12,7 @@ public class BiomeSmokyForest extends BiomeSmoky implements IAppalachiaBiome {
 
         super(props);
 
-        this.spawnableCreatureList.add(new SpawnListEntry(EntityFireFly.class, 15, 4, 10));
+        this.spawnableCaveCreatureList.add(new SpawnListEntry(EntityFireFly.class, 10, 4, 8));
 
         biomeTypes = new BiomeDictionary.Type[]{
             BiomeDictionary.Type.FOREST,
