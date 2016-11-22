@@ -11,6 +11,7 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.color.IBlockColor;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -25,8 +26,10 @@ import net.minecraftforge.common.IShearable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import appalachia.api.AppalachiaAPI;
 import appalachia.api.block.IAppalachiaBlockLeavesFallen;
 import appalachia.api.util.Simplex;
+import appalachia.block.BlockManager;
 import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
 import com.google.common.collect.Lists;
@@ -60,6 +63,13 @@ public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlo
         this.setDefaultState(blockState.getBaseState().withProperty(LAYERS, Integer.valueOf(1)));
         this.slug = unlocalizedName;
     }
+
+    @Nullable
+    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, World worldIn, BlockPos pos)
+    {
+        return NULL_AABB;
+    }
+
 
     @Override
     public String registryName() {
@@ -254,5 +264,10 @@ public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlo
 
             return leafColours[noise];
         }
+    }
+
+    public static Block getRandomFallenLeaves() {
+
+        return (AppalachiaBlockLeavesFallen)BlockManager.appalachiaLeavesFallen.get(AppalachiaAPI.rand.nextInt(BlockManager.appalachiaLeavesFallen.size()));
     }
 }

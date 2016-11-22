@@ -1,13 +1,13 @@
 package rtg.world.gen.feature.tree.rtg;
 
-import net.minecraft.block.BlockLog;
+import java.util.Random;
+
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import rtg.util.BlockUtil;
 
-import java.util.Random;
+import rtg.util.BlockUtil;
 
 /**
  * Cocos Nucifera (Coconut Palm)
@@ -110,30 +110,15 @@ public class TreeRTGCocosNucifera extends TreeRTG {
     @Override
     public boolean generate(World world, Random rand, BlockPos pos) {
 
+        if (!this.isGroundValid(world, pos, true)) {
+            return false;
+        }
+
         int x = pos.getX();
         int y = pos.getY();
         int z = pos.getZ();
 
-        try {
-            this.trunkLog = this.logBlock.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE);
-        }
-        catch (Exception e) {
-            this.trunkLog = this.logBlock;
-        }
-
-        IBlockState b = world.getBlockState(new BlockPos(x, y - 1, z));
-        boolean validGroundBlock = false;
-
-        for (int i = 0; i < this.validGroundBlocks.size(); i++) {
-            if (b == this.validGroundBlocks.get(i)) {
-                validGroundBlock = true;
-                break;
-            }
-        }
-
-        if (!validGroundBlock) {
-            return false;
-        }
+        this.trunkLog = this.getTrunkLog(this.logBlock);
 
         double horDir = getRandomDir(rand);
         float verDir = 0.3f + rand.nextFloat() * 0.4f;
@@ -159,7 +144,7 @@ public class TreeRTGCocosNucifera extends TreeRTG {
 
         while (c < length) {
 
-            world.setBlockState(new BlockPos((int) posX, (int) posY, (int) posZ), this.trunkLog, this.generateFlag);
+            this.placeLogBlock(world, new BlockPos((int) posX, (int) posY, (int) posZ), this.trunkLog, this.generateFlag);
 
             if (c < length - 3) {
                 loss = Math.abs(velX) + Math.abs(velZ);
@@ -182,7 +167,7 @@ public class TreeRTGCocosNucifera extends TreeRTG {
         if (!this.noLeaves) {
 
             for (int j = 0; j < leavesLength; j += 3) {
-                world.setBlockState(new BlockPos(x + leaves[j], y + leaves[j + 1], z + leaves[j + 2]), this.leavesBlock, this.generateFlag);
+                this.placeLeavesBlock(world, new BlockPos(x + leaves[j], y + leaves[j + 1], z + leaves[j + 2]), this.leavesBlock, this.generateFlag);
             }
         }
 

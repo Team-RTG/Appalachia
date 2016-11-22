@@ -24,10 +24,10 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
+import appalachia.api.biome.AppalachiaBiome;
 import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
-import appalachia.api.biome.AppalachiaBiome;
+import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
 
 public class AppalachiaBlockSapling extends BlockBush implements IGrowable, IAppalachiaBlock {
 

@@ -9,14 +9,14 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
-import rtg.api.biome.BiomeConfig;
-import rtg.config.rtg.ConfigRTG;
+import rtg.config.BiomeConfig;
+import rtg.config.ConfigRTG;
 import rtg.util.CellNoise;
 import rtg.util.ModPresenceTester;
 import rtg.util.OpenSimplexNoise;
 import rtg.util.UBColumnCache;
 
-public class SurfaceBase {
+public abstract class SurfaceBase {
 
     private final static ModPresenceTester undergroundBiomesMod = new ModPresenceTester("UndergroundBiomes");
     // create UBColumnCache only if UB is present
@@ -24,6 +24,9 @@ public class SurfaceBase {
     protected IBlockState topBlock;
     protected IBlockState fillerBlock;
     protected BiomeConfig biomeConfig;
+
+    public IBlockState shadowStoneBlock;
+    public IBlockState shadowDesertBlock;
 
     public SurfaceBase(BiomeConfig config, Block top, byte topByte, Block fill, byte fillByte) {
 
@@ -42,10 +45,9 @@ public class SurfaceBase {
         }
 
         biomeConfig = config;
-
         topBlock = top;
         fillerBlock = fill;
-
+        this.initShadowBlocks();
         this.assignUserConfigs(config, top, fill);
     }
 
@@ -61,7 +63,7 @@ public class SurfaceBase {
         }
         else {
 
-            return Block.getBlockFromName(ConfigRTG.shadowStoneBlockId).getStateFromMeta(ConfigRTG.shadowStoneBlockByte);
+            return this.shadowStoneBlock;
         }
     }
 
@@ -73,7 +75,7 @@ public class SurfaceBase {
         }
         else {
 
-            return Block.getBlockFromName(ConfigRTG.shadowDesertBlockId).getStateFromMeta(ConfigRTG.shadowDesertBlockByte);
+            return this.shadowDesertBlock;
         }
     }
 
@@ -99,53 +101,56 @@ public class SurfaceBase {
 
     private void assignUserConfigs(BiomeConfig config, IBlockState top, IBlockState fill) {
 
-        String userTopBlock = config._string(BiomeConfig.surfaceTopBlockId);
-        String userTopBlockMeta = config._string(BiomeConfig.surfaceTopBlockMetaId);
-        try {
-            if (Block.getBlockFromName(userTopBlock) != null) {
-                topBlock = Block.getBlockFromName(userTopBlock).getStateFromMeta(Byte.valueOf(userTopBlockMeta));
-            }
-            else {
-                topBlock = top;
-            }
-        }
-        catch (Exception e) {
-            topBlock = top;
-        }
-
-        String userFillerBlock = config._string(BiomeConfig.surfaceFillerBlockId);
-        String userFillerBlockMeta = config._string(BiomeConfig.surfaceFillerBlockMetaId);
-        try {
-            if (Block.getBlockFromName(userFillerBlock) != null) {
-                fillerBlock = Block.getBlockFromName(userFillerBlock).getStateFromMeta(Integer.parseInt(userFillerBlockMeta));
-            }
-            else {
-                fillerBlock = fill;
-            }
-        }
-        catch (Exception e) {
-            fillerBlock = fill;
-        }
+        topBlock = getConfigBlock(config.SURFACE_TOP_BLOCK.get(), config.SURFACE_TOP_BLOCK_META.get(), top);
+        fillerBlock = getConfigBlock(config.SURFACE_FILLER_BLOCK.get(), config.SURFACE_FILLER_BLOCK_META.get(), fill);
     }
 
-    protected IBlockState getConfigBlock(BiomeConfig config, String propertyId, String propertyMeta, IBlockState blockDefault) {
+    protected IBlockState getConfigBlock(String userBlockId, int userBlockMeta, IBlockState blockDefault) {
 
-        IBlockState blockReturn = blockDefault;
-        String userBlockId = config._string(propertyId);
-        String userBlockMeta = config._string(propertyMeta);
+        IBlockState blockReturn;
 
         try {
-            if (Block.getBlockFromName(userBlockId) != null) {
-                blockReturn = Block.getBlockFromName(userBlockId).getStateFromMeta(Integer.parseInt(userBlockMeta));
+
+            Block blockConfig = Block.getBlockFromName(userBlockId);
+
+            if (blockConfig != null) {
+
+                if (userBlockMeta == 0) {
+
+                    blockReturn = blockConfig.getDefaultState();
+                }
+                else {
+
+                    blockReturn = blockConfig.getStateFromMeta(userBlockMeta);
+                }
             }
             else {
+
                 blockReturn = blockDefault;
             }
         }
         catch (Exception e) {
+
             blockReturn = blockDefault;
         }
 
         return blockReturn;
+    }
+
+    protected void initShadowBlocks() {
+
+        try {
+            this.shadowStoneBlock = Block.getBlockFromName(ConfigRTG.shadowStoneBlockId).getStateFromMeta(ConfigRTG.shadowStoneBlockByte);
+        }
+        catch (Exception e) {
+            this.shadowStoneBlock = Block.getBlockFromName(ConfigRTG.defaultShadowStoneBlockId).getStateFromMeta(ConfigRTG.defaultShadowStoneBlockByte);
+        }
+
+        try {
+            this.shadowDesertBlock = Block.getBlockFromName(ConfigRTG.shadowDesertBlockId).getStateFromMeta(ConfigRTG.shadowDesertBlockByte);
+        }
+        catch (Exception e) {
+            this.shadowDesertBlock = Block.getBlockFromName(ConfigRTG.defaultShadowDesertBlockId).getStateFromMeta(ConfigRTG.defaultShadowDesertBlockByte);
+        }
     }
 }

@@ -9,7 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-import rtg.config.rtg.ConfigRTG;
+import rtg.config.ConfigRTG;
 import rtg.util.BoulderUtil;
 import rtg.util.RandomUtil;
 
@@ -133,7 +133,11 @@ public class WorldGenBlob extends WorldGenerator {
                             }
                         }
 
-                        if (block == Blocks.GRASS.getDefaultState() || block == Blocks.DIRT.getDefaultState() || block == Blocks.STONE.getDefaultState() || block == Blocks.GRAVEL.getDefaultState() || block == Blocks.SAND.getDefaultState()) {
+                        if (block.getBlock() == Blocks.GRASS
+                            || block.getBlock() == Blocks.DIRT
+                            || block.getBlock() == Blocks.STONE
+                            || block.getBlock() == Blocks.GRAVEL
+                            || block.getBlock() == Blocks.SAND) {
                             break label63;
                         }
                     }

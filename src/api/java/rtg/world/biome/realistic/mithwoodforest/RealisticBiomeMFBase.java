@@ -4,23 +4,24 @@ import net.minecraft.world.biome.Biome;
 
 import net.minecraftforge.fml.common.Loader;
 
-import rtg.api.biome.BiomeConfig;
-import rtg.api.biome.mithwoodforest.config.BiomeConfigMF;
 import rtg.util.Logger;
 import rtg.world.biome.realistic.RealisticBiomeBase;
-import rtg.world.gen.surface.SurfaceBase;
-import rtg.world.gen.terrain.TerrainBase;
 
 @SuppressWarnings("WeakerAccess")
-public class RealisticBiomeMFBase extends RealisticBiomeBase {
+public abstract class RealisticBiomeMFBase extends RealisticBiomeBase {
 
     public static RealisticBiomeBase mfMithwoodForest;
 
-    public RealisticBiomeMFBase(BiomeConfig config, Biome b, Biome riverbiome, TerrainBase t, SurfaceBase s) {
+    public RealisticBiomeMFBase(Biome b, Biome riverbiome) {
 
-        super(config, b, riverbiome, t, s);
+        super(b, riverbiome);
 
         this.lavaSurfaceLakeChance = 0;
+    }
+
+    @Override
+    public String modSlug() {
+        return "mithwoodforest";
     }
 
     public static void addBiomes() {
@@ -38,7 +39,7 @@ public class RealisticBiomeMFBase extends RealisticBiomeBase {
                 String biomeClass = biome.getBiomeClass().getName();
 
                 if (biomeName.equals("Mithwood Forest") && biomeClass.equals("rainbeau.mithwoodforest.RMFWorldGen.BiomeMithwoodForest")) {
-                    mfMithwoodForest = new RealisticBiomeMFMithwoodForest(biome, BiomeConfigMF.biomeConfigMFMithwoodForest);
+                    mfMithwoodForest = new RealisticBiomeMFMithwoodForest(biome);
                 }
             }
         }

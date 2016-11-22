@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
 
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -14,10 +15,8 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStoppedEvent;
 
-import rtg.api.event.BiomeConfigEvent;
-import rtg.config.BiomeConfigManager;
 import rtg.config.ConfigManager;
-import rtg.config.rtg.ConfigRTG;
+import rtg.config.ConfigRTG;
 import rtg.event.EventManagerRTG;
 import rtg.event.WorldTypeMessageEventHandler;
 import rtg.proxy.ClientProxy;
@@ -31,7 +30,9 @@ import rtg.world.biome.realistic.betteragriculture.RealisticBiomeBABase;
 import rtg.world.biome.realistic.biomesoplenty.RealisticBiomeBOPBase;
 import rtg.world.biome.realistic.biomesyougo.RealisticBiomeBYGBase;
 import rtg.world.biome.realistic.flowercraft.RealisticBiomeFCBase;
+import rtg.world.biome.realistic.mineworld.RealisticBiomeMWBase;
 import rtg.world.biome.realistic.mithwoodforest.RealisticBiomeMFBase;
+import rtg.world.biome.realistic.morechinesemc.RealisticBiomeMCMBase;
 import rtg.world.biome.realistic.sugiforest.RealisticBiomeSFBase;
 import rtg.world.biome.realistic.vanilla.RealisticBiomeVanillaBase;
 import rtg.world.gen.structure.MapGenScatteredFeatureRTG;
@@ -40,6 +41,14 @@ import rtg.world.gen.structure.MapGenVillageRTG;
 import rtg.world.gen.structure.StructureOceanMonumentRTG;
 
 
+@SuppressWarnings({"WeakerAccess", "unused"})
+@Mod(
+    modid                    = ModInfo.MOD_ID,
+    name                     = ModInfo.MOD_NAME,
+    version                  = "5.0.0.0",
+    dependencies             = "required-after:Forge@[12.18.1.2011,)" + ModInfo.MOD_DEPS,
+    acceptableRemoteVersions = "*"
+)
 public class RTG {
 
     public static String configPath;
@@ -61,11 +70,6 @@ public class RTG {
         instance = this;
 
         worldtype = new WorldTypeRTG(ModInfo.WORLD_TYPE);
-
-        // Biome configs MUST get initialised before the main config.
-        MinecraftForge.EVENT_BUS.post(new BiomeConfigEvent.Pre());
-        BiomeConfigManager.initBiomeConfigs();
-        MinecraftForge.EVENT_BUS.post(new BiomeConfigEvent.Post());
 
         configPath = event.getModConfigurationDirectory() + File.separator + ModInfo.CONFIG_DIRECTORY + File.separator;
         ConfigManager.init(configPath);
@@ -96,7 +100,9 @@ public class RTG {
         RealisticBiomeBOPBase.addBiomes();
         RealisticBiomeBYGBase.addBiomes();
         RealisticBiomeFCBase.addBiomes();
+        RealisticBiomeMCMBase.addBiomes();
         RealisticBiomeMFBase.addBiomes();
+        RealisticBiomeMWBase.addBiomes();
         RealisticBiomeSFBase.addBiomes();
         
         RealisticBiomePresenceTester.doBiomeCheck();

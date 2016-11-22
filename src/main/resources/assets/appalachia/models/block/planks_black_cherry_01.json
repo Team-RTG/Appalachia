@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "appalachia:blocks/planks_black_cherry_01"
+    }
+}

@@ -4,35 +4,54 @@ import net.minecraft.world.biome.Biome;
 
 public class AppalachiaBiomes {
 
-    public static Biome appalachianMountains;
     public static Biome blueRidgeForest;
+    public static Biome blueRidgeForestAutumn;
     public static Biome blueRidgeHills;
+    public static Biome blueRidgeHillsAutumn;
     public static Biome blueRidgeMountains;
+    public static Biome blueRidgeMountainsAutumn;
+    public static Biome blueRidgeBog;
+    public static Biome blueRidgeBogAutumn;
     public static Biome blueRidgeBeach;
     public static Biome blueRidgeRiver;
-    public static Biome prairie;
-    public static Biome smokyMountains;
 
-    public static Biome blueRidgeForestAutumn;
-    public static Biome blueRidgeHillsAutumn;
-    public static Biome blueRidgeMountainsAutumn;
+    public static Biome smokyForest;
+    public static Biome smokyForestAutumn;
+    public static Biome smokyHills;
+    public static Biome smokyHillsAutumn;
+    public static Biome smokyMountains;
+    public static Biome smokyMountainsAutumn;
+    public static Biome smokyBog;
+    public static Biome smokyBogAutumn;
+    public static Biome smokyBeach;
+    public static Biome smokyRiver;
+
 
     public static enum AppalachiaBiomeProps {
-        //                                                          BH      HV      Temp    Rain    H2OColour   Snow?
-        APPALACHIAN_MOUNTAINS("Appalachian Mountains",              1.0F,   0.5F,   0.2F,   0.3F,   16777215,   false),
 
-        BLUE_RIDGE_FOREST_AUTUMN("Autumn Blue Ridge Forest",        0.1F,   0.1F,   0.34F,  0.8F,   16777215,   false),
-        BLUE_RIDGE_HILLS_AUTUMN("Autumn Blue Ridge Hills",          0.15F,  0.15F,  0.34F,  0.8F,   16777215,   false),
-        BLUE_RIDGE_MOUNTAINS_AUTUMN("Autumn Blue Ridge Mountains",  0.2F,   0.2F,   0.34F,  0.8F,   16777215,   false),
+        //                                                          BH      HV      Temp    Rain    H2OColour   Snow?
 
         BLUE_RIDGE_FOREST("Blue Ridge Forest",                      0.1F,   0.1F,   0.34F,  0.8F,   16777215,   false),
+        BLUE_RIDGE_FOREST_AUTUMN("Autumn Blue Ridge Forest",        0.1F,   0.1F,   0.34F,  0.8F,   16777215,   false),
         BLUE_RIDGE_HILLS("Blue Ridge Hills",                        0.15F,  0.15F,  0.34F,  0.8F,   16777215,   false),
+        BLUE_RIDGE_HILLS_AUTUMN("Autumn Blue Ridge Hills",          0.15F,  0.15F,  0.34F,  0.8F,   16777215,   false),
         BLUE_RIDGE_MOUNTAINS("Blue Ridge Mountains",                0.2F,   0.2F,   0.34F,  0.8F,   16777215,   false),
+        BLUE_RIDGE_MOUNTAINS_AUTUMN("Autumn Blue Ridge Mountains",  0.2F,   0.2F,   0.34F,  0.8F,   16777215,   false),
+        BLUE_RIDGE_BOG("Blue Ridge Bog",                            -0.2F,  0.1F,   0.34F,  0.9F,   16777215,   false),
+        BLUE_RIDGE_BOG_AUTUMN("Autumn Blue Ridge Bog",              -0.2F,  0.1F,   0.34F,  0.9F,   16777215,   false),
         BLUE_RIDGE_BEACH("Blue Ridge Beach",                        0.1F,   0.05F,  0.34F,  0.8F,   16777215,   false),
         BLUE_RIDGE_RIVER("Blue Ridge River",                        0.1F,   0.05F,  0.34F,  0.8F,   16777215,   false),
 
-        PRAIRIE("Prairie",                                          0.125F, 0.05F,  0.8F,   0.4F,   16777215,   false),
-        SMOKY_MOUNTAINS("Smoky Mountains",                          1.0F,   0.5F,   0.2F,   0.3F,   16777215,   false);
+        SMOKY_FOREST("Smoky Forest",                                0.1F,   0.1F,   0.44F,  0.8F,   16777215,   false),
+        SMOKY_FOREST_AUTUMN("Autumn Smoky Forest",                  0.1F,   0.1F,   0.44F,  0.8F,   16777215,   false),
+        SMOKY_HILLS("Smoky Hills",                                  0.15F,  0.15F,  0.44F,  0.8F,   16777215,   false),
+        SMOKY_HILLS_AUTUMN("Autumn Smoky Hills",                    0.15F,  0.15F,  0.44F,  0.8F,   16777215,   false),
+        SMOKY_MOUNTAINS("Smoky Mountains",                          0.2F,   0.2F,   0.44F,  0.8F,   16777215,   false),
+        SMOKY_MOUNTAINS_AUTUMN("Autumn Smoky Mountains",            0.2F,   0.2F,   0.44F,  0.8F,   16777215,   false),
+        SMOKY_BOG("Smoky Bog",                                      -0.2F,  0.1F,   0.44F,  0.9F,   16777215,   false),
+        SMOKY_BOG_AUTUMN("Autumn Smoky Bog",                        -0.2F,  0.1F,   0.44F,  0.9F,   16777215,   false),
+        SMOKY_BEACH("Smoky Beach",                                  0.1F,   0.05F,  0.44F,  0.8F,   16777215,   false),
+        SMOKY_RIVER("Smoky River",                                  0.1F,   0.05F,  0.44F,  0.8F,   16777215,   false);
 
         private final String biomeName;
         private final float baseHeight;

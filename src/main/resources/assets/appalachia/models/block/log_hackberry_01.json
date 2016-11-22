@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "appalachia:blocks/log_hackberry_top_01",
+        "side": "appalachia:blocks/log_hackberry_01"
+    }
+}

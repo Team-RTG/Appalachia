@@ -11,15 +11,17 @@ import net.minecraft.world.World;
 public class WorldUtil {
 
     private World world;
+    private boolean appalachia;
 
     public WorldUtil(World world) {
 
         this.world = world;
+        ModPresenceTester apl = new ModPresenceTester("appalachia");
+        this.appalachia = apl.present();
     }
 
     /**
      * Checks a given coordinate to see if it is surrounded by a given block, usually air.
-     * This method only checks along the same Y coord.
      */
     public boolean isSurroundedByBlock(IBlockState checkBlock, int checkDistance, SurroundCheckType checkType, Random rand, int x, int y, int z) {
 
@@ -81,6 +83,20 @@ public class WorldUtil {
 
                 break;
 
+            case UP: // Checks above coord.
+
+                IBlockState b;
+                for (int i = checkDistance; i > 0; i--) {
+
+                    b = this.world.getBlockState(new BlockPos(x, y + i, z));
+
+                    if (b != checkBlock) {
+                        return false;
+                    }
+                }
+
+                break;
+
             default:
                 break;
         }
@@ -90,6 +106,7 @@ public class WorldUtil {
 
     /**
      * Checks to see if a given block is above a given coordinate.
+     * Use isSurroundedByBlock() with SurroundCheckType.UP if you want to check all blocks above.
      */
     public boolean isBlockAbove(IBlockState checkBlock, int checkDistance, World world, int x, int y, int z, boolean materialCheck) {
 
@@ -124,9 +141,27 @@ public class WorldUtil {
         this.setDoublePlant(lowerPos, doublePlant, 2);
     }
 
+    public boolean canSnowAt(BlockPos pos, boolean checkLight) {
+
+        if (!this.world.canSnowAt(pos, true)) {
+            return false;
+        }
+
+        if (this.appalachia) {
+            BlockPos groundPos = pos.down();
+            String groundBlockName = this.world.getBlockState(groundPos).getBlock().getUnlocalizedName().toLowerCase();
+            if (groundBlockName.contains("fallen") && groundBlockName.contains("leaves")) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public enum SurroundCheckType {
         FULL,
         CARDINAL,
-        ORDINAL
+        ORDINAL,
+        UP
     }
 }

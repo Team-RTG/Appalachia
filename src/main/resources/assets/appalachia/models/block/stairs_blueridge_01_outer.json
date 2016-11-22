@@ -1,8 +1,0 @@
-{
-    "parent": "block/outer_stairs",
-    "textures": {
-        "bottom": "appalachia:blocks/planks_blueridge_01",
-        "top": "appalachia:blocks/planks_blueridge_01",
-        "side": "appalachia:blocks/planks_blueridge_01"
-    }
-}

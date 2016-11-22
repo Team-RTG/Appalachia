@@ -1,0 +1,6 @@
+{
+    "parent": "block/fence_inventory",
+    "textures": {
+        "texture": "appalachia:blocks/planks_yellow_birch_01"
+    }
+}

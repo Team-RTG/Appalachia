@@ -1,0 +1,6 @@
+{
+    "parent": "block/wall_gate_closed",
+    "textures": {
+        "texture": "appalachia:blocks/planks_black_oak_01"
+    }
+}

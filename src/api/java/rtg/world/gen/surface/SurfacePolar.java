@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
-import rtg.api.biome.BiomeConfig;
+import rtg.config.BiomeConfig;
 import rtg.util.CellNoise;
 import rtg.util.OpenSimplexNoise;
 import rtg.util.SnowHeightCalculator;
@@ -47,7 +47,7 @@ public class SurfacePolar extends SurfaceBase {
 
                 if (riverPaint) {
                     if (grass && depth < 4) {
-                        primer.setBlockState(x, k, y, Blocks.DIRT.getDefaultState());
+                        primer.setBlockState(x, k, y, fillerBlock);
                     }
                     else if (depth == 0) {
                         if (rand.nextInt(2) == 0) {

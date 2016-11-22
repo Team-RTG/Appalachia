@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "half=bottom": { "model": "appalachia:slab_honey_locust_01" },
+        "half=top": { "model": "appalachia:slab_honey_locust_01_upper" }
+    }
+}

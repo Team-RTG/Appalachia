@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "half=bottom": { "model": "appalachia:slab_river_birch_01" },
+        "half=top": { "model": "appalachia:slab_river_birch_01_upper" }
+    }
+}

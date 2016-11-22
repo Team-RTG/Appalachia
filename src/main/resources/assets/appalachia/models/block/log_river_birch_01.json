@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "appalachia:blocks/log_river_birch_top_01",
+        "side": "appalachia:blocks/log_river_birch_01"
+    }
+}

@@ -1,13 +1,13 @@
 package rtg.util;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.crash.CrashReport;
+import net.minecraft.util.ReportedException;
 
 import net.minecraftforge.fml.common.FMLLog;
 
 import org.apache.logging.log4j.Level;
 
-import rtg.config.rtg.ConfigRTG;
+import rtg.config.ConfigRTG;
 
 public class Logger {
 
@@ -36,6 +36,7 @@ public class Logger {
     public static void fatal(String message, Throwable throwable, Object... data) {
 
         FMLLog.log(Level.FATAL, "[RTG-FATAL] " + message, data);
-        Minecraft.getMinecraft().crashed(new CrashReport(message, throwable));
+        CrashReport crashreport = CrashReport.makeCrashReport(throwable, message);
+        throw new ReportedException(crashreport);
     }
 }

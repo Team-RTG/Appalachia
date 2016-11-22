@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "appalachia:blocks/log_american_chestnut_top_01",
+        "side": "appalachia:blocks/log_american_chestnut_01"
+    }
+}

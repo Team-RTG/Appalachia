@@ -1,5 +1,6 @@
 package appalachia.block.logs;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.material.MapColor;
@@ -9,6 +10,8 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.IStringSerializable;
 
+import appalachia.api.AppalachiaAPI;
+import appalachia.block.BlockManager;
 import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
 
@@ -142,5 +145,10 @@ public class AppalachiaBlockLog extends BlockLog implements IAppalachiaBlock {
 
             return META_LOOKUP[meta];
         }
+    }
+
+    public static Block getRandomLog() {
+
+        return (AppalachiaBlockLog)BlockManager.appalachiaLogs.get(AppalachiaAPI.rand.nextInt(BlockManager.appalachiaLogs.size()));
     }
 }
