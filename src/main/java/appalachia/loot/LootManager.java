@@ -6,7 +6,8 @@ import net.minecraft.world.storage.loot.LootTableList;
 
 import appalachia.reference.ModInfo;
 
-public class LootAppalachia {
+public class LootManager {
+
     public static final ResourceLocation LOOT_TABLE_BLACK_BEAR = register("entities/black_bear");
     public static final ResourceLocation FIREFLY = register("entities/firefly");
     public static final ResourceLocation FIREFLY_FLASHING = register("entities/firefly_flashing");

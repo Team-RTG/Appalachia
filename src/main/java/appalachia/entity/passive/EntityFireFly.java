@@ -6,8 +6,7 @@ import javax.annotation.Nullable;
 import appalachia.entity.ai.EntityAIFlyAwayFromEntity;
 import appalachia.entity.ai.EntityAIFlyPanic;
 import appalachia.entity.ai.EntityAIFlyRandomly;
-import appalachia.loot.LootAppalachia;
-import appalachia.util.EntityUtil;
+import appalachia.loot.LootManager;
 import appalachia.util.WorldUtil;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -83,9 +82,9 @@ public class EntityFireFly extends EntityFlying {
     @Override
     protected ResourceLocation getLootTable() {
         if(isFlashing()) {
-            return LootAppalachia.FIREFLY_FLASHING;
+            return LootManager.FIREFLY_FLASHING;
         } else {
-            return LootAppalachia.FIREFLY;
+            return LootManager.FIREFLY;
         }
     }
 
