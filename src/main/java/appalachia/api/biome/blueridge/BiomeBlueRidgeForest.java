@@ -12,7 +12,7 @@ public class BiomeBlueRidgeForest extends BiomeBlueRidge implements IAppalachiaB
 
         super(props);
 
-        this.spawnableCreatureList.add(new SpawnListEntry(EntityFireFly.class, 15, 4, 10));
+        this.spawnableCreatureList.add(new SpawnListEntry(EntityFireFly.class, 50, 12, 16));
 
         biomeTypes = new BiomeDictionary.Type[]{
             BiomeDictionary.Type.FOREST,
