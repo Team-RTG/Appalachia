@@ -14,7 +14,7 @@ public class AppalachiaBlocks {
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    // DYNAMICALLY-GENERATED CODE - PLEASE DO NO MODIFY BELOW THIS LINE
+    // DYNAMICALLY-GENERATED CODE - PLEASE DO NOT MODIFY BELOW THIS LINE
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     public static Block fence_gate_american_beech_01;
