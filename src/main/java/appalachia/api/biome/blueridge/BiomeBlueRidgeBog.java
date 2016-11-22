@@ -24,7 +24,7 @@ public class BiomeBlueRidgeBog extends BiomeBlueRidge implements IAppalachiaBiom
         theBiomeDecorator.treesPerChunk = 2;
 
         this.spawnableCreatureList.clear();
-        this.spawnableCreatureList.add(new SpawnListEntry(EntityFireFly.class, 50, 12, 16));
+        this.spawnableCaveCreatureList.add(new SpawnListEntry(EntityFireFly.class, 10, 4, 8));
 
         biomeTypes = new BiomeDictionary.Type[]{
             BiomeDictionary.Type.SWAMP,
