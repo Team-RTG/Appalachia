@@ -5,15 +5,18 @@ import java.util.Random;
 
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks.EnumType;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -26,7 +29,10 @@ import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
 import com.google.common.collect.Lists;
 
+import javax.annotation.Nullable;
+
 public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlock {
+
 
     private String slug;
 
@@ -39,6 +45,12 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
         this.setDefaultState(blockState.getBaseState().withProperty(DECAYABLE, Boolean.valueOf(true)).withProperty(CHECK_DECAY, Boolean.valueOf(true)));
         this.leavesFancy = true;
         this.slug = unlocalizedName;
+    }
+
+    @Nullable
+    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, World worldIn, BlockPos pos)
+    {
+        return NULL_AABB;
     }
 
     @Override
@@ -80,6 +92,7 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
 
         return meta;
     }
+
 
     @Override
     public EnumType getWoodType(int meta) {
