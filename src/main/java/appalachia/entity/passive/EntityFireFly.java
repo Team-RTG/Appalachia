@@ -3,9 +3,9 @@ package appalachia.entity.passive;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import appalachia.entity.ai.EntityAIFlyAwayFromEntity;
-import appalachia.entity.ai.EntityAIFlyPanic;
-import appalachia.entity.ai.EntityAIFlyRandomly;
+import appalachia.entity.ai.EntityAIHoverAwayFromEntity;
+import appalachia.entity.ai.EntityAIHoverPanic;
+import appalachia.entity.ai.EntityAIHoverRandomly;
 import appalachia.loot.LootManager;
 import appalachia.util.WorldUtil;
 import net.minecraft.block.material.Material;
@@ -35,7 +35,7 @@ public class EntityFireFly extends EntityFlying {
     private boolean sync;
     private int noFlashStatusChangeBefore;
 
-    public EntityFireFly(World worldIn) {
+    public EntityFireFly(@Nonnull World worldIn) {
         super(worldIn);
         this.setSize(0.15F, 0.15F);
         this.setAIMoveSpeed(0.125F);
@@ -57,9 +57,9 @@ public class EntityFireFly extends EntityFlying {
 
     @Override
     protected void initEntityAI() {
-        this.tasks.addTask(0, new EntityAIFlyPanic(this, 3));
-        this.tasks.addTask(1, new EntityAIFlyAwayFromEntity(this, EntityPlayer.class, 2, 0.874F, 1.25F));
-        this.tasks.addTask(2, new EntityAIFlyRandomly(this, 1));
+        this.tasks.addTask(0, new EntityAIHoverPanic(this, 3));
+        this.tasks.addTask(1, new EntityAIHoverAwayFromEntity(this, EntityPlayer.class, 2, 0.874F, 1.25F));
+        this.tasks.addTask(2, new EntityAIHoverRandomly(this, 1));
         this.tasks.addTask(99, new EntityAILookIdle(this));
     }
 
@@ -93,7 +93,7 @@ public class EntityFireFly extends EntityFlying {
         super.onLivingUpdate();
 
         if (!worldObj.isRemote) {
-            BlockPos pos = new BlockPos(this);
+            @Nonnull BlockPos pos = new BlockPos(this);
 
             if (ticksExisted % 30 == 0 && worldObj.getLightFromNeighbors(pos) > 9) {
                 this.setHealth(this.getHealth() - 0.5F); // Entities will disappear in the sun to save performance, but only if they are grounded.
@@ -141,10 +141,10 @@ public class EntityFireFly extends EntityFlying {
     }
 
     private void updateVariant() {
-        Color color = Color.DEFAULT;
+        @Nonnull Color color = Color.DEFAULT;
 
         BlockPos pos = WorldUtil.nextSolidBlock(worldObj, new BlockPos(this), EnumFacing.DOWN);
-        IBlockState block = worldObj.getBlockState(pos);
+        @Nonnull IBlockState block = worldObj.getBlockState(pos);
 
         if (block.getBlock().equals(Blocks.DIRT) && block.getBlock().getMetaFromState(block) == 0) {
             color = Color.DIRT;
@@ -163,7 +163,7 @@ public class EntityFireFly extends EntityFlying {
         setColor(color);
     }
 
-    private void applyEasterEggs(String name) {
+    private void applyEasterEggs(@Nonnull String name) {
         switch (name) {
             case "WhichOnesPink":
                 setColor(Color.MYCELIUM);
@@ -181,7 +181,7 @@ public class EntityFireFly extends EntityFlying {
         }
     }
 
-    public static boolean isSpotViable(World world, BlockPos pos) {
+    public static boolean isSpotViable(@Nonnull World world, @Nonnull BlockPos pos) {
         if (world.getLightFromNeighbors(pos) > 7) {
             return false;
         }
@@ -196,7 +196,7 @@ public class EntityFireFly extends EntityFlying {
             }
         }
 
-        IBlockState state = world.getBlockState(pos);
+        @Nonnull IBlockState state = world.getBlockState(pos);
         return (state.getMaterial().equals(Material.GRASS) || state.getMaterial().equals(Material.GROUND) && state.getBlock().isReplaceable(world, pos) && !state.getBlock().hasTileEntity(state));
     }
 
@@ -246,7 +246,7 @@ public class EntityFireFly extends EntityFlying {
         }
     }
 
-    public void setColor(Color newColor) {
+    public void setColor(@Nonnull Color newColor) {
         this.dataManager.set(color, (byte) newColor.ordinal());
     }
 

@@ -1,22 +1,28 @@
 package appalachia.entity.ai;
 
 import appalachia.util.EntityUtil;
-import appalachia.util.MathUtil;
+import appalachia.util.RandomUtil;
 import net.minecraft.entity.EntityFlying;
 import net.minecraft.util.math.BlockPos;
 
-public class EntityAIFlyPanic extends EntityAIFlyRandomly {
+public class EntityAIHoverPanic extends EntityAIHoverBase {
+
     private int until;
 
-    public EntityAIFlyPanic(EntityFlying entity, float speedModifier) {
+    public EntityAIHoverPanic(EntityFlying entity, float speedModifier) {
         super(entity, speedModifier);
         setMutexBits(4);
     }
 
     @Override
     public boolean shouldExecute() {
-        return entity.getAITarget() != null &&
-            entity.getAITarget().isEntityAlive();
+        return entity.getAITarget() != null && entity.getAITarget().isEntityAlive();
+    }
+
+    @Override
+    public void startExecuting() {
+        until = entity.ticksExisted + (int) RandomUtil.weightedRandom(entity.getRNG(), 60, 100);
+        super.startExecuting();
     }
 
     @Override
@@ -34,7 +40,7 @@ public class EntityAIFlyPanic extends EntityAIFlyRandomly {
     }
 
     @Override
-    protected void additionalSetup() {
-        until = entity.ticksExisted + (int) MathUtil.weightedRandom(entity.getRNG(), 60, 100);
+    protected boolean isSpotGood(BlockPos spot) {
+        return false;
     }
 }
