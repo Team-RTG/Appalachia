@@ -14,12 +14,14 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import appalachia.api.AppalachiaBiomes;
 import appalachia.api.AppalachiaBlocks;
 import appalachia.api.block.IAppalachiaBlockLeavesFallen;
+import appalachia.block.leaves.AppalachiaBlockLeaves;
+import appalachia.block.leaves.fallen.AppalachiaBlockLeavesFallen;
+import appalachia.block.logs.AppalachiaBlockLog;
 import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
 import appalachia.rtg.world.gen.feature.tree.rtg.TreeAcerRubrum;
 
 import rtg.config.BiomeConfig;
-import rtg.util.BlockUtil;
 import rtg.util.CellNoise;
 import rtg.util.CliffCalculator;
 import rtg.util.OpenSimplexNoise;
@@ -146,8 +148,8 @@ public class RealisticBiomeAPLBlueRidgeBogAutumn extends RealisticBiomeAPLBase {
     public void initDecos() {
 
         AppalachiaTree aplRedMaple = new TreeAcerRubrum();
-        aplRedMaple.logBlock = AppalachiaBlocks.log_red_maple_01.getDefaultState();
-        aplRedMaple.leavesBlock = Blocks.LEAVES.getDefaultState();
+        aplRedMaple.logBlock = AppalachiaBlockLog.getRandomLog().getDefaultState();
+        aplRedMaple.leavesBlock = AppalachiaBlockLeaves.getRandomLeaves().getDefaultState();
         aplRedMaple.minTrunkSize = 4;
         aplRedMaple.maxTrunkSize = 8;
         aplRedMaple.minCrownSize = 8;
@@ -165,8 +167,8 @@ public class RealisticBiomeAPLBlueRidgeBogAutumn extends RealisticBiomeAPLBase {
         this.addDeco(oakMaple);
 
         TreeRTG papyriferaTreeOak = new TreeRTGBetulaPapyrifera();
-        papyriferaTreeOak.logBlock = AppalachiaBlocks.log_white_pine_01.getDefaultState();
-        papyriferaTreeOak.leavesBlock = Blocks.LEAVES.getDefaultState();
+        papyriferaTreeOak.logBlock = AppalachiaBlockLog.getRandomLog().getDefaultState();
+        papyriferaTreeOak.leavesBlock = AppalachiaBlockLeaves.getRandomLeaves().getDefaultState();
         papyriferaTreeOak.minTrunkSize = 4;
         papyriferaTreeOak.maxTrunkSize = 8;
         papyriferaTreeOak.minCrownSize = 6;
@@ -179,8 +181,8 @@ public class RealisticBiomeAPLBlueRidgeBogAutumn extends RealisticBiomeAPLBase {
         paperOak.treeConditionChance = 1;
         paperOak.maxY = treeMaxY;
         TreeRTG papyriferaTreeSpruce = new TreeRTGBetulaPapyrifera();
-        papyriferaTreeSpruce.logBlock = AppalachiaBlocks.log_tulip_poplar_01.getDefaultState();
-        papyriferaTreeSpruce.leavesBlock = BlockUtil.getStateLeaf(3);
+        papyriferaTreeSpruce.logBlock = AppalachiaBlockLog.getRandomLog().getDefaultState();
+        papyriferaTreeSpruce.leavesBlock = AppalachiaBlockLeaves.getRandomLeaves().getDefaultState();
         papyriferaTreeSpruce.minTrunkSize = 4;
         papyriferaTreeSpruce.maxTrunkSize = 8;
         papyriferaTreeSpruce.minCrownSize = 6;
@@ -196,8 +198,8 @@ public class RealisticBiomeAPLBlueRidgeBogAutumn extends RealisticBiomeAPLBase {
         this.addDeco(decoPaper);
 
         TreeRTG ponderosaOakTree = new TreeRTGPinusPonderosa();
-        ponderosaOakTree.logBlock = AppalachiaBlocks.log_black_locust_01.getDefaultState();
-        ponderosaOakTree.leavesBlock = Blocks.LEAVES.getDefaultState();
+        ponderosaOakTree.logBlock = AppalachiaBlockLog.getRandomLog().getDefaultState();
+        ponderosaOakTree.leavesBlock = AppalachiaBlockLeaves.getRandomLeaves().getDefaultState();
         ponderosaOakTree.minTrunkSize = 11;
         ponderosaOakTree.maxTrunkSize = 21;
         ponderosaOakTree.minCrownSize = 15;
@@ -214,8 +216,8 @@ public class RealisticBiomeAPLBlueRidgeBogAutumn extends RealisticBiomeAPLBase {
         oakPines.treeConditionChance = 1;
         oakPines.maxY = 85;
         TreeRTG ponderosaChestnutTree = new TreeRTGPinusPonderosa();
-        ponderosaChestnutTree.logBlock = AppalachiaBlocks.log_honey_locust_01.getDefaultState();
-        ponderosaChestnutTree.leavesBlock = Blocks.LEAVES.getStateFromMeta(3);
+        ponderosaChestnutTree.logBlock = AppalachiaBlockLog.getRandomLog().getDefaultState();
+        ponderosaChestnutTree.leavesBlock = AppalachiaBlockLeaves.getRandomLeaves().getDefaultState();
         ponderosaChestnutTree.minTrunkSize = 11;
         ponderosaChestnutTree.maxTrunkSize = 21;
         ponderosaChestnutTree.minCrownSize = 15;
@@ -235,8 +237,8 @@ public class RealisticBiomeAPLBlueRidgeBogAutumn extends RealisticBiomeAPLBase {
         this.addDeco(decoPines);
 
         TreeRTG sitchensisTree = new TreeRTGPiceaSitchensis();
-        sitchensisTree.logBlock = AppalachiaBlocks.log_hackberry_01.getDefaultState();
-        sitchensisTree.leavesBlock = Blocks.LEAVES.getDefaultState();
+        sitchensisTree.logBlock = AppalachiaBlockLog.getRandomLog().getDefaultState();
+        sitchensisTree.leavesBlock = AppalachiaBlockLeaves.getRandomLeaves().getDefaultState();
         sitchensisTree.minTrunkSize = 4;
         sitchensisTree.maxTrunkSize = 10;
         sitchensisTree.minCrownSize = 6;
@@ -273,8 +275,8 @@ public class RealisticBiomeAPLBlueRidgeBogAutumn extends RealisticBiomeAPLBase {
         decoFallenSpruce.logCondition = LogCondition.RANDOM_CHANCE;
         decoFallenSpruce.logConditionChance = 24;
         decoFallenSpruce.maxY = 80;
-        decoFallenSpruce.logBlock = AppalachiaBlocks.log_river_birch_01.getDefaultState();
-        decoFallenSpruce.leavesBlock = Blocks.LEAVES.getDefaultState();
+        decoFallenSpruce.logBlock = AppalachiaBlockLog.getRandomLog().getDefaultState();
+        decoFallenSpruce.leavesBlock = AppalachiaBlockLeaves.getRandomLeaves().getDefaultState();
         decoFallenSpruce.minSize = 3;
         decoFallenSpruce.maxSize = 6;
         DecoHelper5050 decoFallenTree = new DecoHelper5050(decoFallenOak, decoFallenSpruce);
@@ -297,7 +299,7 @@ public class RealisticBiomeAPLBlueRidgeBogAutumn extends RealisticBiomeAPLBase {
         this.addDeco(decoBoulder1);
 
         // Fallen leaves.
-        DecoLayer decoFallenLeaves = new DecoLayer(AppalachiaBlocks.leaves_oak_fallen.getDefaultState(), IAppalachiaBlockLeavesFallen.LAYERS);
+        DecoLayer decoFallenLeaves = new DecoLayer(AppalachiaBlockLeavesFallen.getRandomFallenLeaves().getDefaultState(), IAppalachiaBlockLeavesFallen.LAYERS);
         decoFallenLeaves.loops = 8;
         this.addDeco(decoFallenLeaves);
 

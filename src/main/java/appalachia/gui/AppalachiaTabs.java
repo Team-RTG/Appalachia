@@ -22,7 +22,7 @@ public class AppalachiaTabs {
         @Override
         public Item getTabIconItem() {
 
-            return Item.getItemFromBlock(AppalachiaBlocks.leaves_autumn_red);
+            return Item.getItemFromBlock(AppalachiaBlocks.leaves_red_oak_01);
         }
     };
 
