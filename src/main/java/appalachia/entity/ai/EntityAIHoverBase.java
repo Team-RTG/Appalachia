@@ -93,7 +93,7 @@ public abstract class EntityAIHoverBase extends EntityAIBase {
     }
 
     protected boolean endCondition(BlockPos spot, float height) {
-        return isBlocked() || entity.getRNG().nextInt(40) == 0 && isSpotGood(spot);
+        return isBlocked() || entity.getRNG().nextInt(32) == 0 && isSpotGood(spot);
     }
 
     protected boolean gainHeightCondition(BlockPos spot, float height) {
@@ -145,10 +145,10 @@ public abstract class EntityAIHoverBase extends EntityAIBase {
     protected boolean flyAction() {
         entity.moveRelative(0, getSpeed(1), 0.1F);
 
-        if (entity.ticksExisted % 3 == 0) {
-            entity.motionX += entity.getRNG().nextGaussian() * getSpeed(0.5F);
-            entity.motionY += entity.getRNG().nextGaussian() * getSpeed(0.5F);
-            entity.motionZ += entity.getRNG().nextGaussian() * getSpeed(0.5F);
+        if (entity.ticksExisted % 2 == 0) {
+            entity.motionX += entity.getRNG().nextGaussian() * getSpeed(0.2F);
+            entity.motionY += entity.getRNG().nextGaussian() * getSpeed(0.2F);
+            entity.motionZ += entity.getRNG().nextGaussian() * getSpeed(0.2F);
         }
 
         return true;

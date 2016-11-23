@@ -10,7 +10,7 @@ public class RandomUtil {
         return (int)((Math.random() * intEnd) + intStart);
     }
 
-    public static int getRandomInt(@Nonnull Random rand, int intStart, int intEnd) {
+    public static int getRandomInt(Random rand, int intStart, int intEnd) {
 
         return intStart + rand.nextInt(intEnd - intStart + 1);
     }
