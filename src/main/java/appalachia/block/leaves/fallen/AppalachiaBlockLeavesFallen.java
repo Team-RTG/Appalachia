@@ -64,17 +64,24 @@ public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlo
         this.slug = unlocalizedName;
     }
 
+    @Override
+    public String registryName() {
+
+        return String.join("_", this.slug.split("\\."));
+    }
+
     @Nullable
     public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, World worldIn, BlockPos pos)
     {
         return NULL_AABB;
     }
 
-
     @Override
-    public String registryName() {
-
-        return String.join("_", this.slug.split("\\."));
+    public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
+    {
+        entityIn.motionX *= 0.025D;
+        entityIn.motionY *= 0.025D;
+        entityIn.motionZ *= 0.025D;
     }
 
     @Override
@@ -203,7 +210,8 @@ public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlo
     @Override
     public boolean isPassable(IBlockAccess world, BlockPos pos) {
 
-        return world.getBlockState(pos).getValue(LAYERS).intValue() < 5;
+        //return world.getBlockState(pos).getValue(LAYERS).intValue() < 5;
+        return true;
     }
 
     @Override
