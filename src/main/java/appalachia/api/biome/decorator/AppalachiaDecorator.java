@@ -1,3 +1,4 @@
+
 package appalachia.api.biome.decorator;
 
 import java.util.Random;

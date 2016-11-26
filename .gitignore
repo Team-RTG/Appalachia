@@ -21,3 +21,5 @@ run
 
 libs/*.jar
 gradlew-*.bat
+
+.DS_Store

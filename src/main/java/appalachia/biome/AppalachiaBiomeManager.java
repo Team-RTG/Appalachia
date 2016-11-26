@@ -18,6 +18,7 @@ import static appalachia.reference.ModInfo.MOD_ID;
 
 public class AppalachiaBiomeManager {
 
+    private static GeographicraftSettingsBuilder gcBuilder = new GeographicraftSettingsBuilder();
 
     public AppalachiaBiomeManager() {
 
@@ -389,6 +390,7 @@ public class AppalachiaBiomeManager {
                 }
             }
         }
+        gcBuilder.activate();
     }
 
     private static void registerBiomeWithTypes(Biome biome, String name, int weight, BiomeManager.BiomeType btype, BiomeDictionary.Type... types) {
@@ -396,5 +398,8 @@ public class AppalachiaBiomeManager {
         GameRegistry.register(biome.setRegistryName(new ResourceLocation(MOD_ID, name)));
         BiomeDictionary.registerBiomeType(biome, types);
         BiomeManager.addBiome(btype, new BiomeManager.BiomeEntry(biome, weight));
+        
+        // try to pass to Geographicraft. 
+        gcBuilder.registerBiomeWithTypes(biome, name, weight, btype, types);
     }
 }
