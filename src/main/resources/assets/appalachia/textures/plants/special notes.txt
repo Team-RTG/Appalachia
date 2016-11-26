@@ -1,1 +1,2 @@
 virginia creeper needs a bright red tint in the autumn biomes
+sumac's texture is very large. i would recommend making it either a 2x2x2 block, or a 1x1x1 block with a texture that extends a block above and a half block to either side of its bounding box
