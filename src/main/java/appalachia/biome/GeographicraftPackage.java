@@ -27,7 +27,13 @@ public class GeographicraftPackage extends BiomePackage {
     }
     
     public void activate() {
-        BiomePackageRegistry.instance.register(this);
+
+        try {
+            BiomePackageRegistry.instance.register(this);
+        }
+        catch (Exception e) {
+            throw new RuntimeException("Geographicraft not found.");
+        }
     }
 
 }

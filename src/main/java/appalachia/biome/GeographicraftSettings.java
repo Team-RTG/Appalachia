@@ -6,14 +6,17 @@
 
 package appalachia.biome;
 
-import climateControl.api.BiomeSettings;
-import climateControl.api.Climate;
-import climateControl.api.ClimateControlRules;
-import climateControl.api.ClimateDistribution;
+
 import java.io.File;
+
 import net.minecraft.world.biome.Biome;
+
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
+
+import climateControl.api.BiomeSettings;
+import climateControl.api.ClimateControlRules;
+import climateControl.api.ClimateDistribution;
 
 /**
  *
@@ -27,7 +30,7 @@ public class GeographicraftSettings extends BiomeSettings {
 
     public void registerBiomeWithTypes(Biome biome, String name, int weight, BiomeManager.BiomeType btype, BiomeDictionary.Type... types) {
         // creating the biome
-        Element gcBiome = new Element(biome.getBiomeName(), Biome.getIdForBiome(biome),weight,false,ClimateDistribution.COOL.name());
+        Element gcBiome = new Element(biome.getBiomeName(), Biome.getIdForBiome(biome), weight, false, ClimateDistribution.COOL.name());
     }
     
     public GeographicraftSettings copy() {
