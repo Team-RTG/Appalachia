@@ -10,13 +10,18 @@ import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.eventhandler.Event;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.LAKE_LAVA;
 import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.LAKE_WATER;
 
 import appalachia.api.AppalachiaAPI;
 import appalachia.api.biome.decorator.AppalachiaDecorator;
+import appalachia.biome.AppalachiaBiomeManager;
 import appalachia.util.Logger;
+import net.minecraftforge.event.terraingen.WorldTypeEvent;
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 
 
 public class EventManager {
@@ -44,6 +49,7 @@ public class EventManager {
 
             // This event fires for each dimension loaded (and then one last time in which it returns 0?),
             // so initialise a field to 0 and set it to the world seed and only display it in the log once.
+           
             if (worldSeed != event.getWorld().getSeed() && event.getWorld().getSeed() != 0) {
 
                 worldSeed = event.getWorld().getSeed();
@@ -59,6 +65,14 @@ public class EventManager {
             // Reset the world seed so that it logs on the next server start if the seed is the same as the last load.
             worldSeed = 0;
         }
+        
+        // this is a little touchy. This event needs to get in before biome gen init
+        // to set a field in the Geographicraft package.
+        @SubscribeEvent(priority = EventPriority.HIGHEST)
+        public void onBiomeGenInit(WorldTypeEvent.InitBiomeGens event) {
+            AppalachiaBiomeManager.updateBiomes(event);
+        }
+        
     }
 
     public class DecorateBiomeEventAppalachia {
@@ -120,6 +134,7 @@ public class EventManager {
         logEventMessage("Registering Appalachia's event handlers...");
 
         MinecraftForge.EVENT_BUS.register(WORLD_EVENT_HANDLER);
+        MinecraftForge.TERRAIN_GEN_BUS.register(WORLD_EVENT_HANDLER);
         MinecraftForge.TERRAIN_GEN_BUS.register(DECORATE_BIOME_EVENT_HANDLER);
         MinecraftForge.TERRAIN_GEN_BUS.register(POPULATE_CHUNK_EVENT_HANDLER);
 

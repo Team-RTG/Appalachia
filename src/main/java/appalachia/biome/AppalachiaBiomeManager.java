@@ -15,6 +15,14 @@ import appalachia.util.BiomeUtils;
 import appalachia.util.Logger;
 import static appalachia.api.AppalachiaBiomes.*;
 import static appalachia.reference.ModInfo.MOD_ID;
+import com.google.common.collect.ImmutableList;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import net.minecraft.world.WorldType;
+import net.minecraft.world.gen.layer.GenLayer;
+import net.minecraftforge.common.BiomeManager.BiomeEntry;
+import net.minecraftforge.event.terraingen.WorldTypeEvent;
 
 public class AppalachiaBiomeManager {
 
@@ -200,7 +208,7 @@ public class AppalachiaBiomeManager {
             smokyForest,
             "smokyforest",
             ConfigAppalachia.biomeWeight_SmokyForest,
-            BiomeManager.BiomeType.COOL,
+            BiomeManager.BiomeType.WARM,
             BiomeSmokyForest.biomeTypes
         );
         BiomeManager.addSpawnBiome(smokyForest);
@@ -217,7 +225,7 @@ public class AppalachiaBiomeManager {
             smokyForestAutumn,
             "smokyforestautumn",
             ConfigAppalachia.biomeWeight_SmokyForestAutumn,
-            BiomeManager.BiomeType.COOL,
+            BiomeManager.BiomeType.WARM,
             BiomeSmokyForestAutumn.biomeTypes
         );
         BiomeManager.addSpawnBiome(smokyForestAutumn);
@@ -234,7 +242,7 @@ public class AppalachiaBiomeManager {
             smokyHills,
             "smokyhills",
             ConfigAppalachia.biomeWeight_SmokyHills,
-            BiomeManager.BiomeType.COOL,
+            BiomeManager.BiomeType.WARM,
             BiomeSmokyHills.biomeTypes
         );
         BiomeManager.addSpawnBiome(smokyHills);
@@ -251,7 +259,7 @@ public class AppalachiaBiomeManager {
             smokyHillsAutumn,
             "smokyhillsautumn",
             ConfigAppalachia.biomeWeight_SmokyHillsAutumn,
-            BiomeManager.BiomeType.COOL,
+            BiomeManager.BiomeType.WARM,
             BiomeSmokyHillsAutumn.biomeTypes
         );
         BiomeManager.addSpawnBiome(smokyHillsAutumn);
@@ -268,7 +276,7 @@ public class AppalachiaBiomeManager {
             smokyMountains,
             "smokymountains",
             ConfigAppalachia.biomeWeight_SmokyMountains,
-            BiomeManager.BiomeType.COOL,
+            BiomeManager.BiomeType.WARM,
             BiomeSmokyMountains.biomeTypes
         );
         BiomeManager.addSpawnBiome(smokyMountains);
@@ -285,7 +293,7 @@ public class AppalachiaBiomeManager {
             smokyMountainsAutumn,
             "smokymountainsautumn",
             ConfigAppalachia.biomeWeight_SmokyMountainsAutumn,
-            BiomeManager.BiomeType.COOL,
+            BiomeManager.BiomeType.WARM,
             BiomeSmokyMountainsAutumn.biomeTypes
         );
         BiomeManager.addSpawnBiome(smokyMountainsAutumn);
@@ -302,7 +310,7 @@ public class AppalachiaBiomeManager {
             smokyBog,
             "smokybog",
             ConfigAppalachia.biomeWeight_SmokyBog,
-            BiomeManager.BiomeType.COOL,
+            BiomeManager.BiomeType.WARM,
             BiomeSmokyForest.biomeTypes
         );
         BiomeManager.addSpawnBiome(smokyBog);
@@ -319,7 +327,7 @@ public class AppalachiaBiomeManager {
             smokyBogAutumn,
             "smokybogautumn",
             ConfigAppalachia.biomeWeight_SmokyBogAutumn,
-            BiomeManager.BiomeType.COOL,
+            BiomeManager.BiomeType.WARM,
             BiomeSmokyForest.biomeTypes
         );
         BiomeManager.addSpawnBiome(smokyBogAutumn);
@@ -336,7 +344,7 @@ public class AppalachiaBiomeManager {
             smokyBeach,
             "smokybeach",
             ConfigAppalachia.biomeWeight_SmokyBeach,
-            BiomeManager.BiomeType.COOL,
+            BiomeManager.BiomeType.WARM,
             BiomeSmokyBeach.biomeTypes
         );
         BiomeManager.addSpawnBiome(smokyBeach);
@@ -351,10 +359,11 @@ public class AppalachiaBiomeManager {
             smokyRiver,
             "smokyriver",
             ConfigAppalachia.biomeWeight_SmokyRiver,
-            BiomeManager.BiomeType.COOL,
+            BiomeManager.BiomeType.WARM,
             BiomeSmokyRiver.biomeTypes
         );
         Biome.EXPLORATION_BIOMES_LIST.add(smokyRiver);
+        gcBuilder.setBiomes(appalachiaBiomes);
     }
 
     public static void doBiomeCheck() {
@@ -393,13 +402,62 @@ public class AppalachiaBiomeManager {
         gcBuilder.activate();
     }
 
+    private static List<Biome> appalachiaBiomes = new ArrayList();
+    private static HashMap<Biome,Integer> configWeights = new HashMap();
+    private static HashMap<Biome,BiomeManager.BiomeType> biomeTypes = new HashMap();
+    
     private static void registerBiomeWithTypes(Biome biome, String name, int weight, BiomeManager.BiomeType btype, BiomeDictionary.Type... types) {
 
         GameRegistry.register(biome.setRegistryName(new ResourceLocation(MOD_ID, name)));
         BiomeDictionary.registerBiomeType(biome, types);
         BiomeManager.addBiome(btype, new BiomeManager.BiomeEntry(biome, weight));
-        
+        appalachiaBiomes.add(biome);
+        configWeights.put(biome, weight);
+        biomeTypes.put(biome, btype);
         // try to pass to Geographicraft. 
         gcBuilder.registerBiomeWithTypes(biome, name, weight, btype, types);
+    }
+    
+    public static void updateBiomes(WorldTypeEvent.InitBiomeGens event) {
+        gcBuilder.updateBiomes(event.getWorldType());
+        /* Failed attempt at dynamic Appalachia biomes in the vanilla generator
+        // rather than tracking what biomes are in or out, the algorithm is to add
+        // all Appalachia biomes for RTG worlds only, redo the biome generators
+        // and then take the Appalachia biomes out.
+
+        if (event.getWorldType().getWorldTypeName().equalsIgnoreCase("RTG")) {
+            // add the Appalachia biomes to the climates
+            for (Biome biome: appalachiaBiomes) {
+                BiomeManager.addBiome(biomeTypes.get(biome), new BiomeManager.BiomeEntry(biome, configWeights.get(biome)));
+            } 
+            // replace the GenLayers
+            event.setNewBiomeGens(GenLayer.initializeAllBiomeGenerators(event.getSeed(), event.getWorldType(),""));
+            //event.setNewBiomeGens(new GenLayer[1]);
+            event.setResult(WorldTypeEvent.Result.ALLOW);
+            if (1>0) return;
+            // take Appalachia biomes back out. Only works for Warm and Cool right now.
+            ArrayList<BiomeEntry> toRemove = new ArrayList();
+            ImmutableList<BiomeEntry> biomes = BiomeManager.getBiomes(BiomeManager.BiomeType.COOL);
+            for (BiomeEntry biomeEntry: biomes) {
+                if (appalachiaBiomes.contains(biomeEntry.biome)) {
+                    toRemove.add(biomeEntry);
+                }
+            }
+            for (BiomeEntry removed: toRemove) {
+                BiomeManager.removeBiome(BiomeManager.BiomeType.COOL, removed);
+            }
+            toRemove = new ArrayList();
+            biomes = BiomeManager.getBiomes(BiomeManager.BiomeType.WARM);
+            for (BiomeEntry biomeEntry: biomes) {
+                if (appalachiaBiomes.contains(biomeEntry.biome)) {
+                    toRemove.add(biomeEntry);
+                }
+            }
+            for (BiomeEntry removed: toRemove) {
+                BiomeManager.removeBiome(BiomeManager.BiomeType.WARM, removed);
+
+        }
+            }
+            */
     }
 }
