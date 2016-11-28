@@ -6,13 +6,11 @@
 
 package appalachia.biome;
 
+import net.minecraft.world.WorldType;
+
 import climateControl.api.BiomePackage;
 import climateControl.api.BiomePackageRegistry;
 import climateControl.api.BiomeSettings;
-import net.minecraft.client.Minecraft;
-import net.minecraft.world.WorldType;
-import net.minecraftforge.event.terraingen.WorldTypeEvent;
-import net.minecraftforge.fml.common.event.FMLServerAboutToStartEvent;
 
 /**
  *
@@ -41,7 +39,7 @@ public class GeographicraftPackage extends BiomePackage {
             BiomePackageRegistry.instance.register(this);
         }
         catch (Exception e) {
-            throw new RuntimeException("Geographicraft not found.");
+            ;
         }
     }
     
