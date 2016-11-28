@@ -9,6 +9,10 @@ package appalachia.biome;
 import climateControl.api.BiomePackage;
 import climateControl.api.BiomePackageRegistry;
 import climateControl.api.BiomeSettings;
+import net.minecraft.client.Minecraft;
+import net.minecraft.world.WorldType;
+import net.minecraftforge.event.terraingen.WorldTypeEvent;
+import net.minecraftforge.fml.common.event.FMLServerAboutToStartEvent;
 
 /**
  *
@@ -16,14 +20,19 @@ import climateControl.api.BiomeSettings;
  */
 public class GeographicraftPackage extends BiomePackage {
 
-    private GeographicraftSettings cloned;
+    private final GeographicraftSettings cloned;
+    private boolean rtgWorld = false;
     public GeographicraftPackage(GeographicraftSettings cloned) {
         super("AppalachiaInGC.cfg");
         this.cloned = cloned;
     }
     @Override
     public BiomeSettings freshBiomeSetting() {
-        return cloned.copy();
+        if (rtgWorld) {
+            return cloned.copy();
+        }
+        // otherwise nothing send empty settings;
+        return new GeographicraftSettings();
     }
     
     public void activate() {
@@ -35,5 +44,8 @@ public class GeographicraftPackage extends BiomePackage {
             throw new RuntimeException("Geographicraft not found.");
         }
     }
-
+    
+    public void onInitBiomeGens(WorldType worldType) {
+        rtgWorld = (worldType.getWorldTypeName().equalsIgnoreCase("RTG"));
+    }
 }
