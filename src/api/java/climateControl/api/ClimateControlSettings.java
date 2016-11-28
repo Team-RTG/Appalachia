@@ -282,7 +282,12 @@ public class ClimateControlSettings extends Settings {
 
     public ArrayList<DistributionPartitioner> partitioners() {
         ArrayList<DistributionPartitioner> result = new ArrayList<DistributionPartitioner>();
+        // add the internal list
         for (DistributionPartitioner partitioner: partitioners) {
+            result.add(partitioner);
+        }
+        // add the registry list
+        for (DistributionPartitioner partitioner: DistributionPartitioner.registeredPartitioners()) {
             result.add(partitioner);
         }
         return result;

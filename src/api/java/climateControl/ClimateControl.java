@@ -29,7 +29,7 @@ import com.Zeno410Utils.Named;
 import com.Zeno410Utils.PropertyManager;
 import com.Zeno410Utils.Zeno410Logger;
 
-//@Mod(modid = "geographicraft", name = "GeographiCraft", version = "0.7.5",acceptableRemoteVersions = "*")
+//@Mod(modid = "geographicraft", name = "GeographiCraft", version = "0.7.7",acceptableRemoteVersions = "*", acceptedMinecraftVersions = "[1.9.4,1.11]")
 
 public class ClimateControl {
     public static Logger logger = new Zeno410Logger("ClimateControl").logger();
