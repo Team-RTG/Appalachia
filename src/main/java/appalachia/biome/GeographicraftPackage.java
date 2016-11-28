@@ -6,13 +6,11 @@
 
 package appalachia.biome;
 
+import net.minecraft.world.WorldType;
+
 import climateControl.api.BiomePackage;
 import climateControl.api.BiomePackageRegistry;
 import climateControl.api.BiomeSettings;
-import net.minecraft.client.Minecraft;
-import net.minecraft.world.WorldType;
-import net.minecraftforge.event.terraingen.WorldTypeEvent;
-import net.minecraftforge.fml.common.event.FMLServerAboutToStartEvent;
 
 /**
  *
@@ -36,7 +34,13 @@ public class GeographicraftPackage extends BiomePackage {
     }
     
     public void activate() {
-        BiomePackageRegistry.instance.register(this);
+
+        try {
+            BiomePackageRegistry.instance.register(this);
+        }
+        catch (Exception e) {
+            ;
+        }
     }
     
     public void onInitBiomeGens(WorldType worldType) {
