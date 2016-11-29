@@ -25,6 +25,9 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeColorHelper;
 
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
 import appalachia.api.AppalachiaAPI;
 import appalachia.block.BlockManager;
 import appalachia.block.IAppalachiaBlock;
@@ -142,6 +145,7 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
         return Lists.newArrayList(new ItemStack(this));
     }
 
+    @SideOnly(Side.CLIENT)
     public static class ColourHandler implements IBlockColor {
 
         public ColourHandler() {
@@ -151,7 +155,12 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
         @Override
         public int colorMultiplier(IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex)
         {
-            return BiomeColorHelper.getFoliageColorAtPos(worldIn, pos);
+            if (worldIn != null && pos != null) {
+                return BiomeColorHelper.getFoliageColorAtPos(worldIn, pos);
+            }
+            else {
+                return 4028928;
+            }
         }
     }
 

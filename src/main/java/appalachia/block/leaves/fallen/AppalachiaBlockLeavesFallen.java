@@ -246,6 +246,7 @@ public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlo
         return true;
     }
 
+    @SideOnly(Side.CLIENT)
     public static class ColourHandler implements IBlockColor {
 
         private static final int leafColours[] = {
@@ -260,17 +261,21 @@ public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlo
 
         }
 
+        @Override
         public int colorMultiplier(IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex)
         {
             //return BiomeColorHelper.getFoliageColorAtPos(worldIn, pos);
 
-            if (pos == null) {
+            if (worldIn != null && pos != null) {
+
+                int noise = (int) (simplex.noise(pos.getX()/5, pos.getZ()/5)*9+9);
+
+                return leafColours[noise];
+            }
+            else {
+
                 return 16750848;
             }
-
-            int noise = (int) (simplex.noise(pos.getX()/5, pos.getZ()/5)*9+9);
-
-            return leafColours[noise];
         }
     }
 
