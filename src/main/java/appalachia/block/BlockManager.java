@@ -29,6 +29,8 @@ import appalachia.block.planks.*;
 import appalachia.block.saplings.*;
 import appalachia.block.slabs.*;
 import appalachia.block.stairs.*;
+import appalachia.block.vines.AppalachiaBlockVine;
+import appalachia.block.vines.BlockVinePoisonIvy01;
 import appalachia.item.ItemManager;
 import appalachia.item.leaves.fallen.AppalachiaItemLeavesFallen;
 import appalachia.item.slabs.AppalachiaItemSlab;
@@ -36,6 +38,10 @@ import appalachia.item.slabs.AppalachiaItemSlab;
 public class BlockManager {
 
     public static ArrayList<Block> appalachiaBlocks = new ArrayList<>();
+
+    public static ArrayList<Block> appalachiaVines = new ArrayList<Block>() {
+
+    };
     public static ArrayList<Block> appalachiaLogs = new ArrayList<Block>() {
 
     };
@@ -65,6 +71,12 @@ public class BlockManager {
     };
 
     public static void registerBlocks() {
+
+        //Vines.
+
+        AppalachiaBlocks.vine_poison_ivy_01 = new BlockVinePoisonIvy01();
+
+        addVines();
 
         //Leaves.
 
@@ -424,6 +436,10 @@ public class BlockManager {
         setFireInfo();
     }
 
+    private static void addVines() {
+        appalachiaVines.add(AppalachiaBlocks.vine_poison_ivy_01);
+    }
+
     /*
      * ALPHABETICAL ORDER MATTERS WHEN ADDING INDIVIDUAL BLOCKS TO THE BLOCK LISTS!!!
      * For example...
@@ -775,6 +791,10 @@ public class BlockManager {
 
     private static void addAppalachiaBlocks() {
 
+        for (int i = 0; i < appalachiaVines.size(); i++) {
+            appalachiaBlocks.add(appalachiaVines.get(i));
+        }
+
         for (int i = 0; i < appalachiaLogs.size(); i++) {
             appalachiaBlocks.add(appalachiaLogs.get(i));
         }
@@ -813,6 +833,13 @@ public class BlockManager {
     }
 
     private static void registerBlocksAndItemBlocks() {
+
+        for (int i = 0; i < appalachiaVines.size(); i++) {
+            AppalachiaBlockVine block = (AppalachiaBlockVine)appalachiaVines.get(i);
+            block.setRegistryName(block.registryName());
+            GameRegistry.register(block);
+            GameRegistry.register(new ItemBlock(block), block.getRegistryName());
+        }
 
         for (int i = 0; i < appalachiaLogs.size(); i++) {
             AppalachiaBlockLog block = (AppalachiaBlockLog)appalachiaLogs.get(i);
@@ -880,6 +907,10 @@ public class BlockManager {
     }
 
     private static void registerOres() {
+
+        for (int i = 0; i < appalachiaVines.size(); i++) {
+            OreDictionary.registerOre("vine", new ItemStack(appalachiaVines.get(i), 1, OreDictionary.WILDCARD_VALUE));
+        }
 
         for (int i = 0; i < appalachiaLogs.size(); i++) {
             OreDictionary.registerOre("logWood", new ItemStack(appalachiaLogs.get(i), 1, OreDictionary.WILDCARD_VALUE));
@@ -995,6 +1026,10 @@ public class BlockManager {
 
     @SideOnly(Side.CLIENT)
     public static void registerModels() {
+
+        for (int i = 0; i < appalachiaVines.size(); i++) {
+            registerModel(appalachiaVines.get(i));
+        }
 
         for (int i = 0; i < appalachiaLogs.size(); i++) {
             registerModel(appalachiaLogs.get(i));

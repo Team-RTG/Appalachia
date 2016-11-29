@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "appalachia:blocks/vine_posion_ivy_01"
+    }
+}
