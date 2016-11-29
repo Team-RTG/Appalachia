@@ -257,7 +257,7 @@ public class DecoCollectionSmokyForest extends DecoCollectionBase {
         // Poison ivy.
         DecoVines decoPoisonIvy = new DecoVines();
         decoPoisonIvy.vineBlock = AppalachiaBlocks.vine_poison_ivy_01;
-        decoPoisonIvy.strengthFactor = 16f;
+        decoPoisonIvy.strengthFactor = 12f;
         decoPoisonIvy.propNorth = AppalachiaBlockVine.NORTH;
         decoPoisonIvy.propEast = AppalachiaBlockVine.EAST;
         decoPoisonIvy.propSouth = AppalachiaBlockVine.SOUTH;
@@ -268,7 +268,7 @@ public class DecoCollectionSmokyForest extends DecoCollectionBase {
         DecoGrass decoGrass = new DecoGrass();
         decoGrass.minY = 63;
         decoGrass.maxY = shrubMaxY;
-        decoGrass.strengthFactor = 16f;
+        decoGrass.strengthFactor = 24f;
         this.addDeco(decoGrass);
     }
 }
