@@ -16,7 +16,7 @@ import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
 
 import rtg.util.OpenSimplexNoise;
 
-public class AppalachiaBiome extends Biome implements IAppalachiaBiome {
+public abstract class AppalachiaBiome extends Biome implements IAppalachiaBiome {
 
     public ArrayList<AppalachiaTree> appalachiaTrees;
     public OpenSimplexNoise simplex = new OpenSimplexNoise(4444);
