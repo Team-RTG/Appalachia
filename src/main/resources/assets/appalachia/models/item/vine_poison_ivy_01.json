@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "appalachia:blocks/vine_posion_ivy_01"
+        "layer0": "appalachia:blocks/vine_poison_ivy_01"
     }
 }
