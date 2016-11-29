@@ -4,10 +4,13 @@ import net.minecraft.init.Blocks;
 import net.minecraft.world.gen.feature.WorldGenTrees;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
+import appalachia.api.AppalachiaBlocks;
 import appalachia.api.block.IAppalachiaBlockLeavesFallen;
 import appalachia.block.leaves.AppalachiaBlockLeaves;
 import appalachia.block.leaves.fallen.AppalachiaBlockLeavesFallen;
 import appalachia.block.logs.AppalachiaBlockLog;
+import appalachia.block.vines.AppalachiaBlockVine;
+import appalachia.rtg.world.biome.deco.DecoVines;
 import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
 import appalachia.rtg.world.gen.feature.tree.rtg.TreeAbiesGrandis;
 import appalachia.rtg.world.gen.feature.tree.rtg.TreeAcerRubrum;
@@ -251,15 +254,21 @@ public class DecoCollectionSmokyForest extends DecoCollectionBase {
         decoFern.loops = 2;
         this.addDeco(decoFern);
 
-        // A combo-deal of grass and vines. (This could probably be pulled out into individual decos.)
-        DecoJungleGrassVines decoJungleGrassVines = new DecoJungleGrassVines();
-        this.addDeco(decoJungleGrassVines);
+        // Poison ivy.
+        DecoVines decoPoisonIvy = new DecoVines();
+        decoPoisonIvy.vineBlock = AppalachiaBlocks.vine_poison_ivy_01;
+        decoPoisonIvy.strengthFactor = 16f;
+        decoPoisonIvy.propNorth = AppalachiaBlockVine.NORTH;
+        decoPoisonIvy.propEast = AppalachiaBlockVine.EAST;
+        decoPoisonIvy.propSouth = AppalachiaBlockVine.SOUTH;
+        decoPoisonIvy.propWest = AppalachiaBlockVine.WEST;
+        this.addDeco(decoPoisonIvy);
 
         // Grass filler.
         DecoGrass decoGrass = new DecoGrass();
         decoGrass.minY = 63;
         decoGrass.maxY = shrubMaxY;
-        decoGrass.strengthFactor = 12f;
+        decoGrass.strengthFactor = 16f;
         this.addDeco(decoGrass);
     }
 }
