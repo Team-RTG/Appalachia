@@ -34,15 +34,14 @@ public class WorldGenVinesAPL extends WorldGenerator {
     public boolean generate(World worldIn, Random rand, BlockPos position) {
 
         for (; position.getY() < this.maxY; position = position.up()) {
+
             if (worldIn.isAirBlock(position)) {
+
                 for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL.facings()) {
+
                     if (this.vineBlock.canPlaceBlockOnSide(worldIn, position, enumfacing)) {
-                        IBlockState iblockstate = this.vineBlock.getDefaultState()
-                            .withProperty(this.propNorth, enumfacing == EnumFacing.SOUTH)
-                            .withProperty(this.propEast, enumfacing == EnumFacing.WEST)
-                            .withProperty(this.propSouth, enumfacing == EnumFacing.NORTH)
-                            .withProperty(this.propWest, enumfacing == EnumFacing.EAST);
-                        worldIn.setBlockState(position, iblockstate, 2);
+
+                        this.addVine(worldIn, rand, position, enumfacing);
                         break;
                     }
                 }
@@ -53,5 +52,24 @@ public class WorldGenVinesAPL extends WorldGenerator {
         }
 
         return true;
+    }
+
+    protected void addVine(World worldIn, Random rand, BlockPos pos, EnumFacing enumfacing)
+    {
+        IBlockState iblockstate = this.vineBlock.getDefaultState()
+            .withProperty(this.propNorth, enumfacing == EnumFacing.SOUTH)
+            .withProperty(this.propEast, enumfacing == EnumFacing.WEST)
+            .withProperty(this.propSouth, enumfacing == EnumFacing.NORTH)
+            .withProperty(this.propWest, enumfacing == EnumFacing.EAST);
+
+        this.setBlockAndNotifyAdequately(worldIn, pos, iblockstate);
+
+        int i = rand.nextInt(4) + 1;
+
+        for (pos = pos.down(); worldIn.isAirBlock(pos) && i > 0; --i)
+        {
+            this.setBlockAndNotifyAdequately(worldIn, pos, iblockstate);
+            pos = pos.down();
+        }
     }
 }
