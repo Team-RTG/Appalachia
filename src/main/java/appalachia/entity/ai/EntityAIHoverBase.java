@@ -13,7 +13,7 @@ import net.minecraft.util.math.Vec3d;
 public abstract class EntityAIHoverBase extends EntityAIBase {
 
     protected EntityFlying entity;
-    protected float flyHeight;
+    protected int hoverHeight;
     protected Action action;
 
     private Vec3d lastPosition;
@@ -27,21 +27,30 @@ public abstract class EntityAIHoverBase extends EntityAIBase {
 
     @Override
     public boolean continueExecuting() {
-        if (action == null || (entity.ticksExisted % 5 == 0 && action != Action.END)) {
+        if (action == null || (entity.ticksExisted % 7 == 0 && action != Action.END)) {
             @Nonnull BlockPos spot = new BlockPos(entity);
 
-            float height = getHeight();
+            float height = hoverHeight;
+
+            if (!heightCouldMatch()) {
+                height = getHeight();
+            }
+
             entity.motionX = entity.motionY = entity.motionZ = 0;
 
             if (stopCondition(spot)) {
                 return false;
             } else if (endCondition(spot, height)) {
+                endActionOnce();
                 action = Action.END;
-            } else if (gainHeightCondition(spot, height)) {
+            } else if (gainHeightCondition(height)) {
+                gainHeightActionOnce();
                 action = Action.GAIN_HEIGHT;
-            } else if (loseHeightCondition(spot, height)) {
+            } else if (loseHeightCondition(height)) {
+                loseHeightActionOnce();
                 action = Action.LOSE_HEIGHT;
             } else {
+                flyActionOnce();
                 action = Action.FLY;
             }
         }
@@ -62,30 +71,39 @@ public abstract class EntityAIHoverBase extends EntityAIBase {
 
     @Override
     public void startExecuting() {
-        float currentHeight = getHeight();
-        flyHeight = getHoverHeight(currentHeight);
+        int currentHeight = getHeight();
+        hoverHeight = getHoverHeight(currentHeight);
 
-        entity.rotationYaw = getRotation(new BlockPos(entity));
-        entity.rotationYawHead = entity.rotationYaw;
+        entity.rotationYawHead = entity.rotationYaw = getRotation(new BlockPos(entity));
 
         lastPosition = new Vec3d(0, -10, 0);
 
         action = Action.GAIN_HEIGHT;
     }
 
-    protected float getHoverHeight(float currentHeight) {
-        return currentHeight > 2 ? currentHeight : (float) RandomUtil.weightedRandom(entity.getRNG(), 1, 0.75F) + entity.getRNG().nextFloat();
+    protected int getHoverHeight(int currentHeight) {
+        return currentHeight > 2 ? currentHeight : RandomUtil.weightedRandomFactor2(entity.ticksExisted, 1, 4);
     }
+
+
 
     protected int getRotation(BlockPos spot) {
         return entity.getRNG().nextInt(360);
     }
 
-    protected float getHeight() {
+    protected boolean heightCouldMatch() {
+        @Nonnull BlockPos pos = new BlockPos(entity);
+        int tolerance = (int) (getSpeed(0.8F) * 14 /* 2 (Blocks to tolerate) * 7 (Task Update Interval) */) + 1;
+
+        BlockPos shouldAir = pos.down(Math.max(1, hoverHeight - tolerance));
+        return entity.getEntityWorld().isAirBlock(shouldAir) && !entity.getEntityWorld().isAirBlock(shouldAir.down(tolerance));
+    }
+
+    protected int getHeight() {
         @Nonnull BlockPos pos = new BlockPos(entity);
         BlockPos nextBlock = WorldUtil.nextSolidBlock(entity.worldObj, pos, EnumFacing.DOWN);
 
-        return (float) (entity.posY - nextBlock.getY());
+        return (int) entity.posY - nextBlock.getY();
     }
 
     protected boolean stopCondition(BlockPos spot) {
@@ -96,21 +114,25 @@ public abstract class EntityAIHoverBase extends EntityAIBase {
         return isBlocked() || entity.getRNG().nextInt(32) == 0 && isSpotGood(spot);
     }
 
-    protected boolean gainHeightCondition(BlockPos spot, float height) {
-        return height > flyHeight + 1;
+    protected boolean gainHeightCondition(float height) {
+        return height < hoverHeight;
     }
 
-    protected boolean loseHeightCondition(BlockPos spot, float height) {
-        return height < flyHeight;
+    protected boolean loseHeightCondition(float height) {
+        return height > hoverHeight + getSpeed(0.9F) * 14 /* 2 (Blocks to tolerate) * 7 (Task Update Interval) */;
     }
+
+    protected void endActionOnce() {}
 
     protected boolean endAction() {
         if (entity.onGround) {
             entity.motionY = -0.5;
             entity.motionX = entity.motionZ = 0;
             return false;
-        } else if (getHeight() < 0.1) {
+        } else if (entity.ticksExisted % 4 == 0 && getHeight() < 0.1) {
             entity.setPosition(entity.posX, (int) entity.posY, entity.posZ);
+            entity.motionY = -0.5;
+            entity.motionX = entity.motionZ = 0;
             return false;
         } else {
             entity.motionY = getSpeed(-0.55F);
@@ -119,33 +141,32 @@ public abstract class EntityAIHoverBase extends EntityAIBase {
         return true;
     }
 
-    protected boolean gainHeightAction() {
-        if (getHeight() >= flyHeight) {
-            entity.motionY = 0;
-            action = Action.FLY;
-        } else {
-            entity.moveRelative(0, getSpeed(0.2F), 0.1F);
-            entity.motionY = getSpeed(0.6F);
-        }
+    protected void gainHeightActionOnce() {}
 
+    protected boolean gainHeightAction() {
+        entity.motionY = getSpeed(0.6F);
         return true;
     }
 
-    protected boolean loseHeightAction() {
-        if (getHeight() < flyHeight + 0.5) {
-            entity.motionY = 0;
-            action = Action.FLY;
-        } else {
-            entity.motionY = getSpeed(-0.7F);
-        }
+    protected void loseHeightActionOnce() {}
 
+    protected boolean loseHeightAction() {
+        entity.motionY = getSpeed(-0.7F);
         return true;
+    }
+
+    protected void flyActionOnce() {
+        if (entity.ticksExisted % 10 == 0 && entity.getRNG().nextInt(5) == 0) {
+            int difference = (int) (entity.getRNG().nextGaussian() * 20);
+            entity.rotationYaw += difference;
+            entity.rotationYawHead += difference;
+        }
     }
 
     protected boolean flyAction() {
         entity.moveRelative(0, getSpeed(1), 0.1F);
 
-        if (entity.ticksExisted % 2 == 0) {
+        if (entity.ticksExisted % 3 == 0) {
             entity.motionX += entity.getRNG().nextGaussian() * getSpeed(0.2F);
             entity.motionY += entity.getRNG().nextGaussian() * getSpeed(0.2F);
             entity.motionZ += entity.getRNG().nextGaussian() * getSpeed(0.2F);

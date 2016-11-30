@@ -18,19 +18,17 @@ public class EntityAIHoverAwayFromEntity extends EntityAIHoverBase {
 
     private float maxRange;
 
-    public EntityAIHoverAwayFromEntity(EntityFlying entity, Class<? extends Entity> living, float defaultRange, float distribution, float speedModifier) {
+    public EntityAIHoverAwayFromEntity(EntityFlying entity, Class<? extends Entity> living, float defaultRange, float maxRange, float speedModifier) {
         super(entity, speedModifier);
         this.living = living;
         this.defaultRange = defaultRange;
-        this.derivation = distribution;
-
-        this.maxRange = defaultRange + distribution * 4;
+        this.maxRange = maxRange;
     }
 
     @Override
     public boolean shouldExecute() {
         @Nonnull BlockPos pos = new BlockPos(entity);
-        return entity.ticksExisted % 7 == 0 && entityNearby(pos, (int) RandomUtil.weightedRandom(entity.getRNG(), defaultRange, derivation));
+        return entity.ticksExisted % 10 == 0 && entityNearby(pos, RandomUtil.weightedRandomFactor2(entity.ticksExisted, 2, 6));
     }
 
     private boolean entityNearby(@Nonnull BlockPos spot, float range) {

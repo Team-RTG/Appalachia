@@ -1,7 +1,6 @@
 package appalachia.entity.ai;
 
 import appalachia.util.EntityUtil;
-import appalachia.util.RandomUtil;
 import net.minecraft.entity.EntityFlying;
 import net.minecraft.util.math.BlockPos;
 
@@ -21,7 +20,7 @@ public class EntityAIHoverPanic extends EntityAIHoverBase {
 
     @Override
     public void startExecuting() {
-        until = entity.ticksExisted + (int) RandomUtil.weightedRandom(entity.getRNG(), 60, 100);
+        until = entity.ticksExisted + 80;
         super.startExecuting();
     }
 

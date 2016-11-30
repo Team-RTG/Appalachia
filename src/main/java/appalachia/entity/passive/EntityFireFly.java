@@ -10,19 +10,34 @@ import appalachia.loot.LootManager;
 import appalachia.util.WorldUtil;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityFlying;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.MobEffects;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.potion.PotionHealth;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.Style;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.world.BossInfo;
+import net.minecraft.world.BossInfo.Color;
+import net.minecraft.world.BossInfo.Overlay;
+import net.minecraft.world.BossInfoServer;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
@@ -34,15 +49,31 @@ public class EntityFireFly extends EntityFlying {
     private boolean doFlash;
     private boolean sync;
     private int noFlashStatusChangeBefore;
+    private boolean bossMode;
+
+    private final BossInfoServer bossInfo = (BossInfoServer)(new BossInfoServer(this.getDisplayName(), BossInfo.Color.YELLOW, Overlay.PROGRESS));
 
     public EntityFireFly(@Nonnull World worldIn) {
         super(worldIn);
         this.setSize(0.15F, 0.15F);
         this.setAIMoveSpeed(0.125F);
+        bossInfo.setVisible(false);
 
         doFlash = true;
         setFlashStatus(false);
         sync = false;
+    }
+
+    @Override
+    public void addTrackingPlayer(EntityPlayerMP player) {
+        bossInfo.addPlayer(player);
+        super.addTrackingPlayer(player);
+    }
+
+    @Override
+    public void removeTrackingPlayer(EntityPlayerMP player) {
+        bossInfo.removePlayer(player);
+        super.removeTrackingPlayer(player);
     }
 
     public void setFlashStatus(boolean flashStatus) {
@@ -115,6 +146,8 @@ public class EntityFireFly extends EntityFlying {
                     }
                 }
             }
+
+            this.bossInfo.setPercent(getHealth() / getMaxHealth());
         }
     }
 
@@ -164,6 +197,8 @@ public class EntityFireFly extends EntityFlying {
     }
 
     private void applyEasterEggs(@Nonnull String name) {
+        bossInfo.setName(new TextComponentString(name).setStyle(new Style().setColor(TextFormatting.YELLOW)));
+
         switch (name) {
             case "WhichOnesPink":
                 setColor(Color.MYCELIUM);
@@ -176,6 +211,10 @@ public class EntityFireFly extends EntityFlying {
                 doFlash = false;
                 setFlashStatus(false);
                 break;
+            case "srs_bsns":
+                bossInfo.setVisible(true);
+                bossMode = true;
+                break;
             default:
                 break;
         }
@@ -186,18 +225,30 @@ public class EntityFireFly extends EntityFlying {
             return false;
         }
 
-        while (WorldUtil.isNotSolid(world, pos)) {
-            pos = pos.down();
-        }
-
-        for (byte i = 1; i < 4; i++) {
-            if (!WorldUtil.isNotSolid(world, pos.up(i))) {
-                return false;
-            }
-        }
+        pos = WorldUtil.nextSolidBlock(world, pos, EnumFacing.DOWN);
 
         @Nonnull IBlockState state = world.getBlockState(pos);
         return (state.getMaterial().equals(Material.GRASS) || state.getMaterial().equals(Material.GROUND) && state.getBlock().isReplaceable(world, pos) && !state.getBlock().hasTileEntity(state));
+    }
+
+    @Override
+    protected void damageEntity(DamageSource damageSrc, float damageAmount) {
+        if(bossMode && getHealth() - damageAmount < 1 && damageSrc != DamageSource.outOfWorld) {
+            if(this.getHealth() > 1) {
+                super.damageEntity(damageSrc, 0);
+                this.setHealth(1);
+            } else {
+                this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(getMaxHealth() + 1);
+                this.setHealth(getMaxHealth());
+            }
+        } else {
+            super.damageEntity(damageSrc, damageAmount);
+        }
+    }
+
+    @Override
+    public boolean isNonBoss() {
+        return !bossMode;
     }
 
     @Override
@@ -206,6 +257,8 @@ public class EntityFireFly extends EntityFlying {
         compound.setByte("color", (byte) getColor().ordinal());
         compound.setBoolean("flashes", doFlash);
         compound.setBoolean("sync", sync);
+        compound.setBoolean("boss", bossMode);
+
         return super.writeToNBT(compound);
     }
 
@@ -221,8 +274,14 @@ public class EntityFireFly extends EntityFlying {
 
         doFlash = compound.getBoolean("flashes");
         sync = compound.getBoolean("sync");
+        bossMode = compound.getBoolean("boss");
 
         setColor(color);
+
+        if(bossMode) {
+            bossInfo.setVisible(true);
+        }
+
         super.readFromNBT(compound);
     }
 
