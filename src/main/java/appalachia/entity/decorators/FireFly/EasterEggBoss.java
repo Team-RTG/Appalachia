@@ -1,5 +1,7 @@
 package appalachia.entity.decorators.FireFly;
 
+import javax.annotation.Nonnull;
+
 import appalachia.entity.decorators.EntityDecorator;
 import appalachia.entity.passive.EntityFireFly;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -19,7 +21,7 @@ public class EasterEggBoss implements EntityDecorator<EntityFireFly> {
     EntityFireFly fireFly;
     private final BossInfoServer bossInfo = new BossInfoServer(getBossName("BossFly™"), BossInfo.Color.YELLOW, Overlay.PROGRESS);
 
-    public EasterEggBoss(EntityFireFly fireFly) {
+    public EasterEggBoss(@Nonnull EntityFireFly fireFly) {
         this.fireFly = fireFly;
         fireFly.setIsBossMode(true);
         bossInfo.setName(getBossName(fireFly.getName()));
@@ -62,16 +64,16 @@ public class EasterEggBoss implements EntityDecorator<EntityFireFly> {
     }
 
     @Override
-    public void newTrackingPlayer(EntityPlayerMP player) {
+    public void newTrackingPlayer(@Nonnull EntityPlayerMP player) {
         bossInfo.addPlayer(player);
     }
 
     @Override
-    public void removeTrackingPlayer(EntityPlayerMP player) {
+    public void removeTrackingPlayer(@Nonnull EntityPlayerMP player) {
         bossInfo.removePlayer(player);
     }
 
-    private static ITextComponent getBossName(String name) {
+    private static ITextComponent getBossName(@Nonnull String name) {
         return new TextComponentString(name).setStyle(new Style().setColor(TextFormatting.YELLOW));
     }
 }

@@ -1,5 +1,7 @@
 package appalachia.entity.decorators.FireFly;
 
+import javax.annotation.Nonnull;
+
 import appalachia.entity.decorators.EntityDecorator;
 import appalachia.entity.passive.EntityFireFly;
 
@@ -10,7 +12,7 @@ public class EasterEggFlashingMode implements EntityDecorator<EntityFireFly> {
 
     EntityFireFly fireFly;
 
-    public EasterEggFlashingMode(EntityFireFly fireFly, boolean sync, boolean doesFlash, boolean flashStatus) {
+    public EasterEggFlashingMode(@Nonnull EntityFireFly fireFly, boolean sync, boolean doesFlash, boolean flashStatus) {
         this.sync = fireFly.isSync();
         this.doesFlash = fireFly.isDoFlash();
         this.flashStatus = fireFly.isFlashing();
