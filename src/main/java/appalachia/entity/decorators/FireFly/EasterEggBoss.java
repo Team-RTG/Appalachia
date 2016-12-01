@@ -37,8 +37,10 @@ public class EasterEggBoss implements EntityDecorator<EntityFireFly> {
     public void removeDecorator() {
         fireFly.setIsBossMode(false);
 
-        for(EntityPlayer player : ((WorldServer) fireFly.getEntityWorld()).getEntityTracker().getTrackingPlayers(fireFly)) {
-            bossInfo.removePlayer((EntityPlayerMP) player);
+        if(!fireFly.worldObj.isRemote) {
+            for (EntityPlayer player : ((WorldServer) fireFly.getEntityWorld()).getEntityTracker().getTrackingPlayers(fireFly)) {
+                bossInfo.removePlayer((EntityPlayerMP) player);
+            }
         }
     }
 
