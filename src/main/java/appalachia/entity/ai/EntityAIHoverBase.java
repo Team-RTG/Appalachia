@@ -32,7 +32,7 @@ public abstract class EntityAIHoverBase extends EntityAIBase {
 
             float height = hoverHeight;
 
-            if (!heightCouldMatch()) {
+            if (action != Action.FLY || !heightCouldMatch()) {
                 height = getHeight();
             }
 
