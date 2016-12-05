@@ -11,6 +11,7 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.color.IBlockColor;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -18,13 +19,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeColorHelper;
-
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.api.AppalachiaAPI;
 import appalachia.block.BlockManager;
@@ -51,6 +50,27 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
     public String registryName() {
 
         return String.join("_", this.slug.split("\\."));
+    }
+
+    @Nullable
+    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, World worldIn, BlockPos pos)
+    {
+        return NULL_AABB;
+    }
+
+    @Override
+    public boolean isPassable(IBlockAccess world, BlockPos pos) {
+
+        return true;
+    }
+
+    @Override
+    public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
+    {
+        entityIn.motionX *= 0.5D;
+        entityIn.motionY *= 0.5D;
+        entityIn.motionZ *= 0.5D;
+        entityIn.fallDistance = 0f;
     }
 
     @Override
@@ -91,13 +111,6 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
     public EnumType getWoodType(int meta) {
 
         return null;
-    }
-
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void setGraphicsLevel(boolean fancy) {
-
-        super.setGraphicsLevel(true);
     }
 
     @Override
