@@ -5,7 +5,6 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
-import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
@@ -13,10 +12,10 @@ import appalachia.api.AppalachiaBiomes;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionSmokyBog;
 import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 
-import rtg.config.BiomeConfig;
-import rtg.util.CellNoise;
-import rtg.util.CliffCalculator;
-import rtg.util.OpenSimplexNoise;
+import rtg.api.config.BiomeConfig;
+import rtg.api.util.CliffCalculator;
+import rtg.api.util.noise.OpenSimplexNoise;
+import rtg.api.world.RTGWorld;
 import rtg.world.gen.surface.SurfaceBase;
 import rtg.world.gen.terrain.HeightEffect;
 import rtg.world.gen.terrain.HeightVariation;
@@ -62,9 +61,10 @@ public class RealisticBiomeAPLSmokyBogAutumn extends RealisticBiomeAPLBase {
         }
 
         @Override
-        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int y, int depth, World world, Random rand,
-                                 OpenSimplexNoise simplex, CellNoise cell, float[] noise, float river, Biome[] base) {
+        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int y, int depth, RTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
 
+            Random rand = rtgWorld.rand;
+            OpenSimplexNoise simplex = rtgWorld.simplex;
             float c = CliffCalculator.calc(x, y, noise);
             boolean cliff = c > 1.4f ? true : false;
 
@@ -80,15 +80,15 @@ public class RealisticBiomeAPLSmokyBogAutumn extends RealisticBiomeAPLBase {
                         if (depth > -1 && depth < 2) {
                             if (rand.nextInt(3) == 0) {
 
-                                primer.setBlockState(x, k, y, hcCobble(world, i, j, x, y, k));
+                                primer.setBlockState(x, k, y, hcCobble(rtgWorld, i, j, x, y, k));
                             }
                             else {
 
-                                primer.setBlockState(x, k, y, hcStone(world, i, j, x, y, k));
+                                primer.setBlockState(x, k, y, hcStone(rtgWorld, i, j, x, y, k));
                             }
                         }
                         else if (depth < 10) {
-                            primer.setBlockState(x, k, y, hcStone(world, i, j, x, y, k));
+                            primer.setBlockState(x, k, y, hcStone(rtgWorld, i, j, x, y, k));
                         }
                     }
                     else {
@@ -120,9 +120,9 @@ public class RealisticBiomeAPLSmokyBogAutumn extends RealisticBiomeAPLBase {
         }
 
         @Override
-        public float generateNoise(OpenSimplexNoise simplex, CellNoise cell, int x, int y, float border, float river) {
+        public float generateNoise(RTGWorld rtgWorld, int x, int y, float border, float river) {
 
-            return 62f + height.added(simplex, cell, x, y);
+            return 62f + height.added(rtgWorld, x, y);
         }
     }
 
