@@ -8,7 +8,6 @@ import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 import net.minecraftforge.event.terraingen.TerrainGen;
@@ -16,8 +15,7 @@ import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.Ev
 
 import appalachia.rtg.world.gen.feature.WorldGenVinesAPL;
 
-import rtg.util.CellNoise;
-import rtg.util.OpenSimplexNoise;
+import rtg.api.world.RTGWorld;
 import rtg.world.biome.deco.DecoBase;
 import rtg.world.biome.realistic.RealisticBiomeBase;
 
@@ -73,11 +71,11 @@ public class DecoVines extends DecoBase {
     }
 
     @Override
-    public void generate(RealisticBiomeBase biome, World world, Random rand, int worldX, int worldY, OpenSimplexNoise simplex, CellNoise cell, float strength, float river, boolean hasPlacedVillageBlocks) {
+    public void generate(RealisticBiomeBase biome, RTGWorld rtgWorld, Random rand, int worldX, int worldZ, float strength, float river, boolean hasPlacedVillageBlocks) {
 
         if (this.allowed) {
 
-            if (TerrainGen.decorate(world, rand, new BlockPos(worldX, 0, worldY), GRASS)) {
+            if (TerrainGen.decorate(rtgWorld.world, rand, new BlockPos(worldX, 0, worldZ), GRASS)) {
 
                 this.worldGenerator = new WorldGenVinesAPL(this.vineBlock, this.maxY, this.propNorth, this.propEast, this.propSouth, this.propWest);
 
@@ -85,10 +83,10 @@ public class DecoVines extends DecoBase {
                 for (int i = 0; i < this.loops; i++) {
 
                     int intX = worldX + rand.nextInt(16);// + 8;
-                    int intZ = worldY + rand.nextInt(16);// + 8;
+                    int intZ = worldZ + rand.nextInt(16);// + 8;
                     int intY = this.minY;
 
-                    worldGenerator.generate(world, rand, new BlockPos(intX, intY, intZ));
+                    worldGenerator.generate(rtgWorld.world, rand, new BlockPos(intX, intY, intZ));
                 }
             }
         }

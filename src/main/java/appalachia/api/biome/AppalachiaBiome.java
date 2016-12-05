@@ -14,7 +14,8 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import appalachia.api.biome.decorator.AppalachiaDecorator;
 import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
 
-import rtg.util.OpenSimplexNoise;
+import rtg.api.util.noise.OpenSimplexNoise;
+
 
 public abstract class AppalachiaBiome extends Biome implements IAppalachiaBiome {
 
