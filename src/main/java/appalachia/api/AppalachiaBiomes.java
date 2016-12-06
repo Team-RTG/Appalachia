@@ -26,10 +26,32 @@ public class AppalachiaBiomes {
     public static Biome smokyBeach;
     public static Biome smokyRiver;
 
+    public static Biome adirondackForest;
+    public static Biome adirondackForestAutumn;
+    public static Biome adirondackHills;
+    public static Biome adirondackHillsAutumn;
+    public static Biome adirondackMountains;
+    public static Biome adirondackMountainsAutumn;
+    public static Biome adirondackBog;
+    public static Biome adirondackBogAutumn;
+    public static Biome adirondackBeach;
+    public static Biome adirondackRiver;
+
 
     public static enum AppalachiaBiomeProps {
 
         //                                                          BH      HV      Temp    Rain    H2OColour   Snow?
+
+        ADIRONDACK_FOREST("Adirondack Forest",                      0.1F,   0.1F,   0.54F,  0.8F,   16777215,   false),
+        ADIRONDACK_FOREST_AUTUMN("Autumn Adirondack Forest",        0.1F,   0.1F,   0.54F,  0.8F,   16777215,   false),
+        ADIRONDACK_HILLS("Adirondack Hills",                        0.15F,  0.15F,  0.54F,  0.8F,   16777215,   false),
+        ADIRONDACK_HILLS_AUTUMN("Autumn Adirondack Hills",          0.15F,  0.15F,  0.54F,  0.8F,   16777215,   false),
+        ADIRONDACK_MOUNTAINS("Adirondack Mountains",                0.2F,   0.2F,   0.54F,  0.8F,   16777215,   false),
+        ADIRONDACK_MOUNTAINS_AUTUMN("Autumn Adirondack Mountains",  0.2F,   0.2F,   0.54F,  0.8F,   16777215,   false),
+        ADIRONDACK_BOG("Adirondack Bog",                            -0.2F,  0.1F,   0.54F,  0.9F,   16777215,   false),
+        ADIRONDACK_BOG_AUTUMN("Autumn Adirondack Bog",              -0.2F,  0.1F,   0.54F,  0.9F,   16777215,   false),
+        ADIRONDACK_BEACH("Adirondack Beach",                        0.1F,   0.05F,  0.54F,  0.8F,   16777215,   false),
+        ADIRONDACK_RIVER("Adirondack River",                        0.1F,   0.05F,  0.54F,  0.8F,   16777215,   false),
 
         BLUE_RIDGE_FOREST("Blue Ridge Forest",                      0.1F,   0.1F,   0.34F,  0.8F,   16777215,   false),
         BLUE_RIDGE_FOREST_AUTUMN("Autumn Blue Ridge Forest",        0.1F,   0.1F,   0.34F,  0.8F,   16777215,   false),

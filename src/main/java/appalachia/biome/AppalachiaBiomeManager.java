@@ -1,13 +1,19 @@
 package appalachia.biome;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
+import net.minecraftforge.event.terraingen.WorldTypeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import appalachia.api.biome.AppalachiaBiome;
+import appalachia.api.biome.adirondack.*;
 import appalachia.api.biome.blueridge.*;
 import appalachia.api.biome.smoky.*;
 import appalachia.config.ConfigAppalachia;
@@ -15,14 +21,6 @@ import appalachia.util.BiomeUtils;
 import appalachia.util.Logger;
 import static appalachia.api.AppalachiaBiomes.*;
 import static appalachia.reference.ModInfo.MOD_ID;
-import com.google.common.collect.ImmutableList;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import net.minecraft.world.WorldType;
-import net.minecraft.world.gen.layer.GenLayer;
-import net.minecraftforge.common.BiomeManager.BiomeEntry;
-import net.minecraftforge.event.terraingen.WorldTypeEvent;
 
 public class AppalachiaBiomeManager {
 
@@ -33,6 +31,171 @@ public class AppalachiaBiomeManager {
     }
 
     public static void registerBiomes() {
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Adirondack Forest
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        adirondackForest = new BiomeAdirondackForest(AppalachiaBiomeProps.ADIRONDACK_FOREST.getProps());
+        registerBiomeWithTypes(
+            adirondackForest,
+            "adirondackforest",
+            ConfigAppalachia.biomeWeight_AdirondackForest,
+            BiomeManager.BiomeType.COOL,
+            BiomeAdirondackForest.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(adirondackForest);
+        BiomeManager.addVillageBiome(adirondackForest, true);
+        BiomeManager.addStrongholdBiome(adirondackForest);
+        Biome.EXPLORATION_BIOMES_LIST.add(adirondackForest);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Autumn Adirondack Forest
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        adirondackForestAutumn = new BiomeAdirondackForestAutumn(AppalachiaBiomeProps.ADIRONDACK_FOREST_AUTUMN.getProps());
+        registerBiomeWithTypes(
+            adirondackForestAutumn,
+            "adirondackforestautumn",
+            ConfigAppalachia.biomeWeight_AdirondackForestAutumn,
+            BiomeManager.BiomeType.COOL,
+            BiomeAdirondackForestAutumn.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(adirondackForestAutumn);
+        BiomeManager.addVillageBiome(adirondackForestAutumn, true);
+        BiomeManager.addStrongholdBiome(adirondackForestAutumn);
+        Biome.EXPLORATION_BIOMES_LIST.add(adirondackForestAutumn);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Adirondack Hills
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        adirondackHills = new BiomeAdirondackHills(AppalachiaBiomeProps.ADIRONDACK_HILLS.getProps());
+        registerBiomeWithTypes(
+            adirondackHills,
+            "adirondackhills",
+            ConfigAppalachia.biomeWeight_AdirondackHills,
+            BiomeManager.BiomeType.COOL,
+            BiomeAdirondackHills.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(adirondackHills);
+        BiomeManager.addVillageBiome(adirondackHills, true);
+        BiomeManager.addStrongholdBiome(adirondackHills);
+        Biome.EXPLORATION_BIOMES_LIST.add(adirondackHills);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Autumn Adirondack Hills
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        adirondackHillsAutumn = new BiomeAdirondackHillsAutumn(AppalachiaBiomeProps.ADIRONDACK_HILLS_AUTUMN.getProps());
+        registerBiomeWithTypes(
+            adirondackHillsAutumn,
+            "adirondackhillsautumn",
+            ConfigAppalachia.biomeWeight_AdirondackHillsAutumn,
+            BiomeManager.BiomeType.COOL,
+            BiomeAdirondackHillsAutumn.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(adirondackHillsAutumn);
+        BiomeManager.addVillageBiome(adirondackHillsAutumn, true);
+        BiomeManager.addStrongholdBiome(adirondackHillsAutumn);
+        Biome.EXPLORATION_BIOMES_LIST.add(adirondackHillsAutumn);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Adirondack Mountains
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        adirondackMountains = new BiomeAdirondackMountains(AppalachiaBiomeProps.ADIRONDACK_MOUNTAINS.getProps());
+        registerBiomeWithTypes(
+            adirondackMountains,
+            "adirondackmountains",
+            ConfigAppalachia.biomeWeight_AdirondackMountains,
+            BiomeManager.BiomeType.COOL,
+            BiomeAdirondackMountains.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(adirondackMountains);
+        BiomeManager.addVillageBiome(adirondackMountains, true);
+        BiomeManager.addStrongholdBiome(adirondackMountains);
+        Biome.EXPLORATION_BIOMES_LIST.add(adirondackMountains);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Autumn Adirondack Mountains
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        adirondackMountainsAutumn = new BiomeAdirondackMountainsAutumn(AppalachiaBiomeProps.ADIRONDACK_MOUNTAINS_AUTUMN.getProps());
+        registerBiomeWithTypes(
+            adirondackMountainsAutumn,
+            "adirondackmountainsautumn",
+            ConfigAppalachia.biomeWeight_AdirondackMountainsAutumn,
+            BiomeManager.BiomeType.COOL,
+            BiomeAdirondackMountainsAutumn.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(adirondackMountainsAutumn);
+        BiomeManager.addVillageBiome(adirondackMountainsAutumn, true);
+        BiomeManager.addStrongholdBiome(adirondackMountainsAutumn);
+        Biome.EXPLORATION_BIOMES_LIST.add(adirondackMountainsAutumn);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Adirondack Bog
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        adirondackBog = new BiomeAdirondackBog(AppalachiaBiomeProps.ADIRONDACK_BOG.getProps());
+        registerBiomeWithTypes(
+            adirondackBog,
+            "adirondackbog",
+            ConfigAppalachia.biomeWeight_AdirondackBog,
+            BiomeManager.BiomeType.COOL,
+            BiomeAdirondackForest.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(adirondackBog);
+        BiomeManager.addVillageBiome(adirondackBog, true);
+        BiomeManager.addStrongholdBiome(adirondackBog);
+        Biome.EXPLORATION_BIOMES_LIST.add(adirondackBog);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Autumn Adirondack Bog
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        adirondackBogAutumn = new BiomeAdirondackBogAutumn(AppalachiaBiomeProps.ADIRONDACK_BOG_AUTUMN.getProps());
+        registerBiomeWithTypes(
+            adirondackBogAutumn,
+            "adirondackbogautumn",
+            ConfigAppalachia.biomeWeight_AdirondackBogAutumn,
+            BiomeManager.BiomeType.COOL,
+            BiomeAdirondackForest.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(adirondackBogAutumn);
+        BiomeManager.addVillageBiome(adirondackBogAutumn, true);
+        BiomeManager.addStrongholdBiome(adirondackBogAutumn);
+        Biome.EXPLORATION_BIOMES_LIST.add(adirondackBogAutumn);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Adirondack Beach
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        adirondackBeach = new BiomeAdirondackBeach(AppalachiaBiomeProps.ADIRONDACK_BEACH.getProps());
+        registerBiomeWithTypes(
+            adirondackBeach,
+            "adirondackbeach",
+            ConfigAppalachia.biomeWeight_AdirondackBeach,
+            BiomeManager.BiomeType.COOL,
+            BiomeAdirondackBeach.biomeTypes
+        );
+        BiomeManager.addSpawnBiome(adirondackBeach);
+        Biome.EXPLORATION_BIOMES_LIST.add(adirondackForest);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Adirondack River
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        adirondackRiver = new BiomeAdirondackRiver(AppalachiaBiomeProps.ADIRONDACK_RIVER.getProps());
+        registerBiomeWithTypes(
+            adirondackRiver,
+            "adirondackriver",
+            ConfigAppalachia.biomeWeight_AdirondackRiver,
+            BiomeManager.BiomeType.COOL,
+            BiomeAdirondackRiver.biomeTypes
+        );
+        Biome.EXPLORATION_BIOMES_LIST.add(adirondackRiver);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Blue Ridge Forest
