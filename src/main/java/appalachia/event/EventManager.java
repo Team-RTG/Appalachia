@@ -8,9 +8,10 @@ import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
+import net.minecraftforge.event.terraingen.WorldTypeEvent;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.eventhandler.Event;
-import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.LAKE_LAVA;
 import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.LAKE_WATER;
@@ -18,12 +19,9 @@ import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.Ev
 import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAVA;
 
 import appalachia.api.AppalachiaAPI;
-import appalachia.api.biome.decorator.AppalachiaDecorator;
+import appalachia.api.biome.AppalachiaBiomeDecorator;
 import appalachia.biome.AppalachiaBiomeManager;
 import appalachia.util.Logger;
-import net.minecraftforge.event.terraingen.WorldTypeEvent;
-import net.minecraftforge.fml.common.FMLCommonHandler;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
 
 
 public class EventManager {
@@ -112,9 +110,9 @@ public class EventManager {
 
                 Biome biome = event.getWorld().getBiome(new BlockPos(event.getChunkX() * 16 + 8, 0, event.getChunkZ() * 16 + 8));
 
-                if (biome.theBiomeDecorator instanceof AppalachiaDecorator) {
+                if (biome.theBiomeDecorator instanceof AppalachiaBiomeDecorator) {
 
-                    AppalachiaDecorator decorator = (AppalachiaDecorator)biome.theBiomeDecorator;
+                    AppalachiaBiomeDecorator decorator = (AppalachiaBiomeDecorator)biome.theBiomeDecorator;
 
                     if (!decorator.generatePonds) {
                         event.setResult(Event.Result.DENY);

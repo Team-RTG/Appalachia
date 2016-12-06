@@ -11,7 +11,6 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
-import appalachia.api.biome.decorator.AppalachiaDecorator;
 import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
 
 import rtg.api.util.noise.OpenSimplexNoise;
@@ -55,7 +54,7 @@ public abstract class AppalachiaBiome extends Biome implements IAppalachiaBiome 
 
     @Override
     public BiomeDecorator createBiomeDecorator() {
-        return new AppalachiaDecorator();
+        return new AppalachiaBiomeDecorator();
     }
 
     @Override
