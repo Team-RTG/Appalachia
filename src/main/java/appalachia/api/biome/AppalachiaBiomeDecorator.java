@@ -1,5 +1,5 @@
 
-package appalachia.api.biome.decorator;
+package appalachia.api.biome;
 
 import java.util.Random;
 
@@ -17,11 +17,11 @@ import net.minecraft.world.gen.feature.*;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
-public class AppalachiaDecorator extends BiomeDecorator {
+public class AppalachiaBiomeDecorator extends BiomeDecorator {
 
     public boolean generatePonds;
 
-    public AppalachiaDecorator() {
+    public AppalachiaBiomeDecorator() {
 
         this.generateLakes = false;
         this.generatePonds = false;

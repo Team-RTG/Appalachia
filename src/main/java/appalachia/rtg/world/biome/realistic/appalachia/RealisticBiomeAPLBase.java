@@ -6,12 +6,24 @@ import net.minecraft.world.biome.Biome;
 import net.minecraftforge.fml.common.Loader;
 
 import appalachia.api.AppalachiaBiomes;
+import appalachia.rtg.world.biome.realistic.appalachia.adirondack.*;
 import appalachia.rtg.world.biome.realistic.appalachia.blueridge.*;
 import appalachia.rtg.world.biome.realistic.appalachia.smoky.*;
 
 import rtg.world.biome.realistic.RealisticBiomeBase;
 
 public abstract class RealisticBiomeAPLBase extends RealisticBiomeBase {
+
+    public static RealisticBiomeBase aplAdirondackForest;
+    public static RealisticBiomeBase aplAdirondackForestAutumn;
+    public static RealisticBiomeBase aplAdirondackHills;
+    public static RealisticBiomeBase aplAdirondackHillsAutumn;
+    public static RealisticBiomeBase aplAdirondackMountains;
+    public static RealisticBiomeBase aplAdirondackMountainsAutumn;
+    public static RealisticBiomeBase aplAdirondackBog;
+    public static RealisticBiomeBase aplAdirondackBogAutumn;
+    public static RealisticBiomeBase aplAdirondackBeach;
+    public static RealisticBiomeBase aplAdirondackRiver;
 
     public static RealisticBiomeBase aplBlueRidgeForest;
     public static RealisticBiomeBase aplBlueRidgeForestAutumn;
@@ -52,6 +64,25 @@ public abstract class RealisticBiomeAPLBase extends RealisticBiomeBase {
 
         if (Loader.isModLoaded("appalachia")) {
 
+            if (AppalachiaBiomes.adirondackForest != null) {
+                aplAdirondackForest = new RealisticBiomeAPLAdirondackForest();
+            }
+            if (AppalachiaBiomes.adirondackHills != null) {
+                aplAdirondackHills = new RealisticBiomeAPLAdirondackHills();
+            }
+            if (AppalachiaBiomes.adirondackMountains != null) {
+                aplAdirondackMountains = new RealisticBiomeAPLAdirondackMountains();
+            }
+            if (AppalachiaBiomes.adirondackBog != null) {
+                aplAdirondackBog = new RealisticBiomeAPLAdirondackBog();
+            }
+            if (AppalachiaBiomes.adirondackBeach != null) {
+                aplAdirondackBeach = new RealisticBiomeAPLAdirondackBeach();
+            }
+            if (AppalachiaBiomes.adirondackRiver != null) {
+                aplAdirondackRiver = new RealisticBiomeAPLAdirondackRiver();
+            }
+
             if (AppalachiaBiomes.blueRidgeForest != null) {
                 aplBlueRidgeForest = new RealisticBiomeAPLBlueRidgeForest();
             }
@@ -91,6 +122,19 @@ public abstract class RealisticBiomeAPLBase extends RealisticBiomeBase {
             }
 
             // Autumnal biomes must be added last.
+
+            if (AppalachiaBiomes.adirondackForestAutumn != null) {
+                aplAdirondackForestAutumn = new RealisticBiomeAPLAdirondackForestAutumn();
+            }
+            if (AppalachiaBiomes.adirondackHillsAutumn != null) {
+                aplAdirondackHillsAutumn = new RealisticBiomeAPLAdirondackHillsAutumn();
+            }
+            if (AppalachiaBiomes.adirondackMountainsAutumn != null) {
+                aplAdirondackMountainsAutumn = new RealisticBiomeAPLAdirondackMountainsAutumn();
+            }
+            if (AppalachiaBiomes.adirondackBogAutumn != null) {
+                aplAdirondackBogAutumn = new RealisticBiomeAPLAdirondackBogAutumn();
+            }
 
             if (AppalachiaBiomes.blueRidgeForestAutumn != null) {
                 aplBlueRidgeForestAutumn = new RealisticBiomeAPLBlueRidgeForestAutumn();
