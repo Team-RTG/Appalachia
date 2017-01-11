@@ -6,13 +6,15 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
-import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenTrees;
 
-import rtg.config.BiomeConfig;
-import rtg.util.*;
+import rtg.api.config.BiomeConfig;
+import rtg.api.util.BlockUtil;
+import rtg.api.util.CliffCalculator;
+import rtg.api.world.RTGWorld;
+import rtg.util.CanyonColour;
 import rtg.world.biome.deco.*;
 import rtg.world.biome.deco.collection.DecoCollectionDesertRiver;
 import rtg.world.gen.surface.SurfaceBase;
@@ -81,9 +83,9 @@ public class RealisticBiomeVanillaMesaPlateauFM extends RealisticBiomeVanillaBas
         }
 
         @Override
-        public float generateNoise(OpenSimplexNoise simplex, CellNoise cell, int x, int y, float border, float river) {
+        public float generateNoise(RTGWorld rtgWorld, int x, int y, float border, float river) {
 
-            return terrainPlateau(x, y, simplex, river, height, border, strength, heightLength, 100f, false);
+            return terrainPlateau(x, y, rtgWorld.simplex, river, height, border, strength, heightLength, 100f, false);
         }
     }
 
@@ -99,9 +101,9 @@ public class RealisticBiomeVanillaMesaPlateauFM extends RealisticBiomeVanillaBas
     }
 
     @Override
-    public void rReplace(ChunkPrimer primer, int i, int j, int x, int y, int depth, World world, Random rand, OpenSimplexNoise simplex, CellNoise cell, float[] noise, float river, Biome[] base) {
+    public void rReplace(ChunkPrimer primer, int i, int j, int x, int y, int depth, RTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
 
-        this.rReplaceRiverSurface(primer, i, j, x, y, depth, world, rand, simplex, cell, noise, river, base);
+        this.rReplaceWithRiver(primer, i, j, x, y, depth, rtgWorld, noise, river, base);
     }
 
     @Override
@@ -125,8 +127,9 @@ public class RealisticBiomeVanillaMesaPlateauFM extends RealisticBiomeVanillaBas
         }
 
         @Override
-        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, World world, Random rand, OpenSimplexNoise simplex, CellNoise cell, float[] noise, float river, Biome[] base) {
+        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, RTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
 
+            Random rand = rtgWorld.rand;
             float c = CliffCalculator.calc(x, z, noise);
             boolean cliff = c > 1.3f;
             Block b;
@@ -190,34 +193,34 @@ public class RealisticBiomeVanillaMesaPlateauFM extends RealisticBiomeVanillaBas
         this.addDecoCollection(new DecoCollectionDesertRiver());
 
         DecoShrub decoShrub = new DecoShrub();
-        decoShrub.chance = 10;
+        decoShrub.setChance(10);
         addDeco(decoShrub);
 
         DecoCactus decoCactus = new DecoCactus();
-        decoCactus.strengthFactor = 25f;
-        decoCactus.soilBlock = BlockUtil.getStateSand(1);
-        decoCactus.sandOnly = false;
-        decoCactus.maxRiver = 0.8f;
+        decoCactus.setStrengthFactor(25f);
+        decoCactus.setSoilBlock(BlockUtil.getStateSand(1));
+        decoCactus.setSandOnly(false);
+        decoCactus.setMaxRiver(0.8f);
         addDeco(decoCactus);
 
         DecoReed decoReed = new DecoReed();
-        decoReed.loops = 5;
-        decoReed.maxRiver = 0.8f;
+        decoReed.setLoops(5);
+        decoReed.setMaxRiver(0.8f);
         addDeco(decoReed);
 
         DecoDeadBush decoDeadBush = new DecoDeadBush();
-        decoDeadBush.strengthFactor = 5f;
+        decoDeadBush.setStrengthFactor(5f);
         addDeco(decoDeadBush);
 
         DecoTree decoTree = new DecoTree(new WorldGenTrees(false));
-        decoTree.loops = 16;
-        decoTree.treeType = DecoTree.TreeType.WORLDGEN;
-        decoTree.treeCondition = DecoTree.TreeCondition.X_DIVIDED_BY_STRENGTH;
-        decoTree.distribution = new DecoTree.Distribution(24f, 1f, 0f);
-        decoTree.treeConditionChance = 0;
-        decoTree.treeConditionFloat = 4f;
-        decoTree.treeConditionNoise = 0f;
-        decoTree.minY = 74;
+        decoTree.setLoops(16);
+        decoTree.setTreeType(DecoTree.TreeType.WORLDGEN);
+        decoTree.setTreeCondition(DecoTree.TreeCondition.X_DIVIDED_BY_STRENGTH);
+        decoTree.setDistribution(new DecoTree.Distribution(24f, 1f, 0f));
+        decoTree.setTreeConditionChance(0);
+        decoTree.setTreeConditionFloat(4f);
+        decoTree.setTreeConditionNoise(0f);
+        decoTree.setMinY(74);
         addDeco(decoTree);
     }
 }

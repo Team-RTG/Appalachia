@@ -6,23 +6,23 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
-import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
 import biomesoplenty.api.biome.BOPBiomes;
 import biomesoplenty.api.block.BOPBlocks;
 
-import rtg.config.BiomeConfig;
-import rtg.util.CellNoise;
-import rtg.util.CliffCalculator;
-import rtg.util.OpenSimplexNoise;
+import rtg.api.config.BiomeConfig;
+import rtg.api.util.CliffCalculator;
+import rtg.api.util.noise.OpenSimplexNoise;
+import rtg.api.world.RTGWorld;
 import rtg.world.biome.deco.DecoBaseBiomeDecorations;
 import rtg.world.biome.deco.DecoBoulder;
 import rtg.world.biome.deco.DecoFallenTree;
 import rtg.world.biome.deco.helper.DecoHelper5050;
 import rtg.world.gen.surface.SurfaceBase;
 import rtg.world.gen.terrain.TerrainBase;
+import static rtg.world.biome.deco.DecoFallenTree.LogCondition.RANDOM_CHANCE;
 
 public class RealisticBiomeBOPRedwoodForest extends RealisticBiomeBOPBase {
 
@@ -62,9 +62,9 @@ public class RealisticBiomeBOPRedwoodForest extends RealisticBiomeBOPBase {
         }
 
         @Override
-        public float generateNoise(OpenSimplexNoise simplex, CellNoise cell, int x, int y, float border, float river) {
+        public float generateNoise(RTGWorld rtgWorld, int x, int y, float border, float river) {
 
-            return terrainRollingHills(x, y, simplex, river, hillStrength, maxHeight, groundNoise, groundNoiseAmplitudeHills, 0f);
+            return terrainRollingHills(x, y, rtgWorld.simplex, river, hillStrength, maxHeight, groundNoise, groundNoiseAmplitudeHills, 0f);
         }
     }
 
@@ -100,15 +100,16 @@ public class RealisticBiomeBOPRedwoodForest extends RealisticBiomeBOPBase {
         }
 
         @Override
-        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int y, int depth, World world, Random rand,
-                                 OpenSimplexNoise simplex, CellNoise cell, float[] noise, float river, Biome[] base) {
+        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, RTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
 
-            float c = CliffCalculator.calc(x, y, noise);
+            Random rand = rtgWorld.rand;
+            OpenSimplexNoise simplex = rtgWorld.simplex;
+            float c = CliffCalculator.calc(x, z, noise);
             int cliff = 0;
 
             Block b;
             for (int k = 255; k > -1; k--) {
-                b = primer.getBlockState(x, k, y).getBlock();
+                b = primer.getBlockState(x, k, z).getBlock();
                 if (b == Blocks.AIR) {
                     depth = -1;
                 }
@@ -128,37 +129,37 @@ public class RealisticBiomeBOPRedwoodForest extends RealisticBiomeBOPBase {
                         if (cliff == 1) {
                             if (rand.nextInt(3) == 0) {
 
-                                primer.setBlockState(x, k, y, hcCobble(world, i, j, x, y, k));
+                                primer.setBlockState(x, k, z, hcCobble(rtgWorld, i, j, x, z, k));
                             }
                             else {
 
-                                primer.setBlockState(x, k, y, hcStone(world, i, j, x, y, k));
+                                primer.setBlockState(x, k, z, hcStone(rtgWorld, i, j, x, z, k));
                             }
                         }
                         else if (cliff == 2) {
-                            primer.setBlockState(x, k, y, getShadowStoneBlock(world, i, j, x, y, k));
+                            primer.setBlockState(x, k, z, getShadowStoneBlock(rtgWorld, i, j, x, z, k));
                         }
                         else if (k < 63) {
                             if (k < 62) {
-                                primer.setBlockState(x, k, y, fillerBlock);
+                                primer.setBlockState(x, k, z, fillerBlock);
                             }
                             else {
-                                primer.setBlockState(x, k, y, topBlock);
+                                primer.setBlockState(x, k, z, topBlock);
                             }
                         }
                         else {
-                            primer.setBlockState(x, k, y, topBlock);
+                            primer.setBlockState(x, k, z, topBlock);
                         }
                     }
                     else if (depth < 6) {
                         if (cliff == 1) {
-                            primer.setBlockState(x, k, y, hcStone(world, i, j, x, y, k));
+                            primer.setBlockState(x, k, z, hcStone(rtgWorld, i, j, x, z, k));
                         }
                         else if (cliff == 2) {
-                            primer.setBlockState(x, k, y, getShadowStoneBlock(world, i, j, x, y, k));
+                            primer.setBlockState(x, k, z, getShadowStoneBlock(rtgWorld, i, j, x, z, k));
                         }
                         else {
-                            primer.setBlockState(x, k, y, fillerBlock);
+                            primer.setBlockState(x, k, z, fillerBlock);
                         }
                     }
                 }
@@ -173,28 +174,28 @@ public class RealisticBiomeBOPRedwoodForest extends RealisticBiomeBOPBase {
         this.addDeco(decoBaseBiomeDecorations);
 
         DecoBoulder decoBoulder1 = new DecoBoulder();
-        decoBoulder1.boulderBlock = Blocks.COBBLESTONE.getDefaultState();
-        decoBoulder1.maxY = 80;
-        decoBoulder1.chance = 16;
-        decoBoulder1.strengthFactor = 1f;
+        decoBoulder1.setBoulderBlock(Blocks.COBBLESTONE.getDefaultState());
+        decoBoulder1.setMaxY(80);
+        decoBoulder1.setChance(16);
+        decoBoulder1.setStrengthFactor(1f);
         DecoBoulder decoBoulder2 = new DecoBoulder();
-        decoBoulder2.boulderBlock = Blocks.COBBLESTONE.getDefaultState();
-        decoBoulder2.maxY = 80;
-        decoBoulder2.chance = 16;
-        decoBoulder2.strengthFactor = 1f;
+        decoBoulder2.setBoulderBlock(Blocks.COBBLESTONE.getDefaultState());
+        decoBoulder2.setMaxY(80);
+        decoBoulder2.setChance(16);
+        decoBoulder2.setStrengthFactor(1f);
         DecoHelper5050 decoHelper5050 = new DecoHelper5050(decoBoulder1, decoBoulder2);
         this.addDeco(decoHelper5050);
 
         DecoFallenTree decoFallenTree = new DecoFallenTree();
-        decoFallenTree.distribution.noiseDivisor = 80f;
-        decoFallenTree.distribution.noiseFactor = 60f;
-        decoFallenTree.distribution.noiseAddend = -15f;
-        decoFallenTree.logCondition = DecoFallenTree.LogCondition.RANDOM_CHANCE;
-        decoFallenTree.logConditionChance = 12;
-        decoFallenTree.logBlock = BOPBlocks.log_3.getDefaultState();
-        decoFallenTree.leavesBlock = Blocks.LEAVES.getDefaultState();
-        decoFallenTree.minSize = 3;
-        decoFallenTree.maxSize = 9;
+        decoFallenTree.getDistribution().setNoiseDivisor(80f);
+        decoFallenTree.getDistribution().setNoiseFactor(60f);
+        decoFallenTree.getDistribution().setNoiseAddend(-15f);
+        decoFallenTree.setLogCondition(RANDOM_CHANCE);
+        decoFallenTree.setLogConditionChance(12);
+        decoFallenTree.setLogBlock(BOPBlocks.log_3.getDefaultState());
+        decoFallenTree.setLeavesBlock(Blocks.LEAVES.getDefaultState());
+        decoFallenTree.setMinSize(3);
+        decoFallenTree.setMaxSize(9);
         this.addDeco(decoFallenTree, this.getConfig().ALLOW_LOGS.get());
     }
 }

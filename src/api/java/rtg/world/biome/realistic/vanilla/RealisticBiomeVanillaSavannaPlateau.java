@@ -6,13 +6,14 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
-import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
-import rtg.config.BiomeConfig;
-import rtg.config.ConfigRTG;
-import rtg.util.*;
+import rtg.api.config.BiomeConfig;
+import rtg.api.util.BlockUtil;
+import rtg.api.util.CliffCalculator;
+import rtg.api.world.RTGWorld;
+import rtg.util.CanyonColour;
 import rtg.world.biome.deco.*;
 import rtg.world.biome.deco.collection.DecoCollectionDesertRiver;
 import rtg.world.gen.feature.tree.rtg.TreeRTG;
@@ -87,9 +88,9 @@ public class RealisticBiomeVanillaSavannaPlateau extends RealisticBiomeVanillaBa
         }
 
         @Override
-        public float generateNoise(OpenSimplexNoise simplex, CellNoise cell, int x, int y, float border, float river) {
+        public float generateNoise(RTGWorld rtgWorld, int x, int y, float border, float river) {
 
-            return terrainPlateau(x, y, simplex, river, height, border, strength, heightLength, 50f, true);
+            return terrainPlateau(x, y, rtgWorld.simplex, river, height, border, strength, heightLength, 50f, true);
         }
     }
 
@@ -115,8 +116,9 @@ public class RealisticBiomeVanillaSavannaPlateau extends RealisticBiomeVanillaBa
         }
 
         @Override
-        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, World world, Random rand, OpenSimplexNoise simplex, CellNoise cell, float[] noise, float river, Biome[] base) {
+        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, RTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
 
+            Random rand = rtgWorld.rand;
             float c = CliffCalculator.calc(x, z, noise);
             boolean cliff = c > 1.3f;
             Block b;
@@ -132,22 +134,22 @@ public class RealisticBiomeVanillaSavannaPlateau extends RealisticBiomeVanillaBa
                     depth++;
 
                     if (cliff) {
-                        if (!ConfigRTG.stoneSavannas) {
+                        if (!rtgConfig.STONE_SAVANNAS.get()) {
                             primer.setBlockState(x, k, z, CanyonColour.SAVANNA.getBlockForHeight(i, k, j));
                         }
                         else {
                             if (depth > -1 && depth < 2) {
                                 if (rand.nextInt(3) == 0) {
 
-                                    primer.setBlockState(x, k, z, hcCobble(world, i, j, x, z, k));
+                                    primer.setBlockState(x, k, z, hcCobble(rtgWorld, i, j, x, z, k));
                                 }
                                 else {
 
-                                    primer.setBlockState(x, k, z, hcStone(world, i, j, x, z, k));
+                                    primer.setBlockState(x, k, z, hcStone(rtgWorld, i, j, x, z, k));
                                 }
                             }
                             else if (depth < 10) {
-                                primer.setBlockState(x, k, z, hcStone(world, i, j, x, z, k));
+                                primer.setBlockState(x, k, z, hcStone(rtgWorld, i, j, x, z, k));
                             }
                         }
                     }
@@ -197,54 +199,54 @@ public class RealisticBiomeVanillaSavannaPlateau extends RealisticBiomeVanillaBa
         this.addDecoCollection(new DecoCollectionDesertRiver());
 
         DecoBoulder decoBoulder1 = new DecoBoulder();
-        decoBoulder1.boulderBlock = Blocks.COBBLESTONE.getDefaultState();
-        decoBoulder1.maxY = 80;
-        decoBoulder1.chance = 24;
+        decoBoulder1.setBoulderBlock(Blocks.COBBLESTONE.getDefaultState());
+        decoBoulder1.setMaxY(80);
+        decoBoulder1.setChance(24);
         this.addDeco(decoBoulder1);
 
         DecoBoulder decoBoulder2 = new DecoBoulder();
-        decoBoulder2.boulderBlock = Blocks.COBBLESTONE.getDefaultState();
-        decoBoulder1.minY = 110;
-        decoBoulder2.chance = 24;
+        decoBoulder2.setBoulderBlock(Blocks.COBBLESTONE.getDefaultState());
+        decoBoulder1.setMinY(110);
+        decoBoulder2.setChance(24);
         this.addDeco(decoBoulder2);
 
         DecoShrub acaciaShrub = new DecoShrub();
-        acaciaShrub.logBlock = Blocks.LOG2.getDefaultState();
-        acaciaShrub.leavesBlock = Blocks.LEAVES2.getDefaultState();
-        acaciaShrub.maxY = 160;
-        acaciaShrub.strengthFactor = 3f;
-        acaciaShrub.chance = 9;
+        acaciaShrub.setLogBlock(Blocks.LOG2.getDefaultState());
+        acaciaShrub.setLeavesBlock(Blocks.LEAVES2.getDefaultState());
+        acaciaShrub.setMaxY(160);
+        acaciaShrub.setStrengthFactor(3f);
+        acaciaShrub.setChance(9);
         this.addDeco(acaciaShrub);
 
         TreeRTG acaciaTree = new TreeRTGAcaciaBucheri();
-        acaciaTree.logBlock = Blocks.LOG2.getDefaultState();
-        acaciaTree.leavesBlock = Blocks.LEAVES2.getDefaultState();
-        acaciaTree.minTrunkSize = 12;
-        acaciaTree.maxTrunkSize = 16;
+        acaciaTree.setLogBlock(Blocks.LOG2.getDefaultState());
+        acaciaTree.setLeavesBlock(Blocks.LEAVES2.getDefaultState());
+        acaciaTree.setMinTrunkSize(12);
+        acaciaTree.setMaxTrunkSize(16);
         this.addTree(acaciaTree);
 
         DecoTree acaciaTrees = new DecoTree(acaciaTree);
-        acaciaTrees.strengthFactorForLoops = 2f;
-        acaciaTrees.treeType = DecoTree.TreeType.RTG_TREE;
-        acaciaTrees.treeCondition = DecoTree.TreeCondition.RANDOM_CHANCE;
-        acaciaTrees.treeConditionChance = 12;
-        acaciaTrees.maxY = 160;
+        acaciaTrees.setStrengthFactorForLoops(2f);
+        acaciaTrees.setTreeType(DecoTree.TreeType.RTG_TREE);
+        acaciaTrees.setTreeCondition(DecoTree.TreeCondition.RANDOM_CHANCE);
+        acaciaTrees.setTreeConditionChance(12);
+        acaciaTrees.setMaxY(160);
         this.addDeco(acaciaTrees);
 
         DecoCactus decoCactus = new DecoCactus();
-        decoCactus.maxY = 160;
-        decoCactus.loops = 60;
-        decoCactus.chance = 8;
+        decoCactus.setMaxY(160);
+        decoCactus.setLoops(60);
+        decoCactus.setChance(8);
         this.addDeco(decoCactus);
 
         DecoDoubleGrass decoDoubleGrass = new DecoDoubleGrass();
-        decoDoubleGrass.maxY = 128;
-        decoDoubleGrass.strengthFactor = 3f;
+        decoDoubleGrass.setMaxY(128);
+        decoDoubleGrass.setStrengthFactor(3f);
         this.addDeco(decoDoubleGrass);
 
         DecoGrass decoGrass = new DecoGrass();
-        decoGrass.maxY = 128;
-        decoGrass.strengthFactor = 10f;
+        decoGrass.setMaxY(128);
+        decoGrass.setStrengthFactor(10f);
         this.addDeco(decoGrass);
     }
 }

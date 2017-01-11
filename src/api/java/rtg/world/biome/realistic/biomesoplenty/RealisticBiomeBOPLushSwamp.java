@@ -6,21 +6,20 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
-import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
 import biomesoplenty.api.biome.BOPBiomes;
 
-import rtg.config.BiomeConfig;
-import rtg.util.CellNoise;
-import rtg.util.CliffCalculator;
-import rtg.util.OpenSimplexNoise;
+import rtg.api.config.BiomeConfig;
+import rtg.api.util.CliffCalculator;
+import rtg.api.world.RTGWorld;
 import rtg.world.biome.deco.DecoBaseBiomeDecorations;
 import rtg.world.biome.deco.DecoBoulder;
 import rtg.world.biome.deco.DecoFallenTree;
 import rtg.world.gen.surface.SurfaceBase;
 import rtg.world.gen.terrain.TerrainBase;
+import static rtg.world.biome.deco.DecoFallenTree.LogCondition.ALWAYS_GENERATE;
 
 public class RealisticBiomeBOPLushSwamp extends RealisticBiomeBOPBase {
 
@@ -51,9 +50,9 @@ public class RealisticBiomeBOPLushSwamp extends RealisticBiomeBOPBase {
         }
 
         @Override
-        public float generateNoise(OpenSimplexNoise simplex, CellNoise cell, int x, int y, float border, float river) {
+        public float generateNoise(RTGWorld rtgWorld, int x, int y, float border, float river) {
 
-            return terrainMarsh(x, y, simplex, 61.5f);
+            return terrainMarsh(x, y, rtgWorld.simplex, 61.5f);
             //return terrainBeach(x, y, simplex, river, 180f, 35f, 60f);
         }
     }
@@ -72,14 +71,14 @@ public class RealisticBiomeBOPLushSwamp extends RealisticBiomeBOPBase {
         }
 
         @Override
-        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int y, int depth, World world, Random rand,
-                                 OpenSimplexNoise simplex, CellNoise cell, float[] noise, float river, Biome[] base) {
+        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, RTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
 
-            float c = CliffCalculator.calc(x, y, noise);
+            Random rand = rtgWorld.rand;
+            float c = CliffCalculator.calc(x, z, noise);
             boolean cliff = c > 1.4f ? true : false;
 
             for (int k = 255; k > -1; k--) {
-                Block b = primer.getBlockState(x, k, y).getBlock();
+                Block b = primer.getBlockState(x, k, z).getBlock();
                 if (b == Blocks.AIR) {
                     depth = -1;
                 }
@@ -90,23 +89,23 @@ public class RealisticBiomeBOPLushSwamp extends RealisticBiomeBOPBase {
                         if (depth > -1 && depth < 2) {
                             if (rand.nextInt(3) == 0) {
 
-                                primer.setBlockState(x, k, y, hcCobble(world, i, j, x, y, k));
+                                primer.setBlockState(x, k, z, hcCobble(rtgWorld, i, j, x, z, k));
                             }
                             else {
 
-                                primer.setBlockState(x, k, y, hcStone(world, i, j, x, y, k));
+                                primer.setBlockState(x, k, z, hcStone(rtgWorld, i, j, x, z, k));
                             }
                         }
                         else if (depth < 10) {
-                            primer.setBlockState(x, k, y, hcStone(world, i, j, x, y, k));
+                            primer.setBlockState(x, k, z, hcStone(rtgWorld, i, j, x, z, k));
                         }
                     }
                     else {
                         if (depth == 0 && k > 61) {
-                            primer.setBlockState(x, k, y, topBlock);
+                            primer.setBlockState(x, k, z, topBlock);
                         }
                         else if (depth < 4) {
-                            primer.setBlockState(x, k, y, fillerBlock);
+                            primer.setBlockState(x, k, z, fillerBlock);
                         }
                     }
                 }
@@ -121,22 +120,22 @@ public class RealisticBiomeBOPLushSwamp extends RealisticBiomeBOPBase {
         this.addDeco(decoBaseBiomeDecorations);
 
         DecoBoulder decoBoulder = new DecoBoulder();
-        decoBoulder.boulderBlock = Blocks.MOSSY_COBBLESTONE.getDefaultState();
-        decoBoulder.maxY = 80;
-        decoBoulder.chance = 16;
-        decoBoulder.strengthFactor = 1f;
+        decoBoulder.setBoulderBlock(Blocks.MOSSY_COBBLESTONE.getDefaultState());
+        decoBoulder.setMaxY(80);
+        decoBoulder.setChance(16);
+        decoBoulder.setStrengthFactor(1f);
         this.addDeco(decoBoulder);
 
         DecoFallenTree decoFallenTree = new DecoFallenTree();
-        decoFallenTree.distribution.noiseDivisor = 80f;
-        decoFallenTree.distribution.noiseFactor = 60f;
-        decoFallenTree.distribution.noiseAddend = -15f;
-        decoFallenTree.logCondition = DecoFallenTree.LogCondition.ALWAYS_GENERATE;
-        decoFallenTree.logConditionChance = 4;
-        decoFallenTree.logBlock = Blocks.LOG.getDefaultState();
-        decoFallenTree.leavesBlock = Blocks.LEAVES.getDefaultState();
-        decoFallenTree.minSize = 3;
-        decoFallenTree.maxSize = 4;
+        decoFallenTree.getDistribution().setNoiseDivisor(80f);
+        decoFallenTree.getDistribution().setNoiseFactor(60f);
+        decoFallenTree.getDistribution().setNoiseAddend(-15f);
+        decoFallenTree.setLogCondition(ALWAYS_GENERATE);
+        decoFallenTree.setLogConditionChance(4);
+        decoFallenTree.setLogBlock(Blocks.LOG.getDefaultState());
+        decoFallenTree.setLeavesBlock(Blocks.LEAVES.getDefaultState());
+        decoFallenTree.setMinSize(3);
+        decoFallenTree.setMaxSize(4);
         this.addDeco(decoFallenTree, this.getConfig().ALLOW_LOGS.get());
     }
 }

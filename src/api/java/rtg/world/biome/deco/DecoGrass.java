@@ -5,13 +5,11 @@ import java.util.Random;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 
 import net.minecraftforge.event.terraingen.TerrainGen;
 import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS;
 
-import rtg.util.CellNoise;
-import rtg.util.OpenSimplexNoise;
+import rtg.api.world.RTGWorld;
 import rtg.world.biome.realistic.RealisticBiomeBase;
 import rtg.world.gen.feature.WorldGenGrass;
 
@@ -20,17 +18,18 @@ import rtg.world.gen.feature.WorldGenGrass;
  */
 public class DecoGrass extends DecoBase {
 
-    protected static final int MAX_LOOPS = 10;
+    private float strengthFactor;
+    private int minY;
+    private int maxY;
+    private int loops;
+    private int chance;
+    private int notEqualsZeroChance;
+    private IBlockState[] randomGrassBlocks;
+    private byte[] randomGrassMetas;
 
-    public float strengthFactor;
-    public int minY;
-    public int maxY;
-    public int loops;
-    public int chance;
-    public int notEqualsZerochance;
-    public IBlockState[] randomGrassBlocks;
-    public byte[] randomGrassMetas;
-    protected boolean useRandomGrass;
+    private boolean useRandomGrass;
+    private static final int MAX_LOOPS = 10;
+
     private IBlockState block;
     private int meta;
     private WorldGenGrass grassGenerator;
@@ -43,12 +42,12 @@ public class DecoGrass extends DecoBase {
          * Default values.
          * These can be overridden when configuring the Deco object in the realistic biome.
          */
-        this.minY = 1; // No height limit by default.
-        this.maxY = 255; // No height limit by default.
-        this.strengthFactor = 0f; // Not sure why it was done like this, but... the higher the value, the more there will be.
-        this.loops = 1;
-        this.chance = 1;
-        this.notEqualsZerochance = 1;
+        this.setMinY(1); // No height limit by default.
+        this.setMaxY(255); // No height limit by default.
+        this.setStrengthFactor(0f); // Not sure why it was done like this, but... the higher the value, the more there will be.
+        this.setLoops(1);
+        this.setChance(1);
+        this.notEqualsZeroChance = 1;
         this.block = Blocks.TALLGRASS.getStateFromMeta(1);
         this.meta = 1;
         this.randomGrassBlocks = new IBlockState[]{};
@@ -85,18 +84,18 @@ public class DecoGrass extends DecoBase {
     }
 
     @Override
-    public void generate(RealisticBiomeBase biome, World world, Random rand, int chunkX, int chunkY, OpenSimplexNoise simplex, CellNoise cell, float strength, float river, boolean hasPlacedVillageBlocks) {
+    public void generate(RealisticBiomeBase biome, RTGWorld rtgWorld, Random rand, int worldX, int worldZ, float strength, float river, boolean hasPlacedVillageBlocks) {
 
         if (this.allowed) {
 
-            if (TerrainGen.decorate(world, rand, new BlockPos(chunkX, 0, chunkY), GRASS)) {
+            if (TerrainGen.decorate(rtgWorld.world, rand, new BlockPos(worldX, 0, worldZ), GRASS)) {
 
-                this.loops = (this.strengthFactor > 0f) ? (int) (this.strengthFactor * strength) : this.loops;
-                this.loops = (this.loops > this.MAX_LOOPS) ? this.MAX_LOOPS : this.loops;
+                this.setLoops((this.strengthFactor > 0f) ? (int) (this.strengthFactor * strength) : this.loops);
+                this.setLoops((this.loops > this.MAX_LOOPS) ? this.MAX_LOOPS : this.loops);
                 for (int i = 0; i < this.loops * 64; i++) {
-                    int intX = chunkX + rand.nextInt(16);// + 8;
+                    int intX = worldX + rand.nextInt(16);// + 8;
                     int intY = this.minY + (rand.nextInt(this.maxY - this.minY) + 1);
-                    int intZ = chunkY + rand.nextInt(16);// + 8;
+                    int intZ = worldZ + rand.nextInt(16);// + 8;
 
                     //Do we want to choose a random grass?
                     if (this.useRandomGrass) {
@@ -105,20 +104,108 @@ public class DecoGrass extends DecoBase {
                         //this.meta = this.randomGrassMetas[rand.nextInt(this.randomGrassMetas.length)];
                     }
 
-                    if (this.notEqualsZerochance > 1) {
+                    if (this.notEqualsZeroChance > 1) {
 
-                        if (intY >= this.minY && intY <= this.maxY && rand.nextInt(this.notEqualsZerochance) != 0) {
-                            grassGenerator.generate(world, rand, new BlockPos(intX, intY, intZ));
+                        if (intY >= this.minY && intY <= this.maxY && rand.nextInt(this.notEqualsZeroChance) != 0) {
+                            grassGenerator.generate(rtgWorld.world, rand, new BlockPos(intX, intY, intZ));
                         }
                     }
                     else {
 
                         if (intY >= this.minY && intY <= this.maxY && rand.nextInt(this.chance) == 0) {
-                            grassGenerator.generate(world, rand, new BlockPos(intX, intY, intZ));
+                            grassGenerator.generate(rtgWorld.world, rand, new BlockPos(intX, intY, intZ));
                         }
                     }
                 }
             }
         }
+    }
+
+    public float getStrengthFactor() {
+
+        return strengthFactor;
+    }
+
+    public DecoGrass setStrengthFactor(float strengthFactor) {
+
+        this.strengthFactor = strengthFactor;
+        return this;
+    }
+
+    public int getMinY() {
+
+        return minY;
+    }
+
+    public DecoGrass setMinY(int minY) {
+
+        this.minY = minY;
+        return this;
+    }
+
+    public int getMaxY() {
+
+        return maxY;
+    }
+
+    public DecoGrass setMaxY(int maxY) {
+
+        this.maxY = maxY;
+        return this;
+    }
+
+    public int getLoops() {
+
+        return loops;
+    }
+
+    public DecoGrass setLoops(int loops) {
+
+        this.loops = loops;
+        return this;
+    }
+
+    public int getChance() {
+
+        return chance;
+    }
+
+    public DecoGrass setChance(int chance) {
+
+        this.chance = chance;
+        return this;
+    }
+
+    public int getNotEqualsZerochance() {
+
+        return notEqualsZeroChance;
+    }
+
+    public DecoGrass setNotEqualsZerochance(int notEqualsZeroChance) {
+
+        this.notEqualsZeroChance = notEqualsZeroChance;
+        return this;
+    }
+
+    public IBlockState[] getRandomGrassBlocks() {
+
+        return randomGrassBlocks;
+    }
+
+    public DecoGrass setRandomGrassBlocks(IBlockState[] randomGrassBlocks) {
+
+        this.randomGrassBlocks = randomGrassBlocks;
+        return this;
+    }
+
+    public byte[] getRandomGrassMetas() {
+
+        return randomGrassMetas;
+    }
+
+    public DecoGrass setRandomGrassMetas(byte[] randomGrassMetas) {
+
+        this.randomGrassMetas = randomGrassMetas;
+        return this;
     }
 }

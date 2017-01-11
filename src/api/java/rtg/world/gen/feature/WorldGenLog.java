@@ -11,7 +11,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-import rtg.util.WorldUtil;
+import rtg.api.util.WorldUtil;
 
 public class WorldGenLog extends WorldGenerator {
 
@@ -165,5 +165,27 @@ public class WorldGenLog extends WorldGenerator {
         if ((b.getMaterial() == Material.AIR || b.getMaterial() == Material.VINE || b.getMaterial() == Material.PLANTS) && rand.nextInt(3) == 0) {
             world.setBlockState(new BlockPos(x, y + 1, z), leavesBlock, 2);
         }
+    }
+
+    public IBlockState getLogBlock() {
+
+        return logBlock;
+    }
+
+    public WorldGenLog setLogBlock(IBlockState logBlock) {
+
+        this.logBlock = logBlock;
+        return this;
+    }
+
+    public IBlockState getLeavesBlock() {
+
+        return leavesBlock;
+    }
+
+    public WorldGenLog setLeavesBlock(IBlockState leavesBlock) {
+
+        this.leavesBlock = leavesBlock;
+        return this;
     }
 }

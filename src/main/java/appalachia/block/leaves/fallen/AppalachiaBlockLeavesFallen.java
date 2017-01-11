@@ -64,17 +64,24 @@ public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlo
         this.slug = unlocalizedName;
     }
 
+    @Override
+    public String registryName() {
+
+        return String.join("_", this.slug.split("\\."));
+    }
+
     @Nullable
     public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, World worldIn, BlockPos pos)
     {
         return NULL_AABB;
     }
 
-
     @Override
-    public String registryName() {
-
-        return String.join("_", this.slug.split("\\."));
+    public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
+    {
+        entityIn.motionX *= 0.925D;
+        entityIn.motionY *= 0.925D;
+        entityIn.motionZ *= 0.925D;
     }
 
     @Override
@@ -203,7 +210,8 @@ public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlo
     @Override
     public boolean isPassable(IBlockAccess world, BlockPos pos) {
 
-        return world.getBlockState(pos).getValue(LAYERS).intValue() < 5;
+        //return world.getBlockState(pos).getValue(LAYERS).intValue() < 5;
+        return true;
     }
 
     @Override
@@ -238,6 +246,7 @@ public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlo
         return true;
     }
 
+    @SideOnly(Side.CLIENT)
     public static class ColourHandler implements IBlockColor {
 
         private static final int leafColours[] = {
@@ -252,17 +261,21 @@ public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlo
 
         }
 
+        @Override
         public int colorMultiplier(IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex)
         {
             //return BiomeColorHelper.getFoliageColorAtPos(worldIn, pos);
 
-            if (pos == null) {
+            if (worldIn != null && pos != null) {
+
+                int noise = (int) (simplex.noise(pos.getX()/5, pos.getZ()/5)*9+9);
+
+                return leafColours[noise];
+            }
+            else {
+
                 return 16750848;
             }
-
-            int noise = (int) (simplex.noise(pos.getX()/5, pos.getZ()/5)*9+9);
-
-            return leafColours[noise];
         }
     }
 

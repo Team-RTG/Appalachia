@@ -8,11 +8,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-import rtg.util.BlockUtil;
-import rtg.util.CellNoise;
-import rtg.util.OpenSimplexNoise;
-import rtg.util.WorldUtil;
-import rtg.util.WorldUtil.SurroundCheckType;
+import rtg.api.util.BlockUtil;
+import rtg.api.util.WorldUtil;
+import rtg.api.world.RTGWorld;
 import rtg.world.biome.realistic.RealisticBiomeBase;
 import rtg.world.gen.feature.WorldGenShrubRTG;
 
@@ -21,21 +19,21 @@ import rtg.world.gen.feature.WorldGenShrubRTG;
  */
 public class DecoShrub extends DecoBase {
 
-    public int size;
-    public boolean useDefaultRandom;
-    public boolean Sand;
-    public IBlockState[] randomLogBlocks;
-    public IBlockState[] randomLeavesBlocks;
-    public float strengthFactor; // Higher = more/bigger shrubs.
-    public int minY; // Height restriction.
-    public int maxY; // Height restriction.
-    public int chance; // Higher = more rare.
-    public int notEqualsZerochance;
-    public int loops;
-    public int minSize;
-    public int maxSize;
-    public IBlockState logBlock;
-    public IBlockState leavesBlock;
+    private int size;
+    private boolean useDefaultRandom;
+    private boolean sand;
+    private IBlockState[] randomLogBlocks;
+    private IBlockState[] randomLeavesBlocks;
+    private float strengthFactor; // Higher = more/bigger shrubs.
+    private int minY; // Height restriction.
+    private int maxY; // Height restriction.
+    private int chance; // Higher = more rare.
+    private int notEqualsZeroChance;
+    private int loops;
+    private int minSize;
+    private int maxSize;
+    private IBlockState logBlock;
+    private IBlockState leavesBlock;
 
     public DecoShrub() {
 
@@ -47,19 +45,19 @@ public class DecoShrub extends DecoBase {
          */
         this.size = -1;
         this.useDefaultRandom = false;
-        this.Sand = true; //Whether shrubs generate on sand
+        this.sand = true; //Whether shrubs generate on sand
         this.randomLogBlocks = new IBlockState[]{Blocks.LOG.getDefaultState(), BlockUtil.getStateLog(1)};
         this.randomLeavesBlocks = new IBlockState[]{Blocks.LEAVES.getDefaultState(), BlockUtil.getStateLeaf(1)};
-        this.strengthFactor = 3f; // Not sure why it was done like this, but... the higher the value, the more there will be.
-        this.minY = 1; // No height limit by default.
-        this.maxY = 255; // No height limit by default.
-        this.chance = 1; // 100% chance of generating by default.
-        this.notEqualsZerochance = 1;
-        this.loops = 1;
-        this.minSize = 3;
-        this.maxSize = 4;
-        this.logBlock = Blocks.LOG.getDefaultState();
-        this.leavesBlock = Blocks.LEAVES.getDefaultState();
+        this.setStrengthFactor(3f); // Not sure why it was done like this, but... the higher the value, the more there will be.
+        this.setMinY(1); // No height limit by default.
+        this.setMaxY(255); // No height limit by default.
+        this.setChance(1); // 100% chance of generating by default.
+        this.notEqualsZeroChance = 1;
+        this.setLoops(1);
+        this.setMinSize(3);
+        this.setMaxSize(4);
+        this.setLogBlock(Blocks.LOG.getDefaultState());
+        this.setLeavesBlock(Blocks.LEAVES.getDefaultState());
 
         this.addDecoTypes(DecoType.SHRUB);
     }
@@ -71,7 +69,7 @@ public class DecoShrub extends DecoBase {
     }
 
     @Override
-    public void generate(RealisticBiomeBase biome, World world, Random rand, int chunkX, int chunkY, OpenSimplexNoise simplex, CellNoise cell, float strength, float river, boolean hasPlacedVillageBlocks) {
+    public void generate(RealisticBiomeBase biome, RTGWorld rtgWorld, Random rand, int worldX, int worldZ, float strength, float river, boolean hasPlacedVillageBlocks) {
 
         if (this.allowed) {
 
@@ -89,30 +87,30 @@ public class DecoShrub extends DecoBase {
                 this.randomLogBlocks.length == this.randomLeavesBlocks.length) {
                 int rnd = rand.nextInt(this.randomLogBlocks.length);
 
-                this.logBlock = this.randomLogBlocks[rnd];
-                this.leavesBlock = this.randomLeavesBlocks[rnd];
+                this.setLogBlock(this.randomLogBlocks[rnd]);
+                this.setLeavesBlock(this.randomLeavesBlocks[rnd]);
             }
 
-            WorldUtil worldUtil = new WorldUtil(world);
-            WorldGenerator worldGenerator = new WorldGenShrubRTG(this.size, this.logBlock, this.leavesBlock, this.Sand);
+            WorldUtil worldUtil = new WorldUtil(rtgWorld.world);
+            WorldGenerator worldGenerator = new WorldGenShrubRTG(this.size, this.logBlock, this.leavesBlock, this.sand);
 
             int loopCount = this.loops;
             loopCount = (this.strengthFactor > 0f) ? (int) (this.strengthFactor * strength) : loopCount;
             for (int i = 0; i < loopCount; i++) {
-                int intX = chunkX + rand.nextInt(16);// + 8;
-                int intZ = chunkY + rand.nextInt(16);// + 8;
-                int intY = world.getHeight(new BlockPos(intX, 0, intZ)).getY();
+                int intX = worldX + rand.nextInt(16);// + 8;
+                int intZ = worldZ + rand.nextInt(16);// + 8;
+                int intY = rtgWorld.world.getHeight(new BlockPos(intX, 0, intZ)).getY();
 
-                if (this.notEqualsZerochance > 1) {
+                if (this.notEqualsZeroChance > 1) {
 
-                    if (intY >= this.minY && intY <= this.maxY && rand.nextInt(this.notEqualsZerochance) != 0) {
-                        generateWorldGenerator(worldGenerator, worldUtil, world, rand, intX, intY, intZ, hasPlacedVillageBlocks);
+                    if (intY >= this.minY && intY <= this.maxY && rand.nextInt(this.notEqualsZeroChance) != 0) {
+                        generateWorldGenerator(worldGenerator, worldUtil, rtgWorld.world, rand, intX, intY, intZ, hasPlacedVillageBlocks);
                     }
                 }
                 else {
 
                     if (intY >= this.minY && intY <= this.maxY && rand.nextInt(this.chance) == 0) {
-                        generateWorldGenerator(worldGenerator, worldUtil, world, rand, intX, intY, intZ, hasPlacedVillageBlocks);
+                        generateWorldGenerator(worldGenerator, worldUtil, rtgWorld.world, rand, intX, intY, intZ, hasPlacedVillageBlocks);
                     }
                 }
             }
@@ -122,11 +120,176 @@ public class DecoShrub extends DecoBase {
     private boolean generateWorldGenerator(WorldGenerator worldGenerator, WorldUtil worldUtil, World world, Random rand, int x, int y, int z, boolean hasPlacedVillageBlocks) {
         // If we're in a village, check to make sure the shrub has extra room to grow to avoid corrupting the village.
         if (hasPlacedVillageBlocks) {
-            if (!worldUtil.isSurroundedByBlock(Blocks.AIR.getDefaultState(), 2, SurroundCheckType.CARDINAL, rand, x, y, z)) {
+            if (!worldUtil.isSurroundedByBlock(Blocks.AIR.getDefaultState(), 2, WorldUtil.SurroundCheckType.CARDINAL, rand, x, y, z)) {
                 return false;
             }
         }
 
         return worldGenerator.generate(world, rand, new BlockPos(x, y, z));
+    }
+
+    public int getSize() {
+
+        return size;
+    }
+
+    public DecoShrub setSize(int size) {
+
+        this.size = size;
+        return this;
+    }
+
+    public boolean isUseDefaultRandom() {
+
+        return useDefaultRandom;
+    }
+
+    public DecoShrub setUseDefaultRandom(boolean useDefaultRandom) {
+
+        this.useDefaultRandom = useDefaultRandom;
+        return this;
+    }
+
+    public boolean isSand() {
+
+        return sand;
+    }
+
+    public DecoShrub setSand(boolean sand) {
+
+        this.sand = sand;
+        return this;
+    }
+
+    public IBlockState[] getRandomLogBlocks() {
+
+        return randomLogBlocks;
+    }
+
+    public DecoShrub setRandomLogBlocks(IBlockState[] randomLogBlocks) {
+
+        this.randomLogBlocks = randomLogBlocks;
+        return this;
+    }
+
+    public IBlockState[] getRandomLeavesBlocks() {
+
+        return randomLeavesBlocks;
+    }
+
+    public DecoShrub setRandomLeavesBlocks(IBlockState[] randomLeavesBlocks) {
+
+        this.randomLeavesBlocks = randomLeavesBlocks;
+        return this;
+    }
+
+    public float getStrengthFactor() {
+
+        return strengthFactor;
+    }
+
+    public DecoShrub setStrengthFactor(float strengthFactor) {
+
+        this.strengthFactor = strengthFactor;
+        return this;
+    }
+
+    public int getMinY() {
+
+        return minY;
+    }
+
+    public DecoShrub setMinY(int minY) {
+
+        this.minY = minY;
+        return this;
+    }
+
+    public int getMaxY() {
+
+        return maxY;
+    }
+
+    public DecoShrub setMaxY(int maxY) {
+
+        this.maxY = maxY;
+        return this;
+    }
+
+    public int getChance() {
+
+        return chance;
+    }
+
+    public DecoShrub setChance(int chance) {
+
+        this.chance = chance;
+        return this;
+    }
+
+    public int getNotEqualsZeroChance() {
+
+        return notEqualsZeroChance;
+    }
+
+    public DecoShrub setNotEqualsZeroChance(int notEqualsZeroChance) {
+
+        this.notEqualsZeroChance = notEqualsZeroChance;
+        return this;
+    }
+
+    public int getLoops() {
+
+        return loops;
+    }
+
+    public DecoShrub setLoops(int loops) {
+
+        this.loops = loops;
+        return this;
+    }
+
+    public int getMinSize() {
+
+        return minSize;
+    }
+
+    public DecoShrub setMinSize(int minSize) {
+
+        this.minSize = minSize;
+        return this;
+    }
+
+    public int getMaxSize() {
+
+        return maxSize;
+    }
+
+    public DecoShrub setMaxSize(int maxSize) {
+
+        this.maxSize = maxSize;
+        return this;
+    }
+
+    public IBlockState getLogBlock() {
+
+        return logBlock;
+    }
+
+    public DecoShrub setLogBlock(IBlockState logBlock) {
+
+        this.logBlock = logBlock;
+        return this;
+    }
+
+    public IBlockState getLeavesBlock() {
+
+        return leavesBlock;
+    }
+
+    public DecoShrub setLeavesBlock(IBlockState leavesBlock) {
+
+        this.leavesBlock = leavesBlock;
+        return this;
     }
 }

@@ -6,17 +6,16 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
-import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
 import biomesoplenty.api.biome.BOPBiomes;
 
-import rtg.config.BiomeConfig;
-import rtg.util.BlockUtil;
-import rtg.util.CellNoise;
-import rtg.util.CliffCalculator;
-import rtg.util.OpenSimplexNoise;
+import rtg.api.config.BiomeConfig;
+import rtg.api.util.BlockUtil;
+import rtg.api.util.CliffCalculator;
+import rtg.api.util.noise.OpenSimplexNoise;
+import rtg.api.world.RTGWorld;
 import rtg.world.biome.deco.*;
 import rtg.world.biome.deco.helper.DecoHelper5050;
 import rtg.world.gen.feature.tree.rtg.TreeRTG;
@@ -24,6 +23,7 @@ import rtg.world.gen.feature.tree.rtg.TreeRTGBetulaPapyrifera;
 import rtg.world.gen.feature.tree.rtg.TreeRTGPiceaSitchensis;
 import rtg.world.gen.surface.SurfaceBase;
 import rtg.world.gen.terrain.TerrainBase;
+import static rtg.world.biome.deco.DecoFallenTree.LogCondition.NOISE_GREATER_AND_RANDOM_CHANCE;
 
 public class RealisticBiomeBOPLandOfLakes extends RealisticBiomeBOPBase {
 
@@ -61,9 +61,9 @@ public class RealisticBiomeBOPLandOfLakes extends RealisticBiomeBOPBase {
         }
 
         @Override
-        public float generateNoise(OpenSimplexNoise simplex, CellNoise cell, int x, int y, float border, float river) {
+        public float generateNoise(RTGWorld rtgWorld, int x, int y, float border, float river) {
 
-            return terrainRollingHills(x, y, simplex, river, hillStrength, maxHeight, groundNoise, groundNoiseAmplitudeHills, 0f);
+            return terrainRollingHills(x, y, rtgWorld.simplex, river, hillStrength, maxHeight, groundNoise, groundNoiseAmplitudeHills, 0f);
         }
     }
 
@@ -101,16 +101,17 @@ public class RealisticBiomeBOPLandOfLakes extends RealisticBiomeBOPBase {
         }
 
         @Override
-        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int y, int depth, World world, Random rand,
-                                 OpenSimplexNoise simplex, CellNoise cell, float[] noise, float river, Biome[] base) {
+        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, RTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
 
-            float c = CliffCalculator.calc(x, y, noise);
+            Random rand = rtgWorld.rand;
+            OpenSimplexNoise simplex = rtgWorld.simplex;
+            float c = CliffCalculator.calc(x, z, noise);
             int cliff = 0;
             boolean m = false;
 
             Block b;
             for (int k = 255; k > -1; k--) {
-                b = primer.getBlockState(x, k, y).getBlock();
+                b = primer.getBlockState(x, k, z).getBlock();
                 if (b == Blocks.AIR) {
                     depth = -1;
                 }
@@ -130,41 +131,41 @@ public class RealisticBiomeBOPLandOfLakes extends RealisticBiomeBOPBase {
                         if (cliff == 1) {
                             if (rand.nextInt(3) == 0) {
 
-                                primer.setBlockState(x, k, y, hcCobble(world, i, j, x, y, k));
+                                primer.setBlockState(x, k, z, hcCobble(rtgWorld, i, j, x, z, k));
                             }
                             else {
 
-                                primer.setBlockState(x, k, y, hcStone(world, i, j, x, y, k));
+                                primer.setBlockState(x, k, z, hcStone(rtgWorld, i, j, x, z, k));
                             }
                         }
                         else if (cliff == 2) {
-                            primer.setBlockState(x, k, y, getShadowStoneBlock(world, i, j, x, y, k));
+                            primer.setBlockState(x, k, z, getShadowStoneBlock(rtgWorld, i, j, x, z, k));
                         }
                         else if (k < 63) {
                             if (k < 62) {
-                                primer.setBlockState(x, k, y, fillerBlock);
+                                primer.setBlockState(x, k, z, fillerBlock);
                             }
                             else {
-                                primer.setBlockState(x, k, y, topBlock);
+                                primer.setBlockState(x, k, z, topBlock);
                             }
                         }
                         else if (simplex.noise2(i / 12f, j / 12f) > mixHeight) {
-                            primer.setBlockState(x, k, y, mix);
+                            primer.setBlockState(x, k, z, mix);
                             m = true;
                         }
                         else {
-                            primer.setBlockState(x, k, y, topBlock);
+                            primer.setBlockState(x, k, z, topBlock);
                         }
                     }
                     else if (depth < 6) {
                         if (cliff == 1) {
-                            primer.setBlockState(x, k, y, hcStone(world, i, j, x, y, k));
+                            primer.setBlockState(x, k, z, hcStone(rtgWorld, i, j, x, z, k));
                         }
                         else if (cliff == 2) {
-                            primer.setBlockState(x, k, y, getShadowStoneBlock(world, i, j, x, y, k));
+                            primer.setBlockState(x, k, z, getShadowStoneBlock(rtgWorld, i, j, x, z, k));
                         }
                         else {
-                            primer.setBlockState(x, k, y, fillerBlock);
+                            primer.setBlockState(x, k, z, fillerBlock);
                         }
                     }
                 }
@@ -176,69 +177,69 @@ public class RealisticBiomeBOPLandOfLakes extends RealisticBiomeBOPBase {
     public void initDecos() {
 
         TreeRTG birchTree = new TreeRTGBetulaPapyrifera();
-        birchTree.logBlock = BlockUtil.getStateLog(2);
-        birchTree.leavesBlock = BlockUtil.getStateLeaf(2);
-        birchTree.minTrunkSize = 4;
-        birchTree.maxTrunkSize = 10;
-        birchTree.minCrownSize = 8;
-        birchTree.maxCrownSize = 19;
+        birchTree.setLogBlock(BlockUtil.getStateLog(2));
+        birchTree.setLeavesBlock(BlockUtil.getStateLeaf(2));
+        birchTree.setMinTrunkSize(4);
+        birchTree.setMaxTrunkSize(10);
+        birchTree.setMinCrownSize(8);
+        birchTree.setMaxCrownSize(19);
         this.addTree(birchTree);
 
         DecoTree birchTrees = new DecoTree(birchTree);
-        birchTrees.strengthFactorForLoops = 9f;
-        birchTrees.treeType = DecoTree.TreeType.RTG_TREE;
-        birchTrees.distribution.noiseDivisor = 100f;
-        birchTrees.distribution.noiseFactor = 6f;
-        birchTrees.distribution.noiseAddend = 0.8f;
-        birchTrees.treeCondition = DecoTree.TreeCondition.NOISE_GREATER_AND_RANDOM_CHANCE;
-        birchTrees.treeConditionChance = 1;
-        birchTrees.treeConditionNoise = 0f;
-        birchTrees.maxY = 120;
+        birchTrees.setStrengthFactorForLoops(9f);
+        birchTrees.setTreeType(DecoTree.TreeType.RTG_TREE);
+        birchTrees.getDistribution().setNoiseDivisor(100f);
+        birchTrees.getDistribution().setNoiseFactor(6f);
+        birchTrees.getDistribution().setNoiseAddend(0.8f);
+        birchTrees.setTreeCondition(DecoTree.TreeCondition.NOISE_GREATER_AND_RANDOM_CHANCE);
+        birchTrees.setTreeConditionChance(1);
+        birchTrees.setTreeConditionNoise(0f);
+        birchTrees.setMaxY(120);
 
         TreeRTG sitchensisTree = new TreeRTGPiceaSitchensis();
-        sitchensisTree.logBlock = BlockUtil.getStateLog(1);
-        sitchensisTree.leavesBlock = BlockUtil.getStateLeaf(1);
-        sitchensisTree.minTrunkSize = 4;
-        sitchensisTree.maxTrunkSize = 9;
-        sitchensisTree.minCrownSize = 5;
-        sitchensisTree.maxCrownSize = 14;
+        sitchensisTree.setLogBlock(BlockUtil.getStateLog(1));
+        sitchensisTree.setLeavesBlock(BlockUtil.getStateLeaf(1));
+        sitchensisTree.setMinTrunkSize(4);
+        sitchensisTree.setMaxTrunkSize(9);
+        sitchensisTree.setMinCrownSize(5);
+        sitchensisTree.setMaxCrownSize(14);
         this.addTree(sitchensisTree);
 
         DecoTree smallPine = new DecoTree(sitchensisTree);
-        smallPine.strengthFactorForLoops = 9f;
-        smallPine.treeType = DecoTree.TreeType.RTG_TREE;
-        smallPine.distribution.noiseDivisor = 100f;
-        smallPine.distribution.noiseFactor = 6f;
-        smallPine.distribution.noiseAddend = 0.8f;
-        smallPine.treeCondition = DecoTree.TreeCondition.NOISE_GREATER_AND_RANDOM_CHANCE;
-        smallPine.treeConditionChance = 1;
-        smallPine.treeConditionNoise = 0f;
-        smallPine.maxY = 120;
+        smallPine.setStrengthFactorForLoops(9f);
+        smallPine.setTreeType(DecoTree.TreeType.RTG_TREE);
+        smallPine.getDistribution().setNoiseDivisor(100f);
+        smallPine.getDistribution().setNoiseFactor(6f);
+        smallPine.getDistribution().setNoiseAddend(0.8f);
+        smallPine.setTreeCondition(DecoTree.TreeCondition.NOISE_GREATER_AND_RANDOM_CHANCE);
+        smallPine.setTreeConditionChance(1);
+        smallPine.setTreeConditionNoise(0f);
+        smallPine.setMaxY(120);
 
         DecoHelper5050 decoHelper5050 = new DecoHelper5050(birchTrees, smallPine);
 
         DecoFallenTree decoFallenTree = new DecoFallenTree();
-        decoFallenTree.distribution.noiseDivisor = 100f;
-        decoFallenTree.distribution.noiseFactor = 6f;
-        decoFallenTree.distribution.noiseAddend = 0.8f;
-        decoFallenTree.logCondition = DecoFallenTree.LogCondition.NOISE_GREATER_AND_RANDOM_CHANCE;
-        decoFallenTree.logConditionNoise = 0f;
-        decoFallenTree.logConditionChance = 12;
-        decoFallenTree.randomLogBlocks = new IBlockState[]{Blocks.LOG.getDefaultState(), BlockUtil.getStateLog(1), BlockUtil.getStateLog(2)};
-        decoFallenTree.minSize = 8;
-        decoFallenTree.maxSize = 12;
+        decoFallenTree.getDistribution().setNoiseDivisor(100f);
+        decoFallenTree.getDistribution().setNoiseFactor(6f);
+        decoFallenTree.getDistribution().setNoiseAddend(0.8f);
+        decoFallenTree.setLogCondition(NOISE_GREATER_AND_RANDOM_CHANCE);
+        decoFallenTree.setLogConditionNoise(0f);
+        decoFallenTree.setLogConditionChance(12);
+        decoFallenTree.setRandomLogBlocks(new IBlockState[]{Blocks.LOG.getDefaultState(), BlockUtil.getStateLog(1), BlockUtil.getStateLog(2)});
+        decoFallenTree.setMinSize(8);
+        decoFallenTree.setMaxSize(12);
         this.addDeco(decoFallenTree, this.getConfig().ALLOW_LOGS.get());
 
         DecoShrub decoShrub = new DecoShrub();
-        decoShrub.maxY = 110;
-        decoShrub.strengthFactor = 3f;
+        decoShrub.setMaxY(110);
+        decoShrub.setStrengthFactor(3f);
         this.addDeco(decoShrub);
 
         DecoBoulder decoBoulder = new DecoBoulder();
-        decoBoulder.boulderBlock = Blocks.COBBLESTONE.getDefaultState();
-        decoBoulder.maxY = 80;
-        decoBoulder.chance = 12;
-        decoBoulder.strengthFactor = 1f;
+        decoBoulder.setBoulderBlock(Blocks.COBBLESTONE.getDefaultState());
+        decoBoulder.setMaxY(80);
+        decoBoulder.setChance(12);
+        decoBoulder.setStrengthFactor(1f);
         this.addDeco(decoBoulder);
 
         DecoBaseBiomeDecorations decoBaseBiomeDecorations = new DecoBaseBiomeDecorations();

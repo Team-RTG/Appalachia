@@ -11,6 +11,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import appalachia.api.AppalachiaBlocks;
 import appalachia.block.leaves.AppalachiaBlockLeaves;
 import appalachia.block.leaves.fallen.AppalachiaBlockLeavesFallen;
+import appalachia.block.vines.AppalachiaBlockVine;
 import appalachia.entity.EntityManager;
 
 public class ClientProxy extends CommonProxy {
@@ -41,6 +42,8 @@ public class ClientProxy extends CommonProxy {
 
     @SideOnly(Side.CLIENT)
     public static void registerColorHandlers(){
+
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockVine.ColourHandler(), AppalachiaBlocks.vine_poison_ivy_01);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // DYNAMICALLY-GENERATED CODE - PLEASE DO NOT MODIFY BELOW THIS LINE

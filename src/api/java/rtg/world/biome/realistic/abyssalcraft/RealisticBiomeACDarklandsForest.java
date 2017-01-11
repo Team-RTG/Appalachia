@@ -6,20 +6,20 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
-import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
 import com.shinoow.abyssalcraft.api.biome.ACBiomes;
 import com.shinoow.abyssalcraft.api.block.ACBlocks;
 
-import rtg.config.BiomeConfig;
-import rtg.util.CellNoise;
-import rtg.util.CliffCalculator;
-import rtg.util.OpenSimplexNoise;
+import rtg.api.config.BiomeConfig;
+import rtg.api.util.CliffCalculator;
+import rtg.api.util.noise.OpenSimplexNoise;
+import rtg.api.world.RTGWorld;
 import rtg.world.biome.deco.*;
 import rtg.world.gen.surface.SurfaceBase;
 import rtg.world.gen.terrain.TerrainBase;
+import static rtg.world.biome.deco.DecoFallenTree.LogCondition.NOISE_GREATER_AND_RANDOM_CHANCE;
 
 public class RealisticBiomeACDarklandsForest extends RealisticBiomeACBase {
 
@@ -55,11 +55,11 @@ public class RealisticBiomeACDarklandsForest extends RealisticBiomeACBase {
         }
 
         @Override
-        public float generateNoise(OpenSimplexNoise simplex, CellNoise cell, int x, int y, float border, float river) {
+        public float generateNoise(RTGWorld rtgWorld, int x, int y, float border, float river) {
 
-            groundNoise = groundNoise(x, y, groundVariation, simplex);
+            groundNoise = groundNoise(x, y, groundVariation, rtgWorld.simplex);
 
-            float m = hills(x, y, hillStrength, simplex, river);
+            float m = hills(x, y, hillStrength, rtgWorld.simplex, river);
 
             float floNoise = 65f + groundNoise + m;
 
@@ -101,16 +101,17 @@ public class RealisticBiomeACDarklandsForest extends RealisticBiomeACBase {
         }
 
         @Override
-        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int y, int depth, World world, Random rand,
-                                 OpenSimplexNoise simplex, CellNoise cell, float[] noise, float river, Biome[] base) {
+        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, RTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
 
-            float c = CliffCalculator.calc(x, y, noise);
+            Random rand = rtgWorld.rand;
+            OpenSimplexNoise simplex = rtgWorld.simplex;
+            float c = CliffCalculator.calc(x, z, noise);
             int cliff = 0;
             boolean m = false;
 
             Block b;
             for (int k = 255; k > -1; k--) {
-                b = primer.getBlockState(x, k, y).getBlock();
+                b = primer.getBlockState(x, k, z).getBlock();
                 if (b == Blocks.AIR) {
                     depth = -1;
                 }
@@ -130,41 +131,41 @@ public class RealisticBiomeACDarklandsForest extends RealisticBiomeACBase {
                         if (cliff == 1) {
                             if (rand.nextInt(3) == 0) {
 
-                                primer.setBlockState(x, k, y, hcCobble(world, i, j, x, y, k));
+                                primer.setBlockState(x, k, z, hcCobble(rtgWorld, i, j, x, z, k));
                             }
                             else {
 
-                                primer.setBlockState(x, k, y, hcStone(world, i, j, x, y, k));
+                                primer.setBlockState(x, k, z, hcStone(rtgWorld, i, j, x, z, k));
                             }
                         }
                         else if (cliff == 2) {
-                            primer.setBlockState(x, k, y, getShadowStoneBlock(world, i, j, x, y, k));
+                            primer.setBlockState(x, k, z, getShadowStoneBlock(rtgWorld, i, j, x, z, k));
                         }
                         else if (k < 63) {
                             if (k < 62) {
-                                primer.setBlockState(x, k, y, fillerBlock);
+                                primer.setBlockState(x, k, z, fillerBlock);
                             }
                             else {
-                                primer.setBlockState(x, k, y, topBlock);
+                                primer.setBlockState(x, k, z, topBlock);
                             }
                         }
                         else if (simplex.noise2(i / 12f, j / 12f) > mixHeight) {
-                            primer.setBlockState(x, k, y, mixBlock);
+                            primer.setBlockState(x, k, z, mixBlock);
                             m = true;
                         }
                         else {
-                            primer.setBlockState(x, k, y, topBlock);
+                            primer.setBlockState(x, k, z, topBlock);
                         }
                     }
                     else if (depth < 6) {
                         if (cliff == 1) {
-                            primer.setBlockState(x, k, y, hcStone(world, i, j, x, y, k));
+                            primer.setBlockState(x, k, z, hcStone(rtgWorld, i, j, x, z, k));
                         }
                         else if (cliff == 2) {
-                            primer.setBlockState(x, k, y, getShadowStoneBlock(world, i, j, x, y, k));
+                            primer.setBlockState(x, k, z, getShadowStoneBlock(rtgWorld, i, j, x, z, k));
                         }
                         else {
-                            primer.setBlockState(x, k, y, fillerBlock);
+                            primer.setBlockState(x, k, z, fillerBlock);
                         }
                     }
                 }
@@ -176,37 +177,37 @@ public class RealisticBiomeACDarklandsForest extends RealisticBiomeACBase {
     public void initDecos() {
 
         DecoAbyssalCraftTree decoTrees = new DecoAbyssalCraftTree();
-        decoTrees.strengthNoiseFactorXForLoops = true;
-        decoTrees.distribution.noiseDivisor = 80f;
-        decoTrees.distribution.noiseFactor = 60f;
-        decoTrees.distribution.noiseAddend = -15f;
-        decoTrees.treeType = DecoAbyssalCraftTree.TreeType.DARKWOOD;
-        decoTrees.treeCondition = DecoTree.TreeCondition.RANDOM_CHANCE;
-        decoTrees.treeConditionChance = 3;
-        decoTrees.maxY = 110;
+        decoTrees.setStrengthNoiseFactorXForLoops(true);
+        decoTrees.getDistribution().setNoiseDivisor(80f);
+        decoTrees.getDistribution().setNoiseFactor(60f);
+        decoTrees.getDistribution().setNoiseAddend(-15f);
+        decoTrees.setTreeType(DecoAbyssalCraftTree.TreeType.DARKWOOD);
+        decoTrees.setTreeCondition(DecoTree.TreeCondition.RANDOM_CHANCE);
+        decoTrees.setTreeConditionChance(3);
+        decoTrees.setMaxY(110);
         this.addDeco(decoTrees);
 
         DecoFallenTree decoFallenTree = new DecoFallenTree();
-        decoFallenTree.logCondition = DecoFallenTree.LogCondition.NOISE_GREATER_AND_RANDOM_CHANCE;
-        decoFallenTree.logConditionNoise = 0f;
-        decoFallenTree.logConditionChance = 12;
-        decoFallenTree.logBlock = ACBlocks.darklands_oak_wood.getDefaultState();
-        decoFallenTree.leavesBlock = ACBlocks.darklands_oak_leaves.getDefaultState();
-        decoFallenTree.minSize = 2;
-        decoFallenTree.maxSize = 3;
+        decoFallenTree.setLogCondition(NOISE_GREATER_AND_RANDOM_CHANCE);
+        decoFallenTree.setLogConditionNoise(0f);
+        decoFallenTree.setLogConditionChance(12);
+        decoFallenTree.setLogBlock(ACBlocks.darklands_oak_wood.getDefaultState());
+        decoFallenTree.setLeavesBlock(ACBlocks.darklands_oak_leaves.getDefaultState());
+        decoFallenTree.setMinSize(2);
+        decoFallenTree.setMaxSize(3);
         this.addDeco(decoFallenTree, this.getConfig().ALLOW_LOGS.get());
 
         DecoShrub decoShrubCustom = new DecoShrub();
-        decoShrubCustom.logBlock = ACBlocks.darklands_oak_wood.getDefaultState();
-        decoShrubCustom.leavesBlock = ACBlocks.darklands_oak_leaves.getDefaultState();
-        decoShrubCustom.maxY = 110;
-        decoShrubCustom.notEqualsZerochance = 3;
-        decoShrubCustom.strengthFactor = 3f;
+        decoShrubCustom.setLogBlock(ACBlocks.darklands_oak_wood.getDefaultState());
+        decoShrubCustom.setLeavesBlock(ACBlocks.darklands_oak_leaves.getDefaultState());
+        decoShrubCustom.setMaxY(110);
+        decoShrubCustom.setNotEqualsZeroChance(3);
+        decoShrubCustom.setStrengthFactor(3f);
         this.addDeco(decoShrubCustom);
 
         DecoGrass decoGrass = new DecoGrass();
-        decoGrass.maxY = 128;
-        decoGrass.strengthFactor = 8f;
+        decoGrass.setMaxY(128);
+        decoGrass.setStrengthFactor(8f);
         this.addDeco(decoGrass);
 
         DecoBaseBiomeDecorations decoBaseBiomeDecorations = new DecoBaseBiomeDecorations();

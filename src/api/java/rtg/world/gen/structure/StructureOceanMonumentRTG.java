@@ -27,7 +27,7 @@ import net.minecraft.world.gen.structure.StructureStart;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 
-import rtg.config.ConfigRTG;
+import rtg.api.RTGAPI;
 import rtg.util.Logger;
 import rtg.world.WorldTypeRTG;
 import rtg.world.biome.BiomeProviderRTG;
@@ -43,8 +43,8 @@ public class StructureOceanMonumentRTG extends StructureOceanMonument
 
     public StructureOceanMonumentRTG()
     {
-        this.spacing = ConfigRTG.oceanMonumentSpacing; // Vanilla = 32
-        this.separation = ConfigRTG.oceanMonumentSeparation; // Vanilla = 5
+        this.spacing = RTGAPI.config().OCEAN_MONUMENT_SPACING.get(); // Vanilla = 32
+        this.separation = RTGAPI.config().OCEAN_MONUMENT_SEPARATION.get(); // Vanilla = 5
     }
 
     public StructureOceanMonumentRTG(Map<String, String> p_i45608_1_)
@@ -122,7 +122,7 @@ public class StructureOceanMonumentRTG extends StructureOceanMonument
     public boolean areBiomesViable(int x, int z, int radius, List<Biome> allowed)
     {
         // Are we in an RTG world?
-        if (!(this.worldObj.getWorldInfo().getTerrainType() instanceof WorldTypeRTG)) {
+        if (!(this.worldObj.getWorldType() instanceof WorldTypeRTG)) {
             //Logger.debug("Could not generate ocean monument. This is not an RTG world.");
             return false;
         }

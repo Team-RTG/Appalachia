@@ -3,9 +3,13 @@ package appalachia.entity.passive;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import appalachia.entity.ai.EntityAIFlyAwayFromEntity;
-import appalachia.entity.ai.EntityAIFlyPanic;
-import appalachia.entity.ai.EntityAIFlyRandomly;
+import appalachia.entity.ai.EntityAIHoverAwayFromEntity;
+import appalachia.entity.ai.EntityAIHoverPanic;
+import appalachia.entity.ai.EntityAIHoverRandomly;
+import appalachia.entity.decorators.EntityDecorator;
+import appalachia.entity.decorators.FireFly.EasterEggBoss;
+import appalachia.entity.decorators.FireFly.EasterEggColor;
+import appalachia.entity.decorators.FireFly.EasterEggFlashingMode;
 import appalachia.loot.LootManager;
 import appalachia.util.WorldUtil;
 import net.minecraft.block.material.Material;
@@ -15,11 +19,13 @@ import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -34,8 +40,11 @@ public class EntityFireFly extends EntityFlying {
     private boolean doFlash;
     private boolean sync;
     private int noFlashStatusChangeBefore;
+    private boolean bossMode;
 
-    public EntityFireFly(World worldIn) {
+    private EntityDecorator<EntityFireFly> easterEgg;
+
+    public EntityFireFly(@Nonnull World worldIn) {
         super(worldIn);
         this.setSize(0.15F, 0.15F);
         this.setAIMoveSpeed(0.125F);
@@ -43,6 +52,24 @@ public class EntityFireFly extends EntityFlying {
         doFlash = true;
         setFlashStatus(false);
         sync = false;
+    }
+
+    @Override
+    public void addTrackingPlayer(EntityPlayerMP player) {
+        if(easterEgg != null) {
+            easterEgg.newTrackingPlayer(player);
+        }
+
+        super.addTrackingPlayer(player);
+    }
+
+    @Override
+    public void removeTrackingPlayer(EntityPlayerMP player) {
+        if(easterEgg != null) {
+            easterEgg.removeTrackingPlayer(player);
+        }
+
+        super.removeTrackingPlayer(player);
     }
 
     public void setFlashStatus(boolean flashStatus) {
@@ -57,9 +84,9 @@ public class EntityFireFly extends EntityFlying {
 
     @Override
     protected void initEntityAI() {
-        this.tasks.addTask(0, new EntityAIFlyPanic(this, 3));
-        this.tasks.addTask(1, new EntityAIFlyAwayFromEntity(this, EntityPlayer.class, 2, 0.874F, 1.25F));
-        this.tasks.addTask(2, new EntityAIFlyRandomly(this, 1));
+        this.tasks.addTask(0, new EntityAIHoverPanic(this, 3));
+        this.tasks.addTask(1, new EntityAIHoverAwayFromEntity(this, EntityPlayer.class, 2, 0.874F, 1.25F));
+        this.tasks.addTask(2, new EntityAIHoverRandomly(this, 1));
         this.tasks.addTask(99, new EntityAILookIdle(this));
     }
 
@@ -93,7 +120,7 @@ public class EntityFireFly extends EntityFlying {
         super.onLivingUpdate();
 
         if (!worldObj.isRemote) {
-            BlockPos pos = new BlockPos(this);
+            @Nonnull BlockPos pos = new BlockPos(this);
 
             if (ticksExisted % 30 == 0 && worldObj.getLightFromNeighbors(pos) > 9) {
                 this.setHealth(this.getHealth() - 0.5F); // Entities will disappear in the sun to save performance, but only if they are grounded.
@@ -114,6 +141,10 @@ public class EntityFireFly extends EntityFlying {
                         noFlashStatusChangeBefore = ticksExisted + 10 + worldObj.rand.nextInt(30);
                     }
                 }
+            }
+
+            if(easterEgg != null) {
+                easterEgg.onUpdate();
             }
         }
     }
@@ -141,10 +172,10 @@ public class EntityFireFly extends EntityFlying {
     }
 
     private void updateVariant() {
-        Color color = Color.DEFAULT;
+        @Nonnull Color color = Color.DEFAULT;
 
         BlockPos pos = WorldUtil.nextSolidBlock(worldObj, new BlockPos(this), EnumFacing.DOWN);
-        IBlockState block = worldObj.getBlockState(pos);
+        @Nonnull IBlockState block = worldObj.getBlockState(pos);
 
         if (block.getBlock().equals(Blocks.DIRT) && block.getBlock().getMetaFromState(block) == 0) {
             color = Color.DIRT;
@@ -163,41 +194,53 @@ public class EntityFireFly extends EntityFlying {
         setColor(color);
     }
 
-    private void applyEasterEggs(String name) {
+    private void applyEasterEggs(@Nonnull String name) {
+        if(easterEgg != null) {
+            easterEgg.removeDecorator();
+        }
+
         switch (name) {
             case "WhichOnesPink":
-                setColor(Color.MYCELIUM);
+                easterEgg = new EasterEggColor(this, Color.MYCELIUM);
                 break;
             case "lightningo7":
-                doFlash = false;
-                setFlashStatus(true);
+                easterEgg = new EasterEggFlashingMode(this, false, false, true);
                 break;
             case "garantiertnicht":
-                doFlash = false;
-                setFlashStatus(false);
+                easterEgg = new EasterEggFlashingMode(this, false, false, false);
+                break;
+            case "srs_bsns":
+                easterEgg = new EasterEggBoss(this);
                 break;
             default:
+                easterEgg = null;
                 break;
         }
     }
 
-    public static boolean isSpotViable(World world, BlockPos pos) {
+    public static boolean isSpotViable(@Nonnull World world, @Nonnull BlockPos pos) {
         if (world.getLightFromNeighbors(pos) > 7) {
             return false;
         }
 
-        while (WorldUtil.isNotSolid(world, pos)) {
-            pos = pos.down();
-        }
+        pos = WorldUtil.nextSolidBlock(world, pos, EnumFacing.DOWN);
 
-        for (byte i = 1; i < 4; i++) {
-            if (!WorldUtil.isNotSolid(world, pos.up(i))) {
-                return false;
-            }
-        }
-
-        IBlockState state = world.getBlockState(pos);
+        @Nonnull IBlockState state = world.getBlockState(pos);
         return (state.getMaterial().equals(Material.GRASS) || state.getMaterial().equals(Material.GROUND) && state.getBlock().isReplaceable(world, pos) && !state.getBlock().hasTileEntity(state));
+    }
+
+    @Override
+    protected void damageEntity(DamageSource damageSrc, float damageAmount) {
+        if(easterEgg != null) {
+            damageAmount = easterEgg.entityGotAttacked(damageAmount, damageSrc);
+        }
+
+        super.damageEntity(damageSrc, damageAmount);
+    }
+
+    @Override
+    public boolean isNonBoss() {
+        return !bossMode;
     }
 
     @Override
@@ -206,6 +249,8 @@ public class EntityFireFly extends EntityFlying {
         compound.setByte("color", (byte) getColor().ordinal());
         compound.setBoolean("flashes", doFlash);
         compound.setBoolean("sync", sync);
+        compound.setBoolean("boss", bossMode);
+
         return super.writeToNBT(compound);
     }
 
@@ -221,20 +266,32 @@ public class EntityFireFly extends EntityFlying {
 
         doFlash = compound.getBoolean("flashes");
         sync = compound.getBoolean("sync");
+        bossMode = compound.getBoolean("boss");
 
         setColor(color);
+
         super.readFromNBT(compound);
+
+        applyEasterEggs(this.getName());
     }
 
     @Override
     public void setCustomNameTag(@Nonnull String name) {
-        applyEasterEggs(name);
         super.setCustomNameTag(name);
+        applyEasterEggs(name);
     }
 
     @Override
     public float getEyeHeight() {
         return 0.07F;
+    }
+
+    @Override
+    public void setHealth(float health) {
+        if(easterEgg != null) {
+            easterEgg.setHealth(getHealth(), health);
+        }
+        super.setHealth(health);
     }
 
     @Nonnull
@@ -246,7 +303,31 @@ public class EntityFireFly extends EntityFlying {
         }
     }
 
-    public void setColor(Color newColor) {
+    public boolean isBossMode() {
+        return bossMode;
+    }
+
+    public void setIsBossMode(boolean bossMode) {
+        this.bossMode = bossMode;
+    }
+
+    public boolean isDoFlash() {
+        return doFlash;
+    }
+
+    public void setDoFlash(boolean doFlash) {
+        this.doFlash = doFlash;
+    }
+
+    public boolean isSync() {
+        return sync;
+    }
+
+    public void setSync(boolean sync) {
+        this.sync = sync;
+    }
+
+    public void setColor(@Nonnull Color newColor) {
         this.dataManager.set(color, (byte) newColor.ordinal());
     }
 

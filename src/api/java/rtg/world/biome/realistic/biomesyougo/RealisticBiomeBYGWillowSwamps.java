@@ -6,15 +6,14 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
-import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
-import rtg.config.BiomeConfig;
-import rtg.util.BlockUtil;
-import rtg.util.CellNoise;
-import rtg.util.CliffCalculator;
-import rtg.util.OpenSimplexNoise;
+import rtg.api.config.BiomeConfig;
+import rtg.api.util.BlockUtil;
+import rtg.api.util.CliffCalculator;
+import rtg.api.util.noise.OpenSimplexNoise;
+import rtg.api.world.RTGWorld;
 import rtg.world.biome.deco.DecoBaseBiomeDecorations;
 import rtg.world.biome.deco.DecoFallenTree;
 import rtg.world.biome.deco.DecoShrub;
@@ -23,6 +22,7 @@ import rtg.world.gen.feature.tree.rtg.TreeRTG;
 import rtg.world.gen.feature.tree.rtg.TreeRTGSalixMyrtilloides;
 import rtg.world.gen.surface.SurfaceBase;
 import rtg.world.gen.terrain.TerrainBase;
+import static rtg.world.biome.deco.DecoFallenTree.LogCondition.NOISE_GREATER_AND_RANDOM_CHANCE;
 
 public class RealisticBiomeBYGWillowSwamps extends RealisticBiomeBYGBase {
 
@@ -55,9 +55,9 @@ public class RealisticBiomeBYGWillowSwamps extends RealisticBiomeBYGBase {
         }
 
         @Override
-        public float generateNoise(OpenSimplexNoise simplex, CellNoise cell, int x, int y, float border, float river) {
+        public float generateNoise(RTGWorld rtgWorld, int x, int y, float border, float river) {
 
-            return terrainMarsh(x, y, simplex, 61.5f);
+            return terrainMarsh(x, y, rtgWorld.simplex, 61.5f);
         }
     }
 
@@ -75,13 +75,15 @@ public class RealisticBiomeBYGWillowSwamps extends RealisticBiomeBYGBase {
         }
 
         @Override
-        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int y, int depth, World world, Random rand, OpenSimplexNoise simplex, CellNoise cell, float[] noise, float river, Biome[] base) {
+        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, RTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
 
-            float c = CliffCalculator.calc(x, y, noise);
+            Random rand = rtgWorld.rand;
+            OpenSimplexNoise simplex = rtgWorld.simplex;
+            float c = CliffCalculator.calc(x, z, noise);
             boolean cliff = c > 1.4f ? true : false;
 
             for (int k = 255; k > -1; k--) {
-                Block b = primer.getBlockState(x, k, y).getBlock();
+                Block b = primer.getBlockState(x, k, z).getBlock();
                 if (b == Blocks.AIR) {
                     depth = -1;
                 }
@@ -92,23 +94,23 @@ public class RealisticBiomeBYGWillowSwamps extends RealisticBiomeBYGBase {
                         if (depth > -1 && depth < 2) {
                             if (rand.nextInt(3) == 0) {
 
-                                primer.setBlockState(x, k, y, hcCobble(world, i, j, x, y, k));
+                                primer.setBlockState(x, k, z, hcCobble(rtgWorld, i, j, x, z, k));
                             }
                             else {
 
-                                primer.setBlockState(x, k, y, hcStone(world, i, j, x, y, k));
+                                primer.setBlockState(x, k, z, hcStone(rtgWorld, i, j, x, z, k));
                             }
                         }
                         else if (depth < 10) {
-                            primer.setBlockState(x, k, y, hcStone(world, i, j, x, y, k));
+                            primer.setBlockState(x, k, z, hcStone(rtgWorld, i, j, x, z, k));
                         }
                     }
                     else {
                         if (depth == 0 && k > 61) {
-                            primer.setBlockState(x, k, y, topBlock);
+                            primer.setBlockState(x, k, z, topBlock);
                         }
                         else if (depth < 4) {
-                            primer.setBlockState(x, k, y, fillerBlock);
+                            primer.setBlockState(x, k, z, fillerBlock);
                         }
                     }
                 }
@@ -120,62 +122,62 @@ public class RealisticBiomeBYGWillowSwamps extends RealisticBiomeBYGBase {
     public void initDecos() {
 
         DecoBaseBiomeDecorations decoBaseBiomeDecorations = new DecoBaseBiomeDecorations();
-        decoBaseBiomeDecorations.maxY = 82;
+        decoBaseBiomeDecorations.setMaxY(82);
         this.addDeco(decoBaseBiomeDecorations);
 
         TreeRTG myrtilloidesTree = new TreeRTGSalixMyrtilloides();
-        myrtilloidesTree.logBlock = Blocks.LOG.getDefaultState();
-        myrtilloidesTree.leavesBlock = Blocks.LEAVES.getDefaultState();
+        myrtilloidesTree.setLogBlock(Blocks.LOG.getDefaultState());
+        myrtilloidesTree.setLeavesBlock(Blocks.LEAVES.getDefaultState());
         this.addTree(myrtilloidesTree);
 
         DecoTree decoTrees = new DecoTree(myrtilloidesTree);
-        decoTrees.distribution.noiseDivisor = 80f;
-        decoTrees.distribution.noiseFactor = 60f;
-        decoTrees.distribution.noiseAddend = -15f;
-        decoTrees.treeType = DecoTree.TreeType.RTG_TREE;
-        decoTrees.treeCondition = DecoTree.TreeCondition.NOISE_GREATER_AND_RANDOM_CHANCE;
-        decoTrees.treeConditionNoise = 0f;
-        decoTrees.treeConditionChance = 16;
-        decoTrees.maxY = 70;
+        decoTrees.getDistribution().setNoiseDivisor(80f);
+        decoTrees.getDistribution().setNoiseFactor(60f);
+        decoTrees.getDistribution().setNoiseAddend(-15f);
+        decoTrees.setTreeType(DecoTree.TreeType.RTG_TREE);
+        decoTrees.setTreeCondition(DecoTree.TreeCondition.NOISE_GREATER_AND_RANDOM_CHANCE);
+        decoTrees.setTreeConditionNoise(0f);
+        decoTrees.setTreeConditionChance(16);
+        decoTrees.setMaxY(70);
         this.addDeco(decoTrees);
 
         DecoFallenTree decoFallenTree = new DecoFallenTree();
-        decoFallenTree.distribution.noiseDivisor = 80f;
-        decoFallenTree.distribution.noiseFactor = 60f;
-        decoFallenTree.distribution.noiseAddend = -15f;
-        decoFallenTree.logCondition = DecoFallenTree.LogCondition.NOISE_GREATER_AND_RANDOM_CHANCE;
-        decoFallenTree.logConditionNoise = 0f;
-        decoFallenTree.logConditionChance = 6;
-        decoFallenTree.logBlock = BlockUtil.getStateLog2(1);
-        decoFallenTree.leavesBlock = BlockUtil.getStateLeaf2(1);
-        decoFallenTree.minSize = 3;
-        decoFallenTree.maxSize = 6;
-        decoFallenTree.maxY = 76;
+        decoFallenTree.getDistribution().setNoiseDivisor(80f);
+        decoFallenTree.getDistribution().setNoiseFactor(60f);
+        decoFallenTree.getDistribution().setNoiseAddend(-15f);
+        decoFallenTree.setLogCondition(NOISE_GREATER_AND_RANDOM_CHANCE);
+        decoFallenTree.setLogConditionNoise(0f);
+        decoFallenTree.setLogConditionChance(6);
+        decoFallenTree.setLogBlock(BlockUtil.getStateLog2(1));
+        decoFallenTree.setLeavesBlock(BlockUtil.getStateLeaf2(1));
+        decoFallenTree.setMinSize(3);
+        decoFallenTree.setMaxSize(6);
+        decoFallenTree.setMaxY(76);
         this.addDeco(decoFallenTree, this.getConfig().ALLOW_LOGS.get());
 
         TreeRTG deadWillowTree = new TreeRTGSalixMyrtilloides();
-        deadWillowTree.logBlock = Blocks.LOG.getDefaultState();
-        deadWillowTree.leavesBlock = Blocks.LEAVES.getDefaultState();
-        deadWillowTree.noLeaves = true;
+        deadWillowTree.setLogBlock(Blocks.LOG.getDefaultState());
+        deadWillowTree.setLeavesBlock(Blocks.LEAVES.getDefaultState());
+        deadWillowTree.setNoLeaves(true);
         this.addTree(deadWillowTree);
 
         DecoTree deadWillow = new DecoTree(deadWillowTree);
-        deadWillow.treeType = DecoTree.TreeType.RTG_TREE;
-        deadWillow.treeCondition = DecoTree.TreeCondition.RANDOM_CHANCE;
-        deadWillow.treeConditionChance = 18;
-        deadWillow.maxY = 84;
+        deadWillow.setTreeType(DecoTree.TreeType.RTG_TREE);
+        deadWillow.setTreeCondition(DecoTree.TreeCondition.RANDOM_CHANCE);
+        deadWillow.setTreeConditionChance(18);
+        deadWillow.setMaxY(84);
         this.addDeco(deadWillow);
 
         DecoShrub decoShrub = new DecoShrub();
-        decoShrub.maxY = 88;
-        decoShrub.strengthFactor = 6f;
+        decoShrub.setMaxY(88);
+        decoShrub.setStrengthFactor(6f);
         this.addDeco(decoShrub);
 
         DecoShrub decoShrubBYG = new DecoShrub();
-        decoShrubBYG.logBlock = willowLogBlock;
-        decoShrubBYG.leavesBlock = willowLeavesBlock;
-        decoShrubBYG.maxY = 88;
-        decoShrubBYG.strengthFactor = 3f;
+        decoShrubBYG.setLogBlock(willowLogBlock);
+        decoShrubBYG.setLeavesBlock(willowLeavesBlock);
+        decoShrubBYG.setMaxY(88);
+        decoShrubBYG.setStrengthFactor(3f);
         this.addDeco(decoShrubBYG);
     }
 }

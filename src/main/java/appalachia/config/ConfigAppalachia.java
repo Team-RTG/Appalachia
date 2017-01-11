@@ -16,6 +16,17 @@ public class ConfigAppalachia {
     // Biome IDs
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+    public static int biomeID_AdirondackForest = biomeIDCounter++;
+    public static int biomeID_AdirondackForestAutumn = biomeIDCounter++;
+    public static int biomeID_AdirondackHills = biomeIDCounter++;
+    public static int biomeID_AdirondackHillsAutumn = biomeIDCounter++;
+    public static int biomeID_AdirondackMountains = biomeIDCounter++;
+    public static int biomeID_AdirondackMountainsAutumn = biomeIDCounter++;
+    public static int biomeID_AdirondackBog = biomeIDCounter++;
+    public static int biomeID_AdirondackBogAutumn = biomeIDCounter++;
+    public static int biomeID_AdirondackBeach = biomeIDCounter++;
+    public static int biomeID_AdirondackRiver = biomeIDCounter++;
+
     public static int biomeID_BlueRidgeForest = biomeIDCounter++;
     public static int biomeID_BlueRidgeForestAutumn = biomeIDCounter++;
     public static int biomeID_BlueRidgeHills = biomeIDCounter++;
@@ -41,6 +52,17 @@ public class ConfigAppalachia {
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // Biome Weights
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    public static int biomeWeight_AdirondackForest = 20;
+    public static int biomeWeight_AdirondackForestAutumn = 20;
+    public static int biomeWeight_AdirondackHills = 20;
+    public static int biomeWeight_AdirondackHillsAutumn = 20;
+    public static int biomeWeight_AdirondackMountains = 20;
+    public static int biomeWeight_AdirondackMountainsAutumn = 20;
+    public static int biomeWeight_AdirondackBog = 10;
+    public static int biomeWeight_AdirondackBogAutumn = 10;
+    public static int biomeWeight_AdirondackBeach = 0;
+    public static int biomeWeight_AdirondackRiver = 0;
 
     public static int biomeWeight_BlueRidgeForest = 20;
     public static int biomeWeight_BlueRidgeForestAutumn = 20;
@@ -87,6 +109,17 @@ public class ConfigAppalachia {
             // Biome IDs
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+            biomeID_AdirondackForest = config.getInt("Adirondack Forest Biome ID", "Biome IDs", biomeID_AdirondackForest, 0, 255, "");
+            biomeID_AdirondackForestAutumn = config.getInt("Autumn Adirondack Forest Biome ID", "Biome IDs", biomeID_AdirondackForestAutumn, 0, 255, "");
+            biomeID_AdirondackHills = config.getInt("Adirondack Hills Biome ID", "Biome IDs", biomeID_AdirondackHills, 0, 255, "");
+            biomeID_AdirondackHillsAutumn = config.getInt("Autumn Adirondack Hills Biome ID", "Biome IDs", biomeID_AdirondackHillsAutumn, 0, 255, "");
+            biomeID_AdirondackMountains = config.getInt("Adirondack Mountains Biome ID", "Biome IDs", biomeID_AdirondackMountains, 0, 255, "");
+            biomeID_AdirondackMountainsAutumn = config.getInt("Autumn Adirondack Mountains Biome ID", "Biome IDs", biomeID_AdirondackMountainsAutumn, 0, 255, "");
+            biomeID_AdirondackBog = config.getInt("Adirondack Bog Biome ID", "Biome IDs", biomeID_AdirondackBog, 0, 255, "");
+            biomeID_AdirondackBogAutumn = config.getInt("Autumn Adirondack Bog Biome ID", "Biome IDs", biomeID_AdirondackBogAutumn, 0, 255, "");
+            biomeID_AdirondackBeach = config.getInt("Adirondack Beach Biome ID", "Biome IDs", biomeID_AdirondackBeach, 0, 255, "");
+            biomeID_AdirondackRiver = config.getInt("Adirondack River Biome ID", "Biome IDs", biomeID_AdirondackRiver, 0, 255, "");
+
             biomeID_BlueRidgeForest = config.getInt("Blue Ridge Forest Biome ID", "Biome IDs", biomeID_BlueRidgeForest, 0, 255, "");
             biomeID_BlueRidgeForestAutumn = config.getInt("Autumn Blue Ridge Forest Biome ID", "Biome IDs", biomeID_BlueRidgeForestAutumn, 0, 255, "");
             biomeID_BlueRidgeHills = config.getInt("Blue Ridge Hills Biome ID", "Biome IDs", biomeID_BlueRidgeHills, 0, 255, "");
@@ -112,6 +145,17 @@ public class ConfigAppalachia {
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             // Biome Weights
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+            biomeWeight_AdirondackForest = config.getInt("Adirondack Forest Biome Weight", "Biome Weights", biomeWeight_AdirondackForest, 0, Integer.MAX_VALUE, "");
+            biomeWeight_AdirondackForestAutumn = config.getInt("Autumn Adirondack Forest Biome Weight", "Biome Weights", biomeWeight_AdirondackForestAutumn, 0, Integer.MAX_VALUE, "");
+            biomeWeight_AdirondackHills = config.getInt("Adirondack Hills Biome Weight", "Biome Weights", biomeWeight_AdirondackHills, 0, Integer.MAX_VALUE, "");
+            biomeWeight_AdirondackHillsAutumn = config.getInt("Autumn Adirondack Hills Biome Weight", "Biome Weights", biomeWeight_AdirondackHillsAutumn, 0, Integer.MAX_VALUE, "");
+            biomeWeight_AdirondackMountains = config.getInt("Adirondack Mountains Biome Weight", "Biome Weights", biomeWeight_AdirondackMountains, 0, Integer.MAX_VALUE, "");
+            biomeWeight_AdirondackMountainsAutumn = config.getInt("Autumn Adirondack Mountains Biome Weight", "Biome Weights", biomeWeight_AdirondackMountainsAutumn, 0, Integer.MAX_VALUE, "");
+            biomeWeight_AdirondackBog = config.getInt("Adirondack Bog Biome Weight", "Biome Weights", biomeWeight_AdirondackBog, 0, Integer.MAX_VALUE, "");
+            biomeWeight_AdirondackBogAutumn = config.getInt("Autumn Adirondack Bog Biome Weight", "Biome Weights", biomeWeight_AdirondackBogAutumn, 0, Integer.MAX_VALUE, "");
+            biomeWeight_AdirondackBeach = config.getInt("Adirondack Beach Biome Weight", "Biome Weights", biomeWeight_AdirondackBeach, 0, Integer.MAX_VALUE, "");
+            biomeWeight_AdirondackRiver = config.getInt("Adirondack River Biome Weight", "Biome Weights", biomeWeight_AdirondackRiver, 0, Integer.MAX_VALUE, "");
 
             biomeWeight_BlueRidgeForest = config.getInt("Blue Ridge Forest Biome Weight", "Biome Weights", biomeWeight_BlueRidgeForest, 0, Integer.MAX_VALUE, "");
             biomeWeight_BlueRidgeForestAutumn = config.getInt("Autumn Blue Ridge Forest Biome Weight", "Biome Weights", biomeWeight_BlueRidgeForestAutumn, 0, Integer.MAX_VALUE, "");

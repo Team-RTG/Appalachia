@@ -5,10 +5,8 @@ import java.util.Random;
 
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.world.World;
 
-import rtg.util.CellNoise;
-import rtg.util.OpenSimplexNoise;
+import rtg.api.world.RTGWorld;
 import rtg.world.biome.realistic.RealisticBiomeBase;
 
 /**
@@ -17,18 +15,18 @@ import rtg.world.biome.realistic.RealisticBiomeBase;
  *
  * @author WhichOnesPink
  */
-public class DecoBase {
+public abstract class DecoBase {
 
     /**
      * If false, the deco won't get generated during chunk decoration.
      * Currently, the only deco that uses allow=false is the DecoBaseBiomeDecorations deco, and it only gets
      * set to false when we need to generate ores in biomes that don't let the base biome handle decoration at all.
      */
-    public boolean allowed;
-    public ArrayList<DecoType> decoTypes;
-    public boolean checkRiver;
-    public float minRiver; // Minimum river value required to generate.
-    public float maxRiver; // Maximum river value required to generate.
+    protected boolean allowed;
+    protected ArrayList<DecoType> decoTypes;
+    protected boolean checkRiver;
+    protected float minRiver; // Minimum river value required to generate.
+    protected float maxRiver; // Maximum river value required to generate.
 
     public DecoBase() {
 
@@ -36,7 +34,7 @@ public class DecoBase {
         this.decoTypes = new ArrayList<DecoType>();
         this.checkRiver = false;
         this.minRiver = -2f;
-        this.maxRiver = 2f;
+        this.setMaxRiver(2f);
     }
 
     public boolean properlyDefined() {
@@ -49,17 +47,15 @@ public class DecoBase {
      * Performs pre-generation checks to determine if the deco is allowed to generate.
      *
      * @param biome
-     * @param world
+     * @param rtgWorld
      * @param rand
-     * @param chunkX
-     * @param chunkY
-     * @param simplex
-     * @param cell
+     * @param worldX
+     * @param worldZ
      * @param strength
      * @param river
      * @param hasPlacedVillageBlocks
      */
-    public boolean preGenerate(RealisticBiomeBase biome, World world, Random rand, int chunkX, int chunkY, OpenSimplexNoise simplex, CellNoise cell, float strength, float river, boolean hasPlacedVillageBlocks) {
+    public boolean preGenerate(RealisticBiomeBase biome, RTGWorld rtgWorld, Random rand, int worldX, int worldZ, float strength, float river, boolean hasPlacedVillageBlocks) {
 
         if (this.checkRiver) {
 
@@ -76,17 +72,15 @@ public class DecoBase {
      * This method should be overridden in the individual deco objects.
      *
      * @param biome
-     * @param world
+     * @param rtgWorld
      * @param rand
-     * @param chunkX
-     * @param chunkY
-     * @param simplex
-     * @param cell
+     * @param worldX
+     * @param worldZ
      * @param strength
      * @param river
      * @param hasPlacedVillageBlocks
      */
-    public void generate(RealisticBiomeBase biome, World world, Random rand, int chunkX, int chunkY, OpenSimplexNoise simplex, CellNoise cell, float strength, float river, boolean hasPlacedVillageBlocks) {
+    public void generate(RealisticBiomeBase biome, RTGWorld rtgWorld, Random rand, int worldX, int worldZ, float strength, float river, boolean hasPlacedVillageBlocks) {
 
     }
 
@@ -140,16 +134,71 @@ public class DecoBase {
             IBlockState leaves = deco.leavesBlock
                 .withProperty(BlockLeaves.CHECK_DECAY, checkDecay)
                 .withProperty(BlockLeaves.DECAYABLE, decayable);
-            deco.leavesBlock = leaves;
+            deco.setLeavesBlock(leaves);
         }
     }
 
     public static void tweakShrubLeaves(DecoShrub deco, boolean checkDecay, boolean decayable) {
-        if (deco.leavesBlock.getBlock() instanceof BlockLeaves) {
-            IBlockState leaves = deco.leavesBlock
+        if (deco.getLeavesBlock().getBlock() instanceof BlockLeaves) {
+            IBlockState leaves = deco.getLeavesBlock()
                 .withProperty(BlockLeaves.CHECK_DECAY, checkDecay)
                 .withProperty(BlockLeaves.DECAYABLE, decayable);
-            deco.leavesBlock = leaves;
+            deco.setLeavesBlock(leaves);
         }
+    }
+
+    public boolean isAllowed() {
+
+        return allowed;
+    }
+
+    public DecoBase setAllowed(boolean allowed) {
+
+        this.allowed = allowed;
+        return this;
+    }
+
+    public ArrayList<DecoType> getDecoTypes() {
+
+        return decoTypes;
+    }
+
+    public DecoBase setDecoTypes(ArrayList<DecoType> decoTypes) {
+
+        this.decoTypes = decoTypes;
+        return this;
+    }
+
+    public boolean isCheckRiver() {
+
+        return checkRiver;
+    }
+
+    public DecoBase setCheckRiver(boolean checkRiver) {
+
+        this.checkRiver = checkRiver;
+        return this;
+    }
+
+    public float getMinRiver() {
+
+        return minRiver;
+    }
+
+    public DecoBase setMinRiver(float minRiver) {
+
+        this.minRiver = minRiver;
+        return this;
+    }
+
+    public float getMaxRiver() {
+
+        return maxRiver;
+    }
+
+    public DecoBase setMaxRiver(float maxRiver) {
+
+        this.maxRiver = maxRiver;
+        return this;
     }
 }

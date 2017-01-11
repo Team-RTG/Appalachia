@@ -6,15 +6,14 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
-import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
-import rtg.config.BiomeConfig;
-import rtg.util.BlockUtil;
-import rtg.util.CellNoise;
-import rtg.util.CliffCalculator;
-import rtg.util.OpenSimplexNoise;
+import rtg.api.config.BiomeConfig;
+import rtg.api.util.BlockUtil;
+import rtg.api.util.CliffCalculator;
+import rtg.api.util.noise.OpenSimplexNoise;
+import rtg.api.world.RTGWorld;
 import rtg.world.biome.deco.*;
 import rtg.world.biome.deco.helper.DecoHelperThisOrThat;
 import rtg.world.gen.feature.tree.rtg.TreeRTG;
@@ -24,6 +23,7 @@ import rtg.world.gen.feature.tree.rtg.TreeRTGRhizophoraMucronata;
 import rtg.world.gen.surface.SurfaceBase;
 import rtg.world.gen.terrain.GroundEffect;
 import rtg.world.gen.terrain.TerrainBase;
+import static rtg.world.biome.deco.DecoFallenTree.LogCondition.NOISE_GREATER_AND_RANDOM_CHANCE;
 
 public class RealisticBiomeVanillaRoofedForest extends RealisticBiomeVanillaBase {
 
@@ -62,9 +62,9 @@ public class RealisticBiomeVanillaRoofedForest extends RealisticBiomeVanillaBase
         }
 
         @Override
-        public float generateNoise(OpenSimplexNoise simplex, CellNoise cell, int x, int y, float border, float river) {
+        public float generateNoise(RTGWorld rtgWorld, int x, int y, float border, float river) {
             //return terrainPlains(x, y, simplex, river, 160f, 10f, 60f, 80f, 65f)
-            return riverized(65f + groundEffect.added(simplex, cell, x, y), river);
+            return riverized(65f + groundEffect.added(rtgWorld, x, y), river);
         }
     }
 
@@ -103,10 +103,11 @@ public class RealisticBiomeVanillaRoofedForest extends RealisticBiomeVanillaBase
         }
 
         @Override
-        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int y, int depth, World world, Random rand,
-                                 OpenSimplexNoise simplex, CellNoise cell, float[] noise, float river, Biome[] base) {
+        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, RTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
 
-            float c = CliffCalculator.calc(x, y, noise);
+            Random rand = rtgWorld.rand;
+            OpenSimplexNoise simplex = rtgWorld.simplex;
+            float c = CliffCalculator.calc(x, z, noise);
             int cliff = 0;
             boolean m = false;
 
@@ -114,7 +115,7 @@ public class RealisticBiomeVanillaRoofedForest extends RealisticBiomeVanillaBase
             float mixModifier = mixHeight + simplex.noise2(((float) i) / 800f, ((float) j) / 800f);
             Block b;
             for (int k = 255; k > -1; k--) {
-                b = primer.getBlockState(x, k, y).getBlock();
+                b = primer.getBlockState(x, k, z).getBlock();
                 if (b == Blocks.AIR) {
                     depth = -1;
                 }
@@ -134,41 +135,41 @@ public class RealisticBiomeVanillaRoofedForest extends RealisticBiomeVanillaBase
                         if (cliff == 1) {
                             if (rand.nextInt(3) == 0) {
 
-                                primer.setBlockState(x, k, y, hcCobble(world, i, j, x, y, k));
+                                primer.setBlockState(x, k, z, hcCobble(rtgWorld, i, j, x, z, k));
                             }
                             else {
 
-                                primer.setBlockState(x, k, y, hcStone(world, i, j, x, y, k));
+                                primer.setBlockState(x, k, z, hcStone(rtgWorld, i, j, x, z, k));
                             }
                         }
                         else if (cliff == 2) {
-                            primer.setBlockState(x, k, y, getShadowStoneBlock(world, i, j, x, y, k));
+                            primer.setBlockState(x, k, z, getShadowStoneBlock(rtgWorld, i, j, x, z, k));
                         }
                         else if (k < 63) {
                             if (k < 62) {
-                                primer.setBlockState(x, k, y, fillerBlock);
+                                primer.setBlockState(x, k, z, fillerBlock);
                             }
                             else {
-                                primer.setBlockState(x, k, y, topBlock);
+                                primer.setBlockState(x, k, z, topBlock);
                             }
                         }
                         else if (simplex.noise2(i / 12f, j / 12f) > mixModifier) {
-                            primer.setBlockState(x, k, y, mixBlock);
+                            primer.setBlockState(x, k, z, mixBlock);
                             m = true;
                         }
                         else {
-                            primer.setBlockState(x, k, y, topBlock);
+                            primer.setBlockState(x, k, z, topBlock);
                         }
                     }
                     else if (depth < 6) {
                         if (cliff == 1) {
-                            primer.setBlockState(x, k, y, hcStone(world, i, j, x, y, k));
+                            primer.setBlockState(x, k, z, hcStone(rtgWorld, i, j, x, z, k));
                         }
                         else if (cliff == 2) {
-                            primer.setBlockState(x, k, y, getShadowStoneBlock(world, i, j, x, y, k));
+                            primer.setBlockState(x, k, z, getShadowStoneBlock(rtgWorld, i, j, x, z, k));
                         }
                         else {
-                            primer.setBlockState(x, k, y, fillerBlock);
+                            primer.setBlockState(x, k, z, fillerBlock);
                         }
                     }
                 }
@@ -180,125 +181,125 @@ public class RealisticBiomeVanillaRoofedForest extends RealisticBiomeVanillaBase
     public void initDecos() {
 
         DecoMushrooms decoMushrooms = new DecoMushrooms();
-        decoMushrooms.chance = 4;
-        decoMushrooms.maxY = 90;
-        decoMushrooms.randomType = rtg.world.biome.deco.DecoMushrooms.RandomType.ALWAYS_GENERATE;
+        decoMushrooms.setChance(4);
+        decoMushrooms.setMaxY(90);
+        decoMushrooms.setRandomType(rtg.world.biome.deco.DecoMushrooms.RandomType.ALWAYS_GENERATE);
         this.addDeco(decoMushrooms);
 
         TreeRTG mucronataTree = new TreeRTGRhizophoraMucronata(3, 4, 13f, 0.32f, 0.1f);
-        mucronataTree.logBlock = BlockUtil.getStateLog2(1);
-        mucronataTree.leavesBlock = BlockUtil.getStateLeaf2(1);
-        mucronataTree.minTrunkSize = 2;
-        mucronataTree.maxTrunkSize = 3;
-        mucronataTree.minCrownSize = 10;
-        mucronataTree.maxCrownSize = 18;
-        mucronataTree.noLeaves = false;
+        mucronataTree.setLogBlock(BlockUtil.getStateLog2(1));
+        mucronataTree.setLeavesBlock(BlockUtil.getStateLeaf2(1));
+        mucronataTree.setMinTrunkSize(2);
+        mucronataTree.setMaxTrunkSize(3);
+        mucronataTree.setMinCrownSize(10);
+        mucronataTree.setMaxCrownSize(18);
+        mucronataTree.setNoLeaves(false);
         this.addTree(mucronataTree);
 
         DecoTree mangroveTree = new DecoTree(mucronataTree);
-        mangroveTree.treeType = DecoTree.TreeType.RTG_TREE;
-        mangroveTree.treeCondition = DecoTree.TreeCondition.RANDOM_CHANCE;
-        mangroveTree.treeConditionChance = 1;
-        mangroveTree.strengthFactorForLoops = 12f;
-        mangroveTree.maxY = 110;
-        mangroveTree.scatter = new DecoTree.Scatter(16, 0);
+        mangroveTree.setTreeType(DecoTree.TreeType.RTG_TREE);
+        mangroveTree.setTreeCondition(DecoTree.TreeCondition.RANDOM_CHANCE);
+        mangroveTree.setTreeConditionChance(1);
+        mangroveTree.setStrengthFactorForLoops(12f);
+        mangroveTree.setMaxY(110);
+        mangroveTree.setScatter(new DecoTree.Scatter(16, 0));
         this.addDeco(mangroveTree);
 
         TreeRTG pentandraTree = new TreeRTGCeibaPentandra(13f, 3, 0.32f, 0.1f);
-        pentandraTree.logBlock = BlockUtil.getStateLog2(1);
-        pentandraTree.leavesBlock = BlockUtil.getStateLeaf2(1);
-        pentandraTree.minTrunkSize = 2;
-        pentandraTree.maxTrunkSize = 3;
-        pentandraTree.minCrownSize = 10;
-        pentandraTree.maxCrownSize = 18;
-        pentandraTree.noLeaves = false;
+        pentandraTree.setLogBlock(BlockUtil.getStateLog2(1));
+        pentandraTree.setLeavesBlock(BlockUtil.getStateLeaf2(1));
+        pentandraTree.setMinTrunkSize(2);
+        pentandraTree.setMaxTrunkSize(3);
+        pentandraTree.setMinCrownSize(10);
+        pentandraTree.setMaxCrownSize(18);
+        pentandraTree.setNoLeaves(false);
         this.addTree(pentandraTree);
 
         DecoTree ceibaPentandraTree = new DecoTree(pentandraTree);
-        ceibaPentandraTree.treeType = DecoTree.TreeType.RTG_TREE;
-        ceibaPentandraTree.treeCondition = DecoTree.TreeCondition.RANDOM_CHANCE;
-        ceibaPentandraTree.treeConditionChance = 1;
-        ceibaPentandraTree.strengthFactorForLoops = 12f;
-        ceibaPentandraTree.maxY = 110;
-        ceibaPentandraTree.scatter = new DecoTree.Scatter(16, 0);
+        ceibaPentandraTree.setTreeType(DecoTree.TreeType.RTG_TREE);
+        ceibaPentandraTree.setTreeCondition(DecoTree.TreeCondition.RANDOM_CHANCE);
+        ceibaPentandraTree.setTreeConditionChance(1);
+        ceibaPentandraTree.setStrengthFactorForLoops(12f);
+        ceibaPentandraTree.setMaxY(110);
+        ceibaPentandraTree.setScatter(new DecoTree.Scatter(16, 0));
         this.addDeco(ceibaPentandraTree);
 
         TreeRTG roseaTree = new TreeRTGCeibaRosea(16f, 5, 0.32f, 0.1f);
-        roseaTree.logBlock = BlockUtil.getStateLog2(1);
-        roseaTree.leavesBlock = BlockUtil.getStateLeaf2(1);
-        roseaTree.minTrunkSize = 2;
-        roseaTree.maxTrunkSize = 3;
-        roseaTree.minCrownSize = 10;
-        roseaTree.maxCrownSize = 18;
-        roseaTree.noLeaves = false;
+        roseaTree.setLogBlock(BlockUtil.getStateLog2(1));
+        roseaTree.setLeavesBlock(BlockUtil.getStateLeaf2(1));
+        roseaTree.setMinTrunkSize(2);
+        roseaTree.setMaxTrunkSize(3);
+        roseaTree.setMinCrownSize(10);
+        roseaTree.setMaxCrownSize(18);
+        roseaTree.setNoLeaves(false);
         this.addTree(roseaTree);
 
         DecoTree ceibaRoseaTree = new DecoTree(roseaTree);
-        ceibaRoseaTree.treeType = DecoTree.TreeType.RTG_TREE;
-        ceibaRoseaTree.treeCondition = DecoTree.TreeCondition.RANDOM_CHANCE;
-        ceibaRoseaTree.treeConditionChance = 1;
-        ceibaRoseaTree.strengthFactorForLoops = 12f;
-        ceibaRoseaTree.maxY = 110;
-        ceibaRoseaTree.scatter = new DecoTree.Scatter(16, 0);
+        ceibaRoseaTree.setTreeType(DecoTree.TreeType.RTG_TREE);
+        ceibaRoseaTree.setTreeCondition(DecoTree.TreeCondition.RANDOM_CHANCE);
+        ceibaRoseaTree.setTreeConditionChance(1);
+        ceibaRoseaTree.setStrengthFactorForLoops(12f);
+        ceibaRoseaTree.setMaxY(110);
+        ceibaRoseaTree.setScatter(new DecoTree.Scatter(16, 0));
         this.addDeco(ceibaRoseaTree);
 
         DecoFallenTree decoFallenTree = new DecoFallenTree();
-        decoFallenTree.distribution.noiseDivisor = 80f;
-        decoFallenTree.distribution.noiseFactor = 60f;
-        decoFallenTree.distribution.noiseAddend = -15f;
-        decoFallenTree.logCondition = DecoFallenTree.LogCondition.NOISE_GREATER_AND_RANDOM_CHANCE;
-        decoFallenTree.logConditionChance = 16;
-        decoFallenTree.logConditionNoise = 0f;
-        decoFallenTree.logBlock = BlockUtil.getStateLog2(1);
-        decoFallenTree.leavesBlock = BlockUtil.getStateLeaf2(1);
-        decoFallenTree.minSize = 4;
-        decoFallenTree.maxSize = 9;
+        decoFallenTree.getDistribution().setNoiseDivisor(80f);
+        decoFallenTree.getDistribution().setNoiseFactor(60f);
+        decoFallenTree.getDistribution().setNoiseAddend(-15f);
+        decoFallenTree.setLogCondition(NOISE_GREATER_AND_RANDOM_CHANCE);
+        decoFallenTree.setLogConditionChance(16);
+        decoFallenTree.setLogConditionNoise(0f);
+        decoFallenTree.setLogBlock(BlockUtil.getStateLog2(1));
+        decoFallenTree.setLeavesBlock(BlockUtil.getStateLeaf2(1));
+        decoFallenTree.setMinSize(4);
+        decoFallenTree.setMaxSize(9);
         this.addDeco(decoFallenTree, this.getConfig().ALLOW_LOGS.get());
 
         DecoShrub darkOakShrub = new DecoShrub();
-        darkOakShrub.logBlock = BlockUtil.getStateLog2(1);
-        darkOakShrub.leavesBlock = BlockUtil.getStateLeaf2(1);
-        darkOakShrub.maxY = 100;
-        darkOakShrub.strengthFactor = 8f;
+        darkOakShrub.setLogBlock(BlockUtil.getStateLog2(1));
+        darkOakShrub.setLeavesBlock(BlockUtil.getStateLeaf2(1));
+        darkOakShrub.setMaxY(100);
+        darkOakShrub.setStrengthFactor(8f);
 
         DecoShrub oakShrub = new DecoShrub();
-        oakShrub.logBlock = Blocks.LOG.getDefaultState();
-        oakShrub.leavesBlock = Blocks.LEAVES.getDefaultState();
-        oakShrub.maxY = 100;
-        oakShrub.strengthFactor = 8f;
+        oakShrub.setLogBlock(Blocks.LOG.getDefaultState());
+        oakShrub.setLeavesBlock(Blocks.LEAVES.getDefaultState());
+        oakShrub.setMaxY(100);
+        oakShrub.setStrengthFactor(8f);
 
         this.addDeco(new DecoHelperThisOrThat(4, DecoHelperThisOrThat.ChanceType.NOT_EQUALS_ZERO, darkOakShrub, oakShrub));
 
         DecoBoulder decoBoulder = new DecoBoulder();
-        decoBoulder.boulderBlock = Blocks.MOSSY_COBBLESTONE.getDefaultState();
-        decoBoulder.chance = 16;
-        decoBoulder.maxY = 80;
-        decoBoulder.strengthFactor = 2f;
+        decoBoulder.setBoulderBlock(Blocks.MOSSY_COBBLESTONE.getDefaultState());
+        decoBoulder.setChance(16);
+        decoBoulder.setMaxY(80);
+        decoBoulder.setStrengthFactor(2f);
         this.addDeco(decoBoulder);
 
         DecoCobwebs decoCobwebs = new DecoCobwebs();
-        decoCobwebs.chance = 1;
-        decoCobwebs.minY = 63;
-        decoCobwebs.maxY = 76;
-        decoCobwebs.strengthFactor = 24f;
-        decoCobwebs.adjacentBlock = BlockUtil.getStateLog2(1);
-        decoCobwebs.minAdjacents = 2;
+        decoCobwebs.setChance(1);
+        decoCobwebs.setMinY(63);
+        decoCobwebs.setMaxY(76);
+        decoCobwebs.setStrengthFactor(24f);
+        decoCobwebs.setAdjacentBlock(BlockUtil.getStateLog2(1));
+        decoCobwebs.setMinAdjacents(2);
         this.addDeco(decoCobwebs, this.getConfig().ALLOW_COBWEBS.get());
 
         DecoBaseBiomeDecorations decoBaseBiomeDecorations = new DecoBaseBiomeDecorations();
-        decoBaseBiomeDecorations.notEqualsZeroChance = 2;
-        decoBaseBiomeDecorations.maxY = 100;
+        decoBaseBiomeDecorations.setNotEqualsZeroChance(2);
+        decoBaseBiomeDecorations.setMaxY(100);
         this.addDeco(decoBaseBiomeDecorations);
 
         DecoGrass decoGrass = new DecoGrass();
-        decoGrass.maxY = 100;
-        decoGrass.strengthFactor = 20f;
+        decoGrass.setMaxY(100);
+        decoGrass.setStrengthFactor(20f);
         this.addDeco(decoGrass);
 
         DecoDeadBush decoDeadBush = new DecoDeadBush();
-        decoDeadBush.maxY = 100;
-        decoDeadBush.chance = 2;
-        decoDeadBush.strengthFactor = 2f;
+        decoDeadBush.setMaxY(100);
+        decoDeadBush.setChance(2);
+        decoDeadBush.setStrengthFactor(2f);
         this.addDeco(decoDeadBush);
     }
 }

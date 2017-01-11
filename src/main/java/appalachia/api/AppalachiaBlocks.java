@@ -4,7 +4,7 @@ import net.minecraft.block.Block;
 
 public class AppalachiaBlocks {
 
-
+    public static Block vine_poison_ivy_01;
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // DYNAMICALLY-GENERATED CODE - PLEASE DO NOT MODIFY BELOW THIS LINE

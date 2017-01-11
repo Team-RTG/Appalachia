@@ -6,12 +6,14 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
-import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
-import rtg.config.BiomeConfig;
-import rtg.util.*;
+import rtg.api.config.BiomeConfig;
+import rtg.api.util.BlockUtil;
+import rtg.api.util.CliffCalculator;
+import rtg.api.world.RTGWorld;
+import rtg.util.CanyonColour;
 import rtg.world.biome.deco.DecoBoulder;
 import rtg.world.biome.deco.DecoCactus;
 import rtg.world.biome.deco.DecoDeadBush;
@@ -84,9 +86,9 @@ public class RealisticBiomeVanillaMesaBryce extends RealisticBiomeVanillaBase {
         }
 
         @Override
-        public float generateNoise(OpenSimplexNoise simplex, CellNoise cell, int x, int y, float border, float river) {
+        public float generateNoise(RTGWorld rtgWorld, int x, int y, float border, float river) {
 
-            return terrainBryce(x, y, simplex, river, height, border);
+            return terrainBryce(x, y, rtgWorld.simplex, river, height, border);
         }
     }
 
@@ -97,9 +99,9 @@ public class RealisticBiomeVanillaMesaBryce extends RealisticBiomeVanillaBase {
     }
 
     @Override
-    public void rReplace(ChunkPrimer primer, int i, int j, int x, int y, int depth, World world, Random rand, OpenSimplexNoise simplex, CellNoise cell, float[] noise, float river, Biome[] base) {
+    public void rReplace(ChunkPrimer primer, int i, int j, int x, int y, int depth, RTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
 
-        this.rReplaceRiverSurface(primer, i, j, x, y, depth, world, rand, simplex, cell, noise, river, base);
+        this.rReplaceWithRiver(primer, i, j, x, y, depth, rtgWorld, noise, river, base);
     }
 
     @Override
@@ -123,8 +125,9 @@ public class RealisticBiomeVanillaMesaBryce extends RealisticBiomeVanillaBase {
         }
 
         @Override
-        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, World world, Random rand, OpenSimplexNoise simplex, CellNoise cell, float[] noise, float river, Biome[] base) {
+        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, RTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
 
+            Random rand = rtgWorld.rand;
             float c = CliffCalculator.calc(x, z, noise);
             boolean cliff = c > 1.3f;
 
@@ -209,24 +212,24 @@ public class RealisticBiomeVanillaMesaBryce extends RealisticBiomeVanillaBase {
         this.addDecoCollection(new DecoCollectionDesertRiver());
 
         DecoBoulder decoBoulder = new DecoBoulder();
-        decoBoulder.boulderBlock = Blocks.COBBLESTONE.getDefaultState();
-        decoBoulder.maxY = 83;
+        decoBoulder.setBoulderBlock(Blocks.COBBLESTONE.getDefaultState());
+        decoBoulder.setMaxY(83);
         this.addDeco(decoBoulder);
 
         DecoShrub decoShrub = new DecoShrub();
-        decoShrub.loops = 3;
-        decoShrub.maxY = 90;
+        decoShrub.setLoops(3);
+        decoShrub.setMaxY(90);
         addDeco(decoShrub);
 
         DecoDeadBush decoDeadBush = new DecoDeadBush();
-        decoDeadBush.maxY = 100;
-        decoDeadBush.loops = 3;
+        decoDeadBush.setMaxY(100);
+        decoDeadBush.setLoops(3);
         this.addDeco(decoDeadBush);
 
         DecoCactus decoCactus = new DecoCactus();
-        decoCactus.soilBlock = BlockUtil.getStateSand(1);
-        decoCactus.loops = 18;
-        decoCactus.maxY = 100;
+        decoCactus.setSoilBlock(BlockUtil.getStateSand(1));
+        decoCactus.setLoops(18);
+        decoCactus.setMaxY(100);
         this.addDeco(decoCactus);
     }
 }

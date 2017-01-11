@@ -8,17 +8,14 @@ package rtg.world.biome.deco.helper;
 
 import java.util.Random;
 
-import net.minecraft.world.World;
-
-import rtg.util.CellNoise;
-import rtg.util.OpenSimplexNoise;
+import rtg.api.world.RTGWorld;
 import rtg.world.biome.deco.DecoBase;
 import rtg.world.biome.realistic.RealisticBiomeBase;
 
 public class DecoHelperThisOrThat extends DecoBase {
 
-    public int chance;
-    public ChanceType chanceType;
+    private int chance;
+    private ChanceType chanceType;
     private DecoBase decoThis;
     private DecoBase decoThat;
 
@@ -39,7 +36,7 @@ public class DecoHelperThisOrThat extends DecoBase {
     }
 
     @Override
-    public void generate(RealisticBiomeBase biome, World world, Random rand, int chunkX, int chunkY, OpenSimplexNoise simplex, CellNoise cell, float strength, float river, boolean hasPlacedVillageBlocks) {
+    public void generate(RealisticBiomeBase biome, RTGWorld rtgWorld, Random rand, int chunkX, int chunkY, float strength, float river, boolean hasPlacedVillageBlocks) {
 
         if (this.allowed) {
 
@@ -47,10 +44,10 @@ public class DecoHelperThisOrThat extends DecoBase {
                 case EQUALS_ZERO:
 
                     if (rand.nextInt(this.chance) == 0) {
-                        this.decoThis.generate(biome, world, rand, chunkX, chunkY, simplex, cell, strength, river, hasPlacedVillageBlocks);
+                        this.decoThis.generate(biome, rtgWorld, rand, chunkX, chunkY, strength, river, hasPlacedVillageBlocks);
                     }
                     else {
-                        this.decoThat.generate(biome, world, rand, chunkX, chunkY, simplex, cell, strength, river, hasPlacedVillageBlocks);
+                        this.decoThat.generate(biome, rtgWorld, rand, chunkX, chunkY, strength, river, hasPlacedVillageBlocks);
                     }
 
                     break;
@@ -58,10 +55,10 @@ public class DecoHelperThisOrThat extends DecoBase {
                 case NOT_EQUALS_ZERO:
 
                     if (rand.nextInt(this.chance) != 0) {
-                        this.decoThis.generate(biome, world, rand, chunkX, chunkY, simplex, cell, strength, river, hasPlacedVillageBlocks);
+                        this.decoThis.generate(biome, rtgWorld, rand, chunkX, chunkY, strength, river, hasPlacedVillageBlocks);
                     }
                     else {
-                        this.decoThat.generate(biome, world, rand, chunkX, chunkY, simplex, cell, strength, river, hasPlacedVillageBlocks);
+                        this.decoThat.generate(biome, rtgWorld, rand, chunkX, chunkY, strength, river, hasPlacedVillageBlocks);
                     }
 
                     break;
@@ -76,5 +73,27 @@ public class DecoHelperThisOrThat extends DecoBase {
     public enum ChanceType {
         EQUALS_ZERO,
         NOT_EQUALS_ZERO;
+    }
+
+    public int getChance() {
+
+        return chance;
+    }
+
+    public DecoHelperThisOrThat setChance(int chance) {
+
+        this.chance = chance;
+        return this;
+    }
+
+    public ChanceType getChanceType() {
+
+        return chanceType;
+    }
+
+    public DecoHelperThisOrThat setChanceType(ChanceType chanceType) {
+
+        this.chanceType = chanceType;
+        return this;
     }
 }

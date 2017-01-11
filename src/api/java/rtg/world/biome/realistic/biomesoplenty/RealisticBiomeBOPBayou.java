@@ -7,20 +7,20 @@ import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
-import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
 import biomesoplenty.api.biome.BOPBiomes;
 import biomesoplenty.api.block.BOPBlocks;
 
-import rtg.config.BiomeConfig;
-import rtg.util.CellNoise;
-import rtg.util.CliffCalculator;
-import rtg.util.OpenSimplexNoise;
+import rtg.api.config.BiomeConfig;
+import rtg.api.util.CliffCalculator;
+import rtg.api.util.noise.OpenSimplexNoise;
+import rtg.api.world.RTGWorld;
 import rtg.world.biome.deco.*;
 import rtg.world.gen.surface.SurfaceBase;
 import rtg.world.gen.terrain.TerrainBase;
+import static rtg.world.biome.deco.DecoFallenTree.LogCondition.NOISE_GREATER_AND_RANDOM_CHANCE;
 
 public class RealisticBiomeBOPBayou extends RealisticBiomeBOPBase {
 
@@ -63,9 +63,9 @@ public class RealisticBiomeBOPBayou extends RealisticBiomeBOPBase {
         }
 
         @Override
-        public float generateNoise(OpenSimplexNoise simplex, CellNoise cell, int x, int y, float border, float river) {
+        public float generateNoise(RTGWorld rtgWorld, int x, int y, float border, float river) {
 
-            return terrainPlains(x, y, simplex, river, 80f, 1f, 40f, 20f, 62f);
+            return terrainPlains(x, y, rtgWorld.simplex, river, 80f, 1f, 40f, 20f, 62f);
         }
     }
 
@@ -103,16 +103,17 @@ public class RealisticBiomeBOPBayou extends RealisticBiomeBOPBase {
         }
 
         @Override
-        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int y, int depth, World world, Random rand,
-                                 OpenSimplexNoise simplex, CellNoise cell, float[] noise, float river, Biome[] base) {
+        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, RTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
 
-            float c = CliffCalculator.calc(x, y, noise);
+            Random rand = rtgWorld.rand;
+            OpenSimplexNoise simplex = rtgWorld.simplex;
+            float c = CliffCalculator.calc(x, z, noise);
             int cliff = 0;
             boolean m = false;
 
             Block b;
             for (int k = 255; k > -1; k--) {
-                b = primer.getBlockState(x, k, y).getBlock();
+                b = primer.getBlockState(x, k, z).getBlock();
                 if (b == Blocks.AIR) {
                     depth = -1;
                 }
@@ -132,41 +133,41 @@ public class RealisticBiomeBOPBayou extends RealisticBiomeBOPBase {
                         if (cliff == 1) {
                             if (rand.nextInt(3) == 0) {
 
-                                primer.setBlockState(x, k, y, hcCobble(world, i, j, x, y, k));
+                                primer.setBlockState(x, k, z, hcCobble(rtgWorld, i, j, x, z, k));
                             }
                             else {
 
-                                primer.setBlockState(x, k, y, hcStone(world, i, j, x, y, k));
+                                primer.setBlockState(x, k, z, hcStone(rtgWorld, i, j, x, z, k));
                             }
                         }
                         else if (cliff == 2) {
-                            primer.setBlockState(x, k, y, getShadowStoneBlock(world, i, j, x, y, k));
+                            primer.setBlockState(x, k, z, getShadowStoneBlock(rtgWorld, i, j, x, z, k));
                         }
                         else if (k < 63) {
                             if (k < 62) {
-                                primer.setBlockState(x, k, y, fillerBlock);
+                                primer.setBlockState(x, k, z, fillerBlock);
                             }
                             else {
-                                primer.setBlockState(x, k, y, topBlock);
+                                primer.setBlockState(x, k, z, topBlock);
                             }
                         }
                         else if (simplex.noise2(i / 12f, j / 12f) > mixHeight) {
-                            primer.setBlockState(x, k, y, mixBlock);
+                            primer.setBlockState(x, k, z, mixBlock);
                             m = true;
                         }
                         else {
-                            primer.setBlockState(x, k, y, topBlock);
+                            primer.setBlockState(x, k, z, topBlock);
                         }
                     }
                     else if (depth < 6) {
                         if (cliff == 1) {
-                            primer.setBlockState(x, k, y, hcStone(world, i, j, x, y, k));
+                            primer.setBlockState(x, k, z, hcStone(rtgWorld, i, j, x, z, k));
                         }
                         else if (cliff == 2) {
-                            primer.setBlockState(x, k, y, getShadowStoneBlock(world, i, j, x, y, k));
+                            primer.setBlockState(x, k, z, getShadowStoneBlock(rtgWorld, i, j, x, z, k));
                         }
                         else {
-                            primer.setBlockState(x, k, y, fillerBlock);
+                            primer.setBlockState(x, k, z, fillerBlock);
                         }
                     }
                 }
@@ -178,23 +179,23 @@ public class RealisticBiomeBOPBayou extends RealisticBiomeBOPBase {
     public void initDecos() {
 
         DecoPond decoPond = new DecoPond();
-        decoPond.chunksPerPond = 1;
-        decoPond.maxY = 67;
-        decoPond.loops = 8;
+        decoPond.setChunksPerPond(1);
+        decoPond.setMaxY(67);
+        decoPond.setLoops(8);
         this.addDeco(decoPond);
 
 //        TreeRTG myrtilloidesTree = new TreeRTGSalixMyrtilloides();
-//        myrtilloidesTree.logBlock = logBlock;
-//        myrtilloidesTree.leavesBlock = leavesBlock;
+//        myrtilloidesTree.setLogBlock(logBlock);
+//        myrtilloidesTree.setLeavesBlock(leavesBlock);
 //        myrtilloidesTree.validGroundBlocks.add(mudBlock);
 //        this.addTree(myrtilloidesTree);
 //        DecoTree decoTrees = new DecoTree(myrtilloidesTree);
-//        decoTrees.treeType = DecoTree.TreeType.RTG_TREE;
-//        decoTrees.treeCondition = DecoTree.TreeCondition.RANDOM_CHANCE;
-//        decoTrees.treeConditionChance = 4;
-//        decoTrees.logBlock = logBlock;
-//        decoTrees.leavesBlock = leavesBlock;
-//        decoTrees.maxY = 90;
+//        decoTrees.setTreeType(DecoTree.TreeType.RTG_TREE);
+//        decoTrees.setTreeCondition(DecoTree.TreeCondition.RANDOM_CHANCE);
+//        decoTrees.setTreeConditionChance(4);
+//        decoTrees.setLogBlock(logBlock);
+//        decoTrees.setLeavesBlock(leavesBlock);
+//        decoTrees.setMaxY(90);
 //        this.addDeco(decoTrees);
 
         /*
@@ -203,65 +204,65 @@ public class RealisticBiomeBOPBayou extends RealisticBiomeBOPBase {
          */
 
 //        TreeRTG roseaTree = new TreeRTGCeibaRosea(16f, 5, 0.32f, 0.1f);
-//        roseaTree.logBlock = logBlock;
-//        roseaTree.leavesBlock = leavesBlock;
+//        roseaTree.setLogBlock(logBlock);
+//        roseaTree.setLeavesBlock(leavesBlock);
 //        roseaTree.validGroundBlocks.add(mudBlock);
-//        roseaTree.minTrunkSize = 2;
-//        roseaTree.maxTrunkSize = 3;
-//        roseaTree.minCrownSize = 10;
-//        roseaTree.maxCrownSize = 18;
-//        roseaTree.noLeaves = false;
+//        roseaTree.setMinTrunkSize(2);
+//        roseaTree.setMaxTrunkSize(3);
+//        roseaTree.setMinCrownSize(10);
+//        roseaTree.setMaxCrownSize(18);
+//        roseaTree.setNoLeaves(false);
 //        this.addTree(roseaTree);
 //        DecoTree ceibaRoseaTree = new DecoTree(roseaTree);
-//        ceibaRoseaTree.treeType = DecoTree.TreeType.RTG_TREE;
-//        ceibaRoseaTree.treeCondition = DecoTree.TreeCondition.RANDOM_CHANCE;
-//        ceibaRoseaTree.treeConditionChance = 4;
-//        ceibaRoseaTree.maxY = 90;
-//        ceibaRoseaTree.scatter = new DecoTree.Scatter(16, 0);
+//        ceibaRoseaTree.setTreeType(DecoTree.TreeType.RTG_TREE);
+//        ceibaRoseaTree.setTreeCondition(DecoTree.TreeCondition.RANDOM_CHANCE);
+//        ceibaRoseaTree.setTreeConditionChance(4);
+//        ceibaRoseaTree.setMaxY(90);
+//        ceibaRoseaTree.setScatter(new DecoTree.Scatter(16, 0));
 //        this.addDeco(ceibaRoseaTree);
 
         DecoBaseBiomeDecorations decoBaseBiomeDecorations = new DecoBaseBiomeDecorations();
-        decoBaseBiomeDecorations.notEqualsZeroChance = 4;
+        decoBaseBiomeDecorations.setNotEqualsZeroChance(4);
         this.addDeco(decoBaseBiomeDecorations);
 
         // Shrubs to fill in the blanks.
         DecoShrub decoShrubOak = new DecoShrub();
-        decoShrubOak.maxY = 90;
-        decoShrubOak.strengthFactor = 4f;
-        decoShrubOak.chance = 3;
+        decoShrubOak.setMaxY(90);
+        decoShrubOak.setStrengthFactor(4f);
+        decoShrubOak.setChance(3);
         this.addDeco(decoShrubOak);
 
         DecoFallenTree decoFallenTree = new DecoFallenTree();
-        decoFallenTree.distribution.noiseDivisor = 80f;
-        decoFallenTree.distribution.noiseFactor = 60f;
-        decoFallenTree.distribution.noiseAddend = -15f;
-        decoFallenTree.logCondition = DecoFallenTree.LogCondition.NOISE_GREATER_AND_RANDOM_CHANCE;
-        decoFallenTree.logConditionNoise = -0.2f;
-        decoFallenTree.logConditionChance = 4;
-        decoFallenTree.logBlock = logBlock;
-        decoFallenTree.leavesBlock = leavesBlock;
-        decoFallenTree.minSize = 3;
-        decoFallenTree.maxSize = 6;
+        decoFallenTree.getDistribution().setNoiseDivisor(80f);
+        decoFallenTree.getDistribution().setNoiseFactor(60f);
+        decoFallenTree.getDistribution().setNoiseAddend(-15f);
+        decoFallenTree.setLogCondition(NOISE_GREATER_AND_RANDOM_CHANCE);
+        decoFallenTree.setLogConditionNoise(-0.2f);
+        decoFallenTree.setLogConditionChance(4);
+        decoFallenTree.setLogBlock(logBlock);
+        decoFallenTree.setLeavesBlock(leavesBlock);
+        decoFallenTree.setMinSize(3);
+        decoFallenTree.setMaxSize(6);
         this.addDeco(decoFallenTree, this.getConfig().ALLOW_LOGS.get());
 
         DecoJungleLilypadVines decoJungleLilypadVines = new DecoJungleLilypadVines();
         this.addDeco(decoJungleLilypadVines);
 
         DecoGrassDoubleTallgrass decoGrassDoubleTallgrass = new DecoGrassDoubleTallgrass();
-        decoGrassDoubleTallgrass.maxY = 90;
-        decoGrassDoubleTallgrass.strengthFactor = 4f;
-        decoGrassDoubleTallgrass.doubleGrassChance = 8;
+        decoGrassDoubleTallgrass.setMaxY(90);
+        decoGrassDoubleTallgrass.setStrengthFactor(4f);
+        decoGrassDoubleTallgrass.setDoubleGrassChance(8);
         this.addDeco(decoGrassDoubleTallgrass);
 
         DecoGrass decoGrass = new DecoGrass();
-        decoGrass.maxY = 90;
-        decoGrass.strengthFactor = 4f;
-        decoGrass.chance = 2;
+        decoGrass.setMaxY(90);
+        decoGrass.setStrengthFactor(4f);
+        decoGrass.setChance(2);
         this.addDeco(decoGrass);
 
         DecoMushrooms decoMushrooms = new DecoMushrooms();
-        decoMushrooms.maxY = 90;
-        decoMushrooms.randomType = rtg.world.biome.deco.DecoMushrooms.RandomType.ALWAYS_GENERATE;
+        decoMushrooms.setMaxY(90);
+        decoMushrooms.setRandomType(rtg.world.biome.deco.DecoMushrooms.RandomType.ALWAYS_GENERATE);
         this.addDeco(decoMushrooms);
     }
 }

@@ -11,12 +11,12 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
-import appalachia.api.biome.decorator.AppalachiaDecorator;
 import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
 
-import rtg.util.OpenSimplexNoise;
+import rtg.api.util.noise.OpenSimplexNoise;
 
-public class AppalachiaBiome extends Biome implements IAppalachiaBiome {
+
+public abstract class AppalachiaBiome extends Biome implements IAppalachiaBiome {
 
     public ArrayList<AppalachiaTree> appalachiaTrees;
     public OpenSimplexNoise simplex = new OpenSimplexNoise(4444);
@@ -54,7 +54,7 @@ public class AppalachiaBiome extends Biome implements IAppalachiaBiome {
 
     @Override
     public BiomeDecorator createBiomeDecorator() {
-        return new AppalachiaDecorator();
+        return new AppalachiaBiomeDecorator();
     }
 
     @Override
