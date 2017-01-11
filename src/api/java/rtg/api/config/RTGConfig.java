@@ -159,6 +159,8 @@ public class RTGConfig extends Config {
     public final ConfigPropertyBoolean GENERATE_ORE_REDSTONE;
     public final ConfigPropertyBoolean GENERATE_ORE_SILVERFISH;
 
+    public final ConfigPropertyBoolean ALLOW_ORE_GEN_EVENT_CANCELLATION;
+
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // Plateaus
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -749,6 +751,19 @@ public class RTGConfig extends Config {
         GENERATE_ORE_SILVERFISH = new ConfigPropertyBoolean(ConfigProperty.Type.BOOLEAN, "Generate Silverfish Ore", "Ore Gen", "", true);
         this.addProperty(GENERATE_ORE_SILVERFISH);
 
+        ALLOW_ORE_GEN_EVENT_CANCELLATION = new ConfigPropertyBoolean(
+            ConfigProperty.Type.BOOLEAN,
+            "Allow ore gen event cancellation",
+            "Ore Gen",
+            "Some mods might not be compatible with the way RTG handles ore generation." +
+                Configuration.NEW_LINE +
+                "If you're using one of those mods, you might need to set this to false." +
+                Configuration.NEW_LINE +
+                "You should only change this if you're having problems with ore gen and you know what you're doing.",
+            true
+        );
+        this.addProperty(ALLOW_ORE_GEN_EVENT_CANCELLATION);
+
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Plateaus
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1048,7 +1063,7 @@ public class RTGConfig extends Config {
             "Strongholds",
             "This setting is the number of strongholds that exist per world."
                 + Configuration.NEW_LINE +
-                "HIGHER values = MORE strongholds & MORE lag. (3 = Vanilla)",
+                "HIGHER values = MORE strongholds & MORE lag. (128 = Vanilla)",
             128, 1, Integer.MAX_VALUE
         );
         this.addProperty(STRONGHOLD_COUNT);
