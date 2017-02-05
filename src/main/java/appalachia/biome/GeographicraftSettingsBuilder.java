@@ -7,6 +7,7 @@
 package appalachia.biome;
 
 import java.util.Collection;
+import java.util.HashMap;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
@@ -31,16 +32,17 @@ public class GeographicraftSettingsBuilder {
         }
     }
 
-    public void setBiomes(Collection<Biome> appalachiaBiomes) {
+    public void setBiomes(Collection<Biome> appalachiaBiomes,
+                              HashMap<Biome,AppalachiaBiomeGroup> biomeGroup) {
         try {
-            grouper = new GeographicraftGrouper(appalachiaBiomes,2,30);
+            grouper = new GeographicraftGrouper(appalachiaBiomes,2,30, biomeGroup);
         } catch (Error error) {
             // no action; Geographicraft is not installed;
         }
     }
-    public void registerBiomeWithTypes(Biome biome, String name, int weight, BiomeManager.BiomeType btype, BiomeDictionary.Type... types) {
+    public void registerBiomeWithTypes(Biome biome, String name, AppalachiaBiomeGroup group, int weight, BiomeManager.BiomeType btype, BiomeDictionary.Type... types) {
          if (settings != null) {
-             settings.registerBiomeWithTypes(biome, name, weight, btype, types);
+             settings.registerBiomeWithTypes(biome, name, group, weight, btype, types);
          }
     }
     
