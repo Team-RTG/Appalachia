@@ -17,9 +17,9 @@ import rtg.api.util.BlockUtil;
 import rtg.api.util.CliffCalculator;
 import rtg.api.util.noise.OpenSimplexNoise;
 import rtg.api.world.RTGWorld;
-import rtg.world.biome.realistic.RealisticBiomeBase;
-import rtg.world.gen.surface.SurfaceBase;
-import rtg.world.gen.terrain.TerrainBase;
+import rtg.api.world.surface.SurfaceBase;
+import rtg.api.world.terrain.TerrainBase;
+
 
 public class RealisticBiomeAPLBlueRidgeMountainsAutumn extends RealisticBiomeAPLBase {
 
@@ -29,8 +29,6 @@ public class RealisticBiomeAPLBlueRidgeMountainsAutumn extends RealisticBiomeAPL
     public RealisticBiomeAPLBlueRidgeMountainsAutumn() {
 
         super(biome, river);
-
-        this.noWaterFeatures = true;
     }
 
     @Override
@@ -43,9 +41,13 @@ public class RealisticBiomeAPLBlueRidgeMountainsAutumn extends RealisticBiomeAPL
     }
 
     @Override
-    public TerrainBase initTerrain() {
+    public boolean noWaterFeatures() {
+        return true;
+    }
 
-        return RealisticBiomeBase.getBiome(Biome.getIdForBiome(AppalachiaBiomes.blueRidgeMountains)).getTerrain();
+    @Override
+    public TerrainBase initTerrain() {
+        return RealisticBiomeAPLBase.aplBlueRidgeMountains.initTerrain();
     }
 
     @Override
@@ -128,6 +130,6 @@ public class RealisticBiomeAPLBlueRidgeMountainsAutumn extends RealisticBiomeAPL
 
     @Override
     public Biome beachBiome() {
-        return this.beachBiome(AppalachiaBiomes.blueRidgeBeach);
+        return AppalachiaBiomes.blueRidgeBeach;
     }
 }

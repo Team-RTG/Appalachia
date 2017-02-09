@@ -17,8 +17,13 @@ import rtg.api.util.BlockUtil;
 import rtg.api.util.CliffCalculator;
 import rtg.api.util.noise.OpenSimplexNoise;
 import rtg.api.world.RTGWorld;
-import rtg.world.gen.surface.SurfaceBase;
-import rtg.world.gen.terrain.*;
+import rtg.api.world.surface.SurfaceBase;
+import rtg.api.world.terrain.FunctionalTerrainBase;
+import rtg.api.world.terrain.TerrainBase;
+import rtg.api.world.terrain.heighteffect.HeightVariation;
+import rtg.api.world.terrain.heighteffect.JitterEffect;
+import rtg.api.world.terrain.heighteffect.MountainsWithPassesEffect;
+
 
 public class RealisticBiomeAPLSmokyMountains extends RealisticBiomeAPLBase {
 
@@ -28,8 +33,6 @@ public class RealisticBiomeAPLSmokyMountains extends RealisticBiomeAPLBase {
     public RealisticBiomeAPLSmokyMountains() {
 
         super(biome, river);
-
-        this.noWaterFeatures = true;
     }
 
     @Override
@@ -39,6 +42,11 @@ public class RealisticBiomeAPLSmokyMountains extends RealisticBiomeAPLBase {
 
         this.getConfig().addProperty(this.getConfig().SURFACE_MIX_BLOCK).set("");
         this.getConfig().addProperty(this.getConfig().SURFACE_MIX_BLOCK_META).set(0);
+    }
+
+    @Override
+    public boolean noWaterFeatures() {
+        return true;
     }
 
     @Override
@@ -163,6 +171,6 @@ public class RealisticBiomeAPLSmokyMountains extends RealisticBiomeAPLBase {
 
     @Override
     public Biome beachBiome() {
-        return this.beachBiome(AppalachiaBiomes.smokyBeach);
+        return AppalachiaBiomes.smokyBeach;
     }
 }

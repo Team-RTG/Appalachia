@@ -16,11 +16,12 @@ import rtg.api.config.BiomeConfig;
 import rtg.api.util.CliffCalculator;
 import rtg.api.util.noise.OpenSimplexNoise;
 import rtg.api.world.RTGWorld;
-import rtg.world.gen.surface.SurfaceBase;
-import rtg.world.gen.terrain.HeightEffect;
-import rtg.world.gen.terrain.HeightVariation;
-import rtg.world.gen.terrain.JitterEffect;
-import rtg.world.gen.terrain.TerrainBase;
+import rtg.api.world.surface.SurfaceBase;
+import rtg.api.world.terrain.TerrainBase;
+import rtg.api.world.terrain.heighteffect.HeightEffect;
+import rtg.api.world.terrain.heighteffect.HeightVariation;
+import rtg.api.world.terrain.heighteffect.JitterEffect;
+
 
 public class RealisticBiomeAPLAdirondackBogAutumn extends RealisticBiomeAPLBase {
 
@@ -134,6 +135,6 @@ public class RealisticBiomeAPLAdirondackBogAutumn extends RealisticBiomeAPLBase 
 
     @Override
     public Biome beachBiome() {
-        return this.beachBiome(AppalachiaBiomes.adirondackBeach);
+        return AppalachiaBiomes.adirondackBeach;
     }
 }
