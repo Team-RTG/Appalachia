@@ -13,17 +13,14 @@ import appalachia.block.vines.AppalachiaBlockVine;
 import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
 import appalachia.rtg.world.gen.feature.tree.rtg.TreeAcerRubrum;
 
-import rtg.world.biome.deco.*;
-import rtg.world.biome.deco.DecoFallenTree.LogCondition;
-import rtg.world.biome.deco.DecoTree.TreeCondition;
-import rtg.world.biome.deco.DecoTree.TreeType;
-import rtg.world.biome.deco.collection.DecoCollectionBase;
-import rtg.world.biome.deco.helper.DecoHelper5050;
-import rtg.world.biome.deco.helper.DecoHelperRandomSplit;
-import rtg.world.gen.feature.tree.rtg.TreeRTG;
-import rtg.world.gen.feature.tree.rtg.TreeRTGBetulaPapyrifera;
-import rtg.world.gen.feature.tree.rtg.TreeRTGPiceaSitchensis;
-import rtg.world.gen.feature.tree.rtg.TreeRTGPinusPonderosa;
+import rtg.api.world.deco.*;
+import rtg.api.world.deco.collection.DecoCollectionBase;
+import rtg.api.world.deco.helper.DecoHelper5050;
+import rtg.api.world.deco.helper.DecoHelperRandomSplit;
+import rtg.api.world.gen.feature.tree.rtg.TreeRTG;
+import rtg.api.world.gen.feature.tree.rtg.TreeRTGBetulaPapyrifera;
+import rtg.api.world.gen.feature.tree.rtg.TreeRTGPiceaSitchensis;
+import rtg.api.world.gen.feature.tree.rtg.TreeRTGPinusPonderosa;
 
 
 /**
@@ -45,11 +42,11 @@ public class DecoCollectionBlueRidgeBog extends DecoCollectionBase {
         aplRedMaple.setMaxCrownSize(12);
         DecoTree oakMaple = new DecoTree(aplRedMaple);
         oakMaple.setLoops(1);
-        oakMaple.setTreeType(TreeType.RTG_TREE);
+        oakMaple.setTreeType(DecoTree.TreeType.RTG_TREE);
         oakMaple.getDistribution().setNoiseDivisor(100f);
         oakMaple.getDistribution().setNoiseFactor(6f);
         oakMaple.getDistribution().setNoiseAddend(0.8f);
-        oakMaple.setTreeCondition(TreeCondition.NOISE_LESSER_AND_RANDOM_CHANCE);
+        oakMaple.setTreeCondition(DecoTree.TreeCondition.NOISE_LESSER_AND_RANDOM_CHANCE);
         oakMaple.setTreeConditionNoise(0.2f);
         oakMaple.setTreeConditionChance(1);
         oakMaple.setMaxY(treeMaxY);
@@ -65,8 +62,8 @@ public class DecoCollectionBlueRidgeBog extends DecoCollectionBase {
         this.addTree(papyriferaTreeOak);
         DecoTree paperOak = new DecoTree(papyriferaTreeOak);
         paperOak.setStrengthFactorForLoops(8f);
-        paperOak.setTreeType(TreeType.RTG_TREE);
-        paperOak.setTreeCondition(TreeCondition.RANDOM_CHANCE);
+        paperOak.setTreeType(DecoTree.TreeType.RTG_TREE);
+        paperOak.setTreeCondition(DecoTree.TreeCondition.RANDOM_CHANCE);
         paperOak.setTreeConditionChance(1);
         paperOak.setMaxY(treeMaxY);
         TreeRTG papyriferaTreeSpruce = new TreeRTGBetulaPapyrifera();
@@ -79,8 +76,8 @@ public class DecoCollectionBlueRidgeBog extends DecoCollectionBase {
         this.addTree(papyriferaTreeSpruce);
         DecoTree paperSpruce = new DecoTree(papyriferaTreeSpruce);
         paperSpruce.setStrengthFactorForLoops(8f);
-        paperSpruce.setTreeType(TreeType.RTG_TREE);
-        paperSpruce.setTreeCondition(TreeCondition.RANDOM_CHANCE);
+        paperSpruce.setTreeType(DecoTree.TreeType.RTG_TREE);
+        paperSpruce.setTreeCondition(DecoTree.TreeCondition.RANDOM_CHANCE);
         paperSpruce.setTreeConditionChance(1);
         paperSpruce.setMaxY(treeMaxY);
         DecoHelper5050 decoPaper = new DecoHelper5050(paperOak, paperSpruce);
@@ -96,11 +93,11 @@ public class DecoCollectionBlueRidgeBog extends DecoCollectionBase {
         this.addTree(ponderosaOakTree);
         DecoTree oakPines = new DecoTree(ponderosaOakTree);
         oakPines.setStrengthFactorForLoops(10f);
-        oakPines.setTreeType(TreeType.RTG_TREE);
+        oakPines.setTreeType(DecoTree.TreeType.RTG_TREE);
         oakPines.getDistribution().setNoiseDivisor(100f);
         oakPines.getDistribution().setNoiseFactor(6f);
         oakPines.getDistribution().setNoiseAddend(0.8f);
-        oakPines.setTreeCondition(TreeCondition.NOISE_LESSER_AND_RANDOM_CHANCE);
+        oakPines.setTreeCondition(DecoTree.TreeCondition.NOISE_LESSER_AND_RANDOM_CHANCE);
         oakPines.setTreeConditionNoise(0.2f);
         oakPines.setTreeConditionChance(1);
         oakPines.setMaxY(85);
@@ -114,11 +111,11 @@ public class DecoCollectionBlueRidgeBog extends DecoCollectionBase {
         this.addTree(ponderosaChestnutTree);
         DecoTree chestnutPines = new DecoTree(ponderosaChestnutTree);
         chestnutPines.setStrengthFactorForLoops(10f);
-        chestnutPines.setTreeType(TreeType.RTG_TREE);
+        chestnutPines.setTreeType(DecoTree.TreeType.RTG_TREE);
         chestnutPines.getDistribution().setNoiseDivisor(100f);
         chestnutPines.getDistribution().setNoiseFactor(6f);
         chestnutPines.getDistribution().setNoiseAddend(0.8f);
-        chestnutPines.setTreeCondition(TreeCondition.NOISE_LESSER_AND_RANDOM_CHANCE);
+        chestnutPines.setTreeCondition(DecoTree.TreeCondition.NOISE_LESSER_AND_RANDOM_CHANCE);
         chestnutPines.setTreeConditionNoise(0.2f);
         chestnutPines.setTreeConditionChance(1);
         chestnutPines.setMaxY(85);
@@ -135,15 +132,15 @@ public class DecoCollectionBlueRidgeBog extends DecoCollectionBase {
         this.addTree(sitchensisTree);
         DecoTree oakPine = new DecoTree(sitchensisTree);
         oakPine.setStrengthFactorForLoops(8f);
-        oakPine.setTreeType(TreeType.RTG_TREE);
-        oakPine.setTreeCondition(TreeCondition.RANDOM_CHANCE);
+        oakPine.setTreeType(DecoTree.TreeType.RTG_TREE);
+        oakPine.setTreeCondition(DecoTree.TreeCondition.RANDOM_CHANCE);
         oakPine.setTreeConditionChance(1);
         oakPine.setMaxY(treeMaxY);
         WorldGenerator vanillaTreeDefinition = new WorldGenTrees(false);
         DecoTree vanillaTrees = new DecoTree(vanillaTreeDefinition);
         vanillaTrees.setStrengthFactorForLoops(3f);
-        vanillaTrees.setTreeType(TreeType.WORLDGEN);
-        vanillaTrees.setTreeCondition(TreeCondition.RANDOM_CHANCE);
+        vanillaTrees.setTreeType(DecoTree.TreeType.WORLDGEN);
+        vanillaTrees.setTreeCondition(DecoTree.TreeCondition.RANDOM_CHANCE);
         vanillaTrees.setTreeConditionChance(2);
         vanillaTrees.setMaxY(treeMaxY);
         DecoHelperRandomSplit decoHelperRandomSplit = new DecoHelperRandomSplit();
@@ -153,7 +150,7 @@ public class DecoCollectionBlueRidgeBog extends DecoCollectionBase {
 
         // Add some fallen trees of the oak and spruce variety (50/50 distribution).
         DecoFallenTree decoFallenOak = new DecoFallenTree();
-        decoFallenOak.setLogCondition(LogCondition.RANDOM_CHANCE);
+        decoFallenOak.setLogCondition(DecoFallenTree.LogCondition.RANDOM_CHANCE);
         decoFallenOak.setLogConditionChance(16);
         decoFallenOak.setMaxY(80);
         decoFallenOak.setLogBlock(AppalachiaBlocks.log_yellow_birch_01.getDefaultState());
@@ -161,7 +158,7 @@ public class DecoCollectionBlueRidgeBog extends DecoCollectionBase {
         decoFallenOak.setMinSize(3);
         decoFallenOak.setMaxSize(6);
         DecoFallenTree decoFallenSpruce = new DecoFallenTree();
-        decoFallenSpruce.setLogCondition(LogCondition.RANDOM_CHANCE);
+        decoFallenSpruce.setLogCondition(DecoFallenTree.LogCondition.RANDOM_CHANCE);
         decoFallenSpruce.setLogConditionChance(24);
         decoFallenSpruce.setMaxY(80);
         decoFallenSpruce.setLogBlock(AppalachiaBlockLog.getRandomLog().getDefaultState());

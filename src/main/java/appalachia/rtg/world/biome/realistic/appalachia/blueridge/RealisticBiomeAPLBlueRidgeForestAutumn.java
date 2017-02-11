@@ -17,9 +17,9 @@ import rtg.api.util.BlockUtil;
 import rtg.api.util.CliffCalculator;
 import rtg.api.util.noise.OpenSimplexNoise;
 import rtg.api.world.RTGWorld;
-import rtg.world.biome.realistic.RealisticBiomeBase;
-import rtg.world.gen.surface.SurfaceBase;
-import rtg.world.gen.terrain.TerrainBase;
+import rtg.api.world.surface.SurfaceBase;
+import rtg.api.world.terrain.TerrainBase;
+
 
 public class RealisticBiomeAPLBlueRidgeForestAutumn extends RealisticBiomeAPLBase {
 
@@ -42,8 +42,7 @@ public class RealisticBiomeAPLBlueRidgeForestAutumn extends RealisticBiomeAPLBas
 
     @Override
     public TerrainBase initTerrain() {
-
-        return RealisticBiomeBase.getBiome(Biome.getIdForBiome(AppalachiaBiomes.blueRidgeForest)).getTerrain();
+        return RealisticBiomeAPLBase.aplBlueRidgeForest.initTerrain();
     }
 
     @Override
@@ -126,6 +125,6 @@ public class RealisticBiomeAPLBlueRidgeForestAutumn extends RealisticBiomeAPLBas
 
     @Override
     public Biome beachBiome() {
-        return this.beachBiome(AppalachiaBiomes.blueRidgeBeach);
+        return AppalachiaBiomes.blueRidgeBeach;
     }
 }

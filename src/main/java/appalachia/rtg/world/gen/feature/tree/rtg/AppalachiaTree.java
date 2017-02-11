@@ -11,7 +11,8 @@ import net.minecraft.world.World;
 
 import appalachia.api.AppalachiaBlocks;
 
-import rtg.world.gen.feature.tree.rtg.TreeRTG;
+import rtg.api.world.gen.feature.tree.rtg.TreeRTG;
+
 
 public class AppalachiaTree extends TreeRTG {
 

@@ -17,8 +17,9 @@ import rtg.api.util.BlockUtil;
 import rtg.api.util.CliffCalculator;
 import rtg.api.util.noise.OpenSimplexNoise;
 import rtg.api.world.RTGWorld;
-import rtg.world.gen.surface.SurfaceBase;
-import rtg.world.gen.terrain.TerrainBase;
+import rtg.api.world.surface.SurfaceBase;
+import rtg.api.world.terrain.TerrainBase;
+
 
 public class RealisticBiomeAPLAdirondackHills extends RealisticBiomeAPLBase {
 
@@ -148,6 +149,6 @@ public class RealisticBiomeAPLAdirondackHills extends RealisticBiomeAPLBase {
 
     @Override
     public Biome beachBiome() {
-        return this.beachBiome(AppalachiaBiomes.adirondackBeach);
+        return AppalachiaBiomes.adirondackBeach;
     }
 }

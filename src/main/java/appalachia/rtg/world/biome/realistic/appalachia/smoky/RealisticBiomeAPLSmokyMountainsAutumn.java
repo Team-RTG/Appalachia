@@ -17,9 +17,9 @@ import rtg.api.util.BlockUtil;
 import rtg.api.util.CliffCalculator;
 import rtg.api.util.noise.OpenSimplexNoise;
 import rtg.api.world.RTGWorld;
-import rtg.world.biome.realistic.RealisticBiomeBase;
-import rtg.world.gen.surface.SurfaceBase;
-import rtg.world.gen.terrain.TerrainBase;
+import rtg.api.world.surface.SurfaceBase;
+import rtg.api.world.terrain.TerrainBase;
+
 
 public class RealisticBiomeAPLSmokyMountainsAutumn extends RealisticBiomeAPLBase {
 
@@ -29,8 +29,6 @@ public class RealisticBiomeAPLSmokyMountainsAutumn extends RealisticBiomeAPLBase
     public RealisticBiomeAPLSmokyMountainsAutumn() {
 
         super(biome, river);
-
-        this.noWaterFeatures = true;
     }
 
     @Override
@@ -43,9 +41,13 @@ public class RealisticBiomeAPLSmokyMountainsAutumn extends RealisticBiomeAPLBase
     }
 
     @Override
-    public TerrainBase initTerrain() {
+    public boolean noWaterFeatures() {
+        return true;
+    }
 
-        return RealisticBiomeBase.getBiome(Biome.getIdForBiome(AppalachiaBiomes.smokyMountains)).getTerrain();
+    @Override
+    public TerrainBase initTerrain() {
+        return RealisticBiomeAPLBase.aplSmokyMountains.initTerrain();
     }
 
     @Override
@@ -128,6 +130,6 @@ public class RealisticBiomeAPLSmokyMountainsAutumn extends RealisticBiomeAPLBase
 
     @Override
     public Biome beachBiome() {
-        return this.beachBiome(AppalachiaBiomes.smokyBeach);
+        return AppalachiaBiomes.smokyBeach;
     }
 }
