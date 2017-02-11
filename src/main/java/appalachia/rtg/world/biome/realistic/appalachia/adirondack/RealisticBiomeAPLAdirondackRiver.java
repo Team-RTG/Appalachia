@@ -13,8 +13,9 @@ import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 import rtg.api.config.BiomeConfig;
 import rtg.api.util.noise.OpenSimplexNoise;
 import rtg.api.world.RTGWorld;
-import rtg.world.gen.surface.SurfaceBase;
-import rtg.world.gen.terrain.TerrainBase;
+import rtg.api.world.surface.SurfaceBase;
+import rtg.api.world.terrain.TerrainBase;
+
 
 public class RealisticBiomeAPLAdirondackRiver extends RealisticBiomeAPLBase {
 
@@ -101,6 +102,6 @@ public class RealisticBiomeAPLAdirondackRiver extends RealisticBiomeAPLBase {
 
     @Override
     public Biome beachBiome() {
-        return this.beachBiome(AppalachiaBiomes.adirondackBeach);
+        return AppalachiaBiomes.adirondackBeach;
     }
 }
