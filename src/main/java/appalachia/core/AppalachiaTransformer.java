@@ -1,6 +1,7 @@
 package appalachia.core;
 
 import com.google.common.collect.Lists;
+import net.minecraft.entity.Entity;
 import net.minecraft.launchwrapper.IClassTransformer;
 import net.minecraftforge.fml.common.FMLLog;
 import org.objectweb.asm.ClassReader;
@@ -14,7 +15,9 @@ import org.objectweb.asm.tree.InsnNode;
 import org.objectweb.asm.tree.LabelNode;
 import org.objectweb.asm.tree.LineNumberNode;
 import org.objectweb.asm.tree.LocalVariableNode;
+import org.objectweb.asm.tree.MethodInsnNode;
 import org.objectweb.asm.tree.MethodNode;
+import org.objectweb.asm.tree.VarInsnNode;
 
 /**
  * This class is dedicated to the Appalachia addon for RTG
@@ -42,6 +45,9 @@ public class AppalachiaTransformer implements IClassTransformer {
         String methodNameIsPassable = AppalachiaCore.isDebofEnabled ? "func_176205_b" : "isPassable";
         String methodDescIsPassable = "(Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;)Z";
 
+        String methodNameOnEntityCollidedWithBlock = AppalachiaCore.isDebofEnabled ? "func_180634_a" : "onEntityCollidedWithBlock";
+        String methodDescOnEntityCollidedWithBlock = "(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/entity/Entity;)V";
+
         String fieldNullAABB = AppalachiaCore.isDebofEnabled ? "field_185506_k" : "NULL_AABB";
 
         ClassNode node = new ClassNode();
@@ -53,7 +59,7 @@ public class AppalachiaTransformer implements IClassTransformer {
         //Keep in mind this is called well before preInit
         boolean transform = true;
         for (MethodNode mn : node.methods) {
-            if(mn.name.equalsIgnoreCase(methodNameGetCollisionBox) || mn.name.equalsIgnoreCase(methodNameIsPassable)) {
+            if(mn.name.equalsIgnoreCase(methodNameGetCollisionBox) || mn.name.equalsIgnoreCase(methodNameIsPassable) || mn.name.equalsIgnoreCase(methodNameOnEntityCollidedWithBlock)) {
                 transform = false;
             }
         }
@@ -118,11 +124,49 @@ public class AppalachiaTransformer implements IClassTransformer {
 
         node.methods.add(isPassable);
 
+        /* ****************************************** *
+
+        onEntityCollidedWithBlock method construction
+
+         * ****************************************** */
+
+        startLabel = new LabelNode();
+        endLabel = new LabelNode();
+        MethodNode onEntityCollidedWithBlock = new MethodNode(Opcodes.ACC_PUBLIC, methodNameOnEntityCollidedWithBlock, methodDescOnEntityCollidedWithBlock, null, new String[0]);
+        onEntityCollidedWithBlock.visibleAnnotations = Lists.newArrayList();
+        onEntityCollidedWithBlock.instructions = new InsnList();
+        onEntityCollidedWithBlock.instructions.add(startLabel);
+        onEntityCollidedWithBlock.instructions.add(new LineNumberNode(170, startLabel)); //Required
+
+        //TODO keep track of parameter changes between minecraft updates!
+        lvnThis = new LocalVariableNode("this", "Lnet/minecraft/block/BlockLeaves;", null, startLabel, endLabel, 0);
+        lvnPWorld = new LocalVariableNode("inWorld", "Lnet/minecraft/world/World;", null, startLabel, endLabel, 1);
+        lvnPPos = new LocalVariableNode("inPos", "Lnet/minecraft/util/math/BlockPos;", null, startLabel, endLabel, 2);
+        lvnPState = new LocalVariableNode("inState", "Lnet/minecraft/block/state/IBlockState;", null, startLabel, endLabel, 3);
+        LocalVariableNode lvnPEntity = new LocalVariableNode("inEntity", "Lnet/minecraft/entity/Entity;", null, startLabel, endLabel, 4);
+        onEntityCollidedWithBlock.localVariables = Lists.newArrayList(lvnThis, lvnPWorld, lvnPPos, lvnPState, lvnPEntity);
+
+        onEntityCollidedWithBlock.instructions.add(new VarInsnNode(Opcodes.ALOAD, 4));
+        onEntityCollidedWithBlock.instructions.add(new MethodInsnNode(Opcodes.INVOKESTATIC, "appalachia/core/AppalachiaTransformer", "onEntityCollidedWithLeaves", "(Lnet/minecraft/entity/Entity;)V", false));
+        onEntityCollidedWithBlock.instructions.add(new InsnNode(Opcodes.RETURN));
+        onEntityCollidedWithBlock.instructions.add(endLabel);
+
+        node.methods.add(onEntityCollidedWithBlock);
+
         ClassWriter writer = new ClassWriter(ClassWriter.COMPUTE_MAXS | ClassWriter.COMPUTE_FRAMES);
         node.accept(writer);
         basicClass = writer.toByteArray();
 
         return basicClass;
+    }
+
+    //ONLY modify the name of this method if you rename it in the ASM above too.
+    //This method is called by its exact name.
+    public static void onEntityCollidedWithLeaves(Entity entity) {
+        entity.motionX *= 0.5D;
+        entity.motionY *= 0.5D;
+        entity.motionZ *= 0.5D;
+        entity.fallDistance = 0f;
     }
 
 }
