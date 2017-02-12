@@ -77,6 +77,15 @@ allprojects {
     }
 }
 
+//Adds the LoadingPlugin description to the manifest so forge finds it.
+jar {
+    manifest {
+        attributes 'FMLCorePlugin': 'appalachia.core.AppalachiaCore',
+                'FMLCorePluginContainsFMLMod': 'true'
+    }
+}
+
+
 // use -Dwarn|-Dwarnall CLI arguement for verbose compiler warnings
 // -Dwarn covers the 3 most common warnings only
 tasks.withType(JavaCompile) {
