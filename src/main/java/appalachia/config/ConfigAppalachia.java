@@ -93,6 +93,8 @@ public class ConfigAppalachia {
     public static boolean enableDebugging = false;
 
     public static boolean allowTreesToGenerateOnSand = false;
+    
+    public static int percentageInGeographicraft = 30;
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -186,7 +188,10 @@ public class ConfigAppalachia {
             enableDebugging = config.getBoolean("Enable Debugging", "Debugging", enableDebugging, "WARNING: This should only be enabled if you know what you're doing." + Configuration.NEW_LINE);
 
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            // Geographicraft Frequencies
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            
+            percentageInGeographicraft = config.getInt("Pecentage of Appalachia Biomes with Geographicraft", "Geographicraft", percentageInGeographicraft, 0, 100, "");
         }
         catch (Exception e) {
 

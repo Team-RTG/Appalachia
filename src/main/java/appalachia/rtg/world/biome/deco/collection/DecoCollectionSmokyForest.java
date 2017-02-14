@@ -6,6 +6,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 import appalachia.api.AppalachiaBlocks;
 import appalachia.api.block.IAppalachiaBlockLeavesFallen;
+import appalachia.block.AppalachiaBlockPair;
 import appalachia.block.leaves.AppalachiaBlockLeaves;
 import appalachia.block.leaves.fallen.AppalachiaBlockLeavesFallen;
 import appalachia.block.logs.AppalachiaBlockLog;
@@ -32,11 +33,18 @@ public class DecoCollectionSmokyForest extends DecoCollectionBase {
     protected static int treeMaxY = 220;
     protected static int shrubMaxY = 220;
 
+    private static AppalachiaBlockPair redMaple = new AppalachiaBlockPair();
+    private static AppalachiaBlockPair papyriferaOak = new AppalachiaBlockPair();
+    private static AppalachiaBlockPair papyriferaSpruce = new AppalachiaBlockPair();
+    private static AppalachiaBlockPair ponderosaOak = new AppalachiaBlockPair();
+    private static AppalachiaBlockPair ponderosaChestnut = new AppalachiaBlockPair();
+    private static AppalachiaBlockPair sitchensis = new AppalachiaBlockPair();
+
     public DecoCollectionSmokyForest(boolean fallenTrees) {
 
         AppalachiaTree aplGrandFirTreeOak = new TreeAbiesGrandis();
-        aplGrandFirTreeOak.setLogBlock(AppalachiaBlockLog.getRandomLog().getDefaultState());
-        aplGrandFirTreeOak.setLeavesBlock(AppalachiaBlockLeaves.getRandomLeaves().getDefaultState());
+        aplGrandFirTreeOak.setLogBlock(papyriferaOak.log);
+        aplGrandFirTreeOak.setLeavesBlock(papyriferaOak.leaves);
         aplGrandFirTreeOak.setMinTrunkSize(10);
         aplGrandFirTreeOak.setMaxTrunkSize(20);
         aplGrandFirTreeOak.setMinCrownSize(15);
@@ -52,12 +60,18 @@ public class DecoCollectionSmokyForest extends DecoCollectionBase {
         oakFir.setTreeConditionChance(2);
         oakFir.setMaxY(treeMaxY);
         AppalachiaTree aplGrandFirTreeChestnut = new TreeAbiesGrandis();
-        aplGrandFirTreeChestnut.setLogBlock(AppalachiaBlockLog.getRandomLog().getDefaultState());
-        aplGrandFirTreeChestnut.setLeavesBlock(AppalachiaBlockLeaves.getRandomLeaves().getDefaultState());
+        aplGrandFirTreeChestnut.setLogBlock(ponderosaChestnut.log);
+        aplGrandFirTreeChestnut.setLeavesBlock(ponderosaChestnut.leaves);
         aplGrandFirTreeChestnut.setMinTrunkSize(10);
         aplGrandFirTreeChestnut.setMaxTrunkSize(20);
         aplGrandFirTreeChestnut.setMinCrownSize(15);
         aplGrandFirTreeChestnut.setMaxCrownSize(30);
+        //
+        aplGrandFirTreeChestnut.setMinTrunkSize(7);
+        aplGrandFirTreeChestnut.setMaxTrunkSize(13);
+        aplGrandFirTreeChestnut.setMinCrownSize(10);
+        aplGrandFirTreeChestnut.setMaxCrownSize(20);
+        //
         DecoTree chestnutFir = new DecoTree(aplGrandFirTreeChestnut);
         chestnutFir.setLoops(1);
         chestnutFir.setTreeType(DecoTree.TreeType.RTG_TREE);
@@ -72,12 +86,18 @@ public class DecoCollectionSmokyForest extends DecoCollectionBase {
         this.addDeco(firTrees);
 
         AppalachiaTree aplRedMaple = new TreeAcerRubrum();
-        aplRedMaple.setLogBlock(AppalachiaBlockLog.getRandomLog().getDefaultState());
-        aplRedMaple.setLeavesBlock(AppalachiaBlockLeaves.getRandomLeaves().getDefaultState());
+        aplRedMaple.setLogBlock(redMaple.log);
+        aplRedMaple.setLeavesBlock(redMaple.leaves);
         aplRedMaple.setMinTrunkSize(4);
         aplRedMaple.setMaxTrunkSize(8);
         aplRedMaple.setMinCrownSize(8);
         aplRedMaple.setMaxCrownSize(12);
+        //
+        aplRedMaple.setMinTrunkSize(3);
+        aplRedMaple.setMaxTrunkSize(6);
+        aplRedMaple.setMinCrownSize(6);
+        aplRedMaple.setMaxCrownSize(9);
+        //
         DecoTree oakMaple = new DecoTree(aplRedMaple);
         oakMaple.setLoops(1);
         oakMaple.setTreeType(DecoTree.TreeType.RTG_TREE);
@@ -91,12 +111,18 @@ public class DecoCollectionSmokyForest extends DecoCollectionBase {
         this.addDeco(oakMaple);
 
         TreeRTG papyriferaTreeOak = new TreeRTGBetulaPapyrifera();
-        papyriferaTreeOak.setLogBlock(AppalachiaBlockLog.getRandomLog().getDefaultState());
-        papyriferaTreeOak.setLeavesBlock(AppalachiaBlockLeaves.getRandomLeaves().getDefaultState());
+        papyriferaTreeOak.setLogBlock(papyriferaOak.log);
+        papyriferaTreeOak.setLeavesBlock(papyriferaOak.leaves);
         papyriferaTreeOak.setMinTrunkSize(4);
         papyriferaTreeOak.setMaxTrunkSize(8);
         papyriferaTreeOak.setMinCrownSize(6);
         papyriferaTreeOak.setMaxCrownSize(16);
+        //
+        papyriferaTreeOak.setMinTrunkSize(3);
+        papyriferaTreeOak.setMaxTrunkSize(4);
+        papyriferaTreeOak.setMinCrownSize(4);
+        papyriferaTreeOak.setMaxCrownSize(12);
+        //
         this.addTree(papyriferaTreeOak);
         DecoTree paperOak = new DecoTree(papyriferaTreeOak);
         paperOak.setStrengthFactorForLoops(8f);
@@ -105,12 +131,18 @@ public class DecoCollectionSmokyForest extends DecoCollectionBase {
         paperOak.setTreeConditionChance(1);
         paperOak.setMaxY(treeMaxY);
         TreeRTG papyriferaTreeSpruce = new TreeRTGBetulaPapyrifera();
-        papyriferaTreeSpruce.setLogBlock(AppalachiaBlockLog.getRandomLog().getDefaultState());
-        papyriferaTreeSpruce.setLeavesBlock(AppalachiaBlockLeaves.getRandomLeaves().getDefaultState());
+        papyriferaTreeSpruce.setLogBlock(papyriferaSpruce.log);
+        papyriferaTreeSpruce.setLeavesBlock(papyriferaSpruce.leaves);
         papyriferaTreeSpruce.setMinTrunkSize(4);
         papyriferaTreeSpruce.setMaxTrunkSize(8);
         papyriferaTreeSpruce.setMinCrownSize(6);
         papyriferaTreeSpruce.setMaxCrownSize(16);
+        //
+        papyriferaTreeSpruce.setMinTrunkSize(3);
+        papyriferaTreeSpruce.setMaxTrunkSize(6);
+        papyriferaTreeSpruce.setMinCrownSize(4);
+        papyriferaTreeSpruce.setMaxCrownSize(12);
+        //
         this.addTree(papyriferaTreeSpruce);
         DecoTree paperSpruce = new DecoTree(papyriferaTreeSpruce);
         paperSpruce.setStrengthFactorForLoops(8f);
@@ -122,12 +154,18 @@ public class DecoCollectionSmokyForest extends DecoCollectionBase {
         this.addDeco(decoPaper);
 
         TreeRTG ponderosaOakTree = new TreeRTGPinusPonderosa();
-        ponderosaOakTree.setLogBlock(AppalachiaBlockLog.getRandomLog().getDefaultState());
-        ponderosaOakTree.setLeavesBlock(AppalachiaBlockLeaves.getRandomLeaves().getDefaultState());
+        ponderosaOakTree.setLogBlock(ponderosaOak.log);
+        ponderosaOakTree.setLeavesBlock(ponderosaOak.leaves);
         ponderosaOakTree.setMinTrunkSize(11);
         ponderosaOakTree.setMaxTrunkSize(21);
         ponderosaOakTree.setMinCrownSize(15);
         ponderosaOakTree.setMaxCrownSize(29);
+        //
+        ponderosaOakTree.setMinTrunkSize(7);
+        ponderosaOakTree.setMaxTrunkSize(14);
+        ponderosaOakTree.setMinCrownSize(10);
+        ponderosaOakTree.setMaxCrownSize(19);
+        //
         this.addTree(ponderosaOakTree);
         DecoTree oakPines = new DecoTree(ponderosaOakTree);
         oakPines.setStrengthFactorForLoops(10f);
@@ -140,12 +178,18 @@ public class DecoCollectionSmokyForest extends DecoCollectionBase {
         oakPines.setTreeConditionChance(1);
         oakPines.setMaxY(85);
         TreeRTG ponderosaChestnutTree = new TreeRTGPinusPonderosa();
-        ponderosaChestnutTree.setLogBlock(AppalachiaBlockLog.getRandomLog().getDefaultState());
-        ponderosaChestnutTree.setLeavesBlock(AppalachiaBlockLeaves.getRandomLeaves().getDefaultState());
+        ponderosaChestnutTree.setLogBlock(ponderosaChestnut.log);
+        ponderosaChestnutTree.setLeavesBlock(ponderosaChestnut.leaves);
         ponderosaChestnutTree.setMinTrunkSize(11);
         ponderosaChestnutTree.setMaxTrunkSize(21);
         ponderosaChestnutTree.setMinCrownSize(15);
         ponderosaChestnutTree.setMaxCrownSize(29);
+        //
+        ponderosaChestnutTree.setMinTrunkSize(7);
+        ponderosaChestnutTree.setMaxTrunkSize(14);
+        ponderosaChestnutTree.setMinCrownSize(10);
+        ponderosaChestnutTree.setMaxCrownSize(19);
+        //
         this.addTree(ponderosaChestnutTree);
         DecoTree chestnutPines = new DecoTree(ponderosaChestnutTree);
         chestnutPines.setStrengthFactorForLoops(10f);
@@ -161,12 +205,18 @@ public class DecoCollectionSmokyForest extends DecoCollectionBase {
         this.addDeco(decoPines);
 
         TreeRTG sitchensisTree = new TreeRTGPiceaSitchensis();
-        sitchensisTree.setLogBlock(AppalachiaBlockLog.getRandomLog().getDefaultState());
-        sitchensisTree.setLeavesBlock(AppalachiaBlockLeaves.getRandomLeaves().getDefaultState());
+        sitchensisTree.setLogBlock(sitchensis.log);
+        sitchensisTree.setLeavesBlock(sitchensis.leaves);
         sitchensisTree.setMinTrunkSize(4);
         sitchensisTree.setMaxTrunkSize(10);
         sitchensisTree.setMinCrownSize(6);
         sitchensisTree.setMaxCrownSize(14);
+        //
+        sitchensisTree.setMinTrunkSize(3);
+        sitchensisTree.setMaxTrunkSize(7);
+        sitchensisTree.setMinCrownSize(4);
+        sitchensisTree.setMaxCrownSize(10);
+        //
         this.addTree(sitchensisTree);
         DecoTree oakPine = new DecoTree(sitchensisTree);
         oakPine.setStrengthFactorForLoops(8f);

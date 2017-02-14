@@ -6,6 +6,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 import appalachia.api.AppalachiaBlocks;
 import appalachia.api.block.IAppalachiaBlockLeavesFallen;
+import appalachia.block.AppalachiaBlockPair;
 import appalachia.block.leaves.AppalachiaBlockLeaves;
 import appalachia.block.leaves.fallen.AppalachiaBlockLeavesFallen;
 import appalachia.block.logs.AppalachiaBlockLog;
@@ -31,11 +32,17 @@ public class DecoCollectionSmokyBog extends DecoCollectionBase {
     protected static int treeMaxY = 220;
     protected static int shrubMaxY = 220;
 
+    private static AppalachiaBlockPair redMaple = new AppalachiaBlockPair();
+    private static AppalachiaBlockPair papyriferaOak = new AppalachiaBlockPair();
+    private static AppalachiaBlockPair papyriferaSpruce = new AppalachiaBlockPair();
+    private static AppalachiaBlockPair ponderosaOak = new AppalachiaBlockPair();
+    private static AppalachiaBlockPair ponderosaChestnut = new AppalachiaBlockPair();
+    private static AppalachiaBlockPair sitchensis = new AppalachiaBlockPair();
     public DecoCollectionSmokyBog(boolean fallenTrees) {
 
         AppalachiaTree aplRedMaple = new TreeAcerRubrum();
-        aplRedMaple.setLogBlock(AppalachiaBlockLog.getRandomLog().getDefaultState());
-        aplRedMaple.setLeavesBlock(AppalachiaBlockLeaves.getRandomLeaves().getDefaultState());
+        aplRedMaple.setLogBlock(redMaple.log);
+        aplRedMaple.setLeavesBlock(redMaple.leaves);
         aplRedMaple.setMinTrunkSize(4);
         aplRedMaple.setMaxTrunkSize(8);
         aplRedMaple.setMinCrownSize(8);
@@ -53,8 +60,8 @@ public class DecoCollectionSmokyBog extends DecoCollectionBase {
         this.addDeco(oakMaple);
 
         TreeRTG papyriferaTreeOak = new TreeRTGBetulaPapyrifera();
-        papyriferaTreeOak.setLogBlock(AppalachiaBlockLog.getRandomLog().getDefaultState());
-        papyriferaTreeOak.setLeavesBlock(AppalachiaBlockLeaves.getRandomLeaves().getDefaultState());
+        papyriferaTreeOak.setLogBlock(papyriferaOak.log);
+        papyriferaTreeOak.setLeavesBlock(papyriferaOak.leaves);
         papyriferaTreeOak.setMinTrunkSize(4);
         papyriferaTreeOak.setMaxTrunkSize(8);
         papyriferaTreeOak.setMinCrownSize(6);
@@ -67,8 +74,8 @@ public class DecoCollectionSmokyBog extends DecoCollectionBase {
         paperOak.setTreeConditionChance(1);
         paperOak.setMaxY(treeMaxY);
         TreeRTG papyriferaTreeSpruce = new TreeRTGBetulaPapyrifera();
-        papyriferaTreeSpruce.setLogBlock(AppalachiaBlockLog.getRandomLog().getDefaultState());
-        papyriferaTreeSpruce.setLeavesBlock(AppalachiaBlockLeaves.getRandomLeaves().getDefaultState());
+        papyriferaTreeSpruce.setLogBlock(papyriferaSpruce.log);
+        papyriferaTreeSpruce.setLeavesBlock(papyriferaSpruce.leaves);
         papyriferaTreeSpruce.setMinTrunkSize(4);
         papyriferaTreeSpruce.setMaxTrunkSize(8);
         papyriferaTreeSpruce.setMinCrownSize(6);
@@ -84,8 +91,8 @@ public class DecoCollectionSmokyBog extends DecoCollectionBase {
         this.addDeco(decoPaper);
 
         TreeRTG ponderosaOakTree = new TreeRTGPinusPonderosa();
-        ponderosaOakTree.setLogBlock(AppalachiaBlockLog.getRandomLog().getDefaultState());
-        ponderosaOakTree.setLeavesBlock(AppalachiaBlockLeaves.getRandomLeaves().getDefaultState());
+        ponderosaOakTree.setLogBlock(ponderosaOak.log);
+        ponderosaOakTree.setLeavesBlock(ponderosaOak.leaves);
         ponderosaOakTree.setMinTrunkSize(11);
         ponderosaOakTree.setMaxTrunkSize(21);
         ponderosaOakTree.setMinCrownSize(15);
@@ -123,8 +130,8 @@ public class DecoCollectionSmokyBog extends DecoCollectionBase {
         this.addDeco(decoPines);
 
         TreeRTG sitchensisTree = new TreeRTGPiceaSitchensis();
-        sitchensisTree.setLogBlock(AppalachiaBlockLog.getRandomLog().getDefaultState());
-        sitchensisTree.setLeavesBlock(AppalachiaBlockLeaves.getRandomLeaves().getDefaultState());
+        ponderosaChestnutTree.setLogBlock(ponderosaChestnut.log);
+        ponderosaChestnutTree.setLeavesBlock(ponderosaChestnut.leaves);
         sitchensisTree.setMinTrunkSize(4);
         sitchensisTree.setMaxTrunkSize(10);
         sitchensisTree.setMinCrownSize(6);
