@@ -6,6 +6,7 @@
 
 package appalachia.biome;
 
+import appalachia.config.ConfigAppalachia;
 import java.util.Collection;
 import java.util.HashMap;
 import net.minecraft.world.WorldType;
@@ -35,7 +36,7 @@ public class GeographicraftSettingsBuilder {
     public void setBiomes(Collection<Biome> appalachiaBiomes,
                               HashMap<Biome,AppalachiaBiomeGroup> biomeGroup) {
         try {
-            grouper = new GeographicraftGrouper(appalachiaBiomes,2,30, biomeGroup);
+            grouper = new GeographicraftGrouper(appalachiaBiomes,2,ConfigAppalachia.percentageInGeographicraft, biomeGroup);
         } catch (Error error) {
             // no action; Geographicraft is not installed;
         }
