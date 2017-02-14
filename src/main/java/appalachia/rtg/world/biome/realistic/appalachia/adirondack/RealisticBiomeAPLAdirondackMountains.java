@@ -11,6 +11,8 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import appalachia.api.AppalachiaBiomes;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionAdirondackForest;
 import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
+import appalachia.rtg.world.gen.terrain.SpikeEverywhereEffect;
+import appalachia.rtg.world.gen.terrain.TerrainRidgedRegion;
 
 import rtg.api.config.BiomeConfig;
 import rtg.api.util.BlockUtil;
@@ -23,6 +25,7 @@ import rtg.api.world.terrain.TerrainBase;
 import rtg.api.world.terrain.heighteffect.HeightVariation;
 import rtg.api.world.terrain.heighteffect.JitterEffect;
 import rtg.api.world.terrain.heighteffect.MountainsWithPassesEffect;
+import rtg.api.world.terrain.heighteffect.RaiseEffect;
 
 
 public class RealisticBiomeAPLAdirondackMountains extends RealisticBiomeAPLBase {
@@ -50,9 +53,24 @@ public class RealisticBiomeAPLAdirondackMountains extends RealisticBiomeAPLBase 
     }
 
     @Override
+    public boolean noLakes() {
+        return true;
+    }
+    @Override
     public TerrainBase initTerrain() {
-
-        return new TerrainAPLAdirondackMountains(120f, 100f);
+        TerrainRidgedRegion.Parameters parameters = new TerrainRidgedRegion.Parameters();
+        SpikeEverywhereEffect mountains= new SpikeEverywhereEffect();
+        mountains.spiked = new RaiseEffect(80);
+        mountains.octave = 2;
+        mountains.power = 0.7f;
+        mountains.wavelength = 200;
+        mountains.minimumSimplex = 0.3f;
+        parameters.ridgeAmplitude = mountains;
+        parameters.ridgeBase = 40;
+        parameters.ridgeVariability = 20;
+        parameters.mediumJitter = 20;
+        return new TerrainRidgedRegion(parameters);
+        //return new TerrainAPLAdirondackMountains(120f, 100f);
     }
 
     @Override

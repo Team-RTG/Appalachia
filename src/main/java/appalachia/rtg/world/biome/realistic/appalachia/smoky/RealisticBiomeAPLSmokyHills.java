@@ -11,6 +11,8 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import appalachia.api.AppalachiaBiomes;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionSmokyForest;
 import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
+import appalachia.rtg.world.gen.terrain.SpikeEverywhereEffect;
+import appalachia.rtg.world.gen.terrain.TerrainRidgedRegion;
 
 import rtg.api.config.BiomeConfig;
 import rtg.api.util.BlockUtil;
@@ -19,6 +21,7 @@ import rtg.api.util.noise.OpenSimplexNoise;
 import rtg.api.world.RTGWorld;
 import rtg.api.world.surface.SurfaceBase;
 import rtg.api.world.terrain.TerrainBase;
+import rtg.api.world.terrain.heighteffect.RaiseEffect;
 
 
 public class RealisticBiomeAPLSmokyHills extends RealisticBiomeAPLBase {
@@ -43,7 +46,18 @@ public class RealisticBiomeAPLSmokyHills extends RealisticBiomeAPLBase {
     @Override
     public TerrainBase initTerrain() {
 
-        return new TerrainAPLSmokyHills();
+        TerrainRidgedRegion.Parameters parameters = new TerrainRidgedRegion.Parameters();
+        SpikeEverywhereEffect mountains= new SpikeEverywhereEffect();
+        mountains.spiked = new RaiseEffect(50);
+        mountains.octave = 2;
+        mountains.power = 0.9f;
+        mountains.wavelength = 200;
+        mountains.minimumSimplex = 0.3f;
+        parameters.ridgeAmplitude = mountains;
+        parameters.ridgeBase =15;
+        parameters.groundNoise = 4;
+        return new TerrainRidgedRegion(parameters);
+        //return new TerrainAPLSmokyHills();
     }
 
     @Override
