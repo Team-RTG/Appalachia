@@ -9,7 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 /**
- * Abies Balsamea (Balsam Fir)
+ * Pinus Contorta (Lodgepole Pine)
  * <p>
  * This tree was designed by Lentebriesje and released as part of the 'Custom Tree Repository' project
  * on Planet Minecraft (http://www.planetminecraft.com/project/native-trees-of-europe-template-repository-1779952/).
