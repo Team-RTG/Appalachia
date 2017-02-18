@@ -28,16 +28,16 @@ import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import appalachia.api.AppalachiaAPI;
 import appalachia.block.BlockManager;
 import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
+import appalachia.util.LeavesConnectionChecker;
 import com.google.common.collect.Lists;
+import static appalachia.api.AppalachiaAPI.rand;
 
 public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlock {
 
     private String slug;
-    protected int[] surroundings;
     protected boolean decayTest = false;
 
     public AppalachiaBlockLeaves(String unlocalizedName) {
@@ -46,8 +46,8 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
         this.setUnlocalizedName(unlocalizedName);
         this.setHarvestLevel("axe", 0);
         this.setCreativeTab(AppalachiaTabs.tabDecoration);
-        this.setDefaultState(blockState.getBaseState().withProperty(DECAYABLE, Boolean.valueOf(true)).withProperty(CHECK_DECAY, Boolean.valueOf(true)));
-        //this.leavesFancy = true;
+        this.setDefaultState(blockState.getBaseState().withProperty(DECAYABLE, Boolean.valueOf(true)).withProperty(CHECK_DECAY, Boolean.valueOf(false)));
+        this.leavesFancy = true;
         this.slug = unlocalizedName;
     }
 
@@ -81,88 +81,19 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
     @Override
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 
-        if (decayTest) {
-            if (!worldIn.isRemote) {
-                if (((Boolean)state.getValue(CHECK_DECAY)).booleanValue() && ((Boolean)state.getValue(DECAYABLE)).booleanValue()) {
-                    int i = 4;
-                    int j = 5;
-                    int k = pos.getX();
-                    int l = pos.getY();
-                    int i1 = pos.getZ();
-                    int j1 = 32;
-                    int k1 = 1024;
-                    int l1 = 16;
+        if (!worldIn.isRemote) {
+            if (((Boolean)state.getValue(DECAYABLE)).booleanValue()) {
 
-                    if (this.surroundings == null) {
-                        this.surroundings = new int[32768];
-                    }
+                LeavesConnectionChecker checker = new LeavesConnectionChecker(worldIn, pos);
 
-                    if (worldIn.isAreaLoaded(new BlockPos(k - 5, l - 5, i1 - 5), new BlockPos(k + 5, l + 5, i1 + 5))) {
-                        BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
+                if (!checker.isConnected()) {
 
-                        for (int i2 = -4; i2 <= 4; ++i2) {
-                            for (int j2 = -4; j2 <= 4; ++j2) {
-                                for (int k2 = -4; k2 <= 4; ++k2) {
-                                    IBlockState iblockstate = worldIn.getBlockState(blockpos$mutableblockpos.setPos(k + i2, l + j2, i1 + k2));
-                                    Block block = iblockstate.getBlock();
-
-                                    if (!block.canSustainLeaves(iblockstate, worldIn, blockpos$mutableblockpos.setPos(k + i2, l + j2, i1 + k2))) {
-                                        if (block.isLeaves(iblockstate, worldIn, blockpos$mutableblockpos.setPos(k + i2, l + j2, i1 + k2))) {
-                                            this.surroundings[(i2 + 16) * 1024 + (j2 + 16) * 32 + k2 + 16] = -2;
-                                        }
-                                        else {
-                                            this.surroundings[(i2 + 16) * 1024 + (j2 + 16) * 32 + k2 + 16] = -1;
-                                        }
-                                    }
-                                    else {
-                                        this.surroundings[(i2 + 16) * 1024 + (j2 + 16) * 32 + k2 + 16] = 0;
-                                    }
-                                }
-                            }
-                        }
-
-                        for (int i3 = 1; i3 <= 4; ++i3) {
-                            for (int j3 = -4; j3 <= 4; ++j3) {
-                                for (int k3 = -4; k3 <= 4; ++k3) {
-                                    for (int l3 = -4; l3 <= 4; ++l3) {
-                                        if (this.surroundings[(j3 + 16) * 1024 + (k3 + 16) * 32 + l3 + 16] == i3 - 1) {
-                                            if (this.surroundings[(j3 + 16 - 1) * 1024 + (k3 + 16) * 32 + l3 + 16] == -2) {
-                                                this.surroundings[(j3 + 16 - 1) * 1024 + (k3 + 16) * 32 + l3 + 16] = i3;
-                                            }
-
-                                            if (this.surroundings[(j3 + 16 + 1) * 1024 + (k3 + 16) * 32 + l3 + 16] == -2) {
-                                                this.surroundings[(j3 + 16 + 1) * 1024 + (k3 + 16) * 32 + l3 + 16] = i3;
-                                            }
-
-                                            if (this.surroundings[(j3 + 16) * 1024 + (k3 + 16 - 1) * 32 + l3 + 16] == -2) {
-                                                this.surroundings[(j3 + 16) * 1024 + (k3 + 16 - 1) * 32 + l3 + 16] = i3;
-                                            }
-
-                                            if (this.surroundings[(j3 + 16) * 1024 + (k3 + 16 + 1) * 32 + l3 + 16] == -2) {
-                                                this.surroundings[(j3 + 16) * 1024 + (k3 + 16 + 1) * 32 + l3 + 16] = i3;
-                                            }
-
-                                            if (this.surroundings[(j3 + 16) * 1024 + (k3 + 16) * 32 + (l3 + 16 - 1)] == -2) {
-                                                this.surroundings[(j3 + 16) * 1024 + (k3 + 16) * 32 + (l3 + 16 - 1)] = i3;
-                                            }
-
-                                            if (this.surroundings[(j3 + 16) * 1024 + (k3 + 16) * 32 + l3 + 16 + 1] == -2) {
-                                                this.surroundings[(j3 + 16) * 1024 + (k3 + 16) * 32 + l3 + 16 + 1] = i3;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    int l2 = this.surroundings[16912];
-
-                    if (l2 >= 0) {
+                    if (decayTest) {
                         worldIn.setBlockState(pos, state.withProperty(CHECK_DECAY, Boolean.valueOf(false)), 4);
+                        worldIn.setBlockState(pos, Blocks.GLOWSTONE.getDefaultState(), 2);
                     }
                     else {
-                        worldIn.setBlockState(pos, Blocks.GLOWSTONE.getDefaultState(), 2);
+                        this.destroy(worldIn, pos);
                     }
                 }
             }
@@ -229,6 +160,12 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
         }
     }
 
+    protected void destroy(World worldIn, BlockPos pos)
+    {
+        this.dropBlockAsItem(worldIn, pos, worldIn.getBlockState(pos), 0);
+        worldIn.setBlockToAir(pos);
+    }
+
     @Override
     public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos) {
 
@@ -262,6 +199,6 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
 
     public static Block getRandomLeaves() {
 
-        return (AppalachiaBlockLeaves)BlockManager.appalachiaLeaves.get(AppalachiaAPI.rand.nextInt(BlockManager.appalachiaLeaves.size()));
+        return (AppalachiaBlockLeaves)BlockManager.appalachiaLeaves.get(rand.nextInt(BlockManager.appalachiaLeaves.size()));
     }
 }
