@@ -3,12 +3,14 @@ package appalachia.entity.ai;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import appalachia.util.EntityUtil;
-import appalachia.util.RandomUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityFlying;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+
+import appalachia.util.EntityUtil;
+
+import rtg.api.util.RandomUtil;
 
 public class EntityAIHoverAwayFromEntity extends EntityAIHoverBase {
 
