@@ -12,7 +12,7 @@ import appalachia.block.leaves.fallen.AppalachiaBlockLeavesFallen;
 import appalachia.block.logs.AppalachiaBlockLog;
 import appalachia.block.vines.AppalachiaBlockVine;
 import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
-import appalachia.rtg.world.gen.feature.tree.rtg.TreeAbiesGrandis;
+import appalachia.rtg.world.gen.feature.tree.rtg.TreeAbiesBalsamea;
 import appalachia.rtg.world.gen.feature.tree.rtg.TreeAcerRubrum;
 
 import rtg.api.world.deco.*;
@@ -42,7 +42,7 @@ public class DecoCollectionSmokyForest extends DecoCollectionBase {
 
     public DecoCollectionSmokyForest(boolean fallenTrees) {
 
-        AppalachiaTree aplGrandFirTreeOak = new TreeAbiesGrandis();
+        AppalachiaTree aplGrandFirTreeOak = new TreeAbiesBalsamea();
         aplGrandFirTreeOak.setLogBlock(papyriferaOak.log);
         aplGrandFirTreeOak.setLeavesBlock(papyriferaOak.leaves);
         aplGrandFirTreeOak.setMinTrunkSize(10);
@@ -59,7 +59,7 @@ public class DecoCollectionSmokyForest extends DecoCollectionBase {
         oakFir.setTreeConditionNoise(-0.5f);
         oakFir.setTreeConditionChance(2);
         oakFir.setMaxY(treeMaxY);
-        AppalachiaTree aplGrandFirTreeChestnut = new TreeAbiesGrandis();
+        AppalachiaTree aplGrandFirTreeChestnut = new TreeAbiesBalsamea();
         aplGrandFirTreeChestnut.setLogBlock(ponderosaChestnut.log);
         aplGrandFirTreeChestnut.setLeavesBlock(ponderosaChestnut.leaves);
         aplGrandFirTreeChestnut.setMinTrunkSize(10);
