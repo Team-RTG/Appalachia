@@ -20,12 +20,12 @@ import appalachia.api.AppalachiaBlocks;
  * by ThisIsMika (http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-tools/2193206-schematic-to-java-converter-for-modders).
  * It has been modified slightly by WhichOnesPink to allow for random variation when generating in the world.
  */
-public class TreeAcerPseudoplatanus extends AppalachiaTree {
+public class TreePlatanusOccidentalis extends AppalachiaTree {
 
     World world;
     Random rand;
 
-    public TreeAcerPseudoplatanus() {
+    public TreePlatanusOccidentalis() {
         super();
         this.setLogBlock(AppalachiaBlocks.log_sycamore_01.getDefaultState());
         this.setLeavesBlock(AppalachiaBlocks.leaves_sycamore_01.getDefaultState());
@@ -33,7 +33,7 @@ public class TreeAcerPseudoplatanus extends AppalachiaTree {
         this.setSaplingBlock(AppalachiaBlocks.sapling_sycamore_01.getDefaultState());
     }
 
-    public TreeAcerPseudoplatanus(boolean shortVersion) {
+    public TreePlatanusOccidentalis(boolean shortVersion) {
         this();
     }
 
