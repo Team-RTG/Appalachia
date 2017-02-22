@@ -9,7 +9,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
 import appalachia.api.AppalachiaBiomes;
-import appalachia.rtg.world.biome.deco.collection.DecoCollectionBlueRidgeForest;
+import appalachia.rtg.world.biome.deco.collection.DecoCollectionBlueRidgeHills;
 import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 import appalachia.rtg.world.gen.terrain.SpikeEverywhereEffect;
 import appalachia.rtg.world.gen.terrain.TerrainRidgedRegion;
@@ -135,7 +135,7 @@ public class RealisticBiomeAPLBlueRidgeHills extends RealisticBiomeAPLBase {
     @Override
     public void initDecos() {
 
-        this.addDecoCollection(new DecoCollectionBlueRidgeForest(this.getConfig().ALLOW_LOGS.get()));
+        this.addDecoCollection(new DecoCollectionBlueRidgeHills(this.getConfig().ALLOW_LOGS.get()));
     }
 
     public class TerrainAPLBlueRidgeHills extends TerrainBase {

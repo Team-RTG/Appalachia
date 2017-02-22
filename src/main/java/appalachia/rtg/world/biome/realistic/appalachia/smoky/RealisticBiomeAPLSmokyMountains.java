@@ -9,7 +9,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
 import appalachia.api.AppalachiaBiomes;
-import appalachia.rtg.world.biome.deco.collection.DecoCollectionSmokyForest;
+import appalachia.rtg.world.biome.deco.collection.DecoCollectionSmokyMountains;
 import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 import appalachia.rtg.world.gen.terrain.SpikeEverywhereEffect;
 import appalachia.rtg.world.gen.terrain.TerrainRidgedRegion;
@@ -144,7 +144,7 @@ public class RealisticBiomeAPLSmokyMountains extends RealisticBiomeAPLBase {
     @Override
     public void initDecos() {
 
-        this.addDecoCollection(new DecoCollectionSmokyForest(this.getConfig().ALLOW_LOGS.get()));
+        this.addDecoCollection(new DecoCollectionSmokyMountains(this.getConfig().ALLOW_LOGS.get()));
     }
 
     public class TerrainAPLSmokyMountains extends FunctionalTerrainBase {
