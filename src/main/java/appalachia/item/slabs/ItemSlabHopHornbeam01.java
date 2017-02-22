@@ -4,11 +4,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 
 import appalachia.api.AppalachiaBlocks;
-import appalachia.block.planks.BlockPlanksHopHornbeam01;
+import appalachia.block.planks.BlockPlanksHophornbeam01;
 
-public class ItemSlabHopHornbeam01 extends AppalachiaItemSlab {
+public class ItemSlabHophornbeam01 extends AppalachiaItemSlab {
 
-    public ItemSlabHopHornbeam01(Block block) {
+    public ItemSlabHophornbeam01(Block block) {
 
         super(block);
     }
@@ -16,6 +16,6 @@ public class ItemSlabHopHornbeam01 extends AppalachiaItemSlab {
     @Override
     protected IBlockState getFullBlock() {
 
-        return AppalachiaBlocks.planks_hop_hornbeam_01.getDefaultState().withProperty(BlockPlanksHopHornbeam01.DOUBLE, Boolean.valueOf(true));
+        return AppalachiaBlocks.planks_hophornbeam_01.getDefaultState().withProperty(BlockPlanksHophornbeam01.DOUBLE, Boolean.valueOf(true));
     }
 }

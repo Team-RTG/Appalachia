@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "half=bottom": { "model": "appalachia:slab_american_basswood_01" },
+        "half=top": { "model": "appalachia:slab_american_basswood_01_upper" }
+    }
+}

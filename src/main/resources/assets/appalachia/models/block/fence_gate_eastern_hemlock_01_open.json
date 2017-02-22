@@ -1,0 +1,6 @@
+{
+    "parent": "block/fence_gate_open",
+    "textures": {
+        "texture": "appalachia:blocks/planks_eastern_hemlock_01"
+    }
+}

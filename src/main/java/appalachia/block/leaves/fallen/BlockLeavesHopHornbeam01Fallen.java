@@ -4,11 +4,11 @@ import net.minecraftforge.common.IShearable;
 
 import appalachia.block.IAppalachiaBlock;
 
-public class BlockLeavesHopHornbeam01Fallen extends AppalachiaBlockLeavesFallen implements IAppalachiaBlock, IShearable {
+public class BlockLeavesHophornbeam01Fallen extends AppalachiaBlockLeavesFallen implements IAppalachiaBlock, IShearable {
 
-    public BlockLeavesHopHornbeam01Fallen() {
+    public BlockLeavesHophornbeam01Fallen() {
 
-        super("leaves.hop_hornbeam.01.fallen");
+        super("leaves.hophornbeam.01.fallen");
     }
 
     @Override

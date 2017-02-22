@@ -1,0 +1,6 @@
+{
+    "parent": "builtin/generated",
+    "textures": {
+        "layer0": "appalachia:blocks/sapling_blackgum_01"
+    }
+}

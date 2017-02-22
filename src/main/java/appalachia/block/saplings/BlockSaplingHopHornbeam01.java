@@ -2,11 +2,11 @@ package appalachia.block.saplings;
 
 import appalachia.block.IAppalachiaBlock;
 
-public class BlockSaplingHopHornbeam01 extends AppalachiaBlockSapling implements IAppalachiaBlock {
+public class BlockSaplingHophornbeam01 extends AppalachiaBlockSapling implements IAppalachiaBlock {
 
-    public BlockSaplingHopHornbeam01() {
+    public BlockSaplingHophornbeam01() {
 
-        super("sapling.hop_hornbeam.01");
+        super("sapling.hophornbeam.01");
     }
 
     @Override

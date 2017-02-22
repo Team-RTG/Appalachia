@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "appalachia:blocks/log_atlantic_white_cedar_01"
+    }
+}

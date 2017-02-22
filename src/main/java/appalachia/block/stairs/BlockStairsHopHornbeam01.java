@@ -3,11 +3,11 @@ package appalachia.block.stairs;
 import appalachia.api.AppalachiaBlocks;
 import appalachia.block.IAppalachiaBlock;
 
-public class BlockStairsHopHornbeam01 extends AppalachiaBlockStairs implements IAppalachiaBlock {
+public class BlockStairsHophornbeam01 extends AppalachiaBlockStairs implements IAppalachiaBlock {
 
-    public BlockStairsHopHornbeam01() {
+    public BlockStairsHophornbeam01() {
 
-        super("stairs.hop_hornbeam.01", AppalachiaBlocks.planks_hop_hornbeam_01.getDefaultState());
+        super("stairs.hophornbeam.01", AppalachiaBlocks.planks_hophornbeam_01.getDefaultState());
     }
 
     @Override

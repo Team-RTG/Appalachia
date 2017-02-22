@@ -1,0 +1,6 @@
+{
+    "parent": "block/fence_post",
+    "textures": {
+        "texture": "appalachia:blocks/planks_hophornbeam_01"
+    }
+}
