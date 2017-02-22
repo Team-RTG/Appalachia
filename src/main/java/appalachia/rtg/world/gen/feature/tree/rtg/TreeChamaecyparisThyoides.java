@@ -9,6 +9,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Chamaecyparis Thyoides (Atlantic White Cedar)
  * <p>
@@ -26,6 +28,10 @@ public class TreeChamaecyparisThyoides extends AppalachiaTree {
 
     public TreeChamaecyparisThyoides() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_atlantic_white_cedar_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_atlantic_white_cedar_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_atlantic_white_cedar_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_atlantic_white_cedar_01.getDefaultState());
     }
 
     public TreeChamaecyparisThyoides(boolean shortVersion) {

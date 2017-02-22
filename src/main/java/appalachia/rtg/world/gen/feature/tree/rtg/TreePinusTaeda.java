@@ -8,6 +8,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Pinus Taeda (Loblolly Pine)
  * <p>
@@ -25,6 +27,10 @@ public class TreePinusTaeda extends AppalachiaTree {
 
     public TreePinusTaeda() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_loblolly_pine_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_loblolly_pine_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_loblolly_pine_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_loblolly_pine_01.getDefaultState());
     }
 
     public TreePinusTaeda(boolean shortVersion) {

@@ -9,6 +9,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Pinus Strobus (White Pine)
  * <p>
@@ -25,6 +27,10 @@ public class TreePinusStrobus extends AppalachiaTree {
 
     public TreePinusStrobus() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_white_pine_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_white_pine_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_white_pine_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_white_pine_01.getDefaultState());
     }
 
     public TreePinusStrobus(boolean shortVersion) {

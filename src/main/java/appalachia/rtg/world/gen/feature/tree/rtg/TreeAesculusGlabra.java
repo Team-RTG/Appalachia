@@ -9,6 +9,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Aesculus Glabra (Buckeye)
  * <p>
@@ -25,6 +27,10 @@ public class TreeAesculusGlabra extends AppalachiaTree {
 
     public TreeAesculusGlabra() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_buckeye_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_buckeye_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_buckeye_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_buckeye_01.getDefaultState());
     }
 
     @Override

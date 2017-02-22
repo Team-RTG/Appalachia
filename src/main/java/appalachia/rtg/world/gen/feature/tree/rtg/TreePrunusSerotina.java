@@ -9,6 +9,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Prunus Serotina (Black Cherry)
  * <p>
@@ -25,6 +27,10 @@ public class TreePrunusSerotina extends AppalachiaTree {
 
     public TreePrunusSerotina() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_black_cherry_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_black_cherry_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_black_cherry_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_black_cherry_01.getDefaultState());
     }
 
     @Override

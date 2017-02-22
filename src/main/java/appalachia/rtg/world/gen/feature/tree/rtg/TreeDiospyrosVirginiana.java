@@ -8,6 +8,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Diospyros Virginiana (Persimmon)
  * <p>
@@ -24,6 +26,10 @@ public class TreeDiospyrosVirginiana extends AppalachiaTree {
 
     public TreeDiospyrosVirginiana() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_persimmon_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_persimmon_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_persimmon_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_persimmon_01.getDefaultState());
     }
 
     public TreeDiospyrosVirginiana(boolean shortVersion) {

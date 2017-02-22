@@ -9,6 +9,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Castanea Dentata (American Chestnut)
  * <p>
@@ -25,6 +27,10 @@ public class TreeCastaneaDentata extends AppalachiaTree {
 
     public TreeCastaneaDentata() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_american_chestnut_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_american_chestnut_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_american_chestnut_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_american_chestnut_01.getDefaultState());
     }
 
     @Override

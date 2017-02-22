@@ -9,6 +9,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Tsuga Canadensis (Eastern Hemlock)
  * <p>
@@ -25,6 +27,10 @@ public class TreeTsugaCanadensis extends AppalachiaTree {
 
     public TreeTsugaCanadensis() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_eastern_hemlock_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_eastern_hemlock_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_eastern_hemlock_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_eastern_hemlock_01.getDefaultState());
     }
 
     public TreeTsugaCanadensis(boolean shortVersion) {

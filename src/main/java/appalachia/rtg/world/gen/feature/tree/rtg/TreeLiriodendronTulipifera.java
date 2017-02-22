@@ -8,6 +8,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Liriodendron Tulipifera (Tulip Poplar)
  * <p>
@@ -24,6 +26,10 @@ public class TreeLiriodendronTulipifera extends AppalachiaTree {
 
     public TreeLiriodendronTulipifera() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_tulip_poplar_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_tulip_poplar_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_tulip_poplar_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_tulip_poplar_01.getDefaultState());
     }
 
     public TreeLiriodendronTulipifera(boolean shortVersion) {

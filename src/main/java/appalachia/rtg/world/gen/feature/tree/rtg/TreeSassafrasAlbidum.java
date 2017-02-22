@@ -9,6 +9,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Sassafras Albidum (Sassafras)
  * <p>
@@ -25,6 +27,10 @@ public class TreeSassafrasAlbidum extends AppalachiaTree {
 
     public TreeSassafrasAlbidum() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_sassafras_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_sassafras_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_sassafras_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_sassafras_01.getDefaultState());
     }
 
     public TreeSassafrasAlbidum(boolean shortVersion) {

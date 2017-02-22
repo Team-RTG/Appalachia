@@ -27,10 +27,10 @@ public class AppalachiaTree extends TreeRTG {
 
         this(false);
 
-        this.logBlock = Blocks.LOG.getDefaultState();
-        this.leavesBlock = Blocks.LEAVES.getDefaultState();
-        this.fallenLeavesBlock = AppalachiaBlocks.leaves_red_oak_01_fallen.getDefaultState();
-        this.saplingBlock = AppalachiaBlocks.sapling_red_oak_01.getDefaultState();
+        this.setLogBlock(Blocks.LOG.getDefaultState());
+        this.setLeavesBlock(Blocks.LEAVES.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_red_oak_01_fallen.getDefaultState());
+        this.setSaplingBlock(Blocks.SAPLING.getDefaultState());
 
         this.minTrunkSize = -1;
         this.maxTrunkSize = -1;
@@ -89,5 +89,16 @@ public class AppalachiaTree extends TreeRTG {
 
     protected int getSizeFromMinMax(Random rand, int min, int max) {
         return min + rand.nextInt(max - min + 1);
+    }
+
+    public IBlockState getFallenLeavesBlock() {
+
+        return fallenLeavesBlock;
+    }
+
+    public AppalachiaTree setFallenLeavesBlock(IBlockState fallenLeavesBlock) {
+
+        this.fallenLeavesBlock = fallenLeavesBlock;
+        return this;
     }
 }

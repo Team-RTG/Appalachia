@@ -9,6 +9,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Fraxinus Pennsylvanica (Red Ash)
  * <p>
@@ -26,6 +28,10 @@ public class TreeFraxinusPennsylvanica extends AppalachiaTree {
 
     public TreeFraxinusPennsylvanica() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_red_ash_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_red_ash_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_red_ash_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_red_ash_01.getDefaultState());
     }
 
     public TreeFraxinusPennsylvanica(boolean shortVersion) {

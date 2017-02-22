@@ -9,6 +9,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Acer Pseudoplatanus (Sycamore)
  * <p>
@@ -25,6 +27,10 @@ public class TreeAcerPseudoplatanus extends AppalachiaTree {
 
     public TreeAcerPseudoplatanus() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_sycamore_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_sycamore_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_sycamore_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_sycamore_01.getDefaultState());
     }
 
     public TreeAcerPseudoplatanus(boolean shortVersion) {

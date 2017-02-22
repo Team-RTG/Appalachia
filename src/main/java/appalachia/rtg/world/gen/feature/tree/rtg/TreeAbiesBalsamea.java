@@ -8,6 +8,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Abies Balsamea (Balsam Fir)
  * <p>
@@ -24,6 +26,10 @@ public class TreeAbiesBalsamea extends AppalachiaTree {
 
     public TreeAbiesBalsamea() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_balsam_fir_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_balsam_fir_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_balsam_fir_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_balsam_fir_01.getDefaultState());
     }
 
     @Override

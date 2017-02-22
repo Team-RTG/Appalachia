@@ -9,6 +9,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Picea Mariana (Black Spruce)
  * <p>
@@ -25,6 +27,10 @@ public class TreePiceaMariana extends AppalachiaTree {
 
     public TreePiceaMariana() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_black_spruce_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_black_spruce_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_black_spruce_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_black_spruce_01.getDefaultState());
     }
 
     public TreePiceaMariana(boolean shortVersion) {

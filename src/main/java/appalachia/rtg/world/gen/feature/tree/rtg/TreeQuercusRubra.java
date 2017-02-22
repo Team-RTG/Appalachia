@@ -9,6 +9,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Quercus Rubra (Red Oak)
  * <p>
@@ -26,6 +28,10 @@ public class TreeQuercusRubra extends AppalachiaTree {
 
     public TreeQuercusRubra() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_red_oak_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_red_oak_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_red_oak_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_red_oak_01.getDefaultState());
     }
 
     public TreeQuercusRubra(boolean shortVersion) {

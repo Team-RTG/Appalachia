@@ -9,6 +9,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Ulmus Americana (American Elm)
  * <p>
@@ -25,6 +27,10 @@ public class TreeUlmusAmericana extends AppalachiaTree {
 
     public TreeUlmusAmericana() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_american_elm_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_american_elm_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_american_elm_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_american_elm_01.getDefaultState());
     }
 
     @Override

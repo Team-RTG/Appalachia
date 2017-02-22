@@ -9,6 +9,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Acer Negundo (Box Elder)
  * <p>
@@ -25,6 +27,10 @@ public class TreeAcerNegundo extends AppalachiaTree {
 
     public TreeAcerNegundo() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_box_elder_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_box_elder_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_box_elder_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_box_elder_01.getDefaultState());
     }
 
     public TreeAcerNegundo(boolean shortVersion) {

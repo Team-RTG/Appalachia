@@ -11,6 +11,8 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Liquidambar Styraciflua (American Sweetgum)
  * <p>
@@ -28,6 +30,10 @@ public class TreeLiquidambarStyraciflua extends AppalachiaTree {
     public TreeLiquidambarStyraciflua() {
 
         super();
+        this.setLogBlock(AppalachiaBlocks.log_american_sweetgum_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_american_sweetgum_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_american_sweetgum_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_american_sweetgum_01.getDefaultState());
 
         this.trunkSize = 3;
         this.validGroundBlocks = new ArrayList<IBlockState>(Arrays.asList(Blocks.GRASS.getDefaultState(), Blocks.DIRT.getDefaultState()));

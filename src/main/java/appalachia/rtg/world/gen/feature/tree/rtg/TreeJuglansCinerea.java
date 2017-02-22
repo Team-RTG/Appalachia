@@ -9,6 +9,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Juglans Cinerea (White Walnut)
  * <p>
@@ -25,6 +27,10 @@ public class TreeJuglansCinerea extends AppalachiaTree {
 
     public TreeJuglansCinerea() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_white_walnut_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_white_walnut_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_white_walnut_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_white_walnut_01.getDefaultState());
     }
 
     @Override

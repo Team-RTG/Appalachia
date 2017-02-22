@@ -8,6 +8,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Picea Rubens (Red Spruce)
  * <p>
@@ -24,6 +26,10 @@ public class TreePiceaRubens extends AppalachiaTree {
 
     public TreePiceaRubens() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_red_spruce_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_red_spruce_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_red_spruce_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_red_spruce_01.getDefaultState());
     }
 
     public TreePiceaRubens(boolean shortVersion) {

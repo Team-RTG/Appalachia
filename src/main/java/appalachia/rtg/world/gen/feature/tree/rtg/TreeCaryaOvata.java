@@ -9,6 +9,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Carya Ovata (Shagbark Hickory)
  * <p>
@@ -25,6 +27,10 @@ public class TreeCaryaOvata extends AppalachiaTree {
 
     public TreeCaryaOvata() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_shagbark_hickory_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_shagbark_hickory_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_shagbark_hickory_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_shagbark_hickory_01.getDefaultState());
     }
 
     public TreeCaryaOvata(boolean shortVersion) {

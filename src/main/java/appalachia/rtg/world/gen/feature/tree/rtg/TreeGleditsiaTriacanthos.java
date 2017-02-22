@@ -9,6 +9,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Gleditsia Triacanthos (Honey Locust)
  * <p>
@@ -25,6 +27,10 @@ public class TreeGleditsiaTriacanthos extends AppalachiaTree {
 
     public TreeGleditsiaTriacanthos() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_honey_locust_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_honey_locust_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_honey_locust_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_honey_locust_01.getDefaultState());
     }
 
     public TreeGleditsiaTriacanthos(boolean shortVersion) {

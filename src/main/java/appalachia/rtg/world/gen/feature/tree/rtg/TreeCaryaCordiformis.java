@@ -9,6 +9,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Carya Cordiformis (Bitternut Hickory)
  * <p>
@@ -25,6 +27,10 @@ public class TreeCaryaCordiformis extends AppalachiaTree {
 
     public TreeCaryaCordiformis() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_bitternut_hickory_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_bitternut_hickory_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_bitternut_hickory_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_bitternut_hickory_01.getDefaultState());
     }
 
     @Override

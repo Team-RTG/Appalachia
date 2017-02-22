@@ -9,6 +9,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Carya Glabra (Pignut Hickory)
  * <p>
@@ -25,6 +27,10 @@ public class TreeCaryaGlabra extends AppalachiaTree {
 
     public TreeCaryaGlabra() {
         super();
+        this.setLogBlock(AppalachiaBlocks.log_pignut_hickory_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_pignut_hickory_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_pignut_hickory_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_pignut_hickory_01.getDefaultState());
     }
 
     public TreeCaryaGlabra(boolean shortVersion) {
