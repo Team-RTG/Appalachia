@@ -1,6 +1,0 @@
-{
-    "parent": "block/wall_gate_open",
-    "textures": {
-        "texture": "appalachia:blocks/planks_hop_hornbeam_01"
-    }
-}

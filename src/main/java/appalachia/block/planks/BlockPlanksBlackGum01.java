@@ -8,17 +8,17 @@ import net.minecraft.item.Item;
 import appalachia.api.AppalachiaBlocks;
 import appalachia.block.IAppalachiaBlock;
 
-public class BlockPlanksBlackGum01 extends AppalachiaBlockPlanks implements IAppalachiaBlock {
+public class BlockPlanksBlackgum01 extends AppalachiaBlockPlanks implements IAppalachiaBlock {
 
-    public BlockPlanksBlackGum01() {
+    public BlockPlanksBlackgum01() {
 
-        super("planks.black_gum.01");
+        super("planks.blackgum.01");
     }
 
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 
-        return Item.getItemFromBlock(state.getValue(DOUBLE).booleanValue() ? AppalachiaBlocks.slab_black_gum_01 : this);
+        return Item.getItemFromBlock(state.getValue(DOUBLE).booleanValue() ? AppalachiaBlocks.slab_blackgum_01 : this);
     }
 
     @Override

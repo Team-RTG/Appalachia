@@ -2,11 +2,11 @@ package appalachia.block.slabs;
 
 import appalachia.block.IAppalachiaBlock;
 
-public class BlockSlabBlackGum01 extends AppalachiaBlockSlab implements IAppalachiaBlock {
+public class BlockSlabBlackgum01 extends AppalachiaBlockSlab implements IAppalachiaBlock {
 
-    public BlockSlabBlackGum01() {
+    public BlockSlabBlackgum01() {
 
-        super("slab.black_gum.01");
+        super("slab.blackgum.01");
     }
 
     @Override

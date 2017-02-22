@@ -8,11 +8,11 @@ import net.minecraft.item.Item;
 import appalachia.api.AppalachiaBlocks;
 import appalachia.block.IAppalachiaBlock;
 
-public class BlockLeavesHopHornbeam01 extends AppalachiaBlockLeaves implements IAppalachiaBlock {
+public class BlockLeavesHophornbeam01 extends AppalachiaBlockLeaves implements IAppalachiaBlock {
 
-    public BlockLeavesHopHornbeam01() {
+    public BlockLeavesHophornbeam01() {
 
-        super("leaves.hop_hornbeam.01");
+        super("leaves.hophornbeam.01");
     }
 
     @Override
@@ -24,6 +24,6 @@ public class BlockLeavesHopHornbeam01 extends AppalachiaBlockLeaves implements I
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 
-        return Item.getItemFromBlock(AppalachiaBlocks.sapling_hop_hornbeam_01);
+        return Item.getItemFromBlock(AppalachiaBlocks.sapling_hophornbeam_01);
     }
 }

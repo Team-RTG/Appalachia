@@ -1,6 +1,0 @@
-{
-    "parent": "appalachia:block/appalachia_leaves",
-    "textures": {
-        "all": "appalachia:blocks/leaves_hop_hornbeam_01"
-    }
-}

@@ -1,0 +1,6 @@
+{
+    "parent": "block/fence_side",
+    "textures": {
+        "texture": "appalachia:blocks/planks_tamarack_01"
+    }
+}

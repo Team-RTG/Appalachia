@@ -4,11 +4,11 @@ import net.minecraftforge.common.IShearable;
 
 import appalachia.block.IAppalachiaBlock;
 
-public class BlockLeavesBlackGum01Fallen extends AppalachiaBlockLeavesFallen implements IAppalachiaBlock, IShearable {
+public class BlockLeavesBlackgum01Fallen extends AppalachiaBlockLeavesFallen implements IAppalachiaBlock, IShearable {
 
-    public BlockLeavesBlackGum01Fallen() {
+    public BlockLeavesBlackgum01Fallen() {
 
-        super("leaves.black_gum.01.fallen");
+        super("leaves.blackgum.01.fallen");
     }
 
     @Override

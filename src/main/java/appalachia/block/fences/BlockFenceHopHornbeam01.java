@@ -2,11 +2,11 @@ package appalachia.block.fences;
 
 import appalachia.block.IAppalachiaBlock;
 
-public class BlockFenceHopHornbeam01 extends AppalachiaBlockFence implements IAppalachiaBlock {
+public class BlockFenceHophornbeam01 extends AppalachiaBlockFence implements IAppalachiaBlock {
 
-    public BlockFenceHopHornbeam01() {
+    public BlockFenceHophornbeam01() {
 
-        super("fence.hop_hornbeam.01");
+        super("fence.hophornbeam.01");
     }
 
     @Override

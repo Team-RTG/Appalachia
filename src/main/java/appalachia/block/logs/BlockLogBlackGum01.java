@@ -2,11 +2,11 @@ package appalachia.block.logs;
 
 import appalachia.block.IAppalachiaBlock;
 
-public class BlockLogBlackGum01 extends AppalachiaBlockLog implements IAppalachiaBlock {
+public class BlockLogBlackgum01 extends AppalachiaBlockLog implements IAppalachiaBlock {
 
-    public BlockLogBlackGum01() {
+    public BlockLogBlackgum01() {
 
-        super("log.black_gum.01");
+        super("log.blackgum.01");
     }
 
     @Override
