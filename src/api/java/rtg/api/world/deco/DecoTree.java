@@ -66,7 +66,7 @@ public class DecoTree extends DecoBase {
         this.tree = null;
         this.worldGen = null;
         this.setDistribution(new DecoTree.Distribution(100f, 5f, 0.8f));
-        this.setTreeCondition(TreeCondition.NOISE_GREATER_AND_RANDOM_CHANCE);
+        this.setTreeCondition(TreeCondition.RANDOM_CHANCE);
         this.setTreeConditionNoise(0f);
         this.setTreeConditionNoise2(0f);
         this.setTreeConditionFloat(0f);

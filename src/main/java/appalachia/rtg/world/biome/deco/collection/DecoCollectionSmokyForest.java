@@ -1,320 +1,172 @@
 package appalachia.rtg.world.biome.deco.collection;
 
-import net.minecraft.init.Blocks;
-import net.minecraft.world.gen.feature.WorldGenTrees;
-import net.minecraft.world.gen.feature.WorldGenerator;
+import appalachia.rtg.world.gen.feature.tree.rtg.*;
 
-import appalachia.api.AppalachiaBlocks;
-import appalachia.api.block.IAppalachiaBlockLeavesFallen;
-import appalachia.block.AppalachiaBlockPair;
-import appalachia.block.leaves.AppalachiaBlockLeaves;
-import appalachia.block.leaves.fallen.AppalachiaBlockLeavesFallen;
-import appalachia.block.logs.AppalachiaBlockLog;
-import appalachia.block.vines.AppalachiaBlockVine;
-import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
-import appalachia.rtg.world.gen.feature.tree.rtg.TreeAbiesBalsamea;
-import appalachia.rtg.world.gen.feature.tree.rtg.TreeAcerRubrum;
-
-import rtg.api.world.deco.*;
+import rtg.api.world.deco.DecoTree;
 import rtg.api.world.deco.collection.DecoCollectionBase;
-import rtg.api.world.deco.helper.DecoHelper5050;
-import rtg.api.world.deco.helper.DecoHelperRandomSplit;
-import rtg.api.world.gen.feature.tree.rtg.TreeRTG;
-import rtg.api.world.gen.feature.tree.rtg.TreeRTGBetulaPapyrifera;
-import rtg.api.world.gen.feature.tree.rtg.TreeRTGPiceaSitchensis;
-import rtg.api.world.gen.feature.tree.rtg.TreeRTGPinusPonderosa;
 
 
 /**
  * @author WhichOnesPink
+ * American Sweetgum, Loblolly Pine, Flowering Dogwood, Black Walnut, American Elm,
+ * Sycamore, Persimmon, Blue Beech, River Birch, Shortleaf Pine
  */
 public class DecoCollectionSmokyForest extends DecoCollectionBase {
 
     protected static int treeMaxY = 220;
     protected static int shrubMaxY = 220;
 
-    private static AppalachiaBlockPair redMaple = new AppalachiaBlockPair();
-    private static AppalachiaBlockPair papyriferaOak = new AppalachiaBlockPair();
-    private static AppalachiaBlockPair papyriferaSpruce = new AppalachiaBlockPair();
-    private static AppalachiaBlockPair ponderosaOak = new AppalachiaBlockPair();
-    private static AppalachiaBlockPair ponderosaChestnut = new AppalachiaBlockPair();
-    private static AppalachiaBlockPair sitchensis = new AppalachiaBlockPair();
-
     public DecoCollectionSmokyForest(boolean fallenTrees) {
 
-        AppalachiaTree aplGrandFirTreeOak = new TreeAbiesBalsamea();
-        aplGrandFirTreeOak.setLogBlock(papyriferaOak.log);
-        aplGrandFirTreeOak.setLeavesBlock(papyriferaOak.leaves);
-        aplGrandFirTreeOak.setMinTrunkSize(10);
-        aplGrandFirTreeOak.setMaxTrunkSize(20);
-        aplGrandFirTreeOak.setMinCrownSize(15);
-        aplGrandFirTreeOak.setMaxCrownSize(30);
-        DecoTree oakFir = new DecoTree(aplGrandFirTreeOak);
-        oakFir.setLoops(1);
-        oakFir.setTreeType(DecoTree.TreeType.RTG_TREE);
-        oakFir.getDistribution().setNoiseDivisor(100f);
-        oakFir.getDistribution().setNoiseFactor(6f);
-        oakFir.getDistribution().setNoiseAddend(0.8f);
-        oakFir.setTreeCondition(DecoTree.TreeCondition.NOISE_GREATER_AND_RANDOM_CHANCE);
-        oakFir.setTreeConditionNoise(-0.5f);
-        oakFir.setTreeConditionChance(2);
-        oakFir.setMaxY(treeMaxY);
-        AppalachiaTree aplGrandFirTreeChestnut = new TreeAbiesBalsamea();
-        aplGrandFirTreeChestnut.setLogBlock(ponderosaChestnut.log);
-        aplGrandFirTreeChestnut.setLeavesBlock(ponderosaChestnut.leaves);
-        aplGrandFirTreeChestnut.setMinTrunkSize(10);
-        aplGrandFirTreeChestnut.setMaxTrunkSize(20);
-        aplGrandFirTreeChestnut.setMinCrownSize(15);
-        aplGrandFirTreeChestnut.setMaxCrownSize(30);
-        //
-        aplGrandFirTreeChestnut.setMinTrunkSize(7);
-        aplGrandFirTreeChestnut.setMaxTrunkSize(13);
-        aplGrandFirTreeChestnut.setMinCrownSize(10);
-        aplGrandFirTreeChestnut.setMaxCrownSize(20);
-        //
-        DecoTree chestnutFir = new DecoTree(aplGrandFirTreeChestnut);
-        chestnutFir.setLoops(1);
-        chestnutFir.setTreeType(DecoTree.TreeType.RTG_TREE);
-        chestnutFir.getDistribution().setNoiseDivisor(100f);
-        chestnutFir.getDistribution().setNoiseFactor(6f);
-        chestnutFir.getDistribution().setNoiseAddend(0.8f);
-        chestnutFir.setTreeCondition(DecoTree.TreeCondition.NOISE_GREATER_AND_RANDOM_CHANCE);
-        chestnutFir.setTreeConditionNoise(-0.5f);
-        chestnutFir.setTreeConditionChance(2);
-        chestnutFir.setMaxY(treeMaxY);
-        DecoHelper5050 firTrees = new DecoHelper5050(oakFir, chestnutFir);
-        this.addDeco(firTrees);
+        // American Sweetgum.
+        AppalachiaTree treeAmericanSweetgum = new TreeLiquidambarStyraciflua();
+        this.addTree(treeAmericanSweetgum);
+        DecoTree decoAmericanSweetgum = new DecoTree(treeAmericanSweetgum);
+        decoAmericanSweetgum.setMaxY(treeMaxY);
+        this.addDeco(decoAmericanSweetgum);
 
-        AppalachiaTree aplRedMaple = new TreeAcerRubrum();
-        aplRedMaple.setLogBlock(redMaple.log);
-        aplRedMaple.setLeavesBlock(redMaple.leaves);
-        aplRedMaple.setMinTrunkSize(4);
-        aplRedMaple.setMaxTrunkSize(8);
-        aplRedMaple.setMinCrownSize(8);
-        aplRedMaple.setMaxCrownSize(12);
-        //
-        aplRedMaple.setMinTrunkSize(3);
-        aplRedMaple.setMaxTrunkSize(6);
-        aplRedMaple.setMinCrownSize(6);
-        aplRedMaple.setMaxCrownSize(9);
-        //
-        DecoTree oakMaple = new DecoTree(aplRedMaple);
-        oakMaple.setLoops(1);
-        oakMaple.setTreeType(DecoTree.TreeType.RTG_TREE);
-        oakMaple.getDistribution().setNoiseDivisor(100f);
-        oakMaple.getDistribution().setNoiseFactor(6f);
-        oakMaple.getDistribution().setNoiseAddend(0.8f);
-        oakMaple.setTreeCondition(DecoTree.TreeCondition.NOISE_LESSER_AND_RANDOM_CHANCE);
-        oakMaple.setTreeConditionNoise(0.2f);
-        oakMaple.setTreeConditionChance(1);
-        oakMaple.setMaxY(treeMaxY);
-        this.addDeco(oakMaple);
+        // Loblolly Pine.
+        AppalachiaTree treeLoblollyPine = new TreePinusTaeda();
+        this.addTree(treeLoblollyPine);
+        DecoTree decoLoblollyPine = new DecoTree(treeLoblollyPine);
+        decoLoblollyPine.setMaxY(treeMaxY);
+        this.addDeco(decoLoblollyPine);
 
-        TreeRTG papyriferaTreeOak = new TreeRTGBetulaPapyrifera();
-        papyriferaTreeOak.setLogBlock(papyriferaOak.log);
-        papyriferaTreeOak.setLeavesBlock(papyriferaOak.leaves);
-        papyriferaTreeOak.setMinTrunkSize(4);
-        papyriferaTreeOak.setMaxTrunkSize(8);
-        papyriferaTreeOak.setMinCrownSize(6);
-        papyriferaTreeOak.setMaxCrownSize(16);
-        //
-        papyriferaTreeOak.setMinTrunkSize(3);
-        papyriferaTreeOak.setMaxTrunkSize(4);
-        papyriferaTreeOak.setMinCrownSize(4);
-        papyriferaTreeOak.setMaxCrownSize(12);
-        //
-        this.addTree(papyriferaTreeOak);
-        DecoTree paperOak = new DecoTree(papyriferaTreeOak);
-        paperOak.setStrengthFactorForLoops(8f);
-        paperOak.setTreeType(DecoTree.TreeType.RTG_TREE);
-        paperOak.setTreeCondition(DecoTree.TreeCondition.RANDOM_CHANCE);
-        paperOak.setTreeConditionChance(1);
-        paperOak.setMaxY(treeMaxY);
-        TreeRTG papyriferaTreeSpruce = new TreeRTGBetulaPapyrifera();
-        papyriferaTreeSpruce.setLogBlock(papyriferaSpruce.log);
-        papyriferaTreeSpruce.setLeavesBlock(papyriferaSpruce.leaves);
-        papyriferaTreeSpruce.setMinTrunkSize(4);
-        papyriferaTreeSpruce.setMaxTrunkSize(8);
-        papyriferaTreeSpruce.setMinCrownSize(6);
-        papyriferaTreeSpruce.setMaxCrownSize(16);
-        //
-        papyriferaTreeSpruce.setMinTrunkSize(3);
-        papyriferaTreeSpruce.setMaxTrunkSize(6);
-        papyriferaTreeSpruce.setMinCrownSize(4);
-        papyriferaTreeSpruce.setMaxCrownSize(12);
-        //
-        this.addTree(papyriferaTreeSpruce);
-        DecoTree paperSpruce = new DecoTree(papyriferaTreeSpruce);
-        paperSpruce.setStrengthFactorForLoops(8f);
-        paperSpruce.setTreeType(DecoTree.TreeType.RTG_TREE);
-        paperSpruce.setTreeCondition(DecoTree.TreeCondition.RANDOM_CHANCE);
-        paperSpruce.setTreeConditionChance(1);
-        paperSpruce.setMaxY(treeMaxY);
-        DecoHelper5050 decoPaper = new DecoHelper5050(paperOak, paperSpruce);
-        this.addDeco(decoPaper);
+        // Flowering Dogwood.
+        AppalachiaTree treeFloweringDogwood = new TreeCornusFlorida();
+        this.addTree(treeFloweringDogwood);
+        DecoTree decoFloweringDogwood = new DecoTree(treeFloweringDogwood);
+        decoFloweringDogwood.setMaxY(treeMaxY);
+        this.addDeco(decoFloweringDogwood);
 
-        TreeRTG ponderosaOakTree = new TreeRTGPinusPonderosa();
-        ponderosaOakTree.setLogBlock(ponderosaOak.log);
-        ponderosaOakTree.setLeavesBlock(ponderosaOak.leaves);
-        ponderosaOakTree.setMinTrunkSize(11);
-        ponderosaOakTree.setMaxTrunkSize(21);
-        ponderosaOakTree.setMinCrownSize(15);
-        ponderosaOakTree.setMaxCrownSize(29);
-        //
-        ponderosaOakTree.setMinTrunkSize(7);
-        ponderosaOakTree.setMaxTrunkSize(14);
-        ponderosaOakTree.setMinCrownSize(10);
-        ponderosaOakTree.setMaxCrownSize(19);
-        //
-        this.addTree(ponderosaOakTree);
-        DecoTree oakPines = new DecoTree(ponderosaOakTree);
-        oakPines.setStrengthFactorForLoops(10f);
-        oakPines.setTreeType(DecoTree.TreeType.RTG_TREE);
-        oakPines.getDistribution().setNoiseDivisor(100f);
-        oakPines.getDistribution().setNoiseFactor(6f);
-        oakPines.getDistribution().setNoiseAddend(0.8f);
-        oakPines.setTreeCondition(DecoTree.TreeCondition.NOISE_LESSER_AND_RANDOM_CHANCE);
-        oakPines.setTreeConditionNoise(0.2f);
-        oakPines.setTreeConditionChance(1);
-        oakPines.setMaxY(85);
-        TreeRTG ponderosaChestnutTree = new TreeRTGPinusPonderosa();
-        ponderosaChestnutTree.setLogBlock(ponderosaChestnut.log);
-        ponderosaChestnutTree.setLeavesBlock(ponderosaChestnut.leaves);
-        ponderosaChestnutTree.setMinTrunkSize(11);
-        ponderosaChestnutTree.setMaxTrunkSize(21);
-        ponderosaChestnutTree.setMinCrownSize(15);
-        ponderosaChestnutTree.setMaxCrownSize(29);
-        //
-        ponderosaChestnutTree.setMinTrunkSize(7);
-        ponderosaChestnutTree.setMaxTrunkSize(14);
-        ponderosaChestnutTree.setMinCrownSize(10);
-        ponderosaChestnutTree.setMaxCrownSize(19);
-        //
-        this.addTree(ponderosaChestnutTree);
-        DecoTree chestnutPines = new DecoTree(ponderosaChestnutTree);
-        chestnutPines.setStrengthFactorForLoops(10f);
-        chestnutPines.setTreeType(DecoTree.TreeType.RTG_TREE);
-        chestnutPines.getDistribution().setNoiseDivisor(100f);
-        chestnutPines.getDistribution().setNoiseFactor(6f);
-        chestnutPines.getDistribution().setNoiseAddend(0.8f);
-        chestnutPines.setTreeCondition(DecoTree.TreeCondition.NOISE_LESSER_AND_RANDOM_CHANCE);
-        chestnutPines.setTreeConditionNoise(0.2f);
-        chestnutPines.setTreeConditionChance(1);
-        chestnutPines.setMaxY(85);
-        DecoHelper5050 decoPines = new DecoHelper5050(oakPines, chestnutPines);
-        this.addDeco(decoPines);
+        // Black Walnut.
+        AppalachiaTree treeBlackWalnut = new TreeJuglansNigra();
+        this.addTree(treeBlackWalnut);
+        DecoTree decoBlackWalnut = new DecoTree(treeBlackWalnut);
+        decoBlackWalnut.setMaxY(treeMaxY);
+        this.addDeco(decoBlackWalnut);
 
-        TreeRTG sitchensisTree = new TreeRTGPiceaSitchensis();
-        sitchensisTree.setLogBlock(sitchensis.log);
-        sitchensisTree.setLeavesBlock(sitchensis.leaves);
-        sitchensisTree.setMinTrunkSize(4);
-        sitchensisTree.setMaxTrunkSize(10);
-        sitchensisTree.setMinCrownSize(6);
-        sitchensisTree.setMaxCrownSize(14);
-        //
-        sitchensisTree.setMinTrunkSize(3);
-        sitchensisTree.setMaxTrunkSize(7);
-        sitchensisTree.setMinCrownSize(4);
-        sitchensisTree.setMaxCrownSize(10);
-        //
-        this.addTree(sitchensisTree);
-        DecoTree oakPine = new DecoTree(sitchensisTree);
-        oakPine.setStrengthFactorForLoops(8f);
-        oakPine.setTreeType(DecoTree.TreeType.RTG_TREE);
-        oakPine.setTreeCondition(DecoTree.TreeCondition.RANDOM_CHANCE);
-        oakPine.setTreeConditionChance(1);
-        oakPine.setMaxY(treeMaxY);
-        WorldGenerator vanillaTreeDefinition = new WorldGenTrees(false);
-        DecoTree vanillaTrees = new DecoTree(vanillaTreeDefinition);
-        vanillaTrees.setStrengthFactorForLoops(3f);
-        vanillaTrees.setTreeType(DecoTree.TreeType.WORLDGEN);
-        vanillaTrees.setTreeCondition(DecoTree.TreeCondition.RANDOM_CHANCE);
-        vanillaTrees.setTreeConditionChance(2);
-        vanillaTrees.setMaxY(treeMaxY);
-        DecoHelperRandomSplit decoHelperRandomSplit = new DecoHelperRandomSplit();
-        decoHelperRandomSplit.decos = new DecoBase[]{oakPine, vanillaTrees};
-        decoHelperRandomSplit.chances = new int[]{12, 4};
-        this.addDeco(decoHelperRandomSplit);
+        // American Elm.
+        AppalachiaTree treeAmericanElm = new TreeUlmusAmericana();
+        this.addTree(treeAmericanElm);
+        DecoTree decoAmericanElm = new DecoTree(treeAmericanElm);
+        decoAmericanElm.setMaxY(treeMaxY);
+        this.addDeco(decoAmericanElm);
 
-        // Add some fallen trees of the oak and spruce variety (50/50 distribution).
-        DecoFallenTree decoFallenOak = new DecoFallenTree();
-        decoFallenOak.setLogCondition(DecoFallenTree.LogCondition.RANDOM_CHANCE);
-        decoFallenOak.setLogConditionChance(16);
-        decoFallenOak.setMaxY(80);
-        decoFallenOak.setLogBlock(AppalachiaBlockLog.getRandomLog().getDefaultState());
-        decoFallenOak.setLeavesBlock(AppalachiaBlockLeaves.getRandomLeaves().getDefaultState());
-        decoFallenOak.setMinSize(3);
-        decoFallenOak.setMaxSize(6);
-        DecoFallenTree decoFallenSpruce = new DecoFallenTree();
-        decoFallenSpruce.setLogCondition(DecoFallenTree.LogCondition.RANDOM_CHANCE);
-        decoFallenSpruce.setLogConditionChance(24);
-        decoFallenSpruce.setMaxY(80);
-        decoFallenSpruce.setLogBlock(AppalachiaBlockLog.getRandomLog().getDefaultState());
-        decoFallenSpruce.setLeavesBlock(AppalachiaBlockLeaves.getRandomLeaves().getDefaultState());
-        decoFallenSpruce.setMinSize(3);
-        decoFallenSpruce.setMaxSize(6);
-        DecoHelper5050 decoFallenTree = new DecoHelper5050(decoFallenOak, decoFallenSpruce);
-        this.addDeco(decoFallenTree, fallenTrees);
+        // Sycamore.
+        AppalachiaTree treeSycamore = new TreePlatanusOccidentalis();
+        this.addTree(treeSycamore);
+        DecoTree decoSycamore = new DecoTree(treeSycamore);
+        decoSycamore.setMaxY(treeMaxY);
+        this.addDeco(decoSycamore);
 
-        // Shrubs to fill in the blanks.
-        DecoShrub decoShrubOak = new DecoShrub();
-        decoShrubOak.setSize(1);
-        decoShrubOak.setMinY(64);
-        decoShrubOak.setMaxY(shrubMaxY);
-        decoShrubOak.setStrengthFactor(8f);
-        decoShrubOak.setChance(2);
-        this.addDeco(decoShrubOak);
+        // Persimmon.
+        AppalachiaTree treePersimmon = new TreeDiospyrosVirginiana();
+        this.addTree(treePersimmon);
+        DecoTree decoPersimmon = new DecoTree(treePersimmon);
+        decoPersimmon.setMaxY(treeMaxY);
+        this.addDeco(decoPersimmon);
 
-        DecoBoulder decoBoulder1 = new DecoBoulder();
-        decoBoulder1.setBoulderBlock(Blocks.COBBLESTONE.getDefaultState());
-        decoBoulder1.setMaxY(80);
-        decoBoulder1.setChance(16);
-        decoBoulder1.setStrengthFactor(1f);
-        this.addDeco(decoBoulder1);
+        // Blue Beech.
+        AppalachiaTree treeBlueBeech = new TreeCarpinusCaroliniana();
+        this.addTree(treeBlueBeech);
+        DecoTree decoBlueBeech = new DecoTree(treeBlueBeech);
+        decoBlueBeech.setMaxY(treeMaxY);
+        this.addDeco(decoBlueBeech);
 
-        // Fallen leaves.
-        DecoLayer decoFallenLeaves = new DecoLayer(AppalachiaBlockLeavesFallen.getRandomFallenLeaves().getDefaultState(), IAppalachiaBlockLeavesFallen.LAYERS);
-        decoFallenLeaves.setLoops(8);
-        this.addDeco(decoFallenLeaves);
+        // River Birch.
+        AppalachiaTree treeRiverBirch = new TreeBetulaNigra();
+        this.addTree(treeRiverBirch);
+        DecoTree decoRiverBirch = new DecoTree(treeRiverBirch);
+        decoRiverBirch.setMaxY(treeMaxY);
+        this.addDeco(decoRiverBirch);
 
-        // Only 1-block-tall flowers so we can see the trees better.
-        // And only white ones because they go with everything.
-        DecoFlowersRTG decoFlowers1 = new DecoFlowersRTG();
-        decoFlowers1.setFlowers(new int[]{3, 6});
-        decoFlowers1.setMaxY(shrubMaxY);
-        decoFlowers1.setStrengthFactor(6f);
-        this.addDeco(decoFlowers1);
+        // Shortleaf Pine.
+        AppalachiaTree treeShortleafPine = new TreePinusEchinata();
+        this.addTree(treeShortleafPine);
+        DecoTree decoShortleafPine = new DecoTree(treeShortleafPine);
+        decoShortleafPine.setMaxY(treeMaxY);
+        this.addDeco(decoShortleafPine);
 
-        // Very rare 2-block-tall flowers. (TODO: Replace these with Appalachian flora.)
-        DecoFlowersRTG decoFlowers2 = new DecoFlowersRTG();
-        decoFlowers2.setFlowers(new int[]{12, 13});
-        decoFlowers2.setMinY(63);
-        decoFlowers2.setMaxY(180);
-        decoFlowers2.setLoops(3);
-        this.addDeco(decoFlowers2);
-
-        // Ferns.
-        DecoGrass decoFern = new DecoGrass(2);
-        decoFern.setMinY(63);
-        decoFern.setMaxY(shrubMaxY);
-        decoFern.setLoops(2);
-        this.addDeco(decoFern);
-
-        // Poison ivy.
-        DecoVines decoPoisonIvy = new DecoVines();
-        decoPoisonIvy.setVineBlock(AppalachiaBlocks.vine_poison_ivy_01);
-        decoPoisonIvy.setStrengthFactor(12f);
-        decoPoisonIvy.setPropNorth(AppalachiaBlockVine.NORTH);
-        decoPoisonIvy.setPropEast(AppalachiaBlockVine.EAST);
-        decoPoisonIvy.setPropSouth(AppalachiaBlockVine.SOUTH);
-        decoPoisonIvy.setPropWest(AppalachiaBlockVine.WEST);
-        this.addDeco(decoPoisonIvy);
-
-        // Grass filler.
-        DecoGrass decoGrass = new DecoGrass();
-        decoGrass.setMinY(63);
-        decoGrass.setMaxY(shrubMaxY);
-        decoGrass.setStrengthFactor(24f);
-        this.addDeco(decoGrass);
+//        // Add some fallen trees of the oak and spruce variety (50/50 distribution).
+//        DecoFallenTree decoFallenOak = new DecoFallenTree();
+//        decoFallenOak.setLogCondition(DecoFallenTree.LogCondition.RANDOM_CHANCE);
+//        decoFallenOak.setLogConditionChance(16);
+//        decoFallenOak.setMaxY(80);
+//        decoFallenOak.setLogBlock(AppalachiaBlockLog.getRandomLog().getDefaultState());
+//        decoFallenOak.setLeavesBlock(AppalachiaBlockLeaves.getRandomLeaves().getDefaultState());
+//        decoFallenOak.setMinSize(3);
+//        decoFallenOak.setMaxSize(6);
+//        DecoFallenTree decoFallenSpruce = new DecoFallenTree();
+//        decoFallenSpruce.setLogCondition(DecoFallenTree.LogCondition.RANDOM_CHANCE);
+//        decoFallenSpruce.setLogConditionChance(24);
+//        decoFallenSpruce.setMaxY(80);
+//        decoFallenSpruce.setLogBlock(AppalachiaBlockLog.getRandomLog().getDefaultState());
+//        decoFallenSpruce.setLeavesBlock(AppalachiaBlockLeaves.getRandomLeaves().getDefaultState());
+//        decoFallenSpruce.setMinSize(3);
+//        decoFallenSpruce.setMaxSize(6);
+//        DecoHelper5050 decoFallenTree = new DecoHelper5050(decoFallenOak, decoFallenSpruce);
+//        this.addDeco(decoFallenTree, fallenTrees);
+//
+//        // Shrubs to fill in the blanks.
+//        DecoShrub decoShrubOak = new DecoShrub();
+//        decoShrubOak.setSize(1);
+//        decoShrubOak.setMinY(64);
+//        decoShrubOak.setMaxY(shrubMaxY);
+//        decoShrubOak.setStrengthFactor(8f);
+//        decoShrubOak.setChance(2);
+//        this.addDeco(decoShrubOak);
+//
+//        DecoBoulder decoBoulder1 = new DecoBoulder();
+//        decoBoulder1.setBoulderBlock(Blocks.COBBLESTONE.getDefaultState());
+//        decoBoulder1.setMaxY(80);
+//        decoBoulder1.setChance(16);
+//        decoBoulder1.setStrengthFactor(1f);
+//        this.addDeco(decoBoulder1);
+//
+//        // Fallen leaves.
+//        DecoLayer decoFallenLeaves = new DecoLayer(AppalachiaBlockLeavesFallen.getRandomFallenLeaves().getDefaultState(), IAppalachiaBlockLeavesFallen.LAYERS);
+//        decoFallenLeaves.setLoops(8);
+//        this.addDeco(decoFallenLeaves);
+//
+//        // Only 1-block-tall flowers so we can see the trees better.
+//        // And only white ones because they go with everything.
+//        DecoFlowersRTG decoFlowers1 = new DecoFlowersRTG();
+//        decoFlowers1.setFlowers(new int[]{3, 6});
+//        decoFlowers1.setMaxY(shrubMaxY);
+//        decoFlowers1.setStrengthFactor(6f);
+//        this.addDeco(decoFlowers1);
+//
+//        // Very rare 2-block-tall flowers. (TODO: Replace these with Appalachian flora.)
+//        DecoFlowersRTG decoFlowers2 = new DecoFlowersRTG();
+//        decoFlowers2.setFlowers(new int[]{12, 13});
+//        decoFlowers2.setMinY(63);
+//        decoFlowers2.setMaxY(180);
+//        decoFlowers2.setLoops(3);
+//        this.addDeco(decoFlowers2);
+//
+//        // Ferns.
+//        DecoGrass decoFern = new DecoGrass(2);
+//        decoFern.setMinY(63);
+//        decoFern.setMaxY(shrubMaxY);
+//        decoFern.setLoops(2);
+//        this.addDeco(decoFern);
+//
+//        // Poison ivy.
+//        DecoVines decoPoisonIvy = new DecoVines();
+//        decoPoisonIvy.setVineBlock(AppalachiaBlocks.vine_poison_ivy_01);
+//        decoPoisonIvy.setStrengthFactor(12f);
+//        decoPoisonIvy.setPropNorth(AppalachiaBlockVine.NORTH);
+//        decoPoisonIvy.setPropEast(AppalachiaBlockVine.EAST);
+//        decoPoisonIvy.setPropSouth(AppalachiaBlockVine.SOUTH);
+//        decoPoisonIvy.setPropWest(AppalachiaBlockVine.WEST);
+//        this.addDeco(decoPoisonIvy);
+//
+//        // Grass filler.
+//        DecoGrass decoGrass = new DecoGrass();
+//        decoGrass.setMinY(63);
+//        decoGrass.setMaxY(shrubMaxY);
+//        decoGrass.setStrengthFactor(24f);
+//        this.addDeco(decoGrass);
     }
 }
