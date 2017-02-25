@@ -72,9 +72,9 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
     @Override
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
     {
-        entityIn.motionX *= 0.5D;
-        entityIn.motionY *= 0.5D;
-        entityIn.motionZ *= 0.5D;
+        entityIn.motionX *= 0.75D;
+        entityIn.motionY *= 0.75D;
+        entityIn.motionZ *= 0.75D;
         entityIn.fallDistance = 0f;
     }
 

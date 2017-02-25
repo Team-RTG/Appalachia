@@ -1,23 +1,15 @@
 package appalachia.core;
 
-import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
 import net.minecraft.launchwrapper.IClassTransformer;
+
 import net.minecraftforge.fml.common.FMLLog;
+
+import com.google.common.collect.Lists;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.tree.AnnotationNode;
-import org.objectweb.asm.tree.ClassNode;
-import org.objectweb.asm.tree.FieldInsnNode;
-import org.objectweb.asm.tree.InsnList;
-import org.objectweb.asm.tree.InsnNode;
-import org.objectweb.asm.tree.LabelNode;
-import org.objectweb.asm.tree.LineNumberNode;
-import org.objectweb.asm.tree.LocalVariableNode;
-import org.objectweb.asm.tree.MethodInsnNode;
-import org.objectweb.asm.tree.MethodNode;
-import org.objectweb.asm.tree.VarInsnNode;
+import org.objectweb.asm.tree.*;
 
 /**
  * This class is dedicated to the Appalachia addon for RTG
@@ -163,9 +155,9 @@ public class AppalachiaTransformer implements IClassTransformer {
     //ONLY modify the name of this method if you rename it in the ASM above too.
     //This method is called by its exact name.
     public static void onEntityCollidedWithLeaves(Entity entity) {
-        entity.motionX *= 0.5D;
-        entity.motionY *= 0.5D;
-        entity.motionZ *= 0.5D;
+        entity.motionX *= 0.75D;
+        entity.motionY *= 0.75D;
+        entity.motionZ *= 0.75D;
         entity.fallDistance = 0f;
     }
 
