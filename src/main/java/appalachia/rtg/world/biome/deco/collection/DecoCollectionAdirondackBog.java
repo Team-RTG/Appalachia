@@ -1,5 +1,6 @@
 package appalachia.rtg.world.biome.deco.collection;
 
+import appalachia.rtg.world.biome.deco.DecoAPLTree;
 import appalachia.rtg.world.gen.feature.tree.rtg.*;
 
 import rtg.api.world.deco.DecoTree;
@@ -14,43 +15,87 @@ public class DecoCollectionAdirondackBog extends DecoCollectionBase {
 
     protected static int treeMaxY = 220;
     protected static int shrubMaxY = 220;
+
+    protected float redMapleNoiseMin = -5f;
+    protected float redMapleNoiseMax = -1f;
+    protected float hackberryNoiseMin = -1.75f;
+    protected float hackberryNoiseMax = 0f;
+    protected float americanElmNoiseMin = -2f;
+    protected float americanElmNoiseMax = 2f;
+    protected float blackSpruceNoiseMin = 1f;
+    protected float blackSpruceNoiseMax = 5f;
+    protected float tamarackNoiseMin = 2f;
+    protected float tamarackNoiseMax = 6f;
+
+    // Tends to return values between -3f to 5f, with some overflow.
+    private DecoTree.Distribution swampDistribution = new DecoTree.Distribution(100f, 6f, 0.8f);
     
     public DecoCollectionAdirondackBog(boolean fallenTrees) {
 
         // Red Maple.
         AppalachiaTree treeRedMaple = new TreeAcerRubrum();
         this.addTree(treeRedMaple);
-        DecoTree decoRedMaple = new DecoTree(treeRedMaple);
-        decoRedMaple.setMaxY(treeMaxY);
-        this.addDeco(decoRedMaple);
-
-        // Hackberry.
-        AppalachiaTree treeHackberry = new TreeCeltisOccidentalis();
-        this.addTree(treeHackberry);
-        DecoTree decoHackberry = new DecoTree(treeHackberry);
-        decoHackberry.setMaxY(treeMaxY);
-        this.addDeco(decoHackberry);
-
-        // American Elm.
-        AppalachiaTree treeAmericanElm = new TreeUlmusAmericana();
-        this.addTree(treeAmericanElm);
-        DecoTree decoAmericanElm = new DecoTree(treeAmericanElm);
-        decoAmericanElm.setMaxY(treeMaxY);
-        this.addDeco(decoAmericanElm);
-
-        // Black Spruce.
-        AppalachiaTree treeBlackSpruce = new TreePiceaMariana();
-        this.addTree(treeBlackSpruce);
-        DecoTree decoBlackSpruce = new DecoTree(treeBlackSpruce);
-        decoBlackSpruce.setMaxY(treeMaxY);
-        this.addDeco(decoBlackSpruce);
+        this.addDeco(new DecoAPLTree(treeRedMaple)
+            .setMaxY(treeMaxY)
+            .setDistribution(swampDistribution)
+            .setTreeCondition(DecoTree.TreeCondition.RANDOM_NOT_EQUALS_CHANCE)
+            .setTreeConditionNoise(redMapleNoiseMin)
+            .setTreeConditionNoise2(redMapleNoiseMax)
+            .setTreeConditionChance(3)
+            //.setLoops(2)
+        );
 
         // Tamarack.
         AppalachiaTree treeTamarack = new TreeLarixLaricina();
         this.addTree(treeTamarack);
-        DecoTree decoTamarack = new DecoTree(treeTamarack);
-        decoTamarack.setMaxY(treeMaxY);
-        this.addDeco(decoTamarack);
+        this.addDeco(new DecoAPLTree(treeTamarack)
+                .setMaxY(treeMaxY)
+                .setDistribution(swampDistribution)
+                .setTreeCondition(DecoTree.TreeCondition.RANDOM_CHANCE)
+                .setTreeConditionNoise(tamarackNoiseMin)
+                .setTreeConditionNoise2(tamarackNoiseMax)
+                .setTreeConditionChance(3)
+            //.setLoops(2)
+        );
+
+        // American Elm.
+        AppalachiaTree treeAmericanElm = new TreeUlmusAmericana();
+        this.addTree(treeAmericanElm);
+        this.addDeco(new DecoAPLTree(treeAmericanElm)
+                .setMaxY(treeMaxY)
+                .setDistribution(swampDistribution)
+                .setTreeCondition(DecoTree.TreeCondition.RANDOM_CHANCE)
+                .setTreeConditionNoise(americanElmNoiseMin)
+                .setTreeConditionNoise2(americanElmNoiseMax)
+                .setTreeConditionChance(5)
+            //.setLoops(2)
+        );
+
+        // Black Spruce.
+        AppalachiaTree treeBlackSpruce = new TreePiceaMariana();
+        this.addTree(treeBlackSpruce);
+        this.addDeco(new DecoAPLTree(treeBlackSpruce)
+                .setMaxY(treeMaxY)
+                .setDistribution(swampDistribution)
+                .setTreeCondition(DecoTree.TreeCondition.RANDOM_CHANCE)
+                .setTreeConditionNoise(blackSpruceNoiseMin)
+                .setTreeConditionNoise2(blackSpruceNoiseMax)
+                .setTreeConditionChance(3)
+            //.setLoops(2)
+        );
+
+        // Hackberry.
+        AppalachiaTree treeHackberry = new TreeCeltisOccidentalis();
+        this.addTree(treeHackberry);
+        this.addDeco(new DecoAPLTree(treeHackberry)
+                .setMaxY(treeMaxY)
+                .setDistribution(swampDistribution)
+                .setTreeCondition(DecoTree.TreeCondition.RANDOM_CHANCE)
+                .setTreeConditionNoise(hackberryNoiseMin)
+                .setTreeConditionNoise2(hackberryNoiseMax)
+                .setTreeConditionChance(6)
+            //.setLoops(1)
+        );
 
 //        // Add some fallen trees of the oak and spruce variety (50/50 distribution).
 //        DecoFallenTree decoFallenOak = new DecoFallenTree();
