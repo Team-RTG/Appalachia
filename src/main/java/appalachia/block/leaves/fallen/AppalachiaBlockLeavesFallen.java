@@ -250,9 +250,10 @@ public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlo
     public static class ColourHandler implements IBlockColor {
 
         private static final int leafColours[] = {
-            15924992, 16776960, 16773632, 16770560, 16767232, 16763904,
-            16760576, 16757504, 16754176, 16750848, 16747520, 16744448,
-            16741120, 16737792, 16734464, 16731392, 16728064, 16724736, 16721408
+            10094865, 10359311, 10623757, 10953739, 11218185, 11482888,
+            11812870, 12077316, 12341762, 12672001, 12279809, 12280577,
+            11563010, 11171075, 10844675, 10452483, 10125572, 9733124,
+            9406213
         };
 
         private Simplex simplex = new Simplex(17781);
