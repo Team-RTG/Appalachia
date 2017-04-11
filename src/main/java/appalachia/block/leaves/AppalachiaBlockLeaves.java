@@ -74,12 +74,11 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
     {
         if(entityIn instanceof EntityPlayer && ((EntityPlayer) entityIn).capabilities.isCreativeMode) {
             return;
-        } else {
+        }
             entityIn.motionX *= 0.75D;
             entityIn.motionY *= 0.75D;
             entityIn.motionZ *= 0.75D;
             entityIn.fallDistance = 0f;
-        }
     }
 
     @Override
