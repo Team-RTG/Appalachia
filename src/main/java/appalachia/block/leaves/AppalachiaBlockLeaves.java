@@ -32,6 +32,7 @@ import appalachia.block.BlockManager;
 import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
 import appalachia.util.LeavesConnectionChecker;
+import appalachia.util.PlayerUtil;
 import com.google.common.collect.Lists;
 import static appalachia.api.AppalachiaAPI.rand;
 
@@ -72,10 +73,14 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
     @Override
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
     {
-        entityIn.motionX *= 0.75D;
-        entityIn.motionY *= 0.75D;
-        entityIn.motionZ *= 0.75D;
-        entityIn.fallDistance = 0f;
+
+        if(PlayerUtil.isCreativeMode(entityIn)) {
+            return;
+        }
+            entityIn.motionX *= 0.75D;
+            entityIn.motionY *= 0.75D;
+            entityIn.motionZ *= 0.75D;
+            entityIn.fallDistance = 0f;
     }
 
     @Override
