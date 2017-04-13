@@ -2,6 +2,7 @@ package appalachia;
 
 import java.io.File;
 
+import appalachia.item.crafting.CraftingManager;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -54,6 +55,7 @@ public class Appalachia {
 
         BlockManager.registerBlocks();
         ItemManager.registerItems();
+        CraftingManager.registerRecipes();
         SoundManager.registerSounds();
 
         if (event.getSide().isClient()) {

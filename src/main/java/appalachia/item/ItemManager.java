@@ -35,9 +35,45 @@ public class ItemManager {
         AppalachiaItems.cookedBear.setUnlocalizedName(AppalachiaItems.cookedBear.getRegistryName().toString());
         AppalachiaItems.cookedBear.setCreativeTab(AppalachiaTabs.tabItem);
 
+        AppalachiaItems.ironPitchfork = new ItemPitchfork(Item.ToolMaterial.IRON, 6, 6);
+        AppalachiaItems.ironPitchfork.setRegistryName(ModInfo.MOD_ID, "iron_pitchfork");
+        AppalachiaItems.ironPitchfork.setUnlocalizedName(AppalachiaItems.ironPitchfork.getRegistryName().toString());
+        AppalachiaItems.ironPitchfork.setCreativeTab(AppalachiaTabs.tabTools);
+
+        AppalachiaItems.woodenPitchfork = new ItemPitchfork(Item.ToolMaterial.WOOD, 3, 3);
+        AppalachiaItems.woodenPitchfork.setRegistryName(ModInfo.MOD_ID, "wooden_pitchfork");
+        AppalachiaItems.woodenPitchfork.setUnlocalizedName(AppalachiaItems.woodenPitchfork.getRegistryName().toString());
+        AppalachiaItems.woodenPitchfork.setCreativeTab(AppalachiaTabs.tabTools);
+
+        AppalachiaItems.stonePitchfork = new ItemPitchfork(Item.ToolMaterial.STONE, 4, 4);
+        AppalachiaItems.stonePitchfork.setRegistryName(ModInfo.MOD_ID, "stone_pitchfork");
+        AppalachiaItems.stonePitchfork.setUnlocalizedName(AppalachiaItems.stonePitchfork.getRegistryName().toString());
+        AppalachiaItems.stonePitchfork.setCreativeTab(AppalachiaTabs.tabTools);
+
+        AppalachiaItems.diamondPitchfork = new ItemPitchfork(Item.ToolMaterial.DIAMOND, 12, 12);
+        AppalachiaItems.diamondPitchfork.setRegistryName(ModInfo.MOD_ID, "diamond_pitchfork");
+        AppalachiaItems.diamondPitchfork.setUnlocalizedName(AppalachiaItems.diamondPitchfork.getRegistryName().toString());
+        AppalachiaItems.diamondPitchfork.setCreativeTab(AppalachiaTabs.tabTools);
+
+        AppalachiaItems.goldPitchfork = new ItemPitchfork(Item.ToolMaterial.GOLD, 9, 9);
+        AppalachiaItems.goldPitchfork.setRegistryName(ModInfo.MOD_ID, "gold_pitchfork");
+        AppalachiaItems.goldPitchfork.setUnlocalizedName(AppalachiaItems.goldPitchfork.getRegistryName().toString());
+        AppalachiaItems.goldPitchfork.setCreativeTab(AppalachiaTabs.tabTools);
+
+        addTools();
         addFoodItems();
         registerModels();
         cookFood();
+    }
+
+    public static void addTools() {
+        appalachiaItems.add(AppalachiaItems.ironPitchfork);
+        appalachiaItems.add(AppalachiaItems.woodenPitchfork);
+        appalachiaItems.add(AppalachiaItems.stonePitchfork);
+        appalachiaItems.add(AppalachiaItems.diamondPitchfork);
+        appalachiaItems.add(AppalachiaItems.goldPitchfork);
+
+        appalachiaItems.forEach(GameRegistry::register);
     }
 
     public static void addFoodItems() {

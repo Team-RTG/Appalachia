@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 import javax.annotation.Nullable;
 
+import appalachia.util.PlayerUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -79,6 +80,9 @@ public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlo
     @Override
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
     {
+        if(PlayerUtil.isCreativeMode(entityIn)) {
+            return;
+        }
         entityIn.motionX *= 0.925D;
         entityIn.motionY *= 0.925D;
         entityIn.motionZ *= 0.925D;
