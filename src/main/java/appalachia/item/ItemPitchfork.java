@@ -92,8 +92,9 @@ public class ItemPitchfork extends ItemTool {
                     ? ((IPitchforkHarvestable) block).canPitchforkHarvest(world, pos, stack)
                     : block instanceof BlockBush) {
                 coords.add(pos);
-                if (!PlayerUtil.isCreativeMode(entity))
+                if (!PlayerUtil.isCreativeMode(entity)) {
                     setDamage(stack, getDamage(stack) + 1);
+                }
             }
         }
 
@@ -105,9 +106,9 @@ public class ItemPitchfork extends ItemTool {
             IBlockState state = world.getBlockState(currCoords);
             Block block = state.getBlock();
 
-            if (block instanceof IPitchforkHarvestable && ((IPitchforkHarvestable) block).hasSpecialPitchforkHarvest(world, currCoords, stack))
+            if (block instanceof IPitchforkHarvestable && ((IPitchforkHarvestable) block).hasSpecialPitchforkHarvest(world, currCoords, stack)) {
                 ((IPitchforkHarvestable) block).harvestByPitchfork(world, currCoords, stack);
-            else {
+            } else {
                 block.dropBlockAsItem(world, currCoords, state, 0);
                 world.setBlockToAir(currCoords);
             }
