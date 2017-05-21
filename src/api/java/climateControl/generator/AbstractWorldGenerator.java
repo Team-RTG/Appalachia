@@ -1,36 +1,21 @@
 
 package climateControl.generator;
 
-import climateControl.ClimateControl;
-import climateControl.api.ClimateControlRules;
-import climateControl.api.ClimateControlSettings;
-import climateControl.api.BiomeSettings;
-import climateControl.customGenLayer.GenLayerBiomeByClimate;
-import climateControl.customGenLayer.GenLayerCache;
-import climateControl.customGenLayer.GenLayerRandomBiomes;
-import climateControl.customGenLayer.GenLayerShoreCC;
-import climateControl.customGenLayer.GenLayerSmoothClimate;
-import climateControl.customGenLayer.GenLayerSubBiome;
-import climateControl.customGenLayer.GenLayerTemperClimate;
-import climateControl.genLayerPack.GenLayerAddIsland;
-import climateControl.genLayerPack.GenLayerEdge;
-import climateControl.genLayerPack.GenLayerHillsOneSix;
-import climateControl.genLayerPack.GenLayerOneSixBiome;
-import climateControl.genLayerPack.GenLayerRareBiome;
-import climateControl.genLayerPack.GenLayerRiver;
-import climateControl.genLayerPack.GenLayerRiverInit;
-import climateControl.genLayerPack.GenLayerSmooth;
-import climateControl.genLayerPack.GenLayerSwampRivers;
-import climateControl.genLayerPack.GenLayerVoronoiZoom;
-import climateControl.genLayerPack.GenLayerZoom;
 import java.util.ArrayList;
 import java.util.List;
+
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.GenLayerBiomeEdge;
 import net.minecraft.world.gen.layer.GenLayerRiverMix;
 import net.minecraft.world.gen.structure.MapGenVillage;
+
+import climateControl.api.BiomeSettings;
+import climateControl.api.ClimateControlRules;
+import climateControl.api.ClimateControlSettings;
+import climateControl.customGenLayer.*;
+import climateControl.genLayerPack.*;
 
 /**
  *
@@ -89,7 +74,7 @@ abstract public class AbstractWorldGenerator {
     abstract GenLayerRiverMix fromSeed(long worldSeed, WorldType worldType);
 
     public int rtgAwareRiverReduction(int baseReduction, WorldType worldType) {
-        if (worldType.getWorldTypeName().equalsIgnoreCase("RTG")) return 100;
+        if (worldType.getName().equalsIgnoreCase("RTG")) return 100;
         return baseReduction;
     }
     
