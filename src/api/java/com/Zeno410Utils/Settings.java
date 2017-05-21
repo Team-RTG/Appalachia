@@ -1,14 +1,13 @@
 package com.Zeno410Utils;
 
-import java.io.DataInput;
-import java.io.DataOutput;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
+import java.io.DataInput;
+import java.io.IOException;
+import java.io.DataOutput;
+import java.io.File;
 
 
 /**

@@ -44,6 +44,6 @@ public class GeographicraftPackage extends BiomePackage {
     }
     
     public void onInitBiomeGens(WorldType worldType) {
-        rtgWorld = (worldType.getWorldTypeName().equalsIgnoreCase("RTG"));
+        rtgWorld = (worldType.getName().equalsIgnoreCase("RTG"));
     }
 }

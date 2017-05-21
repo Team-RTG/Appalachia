@@ -39,7 +39,7 @@ public class EntityAIHoverAwayFromEntity extends EntityAIHoverBase {
 
     @Nullable
     private Entity getEntityWithin(@Nonnull BlockPos spot, float range) {
-        return entity.worldObj.findNearestEntityWithinAABB(living, new AxisAlignedBB(spot.add(-range, -range, -range), spot.add(range, range, range)), entity);
+        return entity.world.findNearestEntityWithinAABB(living, new AxisAlignedBB(spot.add(-range, -range, -range), spot.add(range, range, range)), entity);
     }
 
     @Override

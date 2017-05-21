@@ -102,7 +102,7 @@ public abstract class EntityAIHoverBase extends EntityAIBase {
 
     protected int getHeight() {
         @Nonnull BlockPos pos = new BlockPos(entity);
-        BlockPos nextBlock = WorldUtil.nextSolidBlock(entity.worldObj, pos, EnumFacing.DOWN);
+        BlockPos nextBlock = WorldUtil.nextSolidBlock(entity.world, pos, EnumFacing.DOWN);
 
         return (int) entity.posY - nextBlock.getY();
     }

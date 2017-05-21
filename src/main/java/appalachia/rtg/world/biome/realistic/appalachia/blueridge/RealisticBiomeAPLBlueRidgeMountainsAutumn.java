@@ -34,15 +34,13 @@ public class RealisticBiomeAPLBlueRidgeMountainsAutumn extends RealisticBiomeAPL
     @Override
     public void initConfig() {
 
+        this.getConfig().ALLOW_RIVERS.set(false);
+        this.getConfig().ALLOW_SCENIC_LAKES.set(false);
+
         this.getConfig().addProperty(this.getConfig().ALLOW_LOGS).set(true);
 
         this.getConfig().addProperty(this.getConfig().SURFACE_MIX_BLOCK).set("");
         this.getConfig().addProperty(this.getConfig().SURFACE_MIX_BLOCK_META).set(0);
-    }
-
-    @Override
-    public boolean noWaterFeatures() {
-        return true;
     }
 
     @Override
