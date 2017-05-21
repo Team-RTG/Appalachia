@@ -39,7 +39,7 @@ public class EntityBlackBear extends EntityAnimal {
 
     @Override
     public EntityAgeable createChild(EntityAgeable ageable) {
-        return new EntityBlackBear(this.worldObj);
+        return new EntityBlackBear(this.world);
     }
 
     @Override
@@ -128,13 +128,13 @@ public class EntityBlackBear extends EntityAnimal {
     public void onUpdate() {
         super.onUpdate();
 
-        if (this.worldObj.isRemote) {
+        if (this.world.isRemote) {
             this.field_189799_by = this.field_189800_bz;
 
             if (this.isStanding()) {
-                this.field_189800_bz = MathHelper.clamp_float(this.field_189800_bz + 1.0F, 0.0F, 6.0F);
+                this.field_189800_bz = MathHelper.clamp(this.field_189800_bz + 1.0F, 0.0F, 6.0F);
             } else {
-                this.field_189800_bz = MathHelper.clamp_float(this.field_189800_bz - 1.0F, 0.0F, 6.0F);
+                this.field_189800_bz = MathHelper.clamp(this.field_189800_bz - 1.0F, 0.0F, 6.0F);
             }
         }
 
@@ -198,7 +198,7 @@ public class EntityBlackBear extends EntityAnimal {
                 return false;
             } else {
                 if (super.shouldExecute()) {
-                    for (EntityBlackBear entityblackbear : EntityBlackBear.this.worldObj.getEntitiesWithinAABB(EntityBlackBear.class, EntityBlackBear.this.getEntityBoundingBox().expand(8.0D, 4.0D, 8.0D))) {
+                    for (EntityBlackBear entityblackbear : EntityBlackBear.this.world.getEntitiesWithinAABB(EntityBlackBear.class, EntityBlackBear.this.getEntityBoundingBox().expand(8.0D, 4.0D, 8.0D))) {
                         if (entityblackbear.isChild()) {
                             return true;
                         }

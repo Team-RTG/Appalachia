@@ -2,8 +2,6 @@ package appalachia.entity.decorators.FireFly;
 
 import javax.annotation.Nonnull;
 
-import appalachia.entity.decorators.EntityDecorator;
-import appalachia.entity.passive.EntityFireFly;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -17,6 +15,9 @@ import net.minecraft.world.BossInfo.Overlay;
 import net.minecraft.world.BossInfoServer;
 import net.minecraft.world.WorldServer;
 
+import appalachia.entity.decorators.EntityDecorator;
+import appalachia.entity.passive.EntityFireFly;
+
 public class EasterEggBoss implements EntityDecorator<EntityFireFly> {
     EntityFireFly fireFly;
     private final BossInfoServer bossInfo = new BossInfoServer(getBossName("BossFly™"), BossInfo.Color.YELLOW, Overlay.PROGRESS);
@@ -26,7 +27,7 @@ public class EasterEggBoss implements EntityDecorator<EntityFireFly> {
         fireFly.setIsBossMode(true);
         bossInfo.setName(getBossName(fireFly.getName()));
 
-        if(!fireFly.worldObj.isRemote) {
+        if(!fireFly.world.isRemote) {
             for (EntityPlayer player : ((WorldServer) fireFly.getEntityWorld()).getEntityTracker().getTrackingPlayers(fireFly)) {
                 bossInfo.addPlayer((EntityPlayerMP) player);
             }
@@ -37,7 +38,7 @@ public class EasterEggBoss implements EntityDecorator<EntityFireFly> {
     public void removeDecorator() {
         fireFly.setIsBossMode(false);
 
-        if(!fireFly.worldObj.isRemote) {
+        if(!fireFly.world.isRemote) {
             for (EntityPlayer player : ((WorldServer) fireFly.getEntityWorld()).getEntityTracker().getTrackingPlayers(fireFly)) {
                 bossInfo.removePlayer((EntityPlayerMP) player);
             }

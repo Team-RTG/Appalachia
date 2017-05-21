@@ -6,6 +6,7 @@
 
 package appalachia.rtg.world.gen.terrain;
 
+import rtg.api.util.noise.VoronoiResult;
 import rtg.api.world.RTGWorld;
 import rtg.api.world.terrain.heighteffect.HeightEffect;
 import rtg.api.world.terrain.TerrainBase;
@@ -28,9 +29,12 @@ public class VoronoiRidgingEffect extends HeightEffect {
     
     @Override
     public float added(RTGWorld rtgWorld, float x, float y) {
-         double[] points = rtgWorld.cell.octave(1).eval((float) x / pointWavelength, (float) y / pointWavelength);      
+         VoronoiResult points = rtgWorld.cell.octave(1).eval((float) x / pointWavelength, (float) y / pointWavelength);
          //double divisor = Math.max(minimumDivisor, points[1]);
-         float raise = (float) ((points[1] - points[0]) / points[1]);
+
+//         float raise = (float) ((points[1] - points[0]) / points[1]);
+        float raise = (float) (points.interiorValue());
+
          // make it cycle: multiply by cycles and get the distance from the nearest integer;
          
          raise *= cycles;
@@ -40,10 +44,17 @@ public class VoronoiRidgingEffect extends HeightEffect {
          raise = TerrainBase.blendedHillHeight(raise, floor);
          // smooth off the tops
          raise = 1f - TerrainBase.blendedHillHeight(1f - raise, 1f - cap);
+
+
          // if this will be too steep tamp it down
-         if (points[1]< minimumDivisor) {
-             raise = raise * (float)(points[1]/minimumDivisor);
-         }
+//         if (points[1]< minimumDivisor) {
+//             raise = raise * (float)(points[1]/minimumDivisor);
+//         }
+        if (points.nextDistance< minimumDivisor) {
+            raise = raise * (float)(points.nextDistance/minimumDivisor);
+        }
+
+
          return raise;
     }
 

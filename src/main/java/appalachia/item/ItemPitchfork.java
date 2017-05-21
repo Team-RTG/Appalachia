@@ -1,12 +1,8 @@
 package appalachia.item;
 
 import java.util.*;
-
 import javax.annotation.Nonnull;
 
-import appalachia.api.item.IPitchforkHarvestable;
-import appalachia.util.PlayerUtil;
-import com.google.common.collect.Sets;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.material.Material;
@@ -24,8 +20,13 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import appalachia.api.item.IPitchforkHarvestable;
+import appalachia.util.PlayerUtil;
+import com.google.common.collect.Sets;
 
 public class ItemPitchfork extends ItemTool {
 
@@ -73,9 +74,9 @@ public class ItemPitchfork extends ItemTool {
 
     @Override
     public void onUsingTick(ItemStack stack, EntityLivingBase player, int time) {
-        if (!player.worldObj.isRemote) {
+        if (!player.world.isRemote) {
             if (time != getMaxItemUseDuration(stack)) {
-                breakGrass(player.worldObj, stack, new BlockPos(player), player);
+                breakGrass(player.world, stack, new BlockPos(player), player);
             }
         }
     }

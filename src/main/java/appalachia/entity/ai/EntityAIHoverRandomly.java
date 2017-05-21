@@ -19,6 +19,6 @@ public class EntityAIHoverRandomly extends EntityAIHoverBase {
     @Override
     public boolean shouldExecute() {
 
-        return (entity.getRNG().nextInt(40) == 1 && entity.worldObj.getLightFromNeighbors(new BlockPos(entity)) < 8) || getHeight() > 1.3;
+        return (entity.getRNG().nextInt(40) == 1 && entity.world.getLightFromNeighbors(new BlockPos(entity)) < 8) || getHeight() > 1.3;
     }
 }

@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-import appalachia.util.PlayerUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -33,6 +32,7 @@ import appalachia.api.util.Simplex;
 import appalachia.block.BlockManager;
 import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
+import appalachia.util.PlayerUtil;
 import com.google.common.collect.Lists;
 
 public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlock, IShearable, IAppalachiaBlockLeavesFallen {
@@ -177,11 +177,11 @@ public class AppalachiaBlockLeavesFallen extends Block implements IAppalachiaBlo
         return false;
     }
 
-    @Override
-    public boolean isVisuallyOpaque() {
-
-        return false;
-    }
+//    @Override
+//    public boolean isVisuallyOpaque() {
+//
+//        return false;
+//    }
 
     @Override
     public float getBlockHardness(IBlockState state, World world, BlockPos pos) {
