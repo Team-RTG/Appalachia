@@ -1,0 +1,7 @@
+{
+    "parent": "appalachia:block/cross_double",
+    "textures": {
+        "cross": "appalachia:plants/plant_wild_indigo",
+        "cross1": "appalachia:plants/plant_wild_indigo_bloom"
+    }
+}

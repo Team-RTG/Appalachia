@@ -1,0 +1,6 @@
+{
+    "parent": "appalachia:block/cross_double",
+    "textures": {
+        "cross": "appalachia:plants/plant_tallgrass_wheatshort"
+    }
+}
