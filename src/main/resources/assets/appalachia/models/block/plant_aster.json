@@ -1,0 +1,7 @@
+{
+    "parent": "block/tinted_cross",
+    "textures": {
+        "cross": "blocks/plant_aster",
+        "cross2": "blocks/plant_aster_bloom"
+    }
+}
