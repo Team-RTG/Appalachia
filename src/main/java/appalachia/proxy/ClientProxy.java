@@ -1,5 +1,6 @@
 package appalachia.proxy;
 
+import appalachia.block.plants.AppalachiaBlockPlants;
 import net.minecraft.client.Minecraft;
 
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -44,6 +45,22 @@ public class ClientProxy extends CommonProxy {
     public static void registerColorHandlers(){
 
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockVine.ColourHandler(), AppalachiaBlocks.vine_poison_ivy_01);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlants.ColourHandler(), AppalachiaBlocks.plant_aster);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlants.ColourHandler(), AppalachiaBlocks.plant_chicory);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlants.ColourHandler(), AppalachiaBlocks.plant_daisy_fleabane);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlants.ColourHandler(), AppalachiaBlocks.plant_dandelion);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlants.ColourHandler(), AppalachiaBlocks.plant_field_garlic);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlants.ColourHandler(), AppalachiaBlocks.plant_garlic_mustard);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlants.ColourHandler(), AppalachiaBlocks.plant_laurel);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlants.ColourHandler(), AppalachiaBlocks.plant_sticktights);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlants.ColourHandler(), AppalachiaBlocks.plant_stinging_nettle);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlants.ColourHandler(), AppalachiaBlocks.plant_tallgrass);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlants.ColourHandler(), AppalachiaBlocks.plant_tallgrass_short);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlants.ColourHandler(), AppalachiaBlocks.plant_tallgrass_wheat);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlants.ColourHandler(), AppalachiaBlocks.plant_tallgrass_wheat_short);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlants.ColourHandler(), AppalachiaBlocks.plant_virginia_creeper);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlants.ColourHandler(), AppalachiaBlocks.plant_wild_indigo);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlants.ColourHandler(), AppalachiaBlocks.plant_wild_sumac);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // DYNAMICALLY-GENERATED CODE - PLEASE DO NOT MODIFY BELOW THIS LINE

@@ -1,6 +1,6 @@
 {
-    "parent": "appalachia:block/cross_double",
+    "parent": "block/tinted_cross",
     "textures": {
-        "cross": "appalachia:plants/plant_tallgrass_wheatshort"
+        "cross": "appalachia:plants/plant_virginia_creeper"
     }
 }

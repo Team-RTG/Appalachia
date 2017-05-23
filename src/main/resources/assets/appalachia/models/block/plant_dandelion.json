@@ -1,7 +1,7 @@
 {
     "parent": "appalachia:block/cross_double",
     "textures": {
-        "cross": "appalachia:plants/plant_daisy_fleabane",
-        "cross1": "appalachia:plants/plant_daisy_fleabane_bloom"
+        "cross": "appalachia:plants/plant_dandelion",
+        "cross1": "appalachia:plants/plant_dandelion_bloom"
     }
 }

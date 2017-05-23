@@ -23,6 +23,7 @@ import com.google.common.collect.Lists;
 public class ItemManager {
 
     public static ArrayList<Item> appalachiaItems = new ArrayList<>();
+    public static ArrayList<Item> appalachiaTools = new ArrayList<>();
 
     public static void registerItems() {
         AppalachiaItems.rawBear = new ItemFood(4, 0.3f, false);
@@ -67,13 +68,13 @@ public class ItemManager {
     }
 
     public static void addTools() {
-        appalachiaItems.add(AppalachiaItems.ironPitchfork);
-        appalachiaItems.add(AppalachiaItems.woodenPitchfork);
-        appalachiaItems.add(AppalachiaItems.stonePitchfork);
-        appalachiaItems.add(AppalachiaItems.diamondPitchfork);
-        appalachiaItems.add(AppalachiaItems.goldPitchfork);
+        appalachiaTools.add(AppalachiaItems.ironPitchfork);
+        appalachiaTools.add(AppalachiaItems.woodenPitchfork);
+        appalachiaTools.add(AppalachiaItems.stonePitchfork);
+        appalachiaTools.add(AppalachiaItems.diamondPitchfork);
+        appalachiaTools.add(AppalachiaItems.goldPitchfork);
 
-        appalachiaItems.forEach(GameRegistry::register);
+        appalachiaTools.forEach(GameRegistry::register);
     }
 
     public static void addFoodItems() {
@@ -90,6 +91,7 @@ public class ItemManager {
     @SideOnly(Side.CLIENT)
     public static void registerModels() {
         appalachiaItems.forEach(ItemManager::registerModel);
+        appalachiaTools.forEach(ItemManager::registerModel);
     }
 
     @SideOnly(Side.CLIENT)

@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "appalachia:plant_tallgrass_wheatshort" }
+        "normal": { "model": "appalachia:plant_tallgrass_short" }
     }
 }

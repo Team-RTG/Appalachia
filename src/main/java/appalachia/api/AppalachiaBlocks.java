@@ -5,6 +5,22 @@ import net.minecraft.block.Block;
 public class AppalachiaBlocks {
 
     public static Block vine_poison_ivy_01;
+    public static Block plant_aster;
+    public static Block plant_chicory;
+    public static Block plant_daisy_fleabane;
+    public static Block plant_dandelion;
+    public static Block plant_field_garlic;
+    public static Block plant_garlic_mustard;
+    public static Block plant_laurel;
+    public static Block plant_sticktights;
+    public static Block plant_stinging_nettle;
+    public static Block plant_tallgrass;
+    public static Block plant_tallgrass_short;
+    public static Block plant_tallgrass_wheat;
+    public static Block plant_tallgrass_wheat_short;
+    public static Block plant_virginia_creeper;
+    public static Block plant_wild_indigo;
+    public static Block plant_wild_sumac;
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // DYNAMICALLY-GENERATED CODE - PLEASE DO NOT MODIFY BELOW THIS LINE
