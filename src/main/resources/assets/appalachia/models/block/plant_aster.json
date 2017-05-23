@@ -1,7 +1,7 @@
 {
-    "parent": "block/tinted_cross",
+    "parent": "appalachia:block/cross_double",
     "textures": {
-        "cross": "blocks/plant_aster",
-        "cross2": "blocks/plant_aster_bloom"
+        "cross": "appalachia:plants/plant_aster",
+        "cross1": "appalachia:plants/plant_aster_bloom"
     }
 }

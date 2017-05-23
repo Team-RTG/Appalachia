@@ -1,6 +1,7 @@
 {
-    "parent": "item/generated",
+    "parent": "appalachia:block/cross_double",
     "textures": {
-        "layer0": "appalachia:blocks/vine_poison_ivy_01"
+        "cross": "appalachia:plants/plant_aster",
+        "cross1": "appalachia:plants/plant_aster_bloom"
     }
 }

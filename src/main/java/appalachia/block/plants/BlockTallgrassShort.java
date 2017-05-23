@@ -2,11 +2,11 @@ package appalachia.block.plants;
 
 import appalachia.block.IAppalachiaBlock;
 
-public class BlockTallgrass extends AppalachiaBlockPlants implements IAppalachiaBlock {
+public class BlockTallgrassShort extends AppalachiaBlockPlants implements IAppalachiaBlock {
 
-    public BlockTallgrass() {
+    public BlockTallgrassShort() {
 
-        super("plant.tallgrass");
+        super("plant.tallgrass_short");
     }
 
 }

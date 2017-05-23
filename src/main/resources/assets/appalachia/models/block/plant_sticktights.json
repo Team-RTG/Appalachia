@@ -1,7 +1,6 @@
 {
-    "parent": "appalachia:block/cross_double",
+    "parent": "block/tinted_cross",
     "textures": {
-        "cross": "appalachia:plants/plant_laurel",
-        "cross1": "appalachia:plants/plant_laurel_bloom"
+        "cross": "appalachia:plants/plant_sticktights"
     }
 }

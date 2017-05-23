@@ -8,4 +8,5 @@ public class BlockAster extends AppalachiaBlockPlants implements IAppalachiaBloc
 
         super("plant.aster");
     }
+
 }

@@ -1,7 +1,7 @@
 {
     "parent": "appalachia:block/cross_double",
     "textures": {
-        "cross": "appalachia:plants/plant_aster",
-        "cross1": "appalachia:plants/plant_aster_bloom"
+        "cross": "appalachia:plants/plant_chicory",
+        "cross1": "appalachia:plants/plant_chicory_bloom"
     }
 }

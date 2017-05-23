@@ -32,7 +32,23 @@ entity.appalachia.FireFly.name=Fire Fly
 entity.FireFly.name=Fire Fly
 
 #Blocks
-tile.vine.poison_ivy.01.name=Poison Ivy (01)
+tile.vine.poison_ivy.01.name=Poison Ivy
+tile.plant.aster.name=Aster
+tile.plant.chicory.name=Chicory
+tile.plant.daisy_fleabane.name=Daisy Fleabane
+tile.plant.dandelion.name=Dandelion
+tile.plant.field_garlic.name=Field Garlic
+tile.plant.garlic_mustard.name=Garlic Mustard
+tile.plant.laurel.name=Laurel
+tile.plant.sticktights.name=Sticktights
+tile.plant.stinging_nettle.name=Stinging Nettle
+tile.plant.tallgrass.name=Tallgrass
+tile.plant.tallgrass_short.name=Tallgrass Short
+tile.plant.tallgrass_wheat.name=Tallgrass Wheat
+tile.plant.tallgrass_wheat_short.name=Tallgrass Short Wheat
+tile.plant.virginia_creeper.name=Virginia Creeper
+tile.plant.wild_indigo.name=Wild Indigo
+tile.plant.wild_sumac.name=Wild Sumac
 
 #Items
 

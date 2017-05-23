@@ -2,6 +2,7 @@ package appalachia.block;
 
 import java.util.ArrayList;
 
+import appalachia.block.plants.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockSapling;
@@ -67,6 +68,10 @@ public class BlockManager {
 
     };
     public static ArrayList<Block> appalachiaSaplings = new ArrayList<Block>() {
+
+    };
+
+    public static ArrayList<Block> appalachiaPlants = new ArrayList<Block>() {
 
     };
 
@@ -501,6 +506,28 @@ public class BlockManager {
 
         addSaplings();
 
+        //Plants
+
+        AppalachiaBlocks.plant_aster = new BlockAster();
+        AppalachiaBlocks.plant_chicory = new BlockChicory();
+        AppalachiaBlocks.plant_daisy_fleabane = new BlockDaisyFleabane();
+        AppalachiaBlocks.plant_dandelion = new BlockDandelion();
+        AppalachiaBlocks.plant_field_garlic = new BlockFieldGarlic();
+        AppalachiaBlocks.plant_garlic_mustard = new BlockGarlicMustard();
+        AppalachiaBlocks.plant_laurel = new BlockLaurel();
+        AppalachiaBlocks.plant_sticktights = new BlockSticktights();
+        AppalachiaBlocks.plant_stinging_nettle = new BlockStingingNettle();
+        AppalachiaBlocks.plant_tallgrass = new BlockTallgrass();
+        AppalachiaBlocks.plant_tallgrass_short = new BlockTallgrassShort();
+        AppalachiaBlocks.plant_tallgrass_wheat = new BlockTallgrassWheat();
+        AppalachiaBlocks.plant_tallgrass_wheat_short = new BlockTallgrassWheatShort();
+        AppalachiaBlocks.plant_virginia_creeper = new BlockVirginiaCreeper();
+        AppalachiaBlocks.plant_wild_indigo = new BlockWildIndigo();
+        AppalachiaBlocks.plant_wild_sumac = new BlockWildSumac();
+
+
+        addPlants();
+
         addAppalachiaBlocks();
 
         registerBlocksAndItemBlocks();
@@ -934,6 +961,26 @@ public class BlockManager {
 
     }
 
+    private static void addPlants() {
+
+        appalachiaPlants.add(AppalachiaBlocks.plant_aster);
+        appalachiaPlants.add(AppalachiaBlocks.plant_chicory);
+        appalachiaPlants.add(AppalachiaBlocks.plant_daisy_fleabane);
+        appalachiaPlants.add(AppalachiaBlocks.plant_dandelion);
+        appalachiaPlants.add(AppalachiaBlocks.plant_field_garlic);
+        appalachiaPlants.add(AppalachiaBlocks.plant_garlic_mustard);
+        appalachiaPlants.add(AppalachiaBlocks.plant_laurel);
+        appalachiaPlants.add(AppalachiaBlocks.plant_sticktights);
+        appalachiaPlants.add(AppalachiaBlocks.plant_stinging_nettle);
+        appalachiaPlants.add(AppalachiaBlocks.plant_tallgrass);
+        appalachiaPlants.add(AppalachiaBlocks.plant_tallgrass_short);
+        appalachiaPlants.add(AppalachiaBlocks.plant_tallgrass_wheat);
+        appalachiaPlants.add(AppalachiaBlocks.plant_tallgrass_wheat_short);
+        appalachiaPlants.add(AppalachiaBlocks.plant_virginia_creeper);
+        appalachiaPlants.add(AppalachiaBlocks.plant_wild_indigo);
+        appalachiaPlants.add(AppalachiaBlocks.plant_wild_sumac);
+    }
+
     private static void addAppalachiaBlocks() {
 
         for (int i = 0; i < appalachiaVines.size(); i++) {
@@ -1049,6 +1096,13 @@ public class BlockManager {
             GameRegistry.register(block);
             GameRegistry.register(new ItemBlock(block), block.getRegistryName());
         }
+
+        for (int i = 0; i < appalachiaPlants.size(); i++) {
+            AppalachiaBlockPlants block = (AppalachiaBlockPlants)appalachiaPlants.get(i);
+            block.setRegistryName(block.registryName());
+            GameRegistry.register(block);
+            GameRegistry.register(new ItemBlock(block), block.getRegistryName());
+        }
     }
 
     private static void registerOres() {
@@ -1092,6 +1146,10 @@ public class BlockManager {
         for (int i = 0; i < appalachiaSaplings.size(); i++) {
             OreDictionary.registerOre("treeSapling", new ItemStack(appalachiaSaplings.get(i), 1, OreDictionary.WILDCARD_VALUE));
         }
+
+        for (int i = 0; i < appalachiaPlants.size(); i++) {
+            OreDictionary.registerOre("plant", new ItemStack(appalachiaPlants.get(i), 1, OreDictionary.WILDCARD_VALUE));
+        }
     }
 
     private static void setFireInfo() {
@@ -1130,6 +1188,10 @@ public class BlockManager {
 
         for (int i = 0; i < appalachiaSaplings.size(); i++) {
             Blocks.FIRE.setFireInfo(appalachiaSaplings.get(i), 20, 60);
+        }
+
+        for (int i = 0; i < appalachiaPlants.size(); i++) {
+            Blocks.FIRE.setFireInfo(appalachiaPlants.get(i), 20, 60);
         }
     }
 
@@ -1215,6 +1277,10 @@ public class BlockManager {
         for (int i = 0; i < appalachiaSaplings.size(); i++) {
             registerModel(appalachiaSaplings.get(i));
             ModelLoader.setCustomStateMapper(appalachiaSaplings.get(i), new StateMap.Builder().ignore(BlockSapling.TYPE, BlockSapling.STAGE).build());
+        }
+
+        for (int i = 0; i < appalachiaPlants.size(); i++) {
+            registerModel(appalachiaPlants.get(i));
         }
     }
 

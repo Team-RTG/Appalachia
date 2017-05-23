@@ -2,11 +2,11 @@ package appalachia.block.plants;
 
 import appalachia.block.IAppalachiaBlock;
 
-public class BlockLaurel extends AppalachiaBlockPlants implements IAppalachiaBlock {
+public class BlockStingingNettle extends AppalachiaBlockPlants implements IAppalachiaBlock {
 
-    public BlockLaurel() {
+    public BlockStingingNettle() {
 
-        super("plant.laurel");
+        super("plant.stinging_nettle");
     }
 
 }

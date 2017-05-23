@@ -1,7 +1,7 @@
 {
     "parent": "appalachia:block/cross_double",
     "textures": {
-        "cross": "appalachia:plants/plant_garlic_mustard",
-        "cross1": "appalachia:plants/plant_garlic_mustard_bloom"
+        "cross": "appalachia:plants/plant_laurel",
+        "cross1": "appalachia:plants/plant_laurel_bloom"
     }
 }
