@@ -73,6 +73,11 @@ public abstract class RealisticBiomeAPLBase implements IRealisticBiome {
     }
 
     @Override
+    public boolean hasConfig() {
+        return true;
+    }
+
+    @Override
     public String modSlug() {
         return "appalachia";
     }
