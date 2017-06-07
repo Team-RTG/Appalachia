@@ -1098,7 +1098,7 @@ public class BlockManager {
         }
 
         for (int i = 0; i < appalachiaPlants.size(); i++) {
-            AppalachiaBlockPlants block = (AppalachiaBlockPlants)appalachiaPlants.get(i);
+            AppalachiaBlockPlant block = (AppalachiaBlockPlant)appalachiaPlants.get(i);
             block.setRegistryName(block.registryName());
             GameRegistry.register(block);
             GameRegistry.register(new ItemBlock(block), block.getRegistryName());

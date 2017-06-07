@@ -18,11 +18,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class AppalachiaBlockPlants extends BlockBush implements IAppalachiaBlock {
+public class AppalachiaBlockPlant extends BlockBush implements IAppalachiaBlock {
 
     private String slug;
 
-    public AppalachiaBlockPlants(String unlocalizedName) {
+    public AppalachiaBlockPlant(String unlocalizedName) {
 
         this.setUnlocalizedName(unlocalizedName);
         this.setSoundType(SoundType.PLANT);
