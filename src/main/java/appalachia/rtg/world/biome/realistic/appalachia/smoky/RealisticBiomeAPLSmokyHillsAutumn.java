@@ -16,7 +16,7 @@ import rtg.api.config.BiomeConfig;
 import rtg.api.util.BlockUtil;
 import rtg.api.util.CliffCalculator;
 import rtg.api.util.noise.OpenSimplexNoise;
-import rtg.api.world.RTGWorld;
+import rtg.api.world.IRTGWorld;
 import rtg.api.world.surface.SurfaceBase;
 import rtg.api.world.terrain.TerrainBase;
 
@@ -68,10 +68,10 @@ public class RealisticBiomeAPLSmokyHillsAutumn extends RealisticBiomeAPLBase {
         }
 
         @Override
-        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, RTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
+        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, IRTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
 
-            Random rand = rtgWorld.rand;
-            OpenSimplexNoise simplex = rtgWorld.simplex;
+            Random rand = rtgWorld.rand();
+            OpenSimplexNoise simplex = rtgWorld.simplex();
             float c = CliffCalculator.calc(x, z, noise);
             boolean cliff = c > 2.3f ? true : false; // 2.3f because higher thresholds result in fewer stone cliffs (more grassy cliffs)
 
@@ -120,7 +120,7 @@ public class RealisticBiomeAPLSmokyHillsAutumn extends RealisticBiomeAPLBase {
     @Override
     public void initDecos() {
 
-        this.addDecoCollection(new DecoCollectionSmokyHills(this.getConfig().ALLOW_LOGS.get()));
+        this.addDecoCollection(new DecoCollectionSmokyHills(this.getConfig()));
     }
 
     @Override

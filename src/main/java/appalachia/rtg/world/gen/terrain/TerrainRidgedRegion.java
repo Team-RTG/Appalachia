@@ -6,7 +6,7 @@
 
 package appalachia.rtg.world.gen.terrain;
 
-import rtg.api.world.RTGWorld;
+import rtg.api.world.IRTGWorld;
 import rtg.api.world.terrain.TerrainBase;
 import rtg.api.world.terrain.heighteffect.HeightEffect;
 import rtg.api.world.terrain.heighteffect.HeightVariation;
@@ -71,8 +71,8 @@ public class TerrainRidgedRegion extends TerrainBase {
         public float groundNoise = 6;
     }
     @Override
-    public float generateNoise(RTGWorld rtgw,  int x, int y, float border, float river) {
-        return riverized(totalHeight.added(rtgw, x, y)+base+TerrainBase.groundNoise(x, y, river, rtgw.simplex),river);
+    public float generateNoise(IRTGWorld rtgw, int x, int y, float border, float river) {
+        return riverized(totalHeight.added(rtgw, x, y)+base+TerrainBase.groundNoise(x, y, river, rtgw.simplex()),river);
     }
 
 }

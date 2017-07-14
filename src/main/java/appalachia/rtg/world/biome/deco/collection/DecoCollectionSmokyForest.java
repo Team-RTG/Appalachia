@@ -2,6 +2,7 @@ package appalachia.rtg.world.biome.deco.collection;
 
 import appalachia.rtg.world.gen.feature.tree.rtg.*;
 
+import rtg.api.config.BiomeConfig;
 import rtg.api.world.deco.DecoTree;
 import rtg.api.world.deco.collection.DecoCollectionBase;
 
@@ -16,7 +17,9 @@ public class DecoCollectionSmokyForest extends DecoCollectionBase {
     protected static int treeMaxY = 220;
     protected static int shrubMaxY = 220;
 
-    public DecoCollectionSmokyForest(boolean fallenTrees) {
+    public DecoCollectionSmokyForest(BiomeConfig config) {
+
+        super(config);
 
         // American Sweetgum.
         AppalachiaTree treeAmericanSweetgum = new TreeLiquidambarStyraciflua();

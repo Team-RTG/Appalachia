@@ -10,6 +10,7 @@ import appalachia.block.vines.AppalachiaBlockVine;
 import appalachia.rtg.world.biome.deco.DecoAPLTree;
 import appalachia.rtg.world.gen.feature.tree.rtg.*;
 
+import rtg.api.config.BiomeConfig;
 import rtg.api.world.deco.*;
 import rtg.api.world.deco.collection.DecoCollectionBase;
 
@@ -37,7 +38,9 @@ public class DecoCollectionAdirondackBog extends DecoCollectionBase {
     // Tends to return values between -3f to 5f, with some overflow.
     private DecoTree.Distribution swampDistribution = new DecoTree.Distribution(100f, 6f, 0.8f);
     
-    public DecoCollectionAdirondackBog(boolean fallenTrees) {
+    public DecoCollectionAdirondackBog(BiomeConfig config) {
+
+        super(config);
 
         // Red Maple.
         AppalachiaTree treeRedMaple = new TreeAcerRubrum();
@@ -112,7 +115,7 @@ public class DecoCollectionAdirondackBog extends DecoCollectionBase {
         decoFallenTrees.setRandomLogBlocks(this.treeLogs().toArray(new IBlockState[0]));
         decoFallenTrees.setMinSize(3);
         decoFallenTrees.setMaxSize(5);
-        this.addDeco(decoFallenTrees, fallenTrees);
+        this.addDeco(decoFallenTrees);
 
         // Shrubs to fill in the blanks.
         DecoShrub decoShrub = new DecoShrub();

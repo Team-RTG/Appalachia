@@ -2,6 +2,7 @@ package appalachia.rtg.world.biome.deco.collection;
 
 import appalachia.rtg.world.gen.feature.tree.rtg.*;
 
+import rtg.api.config.BiomeConfig;
 import rtg.api.world.deco.DecoTree;
 import rtg.api.world.deco.collection.DecoCollectionBase;
 
@@ -15,7 +16,9 @@ public class DecoCollectionBlueRidgeBog extends DecoCollectionBase {
     protected static int treeMaxY = 220;
     protected static int shrubMaxY = 220;
     
-    public DecoCollectionBlueRidgeBog(boolean fallenTrees) {
+    public DecoCollectionBlueRidgeBog(BiomeConfig config) {
+
+        super(config);
 
         // Red Maple.
         AppalachiaTree treeRedMaple = new TreeAcerRubrum();

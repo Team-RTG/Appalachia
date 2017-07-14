@@ -18,6 +18,9 @@ import rtg.api.world.biome.IRealisticBiome;
 import rtg.api.world.biome.RealisticBiomeManager;
 import rtg.api.world.deco.DecoBase;
 import rtg.api.world.gen.feature.tree.rtg.TreeRTG;
+import rtg.api.world.surface.SurfaceBase;
+import rtg.api.world.surface.SurfaceGeneric;
+import rtg.api.world.terrain.TerrainBase;
 
 public abstract class RealisticBiomeAPLBase implements IRealisticBiome {
 
@@ -61,6 +64,10 @@ public abstract class RealisticBiomeAPLBase implements IRealisticBiome {
 
     protected ArrayList<DecoBase> decos;
     protected ArrayList<TreeRTG> rtgTrees;
+
+    protected TerrainBase terrain;
+    protected SurfaceBase surface;
+    protected SurfaceBase surfaceGeneric;
 
     public RealisticBiomeAPLBase(Biome b, Biome riverbiome) {
 
@@ -269,5 +276,20 @@ public abstract class RealisticBiomeAPLBase implements IRealisticBiome {
                 RealisticBiomeManager.addBiome(aplSmokyBogAutumn);
             }
         }
+    }
+
+    @Override
+    public TerrainBase terrain() {
+        return this.initTerrain();
+    }
+
+    @Override
+    public SurfaceBase surface() {
+        return this.initSurface();
+    }
+
+    @Override
+    public SurfaceBase surfaceGeneric() {
+        return new SurfaceGeneric(this.getConfig(), this.baseBiome().topBlock, this.baseBiome().fillerBlock);
     }
 }
