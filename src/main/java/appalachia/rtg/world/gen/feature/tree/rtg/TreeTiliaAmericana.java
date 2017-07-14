@@ -10,6 +10,8 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Tilia Americana (American Basswood)
  * <p>
@@ -27,6 +29,10 @@ public class TreeTiliaAmericana extends AppalachiaTree {
     public TreeTiliaAmericana() {
 
         super();
+        this.setLogBlock(AppalachiaBlocks.log_american_basswood_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_american_basswood_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_american_basswood_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_american_basswood_01.getDefaultState());
 
         this.trunkSize = 2;
         this.validGroundBlocks = new ArrayList<IBlockState>(Arrays.asList(Blocks.GRASS.getDefaultState(), Blocks.DIRT.getDefaultState()));

@@ -1,0 +1,6 @@
+{
+    "parent": "block/tinted_cross",
+    "textures": {
+        "cross": "appalachia:plants/plant_tallgrass_wheat_short"
+    }
+}

@@ -1,5 +1,6 @@
 package appalachia.proxy;
 
+import appalachia.block.plants.AppalachiaBlockPlant;
 import net.minecraft.client.Minecraft;
 
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -44,10 +45,30 @@ public class ClientProxy extends CommonProxy {
     public static void registerColorHandlers(){
 
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockVine.ColourHandler(), AppalachiaBlocks.vine_poison_ivy_01);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlant.ColourHandler(), AppalachiaBlocks.plant_aster);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlant.ColourHandler(), AppalachiaBlocks.plant_chicory);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlant.ColourHandler(), AppalachiaBlocks.plant_daisy_fleabane);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlant.ColourHandler(), AppalachiaBlocks.plant_dandelion);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlant.ColourHandler(), AppalachiaBlocks.plant_field_garlic);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlant.ColourHandler(), AppalachiaBlocks.plant_garlic_mustard);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlant.ColourHandler(), AppalachiaBlocks.plant_laurel);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlant.ColourHandler(), AppalachiaBlocks.plant_sticktights);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlant.ColourHandler(), AppalachiaBlocks.plant_stinging_nettle);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlant.ColourHandler(), AppalachiaBlocks.plant_tallgrass);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlant.ColourHandler(), AppalachiaBlocks.plant_tallgrass_short);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlant.ColourHandler(), AppalachiaBlocks.plant_tallgrass_wheat);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlant.ColourHandler(), AppalachiaBlocks.plant_tallgrass_wheat_short);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlant.ColourHandler(), AppalachiaBlocks.plant_virginia_creeper);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlant.ColourHandler(), AppalachiaBlocks.plant_wild_indigo);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockPlant.ColourHandler(), AppalachiaBlocks.plant_wild_sumac);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // DYNAMICALLY-GENERATED CODE - PLEASE DO NOT MODIFY BELOW THIS LINE
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_american_basswood_01);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_american_basswood_01_fallen);
 
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_american_beech_01);
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_american_beech_01_fallen);
@@ -58,8 +79,14 @@ public class ClientProxy extends CommonProxy {
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_american_elm_01);
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_american_elm_01_fallen);
 
-        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_ash_01);
-        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_ash_01_fallen);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_american_sweetgum_01);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_american_sweetgum_01_fallen);
+
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_atlantic_white_cedar_01);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_atlantic_white_cedar_01_fallen);
+
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_balsam_fir_01);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_balsam_fir_01_fallen);
 
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_bitternut_hickory_01);
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_bitternut_hickory_01_fallen);
@@ -67,17 +94,20 @@ public class ClientProxy extends CommonProxy {
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_black_cherry_01);
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_black_cherry_01_fallen);
 
-        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_black_gum_01);
-        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_black_gum_01_fallen);
-
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_black_locust_01);
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_black_locust_01_fallen);
 
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_black_oak_01);
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_black_oak_01_fallen);
 
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_black_spruce_01);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_black_spruce_01_fallen);
+
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_black_walnut_01);
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_black_walnut_01_fallen);
+
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_blackgum_01);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_blackgum_01_fallen);
 
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_blue_beech_01);
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_blue_beech_01_fallen);
@@ -88,11 +118,11 @@ public class ClientProxy extends CommonProxy {
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_buckeye_01);
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_buckeye_01_fallen);
 
-        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_cedar_01);
-        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_cedar_01_fallen);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_eastern_hemlock_01);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_eastern_hemlock_01_fallen);
 
-        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_dogwood_01);
-        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_dogwood_01_fallen);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_flowering_dogwood_01);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_flowering_dogwood_01_fallen);
 
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_hackberry_01);
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_hackberry_01_fallen);
@@ -100,14 +130,20 @@ public class ClientProxy extends CommonProxy {
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_honey_locust_01);
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_honey_locust_01_fallen);
 
-        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_hop_hornbeam_01);
-        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_hop_hornbeam_01_fallen);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_hophornbeam_01);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_hophornbeam_01_fallen);
+
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_loblolly_pine_01);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_loblolly_pine_01_fallen);
 
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_persimmon_01);
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_persimmon_01_fallen);
 
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_pignut_hickory_01);
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_pignut_hickory_01_fallen);
+
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_red_ash_01);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_red_ash_01_fallen);
 
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_red_elm_01);
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_red_elm_01_fallen);
@@ -117,6 +153,9 @@ public class ClientProxy extends CommonProxy {
 
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_red_oak_01);
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_red_oak_01_fallen);
+
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_red_spruce_01);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_red_spruce_01_fallen);
 
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_river_birch_01);
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_river_birch_01_fallen);
@@ -136,6 +175,9 @@ public class ClientProxy extends CommonProxy {
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_sycamore_01);
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_sycamore_01_fallen);
 
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_tamarack_01);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_tamarack_01_fallen);
+
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_tulip_poplar_01);
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_tulip_poplar_01_fallen);
 
@@ -150,6 +192,8 @@ public class ClientProxy extends CommonProxy {
 
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeaves.ColourHandler(), AppalachiaBlocks.leaves_yellow_birch_01);
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new AppalachiaBlockLeavesFallen.ColourHandler(), AppalachiaBlocks.leaves_yellow_birch_01_fallen);
+
+
 
 
     }

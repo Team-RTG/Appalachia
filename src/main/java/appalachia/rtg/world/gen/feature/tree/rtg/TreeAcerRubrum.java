@@ -10,6 +10,8 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Acer Rubrum (Red Maple)
  * <p>
@@ -24,6 +26,10 @@ public class TreeAcerRubrum extends AppalachiaTree {
     public TreeAcerRubrum() {
 
         super();
+        this.setLogBlock(AppalachiaBlocks.log_red_maple_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_red_maple_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_red_maple_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_red_maple_01.getDefaultState());
 
         this.validGroundBlocks = new ArrayList<IBlockState>(Arrays.asList(Blocks.GRASS.getDefaultState(), Blocks.DIRT.getDefaultState()));
     }

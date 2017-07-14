@@ -1,6 +1,0 @@
-{
-    "parent": "block/fence_inventory",
-    "textures": {
-        "texture": "appalachia:blocks/planks_black_gum_01"
-    }
-}

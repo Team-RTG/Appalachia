@@ -28,9 +28,9 @@ public class GeographicraftSettings extends BiomeSettings {
         super("Appalachia");
     }
 
-    public void registerBiomeWithTypes(Biome biome, String name, int weight, BiomeManager.BiomeType btype, BiomeDictionary.Type... types) {
+    public void registerBiomeWithTypes(Biome biome, String name, AppalachiaBiomeGroup group, int weight, BiomeManager.BiomeType btype, BiomeDictionary.Type... types) {
         // creating the biome
-        Element gcBiome = new Element(biome.getBiomeName(), Biome.getIdForBiome(biome), weight, false, ClimateDistribution.COOL.name());
+        Element gcBiome = new Element(biome.getBiomeName(), Biome.getIdForBiome(biome), weight, false, ClimateDistribution.MEDIUM.name());
     }
     
     public GeographicraftSettings copy() {

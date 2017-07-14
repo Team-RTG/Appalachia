@@ -16,10 +16,10 @@ import rtg.api.config.BiomeConfig;
 import rtg.api.util.BlockUtil;
 import rtg.api.util.CliffCalculator;
 import rtg.api.util.noise.OpenSimplexNoise;
-import rtg.api.world.RTGWorld;
-import rtg.world.biome.realistic.RealisticBiomeBase;
-import rtg.world.gen.surface.SurfaceBase;
-import rtg.world.gen.terrain.TerrainBase;
+import rtg.api.world.IRTGWorld;
+import rtg.api.world.surface.SurfaceBase;
+import rtg.api.world.terrain.TerrainBase;
+
 
 public class RealisticBiomeAPLSmokyForestAutumn extends RealisticBiomeAPLBase {
 
@@ -42,8 +42,7 @@ public class RealisticBiomeAPLSmokyForestAutumn extends RealisticBiomeAPLBase {
 
     @Override
     public TerrainBase initTerrain() {
-
-        return RealisticBiomeBase.getBiome(Biome.getIdForBiome(AppalachiaBiomes.smokyForest)).getTerrain();
+        return RealisticBiomeAPLBase.aplSmokyForest.initTerrain();
     }
 
     @Override
@@ -69,10 +68,10 @@ public class RealisticBiomeAPLSmokyForestAutumn extends RealisticBiomeAPLBase {
         }
 
         @Override
-        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, RTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
+        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, IRTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
 
-            Random rand = rtgWorld.rand;
-            OpenSimplexNoise simplex = rtgWorld.simplex;
+            Random rand = rtgWorld.rand();
+            OpenSimplexNoise simplex = rtgWorld.simplex();
             float c = CliffCalculator.calc(x, z, noise);
             boolean cliff = c > 2.3f ? true : false; // 2.3f because higher thresholds result in fewer stone cliffs (more grassy cliffs)
 
@@ -121,11 +120,11 @@ public class RealisticBiomeAPLSmokyForestAutumn extends RealisticBiomeAPLBase {
     @Override
     public void initDecos() {
 
-        this.addDecoCollection(new DecoCollectionSmokyForest(this.getConfig().ALLOW_LOGS.get()));
+        this.addDecoCollection(new DecoCollectionSmokyForest(this.getConfig()));
     }
 
     @Override
     public Biome beachBiome() {
-        return this.beachBiome(AppalachiaBiomes.smokyBeach);
+        return AppalachiaBiomes.smokyBeach;
     }
 }

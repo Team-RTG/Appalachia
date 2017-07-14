@@ -9,17 +9,17 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
 import appalachia.api.AppalachiaBiomes;
-import appalachia.rtg.world.biome.deco.collection.DecoCollectionSmokyForest;
+import appalachia.rtg.world.biome.deco.collection.DecoCollectionSmokyMountains;
 import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 
 import rtg.api.config.BiomeConfig;
 import rtg.api.util.BlockUtil;
 import rtg.api.util.CliffCalculator;
 import rtg.api.util.noise.OpenSimplexNoise;
-import rtg.api.world.RTGWorld;
-import rtg.world.biome.realistic.RealisticBiomeBase;
-import rtg.world.gen.surface.SurfaceBase;
-import rtg.world.gen.terrain.TerrainBase;
+import rtg.api.world.IRTGWorld;
+import rtg.api.world.surface.SurfaceBase;
+import rtg.api.world.terrain.TerrainBase;
+
 
 public class RealisticBiomeAPLSmokyMountainsAutumn extends RealisticBiomeAPLBase {
 
@@ -29,12 +29,13 @@ public class RealisticBiomeAPLSmokyMountainsAutumn extends RealisticBiomeAPLBase
     public RealisticBiomeAPLSmokyMountainsAutumn() {
 
         super(biome, river);
-
-        this.noWaterFeatures = true;
     }
 
     @Override
     public void initConfig() {
+
+        this.getConfig().ALLOW_RIVERS.set(false);
+        this.getConfig().ALLOW_SCENIC_LAKES.set(false);
 
         this.getConfig().addProperty(this.getConfig().ALLOW_LOGS).set(true);
 
@@ -45,7 +46,7 @@ public class RealisticBiomeAPLSmokyMountainsAutumn extends RealisticBiomeAPLBase
     @Override
     public TerrainBase initTerrain() {
 
-        return RealisticBiomeBase.getBiome(Biome.getIdForBiome(AppalachiaBiomes.smokyMountains)).getTerrain();
+        return RealisticBiomeAPLBase.aplSmokyMountains.initTerrain();
     }
 
     @Override
@@ -71,10 +72,10 @@ public class RealisticBiomeAPLSmokyMountainsAutumn extends RealisticBiomeAPLBase
         }
 
         @Override
-        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, RTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
+        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, IRTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
 
-            Random rand = rtgWorld.rand;
-            OpenSimplexNoise simplex = rtgWorld.simplex;
+            Random rand = rtgWorld.rand();
+            OpenSimplexNoise simplex = rtgWorld.simplex();
             float c = CliffCalculator.calc(x, z, noise);
             boolean cliff = c > 2.3f ? true : false; // 2.3f because higher thresholds result in fewer stone cliffs (more grassy cliffs)
 
@@ -123,11 +124,11 @@ public class RealisticBiomeAPLSmokyMountainsAutumn extends RealisticBiomeAPLBase
     @Override
     public void initDecos() {
 
-        this.addDecoCollection(new DecoCollectionSmokyForest(this.getConfig().ALLOW_LOGS.get()));
+        this.addDecoCollection(new DecoCollectionSmokyMountains(this.getConfig()));
     }
 
     @Override
     public Biome beachBiome() {
-        return this.beachBiome(AppalachiaBiomes.smokyBeach);
+        return AppalachiaBiomes.smokyBeach;
     }
 }

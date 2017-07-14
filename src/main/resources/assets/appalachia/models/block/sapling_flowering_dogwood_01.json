@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "appalachia:blocks/sapling_flowering_dogwood_01"
+    }
+}

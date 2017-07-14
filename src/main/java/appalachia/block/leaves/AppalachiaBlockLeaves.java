@@ -28,15 +28,18 @@ import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import appalachia.api.AppalachiaAPI;
 import appalachia.block.BlockManager;
 import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
+import appalachia.util.LeavesConnectionChecker;
+import appalachia.util.PlayerUtil;
 import com.google.common.collect.Lists;
+import static appalachia.api.AppalachiaAPI.rand;
 
 public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlock {
 
     private String slug;
+    protected boolean decayTest = false;
 
     public AppalachiaBlockLeaves(String unlocalizedName) {
 
@@ -44,7 +47,7 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
         this.setUnlocalizedName(unlocalizedName);
         this.setHarvestLevel("axe", 0);
         this.setCreativeTab(AppalachiaTabs.tabDecoration);
-        this.setDefaultState(blockState.getBaseState().withProperty(DECAYABLE, Boolean.valueOf(true)).withProperty(CHECK_DECAY, Boolean.valueOf(true)));
+        this.setDefaultState(blockState.getBaseState().withProperty(DECAYABLE, Boolean.valueOf(true)).withProperty(CHECK_DECAY, Boolean.valueOf(false)));
         this.leavesFancy = true;
         this.slug = unlocalizedName;
     }
@@ -70,10 +73,38 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
     @Override
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
     {
-        entityIn.motionX *= 0.5D;
-        entityIn.motionY *= 0.5D;
-        entityIn.motionZ *= 0.5D;
+        if(PlayerUtil.isCreativeMode(entityIn)) {
+            return;
+        }
+        entityIn.motionX *= 0.75D;
+        entityIn.motionY *= 0.75D;
+        entityIn.motionZ *= 0.75D;
         entityIn.fallDistance = 0f;
+    }
+
+    @Override
+    public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+
+        if (!worldIn.isRemote) {
+            if (((Boolean)state.getValue(DECAYABLE)).booleanValue()) {
+
+                LeavesConnectionChecker checker = new LeavesConnectionChecker(worldIn, pos);
+
+                if (!checker.isConnected()) {
+
+                    if (decayTest) {
+                        worldIn.setBlockState(pos, state.withProperty(CHECK_DECAY, Boolean.valueOf(false)), 4);
+                        worldIn.setBlockState(pos, Blocks.GLOWSTONE.getDefaultState(), 2);
+                    }
+                    else {
+                        this.destroy(worldIn, pos);
+                    }
+                }
+            }
+        }
+        else {
+            super.updateTick(worldIn, pos, state, rand);
+        }
     }
 
     @Override
@@ -133,6 +164,12 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
         }
     }
 
+    protected void destroy(World worldIn, BlockPos pos)
+    {
+        this.dropBlockAsItem(worldIn, pos, worldIn.getBlockState(pos), 0);
+        worldIn.setBlockToAir(pos);
+    }
+
     @Override
     public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos) {
 
@@ -166,6 +203,6 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
 
     public static Block getRandomLeaves() {
 
-        return (AppalachiaBlockLeaves)BlockManager.appalachiaLeaves.get(AppalachiaAPI.rand.nextInt(BlockManager.appalachiaLeaves.size()));
+        return (AppalachiaBlockLeaves)BlockManager.appalachiaLeaves.get(rand.nextInt(BlockManager.appalachiaLeaves.size()));
     }
 }

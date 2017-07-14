@@ -228,9 +228,9 @@ public class DimensionManager {
 
         // get overworld dimension;
         boolean newWorld = true;
-        for (WorldServer worldServer: server.worldServers){
-            if (worldServer.getTotalWorldTime()>0 ) newWorld = false;
-        }
+//        for (WorldServer worldServer: server.worldServers){
+//            if (worldServer.getTotalWorldTime()>0 ) newWorld = false;
+//        }
         //logger.info(worldType.getTranslateName());
         //logger.info(event.originalBiomeGens[0].toString());
         // if not a recognized world type ignore
@@ -275,18 +275,18 @@ public class DimensionManager {
         }
         if (considered.equals(WorldType.FLAT)) return true;
         if (settings.interveneInBOPWorlds.value()) {
-            if (considered.getWorldTypeName().equalsIgnoreCase("BIOMESOP")) return false;
+            if (considered.getName().equalsIgnoreCase("BIOMESOP")) return false;
         }
         if (settings.interveneInHighlandsWorlds.value()) {
 
-            if (considered.getWorldTypeName().equalsIgnoreCase("Highlands")) return false;
-            if (considered.getWorldTypeName().equalsIgnoreCase("HighlandsLB")) return false;
+            if (considered.getName().equalsIgnoreCase("Highlands")) return false;
+            if (considered.getName().equalsIgnoreCase("HighlandsLB")) return false;
         }
         if (true) {
-            if (considered.getWorldTypeName().equalsIgnoreCase("FWG")) return false;
+            if (considered.getName().equalsIgnoreCase("FWG")) return false;
         }
 
-        if (considered.getWorldTypeName().equalsIgnoreCase("RTG")) return false;
+        if (considered.getName().equalsIgnoreCase("RTG")) return false;
         return true;
     }
 

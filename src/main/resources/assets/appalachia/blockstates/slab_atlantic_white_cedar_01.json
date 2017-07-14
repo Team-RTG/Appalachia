@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "half=bottom": { "model": "appalachia:slab_atlantic_white_cedar_01" },
+        "half=top": { "model": "appalachia:slab_atlantic_white_cedar_01_upper" }
+    }
+}

@@ -1,6 +1,0 @@
-{
-    "parent": "appalachia:block/appalachia_leaves",
-    "textures": {
-        "all": "appalachia:blocks/leaves_ash_01"
-    }
-}

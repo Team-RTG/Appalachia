@@ -10,6 +10,8 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import appalachia.api.AppalachiaBlocks;
+
 /**
  * Acer Saccharum (Sugar Maple)
  * <p>
@@ -27,6 +29,10 @@ public class TreeAcerSaccharum extends AppalachiaTree {
     public TreeAcerSaccharum() {
 
         super();
+        this.setLogBlock(AppalachiaBlocks.log_sugar_maple_01.getDefaultState());
+        this.setLeavesBlock(AppalachiaBlocks.leaves_sugar_maple_01.getDefaultState());
+        this.setFallenLeavesBlock(AppalachiaBlocks.leaves_sugar_maple_01_fallen.getDefaultState());
+        this.setSaplingBlock(AppalachiaBlocks.sapling_sugar_maple_01.getDefaultState());
 
         this.validGroundBlocks = new ArrayList<IBlockState>(Arrays.asList(Blocks.GRASS.getDefaultState(), Blocks.DIRT.getDefaultState()));
     }

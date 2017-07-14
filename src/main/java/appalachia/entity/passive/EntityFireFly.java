@@ -3,15 +3,6 @@ package appalachia.entity.passive;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import appalachia.entity.ai.EntityAIHoverAwayFromEntity;
-import appalachia.entity.ai.EntityAIHoverPanic;
-import appalachia.entity.ai.EntityAIHoverRandomly;
-import appalachia.entity.decorators.EntityDecorator;
-import appalachia.entity.decorators.FireFly.EasterEggBoss;
-import appalachia.entity.decorators.FireFly.EasterEggColor;
-import appalachia.entity.decorators.FireFly.EasterEggFlashingMode;
-import appalachia.loot.LootManager;
-import appalachia.util.WorldUtil;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityFlying;
@@ -31,6 +22,17 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
+
+import appalachia.entity.ai.EntityAIHoverAwayFromEntity;
+import appalachia.entity.ai.EntityAIHoverPanic;
+import appalachia.entity.ai.EntityAIHoverRandomly;
+import appalachia.entity.decorators.EntityDecorator;
+import appalachia.entity.decorators.FireFly.EasterEggBoss;
+import appalachia.entity.decorators.FireFly.EasterEggColor;
+import appalachia.entity.decorators.FireFly.EasterEggFlashingMode;
+import appalachia.loot.LootManager;
+
+import rtg.api.util.WorldUtil;
 
 public class EntityFireFly extends EntityFlying {
 
@@ -119,26 +121,26 @@ public class EntityFireFly extends EntityFlying {
     public void onLivingUpdate() {
         super.onLivingUpdate();
 
-        if (!worldObj.isRemote) {
+        if (!world.isRemote) {
             @Nonnull BlockPos pos = new BlockPos(this);
 
-            if (ticksExisted % 30 == 0 && worldObj.getLightFromNeighbors(pos) > 9) {
+            if (ticksExisted % 30 == 0 && world.getLightFromNeighbors(pos) > 9) {
                 this.setHealth(this.getHealth() - 0.5F); // Entities will disappear in the sun to save performance, but only if they are grounded.
             }
 
-            if (doFlash && getHealth() != 0 && worldObj.getLightFromNeighbors(pos) < 9) {
+            if (doFlash && getHealth() != 0 && world.getLightFromNeighbors(pos) < 9) {
                 if (sync) {
-                    if (worldObj.getWorldTime() % 40 == 0) {
+                    if (world.getWorldTime() % 40 == 0) {
                         setFlashStatus(true);
-                    } else if (worldObj.getWorldTime() % 40 == 10) {
+                    } else if (world.getWorldTime() % 40 == 10) {
                         setFlashStatus(false);
                     }
                 } else if (ticksExisted > noFlashStatusChangeBefore) {
                     setFlashStatus(!isFlashing());
                     if (isFlashing()) {
-                        noFlashStatusChangeBefore = ticksExisted + 5 + worldObj.rand.nextInt(10);
+                        noFlashStatusChangeBefore = ticksExisted + 5 + world.rand.nextInt(10);
                     } else {
-                        noFlashStatusChangeBefore = ticksExisted + 10 + worldObj.rand.nextInt(30);
+                        noFlashStatusChangeBefore = ticksExisted + 10 + world.rand.nextInt(30);
                     }
                 }
             }
@@ -152,16 +154,16 @@ public class EntityFireFly extends EntityFlying {
     // Fire Flies only spawn on blocks that are "dirty".
     @Override
     public boolean getCanSpawnHere() {
-        return isSpotViable(worldObj, new BlockPos(this));
+        return isSpotViable(world, new BlockPos(this));
     }
 
     @Override
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
-        if (!worldObj.isRemote) {
+        if (!world.isRemote) {
             updateVariant();
         }
 
-        noFlashStatusChangeBefore = worldObj.rand.nextInt(100);
+        noFlashStatusChangeBefore = world.rand.nextInt(100);
 
         return super.onInitialSpawn(difficulty, livingdata);
     }
@@ -174,8 +176,8 @@ public class EntityFireFly extends EntityFlying {
     private void updateVariant() {
         @Nonnull Color color = Color.DEFAULT;
 
-        BlockPos pos = WorldUtil.nextSolidBlock(worldObj, new BlockPos(this), EnumFacing.DOWN);
-        @Nonnull IBlockState block = worldObj.getBlockState(pos);
+        BlockPos pos = WorldUtil.nextSolidBlock(world, new BlockPos(this), EnumFacing.DOWN);
+        @Nonnull IBlockState block = world.getBlockState(pos);
 
         if (block.getBlock().equals(Blocks.DIRT) && block.getBlock().getMetaFromState(block) == 0) {
             color = Color.DIRT;

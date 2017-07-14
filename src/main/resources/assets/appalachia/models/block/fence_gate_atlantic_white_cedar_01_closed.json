@@ -1,0 +1,6 @@
+{
+    "parent": "block/fence_gate_closed",
+    "textures": {
+        "texture": "appalachia:blocks/planks_atlantic_white_cedar_01"
+    }
+}

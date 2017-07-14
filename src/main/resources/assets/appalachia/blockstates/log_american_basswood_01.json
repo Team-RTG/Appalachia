@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "axis=y":  { "model": "appalachia:log_american_basswood_01" },
+        "axis=z":   { "model": "appalachia:log_american_basswood_01", "x": 90 },
+        "axis=x":   { "model": "appalachia:log_american_basswood_01", "x": 90, "y": 90 },
+        "axis=none": { "model": "appalachia:log_american_basswood_01_bark" }
+    }
+}

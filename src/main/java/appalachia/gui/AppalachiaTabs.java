@@ -31,7 +31,16 @@ public class AppalachiaTabs {
         @Override
         public Item getTabIconItem() {
 
-            return AppalachiaItems.rawBear;
+            return AppalachiaItems.cookedBear;
+        }
+    };
+
+    public static final CreativeTabs tabTools = new CreativeTabs("appalachiatools") {
+
+        @Override
+        public Item getTabIconItem() {
+
+            return AppalachiaItems.ironPitchfork;
         }
     };
 }

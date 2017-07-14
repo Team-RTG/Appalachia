@@ -2,13 +2,14 @@ package appalachia.entity.ai;
 
 import javax.annotation.Nonnull;
 
-import appalachia.util.RandomUtil;
-import appalachia.util.WorldUtil;
 import net.minecraft.entity.EntityFlying;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+
+import rtg.api.util.RandomUtil;
+import rtg.api.util.WorldUtil;
 
 public abstract class EntityAIHoverBase extends EntityAIBase {
 
@@ -101,7 +102,7 @@ public abstract class EntityAIHoverBase extends EntityAIBase {
 
     protected int getHeight() {
         @Nonnull BlockPos pos = new BlockPos(entity);
-        BlockPos nextBlock = WorldUtil.nextSolidBlock(entity.worldObj, pos, EnumFacing.DOWN);
+        BlockPos nextBlock = WorldUtil.nextSolidBlock(entity.world, pos, EnumFacing.DOWN);
 
         return (int) entity.posY - nextBlock.getY();
     }

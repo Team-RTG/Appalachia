@@ -1,6 +1,0 @@
-{
-    "parent": "block/cross",
-    "textures": {
-        "cross": "appalachia:blocks/sapling_ash_01"
-    }
-}

@@ -9,17 +9,17 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
 import appalachia.api.AppalachiaBiomes;
-import appalachia.rtg.world.biome.deco.collection.DecoCollectionBlueRidgeForest;
+import appalachia.rtg.world.biome.deco.collection.DecoCollectionBlueRidgeHills;
 import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 
 import rtg.api.config.BiomeConfig;
 import rtg.api.util.BlockUtil;
 import rtg.api.util.CliffCalculator;
 import rtg.api.util.noise.OpenSimplexNoise;
-import rtg.api.world.RTGWorld;
-import rtg.world.biome.realistic.RealisticBiomeBase;
-import rtg.world.gen.surface.SurfaceBase;
-import rtg.world.gen.terrain.TerrainBase;
+import rtg.api.world.IRTGWorld;
+import rtg.api.world.surface.SurfaceBase;
+import rtg.api.world.terrain.TerrainBase;
+
 
 public class RealisticBiomeAPLBlueRidgeHillsAutumn extends RealisticBiomeAPLBase {
 
@@ -42,8 +42,7 @@ public class RealisticBiomeAPLBlueRidgeHillsAutumn extends RealisticBiomeAPLBase
 
     @Override
     public TerrainBase initTerrain() {
-
-        return RealisticBiomeBase.getBiome(Biome.getIdForBiome(AppalachiaBiomes.blueRidgeHills)).getTerrain();
+        return RealisticBiomeAPLBase.aplBlueRidgeHills.initTerrain();
     }
 
     @Override
@@ -69,10 +68,10 @@ public class RealisticBiomeAPLBlueRidgeHillsAutumn extends RealisticBiomeAPLBase
         }
 
         @Override
-        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, RTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
+        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, IRTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
 
-            Random rand = rtgWorld.rand;
-            OpenSimplexNoise simplex = rtgWorld.simplex;
+            Random rand = rtgWorld.rand();
+            OpenSimplexNoise simplex = rtgWorld.simplex();
             float c = CliffCalculator.calc(x, z, noise);
             boolean cliff = c > 2.3f ? true : false; // 2.3f because higher thresholds result in fewer stone cliffs (more grassy cliffs)
 
@@ -121,11 +120,11 @@ public class RealisticBiomeAPLBlueRidgeHillsAutumn extends RealisticBiomeAPLBase
     @Override
     public void initDecos() {
 
-        this.addDecoCollection(new DecoCollectionBlueRidgeForest(this.getConfig().ALLOW_LOGS.get()));
+        this.addDecoCollection(new DecoCollectionBlueRidgeHills(this.getConfig()));
     }
 
     @Override
     public Biome beachBiome() {
-        return this.beachBiome(AppalachiaBiomes.blueRidgeBeach);
+        return AppalachiaBiomes.blueRidgeBeach;
     }
 }

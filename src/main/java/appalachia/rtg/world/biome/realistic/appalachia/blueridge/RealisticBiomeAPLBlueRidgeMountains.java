@@ -9,16 +9,24 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
 import appalachia.api.AppalachiaBiomes;
-import appalachia.rtg.world.biome.deco.collection.DecoCollectionBlueRidgeForest;
+import appalachia.rtg.world.biome.deco.collection.DecoCollectionBlueRidgeMountains;
 import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
+import appalachia.rtg.world.gen.terrain.SpikeEverywhereEffect;
+import appalachia.rtg.world.gen.terrain.TerrainRidgedRegion;
 
 import rtg.api.config.BiomeConfig;
 import rtg.api.util.BlockUtil;
 import rtg.api.util.CliffCalculator;
 import rtg.api.util.noise.OpenSimplexNoise;
-import rtg.api.world.RTGWorld;
-import rtg.world.gen.surface.SurfaceBase;
-import rtg.world.gen.terrain.*;
+import rtg.api.world.IRTGWorld;
+import rtg.api.world.surface.SurfaceBase;
+import rtg.api.world.terrain.FunctionalTerrainBase;
+import rtg.api.world.terrain.TerrainBase;
+import rtg.api.world.terrain.heighteffect.HeightVariation;
+import rtg.api.world.terrain.heighteffect.JitterEffect;
+import rtg.api.world.terrain.heighteffect.MountainsWithPassesEffect;
+import rtg.api.world.terrain.heighteffect.RaiseEffect;
+
 
 public class RealisticBiomeAPLBlueRidgeMountains extends RealisticBiomeAPLBase {
 
@@ -28,12 +36,13 @@ public class RealisticBiomeAPLBlueRidgeMountains extends RealisticBiomeAPLBase {
     public RealisticBiomeAPLBlueRidgeMountains() {
 
         super(biome, river);
-
-        this.noWaterFeatures = true;
     }
 
     @Override
     public void initConfig() {
+
+        this.getConfig().ALLOW_RIVERS.set(false);
+        this.getConfig().ALLOW_SCENIC_LAKES.set(false);
 
         this.getConfig().addProperty(this.getConfig().ALLOW_LOGS).set(true);
 
@@ -44,7 +53,17 @@ public class RealisticBiomeAPLBlueRidgeMountains extends RealisticBiomeAPLBase {
     @Override
     public TerrainBase initTerrain() {
 
-        return new TerrainAPLBlueRidgeMountains(120f, 100f);
+        TerrainRidgedRegion.Parameters parameters = new TerrainRidgedRegion.Parameters();
+        SpikeEverywhereEffect mountains= new SpikeEverywhereEffect();
+        mountains.spiked = new RaiseEffect(70);
+        mountains.octave = 2;
+        mountains.power = 0.5f;
+        mountains.wavelength = 200;
+        mountains.minimumSimplex = 0.3f;
+        parameters.ridgeAmplitude = mountains;
+        parameters.ridgeBase = 40;
+        return new TerrainRidgedRegion(parameters);
+        //return new TerrainAPLBlueRidgeMountains(120f, 100f);
     }
 
     @Override
@@ -70,10 +89,10 @@ public class RealisticBiomeAPLBlueRidgeMountains extends RealisticBiomeAPLBase {
         }
 
         @Override
-        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, RTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
+        public void paintTerrain(ChunkPrimer primer, int i, int j, int x, int z, int depth, IRTGWorld rtgWorld, float[] noise, float river, Biome[] base) {
 
-            Random rand = rtgWorld.rand;
-            OpenSimplexNoise simplex = rtgWorld.simplex;
+            Random rand = rtgWorld.rand();
+            OpenSimplexNoise simplex = rtgWorld.simplex();
             float c = CliffCalculator.calc(x, z, noise);
             boolean cliff = c > 2.3f ? true : false; // 2.3f because higher thresholds result in fewer stone cliffs (more grassy cliffs)
 
@@ -122,7 +141,7 @@ public class RealisticBiomeAPLBlueRidgeMountains extends RealisticBiomeAPLBase {
     @Override
     public void initDecos() {
 
-        this.addDecoCollection(new DecoCollectionBlueRidgeForest(this.getConfig().ALLOW_LOGS.get()));
+        this.addDecoCollection(new DecoCollectionBlueRidgeMountains(this.getConfig()));
     }
 
     public class TerrainAPLBlueRidgeMountains extends FunctionalTerrainBase {
@@ -163,6 +182,6 @@ public class RealisticBiomeAPLBlueRidgeMountains extends RealisticBiomeAPLBase {
 
     @Override
     public Biome beachBiome() {
-        return this.beachBiome(AppalachiaBiomes.blueRidgeBeach);
+        return AppalachiaBiomes.blueRidgeBeach;
     }
 }
