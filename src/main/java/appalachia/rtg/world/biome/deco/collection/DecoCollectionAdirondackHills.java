@@ -2,6 +2,7 @@ package appalachia.rtg.world.biome.deco.collection;
 
 import appalachia.rtg.world.gen.feature.tree.rtg.*;
 
+import rtg.api.config.BiomeConfig;
 import rtg.api.world.deco.DecoTree;
 import rtg.api.world.deco.collection.DecoCollectionBase;
 
@@ -15,7 +16,9 @@ public class DecoCollectionAdirondackHills extends DecoCollectionBase {
     protected static int treeMaxY = 220;
     protected static int shrubMaxY = 220;
 
-    public DecoCollectionAdirondackHills(boolean fallenTrees) {
+    public DecoCollectionAdirondackHills(BiomeConfig config) {
+
+        super(config);
 
         // Sugar Maple.
         AppalachiaTree treeSugarMaple = new TreeAcerSaccharum();

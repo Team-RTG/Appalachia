@@ -7,9 +7,9 @@
 package appalachia.rtg.world.gen.terrain;
 
 import rtg.api.util.noise.VoronoiResult;
-import rtg.api.world.RTGWorld;
-import rtg.api.world.terrain.heighteffect.HeightEffect;
+import rtg.api.world.IRTGWorld;
 import rtg.api.world.terrain.TerrainBase;
+import rtg.api.world.terrain.heighteffect.HeightEffect;
 
 /**
  * This returns a value generally between just below 0 and 1 depending on the distance from a voronoi cell border
@@ -28,8 +28,8 @@ public class VoronoiRidgingEffect extends HeightEffect {
     public VoronoiRidgingEffect() {}
     
     @Override
-    public float added(RTGWorld rtgWorld, float x, float y) {
-         VoronoiResult points = rtgWorld.cell.octave(1).eval((float) x / pointWavelength, (float) y / pointWavelength);
+    public float added(IRTGWorld rtgWorld, float x, float y) {
+         VoronoiResult points = rtgWorld.cell().octave(1).eval((float) x / pointWavelength, (float) y / pointWavelength);
          //double divisor = Math.max(minimumDivisor, points[1]);
 
 //         float raise = (float) ((points[1] - points[0]) / points[1]);

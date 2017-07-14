@@ -6,7 +6,7 @@
 
 package appalachia.rtg.world.gen.terrain;
 
-import rtg.api.world.RTGWorld;
+import rtg.api.world.IRTGWorld;
 import rtg.api.world.terrain.TerrainBase;
 import rtg.api.world.terrain.heighteffect.HeightEffect;
 
@@ -28,9 +28,9 @@ public class SpikeEverywhereEffect extends HeightEffect {
     public HeightEffect spiked;
 
     @Override
-    public final float added(RTGWorld rtgWorld, float x, float y) {
+    public final float added(IRTGWorld rtgWorld, float x, float y) {
 
-        float noise = rtgWorld.simplex.octave(octave).noise2((float) x / wavelength, (float) y / wavelength);
+        float noise = rtgWorld.simplex().octave(octave).noise2((float) x / wavelength, (float) y / wavelength);
         noise = Math.abs(noise);
         noise = TerrainBase.blendedHillHeight(noise, minimumSimplex);
         noise = TerrainBase.unsignedPower(noise, power);

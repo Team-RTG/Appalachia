@@ -2,6 +2,7 @@ package appalachia.rtg.world.biome.deco.collection;
 
 import appalachia.rtg.world.gen.feature.tree.rtg.*;
 
+import rtg.api.config.BiomeConfig;
 import rtg.api.world.deco.DecoTree;
 import rtg.api.world.deco.collection.DecoCollectionBase;
 
@@ -16,7 +17,9 @@ public class DecoCollectionBlueRidgeHills extends DecoCollectionBase {
     protected static int treeMaxY = 220;
     protected static int shrubMaxY = 220;
 
-    public DecoCollectionBlueRidgeHills(boolean fallenTrees) {
+    public DecoCollectionBlueRidgeHills(BiomeConfig config) {
+
+        super(config);
 
         // White Oak.
         AppalachiaTree treeWhiteOak = new TreeQuercusAlba();
