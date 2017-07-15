@@ -1,6 +1,5 @@
 package appalachia.proxy;
 
-import appalachia.block.plants.AppalachiaBlockPlant;
 import net.minecraft.client.Minecraft;
 
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -10,10 +9,13 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import appalachia.api.AppalachiaBlocks;
+import appalachia.block.BlockManager;
 import appalachia.block.leaves.AppalachiaBlockLeaves;
 import appalachia.block.leaves.fallen.AppalachiaBlockLeavesFallen;
+import appalachia.block.plants.AppalachiaBlockPlant;
 import appalachia.block.vines.AppalachiaBlockVine;
 import appalachia.entity.EntityManager;
+import appalachia.item.ItemManager;
 
 public class ClientProxy extends CommonProxy {
 
@@ -24,6 +26,8 @@ public class ClientProxy extends CommonProxy {
 
         super.preInit(event);
 
+        BlockManager.registerModels();
+        ItemManager.registerModels();
         EntityManager.registerModels();
     }
 
