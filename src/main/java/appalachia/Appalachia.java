@@ -2,7 +2,6 @@ package appalachia;
 
 import java.io.File;
 
-import appalachia.item.crafting.CraftingManager;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -14,10 +13,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import appalachia.biome.AppalachiaBiomeManager;
 import appalachia.block.BlockManager;
-import appalachia.client.sound.SoundManager;
 import appalachia.config.ConfigManager;
 import appalachia.event.EventManager;
-import appalachia.item.ItemManager;
 import appalachia.proxy.ClientProxy;
 import appalachia.proxy.CommonProxy;
 import appalachia.reference.ModInfo;
@@ -53,17 +50,7 @@ public class Appalachia {
         configPath = event.getModConfigurationDirectory() + File.separator + ModInfo.CONFIG_DIRECTORY + File.separator;
         ConfigManager.init(configPath);
 
-        BlockManager.registerBlocks();
-        ItemManager.registerItems();
-        CraftingManager.registerRecipes();
-        SoundManager.registerSounds();
 
-        if (event.getSide().isClient()) {
-            BlockManager.registerModels();
-            ItemManager.registerModels();
-        }
-
-        AppalachiaBiomeManager.registerBiomes();
 
         proxy.preInit(event);
     }

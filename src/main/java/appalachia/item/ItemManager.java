@@ -63,7 +63,6 @@ public class ItemManager {
 
         addTools();
         addFoodItems();
-        registerModels();
         cookFood();
     }
 
