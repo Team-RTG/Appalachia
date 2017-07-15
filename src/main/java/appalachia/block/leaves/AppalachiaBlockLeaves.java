@@ -54,7 +54,7 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
             blockState.getBaseState()
                 .withProperty(DECAYABLE, Boolean.valueOf(true))
                 .withProperty(CHECK_DECAY, Boolean.valueOf(false))
-                .withProperty(TRANSLUCENT, Boolean.valueOf(false))
+                .withProperty(TRANSLUCENT, Boolean.valueOf(true))
         );
         this.leavesFancy = true;
         this.slug = unlocalizedName;
