@@ -2,7 +2,6 @@ package appalachia.block;
 
 import java.util.ArrayList;
 
-import appalachia.block.plants.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockSapling;
@@ -27,6 +26,7 @@ import appalachia.block.leaves.*;
 import appalachia.block.leaves.fallen.*;
 import appalachia.block.logs.*;
 import appalachia.block.planks.*;
+import appalachia.block.plants.*;
 import appalachia.block.saplings.*;
 import appalachia.block.slabs.*;
 import appalachia.block.stairs.*;
@@ -1267,7 +1267,7 @@ public class BlockManager {
 
         for (int i = 0; i < appalachiaLeaves.size(); i++) {
             registerModel(appalachiaLeaves.get(i));
-            ModelLoader.setCustomStateMapper(appalachiaLeaves.get(i), new StateMap.Builder().ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
+            ModelLoader.setCustomStateMapper(appalachiaLeaves.get(i), new StateMap.Builder().ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY, AppalachiaBlockLeaves.TRANSLUCENT).build());
         }
 
         for (int i = 0; i < appalachiaLeavesFallen.size(); i++) {
