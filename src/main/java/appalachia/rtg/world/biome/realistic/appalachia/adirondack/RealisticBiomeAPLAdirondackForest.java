@@ -9,6 +9,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
 import appalachia.api.AppalachiaBiomes;
+import appalachia.rtg.world.biome.deco.collection.DecoCollectionAPL;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionAdirondackForest;
 import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 
@@ -120,8 +121,8 @@ public class RealisticBiomeAPLAdirondackForest extends RealisticBiomeAPLBase {
 
     @Override
     public void initDecos() {
-
         this.addDecoCollection(new DecoCollectionAdirondackForest(this.getConfig()));
+        this.addDecoCollection(new DecoCollectionAPL(this.getConfig()));
     }
 
     public class TerrainAPLAdirondackForest extends TerrainBase {

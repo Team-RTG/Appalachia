@@ -9,6 +9,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
 import appalachia.api.AppalachiaBiomes;
+import appalachia.rtg.world.biome.deco.collection.DecoCollectionAPL;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionSmokyForest;
 import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 
@@ -119,8 +120,8 @@ public class RealisticBiomeAPLSmokyForestAutumn extends RealisticBiomeAPLBase {
 
     @Override
     public void initDecos() {
-
         this.addDecoCollection(new DecoCollectionSmokyForest(this.getConfig()));
+        this.addDecoCollection(new DecoCollectionAPL(this.getConfig()));
     }
 
     @Override

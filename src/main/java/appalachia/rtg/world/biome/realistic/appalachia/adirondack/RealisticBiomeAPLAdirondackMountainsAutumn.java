@@ -9,6 +9,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
 import appalachia.api.AppalachiaBiomes;
+import appalachia.rtg.world.biome.deco.collection.DecoCollectionAPL;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionAdirondackMountains;
 import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 
@@ -122,8 +123,8 @@ public class RealisticBiomeAPLAdirondackMountainsAutumn extends RealisticBiomeAP
 
     @Override
     public void initDecos() {
-
         this.addDecoCollection(new DecoCollectionAdirondackMountains(this.getConfig()));
+        this.addDecoCollection(new DecoCollectionAPL(this.getConfig()));
     }
 
     @Override

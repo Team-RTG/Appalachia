@@ -128,13 +128,6 @@ public class DecoCollectionAdirondackMountains extends DecoCollectionBase {
         decoFlowers2.setLoops(3);
         this.addDeco(decoFlowers2);
 
-        // Ferns.
-        DecoGrass decoFern = new DecoGrass(2);
-        decoFern.setMinY(63);
-        decoFern.setMaxY(shrubMaxY);
-        decoFern.setLoops(2);
-        this.addDeco(decoFern);
-
         // Poison ivy.
         DecoVines decoPoisonIvy = new DecoVines();
         decoPoisonIvy.setVineBlock(AppalachiaBlocks.vine_poison_ivy_01);
@@ -144,12 +137,5 @@ public class DecoCollectionAdirondackMountains extends DecoCollectionBase {
         decoPoisonIvy.setPropSouth(AppalachiaBlockVine.SOUTH);
         decoPoisonIvy.setPropWest(AppalachiaBlockVine.WEST);
         this.addDeco(decoPoisonIvy);
-
-        // Grass filler.
-        DecoGrass decoGrass = new DecoGrass();
-        decoGrass.setMinY(63);
-        decoGrass.setMaxY(shrubMaxY);
-        decoGrass.setStrengthFactor(24f);
-        this.addDeco(decoGrass);
     }
 }
