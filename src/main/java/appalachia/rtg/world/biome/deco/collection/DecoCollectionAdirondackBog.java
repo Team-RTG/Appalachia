@@ -43,7 +43,7 @@ public class DecoCollectionAdirondackBog extends DecoCollectionBase {
         super(config);
 
         // Red Maple.
-        AppalachiaTree treeRedMaple = new TreeAcerRubrum();
+        AppalachiaTree treeRedMaple = new TreeRedMaple();
         this.addTree(treeRedMaple);
         this.addDeco(new DecoAPLTree(treeRedMaple)
             .setMaxY(treeMaxY)
@@ -56,7 +56,7 @@ public class DecoCollectionAdirondackBog extends DecoCollectionBase {
         );
 
         // Tamarack.
-        AppalachiaTree treeTamarack = new TreeLarixLaricina();
+        AppalachiaTree treeTamarack = new TreeTamarack();
         this.addTree(treeTamarack);
         this.addDeco(new DecoAPLTree(treeTamarack)
                 .setMaxY(treeMaxY)
@@ -69,7 +69,7 @@ public class DecoCollectionAdirondackBog extends DecoCollectionBase {
         );
 
         // American Elm.
-        AppalachiaTree treeAmericanElm = new TreeUlmusAmericana();
+        AppalachiaTree treeAmericanElm = new TreeAmericanElm();
         this.addTree(treeAmericanElm);
         this.addDeco(new DecoAPLTree(treeAmericanElm)
                 .setMaxY(treeMaxY)
@@ -82,7 +82,7 @@ public class DecoCollectionAdirondackBog extends DecoCollectionBase {
         );
 
         // Black Spruce.
-        AppalachiaTree treeBlackSpruce = new TreePiceaMariana();
+        AppalachiaTree treeBlackSpruce = new TreeBlackSpruce();
         this.addTree(treeBlackSpruce);
         this.addDeco(new DecoAPLTree(treeBlackSpruce)
                 .setMaxY(treeMaxY)
@@ -95,7 +95,7 @@ public class DecoCollectionAdirondackBog extends DecoCollectionBase {
         );
 
         // Hackberry.
-        AppalachiaTree treeHackberry = new TreeCeltisOccidentalis(true);
+        AppalachiaTree treeHackberry = new TreeHackberry(true);
         this.addTree(treeHackberry);
         this.addDeco(new DecoAPLTree(treeHackberry)
                 .setMaxY(treeMaxY)

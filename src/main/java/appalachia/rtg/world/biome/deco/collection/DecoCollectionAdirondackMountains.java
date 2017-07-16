@@ -30,42 +30,42 @@ public class DecoCollectionAdirondackMountains extends DecoCollectionBase {
         super(config);
 
         // Balsam Fir.
-        AppalachiaTree treeBalsamFir = new TreeAbiesBalsamea();
+        AppalachiaTree treeBalsamFir = new TreeBalsamFir();
         this.addTree(treeBalsamFir);
         DecoTree decoBalsamFir = new DecoTree(treeBalsamFir);
         decoBalsamFir.setMaxY(treeMaxY);
         this.addDeco(decoBalsamFir);
 
         // Sugar Maple.
-        AppalachiaTree treeSugarMaple = new TreeAcerSaccharum();
+        AppalachiaTree treeSugarMaple = new TreeSugarMaple();
         this.addTree(treeSugarMaple);
         DecoTree decoSugarMaple = new DecoTree(treeSugarMaple);
         decoSugarMaple.setMaxY(treeMaxY);
         this.addDeco(decoSugarMaple);
 
         // American Basswood.
-        AppalachiaTree treeAmericanBasswood = new TreeTiliaAmericana();
+        AppalachiaTree treeAmericanBasswood = new TreeAmericanBasswood();
         this.addTree(treeAmericanBasswood);
         DecoTree decoAmericanBasswood = new DecoTree(treeAmericanBasswood);
         decoAmericanBasswood.setMaxY(treeMaxY);
         this.addDeco(decoAmericanBasswood);
 
         // Yellow Birch.
-        AppalachiaTree treeYellowBirch = new TreeBetulaAlleghaniensis();
+        AppalachiaTree treeYellowBirch = new TreeYellowBirch();
         this.addTree(treeYellowBirch);
         DecoTree decoYellowBirch = new DecoTree(treeYellowBirch);
         decoYellowBirch.setMaxY(treeMaxY);
         this.addDeco(decoYellowBirch);
 
         // Red Spruce.
-        AppalachiaTree treeRedSpruce = new TreePiceaRubens();
+        AppalachiaTree treeRedSpruce = new TreeRedSpruce();
         this.addTree(treeRedSpruce);
         DecoTree decoRedSpruce = new DecoTree(treeRedSpruce);
         decoRedSpruce.setMaxY(treeMaxY);
         this.addDeco(decoRedSpruce);
 
         // Eastern Hemlock.
-        AppalachiaTree treeEasternHemlock = new TreeTsugaCanadensis();
+        AppalachiaTree treeEasternHemlock = new TreeEasternHemlock();
         this.addTree(treeEasternHemlock);
         DecoTree decoEasternHemlock = new DecoTree(treeEasternHemlock);
         decoEasternHemlock.setMaxY(treeMaxY);
