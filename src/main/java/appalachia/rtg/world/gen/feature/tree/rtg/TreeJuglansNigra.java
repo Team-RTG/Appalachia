@@ -22,9 +22,6 @@ import appalachia.api.AppalachiaBlocks;
  */
 public class TreeJuglansNigra extends AppalachiaTree {
 
-    World world;
-    Random rand;
-
     public TreeJuglansNigra() {
         super();
         this.setLogBlock(AppalachiaBlocks.log_black_walnut_01.getDefaultState());
@@ -35,12 +32,8 @@ public class TreeJuglansNigra extends AppalachiaTree {
 
     @Override
     public boolean generate(World world, Random rand, BlockPos pos) {
+        this.init(world, rand, pos);
 
-        this.crownSize = this.getSizeFromMinMax(rand, this.minCrownSize, this.maxCrownSize);
-        this.trunkSize = this.getSizeFromMinMax(rand, this.minTrunkSize, this.maxTrunkSize);
-
-        this.world = world;
-        this.rand = rand;
         int x = pos.getX();
         int y = pos.getY();
         int z = pos.getZ();
@@ -73,6 +66,11 @@ public class TreeJuglansNigra extends AppalachiaTree {
         this.spawn(world, x, y - 1, z, this.logBlock, leaves);
 
         return true;
+    }
+
+    @Override
+    public int opaqueLeavesChance() {
+        return 2;
     }
 
     protected void spawn(World world, int x, int y, int z, IBlockState log, IBlockState leaves) {
@@ -3251,14 +3249,5 @@ public class TreeJuglansNigra extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+9, currentY, z+9), leaves);
         this.setBlockMetadataWithNotify(x+9, currentY, z+9, 12, 12);
         currentY++;
-    }
-
-    protected void setBlockState(BlockPos pos, IBlockState state) {
-
-        this.setBlockAndNotifyAdequately(this.world, pos, state);
-    }
-
-    protected void setBlockMetadataWithNotify(int x, int y, int z, int meta1, int meta2) {
-
     }
 }

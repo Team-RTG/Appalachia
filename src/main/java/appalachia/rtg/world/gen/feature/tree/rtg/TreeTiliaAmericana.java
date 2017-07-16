@@ -23,9 +23,6 @@ import appalachia.api.AppalachiaBlocks;
  */
 public class TreeTiliaAmericana extends AppalachiaTree {
 
-    World world;
-    Random rand;
-
     public TreeTiliaAmericana() {
 
         super();
@@ -40,13 +37,8 @@ public class TreeTiliaAmericana extends AppalachiaTree {
 
     @Override
     public boolean generate(World world, Random rand, BlockPos pos) {
+        this.init(world, rand, pos);
 
-        if (rand.nextInt(8) != 0) {
-            return false;
-        }
-
-        this.world = world;
-        this.rand = rand;
         int x = pos.getX();
         int y = pos.getY();
         int z = pos.getZ();
@@ -69,6 +61,11 @@ public class TreeTiliaAmericana extends AppalachiaTree {
         this.spawn(world, x, currentY, z, this.logBlock, leaves);
 
         return true;
+    }
+
+    @Override
+    public int opaqueLeavesChance() {
+        return 2;
     }
 
     protected void spawn(World world, int x, int y, int z, IBlockState log, IBlockState leaves) {
@@ -2135,14 +2132,5 @@ public class TreeTiliaAmericana extends AppalachiaTree {
         this.setBlockMetadataWithNotify(x + 7, y + 30, z + 7, 12, 12);
         this.setBlockState(new BlockPos(x + 6, y + 30, z + 8), leaves);
         this.setBlockMetadataWithNotify(x + 6, y + 30, z + 8, 12, 12);
-    }
-
-    protected void setBlockState(BlockPos pos, IBlockState state) {
-
-        this.setBlockAndNotifyAdequately(this.world, pos, state);
-    }
-
-    private void setBlockMetadataWithNotify(int x, int y, int z, int meta1, int meta2) {
-
     }
 }

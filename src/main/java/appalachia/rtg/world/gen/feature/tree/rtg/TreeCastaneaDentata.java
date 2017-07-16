@@ -1,19 +1,15 @@
 package appalachia.rtg.world.gen.feature.tree.rtg;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Random;
 
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import appalachia.api.AppalachiaBlocks;
-import appalachia.block.leaves.AppalachiaBlockLeaves;
-import appalachia.block.logs.AppalachiaBlockLog;
 
 /**
  * Castanea Dentata (American Chestnut)
@@ -26,18 +22,6 @@ import appalachia.block.logs.AppalachiaBlockLog;
  */
 public class TreeCastaneaDentata extends AppalachiaTree {
 
-    private World world;
-    private Random rand;
-
-    // These maps store the tree's logs and leaves, which get placed after the leaves have been 'opacified'.
-    private HashMap<BlockPos, IBlockState> logMap;
-    private HashMap<BlockPos, IBlockState> leafMap;
-
-    // This list stores the 'columns' that contain leaves.
-    private ArrayList<BlockPos> leafColumns;
-
-    private int groundY;
-
     public TreeCastaneaDentata() {
 
         super();
@@ -46,21 +30,11 @@ public class TreeCastaneaDentata extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_american_chestnut_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_american_chestnut_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_american_chestnut_01.getDefaultState());
-
-        this.logMap = new HashMap<BlockPos, IBlockState>();
-        this.leafMap = new HashMap<BlockPos, IBlockState>();
-
-        this.leafColumns = new ArrayList<BlockPos>(){};
     }
 
     @Override
     public boolean generate(World world, Random rand, BlockPos pos) {
-
-        this.world = world;
-        this.rand = rand;
-        this.crownSize = this.getSizeFromMinMax(rand, this.minCrownSize, this.maxCrownSize);
-        this.trunkSize = this.getSizeFromMinMax(rand, this.minTrunkSize, this.maxTrunkSize);
-        this.groundY = pos.getY();
+        this.init(world, rand, pos);
 
         IBlockState leaves = this.leavesBlock.withProperty(BlockLeaves.CHECK_DECAY, false);
         //IBlockState leaves = this.leavesBlock.withProperty(BlockLeaves.DECAYABLE, false);
@@ -94,88 +68,10 @@ public class TreeCastaneaDentata extends AppalachiaTree {
         return true;
     }
 
-    /*
-    Despite its name, this method doesn't actually place any blocks,
-    it just stores them in the relevant hashmaps to be placed later on.
-     */
-    protected void setBlockState(BlockPos pos, IBlockState state) {
-
-        if (state.getBlock() instanceof AppalachiaBlockLog) {
-            this.logMap.put(pos, state);
-        }
-        else if (state.getBlock() instanceof AppalachiaBlockLeaves) {
-            this.leafMap.put(pos, state);
-
-            // Create a column using the X and Z coords of this block, but only add it to the list if it's not in there already.
-            BlockPos leafColumn = new BlockPos(pos.getX(), 0, pos.getZ());
-            if (!this.leafColumns.contains(leafColumn)) {
-                this.leafColumns.add(leafColumn);
-            }
-        }
-
-        //this.setBlockAndNotifyAdequately(this.world, pos, state);
+    @Override
+    public int opaqueLeavesChance() {
+        return 2;
     }
-
-    private void opacifyLeaves() {
-
-        /*
-         The minY and maxY values need to be calculated from the ground because we're only concerned
-         about leaf blocks that are 5-8 blocks above the ground.
-         More specifically, we want to opacify one random leaf block between minY and maxY, per column.
-          */
-        int minY = this.groundY + 5;
-        int maxY = this.groundY + 8;
-
-        // Find all leaf blocks between minY and maxY in the columns that have leaves and choose one to be opaque.
-        for (BlockPos leafColumn : this.leafColumns) {
-
-            int x = leafColumn.getX();
-            int z = leafColumn.getZ();
-            ArrayList<BlockPos> opaqueCandidates = new ArrayList<BlockPos>(){};
-
-            for (int y = minY; y <= maxY; y++) {
-
-                BlockPos pos = new BlockPos(x, y, z);
-                if (this.leafMap.containsKey(pos)) {
-                    opaqueCandidates.add(pos);
-                }
-            }
-
-            // Now that we have our list of opaque candidates, let's choose a random one to be opaque for this column.
-            if (opaqueCandidates.size() > 0) {
-
-                BlockPos opaquePos = opaqueCandidates.get(this.rand.nextInt(opaqueCandidates.size()));
-                //IBlockState opaqueBlock = this.leafMap.get(opaquePos).withProperty(AppalachiaBlockLeaves.TRANSLUCENT, false);
-                this.leafMap.remove(opaquePos);
-                //this.leafMap.put(opaquePos, opaqueBlock);
-                this.leafMap.put(opaquePos, Blocks.GLOWSTONE.getDefaultState());
-            }
-        }
-    }
-
-    /*
-    This method gets called from spawn2(), after all logs and leaves have been stored in their respective hashmaps.
-     */
-    private void placeAllBlocks(World world) {
-        placeBlockMap(world, this.logMap);
-        opacifyLeaves();
-        placeBlockMap(world, this.leafMap);
-    }
-
-    /*
-    This is the method that actually places the logs and leaves.
-     */
-    private void placeBlockMap(World world, HashMap<BlockPos, IBlockState> map) {
-        for (BlockPos pos : map.keySet()) {
-            this.setBlockAndNotifyAdequately(world, pos, map.get(pos));
-        }
-    }
-
-    /*
-    The calls to this unnecessary method in spawn() were generated by the Schematic To Java Converter.
-    @TODO: Remove all calls to this method, and the method itself.
-     */
-    private void setBlockMetadataWithNotify(int x, int y, int z, int meta1, int meta2) {}
 
     private void spawn(World world, int x, int y, int z, IBlockState log, IBlockState leaves) {
 
@@ -3391,6 +3287,6 @@ public class TreeCastaneaDentata extends AppalachiaTree {
         this.setBlockMetadataWithNotify(x+10, currentY, z+9, 12, 12);
         currentY++;
 
-        placeAllBlocks(world);
+        //placeAllBlocks(world);
     }
 }
