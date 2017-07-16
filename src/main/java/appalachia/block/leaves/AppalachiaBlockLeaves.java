@@ -8,6 +8,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks.EnumType;
 import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.color.IBlockColor;
@@ -41,13 +42,20 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
     private String slug;
     protected boolean decayTest = false;
 
+    public static final PropertyBool TRANSLUCENT = PropertyBool.create("translucent");
+
     public AppalachiaBlockLeaves(String unlocalizedName) {
 
         super();
         this.setUnlocalizedName(unlocalizedName);
         this.setHarvestLevel("axe", 0);
         this.setCreativeTab(AppalachiaTabs.tabDecoration);
-        this.setDefaultState(blockState.getBaseState().withProperty(DECAYABLE, Boolean.valueOf(true)).withProperty(CHECK_DECAY, Boolean.valueOf(false)));
+        this.setDefaultState(
+            blockState.getBaseState()
+                .withProperty(DECAYABLE, Boolean.valueOf(true))
+                .withProperty(CHECK_DECAY, Boolean.valueOf(false))
+                .withProperty(TRANSLUCENT, Boolean.valueOf(true))
+        );
         this.leavesFancy = true;
         this.slug = unlocalizedName;
     }
@@ -73,9 +81,10 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
     @Override
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
     {
-        if(PlayerUtil.isCreativeMode(entityIn)) {
+        if (PlayerUtil.isCreativeMode(entityIn)) {
             return;
         }
+
         entityIn.motionX *= 0.75D;
         entityIn.motionY *= 0.75D;
         entityIn.motionZ *= 0.75D;
@@ -115,8 +124,7 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
 
     @Override
     protected BlockStateContainer createBlockState() {
-
-        return new BlockStateContainer(this, new IProperty[]{DECAYABLE, CHECK_DECAY});
+        return new BlockStateContainer(this, new IProperty[]{DECAYABLE, CHECK_DECAY, TRANSLUCENT});
     }
 
     @Override
@@ -204,5 +212,37 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
     public static Block getRandomLeaves() {
 
         return (AppalachiaBlockLeaves)BlockManager.appalachiaLeaves.get(rand.nextInt(BlockManager.appalachiaLeaves.size()));
+    }
+
+    /**
+     * Location aware and overrideable version of the lightOpacity array,
+     * return the number to subtract from the light value when it passes through this block.
+     * <p>
+     * This is not guaranteed to have the tile entity in place before this is called, so it is
+     * Recommended that you have your tile entity call relight after being placed if you
+     * rely on it for light info.
+     *
+     * @param state The Block state
+     * @param world The current world
+     * @param pos   Block position in world
+     * @return The amount of light to block, 0 for air, 255 for fully opaque.
+     */
+    @Override
+    public int getLightOpacity(IBlockState state, IBlockAccess world, BlockPos pos) {
+
+        if(state.getPropertyKeys().contains(TRANSLUCENT)) {
+
+            boolean translucent = state.getValue(TRANSLUCENT);
+
+            if (translucent) {
+                return 0;
+            }
+            else {
+                return super.getLightOpacity(state, world, pos);
+            }
+        }
+        else {
+            return super.getLightOpacity(state, world, pos);
+        }
     }
 }

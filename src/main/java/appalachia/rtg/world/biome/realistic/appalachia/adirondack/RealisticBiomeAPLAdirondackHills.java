@@ -9,6 +9,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
 import appalachia.api.AppalachiaBiomes;
+import appalachia.rtg.world.biome.deco.collection.DecoCollectionAPL;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionAdirondackHills;
 import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 import appalachia.rtg.world.gen.terrain.SpikeEverywhereEffect;
@@ -135,8 +136,8 @@ public class RealisticBiomeAPLAdirondackHills extends RealisticBiomeAPLBase {
 
     @Override
     public void initDecos() {
-
         this.addDecoCollection(new DecoCollectionAdirondackHills(this.getConfig()));
+        this.addDecoCollection(new DecoCollectionAPL(this.getConfig()));
     }
 
     public class TerrainAPLAdirondackHills extends TerrainBase {

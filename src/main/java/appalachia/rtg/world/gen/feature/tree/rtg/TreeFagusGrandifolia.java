@@ -22,8 +22,6 @@ import appalachia.api.AppalachiaBlocks;
  */
 public class TreeFagusGrandifolia extends AppalachiaTree {
 
-    World world;
-    Random rand;
     boolean shortVersion = false;
 
     public TreeFagusGrandifolia() {
@@ -41,12 +39,8 @@ public class TreeFagusGrandifolia extends AppalachiaTree {
 
     @Override
     public boolean generate(World world, Random rand, BlockPos pos) {
+        this.init(world, rand, pos);
 
-        this.crownSize = this.getSizeFromMinMax(rand, this.minCrownSize, this.maxCrownSize);
-        this.trunkSize = this.getSizeFromMinMax(rand, this.minTrunkSize, this.maxTrunkSize);
-
-        this.world = world;
-        this.rand = rand;
         int x = pos.getX();
         int y = pos.getY();
         int z = pos.getZ();
@@ -88,6 +82,11 @@ public class TreeFagusGrandifolia extends AppalachiaTree {
         }
 
         return true;
+    }
+
+    @Override
+    public int opaqueLeavesChance() {
+        return 2;
     }
 
     protected void spawn(World world, int x, int y, int z, IBlockState log, IBlockState leaves) {
@@ -3962,14 +3961,5 @@ public class TreeFagusGrandifolia extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+6, currentY, z+7), leaves);
         this.setBlockMetadataWithNotify(x+6, currentY, z+7, 12, 12);
         currentY++;
-    }
-
-    protected void setBlockState(BlockPos pos, IBlockState state) {
-
-        this.setBlockAndNotifyAdequately(this.world, pos, state);
-    }
-
-    private void setBlockMetadataWithNotify(int x, int y, int z, int meta1, int meta2) {
-
     }
 }
