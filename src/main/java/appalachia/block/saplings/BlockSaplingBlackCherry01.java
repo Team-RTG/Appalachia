@@ -1,6 +1,8 @@
 package appalachia.block.saplings;
 
 import appalachia.block.IAppalachiaBlock;
+import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
+import appalachia.rtg.world.gen.feature.tree.rtg.TreeBlackCherry;
 
 public class BlockSaplingBlackCherry01 extends AppalachiaBlockSapling implements IAppalachiaBlock {
 
@@ -13,5 +15,11 @@ public class BlockSaplingBlackCherry01 extends AppalachiaBlockSapling implements
     public String registryName() {
 
         return super.registryName();
+    }
+
+    @Override
+    public AppalachiaTree getTree() {
+
+        return new TreeBlackCherry();
     }
 }
