@@ -22,11 +22,10 @@ import appalachia.api.AppalachiaBlocks;
  */
 public class TreeCastaneaDentata extends AppalachiaTree {
 
-    World world;
-    Random rand;
-
     public TreeCastaneaDentata() {
+
         super();
+
         this.setLogBlock(AppalachiaBlocks.log_american_chestnut_01.getDefaultState());
         this.setLeavesBlock(AppalachiaBlocks.leaves_american_chestnut_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_american_chestnut_01_fallen.getDefaultState());
@@ -35,46 +34,46 @@ public class TreeCastaneaDentata extends AppalachiaTree {
 
     @Override
     public boolean generate(World world, Random rand, BlockPos pos) {
+        this.init(world, rand, pos);
 
-        this.crownSize = this.getSizeFromMinMax(rand, this.minCrownSize, this.maxCrownSize);
-        this.trunkSize = this.getSizeFromMinMax(rand, this.minTrunkSize, this.maxTrunkSize);
+        IBlockState leaves = this.leavesBlock.withProperty(BlockLeaves.CHECK_DECAY, false);
+        //IBlockState leaves = this.leavesBlock.withProperty(BlockLeaves.DECAYABLE, false);
 
-        this.world = world;
-        this.rand = rand;
         int x = pos.getX();
         int y = pos.getY();
         int z = pos.getZ();
 
-        ArrayList<BlockPos> groundPos = new ArrayList<BlockPos>(){};
-
-        groundPos.add(new BlockPos(x+7, y, z+7));
-        groundPos.add(new BlockPos(x+5, y, z+8));
-        groundPos.add(new BlockPos(x+4, y, z+9));
-        groundPos.add(new BlockPos(x+9, y, z+9));
-        groundPos.add(new BlockPos(x+10, y, z+9));
-        groundPos.add(new BlockPos(x+5, y, z+10));
-        groundPos.add(new BlockPos(x+7, y, z+10));
-        groundPos.add(new BlockPos(x+10, y, z+10));
-        groundPos.add(new BlockPos(x+5, y, z+11));
-        groundPos.add(new BlockPos(x+7, y, z+11));
-        groundPos.add(new BlockPos(x+8, y, z+12));
-        groundPos.add(new BlockPos(x+6, y, z+13));
-
-        for (int i = 0; i < groundPos.size(); i++) {
-            if (!isValidGroundBlock(world, rand, groundPos.get(i), 1)) {
+        // This tree has a fat trunk, so make sure the ground block is valid for all trunk log blocks
+        ArrayList<BlockPos> groundList = new ArrayList<BlockPos>(){};
+        groundList.add(new BlockPos(x+7, y, z+7));
+        groundList.add(new BlockPos(x+5, y, z+8));
+        groundList.add(new BlockPos(x+4, y, z+9));
+        groundList.add(new BlockPos(x+9, y, z+9));
+        groundList.add(new BlockPos(x+10, y, z+9));
+        groundList.add(new BlockPos(x+5, y, z+10));
+        groundList.add(new BlockPos(x+7, y, z+10));
+        groundList.add(new BlockPos(x+10, y, z+10));
+        groundList.add(new BlockPos(x+5, y, z+11));
+        groundList.add(new BlockPos(x+7, y, z+11));
+        groundList.add(new BlockPos(x+8, y, z+12));
+        groundList.add(new BlockPos(x+6, y, z+13));
+        for (BlockPos groundPos : groundList) {
+            if (!isValidGroundBlock(world, rand, groundPos, 1)) {
                 return false;
             }
         }
-
-        IBlockState leaves = this.leavesBlock.withProperty(BlockLeaves.CHECK_DECAY, false);
-        //IBlockState leaves = this.leavesBlock.withProperty(BlockLeaves.DECAYABLE, false);
 
         this.spawn(world, x, y - 2, z, this.logBlock, leaves);
 
         return true;
     }
 
-    protected void spawn(World world, int x, int y, int z, IBlockState log, IBlockState leaves) {
+    @Override
+    public int opaqueLeavesChance() {
+        return 2;
+    }
+
+    private void spawn(World world, int x, int y, int z, IBlockState log, IBlockState leaves) {
 
         int currentY = y;
 
@@ -83,7 +82,7 @@ public class TreeCastaneaDentata extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+8, currentY, z+12), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
         this.setBlockMetadataWithNotify(x+8, currentY, z+12, 13, 13);
         currentY++;
-        
+
         this.setBlockState(new BlockPos(x+4, currentY, z+9), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
         this.setBlockMetadataWithNotify(x+4, currentY, z+9, 13, 13);
         this.setBlockState(new BlockPos(x+7, currentY, z+11), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
@@ -1955,11 +1954,12 @@ public class TreeCastaneaDentata extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+10, currentY, z+18), leaves);
         this.setBlockMetadataWithNotify(x+10, currentY, z+18, 12, 12);
         currentY++;
-        
+
         spawn2(world, x, currentY, z, log, leaves);
     }
 
-    protected void spawn2(World world, int x, int y, int z, IBlockState log, IBlockState leaves) {
+    // This is just a continuation of spawn() to avoid compilation errors.
+    private void spawn2(World world, int x, int y, int z, IBlockState log, IBlockState leaves) {
 
         int currentY = y;
 
@@ -3286,14 +3286,7 @@ public class TreeCastaneaDentata extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+10, currentY, z+9), leaves);
         this.setBlockMetadataWithNotify(x+10, currentY, z+9, 12, 12);
         currentY++;
-    }
 
-    protected void setBlockState(BlockPos pos, IBlockState state) {
-
-        this.setBlockAndNotifyAdequately(this.world, pos, state);
-    }
-
-    private void setBlockMetadataWithNotify(int x, int y, int z, int meta1, int meta2) {
-
+        //placeAllBlocks(world);
     }
 }

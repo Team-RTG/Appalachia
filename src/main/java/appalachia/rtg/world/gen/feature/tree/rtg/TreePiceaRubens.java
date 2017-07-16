@@ -21,9 +21,6 @@ import appalachia.api.AppalachiaBlocks;
  */
 public class TreePiceaRubens extends AppalachiaTree {
 
-    World world;
-    Random rand;
-
     public TreePiceaRubens() {
         super();
         this.setLogBlock(AppalachiaBlocks.log_red_spruce_01.getDefaultState());
@@ -38,12 +35,8 @@ public class TreePiceaRubens extends AppalachiaTree {
 
     @Override
     public boolean generate(World world, Random rand, BlockPos pos) {
+        this.init(world, rand, pos);
 
-        this.crownSize = this.getSizeFromMinMax(rand, this.minCrownSize, this.maxCrownSize);
-        this.trunkSize = this.getSizeFromMinMax(rand, this.minTrunkSize, this.maxTrunkSize);
-
-        this.world = world;
-        this.rand = rand;
         int x = pos.getX();
         int y = pos.getY();
         int z = pos.getZ();
@@ -64,6 +57,11 @@ public class TreePiceaRubens extends AppalachiaTree {
         this.spawn(world, x, y, z, this.logBlock, leaves);
 
         return true;
+    }
+
+    @Override
+    public int opaqueLeavesChance() {
+        return 2;
     }
 
     protected void spawn(World world, int x, int y, int z, IBlockState log, IBlockState leaves) {
@@ -861,14 +859,5 @@ public class TreePiceaRubens extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+4, currentY, z+4), leaves);
         this.setBlockMetadataWithNotify(x+4, currentY, z+4, 13, 13);
         currentY++;
-    }
-
-    protected void setBlockState(BlockPos pos, IBlockState state) {
-
-        this.setBlockAndNotifyAdequately(this.world, pos, state);
-    }
-
-    private void setBlockMetadataWithNotify(int x, int y, int z, int meta1, int meta2) {
-
     }
 }
