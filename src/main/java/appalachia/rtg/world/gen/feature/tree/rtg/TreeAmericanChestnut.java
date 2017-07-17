@@ -3,8 +3,6 @@ package appalachia.rtg.world.gen.feature.tree.rtg;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.minecraft.block.BlockLeaves;
-import net.minecraft.block.BlockLog;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -38,9 +36,6 @@ public class TreeAmericanChestnut extends AppalachiaTree {
     @Override
     public boolean generate(World world, Random rand, BlockPos pos) {
         this.init(world, rand, pos);
-
-        IBlockState leaves = this.leavesBlock.withProperty(BlockLeaves.CHECK_DECAY, false);
-        //IBlockState leaves = this.leavesBlock.withProperty(BlockLeaves.DECAYABLE, false);
 
         int x = pos.getX();
         int y = pos.getY();
@@ -87,122 +82,122 @@ public class TreeAmericanChestnut extends AppalachiaTree {
 
         int currentY = y;
 
-        this.setBlockState(new BlockPos(x+4, currentY, z+12), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+8, currentY, z+12), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
+        this.setBlockState(new BlockPos(x+4, currentY, z+12), log);
+        this.setBlockState(new BlockPos(x+8, currentY, z+12), log);
         currentY++;
 
-        this.setBlockState(new BlockPos(x+4, currentY, z+9), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+7, currentY, z+11), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+4, currentY, z+12), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+6, currentY, z+14), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
+        this.setBlockState(new BlockPos(x+4, currentY, z+9), log);
+        this.setBlockState(new BlockPos(x+7, currentY, z+11), log);
+        this.setBlockState(new BlockPos(x+4, currentY, z+12), log);
+        this.setBlockState(new BlockPos(x+6, currentY, z+14), log);
         currentY++;
 
-        this.setBlockState(new BlockPos(x+7, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+5, currentY, z+8), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+4, currentY, z+9), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+9, currentY, z+9), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+10, currentY, z+9), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+5, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+7, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+10, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+5, currentY, z+11), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+7, currentY, z+11), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+8, currentY, z+12), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+6, currentY, z+13), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
+        this.setBlockState(new BlockPos(x+7, currentY, z+7), log);
+        this.setBlockState(new BlockPos(x+5, currentY, z+8), log);
+        this.setBlockState(new BlockPos(x+4, currentY, z+9), log);
+        this.setBlockState(new BlockPos(x+9, currentY, z+9), log);
+        this.setBlockState(new BlockPos(x+10, currentY, z+9), log);
+        this.setBlockState(new BlockPos(x+5, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+7, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+10, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+5, currentY, z+11), log);
+        this.setBlockState(new BlockPos(x+7, currentY, z+11), log);
+        this.setBlockState(new BlockPos(x+8, currentY, z+12), log);
+        this.setBlockState(new BlockPos(x+6, currentY, z+13), log);
         currentY++;
 
-        this.setBlockState(new BlockPos(x+5, currentY, z+8), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+7, currentY, z+8), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+8, currentY, z+8), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+8, currentY, z+9), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+4, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+5, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+7, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+9, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+4, currentY, z+11), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+5, currentY, z+11), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+7, currentY, z+11), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+8, currentY, z+12), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+6, currentY, z+13), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
+        this.setBlockState(new BlockPos(x+5, currentY, z+8), log);
+        this.setBlockState(new BlockPos(x+7, currentY, z+8), log);
+        this.setBlockState(new BlockPos(x+8, currentY, z+8), log);
+        this.setBlockState(new BlockPos(x+8, currentY, z+9), log);
+        this.setBlockState(new BlockPos(x+4, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+5, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+7, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+9, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+4, currentY, z+11), log);
+        this.setBlockState(new BlockPos(x+5, currentY, z+11), log);
+        this.setBlockState(new BlockPos(x+7, currentY, z+11), log);
+        this.setBlockState(new BlockPos(x+8, currentY, z+12), log);
+        this.setBlockState(new BlockPos(x+6, currentY, z+13), log);
         currentY++;
 
-        this.setBlockState(new BlockPos(x+5, currentY, z+8), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+5, currentY, z+9), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+6, currentY, z+9), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+7, currentY, z+9), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+8, currentY, z+9), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+5, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+6, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+7, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+8, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+5, currentY, z+11), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+6, currentY, z+11), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+7, currentY, z+11), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+8, currentY, z+11), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+5, currentY, z+12), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+6, currentY, z+12), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+7, currentY, z+12), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
+        this.setBlockState(new BlockPos(x+5, currentY, z+8), log);
+        this.setBlockState(new BlockPos(x+5, currentY, z+9), log);
+        this.setBlockState(new BlockPos(x+6, currentY, z+9), log);
+        this.setBlockState(new BlockPos(x+7, currentY, z+9), log);
+        this.setBlockState(new BlockPos(x+8, currentY, z+9), log);
+        this.setBlockState(new BlockPos(x+5, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+6, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+7, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+8, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+5, currentY, z+11), log);
+        this.setBlockState(new BlockPos(x+6, currentY, z+11), log);
+        this.setBlockState(new BlockPos(x+7, currentY, z+11), log);
+        this.setBlockState(new BlockPos(x+8, currentY, z+11), log);
+        this.setBlockState(new BlockPos(x+5, currentY, z+12), log);
+        this.setBlockState(new BlockPos(x+6, currentY, z+12), log);
+        this.setBlockState(new BlockPos(x+7, currentY, z+12), log);
         currentY++;
 
-        this.setBlockState(new BlockPos(x+5, currentY, z+9), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+7, currentY, z+9), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+5, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+6, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+7, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+8, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+5, currentY, z+11), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+6, currentY, z+11), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+7, currentY, z+11), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+8, currentY, z+11), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+6, currentY, z+12), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+7, currentY, z+12), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
+        this.setBlockState(new BlockPos(x+5, currentY, z+9), log);
+        this.setBlockState(new BlockPos(x+7, currentY, z+9), log);
+        this.setBlockState(new BlockPos(x+5, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+6, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+7, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+8, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+5, currentY, z+11), log);
+        this.setBlockState(new BlockPos(x+6, currentY, z+11), log);
+        this.setBlockState(new BlockPos(x+7, currentY, z+11), log);
+        this.setBlockState(new BlockPos(x+8, currentY, z+11), log);
+        this.setBlockState(new BlockPos(x+6, currentY, z+12), log);
+        this.setBlockState(new BlockPos(x+7, currentY, z+12), log);
         currentY++;
 
-        this.setBlockState(new BlockPos(x+7, currentY, z+9), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+8, currentY, z+9), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+6, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+7, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+8, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+6, currentY, z+11), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+7, currentY, z+11), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
+        this.setBlockState(new BlockPos(x+7, currentY, z+9), log);
+        this.setBlockState(new BlockPos(x+8, currentY, z+9), log);
+        this.setBlockState(new BlockPos(x+6, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+7, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+8, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+6, currentY, z+11), log);
+        this.setBlockState(new BlockPos(x+7, currentY, z+11), log);
         currentY++;
 
         this.setBlockState(new BlockPos(x+6, currentY, z+6), leaves);
-        this.setBlockState(new BlockPos(x+7, currentY, z+9), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+8, currentY, z+9), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+6, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+7, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+8, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+7, currentY, z+11), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+8, currentY, z+11), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
+        this.setBlockState(new BlockPos(x+7, currentY, z+9), log);
+        this.setBlockState(new BlockPos(x+8, currentY, z+9), log);
+        this.setBlockState(new BlockPos(x+6, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+7, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+8, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+7, currentY, z+11), log);
+        this.setBlockState(new BlockPos(x+8, currentY, z+11), log);
         currentY++;
 
         this.setBlockState(new BlockPos(x+6, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+6), leaves);
-        this.setBlockState(new BlockPos(x+6, currentY, z+6), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
+        this.setBlockState(new BlockPos(x+6, currentY, z+6), log);
         this.setBlockState(new BlockPos(x+13, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+14, currentY, z+6), leaves);
-        this.setBlockState(new BlockPos(x+6, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+7, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
+        this.setBlockState(new BlockPos(x+6, currentY, z+7), log);
+        this.setBlockState(new BlockPos(x+7, currentY, z+7), log);
         this.setBlockState(new BlockPos(x+13, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+14, currentY, z+7), leaves);
-        this.setBlockState(new BlockPos(x+7, currentY, z+8), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
+        this.setBlockState(new BlockPos(x+7, currentY, z+8), log);
         this.setBlockState(new BlockPos(x+14, currentY, z+8), leaves);
-        this.setBlockState(new BlockPos(x+7, currentY, z+9), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+8, currentY, z+9), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
+        this.setBlockState(new BlockPos(x+7, currentY, z+9), log);
+        this.setBlockState(new BlockPos(x+8, currentY, z+9), log);
         this.setBlockState(new BlockPos(x+13, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+14, currentY, z+9), leaves);
-        this.setBlockState(new BlockPos(x+6, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+7, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+8, currentY, z+10), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+7, currentY, z+11), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+8, currentY, z+11), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
+        this.setBlockState(new BlockPos(x+6, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+7, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+8, currentY, z+10), log);
+        this.setBlockState(new BlockPos(x+7, currentY, z+11), log);
+        this.setBlockState(new BlockPos(x+8, currentY, z+11), log);
         this.setBlockState(new BlockPos(x+14, currentY, z+11), leaves);
-        this.setBlockState(new BlockPos(x+8, currentY, z+12), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockState(new BlockPos(x+9, currentY, z+12), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
+        this.setBlockState(new BlockPos(x+8, currentY, z+12), log);
+        this.setBlockState(new BlockPos(x+9, currentY, z+12), log);
         this.setBlockState(new BlockPos(x+14, currentY, z+12), leaves);
         this.setBlockState(new BlockPos(x+15, currentY, z+12), leaves);
-        this.setBlockState(new BlockPos(x+9, currentY, z+13), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
+        this.setBlockState(new BlockPos(x+9, currentY, z+13), log);
         this.setBlockState(new BlockPos(x+11, currentY, z+13), leaves);
         this.setBlockState(new BlockPos(x+14, currentY, z+13), leaves);
         this.setBlockState(new BlockPos(x+16, currentY, z+13), leaves);
@@ -1042,14 +1037,6 @@ public class TreeAmericanChestnut extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+10, currentY, z+18), leaves);
         currentY++;
 
-        spawn2(world, x, currentY, z, log, leaves);
-    }
-
-    // This is just a continuation of spawn() to avoid compilation errors.
-    private void spawn2(World world, int x, int y, int z, IBlockState log, IBlockState leaves) {
-
-        int currentY = y;
-
         this.setBlockState(new BlockPos(x+6, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+11, currentY, z+2), leaves);
@@ -1721,7 +1708,5 @@ public class TreeAmericanChestnut extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+9, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+10, currentY, z+9), leaves);
         currentY++;
-
-        //placeAllBlocks(world);
     }
 }
