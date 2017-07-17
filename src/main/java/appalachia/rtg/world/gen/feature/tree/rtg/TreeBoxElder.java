@@ -28,6 +28,9 @@ public class TreeBoxElder extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_box_elder_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_box_elder_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_box_elder_01.getDefaultState());
+
+        this.firstBlockOffsetX = 4;
+        this.firstBlockOffsetZ = 4;
     }
 
     public TreeBoxElder(boolean shortVersion) {

@@ -30,11 +30,17 @@ public class TreeRedOak extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_red_oak_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_red_oak_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_red_oak_01.getDefaultState());
+
+        this.firstBlockOffsetX = 10;
+        this.firstBlockOffsetZ = 8;
     }
 
     public TreeRedOak(boolean shortVersion) {
         this();
         this.shortVersion = shortVersion;
+
+        this.firstBlockOffsetX = 4;
+        this.firstBlockOffsetZ = 6;
     }
 
     @Override

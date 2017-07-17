@@ -28,6 +28,9 @@ public class TreeTamarack extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_tamarack_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_tamarack_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_tamarack_01.getDefaultState());
+
+        this.firstBlockOffsetX = 4;
+        this.firstBlockOffsetZ = 4;
     }
 
     public TreeTamarack(boolean shortVersion) {

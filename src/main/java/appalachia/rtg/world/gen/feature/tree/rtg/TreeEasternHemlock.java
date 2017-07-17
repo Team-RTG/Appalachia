@@ -28,6 +28,9 @@ public class TreeEasternHemlock extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_eastern_hemlock_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_eastern_hemlock_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_eastern_hemlock_01.getDefaultState());
+
+        this.firstBlockOffsetX = 6;
+        this.firstBlockOffsetZ = 3;
     }
 
     public TreeEasternHemlock(boolean shortVersion) {

@@ -27,6 +27,9 @@ public class TreeBalsamFir extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_balsam_fir_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_balsam_fir_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_balsam_fir_01.getDefaultState());
+
+        this.firstBlockOffsetX = 6;
+        this.firstBlockOffsetZ = 6;
     }
 
     @Override

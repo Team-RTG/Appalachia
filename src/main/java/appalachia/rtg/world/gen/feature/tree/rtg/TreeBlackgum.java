@@ -28,6 +28,9 @@ public class TreeBlackgum extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_blackgum_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_blackgum_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_blackgum_01.getDefaultState());
+
+        this.firstBlockOffsetX = 7;
+        this.firstBlockOffsetZ = 3;
     }
 
     @Override

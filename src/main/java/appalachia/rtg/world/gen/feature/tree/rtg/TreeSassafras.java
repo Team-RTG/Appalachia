@@ -28,6 +28,9 @@ public class TreeSassafras extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_sassafras_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_sassafras_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_sassafras_01.getDefaultState());
+
+        this.firstBlockOffsetX = 9;
+        this.firstBlockOffsetZ = 5;
     }
 
     public TreeSassafras(boolean shortVersion) {

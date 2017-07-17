@@ -27,6 +27,9 @@ public class TreeRiverBirch extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_river_birch_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_river_birch_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_river_birch_01.getDefaultState());
+
+        this.firstBlockOffsetX = 5;
+        this.firstBlockOffsetZ = 6;
     }
 
     public TreeRiverBirch(boolean shortVersion) {

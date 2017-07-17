@@ -29,11 +29,17 @@ public class TreeFloweringDogwood extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_flowering_dogwood_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_flowering_dogwood_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_flowering_dogwood_01.getDefaultState());
+
+        this.firstBlockOffsetX = 5;
+        this.firstBlockOffsetZ = 5;
     }
 
     public TreeFloweringDogwood(boolean shortVersion) {
         this();
         this.shortVersion = shortVersion;
+
+        this.firstBlockOffsetX = 3;
+        this.firstBlockOffsetZ = 3;
     }
 
     @Override

@@ -28,6 +28,9 @@ public class TreeWhitePine extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_white_pine_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_white_pine_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_white_pine_01.getDefaultState());
+
+        this.firstBlockOffsetX = 7;
+        this.firstBlockOffsetZ = 6;
     }
 
     public TreeWhitePine(boolean shortVersion) {

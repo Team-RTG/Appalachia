@@ -33,6 +33,9 @@ public class TreeAmericanBasswood extends AppalachiaTree {
 
         this.trunkSize = 2;
         this.validGroundBlocks = new ArrayList<IBlockState>(Arrays.asList(Blocks.GRASS.getDefaultState(), Blocks.DIRT.getDefaultState()));
+
+        this.firstBlockOffsetX = 8;
+        this.firstBlockOffsetZ = 7;
     }
 
     @Override

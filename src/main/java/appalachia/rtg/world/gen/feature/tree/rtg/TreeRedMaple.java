@@ -31,6 +31,9 @@ public class TreeRedMaple extends AppalachiaTree {
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_red_maple_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_red_maple_01.getDefaultState());
 
+        this.firstBlockOffsetX = 5;
+        this.firstBlockOffsetZ = 5;
+
         this.validGroundBlocks = new ArrayList<IBlockState>(Arrays.asList(Blocks.GRASS.getDefaultState(), Blocks.DIRT.getDefaultState()));
     }
 

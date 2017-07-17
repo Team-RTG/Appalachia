@@ -30,6 +30,9 @@ public class TreeAmericanChestnut extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_american_chestnut_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_american_chestnut_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_american_chestnut_01.getDefaultState());
+
+        this.firstBlockOffsetX = 7;
+        this.firstBlockOffsetZ = 7;
     }
 
     @Override

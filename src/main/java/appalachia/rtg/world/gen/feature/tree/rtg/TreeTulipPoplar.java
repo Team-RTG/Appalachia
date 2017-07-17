@@ -27,6 +27,9 @@ public class TreeTulipPoplar extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_tulip_poplar_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_tulip_poplar_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_tulip_poplar_01.getDefaultState());
+
+        this.firstBlockOffsetX = 6;
+        this.firstBlockOffsetZ = 4;
     }
 
     public TreeTulipPoplar(boolean shortVersion) {

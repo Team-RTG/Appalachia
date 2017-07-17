@@ -30,11 +30,17 @@ public class TreeAmericanBeech extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_american_beech_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_american_beech_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_american_beech_01.getDefaultState());
+
+        this.firstBlockOffsetX = 11;
+        this.firstBlockOffsetZ = 10;
     }
 
     public TreeAmericanBeech(boolean shortVersion) {
         this();
         this.shortVersion = shortVersion;
+
+        this.firstBlockOffsetX = 4;
+        this.firstBlockOffsetZ = 5;
     }
 
     @Override

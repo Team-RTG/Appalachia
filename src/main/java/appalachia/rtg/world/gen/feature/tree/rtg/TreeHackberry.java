@@ -30,11 +30,17 @@ public class TreeHackberry extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_hackberry_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_hackberry_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_hackberry_01.getDefaultState());
+
+        this.firstBlockOffsetX = 8;
+        this.firstBlockOffsetZ = 9;
     }
 
     public TreeHackberry(boolean shortVersion) {
         this();
         this.shortVersion = shortVersion;
+
+        this.firstBlockOffsetX = 6;
+        this.firstBlockOffsetZ = 5;
     }
 
     @Override

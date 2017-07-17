@@ -28,6 +28,9 @@ public class TreeRedElm extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_red_elm_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_red_elm_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_red_elm_01.getDefaultState());
+
+        this.firstBlockOffsetX = 11;
+        this.firstBlockOffsetZ = 6;
     }
 
     public TreeRedElm(boolean shortVersion) {

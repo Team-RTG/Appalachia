@@ -30,11 +30,17 @@ public class TreeRedAsh extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_red_ash_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_red_ash_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_red_ash_01.getDefaultState());
+
+        this.firstBlockOffsetX = 7;
+        this.firstBlockOffsetZ = 7;
     }
 
     public TreeRedAsh(boolean shortVersion) {
         this();
         this.shortVersion = shortVersion;
+
+        this.firstBlockOffsetX = 5;
+        this.firstBlockOffsetZ = 5;
     }
 
     @Override

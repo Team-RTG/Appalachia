@@ -30,11 +30,17 @@ public class TreeAtlanticWhiteCedar extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_atlantic_white_cedar_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_atlantic_white_cedar_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_atlantic_white_cedar_01.getDefaultState());
+
+        this.firstBlockOffsetX = 8;
+        this.firstBlockOffsetZ = 6;
     }
 
     public TreeAtlanticWhiteCedar(boolean shortVersion) {
         this();
         this.shortVersion = shortVersion;
+
+        this.firstBlockOffsetX = 4;
+        this.firstBlockOffsetZ = 5;
     }
 
     @Override

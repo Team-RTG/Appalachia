@@ -29,11 +29,17 @@ public class TreeHophornbeam extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_hophornbeam_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_hophornbeam_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_hophornbeam_01.getDefaultState());
+
+        this.firstBlockOffsetX = 7;
+        this.firstBlockOffsetZ = 8;
     }
 
     public TreeHophornbeam(boolean shortVersion) {
         this();
         this.shortVersion = shortVersion;
+
+        this.firstBlockOffsetX = 5;
+        this.firstBlockOffsetZ = 4;
     }
 
     @Override

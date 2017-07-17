@@ -27,6 +27,9 @@ public class TreePersimmon extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_persimmon_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_persimmon_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_persimmon_01.getDefaultState());
+
+        this.firstBlockOffsetX = 4;
+        this.firstBlockOffsetZ = 3;
     }
 
     public TreePersimmon(boolean shortVersion) {

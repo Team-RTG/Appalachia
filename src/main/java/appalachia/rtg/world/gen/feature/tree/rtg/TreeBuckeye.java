@@ -28,6 +28,9 @@ public class TreeBuckeye extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_buckeye_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_buckeye_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_buckeye_01.getDefaultState());
+
+        this.firstBlockOffsetX = 11;
+        this.firstBlockOffsetZ = 8;
     }
 
     @Override

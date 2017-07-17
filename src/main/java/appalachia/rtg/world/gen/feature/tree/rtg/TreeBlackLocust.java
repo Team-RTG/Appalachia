@@ -28,6 +28,9 @@ public class TreeBlackLocust extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_black_locust_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_black_locust_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_black_locust_01.getDefaultState());
+
+        this.firstBlockOffsetX = 7;
+        this.firstBlockOffsetZ = 4;
     }
 
     @Override

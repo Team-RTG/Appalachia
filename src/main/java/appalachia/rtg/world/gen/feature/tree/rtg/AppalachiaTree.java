@@ -27,6 +27,13 @@ public abstract class AppalachiaTree extends TreeRTG implements IAppalachiaTree 
     protected int opaqueLeavesMaxY;
     protected int opaqueLeavesChance;
 
+    protected int genX;
+    protected int genY;
+    protected int genZ;
+
+    protected int firstBlockOffsetX;
+    protected int firstBlockOffsetZ;
+
     public AppalachiaTree(boolean notify) {
         super(notify);
     }
@@ -50,6 +57,9 @@ public abstract class AppalachiaTree extends TreeRTG implements IAppalachiaTree 
         this.noLeaves = false;
         this.generateFromSapling = false;
 
+        this.firstBlockOffsetX = 0;
+        this.firstBlockOffsetZ = 0;
+
         this.validGroundBlocks = new ArrayList<IBlockState>(Arrays.asList(
             Blocks.GRASS.getDefaultState(),
             Blocks.DIRT.getDefaultState(),
@@ -66,6 +76,9 @@ public abstract class AppalachiaTree extends TreeRTG implements IAppalachiaTree 
         this.groundY = pos.getY();
         this.opaqueLeavesMinY = this.groundY + 5;
         this.opaqueLeavesMaxY = this.groundY + 8;
+        this.genX = pos.getX();
+        this.genY = pos.getY();
+        this.genZ = pos.getZ();
     }
 
     @Override
@@ -135,11 +148,12 @@ public abstract class AppalachiaTree extends TreeRTG implements IAppalachiaTree 
             if (y >= this.opaqueLeavesMinY && y <= this.opaqueLeavesMaxY) {
                 if (rand.nextInt(this.opaqueLeavesChance()) == 0) {
                     state = state.withProperty(AppalachiaBlockLeaves.TRANSLUCENT, false);
-                    //state = Blocks.COAL_BLOCK.getDefaultState();
                 }
             }
         }
 
-        this.setBlockAndNotifyAdequately(this.world, pos, state);
+        BlockPos offetPos = new BlockPos(pos.getX() - firstBlockOffsetX, pos.getY(), pos.getZ() - firstBlockOffsetZ);
+
+        this.setBlockAndNotifyAdequately(this.world, offetPos, state);
     }
 }

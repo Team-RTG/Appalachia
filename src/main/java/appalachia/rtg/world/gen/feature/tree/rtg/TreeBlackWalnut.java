@@ -28,6 +28,9 @@ public class TreeBlackWalnut extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_black_walnut_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_black_walnut_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_black_walnut_01.getDefaultState());
+
+        this.firstBlockOffsetX = 7;
+        this.firstBlockOffsetZ = 6;
     }
 
     @Override

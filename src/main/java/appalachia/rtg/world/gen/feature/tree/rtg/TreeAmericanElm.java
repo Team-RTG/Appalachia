@@ -28,6 +28,9 @@ public class TreeAmericanElm extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_american_elm_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_american_elm_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_american_elm_01.getDefaultState());
+
+        this.firstBlockOffsetX = 4;
+        this.firstBlockOffsetZ = 3;
     }
 
     @Override

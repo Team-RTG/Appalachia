@@ -28,6 +28,9 @@ public class TreePignutHickory extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_pignut_hickory_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_pignut_hickory_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_pignut_hickory_01.getDefaultState());
+
+        this.firstBlockOffsetX = 5;
+        this.firstBlockOffsetZ = 7;
     }
 
     public TreePignutHickory(boolean shortVersion) {

@@ -34,6 +34,9 @@ public class TreeAmericanSweetgum extends AppalachiaTree {
 
         this.trunkSize = 3;
         this.validGroundBlocks = new ArrayList<IBlockState>(Arrays.asList(Blocks.GRASS.getDefaultState(), Blocks.DIRT.getDefaultState()));
+
+        this.firstBlockOffsetX = 5;
+        this.firstBlockOffsetZ = 4;
     }
 
     @Override

@@ -32,6 +32,9 @@ public class TreeSugarMaple extends AppalachiaTree {
         this.setSaplingBlock(AppalachiaBlocks.sapling_sugar_maple_01.getDefaultState());
 
         this.validGroundBlocks = new ArrayList<IBlockState>(Arrays.asList(Blocks.GRASS.getDefaultState(), Blocks.DIRT.getDefaultState()));
+
+        this.firstBlockOffsetX = 13;
+        this.firstBlockOffsetZ = 9;
     }
 
     @Override

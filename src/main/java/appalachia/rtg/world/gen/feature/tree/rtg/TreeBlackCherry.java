@@ -28,6 +28,9 @@ public class TreeBlackCherry extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_black_cherry_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_black_cherry_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_black_cherry_01.getDefaultState());
+
+        this.firstBlockOffsetX = 6;
+        this.firstBlockOffsetZ = 8;
     }
 
     @Override

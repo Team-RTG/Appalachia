@@ -28,6 +28,9 @@ public class TreeHoneyLocust extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_honey_locust_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_honey_locust_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_honey_locust_01.getDefaultState());
+
+        this.firstBlockOffsetX = 5;
+        this.firstBlockOffsetZ = 7;
     }
 
     public TreeHoneyLocust(boolean shortVersion) {

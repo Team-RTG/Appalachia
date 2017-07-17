@@ -27,6 +27,9 @@ public class TreeRedSpruce extends AppalachiaTree {
         this.setLeavesBlock(AppalachiaBlocks.leaves_red_spruce_01.getDefaultState());
         this.setFallenLeavesBlock(AppalachiaBlocks.leaves_red_spruce_01_fallen.getDefaultState());
         this.setSaplingBlock(AppalachiaBlocks.sapling_red_spruce_01.getDefaultState());
+
+        this.firstBlockOffsetX = 4;
+        this.firstBlockOffsetZ = 4;
     }
 
     public TreeRedSpruce(boolean shortVersion) {
