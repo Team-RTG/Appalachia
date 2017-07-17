@@ -1,5 +1,6 @@
 package appalachia.block.saplings;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -17,6 +18,7 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 
 import appalachia.block.IAppalachiaBlock;
 import appalachia.gui.AppalachiaTabs;
+import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
 
 public abstract class AppalachiaBlockSapling extends BlockSapling implements IAppalachiaBlock, IAppalachiaBlockSapling {
 
@@ -42,9 +44,14 @@ public abstract class AppalachiaBlockSapling extends BlockSapling implements IAp
             return;
         }
 
-        world.setBlockState(pos, Blocks.AIR.getDefaultState(), 1);
-        if (!this.getTree().generate(world, random, pos)) {
-            world.setBlockState(pos, getDefaultState(), 4);
+        ArrayList<AppalachiaTree> aplTrees = this.getTrees();
+
+        if (aplTrees.size() > 0) {
+
+            world.setBlockState(pos, Blocks.AIR.getDefaultState(), 1);
+            if (!aplTrees.get(random.nextInt(aplTrees.size())).generate(world, random, pos)) {
+                world.setBlockState(pos, getDefaultState(), 4);
+            }
         }
     }
 

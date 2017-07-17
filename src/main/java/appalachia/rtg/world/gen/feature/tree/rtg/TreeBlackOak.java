@@ -33,13 +33,6 @@ public class TreeBlackOak extends AppalachiaTree {
         this.firstBlockOffsetZ = 10;
     }
 
-    public TreeBlackOak(boolean shortVersion) {
-        this();
-
-        this.firstBlockOffsetX = 10;
-        this.firstBlockOffsetZ = 13;
-    }
-
     @Override
     public boolean generate(World world, Random rand, BlockPos pos) {
         this.init(world, rand, pos);
@@ -49,7 +42,6 @@ public class TreeBlackOak extends AppalachiaTree {
         int z = pos.getZ();
 
         ArrayList<BlockPos> groundPos = new ArrayList<BlockPos>(){};
-
         groundPos.add(new BlockPos(x + 11, y, z + 10));
         groundPos.add(new BlockPos(x + 12, y, z + 10));
         groundPos.add(new BlockPos(x + 10, y, z + 11));

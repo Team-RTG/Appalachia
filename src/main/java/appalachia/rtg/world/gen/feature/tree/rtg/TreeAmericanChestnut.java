@@ -48,25 +48,27 @@ public class TreeAmericanChestnut extends AppalachiaTree {
 
         // This tree has a fat trunk, so make sure the ground block is valid for all trunk log blocks
         ArrayList<BlockPos> groundList = new ArrayList<BlockPos>(){};
-        groundList.add(new BlockPos(x+7, y, z+7));
         groundList.add(new BlockPos(x+5, y, z+8));
-        groundList.add(new BlockPos(x+4, y, z+9));
-        groundList.add(new BlockPos(x+9, y, z+9));
-        groundList.add(new BlockPos(x+10, y, z+9));
+        groundList.add(new BlockPos(x+7, y, z+8));
+        groundList.add(new BlockPos(x+8, y, z+8));
+        groundList.add(new BlockPos(x+8, y, z+9));
+        groundList.add(new BlockPos(x+4, y, z+10));
         groundList.add(new BlockPos(x+5, y, z+10));
         groundList.add(new BlockPos(x+7, y, z+10));
-        groundList.add(new BlockPos(x+10, y, z+10));
+        groundList.add(new BlockPos(x+9, y, z+10));
+        groundList.add(new BlockPos(x+4, y, z+11));
         groundList.add(new BlockPos(x+5, y, z+11));
         groundList.add(new BlockPos(x+7, y, z+11));
         groundList.add(new BlockPos(x+8, y, z+12));
         groundList.add(new BlockPos(x+6, y, z+13));
+
         for (BlockPos groundPos : groundList) {
             if (!isValidGroundBlock(world, rand, groundPos, 1)) {
                 return false;
             }
         }
 
-        this.spawn(world, x, y - 2, z, this.logBlock, leaves);
+        this.spawn(world, x, y - 3, z, this.logBlock, leaves);
 
         return true;
     }

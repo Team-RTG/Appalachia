@@ -1,8 +1,11 @@
 package appalachia.block.saplings;
 
+import java.util.ArrayList;
+
 import appalachia.block.IAppalachiaBlock;
 import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
 import appalachia.rtg.world.gen.feature.tree.rtg.TreeEasternHemlock;
+import scala.actors.threadpool.Arrays;
 
 public class BlockSaplingEasternHemlock01 extends AppalachiaBlockSapling implements IAppalachiaBlock {
 
@@ -18,8 +21,9 @@ public class BlockSaplingEasternHemlock01 extends AppalachiaBlockSapling impleme
     }
 
     @Override
-    public AppalachiaTree getTree() {
-
-        return new TreeEasternHemlock();
+    public ArrayList<AppalachiaTree> getTrees() {
+        return new ArrayList<AppalachiaTree>(Arrays.asList(new AppalachiaTree[] {
+            new TreeEasternHemlock()
+        }));
     }
 }

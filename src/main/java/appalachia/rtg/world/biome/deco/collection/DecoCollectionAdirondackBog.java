@@ -95,7 +95,7 @@ public class DecoCollectionAdirondackBog extends DecoCollectionBase {
         );
 
         // Hackberry.
-        AppalachiaTree treeHackberry = new TreeHackberry(true);
+        AppalachiaTree treeHackberry = new TreeHackberrySmall();
         this.addTree(treeHackberry);
         this.addDeco(new DecoAPLTree(treeHackberry)
                 .setMaxY(treeMaxY)

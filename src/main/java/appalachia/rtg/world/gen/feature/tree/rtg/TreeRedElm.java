@@ -46,7 +46,6 @@ public class TreeRedElm extends AppalachiaTree {
         int z = pos.getZ();
 
         ArrayList<BlockPos> groundPos = new ArrayList<BlockPos>(){};
-
         groundPos.add(new BlockPos(x+11, y, z+6));
         groundPos.add(new BlockPos(x+8, y, z+7));
         groundPos.add(new BlockPos(x+11, y, z+7));

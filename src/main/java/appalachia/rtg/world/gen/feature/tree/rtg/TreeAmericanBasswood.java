@@ -46,10 +46,10 @@ public class TreeAmericanBasswood extends AppalachiaTree {
         int y = pos.getY();
         int z = pos.getZ();
 
-        ArrayList<BlockPos> groundPos = new ArrayList<BlockPos>() {
-
-        };
+        ArrayList<BlockPos> groundPos = new ArrayList<BlockPos>(){};
         groundPos.add(new BlockPos(x + 8, y, z + 7));
+        groundPos.add(new BlockPos(x + 7, y, z + 8));
+        groundPos.add(new BlockPos(x + 9, y, z + 8));
 
         for (int i = 0; i < groundPos.size(); i++) {
             if (!isValidGroundBlock(world, rand, groundPos.get(i), 1)) {
@@ -59,9 +59,8 @@ public class TreeAmericanBasswood extends AppalachiaTree {
 
         IBlockState leaves = this.leavesBlock.withProperty(BlockLeaves.CHECK_DECAY, false);
         //IBlockState leaves = this.leavesBlock.withProperty(BlockLeaves.DECAYABLE, false);
-        int currentY = y;
 
-        this.spawn(world, x, currentY, z, this.logBlock, leaves);
+        this.spawn(world, x, y - 1, z, this.logBlock, leaves);
 
         return true;
     }

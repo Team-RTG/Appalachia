@@ -1,8 +1,11 @@
 package appalachia.block.saplings;
 
+import java.util.ArrayList;
+
 import appalachia.block.IAppalachiaBlock;
 import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
 import appalachia.rtg.world.gen.feature.tree.rtg.TreeWhiteWalnut;
+import scala.actors.threadpool.Arrays;
 
 public class BlockSaplingWhiteWalnut01 extends AppalachiaBlockSapling implements IAppalachiaBlock {
 
@@ -18,8 +21,9 @@ public class BlockSaplingWhiteWalnut01 extends AppalachiaBlockSapling implements
     }
 
     @Override
-    public AppalachiaTree getTree() {
-
-        return new TreeWhiteWalnut();
+    public ArrayList<AppalachiaTree> getTrees() {
+        return new ArrayList<AppalachiaTree>(Arrays.asList(new AppalachiaTree[] {
+            new TreeWhiteWalnut()
+        }));
     }
 }
