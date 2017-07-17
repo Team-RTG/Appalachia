@@ -84,28 +84,20 @@ public class TreeLoblollyPineSmall extends TreeLoblollyPine {
         currentY++;
 
         this.setBlockState(new BlockPos(x+4, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+1, 12, 12);
         this.setBlockState(new BlockPos(x+2, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+2, 12, 12);
         this.setBlockState(new BlockPos(x+2, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+3), log);
         this.setBlockState(new BlockPos(x+7, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+3, 12, 12);
         this.setBlockState(new BlockPos(x+3, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+4, 12, 12);
         this.setBlockState(new BlockPos(x+6, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+4, 12, 12);
         this.setBlockState(new BlockPos(x+7, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+4, 12, 12);
         this.setBlockState(new BlockPos(x+3, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+5, 12, 12);
         currentY++;
 
         this.setBlockState(new BlockPos(x+5, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+1, 12, 12);
         this.setBlockState(new BlockPos(x+5, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+2, currentY, z+3), leaves);
@@ -118,7 +110,6 @@ public class TreeLoblollyPineSmall extends TreeLoblollyPine {
         this.setBlockState(new BlockPos(x+5, currentY, z+4), log);
         this.setBlockState(new BlockPos(x+3, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+5, 8, 8);
         currentY++;
 
         this.setBlockState(new BlockPos(x+4, currentY, z+1), leaves);
@@ -144,11 +135,9 @@ public class TreeLoblollyPineSmall extends TreeLoblollyPine {
         this.setBlockState(new BlockPos(x+4, currentY, z+5), log);
         this.setBlockState(new BlockPos(x+6, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+5, 8, 8);
         this.setBlockState(new BlockPos(x+3, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+6, 8, 8);
         this.setBlockState(new BlockPos(x+3, currentY, z+7), leaves);
         currentY++;
 
@@ -189,13 +178,11 @@ public class TreeLoblollyPineSmall extends TreeLoblollyPine {
         this.setBlockState(new BlockPos(x+4, currentY, z+1), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+1), leaves);
         this.setBlockState(new BlockPos(x+2, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+2, 8, 8);
         this.setBlockState(new BlockPos(x+4, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+1, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+3, 8, 8);
         this.setBlockState(new BlockPos(x+4, currentY, z+3), log);
         this.setBlockState(new BlockPos(x+6, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+4), leaves);
@@ -204,7 +191,6 @@ public class TreeLoblollyPineSmall extends TreeLoblollyPine {
         this.setBlockState(new BlockPos(x+4, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+6, 8, 8);
         currentY++;
 
         this.setBlockState(new BlockPos(x+3, currentY, z+2), leaves);
@@ -218,13 +204,10 @@ public class TreeLoblollyPineSmall extends TreeLoblollyPine {
         currentY++;
 
         this.setBlockState(new BlockPos(x+4, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+2, 8, 8);
         this.setBlockState(new BlockPos(x+3, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+3), log);
         this.setBlockState(new BlockPos(x+5, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+3, 8, 8);
         this.setBlockState(new BlockPos(x+3, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+4, 8, 8);
         currentY++;
 
         this.setBlockState(new BlockPos(x+4, currentY, z+3), leaves);

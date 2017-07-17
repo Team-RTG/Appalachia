@@ -32,10 +32,6 @@ public class TreeSassafras extends AppalachiaTree {
         this.firstBlockOffsetZ = 5;
     }
 
-    public TreeSassafras(boolean shortVersion) {
-        this();
-    }
-
     @Override
     public boolean generate(World world, Random rand, BlockPos pos) {
         this.init(world, rand, pos);
@@ -84,88 +80,51 @@ public class TreeSassafras extends AppalachiaTree {
         int currentY = y;
 
         this.setBlockState(new BlockPos(x+8, currentY, z+4), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+8, currentY, z+4, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+4), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+11, currentY, z+4, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+5), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+9, currentY, z+5, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+5), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+11, currentY, z+5, 12, 12);
         this.setBlockState(new BlockPos(x+6, currentY, z+6), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+6, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+7, currentY, z+6), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+7, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+6), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+10, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+6), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+11, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+6, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+6, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+9, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+10, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+8), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+8, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+8), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+10, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+8), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+11, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+12, currentY, z+8), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+12, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+9), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+10, currentY, z+9, 12, 12);
         currentY++;
         
         this.setBlockState(new BlockPos(x+9, currentY, z+5), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+9, currentY, z+5, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+5), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+11, currentY, z+5, 12, 12);
         this.setBlockState(new BlockPos(x+7, currentY, z+6), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+7, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+6), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+8, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+6), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+9, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+6), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+10, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+9, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+10, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+8), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+8, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+8), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+10, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+8), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+11, currentY, z+8, 12, 12);
         currentY++;
 
 
         this.setBlockState(new BlockPos(x+8, currentY, z+6), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+8, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+6), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+9, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+6), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+10, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+9, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+10, currentY, z+7, 12, 12);
         currentY++;
 
         this.setBlockState(new BlockPos(x+8, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+5, 2, 2);
 
         this.setBlockState(new BlockPos(x+8, currentY, z+6), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+8, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+6), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+9, currentY, z+6, 12, 12);
 
         this.setBlockState(new BlockPos(x+9, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+9, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+10, currentY, z+7, 12, 12);
         currentY++;
 
 
@@ -173,14 +132,10 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+9, currentY, z+5), leaves);
 
         this.setBlockState(new BlockPos(x+8, currentY, z+6), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+8, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+6), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+9, currentY, z+6, 12, 12);
 
         this.setBlockState(new BlockPos(x+8, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+8, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+9, currentY, z+7, 12, 12);
         currentY++;
 
 
@@ -190,16 +145,11 @@ public class TreeSassafras extends AppalachiaTree {
 
 
         this.setBlockState(new BlockPos(x+8, currentY, z+5), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+8, currentY, z+5, 8, 8);
         this.setBlockState(new BlockPos(x+7, currentY, z+6), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+7, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+6), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+8, currentY, z+6, 12, 12);
 
         this.setBlockState(new BlockPos(x+8, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+8, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+9, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+9, currentY, z+8), leaves);
         currentY++;
@@ -215,12 +165,9 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+8, currentY, z+5), leaves);
 
         this.setBlockState(new BlockPos(x+7, currentY, z+6), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+7, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+6), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+8, currentY, z+6, 12, 12);
 
         this.setBlockState(new BlockPos(x+8, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+8, currentY, z+7, 12, 12);
 
         this.setBlockState(new BlockPos(x+8, currentY, z+8), leaves);
         currentY++;
@@ -238,13 +185,9 @@ public class TreeSassafras extends AppalachiaTree {
 
         this.setBlockState(new BlockPos(x+6, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+6), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+6), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+7, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+7, 12, 12);
 
         this.setBlockState(new BlockPos(x+9, currentY, z+10), leaves);
         currentY++;
@@ -266,41 +209,30 @@ public class TreeSassafras extends AppalachiaTree {
 
         this.setBlockState(new BlockPos(x+4, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+4), log);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+4, 12, 12);
         this.setBlockState(new BlockPos(x+6, currentY, z+4), leaves);
 
         this.setBlockState(new BlockPos(x+2, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+5), log);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+5, 12, 12);
 
         this.setBlockState(new BlockPos(x+5, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+6), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+6, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+7, 4, 4);
 
 
         this.setBlockState(new BlockPos(x+8, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+8, 12, 12);
 
         this.setBlockState(new BlockPos(x+8, currentY, z+9), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+10), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+10), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+10), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+10, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+10, 2, 2);
 
         this.setBlockState(new BlockPos(x+5, currentY, z+11), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+11), leaves);
@@ -321,7 +253,6 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+3, currentY, z+1), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+1), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+1, 2, 2);
 
 
         this.setBlockState(new BlockPos(x+3, currentY, z+2), leaves);
@@ -332,7 +263,6 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+3, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+3), log);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+3, 12, 12);
         this.setBlockState(new BlockPos(x+6, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+3), leaves);
 
@@ -345,41 +275,29 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+6, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+9, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+4, 2, 2);
 
         this.setBlockState(new BlockPos(x+2, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+5, 2, 2);
 
         this.setBlockState(new BlockPos(x+8, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+9, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+10, currentY, z+5), log);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+5, 12, 12);
         this.setBlockState(new BlockPos(x+4, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+6, 2, 2);
         this.setBlockState(new BlockPos(x+9, currentY, z+6), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+6), log);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+5, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+7, 12, 12);
 
 
         this.setBlockState(new BlockPos(x+8, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+8), leaves);
 
         this.setBlockState(new BlockPos(x+7, currentY, z+9), leaves);
@@ -390,20 +308,14 @@ public class TreeSassafras extends AppalachiaTree {
 
         this.setBlockState(new BlockPos(x+6, currentY, z+11), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+11), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+11, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+11), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+11, 12, 12);
 
 
         this.setBlockState(new BlockPos(x+4, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+12), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+12), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+12, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+9, currentY, z+12), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+13), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+13), leaves);
@@ -422,16 +334,12 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+2, currentY, z+1), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+1), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+1), log);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+1, 12, 12);
         this.setBlockState(new BlockPos(x+5, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+1, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+1), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+1, 2, 2);
 
         this.setBlockState(new BlockPos(x+3, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+2), log);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+2, 12, 12);
         this.setBlockState(new BlockPos(x+5, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+2), leaves);
 
@@ -446,7 +354,6 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+11, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+12, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+13, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+2, currentY, z+4), leaves);
 
         this.setBlockState(new BlockPos(x+5, currentY, z+4), leaves);
@@ -461,10 +368,8 @@ public class TreeSassafras extends AppalachiaTree {
 
 
         this.setBlockState(new BlockPos(x+9, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+10, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+11, currentY, z+5), log);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+5, 12, 12);
         this.setBlockState(new BlockPos(x+12, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+13, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+2, currentY, z+6), leaves);
@@ -473,25 +378,19 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+5, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+6, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+9, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+10, currentY, z+6), log);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+6), leaves);
 
         this.setBlockState(new BlockPos(x+6, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+10, currentY, z+7), leaves);
 
         this.setBlockState(new BlockPos(x+7, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+10), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+10), leaves);
@@ -503,22 +402,18 @@ public class TreeSassafras extends AppalachiaTree {
 
         this.setBlockState(new BlockPos(x+4, currentY, z+12), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+12), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+12), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+12), leaves);
         this.setBlockState(new BlockPos(x+9, currentY, z+12), leaves);
         this.setBlockState(new BlockPos(x+10, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+13), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+13), log);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+13, 12, 12);
         this.setBlockState(new BlockPos(x+7, currentY, z+13), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+13), leaves);
         this.setBlockState(new BlockPos(x+9, currentY, z+13), leaves);
 
         this.setBlockState(new BlockPos(x+6, currentY, z+14), log);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+14, 12, 12);
         this.setBlockState(new BlockPos(x+7, currentY, z+14), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+14), leaves);
 
@@ -536,25 +431,21 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+4, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+2, 2, 2);
 
         this.setBlockState(new BlockPos(x+12, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+13, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+3), leaves);
 
 
 
         this.setBlockState(new BlockPos(x+11, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+12, currentY, z+3), log);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+3, 12, 12);
         this.setBlockState(new BlockPos(x+13, currentY, z+3), leaves);
 
 
         this.setBlockState(new BlockPos(x+10, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+11, currentY, z+4), log);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+4, 12, 12);
         this.setBlockState(new BlockPos(x+12, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+13, currentY, z+4), leaves);
 
@@ -572,33 +463,25 @@ public class TreeSassafras extends AppalachiaTree {
 
 
         this.setBlockState(new BlockPos(x+7, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+10, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+11, currentY, z+7), leaves);
 
         this.setBlockState(new BlockPos(x+6, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+8, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+9, 2, 2);
         this.setBlockState(new BlockPos(x+11, currentY, z+10), leaves);
 
 
         this.setBlockState(new BlockPos(x+6, currentY, z+11), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+12), leaves);
         this.setBlockState(new BlockPos(x+9, currentY, z+12), leaves);
 
         this.setBlockState(new BlockPos(x+5, currentY, z+13), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+13, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+13, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+13), leaves);
 
         this.setBlockState(new BlockPos(x+5, currentY, z+14), leaves);
@@ -614,13 +497,10 @@ public class TreeSassafras extends AppalachiaTree {
 
 
         this.setBlockState(new BlockPos(x+10, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+11, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+12, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+13, currentY, z+3), log);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+3, 12, 12);
         this.setBlockState(new BlockPos(x+14, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+3, 4, 4);
 
 
         this.setBlockState(new BlockPos(x+10, currentY, z+4), leaves);
@@ -628,7 +508,6 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+12, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+13, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+14, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+4, 4, 4);
         this.setBlockState(new BlockPos(x+10, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+11, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+12, currentY, z+5), leaves);
@@ -640,7 +519,6 @@ public class TreeSassafras extends AppalachiaTree {
 
         this.setBlockState(new BlockPos(x+10, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+11, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+6, 2, 2);
         this.setBlockState(new BlockPos(x+12, currentY, z+6), leaves);
 
         this.setBlockState(new BlockPos(x+6, currentY, z+7), leaves);
@@ -648,30 +526,22 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+8, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+9, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+10, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+11, currentY, z+7), leaves);
 
         this.setBlockState(new BlockPos(x+3, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+6, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+7, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+9, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+13, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+9), log);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+7, currentY, z+9), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+10, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+9, 2, 2);
         this.setBlockState(new BlockPos(x+11, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+10), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+10), leaves);
@@ -692,7 +562,6 @@ public class TreeSassafras extends AppalachiaTree {
 
 
         this.setBlockState(new BlockPos(x+11, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+12, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+13, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+4), leaves);
@@ -720,38 +589,29 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+11, currentY, z+6), leaves);
 
         this.setBlockState(new BlockPos(x+3, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+6, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+9, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+10, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+11, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+0, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+0, currentY, z+8, 2, 2);
         this.setBlockState(new BlockPos(x+1, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+2, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+8, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+7, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+9, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+10, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+12, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+13, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+1, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+9, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+9), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+10, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+11, currentY, z+9), leaves);
@@ -763,7 +623,6 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+7, currentY, z+10), leaves);
         this.setBlockState(new BlockPos(x+10, currentY, z+10), leaves);
         this.setBlockState(new BlockPos(x+11, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+12, currentY, z+10), leaves);
 
 
@@ -773,13 +632,11 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+6, currentY, z+11), leaves);
         this.setBlockState(new BlockPos(x+11, currentY, z+11), leaves);
         this.setBlockState(new BlockPos(x+12, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+11, 2, 2);
 
 
         this.setBlockState(new BlockPos(x+4, currentY, z+12), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+12), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+12, 2, 2);
 
         this.setBlockState(new BlockPos(x+6, currentY, z+13), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+13), leaves);
@@ -791,7 +648,6 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+9, currentY, z+14), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+15), leaves);
         this.setBlockState(new BlockPos(x+9, currentY, z+15), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+15, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+16), leaves);
         currentY++;
 
@@ -800,7 +656,6 @@ public class TreeSassafras extends AppalachiaTree {
 
 
         this.setBlockState(new BlockPos(x+1, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+3, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+3), leaves);
@@ -819,46 +674,34 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+1, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+2, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+12, currentY, z+5), leaves);
 
         this.setBlockState(new BlockPos(x+2, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+6, 2, 2);
         this.setBlockState(new BlockPos(x+3, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+6, 2, 2);
         this.setBlockState(new BlockPos(x+9, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+6, 2, 2);
         this.setBlockState(new BlockPos(x+10, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+11, currentY, z+6), leaves);
 
         this.setBlockState(new BlockPos(x+1, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+2, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+3, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+4, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+10, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+0, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+1, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+2, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+4, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+7, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+10, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+11, currentY, z+8), leaves);
@@ -868,12 +711,10 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+2, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+9), log);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+7, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+10, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+11, currentY, z+9), log);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+12, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+13, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+1, currentY, z+10), leaves);
@@ -881,33 +722,25 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+4, currentY, z+10), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+10), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+10), log);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+10, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+10), leaves);
         this.setBlockState(new BlockPos(x+12, currentY, z+10), log);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+10, 12, 12);
         this.setBlockState(new BlockPos(x+13, currentY, z+10), log);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+10, 12, 12);
         this.setBlockState(new BlockPos(x+14, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+10, 4, 4);
 
 
 
         this.setBlockState(new BlockPos(x+3, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+11), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+11), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+11), log);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+11, 12, 12);
         this.setBlockState(new BlockPos(x+7, currentY, z+11), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+11), leaves);
         this.setBlockState(new BlockPos(x+11, currentY, z+11), leaves);
 
         this.setBlockState(new BlockPos(x+13, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+11, 2, 2);
 
         this.setBlockState(new BlockPos(x+5, currentY, z+12), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+12), log);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+12, 12, 12);
         this.setBlockState(new BlockPos(x+7, currentY, z+12), leaves);
         this.setBlockState(new BlockPos(x+9, currentY, z+12), leaves);
 
@@ -915,20 +748,16 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+5, currentY, z+13), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+13), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+13), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+13, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+13, 2, 2);
         this.setBlockState(new BlockPos(x+9, currentY, z+13), leaves);
 
         this.setBlockState(new BlockPos(x+5, currentY, z+14), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+14), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+14), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+14, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+14), leaves);
         this.setBlockState(new BlockPos(x+9, currentY, z+14), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+15), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+15), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+15, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+15), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+16), leaves);
         currentY++;
@@ -942,16 +771,13 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+1, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+2, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+3), leaves);
 
         this.setBlockState(new BlockPos(x+0, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+1, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+4, 2, 2);
         this.setBlockState(new BlockPos(x+2, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+4), leaves);
@@ -959,42 +785,31 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+6, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+4, 2, 2);
 
         this.setBlockState(new BlockPos(x+0, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+0, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+1, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+2, currentY, z+5), log);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+5, 12, 12);
         this.setBlockState(new BlockPos(x+3, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+5), log);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+5, 12, 12);
         this.setBlockState(new BlockPos(x+6, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+9, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+1, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+2, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+6), log);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+4, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+6), log);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+6, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+6, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+9, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+1, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+2, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+6, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+7), leaves);
@@ -1003,23 +818,18 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+1, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+2, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+8, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+8, 2, 2);
         this.setBlockState(new BlockPos(x+11, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+13, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+0, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+0, currentY, z+9, 2, 2);
         this.setBlockState(new BlockPos(x+1, currentY, z+9), log);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+2, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+9), log);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+7, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+10, currentY, z+9), leaves);
@@ -1027,13 +837,11 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+12, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+13, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+0, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+0, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+1, currentY, z+10), leaves);
         this.setBlockState(new BlockPos(x+2, currentY, z+10), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+10), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+10), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+10), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+10), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+10), leaves);
@@ -1046,7 +854,6 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+3, currentY, z+11), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+11), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+11), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+11), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+11), leaves);
@@ -1060,13 +867,10 @@ public class TreeSassafras extends AppalachiaTree {
 
         this.setBlockState(new BlockPos(x+4, currentY, z+13), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+13, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+13, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+13), leaves);
         this.setBlockState(new BlockPos(x+9, currentY, z+13), leaves);
         this.setBlockState(new BlockPos(x+10, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+13, 2, 2);
 
         this.setBlockState(new BlockPos(x+5, currentY, z+14), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+14), leaves);
@@ -1074,15 +878,12 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+8, currentY, z+14), leaves);
         this.setBlockState(new BlockPos(x+9, currentY, z+14), leaves);
         this.setBlockState(new BlockPos(x+10, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+14, 2, 2);
         this.setBlockState(new BlockPos(x+11, currentY, z+14), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+15), leaves);
 
         this.setBlockState(new BlockPos(x+7, currentY, z+15), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+15), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+15, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+15), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+15, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+16), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+16), leaves);
         this.setBlockState(new BlockPos(x+9, currentY, z+16), leaves);
@@ -1098,29 +899,23 @@ public class TreeSassafras extends AppalachiaTree {
 
         this.setBlockState(new BlockPos(x+2, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+3), log);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+3, 12, 12);
         this.setBlockState(new BlockPos(x+6, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+3), leaves);
 
         this.setBlockState(new BlockPos(x+0, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+1, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+4, 2, 2);
         this.setBlockState(new BlockPos(x+2, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+4), log);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+4, 12, 12);
         this.setBlockState(new BlockPos(x+6, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+4), leaves);
 
         this.setBlockState(new BlockPos(x+0, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+1, currentY, z+5), log);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+5, 12, 12);
         this.setBlockState(new BlockPos(x+2, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+3, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+5), leaves);
@@ -1134,14 +929,11 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+5, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+6, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+6), leaves);
 
         this.setBlockState(new BlockPos(x+2, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+7), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+7), leaves);
@@ -1150,13 +942,10 @@ public class TreeSassafras extends AppalachiaTree {
 
         this.setBlockState(new BlockPos(x+1, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+8, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+8, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+8, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+8), leaves);
         this.setBlockState(new BlockPos(x+9, currentY, z+8), leaves);
 
@@ -1165,19 +954,13 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+2, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+9), log);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+7, currentY, z+9), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+9), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+10, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+12, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+9, 2, 2);
         this.setBlockState(new BlockPos(x+13, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+9, 2, 2);
         this.setBlockState(new BlockPos(x+1, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+2, currentY, z+10), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+10), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+10), leaves);
@@ -1193,10 +976,8 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+9, currentY, z+11), leaves);
         this.setBlockState(new BlockPos(x+10, currentY, z+11), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+12), leaves);
         this.setBlockState(new BlockPos(x+9, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+13), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+13), leaves);
         this.setBlockState(new BlockPos(x+9, currentY, z+13), leaves);
@@ -1207,11 +988,9 @@ public class TreeSassafras extends AppalachiaTree {
 
         this.setBlockState(new BlockPos(x+7, currentY, z+15), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+15), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+15, 2, 2);
 
         this.setBlockState(new BlockPos(x+7, currentY, z+16), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+16), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+16, 2, 2);
         currentY++;
 
         this.setBlockState(new BlockPos(x+4, currentY, z+2), leaves);
@@ -1221,14 +1000,12 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+5, currentY, z+3), leaves);
 
         this.setBlockState(new BlockPos(x+2, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+4, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+4), leaves);
 
         this.setBlockState(new BlockPos(x+3, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+5), leaves);
@@ -1236,7 +1013,6 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+2, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+6, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+6), leaves);
 
@@ -1257,9 +1033,7 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+5, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+8, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+9, 2, 2);
         this.setBlockState(new BlockPos(x+9, currentY, z+9), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+11, currentY, z+9), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+10), leaves);
@@ -1271,13 +1045,11 @@ public class TreeSassafras extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+9, currentY, z+11), leaves);
 
         this.setBlockState(new BlockPos(x+9, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+10, currentY, z+12), leaves);
         this.setBlockState(new BlockPos(x+9, currentY, z+13), leaves);
 
 
         this.setBlockState(new BlockPos(x+8, currentY, z+15), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+15, 2, 2);
         currentY++;
 
 

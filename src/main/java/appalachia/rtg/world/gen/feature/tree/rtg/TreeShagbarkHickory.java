@@ -33,10 +33,6 @@ public class TreeShagbarkHickory extends AppalachiaTree {
         this.firstBlockOffsetZ = 7;
     }
 
-    public TreeShagbarkHickory(boolean shortVersion) {
-        this();
-    }
-
     @Override
     public boolean generate(World world, Random rand, BlockPos pos) {
         this.init(world, rand, pos);
@@ -81,43 +77,26 @@ public class TreeShagbarkHickory extends AppalachiaTree {
         int currentY = y;
 
         this.setBlockState(new BlockPos(x+9, currentY, z+6), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+9, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+12, currentY, z+6), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+12, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+8, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+11, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+8), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+10, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+9), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+8, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+9), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+9, currentY, z+9, 12, 12);
         currentY++;
 
         this.setBlockState(new BlockPos(x+8, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+8, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+9, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+10, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+11, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+8), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+9, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+8), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+10, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+9), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+9, currentY, z+9, 12, 12);
         currentY++;
 
         this.setBlockState(new BlockPos(x+9, currentY, z+7), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+9, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+8), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+9, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+8), log.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE));
-        this.setBlockMetadataWithNotify(x+10, currentY, z+8, 12, 12);
         currentY++;
 
 
@@ -125,265 +104,152 @@ public class TreeShagbarkHickory extends AppalachiaTree {
 
 
         this.setBlockState(new BlockPos(x+9, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+8, 12, 12);
         currentY++;
 
 
 
 
         this.setBlockState(new BlockPos(x+9, currentY, z+6), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+6, 12, 12);
 
         this.setBlockState(new BlockPos(x+9, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+8, 12, 12);
 
         this.setBlockState(new BlockPos(x+7, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+13, 1, 1);
         currentY++;
 
 
 
         this.setBlockState(new BlockPos(x+4, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+1, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+1, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+1, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+9, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+3, 1, 1);
 
         this.setBlockState(new BlockPos(x+8, currentY, z+5), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+5, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+6), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+6, 12, 12);
 
         this.setBlockState(new BlockPos(x+9, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+11, 2, 2);
 
         this.setBlockState(new BlockPos(x+13, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+13, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+13, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+13, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+14, 2, 2);
         currentY++;
 
 
 
 
         this.setBlockState(new BlockPos(x+5, currentY, z+0), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+0, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+0), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+0, 2, 2);
 
 
         this.setBlockState(new BlockPos(x+4, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+1, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+1, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+1, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+1, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+1, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+2), log);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+2, 12, 12);
         this.setBlockState(new BlockPos(x+6, currentY, z+2), log);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+2, 12, 12);
         this.setBlockState(new BlockPos(x+7, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+2, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+2, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+3, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+3, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+3, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+9, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+10, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+4), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+4, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+4, 1, 1);
 
 
 
 
 
         this.setBlockState(new BlockPos(x+11, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+7, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+9, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+12, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+14, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+8, 2, 2);
 
         this.setBlockState(new BlockPos(x+8, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+9, 2, 2);
 
         this.setBlockState(new BlockPos(x+10, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+9, 2, 2);
         this.setBlockState(new BlockPos(x+13, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+14, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+11, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+14, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+11), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+11, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+11, 2, 2);
 
         this.setBlockState(new BlockPos(x+12, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+1, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+12), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+12, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+13, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+3, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+13, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+13), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+13, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+14, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+14, 2, 2);
         this.setBlockState(new BlockPos(x+9, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+14, 2, 2);
 
 
 
         this.setBlockState(new BlockPos(x+7, currentY, z+15), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+15, 1, 1);
         currentY++;
 
 
@@ -391,569 +257,320 @@ public class TreeShagbarkHickory extends AppalachiaTree {
 
 
         this.setBlockState(new BlockPos(x+5, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+1, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+1, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+1, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+2, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+2, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+2, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+3, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+3), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+3, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+3, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+10, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+3, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+4, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+4, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+4), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+4, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+4), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+4, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+4, 2, 2);
         this.setBlockState(new BlockPos(x+11, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+4, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+7, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+9, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+5, 2, 2);
 
         this.setBlockState(new BlockPos(x+5, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+6, 2, 2);
 
         this.setBlockState(new BlockPos(x+12, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+6, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+11, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+7, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+8, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+8, 2, 2);
         this.setBlockState(new BlockPos(x+11, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+8, 2, 2);
         this.setBlockState(new BlockPos(x+12, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+14, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+15, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+15, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+9, 1, 1);
 
 
 
         this.setBlockState(new BlockPos(x+7, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+9), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+9, 2, 2);
         this.setBlockState(new BlockPos(x+12, currentY, z+9), log);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+13, currentY, z+9), log);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+14, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+9, 2, 2);
         this.setBlockState(new BlockPos(x+15, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+15, currentY, z+9, 1, 1);
 
         this.setBlockState(new BlockPos(x+2, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+3, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+10, 1, 1);
 
         this.setBlockState(new BlockPos(x+6, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+10), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+10, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+10), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+10, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+14, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+15, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+15, currentY, z+10, 1, 1);
 
         this.setBlockState(new BlockPos(x+0, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+0, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+1, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+3, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+11), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+11, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+12, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+14, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+15, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+15, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+16, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+16, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+1, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+9, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+12, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+14, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+12, 1, 1);
 
         this.setBlockState(new BlockPos(x+1, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+13, 2, 2);
         this.setBlockState(new BlockPos(x+2, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+13, 2, 2);
         this.setBlockState(new BlockPos(x+3, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+13, 1, 1);
 
         this.setBlockState(new BlockPos(x+6, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+13, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+13, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+13, 2, 2);
         this.setBlockState(new BlockPos(x+10, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+13, 1, 1);
 
         this.setBlockState(new BlockPos(x+13, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+1, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+14, 2, 2);
 
 
         this.setBlockState(new BlockPos(x+10, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+14, 2, 2);
         currentY++;
 
 
 
         this.setBlockState(new BlockPos(x+6, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+1, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+5, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+2, 2, 2);
 
         this.setBlockState(new BlockPos(x+5, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+3, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+3, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+3, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+3, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+3, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+6, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+4, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+4, 2, 2);
         this.setBlockState(new BlockPos(x+11, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+4, 2, 2);
 
         this.setBlockState(new BlockPos(x+4, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+5, 2, 2);
 
         this.setBlockState(new BlockPos(x+7, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+5), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+5, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+5, 1, 1);
 
         this.setBlockState(new BlockPos(x+3, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+6, 2, 2);
 
         this.setBlockState(new BlockPos(x+9, currentY, z+6), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+6, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+5, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+7, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+8, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+9, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+12, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+14, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+7, 1, 1);
 
         this.setBlockState(new BlockPos(x+5, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+8, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+14, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+8, 2, 2);
 
         this.setBlockState(new BlockPos(x+3, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+9, 1, 1);
 
         this.setBlockState(new BlockPos(x+8, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+9), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+12, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+9, 2, 2);
         this.setBlockState(new BlockPos(x+13, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+9, 2, 2);
         this.setBlockState(new BlockPos(x+14, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+15, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+15, currentY, z+9, 1, 1);
 
         this.setBlockState(new BlockPos(x+2, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+3, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+9, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+13, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+14, currentY, z+10), log);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+10, 12, 12);
         this.setBlockState(new BlockPos(x+15, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+15, currentY, z+10, 1, 1);
 
         this.setBlockState(new BlockPos(x+1, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+11), log);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+11, 12, 12);
         this.setBlockState(new BlockPos(x+6, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+13, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+14, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+15, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+15, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+0, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+0, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+1, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+2, currentY, z+12), log);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+12, 12, 12);
         this.setBlockState(new BlockPos(x+3, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+12, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+13, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+12, 2, 2);
 
         this.setBlockState(new BlockPos(x+0, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+0, currentY, z+13, 2, 2);
         this.setBlockState(new BlockPos(x+1, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+13, 2, 2);
         this.setBlockState(new BlockPos(x+2, currentY, z+13), log);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+13, 12, 12);
         this.setBlockState(new BlockPos(x+3, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+13, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+13, 1, 1);
 
         this.setBlockState(new BlockPos(x+2, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+14, 1, 1);
         currentY++;
 
 
 
 
         this.setBlockState(new BlockPos(x+6, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+2, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+6, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+3, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+3, 1, 1);
 
         this.setBlockState(new BlockPos(x+8, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+4, 2, 2);
 
         this.setBlockState(new BlockPos(x+3, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+5, 2, 2);
 
         this.setBlockState(new BlockPos(x+8, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+5, 1, 1);
 
         this.setBlockState(new BlockPos(x+3, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+6, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+6, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+6, 1, 1);
 
         this.setBlockState(new BlockPos(x+3, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+6, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+7, 1, 1);
 
         this.setBlockState(new BlockPos(x+8, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+7, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+13, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+9, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+14, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+9, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+3, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+14, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+15, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+15, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+3, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+11), log);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+11, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+11, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+13, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+14, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+11, 2, 2);
 
         this.setBlockState(new BlockPos(x+1, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+12, 2, 2);
 
         this.setBlockState(new BlockPos(x+13, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+12, 1, 1);
 
         this.setBlockState(new BlockPos(x+1, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+13, 2, 2);
         this.setBlockState(new BlockPos(x+2, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+13, 1, 1);
 
 
 
         this.setBlockState(new BlockPos(x+2, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+14, 1, 1);
         currentY++;
 
 
@@ -962,102 +579,58 @@ public class TreeShagbarkHickory extends AppalachiaTree {
 
 
         this.setBlockState(new BlockPos(x+13, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+5, 1, 1);
 
         this.setBlockState(new BlockPos(x+4, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+6, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+12, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+7, 2, 2);
 
         this.setBlockState(new BlockPos(x+8, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+4, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+8, 2, 2);
         this.setBlockState(new BlockPos(x+9, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+8, 1, 1);
 
         this.setBlockState(new BlockPos(x+4, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+9, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+9, 2, 2);
         this.setBlockState(new BlockPos(x+9, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+9, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+3, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+10), log);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+10, 12, 12);
         this.setBlockState(new BlockPos(x+5, currentY, z+10), log);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+10, 12, 12);
         this.setBlockState(new BlockPos(x+6, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+10, 1, 1);
 
         this.setBlockState(new BlockPos(x+3, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+11, 1, 1);
 
         this.setBlockState(new BlockPos(x+2, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+3, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+13, 1, 1);
         currentY++;
 
 
@@ -1066,1005 +639,569 @@ public class TreeShagbarkHickory extends AppalachiaTree {
 
 
         this.setBlockState(new BlockPos(x+13, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+3, 1, 1);
         this.setBlockState(new BlockPos(x+14, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+3, 1, 1);
 
         this.setBlockState(new BlockPos(x+10, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+14, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+5), log);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+5, 12, 12);
         this.setBlockState(new BlockPos(x+14, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+5, 1, 1);
 
 
 
         this.setBlockState(new BlockPos(x+11, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+6), log);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+13, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+6, 1, 1);
 
         this.setBlockState(new BlockPos(x+4, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+7, 2, 2);
 
 
         this.setBlockState(new BlockPos(x+9, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+12, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+7, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+7, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+8, 1, 1);
 
         this.setBlockState(new BlockPos(x+5, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+9, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+9), log);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+7, currentY, z+9), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+9), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+10), log);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+10, 12, 12);
         this.setBlockState(new BlockPos(x+6, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+10, 2, 2);
 
 
         this.setBlockState(new BlockPos(x+4, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+12, 1, 1);
         currentY++;
 
 
 
         this.setBlockState(new BlockPos(x+9, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+2, 1, 1);
 
 
 
 
         this.setBlockState(new BlockPos(x+3, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+3, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+9, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+3, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+13, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+14, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+15, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+15, currentY, z+3, 1, 1);
 
 
 
         this.setBlockState(new BlockPos(x+10, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+4, 2, 2);
         this.setBlockState(new BlockPos(x+14, currentY, z+4), log);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+4, 12, 12);
         this.setBlockState(new BlockPos(x+15, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+15, currentY, z+4, 2, 2);
 
         this.setBlockState(new BlockPos(x+12, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+5), log);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+5, 12, 12);
         this.setBlockState(new BlockPos(x+14, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+15, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+15, currentY, z+5, 1, 1);
 
         this.setBlockState(new BlockPos(x+9, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+6, 2, 2);
         this.setBlockState(new BlockPos(x+14, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+15, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+15, currentY, z+6, 1, 1);
 
 
 
         this.setBlockState(new BlockPos(x+13, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+7, 1, 1);
 
         this.setBlockState(new BlockPos(x+6, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+8, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+8, 12, 12);
 
         this.setBlockState(new BlockPos(x+9, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+8, 12, 12);
 
         this.setBlockState(new BlockPos(x+5, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+9), log);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+9, 1, 1);
 
         this.setBlockState(new BlockPos(x+4, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+10, 1, 1);
 
         this.setBlockState(new BlockPos(x+10, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+10), log);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+10, 12, 12);
         this.setBlockState(new BlockPos(x+12, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+10, 2, 2);
 
         this.setBlockState(new BlockPos(x+5, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+12, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+11, 1, 1);
 
         this.setBlockState(new BlockPos(x+11, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+13, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+13, 1, 1);
 
         this.setBlockState(new BlockPos(x+12, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+14, 1, 1);
         currentY++;
 
         this.setBlockState(new BlockPos(x+10, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+1, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+1, 1, 1);
 
         this.setBlockState(new BlockPos(x+9, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+2, 1, 1);
 
 
 
         this.setBlockState(new BlockPos(x+3, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+3, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+9, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+10, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+11, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+3, 1, 1);
         this.setBlockState(new BlockPos(x+14, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+3, 1, 1);
 
         this.setBlockState(new BlockPos(x+4, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+4, 2, 2);
 
         this.setBlockState(new BlockPos(x+9, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+14, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+4, 1, 1);
 
         this.setBlockState(new BlockPos(x+5, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+14, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+15, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+15, currentY, z+5, 1, 1);
 
         this.setBlockState(new BlockPos(x+9, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+14, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+7, 1, 1);
 
         this.setBlockState(new BlockPos(x+9, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+14, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+7, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+7, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+8, 2, 2);
         this.setBlockState(new BlockPos(x+12, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+8, 2, 2);
 
 
         this.setBlockState(new BlockPos(x+10, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+9, 1, 1);
 
         this.setBlockState(new BlockPos(x+10, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+11, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+10, 1, 1);
 
         this.setBlockState(new BlockPos(x+10, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+11), log);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+11, 12, 12);
         this.setBlockState(new BlockPos(x+12, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+13, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+11, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+12), log);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+12, 12, 12);
         this.setBlockState(new BlockPos(x+13, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+14, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+15, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+15, currentY, z+12, 1, 1);
 
         this.setBlockState(new BlockPos(x+11, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+13), log);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+13, 12, 12);
         this.setBlockState(new BlockPos(x+13, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+14, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+13, 2, 2);
 
         this.setBlockState(new BlockPos(x+11, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+14, 2, 2);
         currentY++;
 
 
 
         this.setBlockState(new BlockPos(x+9, currentY, z+0), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+0, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+0), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+0, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+0), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+0, 2, 2);
         this.setBlockState(new BlockPos(x+3, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+1, 2, 2);
 
         this.setBlockState(new BlockPos(x+9, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+1, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+1, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+1, 1, 1);
 
         this.setBlockState(new BlockPos(x+2, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+2, 2, 2);
 
         this.setBlockState(new BlockPos(x+9, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+2, 2, 2);
 
         this.setBlockState(new BlockPos(x+3, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+3, 1, 1);
 
         this.setBlockState(new BlockPos(x+8, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+9, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+3, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+3), log);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+3, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+3, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+3, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+3, 1, 1);
 
         this.setBlockState(new BlockPos(x+2, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+4, 1, 1);
 
         this.setBlockState(new BlockPos(x+9, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+4), log);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+4, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+4, 1, 1);
 
         this.setBlockState(new BlockPos(x+2, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+5, 1, 1);
 
         this.setBlockState(new BlockPos(x+8, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+5), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+5, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+2, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+6, 1, 1);
 
         this.setBlockState(new BlockPos(x+8, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+6), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+6, 2, 2);
         this.setBlockState(new BlockPos(x+13, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+6, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+7, 12, 12);
 
         this.setBlockState(new BlockPos(x+9, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+11, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+12, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+14, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+7, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+5, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+7, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+8, 2, 2);
         this.setBlockState(new BlockPos(x+11, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+14, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+8, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+5, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+9, 2, 2);
         this.setBlockState(new BlockPos(x+12, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+11, 2, 2);
 
         this.setBlockState(new BlockPos(x+11, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+14, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+15, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+15, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+13), log);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+13, 12, 12);
         this.setBlockState(new BlockPos(x+14, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+13, 1, 1);
 
         this.setBlockState(new BlockPos(x+6, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+14, 2, 2);
         this.setBlockState(new BlockPos(x+14, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+15), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+15, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+15), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+15, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+15), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+15, 2, 2);
 
 
 
         this.setBlockState(new BlockPos(x+7, currentY, z+16), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+16, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+16), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+16, 1, 1);
         currentY++;
 
 
         this.setBlockState(new BlockPos(x+9, currentY, z+0), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+0, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+0), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+0, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+0), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+0, 1, 1);
 
         this.setBlockState(new BlockPos(x+3, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+1, 2, 2);
 
         this.setBlockState(new BlockPos(x+9, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+1, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+1), log);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+1, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+1, 1, 1);
 
         this.setBlockState(new BlockPos(x+1, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+2, 2, 2);
 
         this.setBlockState(new BlockPos(x+9, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+2, 2, 2);
         this.setBlockState(new BlockPos(x+10, currentY, z+2), log);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+2, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+3, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+3), log);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+3, 12, 12);
         this.setBlockState(new BlockPos(x+4, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+9, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+3, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+11, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+3, 1, 1);
 
         this.setBlockState(new BlockPos(x+2, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+4), log);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+4, 12, 12);
         this.setBlockState(new BlockPos(x+4, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+4, 2, 2);
         this.setBlockState(new BlockPos(x+10, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+4, 2, 2);
         this.setBlockState(new BlockPos(x+12, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+4, 1, 1);
 
         this.setBlockState(new BlockPos(x+3, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+5), log);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+5, 12, 12);
         this.setBlockState(new BlockPos(x+5, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+6), log);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+6, 12, 12);
         this.setBlockState(new BlockPos(x+5, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+6, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+6, 1, 1);
 
         this.setBlockState(new BlockPos(x+9, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+6, 1, 1);
 
         this.setBlockState(new BlockPos(x+3, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+7, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+10, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+12, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+13, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+7, 1, 1);
 
         this.setBlockState(new BlockPos(x+4, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+8, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+11, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+14, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+8, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+5, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+9, 2, 2);
 
         this.setBlockState(new BlockPos(x+4, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+10, 1, 1);
 
         this.setBlockState(new BlockPos(x+4, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+12, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+12), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+12, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+12, 1, 1);
 
 
 
         this.setBlockState(new BlockPos(x+6, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+13, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+13), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+13, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+13, 2, 2);
         this.setBlockState(new BlockPos(x+10, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+14, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+13, 1, 1);
 
 
 
         this.setBlockState(new BlockPos(x+6, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+14), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+14, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+14, 2, 2);
         this.setBlockState(new BlockPos(x+14, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+14, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+15), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+15, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+15), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+15, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+15), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+15, 2, 2);
         this.setBlockState(new BlockPos(x+9, currentY, z+15), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+15, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+15), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+15, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+7, currentY, z+16), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+16, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+16), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+16, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+17), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+17, 1, 1);
         currentY++;
 
         this.setBlockState(new BlockPos(x+9, currentY, z+0), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+0, 2, 2);
         this.setBlockState(new BlockPos(x+10, currentY, z+0), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+0, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+1, 1, 1);
 
         this.setBlockState(new BlockPos(x+9, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+1, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+1, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+1, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+3, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+2, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+3, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+3, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+3, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+2, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+4, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+4, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+4, 2, 2);
         this.setBlockState(new BlockPos(x+1, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+3, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+5, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+3, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+6, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+6, 2, 2);
         this.setBlockState(new BlockPos(x+11, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+6, 2, 2);
 
         this.setBlockState(new BlockPos(x+4, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+7, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+10, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+7), log);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+7, 12, 12);
         this.setBlockState(new BlockPos(x+12, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+13, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+13, currentY, z+7, 2, 2);
 
         this.setBlockState(new BlockPos(x+3, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+8, 2, 2);
         this.setBlockState(new BlockPos(x+9, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+9, 2, 2);
         this.setBlockState(new BlockPos(x+3, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+9, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+9), log);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+9), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+9, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+1, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+3, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+10), log);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+10, 12, 12);
         this.setBlockState(new BlockPos(x+6, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+10), log);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+10, 12, 12);
         this.setBlockState(new BlockPos(x+10, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+11, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+1, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+3, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+11), log);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+11, 12, 12);
         this.setBlockState(new BlockPos(x+5, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+11), log);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+11, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+11, 1, 1);
 
         this.setBlockState(new BlockPos(x+1, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+10, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+12, 2, 2);
 
         this.setBlockState(new BlockPos(x+12, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+12, 2, 2);
 
         this.setBlockState(new BlockPos(x+1, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+13, 1, 1);
 
         this.setBlockState(new BlockPos(x+8, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+13, 1, 1);
 
 
 
         this.setBlockState(new BlockPos(x+6, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+14, 2, 2);
 
         this.setBlockState(new BlockPos(x+7, currentY, z+15), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+15, 1, 1);
         currentY++;
 
 
@@ -2072,317 +1209,188 @@ public class TreeShagbarkHickory extends AppalachiaTree {
 
 
         this.setBlockState(new BlockPos(x+3, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+4, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+4, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+4, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+4, 1, 1);
 
         this.setBlockState(new BlockPos(x+3, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+5, 1, 1);
 
         this.setBlockState(new BlockPos(x+3, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+6, 1, 1);
 
         this.setBlockState(new BlockPos(x+7, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+7, 1, 1);
 
         this.setBlockState(new BlockPos(x+10, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+12, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+12, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+2, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+8, 1, 1);
 
         this.setBlockState(new BlockPos(x+5, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+8, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+9, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+11, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+8, 2, 2);
         this.setBlockState(new BlockPos(x+2, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+9, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+9, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+9, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+9, 2, 2);
         this.setBlockState(new BlockPos(x+11, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+11, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+0, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+0, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+1, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+9, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+0, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+0, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+1, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+11), log);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+11, 12, 12);
         this.setBlockState(new BlockPos(x+4, currentY, z+11), log);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+11, 12, 12);
         this.setBlockState(new BlockPos(x+5, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+7, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+9, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+11, 2, 2);
 
         this.setBlockState(new BlockPos(x+0, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+0, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+1, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+12), log);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+12, 12, 12);
         this.setBlockState(new BlockPos(x+3, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+12, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+8, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+12, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+1, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+13, 2, 2);
         this.setBlockState(new BlockPos(x+2, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+13, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+13, 1, 1);
 
         this.setBlockState(new BlockPos(x+8, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+13, 2, 2);
 
 
 
 
         this.setBlockState(new BlockPos(x+7, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+14, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+14), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+14, 1, 1);
         currentY++;
 
 
 
 
         this.setBlockState(new BlockPos(x+7, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+4, 1, 1);
 
         this.setBlockState(new BlockPos(x+7, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+5, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+5, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+6, 2, 2);
         this.setBlockState(new BlockPos(x+10, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+6, 1, 1);
 
         this.setBlockState(new BlockPos(x+5, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+10, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+7, 1, 1);
 
         this.setBlockState(new BlockPos(x+6, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+8, 12, 12);
 
         this.setBlockState(new BlockPos(x+9, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+9, currentY, z+8, 2, 2);
         this.setBlockState(new BlockPos(x+10, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+10, currentY, z+8, 1, 1);
 
         this.setBlockState(new BlockPos(x+3, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+9, 1, 1);
 
         this.setBlockState(new BlockPos(x+2, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+10, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+10, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+10, 2, 2);
 
 
         this.setBlockState(new BlockPos(x+8, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+10, 2, 2);
 
 
         this.setBlockState(new BlockPos(x+1, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+5, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+11, 2, 2);
         this.setBlockState(new BlockPos(x+8, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+11, 2, 2);
 
         this.setBlockState(new BlockPos(x+1, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+2, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+12, 2, 2);
         this.setBlockState(new BlockPos(x+3, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+12, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+12, 1, 1);
 
 
 
         this.setBlockState(new BlockPos(x+2, currentY, z+13), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+13, 2, 2);
         currentY++;
 
 
 
         this.setBlockState(new BlockPos(x+8, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+5, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+6, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+6), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+6, 1, 1);
 
 
         this.setBlockState(new BlockPos(x+5, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+7, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+7, 2, 2);
 
         this.setBlockState(new BlockPos(x+5, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+8), log);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+8, 12, 12);
         this.setBlockState(new BlockPos(x+8, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+8, 1, 1);
 
         this.setBlockState(new BlockPos(x+6, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+9, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+9, 1, 1);
 
 
 
         this.setBlockState(new BlockPos(x+8, currentY, z+10), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+10, 2, 2);
 
         this.setBlockState(new BlockPos(x+2, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+3, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+11, 1, 1);
         this.setBlockState(new BlockPos(x+4, currentY, z+11), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+11, 2, 2);
 
 
         this.setBlockState(new BlockPos(x+3, currentY, z+12), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+12, 2, 2);
         currentY++;
 
 
         this.setBlockState(new BlockPos(x+7, currentY, z+7), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+7, 1, 1);
         this.setBlockState(new BlockPos(x+6, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+7, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+8, 1, 1);
         this.setBlockState(new BlockPos(x+8, currentY, z+8), leaves);
-        this.setBlockMetadataWithNotify(x+8, currentY, z+8, 1, 1);
 
         this.setBlockState(new BlockPos(x+6, currentY, z+9), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+9, 1, 1);
         currentY++;
     }
 }

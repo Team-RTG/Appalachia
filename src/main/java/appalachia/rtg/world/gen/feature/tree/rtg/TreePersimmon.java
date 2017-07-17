@@ -31,10 +31,6 @@ public class TreePersimmon extends AppalachiaTree {
         this.firstBlockOffsetZ = 3;
     }
 
-    public TreePersimmon(boolean shortVersion) {
-        this();
-    }
-
     @Override
     public boolean generate(World world, Random rand, BlockPos pos) {
         this.init(world, rand, pos);
@@ -73,16 +69,13 @@ public class TreePersimmon extends AppalachiaTree {
         int currentY = y;
 
         this.setBlockState(new BlockPos(x+4, currentY, z+3), log);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+3, 12, 12);
         currentY++;
         
         this.setBlockState(new BlockPos(x+4, currentY, z+3), log);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+3, 12, 12);
         currentY++;
 
         this.setBlockState(new BlockPos(x+3, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+3), log);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+3, 12, 12);
         currentY++;
 
         this.setBlockState(new BlockPos(x+2, currentY, z+1), leaves);
@@ -91,11 +84,8 @@ public class TreePersimmon extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+4, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+1, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+3), log);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+3, 12, 12);
         this.setBlockState(new BlockPos(x+5, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+1, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+1, currentY, z+4, 2, 2);
         this.setBlockState(new BlockPos(x+2, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+4), leaves);
@@ -111,10 +101,8 @@ public class TreePersimmon extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+6, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+0, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+0, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+3, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+3), log);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+3, 12, 12);
         this.setBlockState(new BlockPos(x+6, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+0, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+2, currentY, z+4), leaves);
@@ -141,14 +129,12 @@ public class TreePersimmon extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+2, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+3), log);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+3, 12, 12);
         this.setBlockState(new BlockPos(x+5, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+0, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+1, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+2, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+4, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+4), leaves);
@@ -157,16 +143,13 @@ public class TreePersimmon extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+3, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+7, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+6), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+7), leaves);
         currentY++;
 
         this.setBlockState(new BlockPos(x+3, currentY, z+0), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+0, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+0), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+0, 2, 2);
         this.setBlockState(new BlockPos(x+1, currentY, z+1), leaves);
         this.setBlockState(new BlockPos(x+2, currentY, z+1), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+1), leaves);
@@ -175,10 +158,8 @@ public class TreePersimmon extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+1, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+2, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+2, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+2, 2, 2);
         this.setBlockState(new BlockPos(x+0, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+1, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+2, currentY, z+3), leaves);
@@ -201,10 +182,8 @@ public class TreePersimmon extends AppalachiaTree {
         currentY++;
 
         this.setBlockState(new BlockPos(x+3, currentY, z+0), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+0, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+0), leaves);
         this.setBlockState(new BlockPos(x+2, currentY, z+1), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+1, 2, 2);
         this.setBlockState(new BlockPos(x+3, currentY, z+1), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+1), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+1), leaves);
@@ -219,11 +198,9 @@ public class TreePersimmon extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+7, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+1, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+4, currentY, z+4), leaves);
-        this.setBlockMetadataWithNotify(x+4, currentY, z+4, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+7, currentY, z+4), leaves);
         this.setBlockState(new BlockPos(x+2, currentY, z+5), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+5, 2, 2);
         this.setBlockState(new BlockPos(x+3, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+5), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+5), leaves);
@@ -240,9 +217,7 @@ public class TreePersimmon extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+2, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+5, currentY, z+2, 2, 2);
         this.setBlockState(new BlockPos(x+6, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+6, currentY, z+2, 2, 2);
         this.setBlockState(new BlockPos(x+3, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+3), leaves);
@@ -260,13 +235,10 @@ public class TreePersimmon extends AppalachiaTree {
         this.setBlockState(new BlockPos(x+4, currentY, z+1), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+1), leaves);
         this.setBlockState(new BlockPos(x+2, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+2, currentY, z+2, 2, 2);
         this.setBlockState(new BlockPos(x+3, currentY, z+2), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+2, 2, 2);
         this.setBlockState(new BlockPos(x+4, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+5, currentY, z+2), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+3), leaves);
-        this.setBlockMetadataWithNotify(x+3, currentY, z+3, 2, 2);
         this.setBlockState(new BlockPos(x+5, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+6, currentY, z+3), leaves);
         this.setBlockState(new BlockPos(x+3, currentY, z+4), leaves);
