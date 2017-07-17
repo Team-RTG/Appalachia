@@ -1,9 +1,6 @@
 package appalachia.rtg.world.biome.deco.collection;
 
-import appalachia.rtg.world.gen.feature.tree.rtg.*;
-
 import rtg.api.config.BiomeConfig;
-import rtg.api.world.deco.DecoTree;
 import rtg.api.world.deco.collection.DecoCollectionBase;
 
 
@@ -20,12 +17,12 @@ public class DecoCollectionSmokyMountains extends DecoCollectionBase {
 
         super(config);
 
-        // White Oak.
-        AppalachiaTree treeWhiteOak = new TreeWhiteOak();
-        this.addTree(treeWhiteOak);
-        DecoTree decoWhiteOak = new DecoTree(treeWhiteOak);
-        decoWhiteOak.setMaxY(treeMaxY);
-        this.addDeco(decoWhiteOak);
+//        // White Oak.
+//        AppalachiaTree treeWhiteOak = new TreeWhiteOak();
+//        this.addTree(treeWhiteOak);
+//        DecoTree decoWhiteOak = new DecoTree(treeWhiteOak);
+//        decoWhiteOak.setMaxY(treeMaxY);
+//        this.addDeco(decoWhiteOak);
 
 //        // Pignut Hickory.
 //        AppalachiaTree treePignutHickory = new TreeCaryaGlabra();
