@@ -3,7 +3,6 @@ package appalachia.rtg.world.gen.feature.tree.rtg;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
@@ -45,10 +44,7 @@ public class TreeAtlanticWhiteCedarSmall extends TreeAtlanticWhiteCedar {
             }
         }
 
-        IBlockState leaves = this.leavesBlock.withProperty(BlockLeaves.CHECK_DECAY, false);
-        //IBlockState leaves = this.leavesBlock.withProperty(BlockLeaves.DECAYABLE, false);
-
-        this.spawn(world, x, y - 1, z, this.logBlock, leaves);
+        this.spawn(world, x, y - 1, z, this.logBlock, this.leavesBlock);
 
         return true;
     }

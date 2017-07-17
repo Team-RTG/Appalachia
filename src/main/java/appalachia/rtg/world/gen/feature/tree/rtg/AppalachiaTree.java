@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
+import net.minecraft.block.BlockLeaves;
+import net.minecraft.block.BlockLog;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -79,6 +81,10 @@ public abstract class AppalachiaTree extends TreeRTG implements IAppalachiaTree 
         this.genX = pos.getX();
         this.genY = pos.getY();
         this.genZ = pos.getZ();
+
+        this.logBlock = this.logBlock.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE);
+        this.leavesBlock = this.leavesBlock.withProperty(BlockLeaves.CHECK_DECAY, false);
+        //this.leavesBlock = this.leavesBlock.withProperty(BlockLeaves.DECAYABLE, false);
     }
 
     @Override

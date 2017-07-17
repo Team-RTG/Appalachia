@@ -63,10 +63,7 @@ public class TreeWhitePine extends AppalachiaTree {
             }
         }
 
-        IBlockState leaves = this.leavesBlock.withProperty(BlockLeaves.CHECK_DECAY, false);
-        //IBlockState leaves = this.leavesBlock.withProperty(BlockLeaves.DECAYABLE, false);
-
-        this.spawn(world, x, y, z, this.logBlock, leaves);
+        this.spawn(world, x, y, z, this.logBlock, this.leavesBlock);
 
         return true;
     }

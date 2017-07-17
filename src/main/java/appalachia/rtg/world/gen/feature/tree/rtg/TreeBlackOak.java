@@ -58,10 +58,7 @@ public class TreeBlackOak extends AppalachiaTree {
             }
         }
 
-        IBlockState leaves = this.leavesBlock.withProperty(BlockLeaves.CHECK_DECAY, false);
-        //IBlockState leaves = this.leavesBlock.withProperty(BlockLeaves.DECAYABLE, false);
-
-        this.spawn(world, x, y - 1, z, this.logBlock, leaves);
+        this.spawn(world, x, y - 1, z, this.logBlock, this.leavesBlock);
 
         return true;
     }
