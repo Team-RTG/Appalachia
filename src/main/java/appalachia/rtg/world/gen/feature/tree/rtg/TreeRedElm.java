@@ -3,7 +3,6 @@ package appalachia.rtg.world.gen.feature.tree.rtg;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
@@ -63,9 +62,14 @@ public class TreeRedElm extends AppalachiaTree {
             }
         }
 
-        this.spawn(world, x, y, z, this.logBlock, this.leavesBlock);
+        this.spawn(world, x, y - this.rootDepth(), z, this.logBlock, this.leavesBlock);
 
         return true;
+    }
+
+    @Override
+    public int rootDepth() {
+        return 0;
     }
 
     @Override

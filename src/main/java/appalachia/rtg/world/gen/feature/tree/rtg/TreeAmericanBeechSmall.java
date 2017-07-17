@@ -46,9 +46,14 @@ public class TreeAmericanBeechSmall extends TreeAmericanBeech {
             }
         }
 
-        this.spawn(world, x, y - 1, z, this.logBlock, this.leavesBlock);
+        this.spawn(world, x, y - this.rootDepth(), z, this.logBlock, this.leavesBlock);
 
         return true;
+    }
+
+    @Override
+    public int rootDepth() {
+        return 1;
     }
 
     @Override

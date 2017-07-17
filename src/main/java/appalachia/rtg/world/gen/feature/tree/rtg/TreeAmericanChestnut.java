@@ -68,9 +68,14 @@ public class TreeAmericanChestnut extends AppalachiaTree {
             }
         }
 
-        this.spawn(world, x, y - 3, z, this.logBlock, this.leavesBlock);
+        this.spawn(world, x, y - this.rootDepth(), z, this.logBlock, this.leavesBlock);
 
         return true;
+    }
+
+    @Override
+    public int rootDepth() {
+        return 3;
     }
 
     @Override

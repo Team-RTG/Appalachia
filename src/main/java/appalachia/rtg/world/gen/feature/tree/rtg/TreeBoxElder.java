@@ -56,9 +56,14 @@ public class TreeBoxElder extends AppalachiaTree {
             }
         }
 
-        this.spawn(world, x, y, z, this.logBlock, this.leavesBlock);
+        this.spawn(world, x, y - this.rootDepth(), z, this.logBlock, this.leavesBlock);
 
         return true;
+    }
+
+    @Override
+    public int rootDepth() {
+        return 0;
     }
 
     @Override
