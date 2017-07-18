@@ -75,11 +75,14 @@ public class TreeAmericanSweetgum extends AppalachiaTree {
 
         int currentY = y;
 
-        for (int t = 0; t < this.trunkSize; t++) {
+        this.setBlockState(new BlockPos(x + 5, currentY, z + 4), log);
+        currentY++;
 
-            this.setBlockState(new BlockPos(x + 5, currentY, z + 4), log);
-            currentY++;
-        }
+        this.setBlockState(new BlockPos(x + 5, currentY, z + 4), log);
+        currentY++;
+
+        this.setBlockState(new BlockPos(x + 5, currentY, z + 4), log);
+        currentY++;
 
         this.setBlockState(new BlockPos(x + 5, currentY, z + 1), leaves);
         this.setBlockState(new BlockPos(x + 3, currentY, z + 2), leaves);
