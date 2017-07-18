@@ -163,4 +163,22 @@ public abstract class AppalachiaTree extends TreeRTG implements IAppalachiaTree 
         this.treeLayers.add(treeLayer);
         return this;
     }
+
+    protected void generateTreeFromLayers(IBlockState log, IBlockState leaves) {
+
+        for (TreeLayer treeLayer : this.treeLayers) {
+
+            if (treeLayer.getLogs().size() > 0) {
+                for (BlockPos logPos : treeLayer.getLogs()) {
+                    this.setBlockState(logPos, log);
+                }
+            }
+
+            if (treeLayer.getLeaves().size() > 0) {
+                for (BlockPos leafPos : treeLayer.getLeaves()) {
+                    this.setBlockState(leafPos, leaves);
+                }
+            }
+        }
+    }
 }
