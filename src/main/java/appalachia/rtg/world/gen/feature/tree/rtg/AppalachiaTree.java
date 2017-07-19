@@ -13,6 +13,7 @@ import net.minecraft.world.World;
 
 import appalachia.api.AppalachiaBlocks;
 import appalachia.block.leaves.AppalachiaBlockLeaves;
+import appalachia.util.Logger;
 import appalachia.util.TreeLayer;
 
 import rtg.api.world.gen.feature.tree.rtg.TreeRTG;
@@ -36,7 +37,7 @@ public abstract class AppalachiaTree extends TreeRTG implements IAppalachiaTree 
 
     protected int firstBlockOffsetX;
     protected int firstBlockOffsetZ;
-    protected ArrayList<TreeLayer> treeLayers = new ArrayList<TreeLayer>(){};
+    protected ArrayList<TreeLayer> treeLayers;
 
     public AppalachiaTree(boolean notify) {
         super(notify);
@@ -84,6 +85,8 @@ public abstract class AppalachiaTree extends TreeRTG implements IAppalachiaTree 
         this.genY = pos.getY();
         this.genZ = pos.getZ();
 
+        this.treeLayers = new ArrayList<TreeLayer>(){};
+
         this.logBlock = this.logBlock.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE);
         this.leavesBlock = this.leavesBlock.withProperty(BlockLeaves.CHECK_DECAY, false);
         //this.leavesBlock = this.leavesBlock.withProperty(BlockLeaves.DECAYABLE, false);
@@ -110,7 +113,7 @@ public abstract class AppalachiaTree extends TreeRTG implements IAppalachiaTree 
 
         for (int d = 1; d <= depth; d++) {
             IBlockState g = world.getBlockState(new BlockPos(pos.getX(), pos.getY() - d, pos.getZ()));
-
+            //Logger.info("Ground is %s at %d %d %d", g.getBlock().getLocalizedName(), pos.getX(), pos.getY() - d, pos.getZ());
             for (int i = 0; i < this.validGroundBlocks.size(); i++) {
                 if (g == this.validGroundBlocks.get(i)) {
                     return true;
@@ -165,6 +168,35 @@ public abstract class AppalachiaTree extends TreeRTG implements IAppalachiaTree 
     }
 
     protected void generateTreeFromLayers(IBlockState log, IBlockState leaves) {
+
+        // Check every log block of the tree's base to make sure the block underneath it is a valid ground block.
+        if (this.treeLayers.size() > 0) {
+            try {
+                //Logger.info("%s", this.toString());
+                TreeLayer groundLayer = this.treeLayers.get(this.rootDepth());
+                if (groundLayer.getLogs().size() > 0) {
+                    for (BlockPos groundPos : groundLayer.getLogs()) {
+                        if (!isValidGroundBlock(this.world, this.rand, groundPos, 1)) {
+                            //Logger.info("INVALID GROUND!");
+                            return;
+                        }
+                        else {
+                            //Logger.info("Ground is valid.");
+                        }
+                    }
+                }
+                else {
+                    throw new RuntimeException("Incorrect root depth.");
+                }
+            }
+            catch (Exception e) {
+                Logger.warn("Tree generation aborted when checking ground validity. Reason: %s", e.getMessage());
+                return;
+            }
+        }
+        else {
+            throw new RuntimeException("Tree has no layers.");
+        }
 
         for (TreeLayer treeLayer : this.treeLayers) {
 
