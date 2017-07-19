@@ -1,6 +1,11 @@
 package appalachia.block.saplings;
 
+import java.util.ArrayList;
+
 import appalachia.block.IAppalachiaBlock;
+import appalachia.rtg.world.gen.feature.tree.rtg.AppalachiaTree;
+import appalachia.rtg.world.gen.feature.tree.rtg.TreeSycamore;
+import scala.actors.threadpool.Arrays;
 
 public class BlockSaplingSycamore01 extends AppalachiaBlockSapling implements IAppalachiaBlock {
 
@@ -13,5 +18,12 @@ public class BlockSaplingSycamore01 extends AppalachiaBlockSapling implements IA
     public String registryName() {
 
         return super.registryName();
+    }
+
+    @Override
+    public ArrayList<AppalachiaTree> getTrees() {
+        return new ArrayList<AppalachiaTree>(Arrays.asList(new AppalachiaTree[] {
+            new TreeSycamore()
+        }));
     }
 }

@@ -22,6 +22,11 @@ public class BlockLeavesBlackSpruce01 extends AppalachiaBlockLeaves implements I
     }
 
     @Override
+    protected boolean evergreen() {
+        return true;
+    }
+
+    @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 
         return Item.getItemFromBlock(AppalachiaBlocks.sapling_black_spruce_01);

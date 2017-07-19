@@ -22,6 +22,11 @@ public class BlockLeavesBalsamFir01 extends AppalachiaBlockLeaves implements IAp
     }
 
     @Override
+    protected boolean evergreen() {
+        return true;
+    }
+
+    @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 
         return Item.getItemFromBlock(AppalachiaBlocks.sapling_balsam_fir_01);

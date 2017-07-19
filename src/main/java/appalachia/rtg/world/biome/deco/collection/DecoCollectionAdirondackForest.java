@@ -30,56 +30,56 @@ public class DecoCollectionAdirondackForest extends DecoCollectionBase {
         super(config);
 
         // Red Maple.
-        AppalachiaTree treeRedMaple = new TreeAcerRubrum();
+        AppalachiaTree treeRedMaple = new TreeRedMaple();
         this.addTree(treeRedMaple);
         DecoTree decoRedMaple = new DecoTree(treeRedMaple);
         decoRedMaple.setMaxY(treeMaxY);
         this.addDeco(decoRedMaple);
 
         // American Beech.
-        AppalachiaTree treeAmericanBeech = new TreeFagusGrandifolia();
+        AppalachiaTree treeAmericanBeech = new TreeAmericanBeech();
         this.addTree(treeAmericanBeech);
         DecoTree decoAmericanBeech = new DecoTree(treeAmericanBeech);
         decoAmericanBeech.setMaxY(treeMaxY);
         this.addDeco(decoAmericanBeech);
 
         // Red Ash.
-        AppalachiaTree treeRedAsh = new TreeFraxinusPennsylvanica();
+        AppalachiaTree treeRedAsh = new TreeRedAsh();
         this.addTree(treeRedAsh);
         DecoTree decoRedAsh = new DecoTree(treeRedAsh);
         decoRedAsh.setMaxY(treeMaxY);
         this.addDeco(decoRedAsh);
 
         // Hackberry.
-        AppalachiaTree treeHackberry = new TreeCeltisOccidentalis();
+        AppalachiaTree treeHackberry = new TreeHackberry();
         this.addTree(treeHackberry);
         DecoTree decoHackberry = new DecoTree(treeHackberry);
         decoHackberry.setMaxY(treeMaxY);
         this.addDeco(decoHackberry);
 
         // Black Cherry.
-        AppalachiaTree treeBlackCherry = new TreePrunusSerotina();
+        AppalachiaTree treeBlackCherry = new TreeBlackCherry();
         this.addTree(treeBlackCherry);
         DecoTree decoBlackCherry = new DecoTree(treeBlackCherry);
         decoBlackCherry.setMaxY(treeMaxY);
         this.addDeco(decoBlackCherry);
 
         // Red Oak.
-        AppalachiaTree treeRedOak = new TreeQuercusRubra();
+        AppalachiaTree treeRedOak = new TreeRedOak();
         this.addTree(treeRedOak);
         DecoTree decoRedOak = new DecoTree(treeRedOak);
         decoRedOak.setMaxY(treeMaxY);
         this.addDeco(decoRedOak);
 
         // White Walnut.
-        AppalachiaTree treeWhiteWalnut = new TreeJuglansCinerea();
+        AppalachiaTree treeWhiteWalnut = new TreeWhiteWalnut();
         this.addTree(treeWhiteWalnut);
         DecoTree decoWhiteWalnut = new DecoTree(treeWhiteWalnut);
         decoWhiteWalnut.setMaxY(treeMaxY);
         this.addDeco(decoWhiteWalnut);
 
         // White Pine.
-        AppalachiaTree treeWhitePine = new TreePinusStrobus();
+        AppalachiaTree treeWhitePine = new TreeWhitePine();
         this.addTree(treeWhitePine);
         DecoTree decoWhitePine = new DecoTree(treeWhitePine);
         decoWhitePine.setMaxY(treeMaxY);

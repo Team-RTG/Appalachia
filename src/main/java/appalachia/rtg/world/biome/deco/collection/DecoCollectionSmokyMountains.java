@@ -30,35 +30,35 @@ public class DecoCollectionSmokyMountains extends DecoCollectionBase {
         super(config);
 
         // White Oak.
-        AppalachiaTree treeWhiteOak = new TreeQuercusAlba();
+        AppalachiaTree treeWhiteOak = new TreeWhiteOak();
         this.addTree(treeWhiteOak);
         DecoTree decoWhiteOak = new DecoTree(treeWhiteOak);
         decoWhiteOak.setMaxY(treeMaxY);
         this.addDeco(decoWhiteOak);
 
         // Pignut Hickory.
-        AppalachiaTree treePignutHickory = new TreeCaryaGlabra();
+        AppalachiaTree treePignutHickory = new TreePignutHickory();
         this.addTree(treePignutHickory);
         DecoTree decoPignutHickory = new DecoTree(treePignutHickory);
         decoPignutHickory.setMaxY(treeMaxY);
         this.addDeco(decoPignutHickory);
 
         // Tulip Poplar.
-        AppalachiaTree treeTulipPoplar = new TreeLiriodendronTulipifera();
+        AppalachiaTree treeTulipPoplar = new TreeTulipPoplar();
         this.addTree(treeTulipPoplar);
         DecoTree decoTulipPoplar = new DecoTree(treeTulipPoplar);
         decoTulipPoplar.setMaxY(treeMaxY);
         this.addDeco(decoTulipPoplar);
 
         // American Chestnut.
-        AppalachiaTree treeAmericanChestnut = new TreeCastaneaDentata();
+        AppalachiaTree treeAmericanChestnut = new TreeAmericanChestnut();
         this.addTree(treeAmericanChestnut);
         DecoTree decoAmericanChestnut = new DecoTree(treeAmericanChestnut);
         decoAmericanChestnut.setMaxY(treeMaxY);
         this.addDeco(decoAmericanChestnut);
 
         // Box Elder.
-        AppalachiaTree treeBoxElder = new TreeAcerNegundo();
+        AppalachiaTree treeBoxElder = new TreeBoxElder();
         this.addTree(treeBoxElder);
         DecoTree decoBoxElder = new DecoTree(treeBoxElder);
         decoBoxElder.setMaxY(treeMaxY);

@@ -22,6 +22,11 @@ public class BlockLeavesEasternHemlock01 extends AppalachiaBlockLeaves implement
     }
 
     @Override
+    protected boolean evergreen() {
+        return true;
+    }
+
+    @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 
         return Item.getItemFromBlock(AppalachiaBlocks.sapling_eastern_hemlock_01);

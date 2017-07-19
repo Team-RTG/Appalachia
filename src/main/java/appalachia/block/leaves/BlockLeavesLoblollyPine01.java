@@ -22,6 +22,11 @@ public class BlockLeavesLoblollyPine01 extends AppalachiaBlockLeaves implements 
     }
 
     @Override
+    protected boolean evergreen() {
+        return true;
+    }
+
+    @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 
         return Item.getItemFromBlock(AppalachiaBlocks.sapling_loblolly_pine_01);

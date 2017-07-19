@@ -31,70 +31,70 @@ public class DecoCollectionSmokyForest extends DecoCollectionBase {
         super(config);
 
         // American Sweetgum.
-        AppalachiaTree treeAmericanSweetgum = new TreeLiquidambarStyraciflua();
+        AppalachiaTree treeAmericanSweetgum = new TreeAmericanSweetgum();
         this.addTree(treeAmericanSweetgum);
         DecoTree decoAmericanSweetgum = new DecoTree(treeAmericanSweetgum);
         decoAmericanSweetgum.setMaxY(treeMaxY);
         this.addDeco(decoAmericanSweetgum);
 
         // Loblolly Pine.
-        AppalachiaTree treeLoblollyPine = new TreePinusTaeda();
+        AppalachiaTree treeLoblollyPine = new TreeLoblollyPine();
         this.addTree(treeLoblollyPine);
         DecoTree decoLoblollyPine = new DecoTree(treeLoblollyPine);
         decoLoblollyPine.setMaxY(treeMaxY);
         this.addDeco(decoLoblollyPine);
 
         // Flowering Dogwood.
-        AppalachiaTree treeFloweringDogwood = new TreeCornusFlorida();
+        AppalachiaTree treeFloweringDogwood = new TreeFloweringDogwood();
         this.addTree(treeFloweringDogwood);
         DecoTree decoFloweringDogwood = new DecoTree(treeFloweringDogwood);
         decoFloweringDogwood.setMaxY(treeMaxY);
         this.addDeco(decoFloweringDogwood);
 
         // Black Walnut.
-        AppalachiaTree treeBlackWalnut = new TreeJuglansNigra();
+        AppalachiaTree treeBlackWalnut = new TreeBlackWalnut();
         this.addTree(treeBlackWalnut);
         DecoTree decoBlackWalnut = new DecoTree(treeBlackWalnut);
         decoBlackWalnut.setMaxY(treeMaxY);
         this.addDeco(decoBlackWalnut);
 
         // American Elm.
-        AppalachiaTree treeAmericanElm = new TreeUlmusAmericana();
+        AppalachiaTree treeAmericanElm = new TreeAmericanElm();
         this.addTree(treeAmericanElm);
         DecoTree decoAmericanElm = new DecoTree(treeAmericanElm);
         decoAmericanElm.setMaxY(treeMaxY);
         this.addDeco(decoAmericanElm);
 
         // Sycamore.
-        AppalachiaTree treeSycamore = new TreePlatanusOccidentalis();
+        AppalachiaTree treeSycamore = new TreeSycamore();
         this.addTree(treeSycamore);
         DecoTree decoSycamore = new DecoTree(treeSycamore);
         decoSycamore.setMaxY(treeMaxY);
         this.addDeco(decoSycamore);
 
         // Persimmon.
-        AppalachiaTree treePersimmon = new TreeDiospyrosVirginiana();
+        AppalachiaTree treePersimmon = new TreePersimmon();
         this.addTree(treePersimmon);
         DecoTree decoPersimmon = new DecoTree(treePersimmon);
         decoPersimmon.setMaxY(treeMaxY);
         this.addDeco(decoPersimmon);
 
         // Blue Beech.
-        AppalachiaTree treeBlueBeech = new TreeCarpinusCaroliniana();
+        AppalachiaTree treeBlueBeech = new TreeBlueBeech();
         this.addTree(treeBlueBeech);
         DecoTree decoBlueBeech = new DecoTree(treeBlueBeech);
         decoBlueBeech.setMaxY(treeMaxY);
         this.addDeco(decoBlueBeech);
 
         // River Birch.
-        AppalachiaTree treeRiverBirch = new TreeBetulaNigra();
+        AppalachiaTree treeRiverBirch = new TreeRiverBirch();
         this.addTree(treeRiverBirch);
         DecoTree decoRiverBirch = new DecoTree(treeRiverBirch);
         decoRiverBirch.setMaxY(treeMaxY);
         this.addDeco(decoRiverBirch);
 
         // Shortleaf Pine.
-        AppalachiaTree treeShortleafPine = new TreePinusEchinata();
+        AppalachiaTree treeShortleafPine = new TreeShortleafPine();
         this.addTree(treeShortleafPine);
         DecoTree decoShortleafPine = new DecoTree(treeShortleafPine);
         decoShortleafPine.setMaxY(treeMaxY);

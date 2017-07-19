@@ -66,6 +66,10 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
         return String.join("_", this.slug.split("\\."));
     }
 
+    protected boolean evergreen() {
+        return false;
+    }
+
     @Nullable
     public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, World worldIn, BlockPos pos)
     {
@@ -201,7 +205,13 @@ public class AppalachiaBlockLeaves extends BlockLeaves implements IAppalachiaBlo
         public int colorMultiplier(IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex)
         {
             if (worldIn != null && pos != null) {
-                return BiomeColorHelper.getFoliageColorAtPos(worldIn, pos);
+
+                if (!(((AppalachiaBlockLeaves)state.getBlock()).evergreen())) {
+                    return BiomeColorHelper.getFoliageColorAtPos(worldIn, pos);
+                }
+                else {
+                    return 4028928;
+                }
             }
             else {
                 return 4028928;

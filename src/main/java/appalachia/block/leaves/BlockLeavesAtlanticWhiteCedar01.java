@@ -22,6 +22,11 @@ public class BlockLeavesAtlanticWhiteCedar01 extends AppalachiaBlockLeaves imple
     }
 
     @Override
+    protected boolean evergreen() {
+        return true;
+    }
+
+    @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 
         return Item.getItemFromBlock(AppalachiaBlocks.sapling_atlantic_white_cedar_01);

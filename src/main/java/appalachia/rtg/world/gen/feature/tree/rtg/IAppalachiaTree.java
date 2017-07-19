@@ -6,4 +6,5 @@ package appalachia.rtg.world.gen.feature.tree.rtg;
 public interface IAppalachiaTree {
 
     int opaqueLeavesChance();
+    int rootDepth();
 }
