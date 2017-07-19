@@ -88,8 +88,10 @@ public abstract class AppalachiaTree extends TreeRTG implements IAppalachiaTree 
         this.treeLayers = new ArrayList<TreeLayer>(){};
 
         this.logBlock = this.logBlock.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE);
-        this.leavesBlock = this.leavesBlock.withProperty(BlockLeaves.CHECK_DECAY, false);
-        //this.leavesBlock = this.leavesBlock.withProperty(BlockLeaves.DECAYABLE, false);
+        this.leavesBlock = this.leavesBlock
+            .withProperty(BlockLeaves.CHECK_DECAY, false)
+            .withProperty(BlockLeaves.DECAYABLE, true);
+        //this.leavesBlock = this.leavesBlock.withProperty(BlockLeaves.DECAYABLE, Boolean.valueOf(false));
     }
 
     @Override
