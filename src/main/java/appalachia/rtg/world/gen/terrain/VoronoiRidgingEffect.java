@@ -21,41 +21,31 @@ public class VoronoiRidgingEffect extends HeightEffect {
 
     public float pointWavelength = 0;
     public float floor = -0.1f;
-    public float minimumDivisor = 0.1f;//low divisors can produce excessive rates of change
+    public float minimumDivisor = 0.4f;//0.1f;//low divisors can produce excessive rates of change
     public float cycles = 5f;// the number of ridges passed between the border and the center
     public float cap = 1.1f; // A cap to smooth out ridge tops.
-    
+
     public VoronoiRidgingEffect() {}
-    
+
     @Override
     public float added(IRTGWorld rtgWorld, float x, float y) {
-         VoronoiResult points = rtgWorld.cell().octave(1).eval((float) x / pointWavelength, (float) y / pointWavelength);
-         //double divisor = Math.max(minimumDivisor, points[1]);
+        VoronoiResult points = rtgWorld.cell().octave(1).eval((float) x / pointWavelength, (float) y / pointWavelength);
+        //double divisor = Math.max(minimumDivisor, points[1]);
+        float raise = (float) (points.borderValue());
+        // make it cycle: multiply by cycles and get the distance from the nearest integer;
 
-//         float raise = (float) ((points[1] - points[0]) / points[1]);
-        float raise = (float) (points.interiorValue());
-
-         // make it cycle: multiply by cycles and get the distance from the nearest integer;
-         
-         raise *= cycles;
-         raise -= Math.round(raise);
-         raise = Math.abs(raise)*2f;
-         raise = 1.0f-raise;
-         raise = TerrainBase.blendedHillHeight(raise, floor);
-         // smooth off the tops
-         raise = 1f - TerrainBase.blendedHillHeight(1f - raise, 1f - cap);
-
-
-         // if this will be too steep tamp it down
-//         if (points[1]< minimumDivisor) {
-//             raise = raise * (float)(points[1]/minimumDivisor);
-//         }
-        if (points.nextDistance< minimumDivisor) {
-            raise = raise * (float)(points.nextDistance/minimumDivisor);
-        }
-
-
-         return raise;
+        raise *= cycles;
+        raise -= Math.round(raise);
+        raise = Math.abs(raise)*2f;
+        raise = 1.0f-raise;
+        raise = TerrainBase.blendedHillHeight(raise, floor);
+        // smooth off the tops
+        raise = 1f - TerrainBase.blendedHillHeight(1f - raise, 1f - cap);
+        // if this will be too steep tamp it down
+//        if (points.nextDistance < minimumDivisor) {
+//            raise = raise * (float)(points.nextDistance/minimumDivisor);
+//        }
+        return raise;
     }
 
 
