@@ -12,11 +12,11 @@ import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.event.terraingen.WorldTypeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+import appalachia.api.AppalachiaAPI;
 import appalachia.api.biome.AppalachiaBiome;
 import appalachia.api.biome.adirondack.*;
 import appalachia.api.biome.blueridge.*;
 import appalachia.api.biome.smoky.*;
-import appalachia.config.ConfigAppalachia;
 import appalachia.util.BiomeUtils;
 import appalachia.util.Logger;
 import static appalachia.api.AppalachiaBiomes.*;
@@ -41,7 +41,7 @@ public class AppalachiaBiomeManager {
             adirondackForest,
             "adirondackforest",
             AppalachiaBiomeGroup.ADIRONDACK,
-            ConfigAppalachia.biomeWeight_AdirondackForest,
+            AppalachiaAPI.config().BIOME_WEIGHT_ADIRONDACK_FOREST.get(),
             BiomeManager.BiomeType.COOL,
             BiomeAdirondackForest.biomeTypes
         );
@@ -59,7 +59,7 @@ public class AppalachiaBiomeManager {
             adirondackForestAutumn,
             "adirondackforestautumn",
             AppalachiaBiomeGroup.ADIRONDACK,
-            ConfigAppalachia.biomeWeight_AdirondackForestAutumn,
+            AppalachiaAPI.config().BIOME_WEIGHT_ADIRONDACK_FOREST_AUTUMN.get(),
             BiomeManager.BiomeType.COOL,
             BiomeAdirondackForestAutumn.biomeTypes
         );
@@ -77,7 +77,7 @@ public class AppalachiaBiomeManager {
             adirondackHills,
             "adirondackhills",
             AppalachiaBiomeGroup.ADIRONDACK,
-            ConfigAppalachia.biomeWeight_AdirondackHills,
+            AppalachiaAPI.config().BIOME_WEIGHT_ADIRONDACK_HILLS.get(),
             BiomeManager.BiomeType.COOL,
             BiomeAdirondackHills.biomeTypes
         );
@@ -95,7 +95,7 @@ public class AppalachiaBiomeManager {
             adirondackHillsAutumn,
             "adirondackhillsautumn",
             AppalachiaBiomeGroup.ADIRONDACK,
-            ConfigAppalachia.biomeWeight_AdirondackHillsAutumn,
+            AppalachiaAPI.config().BIOME_WEIGHT_ADIRONDACK_HILLS_AUTUMN.get(),
             BiomeManager.BiomeType.COOL,
             BiomeAdirondackHillsAutumn.biomeTypes
         );
@@ -113,7 +113,7 @@ public class AppalachiaBiomeManager {
             adirondackMountains,
             "adirondackmountains",
             AppalachiaBiomeGroup.ADIRONDACK,
-            ConfigAppalachia.biomeWeight_AdirondackMountains,
+            AppalachiaAPI.config().BIOME_WEIGHT_ADIRONDACK_MOUNTAINS.get(),
             BiomeManager.BiomeType.COOL,
             BiomeAdirondackMountains.biomeTypes
         );
@@ -131,7 +131,7 @@ public class AppalachiaBiomeManager {
             adirondackMountainsAutumn,
             "adirondackmountainsautumn",
             AppalachiaBiomeGroup.ADIRONDACK,
-            ConfigAppalachia.biomeWeight_AdirondackMountainsAutumn,
+            AppalachiaAPI.config().BIOME_WEIGHT_ADIRONDACK_MOUNTAINS_AUTUMN.get(),
             BiomeManager.BiomeType.COOL,
             BiomeAdirondackMountainsAutumn.biomeTypes
         );
@@ -149,7 +149,7 @@ public class AppalachiaBiomeManager {
             adirondackBog,
             "adirondackbog",
             AppalachiaBiomeGroup.ADIRONDACK,
-            ConfigAppalachia.biomeWeight_AdirondackBog,
+            AppalachiaAPI.config().BIOME_WEIGHT_ADIRONDACK_BOG.get(),
             BiomeManager.BiomeType.COOL,
             BiomeAdirondackForest.biomeTypes
         );
@@ -167,7 +167,7 @@ public class AppalachiaBiomeManager {
             adirondackBogAutumn,
             "adirondackbogautumn",
             AppalachiaBiomeGroup.ADIRONDACK,
-            ConfigAppalachia.biomeWeight_AdirondackBogAutumn,
+            AppalachiaAPI.config().BIOME_WEIGHT_ADIRONDACK_BOG_AUTUMN.get(),
             BiomeManager.BiomeType.COOL,
             BiomeAdirondackForest.biomeTypes
         );
@@ -185,7 +185,7 @@ public class AppalachiaBiomeManager {
             adirondackBeach,
             "adirondackbeach",
             AppalachiaBiomeGroup.ADIRONDACK,
-            ConfigAppalachia.biomeWeight_AdirondackBeach,
+            AppalachiaAPI.config().BIOME_WEIGHT_ADIRONDACK_BEACH.get(),
             BiomeManager.BiomeType.COOL,
             BiomeAdirondackBeach.biomeTypes
         );
@@ -201,7 +201,7 @@ public class AppalachiaBiomeManager {
             adirondackRiver,
             "adirondackriver",
             AppalachiaBiomeGroup.ADIRONDACK,
-            ConfigAppalachia.biomeWeight_AdirondackRiver,
+            AppalachiaAPI.config().BIOME_WEIGHT_ADIRONDACK_RIVER.get(),
             BiomeManager.BiomeType.COOL,
             BiomeAdirondackRiver.biomeTypes
         );
@@ -216,7 +216,7 @@ public class AppalachiaBiomeManager {
             blueRidgeForest,
             "blueridgeforest",
             AppalachiaBiomeGroup.BLUERIDGE,
-            ConfigAppalachia.biomeWeight_BlueRidgeForest,
+            AppalachiaAPI.config().BIOME_WEIGHT_BLUE_RIDGE_FOREST.get(),
             BiomeManager.BiomeType.COOL,
             BiomeBlueRidgeForest.biomeTypes
         );
@@ -234,7 +234,7 @@ public class AppalachiaBiomeManager {
             blueRidgeForestAutumn,
             "blueridgeforestautumn",
             AppalachiaBiomeGroup.BLUERIDGE,
-            ConfigAppalachia.biomeWeight_BlueRidgeForestAutumn,
+            AppalachiaAPI.config().BIOME_WEIGHT_BLUE_RIDGE_FOREST_AUTUMN.get(),
             BiomeManager.BiomeType.COOL,
             BiomeBlueRidgeForestAutumn.biomeTypes
         );
@@ -252,7 +252,7 @@ public class AppalachiaBiomeManager {
             blueRidgeHills,
             "blueridgehills",
             AppalachiaBiomeGroup.BLUERIDGE,
-            ConfigAppalachia.biomeWeight_BlueRidgeHills,
+            AppalachiaAPI.config().BIOME_WEIGHT_BLUE_RIDGE_HILLS.get(),
             BiomeManager.BiomeType.COOL,
             BiomeBlueRidgeHills.biomeTypes
         );
@@ -270,7 +270,7 @@ public class AppalachiaBiomeManager {
             blueRidgeHillsAutumn,
             "blueridgehillsautumn",
             AppalachiaBiomeGroup.BLUERIDGE,
-            ConfigAppalachia.biomeWeight_BlueRidgeHillsAutumn,
+            AppalachiaAPI.config().BIOME_WEIGHT_BLUE_RIDGE_HILLS_AUTUMN.get(),
             BiomeManager.BiomeType.COOL,
             BiomeBlueRidgeHillsAutumn.biomeTypes
         );
@@ -288,7 +288,7 @@ public class AppalachiaBiomeManager {
             blueRidgeMountains,
             "blueridgemountains",
             AppalachiaBiomeGroup.BLUERIDGE,
-            ConfigAppalachia.biomeWeight_BlueRidgeMountains,
+            AppalachiaAPI.config().BIOME_WEIGHT_BLUE_RIDGE_MOUNTAINS.get(),
             BiomeManager.BiomeType.COOL,
             BiomeBlueRidgeMountains.biomeTypes
         );
@@ -306,7 +306,7 @@ public class AppalachiaBiomeManager {
             blueRidgeMountainsAutumn,
             "blueridgemountainsautumn",
             AppalachiaBiomeGroup.BLUERIDGE,
-            ConfigAppalachia.biomeWeight_BlueRidgeMountainsAutumn,
+            AppalachiaAPI.config().BIOME_WEIGHT_BLUE_RIDGE_MOUNTAINS_AUTUMN.get(),
             BiomeManager.BiomeType.COOL,
             BiomeBlueRidgeMountainsAutumn.biomeTypes
         );
@@ -324,7 +324,7 @@ public class AppalachiaBiomeManager {
             blueRidgeBog,
             "blueridgebog",
             AppalachiaBiomeGroup.BLUERIDGE,
-            ConfigAppalachia.biomeWeight_BlueRidgeBog,
+            AppalachiaAPI.config().BIOME_WEIGHT_BLUE_RIDGE_BOG.get(),
             BiomeManager.BiomeType.COOL,
             BiomeBlueRidgeForest.biomeTypes
         );
@@ -342,7 +342,7 @@ public class AppalachiaBiomeManager {
             blueRidgeBogAutumn,
             "blueridgebogautumn",
             AppalachiaBiomeGroup.BLUERIDGE,
-            ConfigAppalachia.biomeWeight_BlueRidgeBogAutumn,
+            AppalachiaAPI.config().BIOME_WEIGHT_BLUE_RIDGE_BOG_AUTUMN.get(),
             BiomeManager.BiomeType.COOL,
             BiomeBlueRidgeForest.biomeTypes
         );
@@ -360,7 +360,7 @@ public class AppalachiaBiomeManager {
             blueRidgeBeach,
             "blueridgebeach",
             AppalachiaBiomeGroup.BLUERIDGE,
-            ConfigAppalachia.biomeWeight_BlueRidgeBeach,
+            AppalachiaAPI.config().BIOME_WEIGHT_BLUE_RIDGE_BEACH.get(),
             BiomeManager.BiomeType.COOL,
             BiomeBlueRidgeBeach.biomeTypes
         );
@@ -376,7 +376,7 @@ public class AppalachiaBiomeManager {
             blueRidgeRiver,
             "blueridgeriver",
             AppalachiaBiomeGroup.BLUERIDGE,
-            ConfigAppalachia.biomeWeight_BlueRidgeRiver,
+            AppalachiaAPI.config().BIOME_WEIGHT_BLUE_RIDGE_RIVER.get(),
             BiomeManager.BiomeType.COOL,
             BiomeBlueRidgeRiver.biomeTypes
         );
@@ -391,7 +391,7 @@ public class AppalachiaBiomeManager {
             smokyForest,
             "smokyforest",
             AppalachiaBiomeGroup.SMOKY,
-            ConfigAppalachia.biomeWeight_SmokyForest,
+            AppalachiaAPI.config().BIOME_WEIGHT_SMOKY_FOREST.get(),
             BiomeManager.BiomeType.WARM,
             BiomeSmokyForest.biomeTypes
         );
@@ -409,7 +409,7 @@ public class AppalachiaBiomeManager {
             smokyForestAutumn,
             "smokyforestautumn",
             AppalachiaBiomeGroup.SMOKY,
-            ConfigAppalachia.biomeWeight_SmokyForestAutumn,
+            AppalachiaAPI.config().BIOME_WEIGHT_SMOKY_FOREST_AUTUMN.get(),
             BiomeManager.BiomeType.WARM,
             BiomeSmokyForestAutumn.biomeTypes
         );
@@ -427,7 +427,7 @@ public class AppalachiaBiomeManager {
             smokyHills,
             "smokyhills",
             AppalachiaBiomeGroup.SMOKY,
-            ConfigAppalachia.biomeWeight_SmokyHills,
+            AppalachiaAPI.config().BIOME_WEIGHT_SMOKY_HILLS.get(),
             BiomeManager.BiomeType.WARM,
             BiomeSmokyHills.biomeTypes
         );
@@ -445,7 +445,7 @@ public class AppalachiaBiomeManager {
             smokyHillsAutumn,
             "smokyhillsautumn",
             AppalachiaBiomeGroup.SMOKY,
-            ConfigAppalachia.biomeWeight_SmokyHillsAutumn,
+            AppalachiaAPI.config().BIOME_WEIGHT_SMOKY_HILLS_AUTUMN.get(),
             BiomeManager.BiomeType.WARM,
             BiomeSmokyHillsAutumn.biomeTypes
         );
@@ -463,7 +463,7 @@ public class AppalachiaBiomeManager {
             smokyMountains,
             "smokymountains",
             AppalachiaBiomeGroup.SMOKY,
-            ConfigAppalachia.biomeWeight_SmokyMountains,
+            AppalachiaAPI.config().BIOME_WEIGHT_SMOKY_MOUNTAINS.get(),
             BiomeManager.BiomeType.WARM,
             BiomeSmokyMountains.biomeTypes
         );
@@ -481,7 +481,7 @@ public class AppalachiaBiomeManager {
             smokyMountainsAutumn,
             "smokymountainsautumn",
             AppalachiaBiomeGroup.SMOKY,
-            ConfigAppalachia.biomeWeight_SmokyMountainsAutumn,
+            AppalachiaAPI.config().BIOME_WEIGHT_SMOKY_MOUNTAINS_AUTUMN.get(),
             BiomeManager.BiomeType.WARM,
             BiomeSmokyMountainsAutumn.biomeTypes
         );
@@ -499,7 +499,7 @@ public class AppalachiaBiomeManager {
             smokyBog,
             "smokybog",
             AppalachiaBiomeGroup.SMOKY,
-            ConfigAppalachia.biomeWeight_SmokyBog,
+            AppalachiaAPI.config().BIOME_WEIGHT_SMOKY_BOG.get(),
             BiomeManager.BiomeType.WARM,
             BiomeSmokyForest.biomeTypes
         );
@@ -517,7 +517,7 @@ public class AppalachiaBiomeManager {
             smokyBogAutumn,
             "smokybogautumn",
             AppalachiaBiomeGroup.SMOKY,
-            ConfigAppalachia.biomeWeight_SmokyBogAutumn,
+            AppalachiaAPI.config().BIOME_WEIGHT_SMOKY_BOG_AUTUMN.get(),
             BiomeManager.BiomeType.WARM,
             BiomeSmokyForest.biomeTypes
         );
@@ -535,7 +535,7 @@ public class AppalachiaBiomeManager {
             smokyBeach,
             "smokybeach",
             AppalachiaBiomeGroup.SMOKY,
-            ConfigAppalachia.biomeWeight_SmokyBeach,
+            AppalachiaAPI.config().BIOME_WEIGHT_SMOKY_BEACH.get(),
             BiomeManager.BiomeType.WARM,
             BiomeSmokyBeach.biomeTypes
         );
@@ -551,7 +551,7 @@ public class AppalachiaBiomeManager {
             smokyRiver,
             "smokyriver",
             AppalachiaBiomeGroup.SMOKY,
-            ConfigAppalachia.biomeWeight_SmokyRiver,
+            AppalachiaAPI.config().BIOME_WEIGHT_SMOKY_RIVER.get(),
             BiomeManager.BiomeType.WARM,
             BiomeSmokyRiver.biomeTypes
         );

@@ -11,9 +11,10 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+import appalachia.api.AppalachiaAPI;
+import appalachia.api.config.AppalachiaConfig;
 import appalachia.biome.AppalachiaBiomeManager;
 import appalachia.block.BlockManager;
-import appalachia.config.ConfigManager;
 import appalachia.event.EventManager;
 import appalachia.proxy.ClientProxy;
 import appalachia.proxy.CommonProxy;
@@ -40,17 +41,14 @@ public class Appalachia {
     @SidedProxy(clientSide = ClientProxy.LOCATION, serverSide = CommonProxy.LOCATION)
     public static CommonProxy proxy;
 
-    private ConfigManager configManager = new ConfigManager();
-
     @EventHandler
     public void initPre(FMLPreInitializationEvent event) {
 
         instance = this;
 
         configPath = event.getModConfigurationDirectory() + File.separator + ModInfo.CONFIG_DIRECTORY + File.separator;
-        ConfigManager.init(configPath);
-
-
+        AppalachiaAPI.aplConfig = new AppalachiaConfig();
+        AppalachiaAPI.aplConfig.load(configPath + "appalachia.cfg");
 
         proxy.preInit(event);
     }

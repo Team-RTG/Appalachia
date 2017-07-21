@@ -5,7 +5,7 @@ import net.minecraft.crash.CrashReport;
 
 import net.minecraftforge.fml.common.FMLLog;
 
-import appalachia.config.ConfigAppalachia;
+import appalachia.api.AppalachiaAPI;
 import org.apache.logging.log4j.Level;
 
 
@@ -13,7 +13,7 @@ public class Logger {
 
     public static void debug(String format, Object... data) {
 
-        if (ConfigAppalachia.enableDebugging) {
+        if (AppalachiaAPI.config().ENABLE_DEBUGGING.get()) {
             FMLLog.log(Level.INFO, "[Appalachia-DEBUG] " + format, data);
         }
     }
