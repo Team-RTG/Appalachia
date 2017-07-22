@@ -11,7 +11,6 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import appalachia.api.AppalachiaBiomes;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionAPL;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionAdirondackForest;
-import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 
 import rtg.api.config.BiomeConfig;
 import rtg.api.util.BlockUtil;
@@ -22,7 +21,7 @@ import rtg.api.world.surface.SurfaceBase;
 import rtg.api.world.terrain.TerrainBase;
 
 
-public class RealisticBiomeAPLAdirondackForestAutumn extends RealisticBiomeAPLBase {
+public class RealisticBiomeAPLAdirondackForestAutumn extends RealisticBiomeAPLAdirondackBase {
 
     public static Biome biome = AppalachiaBiomes.adirondackForestAutumn;
     public static Biome river = AppalachiaBiomes.adirondackRiver;
@@ -43,7 +42,28 @@ public class RealisticBiomeAPLAdirondackForestAutumn extends RealisticBiomeAPLBa
 
     @Override
     public TerrainBase initTerrain() {
-        return RealisticBiomeAPLBase.aplAdirondackForest.initTerrain();
+        return new TerrainAPLAdirondackForestAutumn();
+    }
+
+    public class TerrainAPLAdirondackForestAutumn extends TerrainBase {
+
+        protected float hillStrength = 10f;// this needs to be linked to the
+
+        public TerrainAPLAdirondackForestAutumn() {
+
+        }
+
+        @Override
+        public float generateNoise(IRTGWorld rtgWorld, int x, int y, float border, float river) {
+
+            groundNoise = groundNoise(x, y, groundVariation, rtgWorld.simplex());
+
+            float m = hills(x, y, hillStrength, rtgWorld.simplex(), river);
+
+            float floNoise = 65f + groundNoise + m;
+
+            return riverized(floNoise, river);
+        }
     }
 
     @Override
@@ -122,10 +142,5 @@ public class RealisticBiomeAPLAdirondackForestAutumn extends RealisticBiomeAPLBa
     public void initDecos() {
         this.addDecoCollection(new DecoCollectionAdirondackForest(this.getConfig()));
         this.addDecoCollection(new DecoCollectionAPL(this.getConfig()));
-    }
-
-    @Override
-    public Biome beachBiome() {
-        return AppalachiaBiomes.adirondackBeach;
     }
 }

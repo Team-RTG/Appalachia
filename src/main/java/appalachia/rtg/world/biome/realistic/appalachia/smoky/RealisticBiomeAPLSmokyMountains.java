@@ -11,7 +11,6 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import appalachia.api.AppalachiaBiomes;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionAPL;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionSmokyMountains;
-import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 import appalachia.rtg.world.gen.terrain.SpikeEverywhereEffect;
 import appalachia.rtg.world.gen.terrain.TerrainRidgedRegion;
 
@@ -29,7 +28,7 @@ import rtg.api.world.terrain.heighteffect.MountainsWithPassesEffect;
 import rtg.api.world.terrain.heighteffect.RaiseEffect;
 
 
-public class RealisticBiomeAPLSmokyMountains extends RealisticBiomeAPLBase {
+public class RealisticBiomeAPLSmokyMountains extends RealisticBiomeAPLSmokyBase {
 
     public static Biome biome = AppalachiaBiomes.smokyMountains;
     public static Biome river = AppalachiaBiomes.smokyRiver;
@@ -53,7 +52,6 @@ public class RealisticBiomeAPLSmokyMountains extends RealisticBiomeAPLBase {
 
     @Override
     public TerrainBase initTerrain() {
-
 
         TerrainRidgedRegion.Parameters parameters = new TerrainRidgedRegion.Parameters();
         SpikeEverywhereEffect mountains= new SpikeEverywhereEffect();
@@ -180,10 +178,5 @@ public class RealisticBiomeAPLSmokyMountains extends RealisticBiomeAPLBase {
             height = height.plus(passHeight);
 
         }
-    }
-
-    @Override
-    public Biome beachBiome() {
-        return AppalachiaBiomes.smokyBeach;
     }
 }

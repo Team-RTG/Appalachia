@@ -11,7 +11,6 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import appalachia.api.AppalachiaBiomes;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionAPL;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionBlueRidgeMountains;
-import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 import appalachia.rtg.world.gen.terrain.SpikeEverywhereEffect;
 import appalachia.rtg.world.gen.terrain.TerrainRidgedRegion;
 
@@ -29,7 +28,7 @@ import rtg.api.world.terrain.heighteffect.MountainsWithPassesEffect;
 import rtg.api.world.terrain.heighteffect.RaiseEffect;
 
 
-public class RealisticBiomeAPLBlueRidgeMountains extends RealisticBiomeAPLBase {
+public class RealisticBiomeAPLBlueRidgeMountains extends RealisticBiomeAPLBlueRidgeBase {
 
     public static Biome biome = AppalachiaBiomes.blueRidgeMountains;
     public static Biome river = AppalachiaBiomes.blueRidgeRiver;
@@ -179,10 +178,5 @@ public class RealisticBiomeAPLBlueRidgeMountains extends RealisticBiomeAPLBase {
             height = height.plus(passHeight);
 
         }
-    }
-
-    @Override
-    public Biome beachBiome() {
-        return AppalachiaBiomes.blueRidgeBeach;
     }
 }

@@ -11,7 +11,8 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import appalachia.api.AppalachiaBiomes;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionAPL;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionSmokyHills;
-import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
+import appalachia.rtg.world.gen.terrain.SpikeEverywhereEffect;
+import appalachia.rtg.world.gen.terrain.TerrainRidgedRegion;
 
 import rtg.api.config.BiomeConfig;
 import rtg.api.util.BlockUtil;
@@ -20,9 +21,10 @@ import rtg.api.util.noise.OpenSimplexNoise;
 import rtg.api.world.IRTGWorld;
 import rtg.api.world.surface.SurfaceBase;
 import rtg.api.world.terrain.TerrainBase;
+import rtg.api.world.terrain.heighteffect.RaiseEffect;
 
 
-public class RealisticBiomeAPLSmokyHillsAutumn extends RealisticBiomeAPLBase {
+public class RealisticBiomeAPLSmokyHillsAutumn extends RealisticBiomeAPLSmokyBase {
 
     public static Biome biome = AppalachiaBiomes.smokyHillsAutumn;
     public static Biome river = AppalachiaBiomes.smokyRiver;
@@ -43,7 +45,42 @@ public class RealisticBiomeAPLSmokyHillsAutumn extends RealisticBiomeAPLBase {
 
     @Override
     public TerrainBase initTerrain() {
-        return RealisticBiomeAPLBase.aplSmokyHills.initTerrain();
+
+        TerrainRidgedRegion.Parameters parameters = new TerrainRidgedRegion.Parameters();
+        SpikeEverywhereEffect mountains= new SpikeEverywhereEffect();
+        mountains.spiked = new RaiseEffect(50);
+        mountains.octave = 2;
+        mountains.power = 0.9f;
+        mountains.wavelength = 200;
+        mountains.minimumSimplex = 0.3f;
+        parameters.ridgeAmplitude = mountains;
+        parameters.ridgeBase =15;
+        parameters.groundNoise = 4;
+        return new TerrainRidgedRegion(parameters);
+        //return new TerrainAPLSmokyHillsAutumn();
+    }
+
+    public class TerrainAPLSmokyHillsAutumn extends TerrainBase {
+
+        protected float hillStrength = 30f;
+
+        public TerrainAPLSmokyHillsAutumn() {
+
+            this(72f, 30f);
+        }
+
+        public TerrainAPLSmokyHillsAutumn(float bh, float hs) {
+
+            base = bh;
+            hillStrength = hs;
+        }
+
+        @Override
+        public float generateNoise(IRTGWorld rtgWorld, int x, int y, float border, float river) {
+
+            return terrainHighland(x, y, rtgWorld.simplex(), rtgWorld.cell(), river, 10f, 68f, hillStrength, base - 62f);
+
+        }
     }
 
     @Override
@@ -122,10 +159,5 @@ public class RealisticBiomeAPLSmokyHillsAutumn extends RealisticBiomeAPLBase {
     public void initDecos() {
         this.addDecoCollection(new DecoCollectionSmokyHills(this.getConfig()));
         this.addDecoCollection(new DecoCollectionAPL(this.getConfig()));
-    }
-
-    @Override
-    public Biome beachBiome() {
-        return AppalachiaBiomes.smokyBeach;
     }
 }

@@ -11,7 +11,6 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import appalachia.api.AppalachiaBiomes;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionAPL;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionAdirondackBog;
-import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 
 import rtg.api.config.BiomeConfig;
 import rtg.api.util.CliffCalculator;
@@ -24,7 +23,7 @@ import rtg.api.world.terrain.heighteffect.HeightVariation;
 import rtg.api.world.terrain.heighteffect.JitterEffect;
 
 
-public class RealisticBiomeAPLAdirondackBogAutumn extends RealisticBiomeAPLBase {
+public class RealisticBiomeAPLAdirondackBogAutumn extends RealisticBiomeAPLAdirondackBase {
 
     public static Biome biome = AppalachiaBiomes.adirondackBogAutumn;
     public static Biome river = AppalachiaBiomes.adirondackRiver;
@@ -132,10 +131,5 @@ public class RealisticBiomeAPLAdirondackBogAutumn extends RealisticBiomeAPLBase 
     public void initDecos() {
         this.addDecoCollection(new DecoCollectionAdirondackBog(this.getConfig()));
         this.addDecoCollection(new DecoCollectionAPL(this.getConfig()));
-    }
-
-    @Override
-    public Biome beachBiome() {
-        return AppalachiaBiomes.adirondackBeach;
     }
 }

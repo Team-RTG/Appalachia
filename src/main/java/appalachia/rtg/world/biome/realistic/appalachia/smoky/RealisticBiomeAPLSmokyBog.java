@@ -11,7 +11,6 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import appalachia.api.AppalachiaBiomes;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionAPL;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionSmokyBog;
-import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 
 import rtg.api.config.BiomeConfig;
 import rtg.api.util.CliffCalculator;
@@ -24,7 +23,7 @@ import rtg.api.world.terrain.heighteffect.HeightVariation;
 import rtg.api.world.terrain.heighteffect.JitterEffect;
 
 
-public class RealisticBiomeAPLSmokyBog extends RealisticBiomeAPLBase {
+public class RealisticBiomeAPLSmokyBog extends RealisticBiomeAPLSmokyBase {
 
     public static Biome biome = AppalachiaBiomes.smokyBog;
     public static Biome river = AppalachiaBiomes.smokyRiver;
@@ -132,10 +131,5 @@ public class RealisticBiomeAPLSmokyBog extends RealisticBiomeAPLBase {
     public void initDecos() {
         this.addDecoCollection(new DecoCollectionSmokyBog(this.getConfig()));
         this.addDecoCollection(new DecoCollectionAPL(this.getConfig()));
-    }
-
-    @Override
-    public Biome beachBiome() {
-        return AppalachiaBiomes.smokyBeach;
     }
 }

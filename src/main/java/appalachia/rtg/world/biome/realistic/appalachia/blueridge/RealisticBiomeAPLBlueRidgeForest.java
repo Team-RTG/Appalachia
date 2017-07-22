@@ -11,7 +11,6 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import appalachia.api.AppalachiaBiomes;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionAPL;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionBlueRidgeForest;
-import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 
 import rtg.api.config.BiomeConfig;
 import rtg.api.util.BlockUtil;
@@ -22,7 +21,7 @@ import rtg.api.world.surface.SurfaceBase;
 import rtg.api.world.terrain.TerrainBase;
 
 
-public class RealisticBiomeAPLBlueRidgeForest extends RealisticBiomeAPLBase {
+public class RealisticBiomeAPLBlueRidgeForest extends RealisticBiomeAPLBlueRidgeBase {
 
     public static Biome biome = AppalachiaBiomes.blueRidgeForest;
     public static Biome river = AppalachiaBiomes.blueRidgeRiver;
@@ -144,10 +143,5 @@ public class RealisticBiomeAPLBlueRidgeForest extends RealisticBiomeAPLBase {
 
             return riverized(floNoise, river);
         }
-    }
-
-    @Override
-    public Biome beachBiome() {
-        return AppalachiaBiomes.blueRidgeBeach;
     }
 }

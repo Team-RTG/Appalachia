@@ -11,7 +11,6 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import appalachia.api.AppalachiaBiomes;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionAPL;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionBlueRidgeForest;
-import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 
 import rtg.api.config.BiomeConfig;
 import rtg.api.util.BlockUtil;
@@ -22,7 +21,7 @@ import rtg.api.world.surface.SurfaceBase;
 import rtg.api.world.terrain.TerrainBase;
 
 
-public class RealisticBiomeAPLBlueRidgeForestAutumn extends RealisticBiomeAPLBase {
+public class RealisticBiomeAPLBlueRidgeForestAutumn extends RealisticBiomeAPLBlueRidgeBase {
 
     public static Biome biome = AppalachiaBiomes.blueRidgeForestAutumn;
     public static Biome river = AppalachiaBiomes.blueRidgeRiver;
@@ -43,7 +42,28 @@ public class RealisticBiomeAPLBlueRidgeForestAutumn extends RealisticBiomeAPLBas
 
     @Override
     public TerrainBase initTerrain() {
-        return RealisticBiomeAPLBase.aplBlueRidgeForest.initTerrain();
+        return new TerrainAPLBlueRidgeForest();
+    }
+
+    public class TerrainAPLBlueRidgeForest extends TerrainBase {
+
+        protected float hillStrength = 10f;// this needs to be linked to the
+
+        public TerrainAPLBlueRidgeForest() {
+
+        }
+
+        @Override
+        public float generateNoise(IRTGWorld rtgWorld, int x, int y, float border, float river) {
+
+            groundNoise = groundNoise(x, y, groundVariation, rtgWorld.simplex());
+
+            float m = hills(x, y, hillStrength, rtgWorld.simplex(), river);
+
+            float floNoise = 65f + groundNoise + m;
+
+            return riverized(floNoise, river);
+        }
     }
 
     @Override
@@ -122,10 +142,5 @@ public class RealisticBiomeAPLBlueRidgeForestAutumn extends RealisticBiomeAPLBas
     public void initDecos() {
         this.addDecoCollection(new DecoCollectionBlueRidgeForest(this.getConfig()));
         this.addDecoCollection(new DecoCollectionAPL(this.getConfig()));
-    }
-
-    @Override
-    public Biome beachBiome() {
-        return AppalachiaBiomes.blueRidgeBeach;
     }
 }

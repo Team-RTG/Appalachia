@@ -11,7 +11,6 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import appalachia.api.AppalachiaBiomes;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionAPL;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionBlueRidgeBog;
-import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 
 import rtg.api.config.BiomeConfig;
 import rtg.api.util.CliffCalculator;
@@ -24,7 +23,7 @@ import rtg.api.world.terrain.heighteffect.HeightVariation;
 import rtg.api.world.terrain.heighteffect.JitterEffect;
 
 
-public class RealisticBiomeAPLBlueRidgeBogAutumn extends RealisticBiomeAPLBase {
+public class RealisticBiomeAPLBlueRidgeBogAutumn extends RealisticBiomeAPLBlueRidgeBase {
 
     public static Biome biome = AppalachiaBiomes.blueRidgeBogAutumn;
     public static Biome river = AppalachiaBiomes.blueRidgeRiver;
@@ -132,10 +131,5 @@ public class RealisticBiomeAPLBlueRidgeBogAutumn extends RealisticBiomeAPLBase {
     public void initDecos() {
         this.addDecoCollection(new DecoCollectionBlueRidgeBog(this.getConfig()));
         this.addDecoCollection(new DecoCollectionAPL(this.getConfig()));
-    }
-
-    @Override
-    public Biome beachBiome() {
-        return AppalachiaBiomes.blueRidgeBeach;
     }
 }

@@ -8,7 +8,6 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
 import appalachia.api.AppalachiaBiomes;
-import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 
 import rtg.api.config.BiomeConfig;
 import rtg.api.util.noise.OpenSimplexNoise;
@@ -17,7 +16,7 @@ import rtg.api.world.surface.SurfaceBase;
 import rtg.api.world.terrain.TerrainBase;
 
 
-public class RealisticBiomeAPLSmokyRiver extends RealisticBiomeAPLBase {
+public class RealisticBiomeAPLSmokyRiver extends RealisticBiomeAPLSmokyBase {
 
     public static Biome biome = AppalachiaBiomes.smokyRiver;
     public static Biome river = AppalachiaBiomes.smokyRiver;
@@ -98,10 +97,5 @@ public class RealisticBiomeAPLSmokyRiver extends RealisticBiomeAPLBase {
 
             return terrainFlatLakes(x, y, rtgWorld.simplex(), river, 3f, 60f);
         }
-    }
-
-    @Override
-    public Biome beachBiome() {
-        return AppalachiaBiomes.smokyBeach;
     }
 }

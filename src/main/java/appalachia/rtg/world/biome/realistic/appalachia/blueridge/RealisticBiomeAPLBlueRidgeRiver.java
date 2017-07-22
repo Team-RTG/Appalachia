@@ -8,7 +8,6 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 
 import appalachia.api.AppalachiaBiomes;
-import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 
 import rtg.api.config.BiomeConfig;
 import rtg.api.util.noise.OpenSimplexNoise;
@@ -17,7 +16,7 @@ import rtg.api.world.surface.SurfaceBase;
 import rtg.api.world.terrain.TerrainBase;
 
 
-public class RealisticBiomeAPLBlueRidgeRiver extends RealisticBiomeAPLBase {
+public class RealisticBiomeAPLBlueRidgeRiver extends RealisticBiomeAPLBlueRidgeBase {
 
     public static Biome biome = AppalachiaBiomes.blueRidgeRiver;
     public static Biome river = AppalachiaBiomes.blueRidgeRiver;
@@ -98,10 +97,5 @@ public class RealisticBiomeAPLBlueRidgeRiver extends RealisticBiomeAPLBase {
 
             return terrainFlatLakes(x, y, rtgWorld.simplex(), river, 3f, 60f);
         }
-    }
-
-    @Override
-    public Biome beachBiome() {
-        return AppalachiaBiomes.blueRidgeBeach;
     }
 }

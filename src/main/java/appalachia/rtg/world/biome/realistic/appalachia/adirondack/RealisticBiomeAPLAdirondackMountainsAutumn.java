@@ -11,7 +11,8 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import appalachia.api.AppalachiaBiomes;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionAPL;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionAdirondackMountains;
-import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
+import appalachia.rtg.world.gen.terrain.SpikeEverywhereEffect;
+import appalachia.rtg.world.gen.terrain.TerrainRidgedRegion;
 
 import rtg.api.config.BiomeConfig;
 import rtg.api.util.BlockUtil;
@@ -19,10 +20,15 @@ import rtg.api.util.CliffCalculator;
 import rtg.api.util.noise.OpenSimplexNoise;
 import rtg.api.world.IRTGWorld;
 import rtg.api.world.surface.SurfaceBase;
+import rtg.api.world.terrain.FunctionalTerrainBase;
 import rtg.api.world.terrain.TerrainBase;
+import rtg.api.world.terrain.heighteffect.HeightVariation;
+import rtg.api.world.terrain.heighteffect.JitterEffect;
+import rtg.api.world.terrain.heighteffect.MountainsWithPassesEffect;
+import rtg.api.world.terrain.heighteffect.RaiseEffect;
 
 
-public class RealisticBiomeAPLAdirondackMountainsAutumn extends RealisticBiomeAPLBase {
+public class RealisticBiomeAPLAdirondackMountainsAutumn extends RealisticBiomeAPLAdirondackBase {
 
     public static Biome biome = AppalachiaBiomes.adirondackMountainsAutumn;
     public static Biome river = AppalachiaBiomes.adirondackRiver;
@@ -46,7 +52,55 @@ public class RealisticBiomeAPLAdirondackMountainsAutumn extends RealisticBiomeAP
 
     @Override
     public TerrainBase initTerrain() {
-        return RealisticBiomeAPLBase.aplAdirondackMountains.initTerrain();
+        TerrainRidgedRegion.Parameters parameters = new TerrainRidgedRegion.Parameters();
+        SpikeEverywhereEffect mountains= new SpikeEverywhereEffect();
+        mountains.spiked = new RaiseEffect(80);
+        mountains.octave = 2;
+        mountains.power = 0.7f;
+        mountains.wavelength = 200;
+        mountains.minimumSimplex = 0.3f;
+        parameters.ridgeAmplitude = mountains;
+        parameters.ridgeBase = 40;
+        parameters.ridgeVariability = 20;
+        parameters.mediumJitter = 20;
+        return new TerrainRidgedRegion(parameters);
+        //return new TerrainAPLAdirondackMountainsAutumn(120f, 100f);
+    }
+
+    public class TerrainAPLAdirondackMountainsAutumn extends FunctionalTerrainBase {
+
+        protected float width;
+        protected float strength;
+        protected float spikeWidth = 40;
+        protected float spikeHeight = 20;
+
+        public TerrainAPLAdirondackMountainsAutumn(float mountainWidth, float mountainStrength) {
+
+            this(mountainWidth, mountainStrength, 90f);
+        }
+
+        public TerrainAPLAdirondackMountainsAutumn(float mountainWidth, float mountainStrength, float baseHeight) {
+
+            width = mountainWidth;
+            strength = mountainStrength;
+            base = baseHeight;
+            MountainsWithPassesEffect mountainEffect = new MountainsWithPassesEffect();
+            mountainEffect.mountainHeight = strength;
+            mountainEffect.mountainWavelength = width;
+            mountainEffect.spikeHeight = this.spikeHeight;
+            mountainEffect.spikeWavelength = this.spikeWidth;
+
+            this.height = new JitterEffect(6f, 10f, mountainEffect);
+            height = new JitterEffect(2f, 6f, height);
+
+            HeightVariation passHeight = new HeightVariation();
+            passHeight.height = 15;
+            passHeight.octave = 4;
+            passHeight.wavelength = 70;
+
+            height = height.plus(passHeight);
+
+        }
     }
 
     @Override
@@ -125,10 +179,5 @@ public class RealisticBiomeAPLAdirondackMountainsAutumn extends RealisticBiomeAP
     public void initDecos() {
         this.addDecoCollection(new DecoCollectionAdirondackMountains(this.getConfig()));
         this.addDecoCollection(new DecoCollectionAPL(this.getConfig()));
-    }
-
-    @Override
-    public Biome beachBiome() {
-        return AppalachiaBiomes.adirondackBeach;
     }
 }

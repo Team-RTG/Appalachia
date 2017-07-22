@@ -11,7 +11,6 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import appalachia.api.AppalachiaBiomes;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionAPL;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionSmokyForest;
-import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 
 import rtg.api.config.BiomeConfig;
 import rtg.api.util.BlockUtil;
@@ -22,7 +21,7 @@ import rtg.api.world.surface.SurfaceBase;
 import rtg.api.world.terrain.TerrainBase;
 
 
-public class RealisticBiomeAPLSmokyForestAutumn extends RealisticBiomeAPLBase {
+public class RealisticBiomeAPLSmokyForestAutumn extends RealisticBiomeAPLSmokyBase {
 
     public static Biome biome = AppalachiaBiomes.smokyForestAutumn;
     public static Biome river = AppalachiaBiomes.smokyRiver;
@@ -43,7 +42,28 @@ public class RealisticBiomeAPLSmokyForestAutumn extends RealisticBiomeAPLBase {
 
     @Override
     public TerrainBase initTerrain() {
-        return RealisticBiomeAPLBase.aplSmokyForest.initTerrain();
+        return new TerrainAPLSmokyForestAutumn();
+    }
+
+    public class TerrainAPLSmokyForestAutumn extends TerrainBase {
+
+        protected float hillStrength = 10f;// this needs to be linked to the
+
+        public TerrainAPLSmokyForestAutumn() {
+
+        }
+
+        @Override
+        public float generateNoise(IRTGWorld rtgWorld, int x, int y, float border, float river) {
+
+            groundNoise = groundNoise(x, y, groundVariation, rtgWorld.simplex());
+
+            float m = hills(x, y, hillStrength, rtgWorld.simplex(), river);
+
+            float floNoise = 65f + groundNoise + m;
+
+            return riverized(floNoise, river);
+        }
     }
 
     @Override
@@ -122,10 +142,5 @@ public class RealisticBiomeAPLSmokyForestAutumn extends RealisticBiomeAPLBase {
     public void initDecos() {
         this.addDecoCollection(new DecoCollectionSmokyForest(this.getConfig()));
         this.addDecoCollection(new DecoCollectionAPL(this.getConfig()));
-    }
-
-    @Override
-    public Biome beachBiome() {
-        return AppalachiaBiomes.smokyBeach;
     }
 }

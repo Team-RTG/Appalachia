@@ -11,7 +11,6 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import appalachia.api.AppalachiaBiomes;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionAPL;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionSmokyHills;
-import appalachia.rtg.world.biome.realistic.appalachia.RealisticBiomeAPLBase;
 import appalachia.rtg.world.gen.terrain.SpikeEverywhereEffect;
 import appalachia.rtg.world.gen.terrain.TerrainRidgedRegion;
 
@@ -25,7 +24,7 @@ import rtg.api.world.terrain.TerrainBase;
 import rtg.api.world.terrain.heighteffect.RaiseEffect;
 
 
-public class RealisticBiomeAPLSmokyHills extends RealisticBiomeAPLBase {
+public class RealisticBiomeAPLSmokyHills extends RealisticBiomeAPLSmokyBase {
 
     public static Biome biome = AppalachiaBiomes.smokyHills;
     public static Biome river = AppalachiaBiomes.smokyRiver;
@@ -160,10 +159,5 @@ public class RealisticBiomeAPLSmokyHills extends RealisticBiomeAPLBase {
             return terrainHighland(x, y, rtgWorld.simplex(), rtgWorld.cell(), river, 10f, 68f, hillStrength, base - 62f);
 
         }
-    }
-
-    @Override
-    public Biome beachBiome() {
-        return AppalachiaBiomes.smokyBeach;
     }
 }
