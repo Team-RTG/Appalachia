@@ -4,6 +4,17 @@ import net.minecraft.world.biome.Biome;
 
 public class AppalachiaBiomes {
 
+    public static Biome adirondackForest;
+    public static Biome adirondackForestAutumn;
+    public static Biome adirondackHills;
+    public static Biome adirondackHillsAutumn;
+    public static Biome adirondackMountains;
+    public static Biome adirondackMountainsAutumn;
+    public static Biome adirondackBog;
+    public static Biome adirondackBogAutumn;
+    public static Biome adirondackBeach;
+    public static Biome adirondackRiver;
+
     public static Biome blueRidgeForest;
     public static Biome blueRidgeForestAutumn;
     public static Biome blueRidgeHills;
@@ -26,19 +37,7 @@ public class AppalachiaBiomes {
     public static Biome smokyBeach;
     public static Biome smokyRiver;
 
-    public static Biome adirondackForest;
-    public static Biome adirondackForestAutumn;
-    public static Biome adirondackHills;
-    public static Biome adirondackHillsAutumn;
-    public static Biome adirondackMountains;
-    public static Biome adirondackMountainsAutumn;
-    public static Biome adirondackBog;
-    public static Biome adirondackBogAutumn;
-    public static Biome adirondackBeach;
-    public static Biome adirondackRiver;
-
-
-    public static enum AppalachiaBiomeProps {
+    public enum AppalachiaBiomeProps {
 
         //                                                          BH      HV      Temp    Rain    H2OColour   Snow?
 
