@@ -207,14 +207,14 @@ public class AppalachiaBiomeManager {
                 BiomeAdirondackBeach.biomeTypes
             );
             BiomeManager.addSpawnBiome(adirondackBeach);
-            Biome.EXPLORATION_BIOMES_LIST.add(adirondackForest);
+            Biome.EXPLORATION_BIOMES_LIST.add(adirondackBeach);
         }
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Adirondack River
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-        if (aplConfig.ADIRONDACK_RIVER_ENABLED.get()) {
+        //if (aplConfig.ADIRONDACK_RIVER_ENABLED.get()) {
             adirondackRiver = new BiomeAdirondackRiver(AppalachiaBiomeProps.ADIRONDACK_RIVER.getProps());
             registerBiomeWithTypes(
                 adirondackRiver,
@@ -225,7 +225,7 @@ public class AppalachiaBiomeManager {
                 BiomeAdirondackRiver.biomeTypes
             );
             Biome.EXPLORATION_BIOMES_LIST.add(adirondackRiver);
-        }
+        //}
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Blue Ridge Forest
@@ -402,14 +402,14 @@ public class AppalachiaBiomeManager {
                 BiomeBlueRidgeBeach.biomeTypes
             );
             BiomeManager.addSpawnBiome(blueRidgeBeach);
-            Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeForest);
+            Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeBeach);
         }
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Blue Ridge River
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-        if (aplConfig.BLUE_RIDGE_RIVER_ENABLED.get()) {
+        //if (aplConfig.BLUE_RIDGE_RIVER_ENABLED.get()) {
             blueRidgeRiver = new BiomeBlueRidgeRiver(AppalachiaBiomeProps.BLUE_RIDGE_RIVER.getProps());
             registerBiomeWithTypes(
                 blueRidgeRiver,
@@ -420,7 +420,7 @@ public class AppalachiaBiomeManager {
                 BiomeBlueRidgeRiver.biomeTypes
             );
             Biome.EXPLORATION_BIOMES_LIST.add(blueRidgeRiver);
-        }
+        //}
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Smoky Forest
@@ -597,14 +597,14 @@ public class AppalachiaBiomeManager {
                 BiomeSmokyBeach.biomeTypes
             );
             BiomeManager.addSpawnBiome(smokyBeach);
-            Biome.EXPLORATION_BIOMES_LIST.add(smokyForest);
+            Biome.EXPLORATION_BIOMES_LIST.add(smokyBeach);
         }
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Smoky River
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-        if (aplConfig.SMOKY_RIVER_ENABLED.get()) {
+        //if (aplConfig.SMOKY_RIVER_ENABLED.get()) {
             smokyRiver = new BiomeSmokyRiver(AppalachiaBiomeProps.SMOKY_RIVER.getProps());
             registerBiomeWithTypes(
                 smokyRiver,
@@ -616,7 +616,7 @@ public class AppalachiaBiomeManager {
             );
             Biome.EXPLORATION_BIOMES_LIST.add(smokyRiver);
             gcBuilder.setBiomes(appalachiaBiomes, biomeGroups);
-        }
+        //}
     }
 
     public static void doBiomeCheck() {
