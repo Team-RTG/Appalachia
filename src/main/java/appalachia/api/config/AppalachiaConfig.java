@@ -25,7 +25,7 @@ public class AppalachiaConfig extends Config {
     public final ConfigPropertyBoolean ADIRONDACK_BOG_ENABLED;
     public final ConfigPropertyBoolean ADIRONDACK_BOG_AUTUMN_ENABLED;
     public final ConfigPropertyBoolean ADIRONDACK_BEACH_ENABLED;
-    public final ConfigPropertyBoolean ADIRONDACK_RIVER_ENABLED;
+    //public final ConfigPropertyBoolean ADIRONDACK_RIVER_ENABLED;
 
     public final ConfigPropertyBoolean BLUE_RIDGE_FOREST_ENABLED;
     public final ConfigPropertyBoolean BLUE_RIDGE_FOREST_AUTUMN_ENABLED;
@@ -36,7 +36,7 @@ public class AppalachiaConfig extends Config {
     public final ConfigPropertyBoolean BLUE_RIDGE_BOG_ENABLED;
     public final ConfigPropertyBoolean BLUE_RIDGE_BOG_AUTUMN_ENABLED;
     public final ConfigPropertyBoolean BLUE_RIDGE_BEACH_ENABLED;
-    public final ConfigPropertyBoolean BLUE_RIDGE_RIVER_ENABLED;
+    //public final ConfigPropertyBoolean BLUE_RIDGE_RIVER_ENABLED;
 
     public final ConfigPropertyBoolean SMOKY_FOREST_ENABLED;
     public final ConfigPropertyBoolean SMOKY_FOREST_AUTUMN_ENABLED;
@@ -47,7 +47,7 @@ public class AppalachiaConfig extends Config {
     public final ConfigPropertyBoolean SMOKY_BOG_ENABLED;
     public final ConfigPropertyBoolean SMOKY_BOG_AUTUMN_ENABLED;
     public final ConfigPropertyBoolean SMOKY_BEACH_ENABLED;
-    public final ConfigPropertyBoolean SMOKY_RIVER_ENABLED;
+    //public final ConfigPropertyBoolean SMOKY_RIVER_ENABLED;
 
     // Weight
 
@@ -116,7 +116,7 @@ public class AppalachiaConfig extends Config {
         ADIRONDACK_BOG_ENABLED = this.addProperty(new ConfigPropertyBoolean(ConfigProperty.Type.BOOLEAN, "Enable Adirondack Bog", "Biomes", "", true));
         ADIRONDACK_BOG_AUTUMN_ENABLED = this.addProperty(new ConfigPropertyBoolean(ConfigProperty.Type.BOOLEAN, "Enable Adirondack Bog (Autumn)", "Biomes", "", true));
         ADIRONDACK_BEACH_ENABLED = this.addProperty(new ConfigPropertyBoolean(ConfigProperty.Type.BOOLEAN, "Enable Adirondack Beach", "Biomes", "", true));
-        ADIRONDACK_RIVER_ENABLED = this.addProperty(new ConfigPropertyBoolean(ConfigProperty.Type.BOOLEAN, "Enable Adirondack River", "Biomes", "", true));
+        //ADIRONDACK_RIVER_ENABLED = this.addProperty(new ConfigPropertyBoolean(ConfigProperty.Type.BOOLEAN, "Enable Adirondack River", "Biomes", "", true));
 
         BLUE_RIDGE_FOREST_ENABLED = this.addProperty(new ConfigPropertyBoolean(ConfigProperty.Type.BOOLEAN, "Enable Blue Ridge Forest", "Biomes", "", true));
         BLUE_RIDGE_FOREST_AUTUMN_ENABLED = this.addProperty(new ConfigPropertyBoolean(ConfigProperty.Type.BOOLEAN, "Enable Blue Ridge Forest (Autumn)", "Biomes", "", true));
@@ -127,7 +127,7 @@ public class AppalachiaConfig extends Config {
         BLUE_RIDGE_BOG_ENABLED = this.addProperty(new ConfigPropertyBoolean(ConfigProperty.Type.BOOLEAN, "Enable Blue Ridge Bog", "Biomes", "", true));
         BLUE_RIDGE_BOG_AUTUMN_ENABLED = this.addProperty(new ConfigPropertyBoolean(ConfigProperty.Type.BOOLEAN, "Enable Blue Ridge Bog (Autumn)", "Biomes", "", true));
         BLUE_RIDGE_BEACH_ENABLED = this.addProperty(new ConfigPropertyBoolean(ConfigProperty.Type.BOOLEAN, "Enable Blue Ridge Beach", "Biomes", "", true));
-        BLUE_RIDGE_RIVER_ENABLED = this.addProperty(new ConfigPropertyBoolean(ConfigProperty.Type.BOOLEAN, "Enable Blue Ridge River", "Biomes", "", true));
+        //BLUE_RIDGE_RIVER_ENABLED = this.addProperty(new ConfigPropertyBoolean(ConfigProperty.Type.BOOLEAN, "Enable Blue Ridge River", "Biomes", "", true));
 
         SMOKY_FOREST_ENABLED = this.addProperty(new ConfigPropertyBoolean(ConfigProperty.Type.BOOLEAN, "Enable Smoky Forest", "Biomes", "", true));
         SMOKY_FOREST_AUTUMN_ENABLED = this.addProperty(new ConfigPropertyBoolean(ConfigProperty.Type.BOOLEAN, "Enable Smoky Forest (Autumn)", "Biomes", "", true));
@@ -138,7 +138,7 @@ public class AppalachiaConfig extends Config {
         SMOKY_BOG_ENABLED = this.addProperty(new ConfigPropertyBoolean(ConfigProperty.Type.BOOLEAN, "Enable Smoky Bog", "Biomes", "", true));
         SMOKY_BOG_AUTUMN_ENABLED = this.addProperty(new ConfigPropertyBoolean(ConfigProperty.Type.BOOLEAN, "Enable Smoky Bog (Autumn)", "Biomes", "", true));
         SMOKY_BEACH_ENABLED = this.addProperty(new ConfigPropertyBoolean(ConfigProperty.Type.BOOLEAN, "Enable Smoky Beach", "Biomes", "", true));
-        SMOKY_RIVER_ENABLED = this.addProperty(new ConfigPropertyBoolean(ConfigProperty.Type.BOOLEAN, "Enable Smoky River", "Biomes", "", true));
+        //SMOKY_RIVER_ENABLED = this.addProperty(new ConfigPropertyBoolean(ConfigProperty.Type.BOOLEAN, "Enable Smoky River", "Biomes", "", true));
 
         // Weight
 
