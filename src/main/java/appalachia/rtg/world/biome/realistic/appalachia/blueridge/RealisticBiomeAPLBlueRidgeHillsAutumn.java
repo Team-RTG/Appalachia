@@ -11,8 +11,6 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import appalachia.api.AppalachiaBiomes;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionAPL;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionBlueRidgeHills;
-import appalachia.rtg.world.gen.terrain.SpikeEverywhereEffect;
-import appalachia.rtg.world.gen.terrain.TerrainRidgedRegion;
 
 import rtg.api.config.BiomeConfig;
 import rtg.api.util.BlockUtil;
@@ -21,7 +19,6 @@ import rtg.api.util.noise.OpenSimplexNoise;
 import rtg.api.world.IRTGWorld;
 import rtg.api.world.surface.SurfaceBase;
 import rtg.api.world.terrain.TerrainBase;
-import rtg.api.world.terrain.heighteffect.RaiseEffect;
 
 
 public class RealisticBiomeAPLBlueRidgeHillsAutumn extends RealisticBiomeAPLBlueRidgeBase {
@@ -46,18 +43,19 @@ public class RealisticBiomeAPLBlueRidgeHillsAutumn extends RealisticBiomeAPLBlue
     @Override
     public TerrainBase initTerrain() {
 
-        TerrainRidgedRegion.Parameters parameters = new TerrainRidgedRegion.Parameters();
-        SpikeEverywhereEffect mountains= new SpikeEverywhereEffect();
-        mountains.spiked = new RaiseEffect(35);
-        mountains.octave = 2;
-        mountains.power = 0.5f;
-        mountains.wavelength = 200;
-        mountains.minimumSimplex = 0.3f;
-        parameters.ridgeAmplitude = mountains;
-        parameters.ridgeBase =15;
-        parameters.groundNoise = 4;
-        return new TerrainRidgedRegion(parameters);
-        //return new TerrainAPLBlueRidgeHills();
+//        TerrainRidgedRegion.Parameters parameters = new TerrainRidgedRegion.Parameters();
+//        SpikeEverywhereEffect mountains= new SpikeEverywhereEffect();
+//        mountains.spiked = new RaiseEffect(35);
+//        mountains.octave = 2;
+//        mountains.power = 0.5f;
+//        mountains.wavelength = 200;
+//        mountains.minimumSimplex = 0.3f;
+//        parameters.ridgeAmplitude = mountains;
+//        parameters.ridgeBase =15;
+//        parameters.groundNoise = 4;
+//        return new TerrainRidgedRegion(parameters);
+
+        return new TerrainAPLBlueRidgeHillsAutumn();
     }
 
     public class TerrainAPLBlueRidgeHillsAutumn extends TerrainBase {

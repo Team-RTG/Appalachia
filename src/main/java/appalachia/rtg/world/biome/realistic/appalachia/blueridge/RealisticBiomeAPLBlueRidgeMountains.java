@@ -11,8 +11,6 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import appalachia.api.AppalachiaBiomes;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionAPL;
 import appalachia.rtg.world.biome.deco.collection.DecoCollectionBlueRidgeMountains;
-import appalachia.rtg.world.gen.terrain.SpikeEverywhereEffect;
-import appalachia.rtg.world.gen.terrain.TerrainRidgedRegion;
 
 import rtg.api.config.BiomeConfig;
 import rtg.api.util.BlockUtil;
@@ -25,7 +23,6 @@ import rtg.api.world.terrain.TerrainBase;
 import rtg.api.world.terrain.heighteffect.HeightVariation;
 import rtg.api.world.terrain.heighteffect.JitterEffect;
 import rtg.api.world.terrain.heighteffect.MountainsWithPassesEffect;
-import rtg.api.world.terrain.heighteffect.RaiseEffect;
 
 
 public class RealisticBiomeAPLBlueRidgeMountains extends RealisticBiomeAPLBlueRidgeBase {
@@ -53,17 +50,18 @@ public class RealisticBiomeAPLBlueRidgeMountains extends RealisticBiomeAPLBlueRi
     @Override
     public TerrainBase initTerrain() {
 
-        TerrainRidgedRegion.Parameters parameters = new TerrainRidgedRegion.Parameters();
-        SpikeEverywhereEffect mountains= new SpikeEverywhereEffect();
-        mountains.spiked = new RaiseEffect(70);
-        mountains.octave = 2;
-        mountains.power = 0.5f;
-        mountains.wavelength = 200;
-        mountains.minimumSimplex = 0.3f;
-        parameters.ridgeAmplitude = mountains;
-        parameters.ridgeBase = 40;
-        return new TerrainRidgedRegion(parameters);
-        //return new TerrainAPLBlueRidgeMountains(120f, 100f);
+//        TerrainRidgedRegion.Parameters parameters = new TerrainRidgedRegion.Parameters();
+//        SpikeEverywhereEffect mountains= new SpikeEverywhereEffect();
+//        mountains.spiked = new RaiseEffect(70);
+//        mountains.octave = 2;
+//        mountains.power = 0.5f;
+//        mountains.wavelength = 200;
+//        mountains.minimumSimplex = 0.3f;
+//        parameters.ridgeAmplitude = mountains;
+//        parameters.ridgeBase = 40;
+//        return new TerrainRidgedRegion(parameters);
+
+        return new TerrainAPLBlueRidgeMountains(120f, 100f);
     }
 
     @Override
